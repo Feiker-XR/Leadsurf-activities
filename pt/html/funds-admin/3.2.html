@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>3.2人工资金操作建单</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>充值相关</dt>
+				<dd><a href="">异常充值处理</a></dd>
+				<dd><a href="">充值相关配置</a></dd>
+				<dt>提现相关</dt>
+				<dd><a href="">风险提现处理</a></dd>
+				<dd><a href="#">提现相关处理</a></dd>
+				<dt>人工资金操作</dt>
+				<dd class="current"><a href="#">人工资金操作审核流程</a></dd>
+				<dt>银行卡相关</dt>
+				<dd><a href="#">银行管理</a></dd>
+				<dd><a href="#">用户银行卡绑定管理</a></dd>
+				<dd><a href="#">银行卡黑名单管理</a></dd>
+				<dt>统计报表</dt>
+				<dd><a href="#">充值明细报表</a></dd>
+				<dd><a href="#">提现明细报表</a></dd>
+				<dd><a href="#">充提报表</a></dd>
+				<dd><a href="#">总代每日报表</a></dd>
+				<dd><a href="#">自动收款明细报表</a></dd>
+				<dt>转账相关</dt>
+				<dd><a href="#">转账明细</a></dd>
+				<dd><a href="#">转账限额配置</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">一级菜单</a> &gt; <a href="#">二级级菜单</a> &gt; 三级菜单名</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<h3 class="ui-title">人工资金操作建单</h3>
+						<ul class="ui-form">
+							<li>
+								<label class="ui-label big">建单类型：</label>
+								<select class="ui-select w-3">
+									<option value="所有">请选择人工建单类型</option>
+									<option value="可疑卡">打款 - 活动中奖</option>
+									<option value="骗子卡">打款 - 人工提现</option>
+									<option value="加币 - 活动加币">加币 - 活动加币</option>
+									<option value="加币 - 大客户预支">加币 - 大客户预支</option>
+									<option value="加币 - 投诉理赔">加币 - 投诉理赔</option>
+									<option value="加币 - 平台奖励">加币 - 平台奖励</option>
+									<option value="加币 - 重复打款">加币 - 重复打款</option>
+									<option value="加币 - 人工扣款">加币 - 人工扣款</option>
+								</select>
+								<span class="ui-text-info">请慎重选择建单类型，并填写清楚建单原因</span>
+							</li>
+							<li>
+								<label class="ui-label big">涉及用户名：</label>
+								<input type="text" value="" class="input w-4">
+								<a href="javascript:void(0);" class="btn btn-important">确 定<b class="btn-inner"></b></a>
+							</li>
+						</ul>
+						<ul class="ui-form">
+							<li>
+								<label class="ui-label">建单类型：</label>
+								<span class="ui-info">打款 - 活动中奖</span>
+							</li>
+							<li>
+								<label class="ui-label">类型说明：</label>
+								<span class="ui-info">打款 - 活动中奖</span>
+								<span class="ui-text-info">仅适用于运营活动中奖后，需要给用户现金派奖的运营场景</span>
+							</li>
+							<li>
+								<label class="ui-label">选择银行卡：</label>
+								<div class="bank-more">
+								<div class="bank-label">
+									<span style="display:none;" class="ico-bank CCB" title="建设银行"></span>
+									<span class="bank-drop-text">- 请选择银行 -</span>
+									<a href="javascript:void(0);" class="bank-drop"><i class="ico-up"></i></a>
+								</div>
+								<div style="" class="bank-more-content">
+									<table>
+										<tbody>
+											<tr>
+												<td><span class="ico-bank ICBC"></span></td>
+												<td>开户人姓名：张*</td>
+												<td>银行卡号：**** **** **** 3400</td>
+											</tr>
+											<tr>
+												<td><span class="ico-bank ICBC"></span></td>
+												<td>开户人姓名：王*</td>
+												<td>银行卡号：**** **** **** 3401</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							</li>
+							<li>
+								<label class="ui-label">打款金额：</label>
+								<input type="text" value="" class="input w-4">
+							</li>
+							<li>
+								<label class="ui-label">附件：</label>
+								<input type="file" value="添加附件" class="file">
+								<span class="ui-text-prompt">支持rar、jpg、png格式，大小不超过2M，最多可添加三条</span>
+							</li>
+							<li>
+								<label class="ui-label">建单原因：</label>
+								<div class="textarea w-6">
+									<textarea id="text"></textarea>
+								</div>
+								<span class="ui-text-info vertical-bottom">0/100</span>
+								<span class="ui-text-info vertical-bottom">请填写清楚建单原因</span>
+							</li>
+							<li class="ui-btn">
+								<a href="javascript:void(0);" class="btn btn-important">提 交<b class="btn-inner"></b></a>
+								<a href="javascript:void(0);" class="btn">上一步<b class="btn-inner"></b></a>
+							</li>
+						</ul>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

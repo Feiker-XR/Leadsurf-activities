@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>修改广告</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+
+	<style>
+	.ui-form .J-panel-group {margin:0;}
+	.checkbox-list {border-bottom:1px dotted #CCC;display:inline-block;padding-bottom:10px;}
+	.checkbox-list-last {border:0;}
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>广告</dt>
+				<dd class="current"><a href="1.1index.html">广告管理（发布）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告管理（审核）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告位管理</a></dd>
+				<dt>公告</dt>
+				<dd><a href="2.1freeze-account-list.html">公告管理（发布）</a></dd>
+				<dd><a href="#">公告管理（审核）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建公告</a></dd>
+				<dt>专题</dt>
+				<dd><a href="2.1freeze-account-list.html">专题管理（发布）</a></dd>
+				<dd><a href="#">专题管理（查看）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建专题</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">广告</a> &gt; <a href="#">广告管理</a> &gt; 修改广告</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<form id="J-form-upload" name="form1" enctype="multipart/form-data" method="post" action="upload.php" target="check_file_frame">
+							<input name="file" type="file" id="J-upload-file" class="upload-file-button" size="40" hidefocus="true" value="导入" style="display:none;" />
+						</form>
+					
+						
+						<form action="?" id="J-form">
+							
+						<ul class="ui-form">
+							<li></li>
+							<li style="margin:0;">
+								<label for="" class="ui-label">展示用户组：</label>
+								<span class="checkbox-list">
+									<label for="J-checkbox-all" class="label"><input id="J-checkbox-all" type="checkbox" value="1" class="checkbox">全部站内用户</label>
+									<label for="J-usergroup-13" class="label"><input type="checkbox" value="13" class="checkbox" id="J-usergroup-13">游客</label>
+								</span>
+							</li>
+							<li class="J-panel-group">
+								<label for="" class="ui-label"></label>
+								<span class="checkbox-list">
+									<label for="J-usergroup-2" class="label"><input type="checkbox" value="2" class="checkbox" id="J-usergroup-2">总代</label>
+									<label for="J-usergroup-3" class="label"><input type="checkbox" value="3" class="checkbox" id="J-usergroup-3">其他代理</label>
+									<label for="J-usergroup-10" class="label"><input type="checkbox" value="10" class="checkbox" id="J-usergroup-10">玩家</label>
+								</span>
+							</li>
+							<li class="J-panel-group">
+								<label for="" class="ui-label"></label>
+								<span class="checkbox-list">
+									<label for="J-usergroup-11" class="label"><input type="checkbox" value="11" class="checkbox" id="J-usergroup-11">VIP</label>
+									<label for="J-usergroup-12" class="label"><input type="checkbox" value="12" class="checkbox" id="J-usergroup-12">非VIP</label>
+								</span>
+							</li>
+							<li class="J-panel-group">
+								<label for="" class="ui-label"></label>
+								<span class="checkbox-list checkbox-list-last">
+									
+								</span>
+								<span class="ui-check"><i></i>请选择一个用户组</span>
+							</li>
+							
+							<li>
+								<label class="ui-label">广告投放位置：</label>
+								<div class="select-position" id="J-panel-ad-position">
+									<table class="table table-info table-group ">
+										<thead>
+											<tr>
+												<th>页面/位置/尺寸</th>
+												<th>预览</th>
+												<th>已绑定</th>
+												<th>进行中</th>
+												<th>未开始</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="table-tool text-left"><label class="label"><input type="checkbox" class="checkbox">注册页（右侧下广告-400*400）</label></td>
+												<td class="table-tool"><a href="javascript:void(0);" title="预览" class="ico-preview"></a></td>
+												<td>6</td>
+												<td>6</td>
+												<td>3</td>
+											</tr>
+											<tr>
+												<td class="table-tool text-left"><label class="label"><input type="checkbox" class="checkbox">注册页（右侧下广告-400*400）</label></td>
+												<td class="table-tool"><a href="javascript:void(0);" title="预览" class="ico-preview"></a></td>
+												<td>6</td>
+												<td>6</td>
+												<td>3</td>
+											</tr>
+											<tr>
+												<td class="table-tool text-left"><label class="label"><input type="checkbox" class="checkbox">注册页（右侧下广告-400*400）</label></td>
+												<td class="table-tool"><a href="javascript:void(0);" title="预览" class="ico-preview"></a></td>
+												<td>6</td>
+												<td>6</td>
+												<td>3</td>
+											</tr>
+											<tr>
+												<td class="table-tool text-left"><label class="label"><input type="checkbox" class="checkbox">注册页（右侧下广告-400*400）</label></td>
+												<td class="table-tool"><a href="javascript:void(0);" title="预览" class="ico-preview"></a></td>
+												<td>6</td>
+												<td>6</td>
+												<td>3</td>
+											</tr>
+											<tr>
+												<td class="table-tool text-left"><label class="label"><input type="checkbox" class="checkbox">注册页（右侧下广告-400*400）</label></td>
+												<td class="table-tool"><a href="javascript:void(0);" title="预览" class="ico-preview"></a></td>
+												<td>6</td>
+												<td>6</td>
+												<td>3</td>
+											</tr>
+										</tbody>
+									</table>
+									<span class="ui-check"><i></i>请至少选择一个广告位</span>
+								</div>
+							</li>
+							<li>
+								<label class="ui-label">广告名称：</label>
+								<input id="J-input-title" type="text" class="input" value="" /> <span class="ui-prompt">(限20个字)</span>
+								<span class="ui-check"><i></i>广告名称不能为空</span>
+							</li>
+							<li class="pic-size">
+								<label class="ui-label" for="name">图片尺寸：</label>
+								<input type="hidden" id="J-input-img-src" value="" />
+								<span class="ui-singleline">宽 <input id="J-input-img-w" type="text" class="input input-disable" value="" disabled="disabled" style="text-align:center;"> 像素</span>
+								<span class="ui-singleline">高 <input id="J-input-img-h" type="text" class="input input-disable" value="" disabled="disabled" style="text-align:center;"> 像素</span>
+							</li>
+							<li id="J-panel-upload">
+								<label class="ui-label">上传图片：</label>
+								<a class="btn" href="javascript:void(0);" onClick="document.getElementById('J-form-upload').file.click();">上传图片<b class="btn-inner"></b></a>
+								<span class="ui-prompt">支持格式：JPG、GIF、PNG，不可超过100k</span>
+								<span id="J-msg-upload-tip" class="ui-check"><i></i>广告图片不能为空</span>
+							</li>
+							<li style="margin:0;">
+								<iframe src="upload.php" style="margin-left:150px;height:50px;" name="check_file_frame" frameborder="0"></iframe>
+							</li>
+
+							<li>
+								<label class="ui-label" for="name">链接地址：</label>
+								<input id="J-input-link" type="text" class="input" value="">
+								<span class="ui-prompt">链接地址为空则无链接</span>
+							</li>
+							<li class="time">
+								<label class="ui-label" for="name">有效期：</label>
+								<input id="J-time-start" type="text" class="input" value=""> - <input id="J-time-end" type="text" class="input" value="">
+								<span class="ui-check"><i></i>请选择广告有效期</span>
+							</li>
+							<li class="ui-btn">
+								<a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">提交审核<b class="btn-inner"></b></a>
+								<a class="btn" href="javascript:void(0);">保 存<b class="btn-inner"></b></a>
+							</li>
+						</ul>
+						</form>
+						
+						<div style="height:700px"></div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<script>
+function global_img(msg){
+	if(Number(msg['isSuccess']) == 1){
+		$('#J-input-img-w').val(msg['data']['width']);
+		$('#J-input-img-h').val(msg['data']['height']);
+		$('#J-input-img-src').val(msg['data']['src']);
+		$('#J-msg-upload-tip').hide();
+	}else{
+		$('#J-input-img-w').val('');
+		$('#J-input-img-h').val('');
+		$('#J-input-img-src').val('');
+		$('#J-msg-upload-tip').html('<i></i>' + msg['msg']).show();
+	}
+}
+
+
+(function($){
+	//弹窗
+	var Wd = phoenix.Message.getInstance(),
+	 	start = $('#J-time-start'),
+		end = $('#J-time-end');
+	start.focus(function(){
+		(new phoenix.DatePicker({input:start,isShowTime:true,expands:{show:function(){
+			var me = this,pos;
+			if(me.input && me.input.size() > 0){
+				pos = me.input.offset();
+				me.dom.css({left:pos.left,top:pos.top + (me.dom.height()*-1)});
+			}
+			me.effectShow();
+		}}})).show();
+	});
+	end.focus(function(){
+		(new phoenix.DatePicker({input:end,isShowTime:true,expands:{show:function(){
+			var me = this,pos;
+			if(me.input && me.input.size() > 0){
+				pos = me.input.offset();
+				me.dom.css({left:pos.left,top:pos.top + (me.dom.height()*-1)});
+			}
+			me.effectShow();
+		}}})).show();
+	});
+
+	//用户组
+	var checkGroup = function(e){
+		var par = $('.ui-form li'),ipts = par.find('input[type="checkbox"]'),num = 0,isPass = false,groupIpts = $('.J-panel-group').find('input[type="checkbox"]'),checkNum = 0,checkNotNum = 0;
+		ipts.each(function(){
+			if(this.checked){
+				num += 1;
+			}
+		});
+		if(num > 0){
+			isPass = true;
+		}else{
+			isPass = false;
+			par.find('.ui-check').show();
+		}
+		if(isPass){
+			par.find('.ui-check').hide();
+		}
+		
+		groupIpts.each(function(){
+			if(this.checked){
+				checkNum += 1;
+			}else{
+				checkNotNum += 1;
+			}
+		});
+		
+		if(e && e.target != ipts.get(0)){
+			if(checkNum == groupIpts.size()){
+				ipts.get(0).checked = true;
+			}
+			if(checkNum < groupIpts.size()){
+				ipts.get(0).checked = false;
+			}
+		}
+		
+		return isPass;
+	};
+	$('.checkbox-list').on('click', 'input[type="checkbox"]', function(e){
+		checkGroup(e);
+	});
+	$('.checkbox-list').find('input[type="checkbox"]').click(function(){
+		if(this.checked){
+			$('.J-panel-group').find('.ui-check').hide();
+		}
+		checkGroup();
+	});
+	
+	
+	//选择全部客户
+	$('#J-checkbox-all').click(function(){
+		var me = this,ipts = $('.J-panel-group').find('input[type="checkbox"]');
+		if(this.checked){
+			ipts.each(function(){
+				if(me != this){
+					this.checked = true;
+				}
+			});
+		}else{
+			ipts.each(function(){
+				if(me != this){
+					this.checked = false;
+				}
+			});
+		}
+		checkGroup();
+	});
+	
+	
+	
+	//广告位
+	var checkPostion = function(){
+		var par = $('#J-panel-ad-position'),ipts = par.find('input[type="checkbox"]'),num = 0,isPass = false;
+		ipts.each(function(){
+			if(this.checked){
+				num += 1;
+			}
+		});
+		if(num > 0){
+			isPass = true;
+		}else{
+			isPass = false;
+			par.find('.ui-check').show();
+		}
+		if(isPass){
+			par.find('.ui-check').hide();
+		}
+		return isPass;
+	};
+	$('#J-panel-ad-position').on('click', 'input[type="checkbox"]', function(){
+		checkPostion();
+	});
+	
+	
+	//标题
+	var checkTitle = function(){
+		var title = $('#J-input-title'),titleValue = $.trim(title.val()),isPass = false;
+		if(titleValue == ''){
+			title.parent().find('.ui-check').html('<i></i>广告名称不能为空').show();
+			isPass = false;
+		}else if(titleValue.length > 20){
+			title.parent().find('.ui-check').html('<i></i>广告名称不能超过20个字符').show();
+			isPass = false;
+		}else{
+			title.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-title').blur(function(){
+		checkTitle();
+	});
+	
+	
+	//图片
+	var checkImage = function(){
+		var image = $('#J-input-img-src'),imagev = $.trim(image.val()),isPass = false;
+		if(imagev == ''){
+			$('#J-panel-upload').find('.ui-check').show();
+			isPass = false;
+		}else{
+			$('#J-panel-upload').find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	
+	
+	//有效期
+	var checkTime = function(){
+		//检测标题
+		var time = $('#J-time-start'),timev = $.trim(time.val()),isPass = false,
+			time2 = $('#J-time-end'),timev2 = $.trim(time2.val());
+		if(timev == '' || timev2 == ''){
+			time.parent().find('.ui-check').html('<i></i>请选择广告有效期').show();
+			isPass = false;
+		}else{
+			time.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+		
+	
+	
+	//文件上传按钮
+	$('#J-upload-file').bind('propertychange',function(){
+		$(this).parent().submit();
+	}).bind('change',function(){
+		$(this).parent().submit();
+	});
+	
+	
+	
+
+	//提交表单
+	$('#J-button-submit').click(function(){
+		if(checkGroup() && checkPostion() && checkTitle() && checkImage() && checkTime()){
+			var groupv,positionv,titlev,imgv,linkv,starttime,endtime;
+			groupv = [];
+			$('.J-panel-group').find('input[type="checkbox"]').each(function(){
+				if(this.checked){
+					groupv.push(this.value);
+				}
+			});
+			groupv = groupv.join(',');
+			
+			positionv = [];
+			$('#J-panel-ad-position').find('input[type="checkbox"]').each(function(){
+				if(this.checked){
+					positionv.push(this.value);
+				}
+			});
+			positionv = positionv.join(',');
+			
+			titlev = $.trim($('#J-input-title').val());
+			imgv = $('#J-input-img-src').val();
+			linkv = $('#J-input-link').val();
+			starttime = $('#J-time-start').val();
+			endtime = $('#J-time-end').val();
+			
+			$.ajax({
+				url:'data.json',
+				data:{group:groupv,position:positionv,img:imgv,link:linkv,starttime:starttime,endtime:endtime},
+				dataType:'json',
+				success:function(data){
+					data = {isSuccess:1,msg:'',data:{}};
+					if(Number(data['isSuccess']) == 1){
+						Wd.show({
+							mask:true,
+							title:'提示',
+							confirmText:'继续创建',
+							cancelText:'进入管理',
+							content:'<div class="bd text-center"><div class="pop-title"><i class="ico-success"></i><h4 class="pop-text">创建成功</h4></div></div>',
+							confirmIsShow:true,
+							cancelIsShow:true,
+							confirmFun:function(){
+								Wd.hide();
+								location.href = location.href;
+							},
+							cancelFun:function(){
+								Wd.hide();
+								location.href = '1.7.html';
+							},
+							callback:function(){
+							}
+						});
+					}else{
+						alert(data['msg']);
+					}
+					
+				}
+			});
+			
+			//$('#J-form').submit();
+		}
+	});
+	
+	
+	
+	
+	
+	
+	
+})(jQuery);
+</script>
+	
+	
+	
+</body>
+</html>

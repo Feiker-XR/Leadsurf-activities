@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>封锁参数设定  封锁数据</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li class="current"><a href="1.171.html">封锁</a></li>
+									<li><a href="1.191.html">变价</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content" id="J-list-container">
+							
+								<ul class="ui-tab-title clearfix">
+									<li><a href="1.171.html">封锁数据</a></li>
+									<li class="current"><a href="1.181.html">封锁参数设定</a></li>
+								</ul>
+								
+								
+								
+								<h3 class="ui-title">
+									福彩3D封锁参数  
+									&nbsp;&nbsp;
+									当前状态：
+									<span class="color-red">待审核</span>
+									<span class="color-red">待发布</span>
+								</h3>
+								
+								<form id="J-form" action="?">
+								<ul class="ui-form">
+									<li>
+										<label class="ui-label w-4 ">
+										
+										&nbsp;&nbsp;&nbsp;&nbsp;
+										最大封锁值：
+										</label>
+										<span class="ui-info" style="padding:0 10px;">3500,000.00</span>
+										&nbsp;&nbsp;
+										<a href="1.182.html" class="btn btn-important">修改<b class="btn-inner"></b></a>
+										<a href="1.183.html" class="btn btn-important">审核<b class="btn-inner"></b></a>
+										<a id="J-button-submit" href="#" class="btn btn-important">发布<b class="btn-inner"></b></a>
+									</li>
+								</ul>
+								</form>
+								
+								
+						
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<script>
+(function($){
+	
+	$('#J-button-submit').click(function(e){
+		e.preventDefault();
+		$('#J-form').submit();
+	});
+	
+})(jQuery);
+</script>
+</body>
+</html>

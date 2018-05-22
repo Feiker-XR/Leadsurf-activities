@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>注册成功</title>
+	<link rel="stylesheet" href="style/register.css" />
+</head>
+<body>
+		<div class="register-box">
+			<div class="register-top">
+				<div class="logo"></div>
+			</div>
+			<div class="register-content clearfix">
+				<div class="alert alert-success">
+					<i></i>
+					<div class="txt">
+						<h4>恭喜您注册成功！<br />您的账号是：vava123</h4>
+						<a href="javascript:void(0);" class="btn">立即登录</a>
+						<dl>
+							<dt>其他常用登录地址：(建议添加到收藏夹备用)</dt>
+							<dd>地址一：<a href="">http://www.ph278.com</a>（<a href="javascript:void(0);" onClick="AddFavorite('http://www.ph278.com', '银行大厅用户登录页')">添加到收藏夹</a>）</dd>
+							<dd>地址二：<a href="">http://www.ph158nb.com:999</a>（<a href="javascript:void(0);" onClick="AddFavorite('http://www.ph278.com', '银行大厅用户登录页')">添加到收藏夹</a>）</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<p class="copy">为了更好的操作体验首选Google Chrome、Firefox或IE9浏览器</p>
+		</div>
+<script>
+	var AddFavorite = function(sURL, sTitle) {
+		try {
+			window.external.addFavorite(sURL, sTitle)
+		} catch(e) {
+			try {
+				window.sidebar.addPanel(sTitle, sURL, "")
+			} catch(e) {
+				alert("加入收藏失败，请使用Ctrl+D进行添加")
+			}
+		}
+	};
+</script>
+</body>
+</html>

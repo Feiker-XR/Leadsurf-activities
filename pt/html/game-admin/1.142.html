@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.142玩法描述审核页</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	
+	<style>
+	.textarea-mark-cont,.textarea-mark-cont:hover {border:1px dotted #F00;}
+	.j-ui-tip-info {background:#FFFFE1;border:1px solid #CCC;font-size:12px;color:#F60;}
+	.j-ui-tip-info .sj-l {display:none;}
+	.textarea{
+	}
+	.textarea .text{
+		border: 0 none;
+	    color: #555;
+	    height: 80px;
+	    line-height: 18px;
+	    resize: none;
+	    width: 100%;
+	    white-space: normal;
+	}
+	</style>
+	
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li class="current"><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content clearfix">
+								<h3 class="ui-title"><a href="1.14.html">&lt;&lt; 返回玩法描述查看页</a></h3>
+								<h3 class="ui-title">
+									彩种名称：重庆时时彩
+								</h3>
+								
+								<div class="ui-form lottery-info">
+									<label for="text" class="ui-label">开奖周期说明：</label>
+									<div class="textarea w-12">
+										 全天：120期<br>【白天】10:00-22:00，10分钟/期 <br>【夜间】22:00-01:55，5分钟/期
+									</div>
+								</div>
+								<ul class="play-select-title clearfix">
+									<li class="current">五星</li>
+									<li>四星</li>
+									<li>后三</li>
+									<li>前三</li>
+									<li>后二</li>
+									<li>前二</li>
+									<li>一星</li>
+								</ul>
+								<table class="table table-info table-border">
+									<thead>
+										<tr>
+											<th>玩法群</th>
+											<th>玩法组</th>
+											<th>玩法/投注方式</th>
+											<th>玩法提示</th>
+											<th>示例</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td rowspan="15">五星</td>
+											<td rowspan="2">直选</td>
+											<td>复式</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+													<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+												</div>
+											</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>单式</td>
+											<td>
+												<div class="textarea w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td rowspan="6">组选</td>
+											<td>组选120（杂牌）</td>
+											<td>
+												<div class="textarea w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>组选60（对子）</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>组选30（两对）</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>组选20（三条）</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>组选10（葫芦）</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>组选10（葫芦）</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td rowspan="3">不定位</td>
+											<td>一码不定位</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>二码不定位</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>三码不定位</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td rowspan="4">趣味</td>
+											<td>一帆风顺</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>好事成双</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>三星报喜</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td>四季发财</td>
+											<td>
+												<div class="textarea textarea-mark-cont w-6">
+													<div class="text">中奖号码3位数中有两位数字相同且与对子号码相同，奖金为每注'bonus'元</div>
+												</div>
+											</td>
+											<td>
+																								<div class="textarea textarea-mark-cont w-6">选号 二重号：1 <br />&nbsp;&nbsp; 单号：3 <br />开奖 113<br />中奖：'bonus'元'bonus'元</div>
+												<div class="textarea-mark-old" style="display:none;">哇哈哈哇哈哈</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="5" class="text-center"><a class="btn btn-important " id="#J-button-checked" href="javascript:void(0);" id="J-Submit-Butt1">审核通过<b class="btn-inner"></b></a></td>
+										</tr>                                   
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+<script>
+(function(){
+	var minWindow,mask,initFn,isture=false;	
+	minWindow = new phoenix.MiniWindow({cls:'pop'});
+	mask = phoenix.Mask.getInstance();
+	minWindow.addEvent('beforeShow', function(){
+		mask.show();
+	});
+	minWindow.addEvent('afterHide', function(){
+		mask.hide();
+	});
+	
+
+	$('#J-button-checked').click(function(e){
+		minWindow.setTitle('温馨提示');
+		minWindow.setContent('<div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确认审核通过当前内容吗？</h4></div><div class="pop-btn"><a href="javascript:void(0);" class="btn btn-important " id="J-button-pop-confirm">确 认<b class="btn-inner"></b></a><a href="javascript:void(0);" class="btn" id="J-button-pop-cancel">取 消<b class="btn-inner"></b></a></div>');
+		minWindow.show();
+		
+		$('#J-button-pop-confirm').click(function(){
+			$.ajax({
+				url:'',
+				dataType:'JSON',
+				//返回消息格式
+				//{isSuccess:1,msg:'',type:''}
+				success:function(data){
+					if(Number(data['isSuccess']) == 1){
+						alert('操作成功后的动作...');
+					}else{
+						alert(data['msg']);
+					}
+				}
+			});
+		});
+		$('#J-button-pop-cancel').click(function(){
+			minWindow.hide();
+		});
+	});
+	
+	
+	
+	var inputTip = new phoenix.Tip.getInstance();
+	$('body').on('mouseover', '.textarea-mark-cont', function(){
+		var dom = $(this);
+		inputTip.setText(dom.parent().find('.textarea-mark-old').html());
+		inputTip.show(dom.width() + 12, 0, this);
+	}).on('mouseout', '.textarea-mark-cont', function(){
+		inputTip.hide();
+	});
+	
+	
+	
+	
+	
+	
+})();
+</script>
+	
+	
+</body>
+</html>

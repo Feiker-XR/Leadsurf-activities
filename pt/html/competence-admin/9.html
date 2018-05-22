@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>9创建权限组</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.tree-list #J-tree-container,.tree-list #J-tree-container2 {padding-bottom:20px;}
+	.ui-tree-node:hover {background:#FFFFe1;}
+	.ui-tree-check,.ui-tree-del {float:right;height:24px;line-height:24px;padding-right:5px;}
+	.ui-tree-del {cursor:pointer}
+	</style>
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tree.js"></script>
+	
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li class="current"><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>权限中心</dt>
+				<dd><a href="8.html">权限组管理</a></dd>
+				<dd class="current"><a href="9.html">创建权限组</a></dd>
+				<dd><a href="7.html">用户管理</a></dd>
+				<dd><a href="11.html">添加用户</a></dd>
+				<dd><a href="12.html">操作日志</a></dd>
+				<dd><a href="10.html">修改密码</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">客户管理</a> &gt; 列表</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<h3 class="ui-title">修改权限组</h3>
+						<form id="J-form" action="#" id="">
+						<input type="hidden" id="J-input-ids" value="" />
+							<ul class="ui-form">
+								<li>
+									<label class="ui-label" for="">组名称：</label>
+									<input id="groupName" type="text" value="" class="input w-4" />
+									<span class="ui-text-prompt"></span>
+								</li>
+								<li>
+									<label class="ui-label" for="">所属组：</label>
+									<select class="ui-select">
+										<option value="所有组">所有组</option>
+										<option value="CFO">CFO</option>
+										<option value="一级代理">|--会计经理</option>
+										<option value="二级代理">&nbsp;&nbsp;|--业务会计员</option>
+									</select>
+								</li>
+								<li class="radio-list">
+									<label class="ui-label" for="">是否启用：</label>
+								<label class="label" for="switch-1"><input id="switch-1" name="switch" type="radio" class="radio" value="1" checked="checked">开启（默认）</label>
+								<label class="label" for="switch-2"><input id="switch-2" name="switch" type="radio" class="radio" value="0">禁用</label>
+								</li>
+							</ul>
+						</form>	
+						<h3 class="ui-title">修改组权限</h3>
+
+
+						<ul class="tree-list clearfix">
+							<li class="tree-list-layout">
+								<h3 class="title">可分配权限</h3>
+								<div class="content" id="J-tree-container">
+								
+
+								</div>
+								
+							</li>
+							<li>
+								<h3 class="title">已授予权限</h3>
+								<div class="content" id="J-tree-container2">
+									
+								</div>
+							</li>
+						</ul>
+
+
+
+
+
+						<div style="padding-left:20px;"><a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">提 交<b class="btn-inner"></b></a></div>
+						
+						<div style="height:60px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+<div id="tip-success" style="position:absolute;display:none;" class="pop w-4">
+	<i class="ico-success"></i>
+	<h4 class="pop-text">创建成功</h4>
+</div>
+	
+	
+<div id="tip-fail" style="position:absolute;display:none;" class="pop w-4">
+	<i class="ico-error"></i>
+	<h4 class="pop-text">创建失败，请重试</h4>
+</div>
+	
+
+
+
+	
+<script>
+	(function(win, host){
+		var groupName = false,
+			groupNameDom = $('#groupName');
+
+		groupNameDom.blur(function(){
+			var tipsDom = $(this).next();
+
+			$.ajax({
+				url: '#',
+				dataType: 'json',
+				type: 'GET',
+				success:function(data){
+					if(Number(data['isSuccess']) == 1){
+						tipsDom.html('密码卡可以使用');
+						//校验密保卡
+						//测试完成打开
+						groupName = true;
+					}else{
+						tipsDom.html('组名已经被使用，请更换名称');
+					}
+				},
+				complete: function(){
+
+				}
+			});
+
+			//测试完成删除此处
+			groupName = true;
+		});
+	})(window, phoenix);
+	
+	
+	
+	
+	
+(function($){
+	var Tree,Tree2;
+	var buildLeft = function(data){
+			var treeData = data,
+				imgStr = '<img src="../images/common/tree/blue/check.png" />',
+				checkedClass = 'ui-tree-check-checked',
+				cfg = {
+					data:treeData,
+					dom:'#J-tree-container',
+					path:'../images/common/tree/blue/',
+					nodeTpl:'<div class="ui-tree-clip"><div data-action="check" data-id="<#=id#>" data-pid="<#=pid#>" class="ui-tree-node"><#=#indent##> <span class="ui-node-text"><#=text#></span><span class="ui-tree-check <#=#checkedclass##>"><#=#checkedimg##></span></div><#=#childrenNodes##></div>',
+					expands:{
+						checked:function(id){
+							var me = this,dom = me.dom.find('[data-id="'+ id +'"]'),checkDom = dom.find('.ui-tree-check'),par,nodeData = me.getDataById(Number(id));
+							checkDom.addClass(checkedClass);
+							checkDom.html(imgStr);
+							par = dom.parent().parent().children('[data-action="check"]');
+							nodeData['isChecked'] = 1;
+							if(par.size() > 0 && (par.get(0) != me.dom.get(0)) && (par.attr('data-action') == 'check')){
+								arguments.callee.call(me, par.attr('data-id'));
+							}
+						},
+						unchecked:function(id){
+							var me = this,dom = me.dom.find('[data-id="'+ id +'"]'),checkDom = dom.find('.ui-tree-check'),nodeData = me.getDataById(Number(id)),i = 0,len,
+								par,
+								checkedNum = 0;
+								
+							nodeData['isChecked'] = 0;
+							checkDom.removeClass(checkedClass);
+							checkDom.html('');
+							
+							if(nodeData['children']){
+								for(i = 0,len = nodeData['children'].length;i < len;i++){
+									arguments.callee.call(me, Number(nodeData['children'][i]['id']));
+								}
+							}
+							
+							me.clearSingleLabel();
+						},
+						//清除空label节点
+						clearSingleLabel:function(){
+							var me = this,data = me.getData(),i = 0,len = data.length,children,dom,checkDom,num = 0;
+							for(;i < len;i++){
+								if((data[i]['isChecked'] == 1 && data[i]['type'] == 2) || (data[i]['level'] == 0)){
+									if(data[i]['children']){
+										children = data[i]['children'];
+										num = 0;
+										$.each(children, function(){
+											if(this['isChecked'] == 1){
+												num += 1;
+											}
+										});
+										//console.log(data[i]['id'], data[i]['level'], data[i]['children'], num);
+										if(num <= 0){
+											
+											data[i]['isChecked'] = 0;
+											dom = me.dom.find('[data-id="'+ data[i]['id'] +'"]');
+											checkDom = dom.find('.ui-tree-check');
+											checkDom.removeClass(checkedClass);
+											checkDom.html('');
+										}
+									}
+								}
+							}
+						},
+						getCheckData:function(){
+							var me = this,data = me.getData(),i = 0,len = data.length,arr = [];
+							for(;i < len;i++){
+								if(data[i]['isChecked'] == 1){
+									delete data[i]['children'];
+									arr.push(data[i]);
+								}
+							}
+							return arr;
+						},
+						formatNodeHTML:function(str, node){
+							var img = (node['isChecked'] == 1) ? imgStr : '',
+								cls = (img != '') ? checkedClass : '';
+							return str.replace(/<#=#checkedimg##>/g, img).replace(/<#=#checkedclass##>/g, cls);
+						}
+					}
+				};
+			
+			Tree = new phoenix.Tree(cfg);
+			
+			Tree.addEvent('click', function(e, el){
+				var me = this,dom = $(el),action = dom.attr('data-action'),checkDom,id,node,par,childs,checkedNum = 0;
+				if(action != 'check'){
+					return;
+				}
+				id = Number(dom.attr('data-id'));
+				checkDom = dom.find('.ui-tree-check');
+				if(checkDom.hasClass('ui-tree-check-checked')){
+					me.unchecked(id);
+					
+					par = me.getDataById(me.getDataById(id)['pid']);
+					//label 类型子类不允许为空
+					if(par && ((par['type'] == 2) || (par['level'] == 0))){
+						childs = par['children'];
+						if(childs.length > 0){
+							$.each(childs, function(){
+								checkedNum = (this['isChecked'] == 1) ? (checkedNum + 1) : checkedNum;
+							});
+							if(checkedNum <= 0){
+								me.unchecked(par['id']);
+							}
+						}
+					}
+					
+					
+				}else{
+					me.checked(id);
+				}
+				
+				buildRight(me.getCheckData());
+			});
+			
+			buildRight(Tree.getCheckData());
+	};
+	
+	var buildRight = function(data){
+			var treeData = data,
+				cfg = {
+					data:treeData,
+					dom:'#J-tree-container2',
+					path:'../images/common/tree/blue/',
+					nodeTpl:'<div class="ui-tree-clip"><div data-id="<#=id#>" data-pid="<#=pid#>" class="ui-tree-node"><#=#indent##> <span class="ui-tree-node-text"><#=text#></span><span data-id="<#=id#>" data-action="del" class="ui-tree-del"><img src="../images/common/tree/blue/del.png" class="ui-tree-img-del" /></span></div><#=#childrenNodes##></div>',
+					expands:{
+						getCheckedIds:function(){
+							var me = this,data = me.getData(),i = 0,len = data.length,arr = [];
+							for(;i < len;i++){
+								if(data[i]['isChecked'] == 1){
+									arr.push(data[i]['id']);
+								}
+							}
+							return arr;
+						}
+					}
+				};
+			
+			if(Tree2){
+				Tree2.dom.remove();
+			}
+			
+			Tree2 = new phoenix.Tree(cfg);
+			
+			Tree2.addEvent('click', function(e, el){
+				var me = this,dom = $(el),action,id,par,childs,checkedNum = 0;
+				dom = dom.hasClass('ui-tree-img-del') ? dom.parent() : dom;
+				action = dom.attr('data-action')
+				if(action != 'del'){
+					return;
+				}
+				id = Number(dom.attr('data-id'));
+				
+				Tree.unchecked(id);
+				
+				par = Tree.getDataById(Tree.getDataById(id)['pid']);
+				//label 类型子类不允许为空
+				if(par && ((par['type'] == 2) || (par['level'] == 0))){
+					childs = par['children'];
+					if(childs.length > 0){
+						$.each(childs, function(){
+							checkedNum = (this['isChecked'] == 1) ? (checkedNum + 1) : checkedNum;
+						});
+						if(checkedNum <= 0){
+							Tree.unchecked(par['id']);
+						}
+					}
+				}
+				
+				buildRight(Tree.getCheckData());
+				
+			});
+			
+		
+		$('#J-input-ids').val(Tree2.getCheckedIds().join(','));
+		
+	};
+	
+	
+	$.ajax({
+		url:'tree.php',
+		dataType:'json',
+		success:function(data){
+			buildLeft(data['data']);
+		}
+	});
+	
+	
+	
+	//表单提交
+	$('#J-button-submit').click(function(){
+		var titleDom = $('#groupName'),
+			title = $.trim(titleDom.val()),
+			ids = $.trim($('#J-input-ids').val()),
+			tipsDom = titleDom.next();
+
+		if(title.length > 20 || title.length < 2){
+			tipsDom.html('<span style="color:#ff0000">组名称长度应为2-20个字符</span>');
+			titleDom.focus();
+			return;
+		}
+		if(ids.length < 1){
+			alert('你还未选择任何权限');
+			return;
+		}
+		
+		
+		$.ajax({
+			url:'data.php',
+			dataType:'json',
+			success:function(data){
+				if(Number(data['isSuccess']) == 1){
+					var successDom = $('#tip-success');
+					phoenix.util.toViewCenter(successDom);
+					successDom.show();
+					setTimeout(function(){
+						successDom.hide();
+						location.href = '8.html';
+					}, 3000);
+					
+				}else{
+					var failDom = $('#tip-fail');
+					phoenix.util.toViewCenter(failDom);
+					failDom.show();
+					setTimeout(function(){
+						failDom.hide();
+					}, 3000);
+				}
+			}
+		});
+		
+	});
+
+	
+	
+})(jQuery);
+	
+</script>
+</body>
+</html>

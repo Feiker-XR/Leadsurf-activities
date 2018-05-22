@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>4.0用户中心首页</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="../images/common/base.css" rel="stylesheet">
+<link href="../images/ucenter/index.css" rel="stylesheet">
+<script type="text/javascript" src="../js/game/util/jquery-1.9.1.js" ></script>
+<script type="text/javascript" src="../js/game/util/jquery.tmpl.js" ></script>
+<script type="text/javascript" src="../js/game/util/phoenix.base.js" ></script>
+<script type="text/javascript" src="../js/game/util/phoenix.Class.js" ></script>
+<script type="text/javascript" src="../js/game/util/phoenix.Event.js" ></script>
+<script type="text/javascript" src="../js/game/util/phoenix.util.js" ></script>
+<script type="text/javascript" src="../js/game/util/phoenix.Tab.js" ></script>
+<script type="text/javascript" src="../js/game/util/phoenix.Hover.js" ></script>
+</head>
+<body class="ucenter-index">
+    <!-- toolbar start -->
+	<div class="bg-toolbar"></div>
+	<div class="toolbar">
+		<div class="g_33">
+				<!-- <a href="#" class="download-app">手机投注送红包，速度下载！</a> -->
+				<ul class="menu">
+					<li class="user hover">
+						<a href="#">您好，VIC</a>
+					</li>
+					<li id="J-user-msg" class="msg">
+						<a href="#" class="msg-title">12</a>
+						<div class="msg-box">
+							<div class="msg-hd"><i class="tri"></i><a href="#" class="more">更多</a>我的未读消息<strong>（12）</strong></div>
+							<div class="msg-bd">
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息</a>
+							</div>
+						</div>
+					</li>
+					<li id="J-user-center" class="ucenter hover">
+						<a href="#">用户中心<i class="tri"></i></a>
+						<div class="menu-nav">
+							<i class="tri"></i>
+							<a href="">游戏记录</a>
+							<a href="">报表管理</a>
+							<a href="">资金明细</a>
+							<a href="">安全中心</a>
+							<a href="">安全退出</a>
+						</div>
+					</li>
+					<li class="balance">余额：10000.00</li>
+					<li class="recharge"><a href="#">充值</a></li>
+					<li class="withdrawals"><a href="#">提现</a></li>
+				</ul>
+		</div>
+	</div>
+	<!-- toolbar end -->
+	<!-- header start -->
+	<div class="header">
+		<div class="g_33">
+			<h1 class="logo"><a title="首页" href="#">PH158</a></h1>
+			<div class="service">
+				<a title="客服" class="link-service" href="#">客服</a>
+				<a title="帮助" class="link-help" href="#">帮助</a>
+			</div>
+		</div>
+	</div>
+	<!-- header end -->
+	<!-- content start -->
+	<div class="uc-container clearfix">
+		<div class="left-menu">
+			<h4 class="high">高频</h4>
+			<ul>
+				<li><a href="#">重庆时时彩</a></li>
+				<li><a href="#">江西时时彩</a></li>
+				<li class="award">
+					<a href="#">黑龙江时时彩</a>
+					<i class="icon-award"></i>
+				</li>
+				<li><a href="#">新疆时时彩</a></li>
+				<li><a href="#">天津时时彩</a></li>
+				<li><a href="#">乐利时时彩</a></li>
+				<li><a href="#">上海时时彩</a></li>
+				<li><a href="#">山东11选5</a></li>
+				<li><a href="#">江西11选5</a></li>
+				<li><a href="#">广东11选5</a></li>
+				<li><a href="#">重庆11选5</a></li>
+				<li><a href="#">乐利11选5</a></li>
+				<li><a href="#">北京快乐8</a></li>
+			</ul>
+			<div class="line"></div>
+			<h4 class="low">低频</h4>
+			<ul>
+				<li class="new">
+					<a href="#">双色球</a>
+					<i class="icon-new"></i>
+				</li>
+				<li><a href="#">福彩3D</a></li>
+				<li><a href="#">排列3/5</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<div class="clearfix">
+				<!--user-info-area-->
+				<div class="user-info">
+					<div class="info">
+						<div class="account">
+							下午好, VIC
+						</div> 
+						<!-- <a href="#" class="post-mail">发送站内信</a> -->
+					</div>
+					<div class="balance">
+						余额: <em>77,488,554.10</em> 元
+					</div>
+					<div class="clearfix">
+						<a href="#" class="recharge">充 值</a>
+						<a href="#" class="withdrawal">提 现</a>
+					</div>
+				</div>
+				<div class="user-safe">
+					<div class="safety-info clearfix">
+						<h6>安全等级</h6>
+						<div class="safety-level one"></div>
+						<a href="#" class="level-up">提升</a>
+					</div>
+					<div class="satety-msg clearfix">
+						为了您的账户安全，请提升您的安全等级！
+					</div>
+					<div class="bind-info clearfix">
+						<span class="mail-lock mail-bind">已绑定</span>
+						<span class="card-lock phone-bind">已绑定</span>
+						<span class="phone-lock card-bind">已绑定</span>
+					</div>
+				</div>
+			</div>
+			<!--user-info-area-end-->
+			<h4 class="ct-title played clearfix">
+				上次玩过的游戏
+			</h4>
+			<div class="lottery-info">
+				<div class="logo-area">
+					<img title="时时彩" src="../images/ucenter/index/logo/logo-ssc.png" />
+				</div>
+				<div class="detail">
+					<p>重庆时时彩 距下一期投注截至：<span class="over-time"></span></p>
+					<p>第120910017期 开奖号码: <i>2</i> <i>3</i> <i>4</i> <i>5</i> <i>2</i></p>
+				</div>
+				<a href="#" class="bet-now">立即投注</a>
+			</div>
+			<div class="trans-history">
+				<h6>重庆时时彩最新交易记录</h6>
+				<a href="#" class="link-more">更多></a>
+			</div>
+			<table class="history-detail">
+				<tbody>
+					<tr class="title-qihao">
+						<th>期号</th>
+						<th>投注内容</th>
+						<th>投注金额</th>
+						<th>奖金</th>
+						<th>投注时间</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td>201090</td>
+						<td>[五星直选]1,3,5,8,6</td>
+						<td>120.00</td>
+						<td>100,000.00</td>
+						<td>2010-09-10 23:11:58</td>
+						<td><a href="#">详情</a></td>
+					</tr>
+					<tr>
+						<td>201090</td>
+						<td>[五星直选]1,3,5,8,6</td>
+						<td>120.00</td>
+						<td>100,000.00</td>
+						<td>2010-09-10 23:11:58</td>
+						<td><a href="#">详情</a></td>
+					</tr>
+					<tr>
+						<td>201090</td>
+						<td>[五星直选]1,3,5,8,6</td>
+						<td>120.00</td>
+						<td>100,000.00</td>
+						<td>2010-09-10 23:11:58</td>
+						<td><a href="#">详情</a></td>
+					</tr>
+					<tr>
+						<td>201090</td>
+						<td>[五星直选]1,3,5,8,6</td>
+						<td>120.00</td>
+						<td>100,000.00</td>
+						<td>2010-09-10 23:11:58</td>
+						<td><a href="#">详情</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<h4 class="ct-title recommend clearfix">
+				热门彩种推荐
+			</h4>
+			<ul class="lottery-list">
+				<li>
+					<img title="时时彩" src="../images/ucenter/index/logo/logo-ssc.png" />
+					<h6>重庆时时彩</h6>
+					<p>官方同步开奖，玩法多样，返奖率高</p>
+					<p class="color-red">全天120期，最高奖金18万</p>
+					<a href="#" class="bet-now">立即投注</a>
+				</li>
+				<li>
+					<img title="时时彩" src="../images/ucenter/index/logo/logo-ll115.jpg" />
+					<h6>乐利11选5</h6>
+					<p>独有夜间版，乐利宝贝与您有个约会</p>
+					<p class="color-red">12分钟一开奖，全天115期</p>
+					<a href="#" class="bet-now">立即投注</a>
+				</li>
+				<li>
+					<img title="时时彩" src="../images/ucenter/index/logo/logo-kl8.jpg" />
+					<h6>北京快乐8</h6>
+					<p>开奖快中奖概率高，财富快速累积</p>
+					<p class="color-red">五分钟一开奖，每天179期</p>
+					<a href="#" class="bet-now">立即投注</a>
+				</li>
+			</ul>
+		</div>
+		<div class="right-sidebar">
+			<div class="ad">
+				<img src="../images/ucenter/index/ad.jpg" />
+			</div>
+			<h4 class="announcement">
+				网站公告
+				<!-- <div class="date">9月3日</div> -->
+			</h4>
+			<!-- <div class="announcement-detail">
+				半夜睡不著觉？又没有屋顶可以唱歌？ 没关系！乐利宝贝会陪著你！
+			</div> -->
+			<ul class="info-list">
+				<li>
+					<em>·</em>
+					<a href="#" class="info">天津时时彩隆重上线</a>
+					<span class="date">9月3日</span>
+				</li>
+				<li>
+					<em>·</em>
+					<a href="#" class="info">天津时时彩隆重上线</a>
+					<span class="date">9月3日</span>
+				</li>
+				<li>
+					<em>·</em>
+					<a href="#"  class="info">建行服务调整公告</a>
+					<span class="date">9月3日</span>
+				</li>
+				<li>
+					<em>·</em>
+					<a href="#"  class="info">平台账户安全保护措施公告</a>
+					<span class="date">9月3日</span>
+				</li>
+				<li>
+					<em>·</em>
+					<a href="#"  class="info">验证系统升级公告</a>
+					<span class="date">9月3日</span>
+				</li>
+			</ul>
+			<div class="ad2">
+				<img src="../images/ucenter/index/ad2.jpg" />
+			</div>
+			<h4 class="new-member">新手指南</h4>
+			<ul class="info-list">
+				<li>
+					<em>·</em>
+					<a href="#" class="info">天津时时彩隆重上线</a>
+					<span class="date">9月3日</span>
+				</li>
+				<li>
+					<em>·</em>
+					<a href="#"  class="info">建行服务调整公告</a>
+					<span class="date">9月3日</span>
+				</li>
+				<li>
+					<em>·</em>
+					<a href="#"  class="info">平台账户安全保护措施公告</a>
+					<span class="date">9月3日</span>
+				</li>
+				<li>
+					<em>·</em>
+					<a href="#"  class="info">验证系统升级公告</a>
+					<span class="date">9月3日</span>
+				</li>
+			</ul>
+		</div>
+		<!-- content end -->
+	</div>
+	<!-- footer start -->
+	<div class="uc-footer clearfix">
+		<div class="footer-warp">
+			<!-- <ul class="link-map">
+				<li><a href="#">帮助中心</a></li>
+				<li class="line"></li>
+				<li><a href="#">在线客服</a></li>
+				<li class="line"></li>
+				<li><a href="#">游戏介绍</a></li>
+				<li class="line"></li>
+				<li><a href="#">下载客户端</a></li>
+				<li class="line"></li>
+				<li><a href="#">翻墙工具</a></li>
+			</ul> -->
+			© 2001-2012 591PH. All rights reserved.凤凰游戏平台版权所有
+		</div>
+	</div>
+	<!-- footer end -->
+	<script>
+		(function() {
+			//顶部用户信息
+			new phoenix.Hover({triggers:'#J-user-center',panels:'#J-user-center .menu-nav',hoverDelayOut:300});
+			new phoenix.Hover({triggers:'#J-user-msg',panels:'#J-user-msg .msg-box',hoverDelayOut:300});
+		})();
+	</script>
+</body>
+</html>

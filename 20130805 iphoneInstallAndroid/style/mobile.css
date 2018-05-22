@@ -1,0 +1,43 @@
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, th, td, em, form, input,select, textarea, button, header, section, aside, footer { margin: 0; padding: 0; }
+body { min-width: 320px; background:-webkit-gradient(linear,0% 0%,100% 100%,from(#E3EAC1),to(#77C4B9)); font-size: 16px; -webkit-text-size-adjust: none; overflow-x: hidden; }
+ul, li { list-style: none; }
+img { border: none; }
+a { color: #287fc2; text-decoration: none; }
+header{height:62px;background:#FFF;overflow:hidden;}
+header .logo{display:inline-block;width:206px;height:39px;margin:12px 0 0 10px;
+ /*background-image: -webkit-image-set(url(../images/logo.png) 1x,url(../images/logo.png) 2x);*/
+background-image:url(../images/logo.png);
+background-repeat:no-repeat;
+}
+
+.title-text{padding-top:175px;padding-bottom:300px;font-size:32px;text-align:center;color:#555;}
+.title-text strong{display:block;font-size:28px;font-weight:100;}
+.title-text span{display:block;padding-top:10px;}
+
+@media only screen and (-o-min-device-pixel-ratio: 2/1), /* Opera */
+       only screen and (min--moz-device-pixel-ratio: 2), /* Firefox 16 之前 */
+       only screen and (-webkit-min-device-pixel-ratio: 2), /* Webkit */
+       only screen and (min-resolution: 240dpi), /* 标准 */
+       only screen and (min-resolution: 2dppx) /* 标准 */{
+	header .logo{
+	background-image:url(../images/logo.png);
+	background-size:206px 39px;
+	}
+}
+
+@media screen and (min-width:240px){
+	header .logo{
+	background-size:206px 39px;
+	}
+}
+
+@media screen and (min-width:480px){
+.title-text{padding-top:85px;padding-bottom:150px;}
+}
+@media only screen and (min-width:700px) {
+header{height:124px;}
+header .logo{width:412px;height:78px;margin:24px 0 0 20px;}
+.title-text{padding-top:350px;padding-bottom:600px;font-size:64px;}
+.title-text strong{font-size:56px;}
+.title-text span{padding-top:20px;}
+}

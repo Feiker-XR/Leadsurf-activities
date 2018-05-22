@@ -1,0 +1,543 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>广告管理-审核管理界面</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.table-group .table-toggle a {color:#009B7D; text-decoration:underline;}
+	.j-ui-tip {border:1px solid #CCC;padding:10px;}
+	.j-ui-tip .sj {display:none;}
+	.row-show {position:relative;}
+	.row-show-pass {position:relative;}
+	.row-show-panel {display:none;position:absolute;background:#FFFFE1;border:1px solid #CCC;padding:10px;}
+	.row-show-panel-current {display:block;}
+	.table a {text-decoration:underline;}
+	</style>
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Hover.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>广告</dt>
+				<dd class="current"><a href="1.1index.html">广告管理（发布）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告管理（审核）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告位管理</a></dd>
+				<dt>公告</dt>
+				<dd><a href="2.1freeze-account-list.html">公告管理（发布）</a></dd>
+				<dd><a href="#">公告管理（审核）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建公告</a></dd>
+				<dt>专题</dt>
+				<dd><a href="2.1freeze-account-list.html">专题管理（发布）</a></dd>
+				<dd><a href="#">专题管理（查看）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建专题</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">广告</a> &gt; 广告管理</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+					
+						<form action="?" id="J-form">
+						<ul class="ui-search">
+							<li>
+								<label class="ui-label" for="">广告名称：</label>
+								<input type="text" class="input w-3"  value="">
+							</li>
+							<li>
+								<label class="ui-label">投放位置：</label>
+								<select class="ui-select w-5">
+									<option value="">全部</option>
+									<option value="注册页（右侧下广告-400*400）">注册页（右侧下广告-400*400）</option>
+									<option value="登录页（左侧下广告-200*200）">登录页（左侧下广告-200*200）</option>
+									<option value="高频（右侧下广告-200*100）">高频（右侧下广告-200*200）</option>
+									<option value=" - 重庆时时彩（右侧下广告-200*100）"> - 重庆时时彩（右侧下广告-200*100）</option>
+									<option value=" - 江西时时彩（右侧下广告-200*100）"> - 江西时时彩（右侧下广告-200*100）</option>
+									<option value="低频（右侧下广告-200*100）">低频（右侧下广告-200*100）</option>
+									<option value=" - 3D（右侧下广告-200*100）">- 3D（右侧下广告-200*100）</option>
+									<option value=" - 双色球（右侧下广告-200*100）"> - 双色球（右侧下广告-200*100）</option>
+								</select>
+							</li>
+							<li>
+								<label class="ui-label">状态：</label>
+								<select class="ui-select w-2">
+									<option value="全部">全部</option>
+									<option value="进行中">进行中</option>
+									<option value="未开始">未开始</option>
+									<option value="已过期">已过期</option>
+								</select>
+							</li>
+							<li class="checkbox-list">
+								<label class="ui-label">展示用户组：</label>
+								<label class="label" for="J-checkbox-1"><input id="J-checkbox-1" type="checkbox" class="checkbox" value="1">总代理</label>
+								<label class="label" for="J-checkbox-2"><input id="J-checkbox-2" type="checkbox" class="checkbox" value="2">其他代理</label>
+								<label class="label" for="J-checkbox-3"><input id="J-checkbox-3" type="checkbox" class="checkbox" value="3">玩家</label>
+								<label class="label" for="J-checkbox-4"><input id="J-checkbox-4" type="checkbox" class="checkbox" value="4">VIP</label>
+								<label class="label" for="J-checkbox--1"><input id="J-checkbox-4" type="checkbox" class="checkbox" value="-1">非VIP</label>
+								<label class="label" for="J-checkbox-5"><input id="J-checkbox-5" type="checkbox" class="checkbox" value="5">游客</label>
+							</li>
+							<li><a id="J-button-search" href="javascript:void(0);" class="btn btn-important">搜 索<b class="btn-inner"></b></a></li>
+						</ul>
+						</form>
+						
+						
+						
+						
+						
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="#">全部</a></li>
+									<li class="current">审核中(1)</li>
+									<li><a href="#">已通过</a></li>
+									<li><a href="#">未通过(3)</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content">
+								<table class="table table-info table-group" id="J-table">
+									<thead>
+										<tr>
+											<th class="table-toggle">编号<i class="ico-up"></i></th>
+											<th>缩略图</th>
+											<th>广告名称</th>
+											<th>展示用户组</th>
+											<th class="table-toggle"><a href="#">投放位置</a><i class="ico-up"></i></th>
+											<th>链接地址</th>
+											<th class="table-toggle"><a href="#">有效期</a><i class="ico-up"></i><i class="ico-down"></i></th>
+											<th>申请人</th>
+											<th>审核人</th>
+											<th>审核状态</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><label class="label"><input type="checkbox" class="checkbox">4</label></td>
+											<td>
+												<a href="" class="thumbnail"><img class="row-img-small" src="" alt="" data-src-big="https://www.google.com.ph/images/srpr/logo11w.png" data-width="10" data-height="20" /></a>
+											</td>
+											<td>新春快乐祝贺图</td>
+											<td>代理</td>
+											<td class="row-show" data-id="1" style="z-index:100">
+												<a href="javascript:void(0);" class="row-show-tigger">4</a>
+												<div class="row-show-panel"></div>
+											</td>
+											<td><a href="">http://ph158.com</a></td>
+											<td>2013-02-01 10:20:30<br />2013-02-02 10:20:30</td>
+											<td>张三</td>
+											<td>无</td>
+											<td>审核中</td>
+											<td class="table-tool">
+												<a data-id="1" class="ico-right row-pass" title="通过" href="javascript:void(0);"></a>
+												<a data-id="1" class="ico-wrong row-notpass" title="不通过" href="javascript:void(0);"></a>
+											</td>
+										</tr>
+										<tr>
+											<td><label class="label"><input type="checkbox" class="checkbox">4</label></td>
+											<td>
+												<a href="" class="thumbnail"><img class="row-img-small" src="" alt="" data-src-big="https://www.google.com.ph/images/srpr/logo11w.png" data-width="10" data-height="20" /></a>
+											</td>
+											<td>新春快乐祝贺图</td>
+											<td>代理</td>
+											<td class="row-show" data-id="1" style="z-index:99">
+												<a href="javascript:void(0);" class="row-show-tigger">4</a>
+												<div class="row-show-panel"></div>
+											</td>
+											<td><a href="">http://ph158.com</a></td>
+											<td>2013-02-01 10:20:30<br />2013-02-02 10:20:30</td>
+											<td>张三</td>
+											<td>无</td>
+											<td class="row-show-pass" data-id="1" style="z-index:100">
+												<a href="javascript:void(0);" class="row-show-tigger">未通过</a>
+												<div class="row-show-panel"></div>
+											</td>
+											<td class="table-tool">
+												<a data-id="1" class="ico-right row-pass" title="通过" href="javascript:void(0);"></a>
+												<a data-id="1" class="ico-wrong row-notpass" title="不通过" href="javascript:void(0);"></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								
+								<div class="page-wrapper">
+									<span class="page-text">
+										<label class="label"><input id="J-select-all" type="checkbox" class="checkbox">全选</label>
+										<a id="J-button-passall" class="btn btn-small" href="javascript:void(0);">通 过<b class="btn-inner"></b></a>
+										<a id="J-button-cancelall" class="btn btn-small" href="javascript:void(0);">不通过<b class="btn-inner"></b></a>
+										<span class="lower">共102条记录</span>
+									</span>
+									<div class="page page-right">
+										<a href="#" class="prev">上一步</a>
+										<a href="#">1</a>
+										<a href="#">2</a>
+										<a href="#" class="current">3</a>
+										<a href="#">4</a>
+										<a href="#">5</a>
+										<a href="#">6</a>
+										<a href="#">7</a>
+										<a href="#">8</a>
+										<a href="#">9</a>
+										<a href="#">...</a>
+										<a href="#" class="next">下一步</a>
+										<span class="page-few">到第 <input type="text" value="" class="input"> /100页</span>
+										<input type="button" value="确 认" class="page-btn">
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+<script>
+(function($){
+	var table = $('#J-table');
+	//弹窗
+	var Wd = phoenix.Message.getInstance(),
+		Tip = phoenix.Tip.getInstance();
+	
+	$('#J-button-search').click(function(){
+		$('#J-form').submit();
+	});
+	
+	//全选
+	$('#J-select-all').click(function(){
+		var inputs = $('#J-table').find('input[type="checkbox"]');
+		if(this.checked){
+			inputs.each(function(){
+				this.checked = true;
+			});
+		}else{
+			inputs.each(function(){
+				this.checked = false;
+			});
+		}
+	});
+
+	//批量通过
+	$('#J-button-passall').click(function(){
+		var inputs = $('#J-table').find('input[type="checkbox"]'),result = [];
+		inputs.each(function(){
+			if(this.checked){
+				result.push(this.value);
+			}
+		});
+		if(result.length < 1){
+			return;
+		}
+		Wd.show({
+			mask:true,
+			title:'温馨提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您选择了 '+ result.length +' 条信息，请确认通过审核？</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=deleteall',
+					dataType:'json',
+					method:'post',
+					data:{ids:result.join(',')},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							Wd.hide();
+							location.href = location.href;
+						}else{
+							alert('msg');
+							Wd.hide();
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	//批量不通过
+	$('#J-button-cancelall').click(function(){
+		var inputs = $('#J-table').find('input[type="checkbox"]'),result = [];
+		inputs.each(function(){
+			if(this.checked){
+				result.push(this.value);
+			}
+		});
+		if(result.length < 1){
+			return;
+		}
+		Wd.show({
+			mask:true,
+			title:'温馨提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您选择了 '+ result.length +' 条信息，请确认不通过？</h4><div style="padding:10px;">请填写原因(必填):<span style="color:#999;font-size:12px;padding-left:10px;">限30个字</span></div><div><textarea id="J-cancelall-text" style="width:250px;" class="textarea"></textarea></div></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				var text = $.trim($('#J-cancelall-text').val());
+				if(text == ''){
+					alert('请填写不通过的原因');
+					$('#J-cancelall-text').focus();
+					return;
+				}else if(text.length > 30){
+					alert('不通过的原因描述文字不能超过30个字符');
+					$('#J-cancelall-text').focus();
+					return;
+				}
+				$.ajax({
+					url:'data.php?action=deleteall',
+					dataType:'json',
+					method:'post',
+					data:{ids:result.join(','),text:text},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							Wd.hide();
+							location.href = location.href;
+						}else{
+							alert('msg');
+							Wd.hide();
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+
+
+	//列表删除单行
+	table.on('click', '.row-delete', function(){
+		var id = Number($(this).attr('data-id'));
+		Wd.show({
+			mask:true,
+			title:'提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">你确定要删除该条信息？</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=delete&id=' + id,
+					dataType:'json',
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							alert('msg');
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+	
+	//单行通过
+	table.on('click', '.row-pass', function(){
+		var dom = $(this),id = dom.attr('data-id');
+		Wd.show({
+			mask:true,
+			title:'温馨提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确认通过审核该条信息？</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=pass&id=' + id,
+					dataType:'json',
+					method:'post',
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							Wd.hide();
+							location.href = location.href;
+						}else{
+							alert('msg');
+							Wd.hide();
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+	//单行不通过
+	table.on('click', '.row-notpass', function(){
+		var dom = $(this),id = dom.attr('data-id');
+		Wd.show({
+			mask:true,
+			title:'温馨提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确认不通过该条信息？</h4><div style="padding:10px;">请填写原因(必填):<span style="color:#999;font-size:12px;padding-left:10px;">限30个字</span></div><div><textarea id="J-cancelall-text" style="width:250px;" class="textarea"></textarea></div></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				var text = $.trim($('#J-cancelall-text').val());
+				if(text == ''){
+					alert('请填写不通过的原因');
+					$('#J-cancelall-text').focus();
+					return;
+				}else if(text.length > 30){
+					alert('不通过的原因描述文字不能超过30个字符');
+					$('#J-cancelall-text').focus();
+					return;
+				}
+				$.ajax({
+					url:'data.php?action=notpass&id=' + id,
+					dataType:'json',
+					method:'post',
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							Wd.hide();
+							location.href = location.href;
+						}else{
+							alert('msg');
+							Wd.hide();
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+	
+	//缩略图
+	table.on('mouseenter', '.row-img-small', function(){
+		var dom = $(this),src = dom.attr('data-src-big'),w = dom.attr('data-width'),h = dom.attr('data-height');
+		Tip.setText('<img width="400" src="'+ src +'" /><div style="text-align:center;font-size:12px;color:#333;line-height:180%;">尺寸：'+ w +' * '+ h +'</div>');
+		Tip.show(dom.width()+5, Tip.dom.outerHeight()*-1-5, this);
+	}).on('mouseleave', '.row-img-small', function(){
+		Tip.hide();
+	});
+
+	
+	//广告列表
+	table.find('.row-show').each(function(){
+		var dom = $(this),id = dom.attr('data-id'),hd;
+		try{
+			hd = new phoenix.Hover({par:dom,triggers:dom.find('.row-show-tigger'),panels:'.row-show-panel',currPanelClass:'row-show-panel-current',hoverDelayOut:300,hoverIsBindPanels:true});
+			hd.addEvent('onSwitch', function(){
+				$.ajax({
+					url:'data.php?action=getlist&id=' + id,
+					dataType:'json',
+					cache:true,
+					success:function(data){
+						data = {isSuccess:1,data:['高频（右侧下广告-200*100）', '黑龙江时时彩（右侧下广告-200*100）', '江西时时彩（右侧下广告-200*100）']};
+						if(Number(data['isSuccess']) == 1){
+							var strArr = [];
+							strArr.push('<div style="font-size:12px;color:#333;line-height:180%;">');
+							$.each(data['data'], function(){
+								strArr.push('<p>');
+								strArr.push(this);
+								strArr.push('</p>');
+							});
+							strArr.push('</div>');
+							dom.find('.row-show-panel').html(strArr.join(''));
+						}else{
+							alert(data['msg']);
+							return;
+						}
+					}
+				});
+			});
+		}catch(e){
+		}
+	});
+	
+	
+	//未通过
+	table.find('.row-show-pass').each(function(){
+		var dom = $(this),id = dom.attr('data-id'),hd;
+		try{
+			hd = new phoenix.Hover({par:dom,triggers:dom.find('.row-show-tigger'),panels:'.row-show-panel',currPanelClass:'row-show-panel-current',hoverDelayOut:300,hoverIsBindPanels:true});
+			hd.addEvent('afterSwitch', function(){
+				$.ajax({
+					url:'data.php?action=pass&id=' + id,
+					dataType:'json',
+					cache:true,
+					success:function(data){
+						data = {isSuccess:1,data:'链接不正确，请重新填写'};
+						
+						if(Number(data['isSuccess']) == 1){
+							var strArr = [];
+							strArr.push('<div>原因：</div>');
+							strArr.push('<div>');
+							strArr.push(data['data']);
+							strArr.push('</div>');
+							dom.find('.row-show-panel').html(strArr.join(''));
+							//hd.getPanel(0).css({left:hd.getPanel(0).outerWidth()*-1 + 10,top:hd.getPanel(0).outerHeight()/2*-1});
+						}else{
+							alert(data['msg']);
+							return;
+						}
+					}
+				});
+			});
+		}catch(e){
+		}
+	});
+	
+	
+	
+	
+	
+})(jQuery);
+</script>
+	
+	
+	
+	
+	
+	
+</body>
+</html>

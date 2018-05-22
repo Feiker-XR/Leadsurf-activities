@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>用户迁移</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+	<section id="J-animate-area" class="animate-area">
+		<div class="bg"></div>
+		<div class="banner-bg-0 banner-bg"></div>
+		<div class="banner-bg-1 banner-bg"></div>
+		<div class="banner-bg-2 banner-bg"></div>
+		<div class="banner-bg-3 banner-bg"></div>
+		<div class="banner-bg-4 banner-bg"></div>
+		<div class="banner-bg-5 banner-bg"></div>
+		<div id="J-animate-group">
+			<div class="flags"></div>
+			<div class="rocket"></div>
+			<div class="gift"></div>
+			<div class="slogan"></div>
+			<div class="ribbon"></div>
+		</div>
+		<div id="focus" class="cycle-slideshow"
+					data-cycle-slides="> .item"
+					data-cycle-pager="> .cycle-pager-wrap .cycle-pager"
+					data-cycle-fx="scrollVert"
+					data-cycle-timeout="4000"
+					data-cycle-loader="wait"
+					data-cycle-speed="800"
+					data-cycle-paused="true"
+					data-pause-on-hover="true">
+			<div class="cycle-pager-wrap">
+				<div class="cycle-pager"></div>
+			</div>
+			<div class="item">
+				<div class="flags-img"></div>
+				<div class="rocket-img"></div>
+				<div class="gift-img"></div>
+				<div class="slogan-img"></div>
+				<div class="ribbon-img"></div>
+				<a href="#" style="display:none"><img src="images/banner-2.png"></a>
+			</div>
+			<div class="item">
+				<div class="banner-2"></div>
+				<a href="#" style="display:none"><img src="images/banner-2.png"></a>
+			</div>
+			<div class="item">
+				<div class="banner-3"></div>
+				<a href="#" style="display:none"><img src="images/banner-2.png"></a>
+			</div>
+			<div class="item">
+				<div class="banner-4"></div>
+				<a href="#" style="display:none"><img src="images/banner-2.png"></a>
+			</div>
+			<div class="item">
+				<div class="banner-5"></div>
+				<a href="#" style="display:none"><img src="images/banner-2.png"></a>
+			</div>
+			<div class="item">
+				<div class="banner-6"></div>
+				<a href="#" style="display:none"><img src="images/banner-2.png"></a>
+			</div>
+		</div>
+	</section>
+	<article class="get-permiss">
+		<div class="layout">
+			<div class="bg-area">
+				<div class="mark"></div>
+				<div class="chips"></div>
+				<div class="arrow"></div>
+				<div class="content-info">
+					<h2>开通访问权限</h2>
+					<h4>补充您的安全信息，新平台触手可及</h4>
+					<ol class="rules">
+						<li>开通新平台权限后您仍可以登录旧平台继续操作，资金不受影响；</li>
+						<li>您在新旧平台均可游戏、充提，且所有操作分开记录；</li>
+						<li>您在旧平台的配置将同步至新平台；</li>
+						<li>请牢记填写的资料，为保障帐户安全客服已无权帮您修改任何资料。</li>
+					</ol>
+				</div>
+				<form id="J-user-info" action="#" method="get">
+					<section class="info-area">
+						<div class="user-info">
+							<dl>
+								<dt>用户名</dt>
+								<dd><input class="user-name readonly" data-name="用户名" name="user-info" value="cliff" readonly="readonly"></dd>
+								<dt>登陆密码</dt>
+								<dd>
+									<input class="login-password" type="password" data-name="登陆密码" name="login-password" value="">
+									<input class="login-password-msg msg-area hide" type="text" data-name="登陆密码" value="">
+								</dd>
+								<dt>确认登录密码</dt>
+								<dd>
+									<input class="re-login-password" type="password"  data-name="确认登陆密码" name="re-login-password" value="">
+									<input class="re-login-password-msg msg-area hide" type="text" data-name="登陆密码" value="">
+								</dd>
+									<dt>安全密码</dt>
+									<dd class="safe-area">
+										<div class="mark-tips"></div>
+										<input class="safe-password" type="password"  data-name="安全密码" name="safe-password" value="">
+										<input class="safe-password-msg msg-area hide" type="text"  data-name="安全密码" name="user-info" value="">
+									</dd>
+								<dt>确认安全密码</dt>
+								<dd>
+									<input class="re-safe-password" type="password"  data-name="确认安全密码" name="re-safe-password" value="">
+									<input class="re-safe-password-msg msg-area hide" type="text"  data-name="确认安全密码" name="user-info" value="">
+								</dd>
+							</dl>
+						</div>
+					</section>
+					<section class="info-area safe-info clearfix">
+						<div class="">
+							<div class="mark-tips"></div>
+							<dl>
+								<dt>安全问题01</dt>
+								<dd class="safe-question-area">
+									<div class="mark-tips"></div>
+									<select class="select-area">
+										<option>请选择安全问题</option>
+										<option>最爱的电影</option>
+										<option>小学老师</option>
+									</select>
+									<input class="answer safe-question-1"  data-name="安全问题01" name="safe-question-1" value="">
+									<input class="answer safe-question-1-msg msg-area hide"  data-name="安全问题01" name="user-info" value="">
+								</dd>
+								<dt>安全问题02</dt>
+								<dd class="safe-question-area">
+									<div class="mark-tips"></div>
+									<select class="select-area">
+										<option>请选择安全问题</option>
+										<option>最爱的电影</option>
+										<option>小学老师</option>
+									</select>
+									<input class="answer safe-question-2"  data-name="安全问题02" name="safe-question-2" value="">
+									<input class="answer safe-question-2-msg msg-area hide"  data-name="安全问题02" name="user-info" value="">
+								</dd>
+								<dt>安全问题03</dt>
+								<dd class="safe-question-area">
+									<div class="mark-tips"></div>
+									<select class="select-area">
+										<option>请选择安全问题</option>
+										<option>最爱的电影</option>
+										<option>小学老师</option>
+									</select>
+									<input class="answer safe-question-3" data-name="安全问题03" name="safe-question-2" value="">
+									<input class="answer safe-question-3-msg msg-area hide" data-name="安全问题03" name="user-info" value="">
+								</dd>
+							</dl>
+						</div>
+					</section>
+				</form>
+				<div class="button-area">
+					<input id="J-sub-button" type="submit" class="submit-btn clearfix" value="">
+				</div>
+			</div>
+			<div class="footer"></div>
+		</div>
+	</article>
+	<div id="migrate_overlay_shadow" style="height: 955px; margin: 0px; padding: 0px; width: 1920px; opacity: 0.600000023841858; display: none; overflow: hidden;">&nbsp;</div>
+	<div id="J-success-tips" class="tips success hide">
+		<h4>开通成功</h4>
+		<p>您现在可以使用新密码，登陆体验新平台</p>
+		<a href="http://www.google.com" class="button">确 定</a> 
+		<a href="#" class="link">转移资金</a>
+	</div>
+	<div id="J-fail-tips" class="tips fail hide">
+		<h4>开通失败</h4>
+		<p>系统出错了，请稍后再试哦</p>
+		<a href="javascript:;" class="button">确 定</a> 
+		<a href="#" class="link">转移资金</a>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+<script>
+(function($) {
+	"use strict";
+
+	$.fn.cycle.transitions.scrollVert = {
+	    before: function( opts, curr, next, fwd ) {
+	        opts.API.stackSlides( opts, curr, next, fwd );
+	        var height = opts.container.css('overflow','hidden').height();
+	        opts.cssBefore = { top: fwd ? -height : height, left: 0, opacity: 1, display: 'block', visibility: 'visible' };
+	        opts.animIn = { top: 0 };
+	        opts.animOut = { top: fwd ? height : -height };
+	    }
+	};	
+})(jQuery);
+
+(function($){
+	var height = $(window).height() / 2,
+		$animteGroup = $('#J-animate-group');
+
+	//背景
+	$( '.cycle-slideshow' ).on( 'cycle-before', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
+	  	var currentNum = optionHash['slideNum']-1;
+
+	  	$('#J-animate-area').find('.banner-bg').fadeOut(200);
+	  	$('#J-animate-area').find('.banner-bg-' + currentNum).fadeIn(500);
+	});
+
+	var collapseSlide = function(){
+		var $animateDom = $('#J-animate-area'),
+			$flags = $('#J-animate-group > .flags'),
+			$slogan = $('#J-animate-group > .slogan'),
+			$formPanel = $('.get-permiss'),
+			$ribbon = $('.animate-area .ribbon'),
+			$gift = $('#J-animate-group > .gift');
+
+		//旗子
+		$flags.animate({top: -100});
+		//slogan
+		$slogan.animate({top: 138});
+		//slogan
+		$gift.animate({top: 59});
+		//slogan
+		$ribbon.animate({top: -80});
+		//收起
+		$animateDom.animate({
+			height: 400
+		},
+			1000, function() {
+
+			$formPanel.fadeIn(500);
+			//动画区域关闭
+			$animteGroup.hide();
+			//幻灯片展示
+			$('.cycle-slideshow').show();
+			//恢复幻灯片播放
+			$('.cycle-slideshow').cycle('resume');
+		});
+
+	};
+
+	var animateAction = function(){
+		var $rocketDom = $('.animate-area .rocket'),
+			$slogan = $('.animate-area .slogan'),
+			$gift = $('.animate-area .gift'),
+			$ribbon = $('.animate-area .ribbon');
+
+		//火箭动画
+		$rocketDom.animate({
+			top: -500},
+			2000, 'easeInQuart', function() {
+			
+
+			if (BrowserDetect['browser'] == 'Explorer' && BrowserDetect['version'] < 8) {
+
+				//标语动画
+				$slogan.animate({
+					top: '-=200px'},
+					1500, '', function() {
+					
+					//礼物动画
+					$gift.animate({
+						top: '-=200px'},
+						1500, '', function() {
+								
+							$ribbon.animate({
+								'width': 960,
+								'height': 466,
+								'marginLeft': -480},
+								300, '', function() {
+									$ribbon.animate({
+										'top': 30
+									}, 2000);
+
+									setTimeout(function(){
+										//收起动画区域
+										collapseSlide();
+									}, 2000);
+							});
+							
+					}).css('left', '50%');	
+				}).css('left', '50%');	
+
+			} else {
+				//标语动画
+				$slogan.animate({
+					top: '-=200px',
+					opacity: 1},
+					1500, '', function() {
+					
+					//礼物动画
+					$gift.animate({
+						top: '-=200px',
+						opacity: 1},
+						1500, '', function() {
+								
+							$ribbon.animate({
+								'width': 960,
+								'height': 466,
+								'marginLeft': -480},
+								300, '', function() {
+									$ribbon.animate({
+										'top': 30
+									}, 2000);
+
+									setTimeout(function(){
+										//收起动画区域
+										collapseSlide();
+									}, 2000);
+							});
+							
+					});	
+				});
+			}
+		});
+	};
+
+	//动画开关
+	//预留load方案
+	animateAction();
+
+	//检查用户信息
+	checkUserInfo = function(){
+		var result = true,
+			$loginPass = $('.info-area .login-password'),
+			$reLoginPass = $('.info-area .re-login-password'),
+			$safePass = $('.info-area .safe-password'),
+			$reSafePass = $('.info-area .re-safe-password'),
+			$safeAnswer1 = $('.info-area .safe-question-1'),
+			$safeAnswer2 = $('.info-area .safe-question-2'),
+			$safeAnswer3 = $('.info-area .safe-question-2');
+
+		//密码不一致
+		if($.trim($safePass.val()) != $.trim($reSafePass.val()) && !$safePass.hasClass('error') && !$reSafePass.hasClass('error')) {
+
+
+			$reSafePass.hide().next().val('两次输入的安全密码不一致，请重新输入').addClass('error').show();
+
+			return false;
+		}
+
+		//登陆密码不一致
+		if($.trim($loginPass.val()) != $.trim($reLoginPass.val()) && !$loginPass.hasClass('error') && !$reLoginPass.hasClass('error')) {
+
+			$reLoginPass.hide().next().val('两次输入的安全密码不一致，请重新输入').addClass('error').show();
+
+			return false;
+		}
+
+		//登陆
+		$.each($('.info-area').find('input'), function(index, val) {
+			var $dom = $(this),
+				name = $dom.attr('data-name');
+
+			if($.trim($dom.val()) == '' && !$dom.hasClass('error')){
+
+				$dom.hide().next().val(name + '不能为空').addClass('error').show();
+				result = false;
+			} 
+
+			
+		});
+
+		return result;
+	};
+
+
+
+	$('.msg-area').focus(function(event) {
+		var dom = $(this);
+
+		dom.hide().prev().val('').show().focus();
+	});
+
+	$('.info-area .login-password, .info-area .re-login-password, .info-area .safe-password , .info-area .re-safe-password').blur(function(event) {
+		var dom = $(this),
+			name = dom.attr('data-name');
+
+		if($.trim(dom.val()) == '') {
+			dom.hide().next().val(name + '不能为空').addClass('error').show();
+		}
+	});
+
+	$('.info-area').find('.answer').blur(function(event) {
+		var dom = $(this),
+			name = dom.attr('data-name');
+
+		if($.trim(dom.val()) == '') {
+			dom.hide().next().val(name + '不能为空').addClass('error').show();
+		}
+	});
+
+	$('#J-sub-button').click(function(e){
+		var data = $('#J-user-info').serialize();
+
+		//检查用户信息
+		if(checkUserInfo()){
+			$.ajax({
+				url: 'js/result.json',
+				type: 'GET',
+				dataType: 'json',
+				data: data,
+			})
+			.done(function(r) {
+				
+				if(Number(r['isSuccess'] == 1)){
+					successTips();
+				}
+			})
+			.fail(function() {
+		
+			})
+			.always(function() {
+				
+			});
+		}
+
+		e.preventDefault();
+	});
+
+
+	var $shadow = $('#migrate_overlay_shadow'),
+		$successDom = $('#J-success-tips'),
+		$failDom = $('#J-fail-tips');
+
+	$failDom.find('.button').click(function(event) {
+		closeTips();
+	});
+
+	openShadow = function(){
+		$shadow.show();
+	};
+
+	closeShadow = function(){
+		$shadow.hide();
+	};
+
+	successTips = function(){
+		$successDom.show();
+		openShadow();
+	};
+
+	failTips = function(){
+		$failDom.show();
+		openShadow();
+	};
+
+	closeTips = function(){
+		$('body').find('.tips').hide();
+		closeShadow();
+	};
+
+
+
+})(jQuery);
+</script>
+ 
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>代理平台后台-开户链接配置</title>
+<link rel="stylesheet" href="style/style.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="">
+	<div class="wrapper">
+		<div class="main">
+			<h2>开户链接配置</h2>
+			<div class="ui-title">为“立即开户”按钮添加链接地址</div>
+			<form id="J-form" action="?">
+			<ul class="ui-form">
+				<li>
+					<label class="ui-label" for="info">链接开户地址：</label>
+					<input id="J-input" maxlength="100" type="text" value="com" class="input">
+				</li>
+				<li>
+					<label class="ui-label" for="info">模块悬浮：</label>
+					<label class="ui-radio"><input type="radio" id="" value="S" />开启</label>
+					<label class="ui-radio"><input type="radio" id="" checked="checked" value="S" />关闭（默认值）</label>
+				</li>
+				<li>
+				
+					<div id="J-wd-msg-right" class="pop-mini w-4">
+						<i class="ico-success"></i>
+						<h4 class="pop-text"></h4>
+					</div>
+					<div id="J-wd-msg-error" class="pop-mini w-4">
+						<i class="ico-error"></i>
+						<h4 class="pop-text"></h4>
+					</div>
+				
+					<label class="ui-label" for="">&nbsp;</label>
+					<input id="J-button-submit" type="button" value="提交并保存" class="ui-button">
+				</li>
+			</ul>
+			</form>
+			
+			<div class="pop-mini w-4" style="position:absolute;left:100px;">
+				<i class="ico-success"></i>
+				<h4 class="pop-text">操作成功</h4>
+			</div>
+		</div>
+		<div class="sub"></div>
+	</div>
+<script>
+(function($){
+	//type = 1 成功消息
+	//type = 0 错误消息
+	var msgDom = [$('#J-wd-msg-error'), $('#J-wd-msg-right')],
+		showMsg = function(type, text){
+			var el = msgDom[type];
+			msgDom[0].hide();
+			msgDom[1].hide();
+			el.find('.pop-text').html(text);
+			el.show();
+			setTimeout(function(){
+				el.hide();
+			}, 3000);
+		};
+	var input = $('#J-input'),text = '请输入链接地址，如：http://baidu.com';
+	input.val(text);
+	input.focus(function(){
+		if(this.value == text){
+			this.value = '';
+		}
+	}).blur(function(){
+		if($.trim(this.value) == ''){
+			this.value = text;
+		}
+	});
+	
+	
+	$('#J-button-submit').click(function(){
+		if(input.val() == text){
+			showMsg(0, '链接开户地址不能为空');
+			return;
+		}
+		$('#J-form').submit();
+	});
+	
+})(jQuery);
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>安全中心 -- 账户安全</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/ucenter/safe/safe.css" />
+</head>
+<body>
+	
+	<!-- header start -->
+	<div class="header">
+		<div class="g_33">
+			<h1 class="logo"><a title="首页" href="#">PH158</a></h1>
+			<div class="service">
+				<a title="客服" class="link-service" href="#">客服</a>
+				<a title="帮助" class="link-help" href="#">帮助</a>
+			</div>
+		</div>
+	</div>
+	<!-- header end -->
+	<!-- step-num star -->
+	<div class="step-num">
+		<ul>
+			<li><i class="step-num-1">1</i>输入用户名</li>
+			<li><i class="step-num-2">2</i>选择找回密码方式</li>
+			<li class="current"><i class="step-num-3">3</i>重置密码</li>
+			<li><i class="step-num-4">4</i>完成</li>
+		</ul>
+	</div>
+	<!-- step-num end -->
+	<div class="g_33">
+		<div class="find-reset-content">
+			<ul class="ui-form">
+				<li class="ui-text"><strong class="highbig">设置新的登录密码</strong><br />您申请了找回密码，为保护您的账号安全，您的当前登录密码系统已随机重置，请立即修改为您常用的新的密码。</li>
+				<li>
+					<label for="name" class="ui-label">请输入新的密码：</label>
+					<input type="text" value="请输入你的用户名" id="name" class="input">
+					<div class="ui-check"><i class="error"></i>请输入密码</div>
+				</li>
+				<li>
+					<label for="pwd" class="ui-label">再次输入新密码：</label>
+					<input type="text" value="请输入右侧验证码" id="pwd" class="input">
+					<div class="ui-check"><i class="error"></i>请输入密码</div>
+				</li>
+				<li class="ui-btn"><a href="javascript:void(0);" class="btn">确 定<b class="btn-inner"></b></a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- footer star 不使用的情况下请自行删除 -->
+	<div class="footer" >
+		<div class="g_33 text-center">
+			<span>&copy; 2001-2012 591PH. All right reserved. 凤凰游戏平台版权所有</span>
+		</div>
+	</div>
+	<!-- footer end -->
+	
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script>
+(function($){
+	var footer = $('#footer');
+	footer.css('position','fixed');
+	if($(document).height()>$(window).height()){
+		footer.css('position','static');
+	}
+})(jQuery);
+</script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>3.敏感词管理</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<style>
+	.keyword-control {padding:0 20px;display:none;}
+	.keyword-control a {display:inline-block;padding:0 10px;}
+	.table-info td:hover .keyword-control {display:inline-block;}
+	.pop .btn.confirm{
+			background: url("../images/common/ui-btn.png") repeat scroll 0 -240px transparent;
+			border: 0 none;
+			border-radius: 0 0 0 0;
+			color: #FFFFFF;
+			height: 34px;
+			line-height: 34px
+	}
+	.pop .btn.confirm .btn-inner{
+			background: url("../images/common/ui-btn.png") repeat scroll right -240px transparent;
+			height: 34px;
+			width: 15px;
+	}
+	
+	</style>
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	
+	
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li class="current"><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>全局管理</dt>
+				<dd><a href="5.html">注册登录设置</a></dd>
+				<dd class="current"><a href="3.html">敏感词管理</a></dd>
+				<dd><a href="4.1.html">IP黑白名单</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><!-- <strong>当前位置：</strong><a href="#">客户管理</a> &gt; 列表 --></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+					
+					<form id="J-search-form" action="?">
+						<ul class="ui-search">
+							<li>
+								<input id="J-search-input" type="text" class="input"  value="">
+							</li>
+							<li><a id="J-search-submit" href="javascript:void(0);" class="btn btn-important">搜索<b class="btn-inner"></b></a></li>
+							<li style="float:right;"><a id="J-button-keyword-add" href="javascript:void(0);" class="btn">+新建敏感词<b class="btn-inner"></b></a></li>
+						</ul>
+					</form>
+						
+						<div class="ui-tab tab-left">
+							<div id="J-side-menu" class="ui-tab-title clearfix" style="border-bottom:1px solid #DEDEDE;">
+								<ul>
+									<li class="current"><a href="#">全部</a></li>
+									<li><a href="#">注册页 20个</a>
+										<div class="dropdown">
+											<div class="dropdown-btn"><i class="ico-close"></i></div>
+											<div class="dropdown-menu">
+												<a href="javascript:void(0);" data-id="1" data-title="注册页" class="sort-rename">重命名</a>
+												<a href="javascript:void(0);" data-id="1" data-title="注册页" class="sort-delete">删除</a>
+											</div>
+										</div>
+										
+									</li>
+									<li><a href="#">广告 10个</a>
+										<div class="dropdown">
+											<div class="dropdown-btn"><i class="ico-close"></i></div>
+											<div class="dropdown-menu">
+												<a href="javascript:void(0);" data-id="2" data-title="广告" class="sort-rename">重命名</a>
+												<a href="javascript:void(0);" data-id="2" data-title="广告" class="sort-delete">删除</a>
+											</div>
+										</div>
+									</li>
+									<li><a href="#">帮助 30个</a>
+										<div class="dropdown">
+											<div class="dropdown-btn"><i class="ico-close"></i></div>
+											<div class="dropdown-menu">
+												<a href="javascript:void(0);" data-id="3" data-title="帮助" class="sort-rename">重命名</a>
+												<a href="javascript:void(0);" data-id="3" data-title="帮助" class="sort-delete">删除</a>
+											</div>
+										</div>
+									</li>
+									<li><a href="#">站内信 60个</a>
+										<div class="dropdown">
+											<div class="dropdown-btn"><i class="ico-close"></i></div>
+											<div class="dropdown-menu">
+												<a href="javascript:void(0);" data-id="4" data-title="站内信" class="sort-rename">重命名</a>
+												<a href="javascript:void(0);" data-id="4" data-title="站内信" class="sort-delete">删除</a>
+											</div>
+										</div>
+									</li>
+									<li><a href="#">评论 20个</a>
+										<div class="dropdown">
+											<div class="dropdown-btn"><i class="ico-close"></i></div>
+											<div class="dropdown-menu">
+												<a href="javascript:void(0);" data-id="5" data-title="评论" class="sort-rename">重命名</a>
+												<a href="javascript:void(0);" data-id="5" data-title="评论" class="sort-delete">删除</a>
+											</div>
+										</div>
+									</li>
+									<li><a href="#">客服 80个</a>
+										<div class="dropdown">
+											<div class="dropdown-btn"><i class="ico-close"></i></div>
+											<div class="dropdown-menu">
+												<a href="javascript:void(0);" data-id="6" data-title="客服" class="sort-rename">重命名</a>
+												<a href="javascript:void(0);" data-id="6" data-title="客服" class="sort-delete">删除</a>
+											</div>
+										</div>
+									</li>
+									<li style="border:0;background:none;" id="J-button-keyword-addsort"><a href="javascript:void(0);" class="btn">新建分类+<b class="btn-inner"></b></a></li>
+									
+								</ul>
+							</div>
+							<div class="ui-tab-content">
+								<table class="table table-info" id="J-table-list">
+									<thead>
+										<tr>
+											<th class="w-1"></th>
+											<th class="w-9">敏感词</th>
+											<th>分类</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="checkbox" class="checkbox" value="1"></td>
+											<td>江泽民  <span class="keyword-control"><a href="#" data-id="1" data-title="江泽民" data-pid="1" class="word-rename">重命名</a> <a href="#" class="word-delete">删除</a></span></td>
+											<td>注册</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" class="checkbox" value="2"></td>
+											<td>胡锦涛  <span class="keyword-control"><a href="#" data-id="2" data-title="胡锦涛" data-pid="2" class="word-rename">重命名</a> <a href="#" class="word-delete">删除</a></span></td>
+											<td>站内信</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" class="checkbox" value="3"></td>
+											<td>张学友  <span class="keyword-control"><a href="#" data-id="3" data-title="张学友" data-pid="3" class="word-rename">重命名</a> <a href="#" class="word-delete">删除</a></span></td>
+											<td>注册</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" class="checkbox" value="4"></td>
+											<td>刘德华  <span class="keyword-control"><a href="#" data-id="4" data-title="刘德华" data-pid="4" class="word-rename">重命名</a> <a href="#" class="word-delete">删除</a></span></td>
+											<td>站内信</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="page-wrapper clearfix">
+									<span class="page-text">
+										<label class="label" for="J-select-all"><input id="J-select-all" type="checkbox" class="checkbox">全选</label>
+										<a class="btn btn-small" href="javascript:void(0);" id="J-delete-all">批量删除<b class="btn-inner"></b></a>
+									</span>
+									<div class="page page-right">
+										<a href="#" class="prev">上一页</a>
+										<span>2/200</span>
+										<a href="#" class="next">下一页</a>
+									</div>
+								</div>
+								
+								
+
+								
+								
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<select id="J-sort-select-data" style="display:none;">
+
+</select>
+
+<script type="text/template" id="J-tpl-addkeyword">
+	<ul class="ui-form ui-form-small">
+		<li>
+			<label class="ui-label w-2">敏感词：</label>
+			<div class="textarea w-4">
+				<textarea id="J-textarea-new-words"></textarea>
+			</div>
+		</li>
+		<li>
+			<label class="ui-label w-2"></label>
+			<span class="ui-prompt">可批量添加，一行一个</span>
+			<span id="ui-prompt" style="color:red;display: none;"></span>
+		</li>
+		<li>
+			<label for="" class="ui-label w-2">分类：</label>
+			<select class="ui-select">
+			</select>
+		</li>
+	</ul>
+</script>
+<script type="text/template" id="J-tpl-addsort">
+	<ul class="ui-form ui-form-small">
+		<li>
+			<label class="ui-label w-2">分类名称：</label>
+			<input id="J-input-new-sort" type="text" class="input w-4" value="">
+		</li>
+		<li>
+			<label class="ui-label w-2"></label>
+			<span class="ui-prompt">4-20位字符组成，区分大小写</span>
+		</li>
+	</ul>
+</script>
+<script type="text/template" id="J-tpl-sort"><li>
+		<a href="?id=<#=id#>"><#=title#> <#=num#>个</a>
+		<div class="dropdown">
+			<div class="dropdown-btn"><i class="ico-close"></i></div>
+			<div class="dropdown-menu">
+				<a href="javascript:void(0);" data-id="<#=id#>" data-title="<#=title#>" class="sort-rename">重命名</a>
+				<a href="javascript:void(0);" data-id="<#=id#>" data-title="<#=title#>" class="sort-delete">删除</a>
+			</div>
+		</div>
+	</li>
+</script>
+
+
+<script>
+
+(function($){
+	//弹窗
+	var Wd = phoenix.Message.getInstance();
+
+	//搜索输入框默认文本
+	var Input = new phoenix.Input({defText:'敏感词关键词',el:'#J-search-input'});
+	
+	
+	//搜索表单提交
+	var form = $('#J-search-form'),
+		button = $('#J-search-submit');
+	button.click(function(){
+		var v = Input.getValue();
+		if($.trim(v) == '' || v == Input.getDefText()){
+			alert('搜索关键词不能为空');
+			Input.dom.focus();
+			return;
+		}
+		form.submit();
+	});
+	
+	
+	var sortPanel = $('#J-side-menu');
+	//左侧分类修改和删除
+	sortPanel.on('click', '.dropdown-btn', function(){
+		var dom = $(this),panel = dom.parent().find('.dropdown-menu');
+		panel.show();
+	});
+	sortPanel.on('click', '.sort-rename', function(){
+		var dom = $(this),id = Number(dom.attr('data-id')),title = dom.attr('data-title');
+		Wd.show({
+			mask:true,
+			confirmIsShow:true,
+			confirmFun:function(){
+				var input = $('#J-input-new-sort'),v = $.trim(input.val()),v2 = v.replace(/[^\x00-\xff]/g, 'xx');
+				if(v2.length < 4 || v2.length > 20){
+					alert('分类名称长度必须是4-20位字符');
+					input.focus();
+					return;
+				}
+				$.ajax({
+					url:'data.php?action=edit&id=' + id,
+					dataType:'json',
+					method:'post',
+					data:{title:v},
+					success:function(data){
+						//测试数据
+						data = {isSuccess:1,type:'success',data:{id:1,title:$('#J-input-new-sort').val(),num:10}};
+						
+						if(Number(data['isSuccess']) == 1){
+							var par = dom.parents('li'),textDom = par.children('a'),sortData = data['data'];
+							textDom.text(sortData['title'] + ' ' + sortData['num'] + '个');
+							par.find('.sort-rename').attr('data-id', sortData['id']).attr('data-title', sortData['title']);
+							par.find('.sort-delete').attr('data-id', sortData['id']).attr('data-title', sortData['title']);
+							Wd.hide();
+							
+							location.href = location.href;
+						}else{
+							alert(data['msg']);
+						}
+						updateSort();
+					}
+				});
+				
+			},
+			cancelIsShow:true,
+			cancelFun:function(){
+				Wd.hide();
+			},
+			title:'重命名',
+			content:$('#J-tpl-addsort').text(),
+			callback:function(){
+				$('#J-input-new-sort').val(title);
+			}
+		});
+	});
+	sortPanel.on('click', '.sort-delete', function(){
+		var dom = $(this),li = dom.parents('li'),id = Number(dom.attr('data-id'));
+		
+		Wd.show({
+			mask:true,
+			title:'提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">你确定要删除分类 ['+ dom.attr('data-title') +'] 吗？</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=delete&id=' + id,
+					dataType:'json',
+					success:function(data){
+						//测试数据
+						data = {isSuccess:1,type:'success',data:{}};
+								
+						if(Number(data['isSuccess']) == 1){
+							li.remove();
+						}else{
+							alert(data['msg']);
+						}
+						Wd.hide();
+						updateSort();
+						
+						location.href = location.href;
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+		
+	});
+	
+	
+	
+	
+	
+	//新建敏感词
+	var addButton = $('#J-button-keyword-add');
+	addButton.click(function(){
+		Wd.show({
+			confirmIsShow:true,
+			confirmFun:function(){
+				var input = $('#J-textarea-new-words'),arr = $.trim(input.val()).split('\n'),len = arr.length,i = 0,words = [],pid = Wd.win.dom.find('.ui-select').val(),prot=Wd.win.dom.find('.ui-prompt'),newprot=Wd.win.dom.find('#ui-prompt');
+				for(;i < len;i++){
+					if($.trim(arr[i]) != ''){
+						words.push(arr[i]);
+					}
+				}
+				if(words.length < 1){
+					alert('敏感词不能为空');
+					input.focus();
+					return;
+				}
+				if($.trim(pid) == ''){
+					alert('请选择一个分类');
+					return;
+				}
+				
+				$.ajax({
+					method:'post',
+					url:'data.php?action=add&pid=' + pid,
+					dataType:'json',
+					data:{words:words},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							prot.hide();
+						    newprot.text("敏感词【"+$('#J-textarea-new-words').val()+"】已存在");
+						    newprot.show();
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelFun:function(){
+				Wd.hide();
+			},
+			title:'新建敏感词',
+			content:$('#J-tpl-addkeyword').text(),
+			callback:function(){
+				Wd.win.dom.find('.ui-select').html($('#J-sort-select-data').html());
+			}
+		});
+	});
+	
+	
+	
+	//新建分类
+	var addSortButton = $('#J-button-keyword-addsort');
+	addSortButton.click(function(){
+		Wd.mask.css({opacity:.2});
+		Wd.show({
+			mask:true,
+			confirmIsShow:true,
+			confirmFun:function(){
+				var input = $('#J-input-new-sort'),v = $.trim(input.val()),v2 = v.replace(/[^\x00-\xff]/g, 'xx');
+				if(v2.length < 4 || v2.length > 20){
+					alert('分类名称长度必须是4-20位字符');
+					input.focus();
+					return;
+				}
+				$.ajax({
+					url:'data.php',
+					dataType:'json',
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							var id = data['data']['id'],
+								html = $('#J-tpl-sort').text().replace(/<#=title#>/g, v).replace(/<#=num#>/g, '0').replace(/<#=id#>/g, id);
+							$(html).insertBefore(addSortButton);
+							
+							Wd.hide();
+							//location.href = location.href;
+						}else{
+							alert(data['msg']);
+						}
+						updateSort();
+					}
+				});
+				
+			},
+			cancelIsShow:true,
+			cancelFun:function(){
+				Wd.hide();
+			},
+			title:'新建分类',
+			content:$('#J-tpl-addsort').text()
+		});
+	});
+	
+	
+	
+	$('body').on('keyup', '#J-input-new-sort', function(){
+		var dom = $(this),v = $.trim(dom.val());
+		if(v.length > 20){
+			dom.val(v.substr(0, 20));
+		}
+	});
+	
+	
+	
+	//新增、修改、删除分类后，获取最新的分类列表
+	var updateSort = function(){
+		var dataDom = $('#J-sort-select-data');
+		$.ajax({
+			url:'data.php',
+			dataType:'json',
+			success:function(data){
+				if(Number(data['isSuccess']) == 1){
+					var list = data['data'],arr = [];
+					
+					//测试数据
+					list = [{'title':'哇哈哈','num':4,'id':1},{'title':'张学友','num':2,'id':2},{'title':'梁朝伟','num':1,'id':3}];
+					
+					$.each(list, function(){
+						arr.push('<option value="'+ this.id +'">'+ this.title +'</option>');
+					});
+					dataDom.html(arr.join(''));
+				}else{
+					alert(data['msg']);
+				}
+			}
+		});
+	};
+	
+	updateSort();
+	
+	//全选
+	$('#J-select-all').click(function(){
+		var inputs = $('#J-table-list').find('input[type="checkbox"]');
+		if(this.checked){
+			inputs.each(function(){
+				this.checked = true;
+			});
+		}else{
+			inputs.each(function(){
+				this.checked = false;
+			});
+		}
+	});
+	
+	//批量删除
+	$('#J-delete-all').click(function(){
+		var inputs = $('#J-table-list').find('input[type="checkbox"]'),result = [];
+		inputs.each(function(){
+			if(this.checked){
+				result.push(this.value);
+			}
+		});
+		if(result.length < 1){
+			return;
+		}
+		Wd.show({
+			mask:true,
+			title:'提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">你确定要删除列表中所选的敏感词吗？</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=deleteall',
+					dataType:'json',
+					method:'post',
+					data:{ids:result.join(',')},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							alert('msg');
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+	
+	$('#J-table-list').on('click', '.word-rename', function(e){
+		e.preventDefault();
+		var dom = $(this),
+			id = Number(dom.attr('data-id')),
+			pid = Number(dom.attr('data-pid')),
+			title = dom.attr('data-title');
+		
+		Wd.show({
+			confirmIsShow:true,
+			confirmFun:function(){
+				var input = $('#J-textarea-new-words'),arr = $.trim(input.val()).split('\n'),len = arr.length,i = 0,words = [],pid = Wd.win.dom.find('.ui-select').val();
+				for(;i < len;i++){
+					if($.trim(arr[i]) != ''){
+						words.push(arr[i]);
+					}
+				}
+				if(words.length < 1){
+					alert('敏感词不能为空');
+					input.focus();
+					return;
+				}
+				if($.trim(pid) == ''){
+					alert('请选择一个分类');
+					return;
+				}
+				
+				$.ajax({
+					method:'post',
+					url:'data.php?action=editword&pid=' + pid,
+					dataType:'json',
+					data:{words:words},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							alert(data['msg']);
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelFun:function(){
+				Wd.hide();
+			},
+			title:'修改敏感词',
+			content:$('#J-tpl-addkeyword').text(),
+			callback:function(){
+				var selDom = Wd.win.dom.find('.ui-select');
+				selDom.html($('#J-sort-select-data').html());
+				setTimeout(function(){
+					selDom.val(pid);
+				},0);
+
+				$('#J-textarea-new-words').val(title);
+			}
+		});
+	});
+	
+	$('#J-table-list').on('click', '.word-delete', function(e){
+		e.preventDefault();
+		var dom = $(this),
+			aDom = dom.parent().find('.word-rename').eq(0),
+			id = Number(aDom.attr('data-id')),
+			pid = Number(aDom.attr('data-pid')),
+			title = aDom.attr('data-title');
+			
+		Wd.show({
+			mask:true,
+			title:'提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">你确定要删除 ['+ title +'] 敏感词吗？</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=deleteword&id=' + id,
+					dataType:'json',
+					method:'post',
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							alert('msg');
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+		
+	});
+	
+	
+})(jQuery);
+
+</script>
+
+
+
+
+
+
+
+
+
+	
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>购彩送红包，点点进腰包</title>
+<link rel="stylesheet" href="style/style.css"/>
+</head>
+<body>
+	<div class="container">
+		<div class="banner">
+			<a href="http://www.ph158.com" class="logo" target="_blank"></a>
+			<a href="http://www.ph158.com/m" class="download" target="_blank"></a>
+			<a class="ios" href="http://103.22.191.40/app/Caipiao_br.ipa"></a>
+			<a id="hd" class="install" href="javascript:void(0);"></a>
+			<div id="bd" class="overlap" style="display:none;">
+				<div id="close" class="close"></div>
+				<ul>
+					<li><a href="http://ghost.25pp.com/soft/PPGhost.zip">PP越狱助手，帮您一键越狱</a></li>
+					<li><a href="http://www.ph158.com/m">其他越狱教程</a></li>
+					<li><a href="http://dl.sj.91.com/pcsuite/91update/91assistant_v3.3.2.1026.exe">91助手</a></li>
+					<li><a href="http://ghost.25pp.com/soft/pp.exe">PP助手一键安装</a></li>
+				</ul>
+			</div>
+			<div class="tab1">
+				<img src="images/tab1.png" alt="Tab 1"/>
+				<p class="tab1-text">活动期间，连续3天、5天、7天通过凤凰APP投注满一定金额，既可获得平台一次性派发的额外返利，具体比例如下：</p>
+			</div>
+		</div>
+		
+		<div class="content">
+			<img src="images/table.png" alt="Time Table" />
+			<div class="tab2">
+				<img src="images/tab2.png" alt="Tab 2"/>
+				<p>活动期间使用凤凰手机APP（目前仅支持iPhone用户）进行投注的用户，均可参加此活动</p>
+			</div>
+			<div class="tab3">
+				<img src="images/tab3.png" alt="Tab 3"/>
+				<ol>
+					<li>平台将在活动结束后通过公告及站内信等方式通知中奖用户</li>
+					<li>平台将在活动结束后三天内将加奖奖金以游戏币的形式打入获奖用户账户</li>
+				</ol>
+			</div>
+			<div class="tab4">
+				<img src="images/tab4.png" alt="Tab 4"/>
+				<p>每日投注额计算为当天的0:00-24:00期间（重庆时时彩当天第001期～第120期）实际产生的有效投注额；</p>
+				<p>奖金计算组合以活动期间内用户可能达到的最多奖金为准，每一天的投注额只可用来计算一次，不可重复计算；</p>
+				<p>奖金计算案例1：如连续6天投注达1888元，但第7天只投注了58元，可获最大奖金为连续5天投注1888元的438元，而不是连续投注7天58元可获得的19.8元；</p>
+				<p>奖金计算案例2：如前三天投注达1888元，但第4天只投注了588元，最后三天连续投注达1888元， 则可获最大奖金为两次连续3天投注1888元的258元，而不是连续投注7天588元可获得的198元；</p>
+				<p>娱乐平台对与本活动相关的所有事项具有最终决定及解释权。</p>
+			</div>
+			<div class="ios-small">
+				<a href="http://103.22.191.40/app/Caipiao_br.ipa"></a>
+			</div>
+			
+		</div>
+		<div class="footer">
+			<p>Copyright © 2003-2012	凤凰娱乐版权所有</p>
+		</div>
+		<div id="float" class="scroll">
+			<a href="javascript:void(0);"><img src="images/float.png" alt="Scroll" /></a>
+		</div>
+		
+	</div>
+	
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<script>
+
+(function($){
+	var A = document.getElementById("hd");
+	var J = document.getElementById("bd");
+	var C = document.getElementById("close");
+	A.onclick = function(){
+		J.style.display = "block";
+	}
+	C.onclick = function(){
+		J.style.display = "none";
+	}
+
+
+	var win = $(window),float = $('#float'),top = parseInt(float.css('top')),sTop = win.scrollTop(),_sTop = sTop;
+	/*
+	vbox = $('#videobox'),vboxTop = parseInt(vbox.css('top'));
+	vbox.css('left', win.width()/2 - vbox.width()/2);
+	float[0].style.display = "none";
+	setInterval(function(){
+		_sTop = win.scrollTop();
+		if(sTop >=300){
+			float[0].style.display = "block";
+		}
+		if(sTop != _sTop){
+			float.stop().animate({top:top + _sTop}, 250);
+			sTop = _sTop;
+		}
+	},50);
+	*/
+	float.bind('click',function(){
+	$('body,html').animate({scrollTop:0},600);
+	})
+	win.resize(function(e){
+		vbox.css('left', win.width()/2 - vbox.width()/2);
+	});
+	
+})(jQuery);
+
+</script>
+</body>
+</html>

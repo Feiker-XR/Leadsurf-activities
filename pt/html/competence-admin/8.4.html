@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>8.4查看组权限</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<style>
+	.tree-list #J-tree-container,.tree-list #J-tree-container2 {padding-bottom:20px;}
+	.ui-tree-node:hover {background:#FFFFe1;}
+	.ui-tree-check,.ui-tree-del {float:right;height:24px;line-height:24px;padding-right:5px;}
+	.ui-tree-del {cursor:pointer}
+	</style>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tree.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li class="current"><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>权限中心</dt>
+				<dd class="current"><a href="8.html">权限组管理</a></dd>
+				<dd><a href="9.html">创建权限组</a></dd>
+				<dd><a href="7.html">用户管理</a></dd>
+				<dd><a href="11.html">添加用户</a></dd>
+				<dd><a href="12.html">操作日志</a></dd>
+				<dd><a href="10.html">修改密码</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">客户管理</a> &gt; 列表</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<h3 class="ui-title">你正在查看的是组COO的权限</h3>
+						
+						
+						
+						<ul class="tree-list clearfix">
+							<li class="tree-list-layout">
+								<h3 class="title">可分配权限</h3>
+								<div class="content" id="J-tree-container">
+								
+
+								</div>
+								
+							</li>
+							<li>
+								<h3 class="title">已授予权限</h3>
+								<div class="content" id="J-tree-container2">
+									
+								</div>
+							</li>
+						</ul>
+						
+						
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+<script>
+
+(function($){
+
+	var Tree,Tree2;
+	var buildLeft = function(data){
+			var treeData = data,
+				imgStr = '<img src="../images/common/tree/blue/check.png" />',
+				checkedClass = 'ui-tree-check-checked',
+				cfg = {
+					data:treeData,
+					dom:'#J-tree-container',
+					path:'../images/common/tree/blue/',
+					nodeTpl:'<div class="ui-tree-clip"><div data-action="check" data-id="<#=id#>" data-pid="<#=pid#>" class="ui-tree-node"><#=#indent##> <span class="ui-node-text"><#=text#></span><span class="ui-tree-check <#=#checkedclass##>"><#=#checkedimg##></span></div><#=#childrenNodes##></div>',
+					expands:{
+						checked:function(id){
+							var me = this,dom = me.dom.find('[data-id="'+ id +'"]'),checkDom = dom.find('.ui-tree-check'),par,nodeData = me.getDataById(Number(id));
+							checkDom.addClass(checkedClass);
+							checkDom.html(imgStr);
+							par = dom.parent().parent().children('[data-action="check"]');
+							nodeData['isChecked'] = 1;
+							if(par.size() > 0 && (par.get(0) != me.dom.get(0)) && (par.attr('data-action') == 'check')){
+								arguments.callee.call(me, par.attr('data-id'));
+							}
+						},
+						unchecked:function(id){
+							var me = this,dom = me.dom.find('[data-id="'+ id +'"]'),checkDom = dom.find('.ui-tree-check'),nodeData = me.getDataById(Number(id)),i = 0,len,
+								par,
+								checkedNum = 0;
+								
+							nodeData['isChecked'] = 0;
+							checkDom.removeClass(checkedClass);
+							checkDom.html('');
+							
+							if(nodeData['children']){
+								for(i = 0,len = nodeData['children'].length;i < len;i++){
+									arguments.callee.call(me, Number(nodeData['children'][i]['id']));
+								}
+							}
+							
+							me.clearSingleLabel();
+						},
+						//清除空label节点
+						clearSingleLabel:function(){
+							var me = this,data = me.getData(),i = 0,len = data.length,children,dom,checkDom,num = 0;
+							for(;i < len;i++){
+								if((data[i]['isChecked'] == 1 && data[i]['type'] == 2) || (data[i]['level'] == 0)){
+									if(data[i]['children']){
+										children = data[i]['children'];
+										num = 0;
+										$.each(children, function(){
+											if(this['isChecked'] == 1){
+												num += 1;
+											}
+										});
+										//console.log(data[i]['id'], data[i]['level'], data[i]['children'], num);
+										if(num <= 0){
+											
+											data[i]['isChecked'] = 0;
+											dom = me.dom.find('[data-id="'+ data[i]['id'] +'"]');
+											checkDom = dom.find('.ui-tree-check');
+											checkDom.removeClass(checkedClass);
+											checkDom.html('');
+										}
+									}
+								}
+							}
+						},
+						getCheckData:function(){
+							var me = this,data = me.getData(),i = 0,len = data.length,arr = [];
+							for(;i < len;i++){
+								if(data[i]['isChecked'] == 1){
+									delete data[i]['children'];
+									arr.push(data[i]);
+								}
+							}
+							return arr;
+						},
+						formatNodeHTML:function(str, node){
+							var img = (node['isChecked'] == 1) ? imgStr : '',
+								cls = (img != '') ? checkedClass : '';
+							return str.replace(/<#=#checkedimg##>/g, img).replace(/<#=#checkedclass##>/g, cls);
+						}
+					}
+				};
+			
+			Tree = new phoenix.Tree(cfg);
+			
+			buildRight(Tree.getCheckData());
+	};
+	
+	var buildRight = function(data){
+			var treeData = data,
+				cfg = {
+					data:treeData,
+					dom:'#J-tree-container2',
+					path:'../images/common/tree/blue/',
+					nodeTpl:'<div class="ui-tree-clip"><div data-id="<#=id#>" data-pid="<#=pid#>" class="ui-tree-node"><#=#indent##> <span class="ui-tree-node-text"><#=text#></span></div><#=#childrenNodes##></div>',
+					expands:{
+						getCheckedIds:function(){
+							var me = this,data = me.getData(),i = 0,len = data.length,arr = [];
+							for(;i < len;i++){
+								if(data[i]['isChecked'] == 1){
+									arr.push(data[i]['id']);
+								}
+							}
+							return arr;
+						}
+					}
+				};
+			
+			if(Tree2){
+				Tree2.dom.remove();
+			}
+			
+			Tree2 = new phoenix.Tree(cfg);
+			
+			Tree2.addEvent('click', function(e, el){
+				var me = this,dom = $(el),action,id,par,childs,checkedNum = 0;
+				dom = dom.hasClass('ui-tree-img-del') ? dom.parent() : dom;
+				action = dom.attr('data-action')
+				if(action != 'del'){
+					return;
+				}
+				id = Number(dom.attr('data-id'));
+				
+				Tree.unchecked(id);
+				
+				par = Tree.getDataById(Tree.getDataById(id)['pid']);
+				//label 类型子类不允许为空
+				if(par && ((par['type'] == 2) || (par['level'] == 0))){
+					childs = par['children'];
+					if(childs.length > 0){
+						$.each(childs, function(){
+							checkedNum = (this['isChecked'] == 1) ? (checkedNum + 1) : checkedNum;
+						});
+						if(checkedNum <= 0){
+							Tree.unchecked(par['id']);
+						}
+					}
+				}
+				
+				buildRight(Tree.getCheckData());
+				
+			});
+			
+		
+		$('#J-input-ids').val(Tree2.getCheckedIds().join(','));
+		
+	};
+	
+	
+	$.ajax({
+		url:'tree.php',
+		dataType:'json',
+		success:function(data){
+			buildLeft(data['data']);
+		}
+	});
+	
+	
+	
+	
+	
+})(jQuery);
+</script>
+	
+	
+	
+	
+</body>
+</html>

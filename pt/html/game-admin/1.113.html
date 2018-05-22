@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.113奖期规则查看页-查看奖期</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li class="current"><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<h3 class="ui-title">
+								<a href="1.11.html"><< 返回奖期规则列表</a>
+							</h3>
+							<form action="" method="post" id="J-form">
+								<div class="ui-tab-content clearfix">
+									<ul class="ui-search">
+										<li><label class="ui-label"><input type="radio" class="radio"  name="radios"  checked="ture"/>过去奖期查询</label></li>
+										<li><label class="ui-label"><input type="radio" class="radio"  name="radios"/>过去奖期查询<span class="color-gray">（不包含待审核内容）</span></label></li>
+										<li><label class="ui-label"><input type="radio" class="radio"  name="radios"/>未来奖期查询<span class="color-gray">（包含待审核内容）</span></label></li>
+										<li class="date">
+											<label for="" class="ui-label">显示时间段：</label>
+											<input type="text" value="" class="input w-3" id="timesStart"> 至 <input type="text" value="" class="input w-3" id="timesEnd">
+										</li>
+										<li><a class="btn btn-important" href="javascript:void(0);" id="J-Submit">查 询<b class="btn-inner"></b></a></li>
+									</ul>
+									<h3 class="ui-title">彩种名称：重庆时时彩</h3>
+									<table class="table table-info">
+										<thead>
+											<tr>
+												<th>期号</th>
+												<th>周期开始时间</th>
+												<th>周期结束时间</th>
+												<th>期号</th>
+												<th>周期开始时间</th>
+												<th>周期结束时间</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>20130429-001</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>20130429-001</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>2013-04-29 00:00:00</td>
+											</tr>
+											<tr>
+												<td>20130429-001</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>20130429-001</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>2013-04-29 00:00:00</td>
+											</tr>
+											<tr>
+												<td>20130429-001</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>20130429-001</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>2013-04-29 00:00:00</td>
+											</tr>
+											<tr>
+												<td>20130429-001</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>20130429-001</td>
+												<td>2013-04-29 00:00:00</td>
+												<td>2013-04-29 00:00:00</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</form>
+						</div>
+						<div style="position:absolute;left:100px; display:none" class="pop w-8">
+							<div class="hd"><i class="close"></i></div>
+							<div class="bd">
+								<div class="pop-title">
+									<i class="ico-waring"></i>
+									<h4 class="pop-text">请至少选择一注投注号码！</h4>
+								</div>
+								<div class="pop-btn">
+									<a href="javascript:void(0);" class="btn btn-important ">修 改<b class="btn-inner"></b></a>
+									<a href="javascript:void(0);" class="btn">取 消<b class="btn-inner"></b></a>
+								</div>
+							</div>
+						</div>
+						<div class="pop pop-success w-4" style="position:absolute;left:600px; display:none">
+							<i class="ico-success"></i>
+							<h4 class="pop-text">操作成功</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+(function() {
+	//----------------------------------时间加载开始-----------------------------------------------------------
+	var inputTimeStart = $("#timesStart"),inputTimeEnd=$('#timesEnd'),form = $('#J-form');
+	inputTimeStart.click(function(){
+		var Dt = new phoenix.DatePicker({input:this, isShowTime:true});
+			Dt.show();
+	});	
+	inputTimeEnd.click(function(){
+		var Dt = new phoenix.DatePicker({input:this, isShowTime:true});
+			Dt.show();
+	});	
+	
+	//------------------------时间加载结束----------------------------------------------
+	
+	
+	//表单提交校验
+	$('#J-Submit').click(function(){
+		form.submit();	
+	});	
+	
+	form.submit(function(e){
+		if($('#timesStart').val() =='' || $('#timesEnd').val()==''){ 
+			e.preventDefault(); 
+			alert('时间段不能为空');
+			return false;
+		}else{
+			
+			return true;
+		}
+	});
+	
+	
+	
+	//日期控件跟随最外层容器滚动条滚动位置
+	$('.col-main').scroll(function(){
+		var dom = $(this),datepicker = $('.j-ui-datepicker '),oldTop = Number(datepicker.attr('oldTop'));
+		if(isNaN(oldTop)){
+			datepicker.attr('oldTop', oldTop = parseInt(datepicker.css('top')));
+		}
+		datepicker.css('top', oldTop - dom.scrollTop());
+	});
+	
+	
+	
+})();
+</script>
+</body>
+</html>

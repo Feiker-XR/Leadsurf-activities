@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/login/login.css" />
+</head>
+<body>
+	<!-- star -->
+	<div class="header">
+		<div class="g_33">
+			<h1 class="logo"><a title="首页" href="#">PH158</a></h1>
+		</div>
+	</div>
+	<!-- end -->
+	<div class="g_33 register-content">
+		<div class="slider">
+			<ul class="slider-pic">
+				<li><a href="#"><img src="../images/login/zzz-1.png" alt="pic1" /></a></li>
+				<li><a href="#"><img src="../images/login/zzz-1.png" alt="pic2" /></a></li>
+				<li><a href="#"><img src="../images/login/zzz-1.png" alt="pic3" /></a></li>
+				<li><a href="#"><img src="../images/login/zzz-1.png" alt="pic4" /></a></li>
+				<li><a href="#"><img src="../images/login/zzz-1.png" alt="pic5" /></a></li>
+			</ul>
+			<ul class="slider-num">
+				<li class="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+		<ul class="register">
+			<li>
+				<label class="ui-label" for="name">用户名：</label>
+				<input type="text" class="input" id="name" value="4~16位字母或数字，首位为字母" />
+				<div class="msg-error"><i class="error"></i>4~16位字母或数字，首位须为字母</div>
+			</li>
+			<li>
+				<label class="ui-label" for="pwd">密码：</label>
+				<input type="text" class="input" id="pwd" value="请输入密码，英文字符加数字" />
+				<div class="pwd-strength">密码强度：弱<span class="pwd-bar"><b class="pwd-weak"></b></span>强</div>
+			</li>
+			<li>
+				<label class="ui-label" for="check-pwd">确认密码：</label>
+				<input type="text" class="input" id="check-pwd" value="初始状态" />
+			</li>
+			<li>
+				<a href="javascript:void(0);" class="btn">提交注册<b class="btn-inner"></b></a>
+			</li>
+		</ul>
+	</div>
+	<!-- footer 不使用的情况下请自行删除 -->
+	<div id="footer" class="footer">
+		<div class="g_33 text-center">
+			<span>&copy; 2001-2012 591PH. All right reserved. 凤凰游戏平台版权所有</span>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script>
+	(function($){
+		var footer = $('#footer');
+		footer.css('position','fixed');
+		if($(document).height()>$(window).height()){
+			footer.css('position','static');
+		}
+	})(jQuery);
+	</script>
+	
+</body>
+</html>

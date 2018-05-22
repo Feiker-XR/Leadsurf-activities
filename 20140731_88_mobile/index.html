@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>八八大闯关 百万豪礼等你来战</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="telephone=no" name="format-detection" />
+<link href="css/base.css" rel="stylesheet">
+</head>
+<body>
+	<header class="banner">
+		<a href="javascript:void(0);" class="btn-signup" id="J-reg-button"><span></span></a>
+		<div class="deadline-number">截止报名时间：<strong></strong></div>
+	</header>
+	<section class="off-first">
+		<a href="javascript:void(0);" class="btn-first"><span></span></a>
+	</section>
+	<section class="off-second">
+		<a href="javascript:void(0);" class="btn-second"><span></span></a>
+	</section>
+	<section class="off-third">
+		<a href="javascript:void(0);" class="btn-third"><span></span></a>
+	</section>
+	<section class="activity-description">
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+	(function(){
+		var currentTimeNum = 0,
+			currentTimeSave = null,
+			buttonClock = false,
+			saveTime = null,
+			activityEndTime = '2014/08/28,00:00:00',
+			$regButton = $('#J-reg-button');
+		
+		$("#sliderBar a").eq(0).bind('click',function(){
+			$('body,html').animate({scrollTop:404},600);
+			$("#sliderBar").animate({top:120},600);
+			$("#sliderBar a").removeClass("current").eq(0).addClass("current");
+		})
+		
+		$("#sliderBar a").eq(1).bind('click',function(){
+			$('body,html').animate({scrollTop:862},600);
+			$("#sliderBar").animate({top:120},600);
+			$("#sliderBar a").removeClass("current").eq(1).addClass("current");
+		})
+		
+		$("#sliderBar a").eq(2).bind('click',function(){
+			$('body,html').animate({scrollTop:1134},600);
+			$("#sliderBar").animate({top:120},600);
+			$("#sliderBar a").removeClass("current").eq(2).addClass("current");
+		})
+
+		//倒计时
+		//当前时间, 结束时间, 回调函数
+		var  _fresh = function(currentTime, endTime, callback) {  
+
+			var endtime = new Date(endTime) ||  new Date("2011/11/06,12:20:12");  
+			var nowtime = currentTime || new Date();  
+			var leftsecond = currentTimeSave != null ? currentTimeSave : parseInt((endtime.getTime() - nowtime)/1000);  
+			
+			
+
+			var d=parseInt(leftsecond/3600/24),  
+				h=parseInt((leftsecond/3600)%24),  
+				m=parseInt((leftsecond/60)%60),  
+				s=parseInt(leftsecond%60); 
+			
+			$('.deadline-number strong').html(d+"天"+h+"时"+m+"分");
+
+			//剩余时间
+			if(leftsecond <= 0) {
+				callback  && callback();
+				clearInterval(saveTime);
+				saveTime = null;
+		 	}  
+
+		 	currentTimeSave = currentTimeSave != null ? currentTimeSave - 1 : leftsecond - 1;
+		}
+
+		//定时器
+		var saveTimeFn = function(endTime){
+			
+			saveTime = setInterval(function(){
+
+				_fresh(currentTimeNum, endTime, function(){
+					$regButton.addClass('btn-signup-disable');
+				});
+			}, 1000);
+		};
+
+		$(function(){
+			$.ajax({
+				url: 'currentTime.json',
+				type: 'GET',
+				dataType: 'json'
+			})
+			.done(function(r) {
+				//读取服务器时间成功
+				//使用服务器时间
+				currentTimeNum = r['time'];
+				saveTimeFn(activityEndTime);
+			})
+			.fail(function() {
+				//读取服务器时间失败
+				//采用本机时间
+				currentTimeNum = new Date().getTime();
+				saveTimeFn(activityEndTime);
+			})
+		});
+
+		//按钮点击事件
+		$regButton.click(function(){
+			var $button = $(this);
+
+			if($button.hasClass('btn-signup-disable') || $button.hasClass('btn-signup-success')){
+				return;
+			}
+
+
+			if(buttonClock){
+				return;
+			}
+
+			buttonClock = true;
+
+			$.ajax({
+				url: 'resultData.json',
+				type: 'GET',
+				dataType: 'json'
+			})
+			.done(function(r) {
+
+				if(r['isSuccess'] == 1) {
+					$button.addClass('btn-signup-success');
+				} else {
+					alert(r['msg']);
+				}
+			})
+			.fail(function() {
+				
+				alert('网络问题，请稍候再试。');
+			})
+			.always(function() {
+				
+				buttonClock = false;
+			});
+			
+		});
+	})();
+</script>
+</html>

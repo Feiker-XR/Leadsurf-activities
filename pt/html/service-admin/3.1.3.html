@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>3.1.3系统-通知任务管理-系统任务--桌面通知模板编辑</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	
+	.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+	
+	.pop-window-datepicker {z-index:710;}
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	
+	<script type="text/javascript" src="../js/xheditor121/jquery/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="../js/xheditor121/xheditor-1.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/xheditor121/xheditor_lang/zh-cn.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>站内信</dt>
+				<dd>发送站内信</dd>
+				<dd class="current"><a href="">系统消息管理</a></dd>
+				<dd>用户消息管理</dd>
+				<dt>邮件</dt>
+				<dd><a href="">邮件配置</a></dd>
+				<dd><a href="">邮件测试</a></dd>
+				<dt>通知任务</dt>
+				<dd><a href="#">通知任务管理</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">通知中心</a> &gt; <a href="#">站内信</a> &gt; <a href="#">系统任务</a> &gt; 桌面通知模板编辑</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<h3 class="ui-title">桌面通知模板编辑</h3>
+						<form action="?" id="J-form">
+						<ul class="ui-form">
+							<li>
+								<label for="" class="ui-label">内容：</label>
+								<div class="textarea" style="width:60%">
+									<textarea id="J-content"  rows="12" cols="80" style="width:100%;height:300px;"></textarea>
+								</div>
+								<div style="padding-left:150px;"><span class="ui-check"><i></i>内容不能为空</span></div>
+							</li>
+							<li class="ui-btn">
+								<a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">保 存<b class="btn-inner"></b></a>
+								<a class="btn" href="javascript:void(0);">取消<b class="btn-inner"></b></a>
+							</li>
+						</ul>
+						</form>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<script>
+(function($){
+	var editor = $('#J-content').xheditor({upImgUrl:"upload.php",upImgExt:"jpg,jpeg,gif,png"});
+	var form = $('#J-form');
+	
+	var checkContent = function(){
+		var content = $('#J-content'),contentv = $.trim(content.val()),isPass = false;
+		if(contentv == ''){
+			content.parent().parent().find('.ui-check').html('<i></i>内容不能为空').show();
+			isPass = false;
+			content.focus();
+		}else{
+			content.parent().parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-content').blur(function(){
+		checkContent();
+	});
+	
+	
+	$('#J-button-submit').click(function(){
+		if(checkContent()){
+			form.submit();
+		}
+		
+	});
+	
+	
+})(jQuery);
+</script>
+
+
+	
+	
+</body>
+</html>

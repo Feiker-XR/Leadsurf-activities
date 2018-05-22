@@ -1,0 +1,77 @@
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, th, td, em, form, input,select, textarea, button, header, section, aside, footer { margin: 0; padding: 0; }
+body { min-width: 320px; background:-webkit-gradient(linear,0% 0%,100% 100%,from(#E3EAC1),to(#77C4B9)); font-size: 16px; -webkit-text-size-adjust: none; overflow-x: hidden; }
+ul, li { list-style: none; }
+img { border: none; }
+a { color: #287fc2; text-decoration: none; }
+header{height:62px;background:#FFF;overflow:hidden;}
+header .logo{display:inline-block;width:206px;height:39px;margin:12px 0 0 10px;
+ /*background-image: -webkit-image-set(url(../images/logo.png) 1x,url(../images/logo.png) 2x);*/
+background-image:url(../images/logo.png);
+background-repeat:no-repeat;
+}
+
+.title-text{padding-top:120px;font-size:16px;text-align:center;color:#555;}
+.title-text strong{display:block;font-size:40px;font-weight:100;}
+.title-text span{display:block;}
+.btn-box{padding:20px 50px 120px;}
+.btn-download{display:block;width:100%;text-align:center;background-color:#048E82;border-radius:6px;font-size:18px;color:#FFF;}
+.btn-download i{display:inline-block;width:16px;height:26px;vertical-align:middle;background-repeat:no-repeat;
+ /*background-image: -webkit-image-set(url(../images/ico-iphone.png) 1x,url(../images/ico-iphone.png) 2x);*/
+background-image:url(../images/ico-iphone.png);
+background-repeat:no-repeat;
+}
+
+
+.btn-download span{display:inline-block;height:60px;line-height:60px;vertical-align:middle;}
+.function{padding-bottom:30px;background-color:rgba(0,0,0,0.1);color:#555;}
+.function .title{font-size:24px;padding:20px 0 30px;text-align:center;}
+.function dl{padding-bottom:30px;padding-left:18px;line-height:2;}
+.function dt{font-size:24px;}
+.function dt i{display:inline-block;width:25px;height:25px;margin-right:5px;line-height:25px;border-radius:50%;background-color:#405E59;color:#FFF;text-align:center;font-size:20px;font-style:normal;}
+.function dt span{display:inline-block;vertical-align:middle;}
+.function dd{padding-left:30px;font-size:20px;}
+
+@media only screen and (-o-min-device-pixel-ratio: 2/1), /* Opera */
+       only screen and (min--moz-device-pixel-ratio: 2), /* Firefox 16 之前 */
+       only screen and (-webkit-min-device-pixel-ratio: 2), /* Webkit */
+       only screen and (min-resolution: 240dpi), /* 标准 */
+       only screen and (min-resolution: 2dppx) /* 标准 */{
+	header .logo{
+	background-image:url(../images/logo.png);
+	background-size:206px 39px;
+	}
+	.btn-download i{
+	background-image:url(../images/ico-iphone.png);
+	background-size:16px 26px;
+	}
+}
+
+@media only screen and (max-width:700px){
+	header .logo{
+	background-size:206px 39px;
+	}
+	.btn-download i{
+	background-size:16px 26px;
+	}
+}
+@media  screen and (min-width:321px){
+.title-text{padding-top:40px;}
+.btn-box{padding-bottom:60px;}
+}
+@media only screen and (min-width:700px) {
+
+header{height:124px;}
+header .logo{width:412px;height:78px;margin:24px 0 0 20px;}
+.title-text{padding-top:240px;font-size:32px;}
+.title-text strong{font-size:80px;}
+.btn-box{padding:40px 100px 240px;}
+.btn-download{font-size:32px;}
+.btn-download i{width:32px;height:52px;margin-right:10px;}
+.btn-download span{height:120px;line-height:120px;}
+.function{padding-bottom:60px;}
+.function .title{font-size:48px;padding:40px 0 60px;}
+.function dl{padding-bottom:60px;padding-left:36px;}
+.function dt{font-size:48px;}
+.function dt i{width:50px;height:50px;margin-right:10px;line-height:50px;font-size:40px;}
+.function dd{padding-left:60px;font-size:40px;}
+}

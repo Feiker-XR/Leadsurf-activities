@@ -1,0 +1,231 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.clearfix:after,.clearfix:before{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+
+a{
+	text-decoration: none;
+}
+html,body{height:100%;}
+body{font:12px/1.5 Arial,Microsoft Yahei,  Helvetica, sans-serif;}
+.top{position:relative;z-index:3;width:100%;background-color:#FFF;}
+.top-inner{padding:20px 80px 20px 120px;min-width:780px;}
+.top .logo{width:296px;height:63px;float:left;background: url(../images/bg-logo.jpg) no-repeat 0 0;}
+.top .menu{float:right;}
+.top .menu li{position:relative;display:inline-block;*display:inline;*zoom:1;padding:0 40px;}
+.top .menu li a{line-height:60px;font-size:18px;color:#A3A3A3;text-decoration:none;}
+.top .menu li.current a{color:#389B91;}
+.ico-version{position:absolute;left:108px;padding:0 5px;background-color:#FF006C;color:#FFF;border-radius:2px;}
+
+
+.slider-pic,.slider-pic li{height:100%;}
+.banner{position:relative;height:575px;color:#FFF;}
+.banner1{background: url(../images/bg-banner1.jpg) no-repeat center -75px;}
+.banner2{background: url(../images/bg-banner2.jpg) no-repeat center -75px;}
+.banner3{background: url(../images/bg-banner3.jpg) no-repeat center -75px;}
+.banner-inner{position:relative;width:980px;height:100%;margin:0 auto;}
+.banner1 .mid{left:30px;}
+.banner2 .mid{left:500px;}
+.banner3 .mid{left:20px;}
+.banner2 .install-iphone .current{background-color:#FC506E;}
+.banner2 .install-iphone a{color:#FC506E;}
+.banner3 .install-iphone .current{background-color:#A971CD;}
+.banner3 .install-iphone a{color:#A971CD;}
+.banner2 .install-tool{text-align:right;}
+.banner3 .install-tool{text-align:right;}
+.banner2 .install-code{float:right;}
+.banner3 .install-code{float:right;}
+
+.install-iphone i{display:inline-block;width:22px;height:37px;margin-right:15px;background:url(../images/un-iphone-ico.png) no-repeat -40px 0;}
+.install-iphone .current i{background-position:0 0;}
+.banner2 .install-iphone i{background-position:-40px -40px;}
+.banner2 .install-iphone .current i{background-position:0 -40px;}
+.banner3 .install-iphone i{background-position:-40px -80px;}
+.banner3 .install-iphone .current i{background-position:0 -80px;}
+
+
+
+.slider-dot{position:absolute;bottom:10px;left:50%;margin-left:-80px;z-index:1;display:inline-block;*display:inline;*zoom:1;width:160px;height:16px;text-align:center;}
+.slider-dot li{width:20px;height:16px;display:inline-block;*display:inline;*zoom:1;margin:0 8px;background:url(../images/un-slider-dot.png) no-repeat 0 0;cursor:pointer;overflow:hidden;}
+.slider-dot .current{background-position:0 -30px;}
+.slider-dot0 li{background-position:-20px 0;}
+.slider-dot0 .current{background-position:-20px -30px;}
+.slider-dot1 li{background-position:-40px 0;}
+.slider-dot1 .current{background-position:-40px -30px;}
+.slider-dot3 li{background-position:0 0;}
+.slider-dot3 .current{background-position:0 -30px;}
+
+
+
+.mid{position:absolute;bottom:0px}
+.tool-text{
+	width:600px;
+	height:136px;
+	margin-bottom:40px;
+	overflow: hidden;
+}
+.tool-text div{
+	display: none;
+	width:600px;
+	height:136px;
+	margin-bottom:40px;
+}
+.tool-text .bg-title1{
+	background:url(../images/bg-title1.png) no-repeat 0 0;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-title1.png');
+}
+.tool-text .bg-title2{
+	background:url(../images/bg-title2.png) no-repeat 0 0;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-title2.png');
+}
+.tool-text .bg-title3{
+	background:url(../images/bg-title3.png) no-repeat 0 0;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-title3.png');
+}
+.tool-text .bg-title4{
+	background:url(../images/bg-title4.png) no-repeat 0 0;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-title4.png');
+}
+.install-iphone{margin-bottom:25px;}
+.install-iphone li{float:left;width:210px;height:48px;padding:10px 15px;background-color:#FFFFFF;border-radius:0 4px 4px 0;}
+.install-iphone .current{background-color:#048E82;border-radius:4px 0 0 4px;}
+.install-iphone a{display:inline-block;color:#03b3a4;text-decoration:none;}
+.install-iphone .current a{color:#FFF;}
+.install-iphone .current a:hover{color:#F4F5C9;}
+.install-iphone a strong{display:block;font-size:18px;}
+
+.install-tool{margin-bottom:25px;font-size:16px;color:#FFF;}
+.install-tool dt,.install-tool dd{display:inline-block;*display:inline;*zoom:1;}
+.install-tool dd{padding:0 8px;}
+.install-tool a{color:#FFF;}
+.install-tool a:hover{color:#EEE;transition: all 0.3s ease-in 0s;text-decoration:underline;}
+.install-code{width:100px;margin-bottom:55px;}
+.install-code img{display:block;width:100px;height:100px;}
+.install-code span{display:block;margin-top:5px;text-align:center;}
+
+
+
+.nav{width:100%;height:255px;background-color:#FFF;}
+.nav ul{width:980px;margin:0 auto;text-align:center;}
+.nav li{position:relative;z-index:1;display:inline-block;*display:inline;*zoom:1;width:104px;height:160px;margin-top:60px;margin-bottom:35px;padding:0 90px;vertical-align:middle;text-align:center;cursor:pointer;}
+.nav li .arrow{
+display:none;
+position:absolute;bottom:-54px;left:50%;margin-left:-20px;width:0;height:0;overflow:hidden;line-height:0;font-size:0;
+vertical-align:middle;
+border-width:20px;
+border-color: #FFF transparent transparent;border-style:solid dotted none;border-style:solid solid none\0;
+z-index: 2
+}
+.nav li.current .arrow{display:block;}
+.nav li.left{}
+.nav li.right{}
+.nav li.border{width:322px;padding:0 30px;border-left:1px solid #ECEDED;border-right:1px solid #ECEDED;}
+.nav .mod-pic{display:inline-block;*display:inline;*zoom:1;width:67px;height:78px;background-image:url(../images/un-nav-ico.png);background-repeat:no-repeat;}
+
+.nav .pic1{background-position:0 0;}
+.nav .pic2{background-position:-70px 0;}
+.nav .pic3{background-position:-140px 0;}
+.nav .mod-text{color:#6F7781;}
+.nav .mod-text .title{font-size:20px;}
+.nav li:hover .mod-text{color:#333;
+transition: all 0.3s ease-in 0s;
+}
+.nav-show{border-top:1px solid #EEE;}
+
+
+.content_area{position:relative;display:none;width:100%;background:#FAFAFA;}
+.content_area .weibo{position:absolute;z-index:2;top:160px;left:50%;margin-left:520px;width:76px;height:76px;border:2px solid #E3E3E3;background:url(../images/ico-weibo.png) 0 0 no-repeat;cursor:pointer;}
+.content_area .tab-content{padding-top:60px;;background:url(../images/bg-content.png) 0 1px repeat-x;}
+.content_area .tab-content li{display: none;}
+.content_area .list100,
+.content_area .list101,
+.content_area .list102,
+.content_area .list103,
+.content_area .list104,
+.content_area .list105,
+.content_area .list201,
+.content_area .list202,
+.content_area .list203,
+.content_area .list204,
+.content_area .list205,
+.content_area .list206,
+.content_area .list301,
+.content_area .list302,
+.content_area .list303,
+.content_area .list304,
+.content_area .list305{
+background-position:center 0;
+background-repeat:no-repeat;
+border-bottom:1px solid #EBEBEB;
+}
+.content_area .list100{height:610px;background-image:url(../images/list100.jpg);}
+.content_area .list101{height:610px;background-image:url(../images/list101.png);}
+.content_area .list102{height:610px;background-image:url(../images/list102.png);}
+.content_area .list103{height:610px;background-image:url(../images/list103.png);}
+.content_area .list104{height:610px;background-image:url(../images/list104.png);}
+.content_area .list105{height:610px;background-image:url(../images/list105.png);}
+.content_area .list201{height:360px;background-image:url(../images/list201.png);}
+.content_area .list202{height:360px;background-image:url(../images/list202.png);}
+.content_area .list203{height:500px;background-image:url(../images/list203.png);}
+.content_area .list204{height:500px;background-image:url(../images/list204.png);}
+.content_area .list205{height:500px;background-image:url(../images/list205.png);}
+.content_area .list206{height:600px;background-image:url(../images/list206.png);}
+.content_area .list301{height:710px;background-image:url(../images/list301.png);}
+.content_area .list302{height:536px;background-image:url(../images/list302.png);}
+.content_area .list303{height:536px;background-image:url(../images/list303.png);}
+.content_area .list304{height:536px;background-image:url(../images/list304.png);}
+.content_area .list305{height:200px;background-image:url(../images/list305.png);}
+
+.footer{display:none; padding:40px 0;background-color:#EEE;}
+.footer-inner{width:980px;margin:0 auto;}
+.footer .install-code{float:left;margin-right:50px;margin-bottom:0;}
+.footer .install-download{float:left;}
+.footer .install-tool{margin-bottom:0;}
+.footer .install-iphone{margin-bottom:20px;}
+.footer .install-tool,.footer .install-tool a{color:#555;}
+.copyright{float:right;text-align:right;padding:5px 0;color:#8A8A8A;font-size:18px;_margin-top:-110px;}
+
+
+

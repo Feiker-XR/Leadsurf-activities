@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>5.6游戏审核设置</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>审核管理</dt>
+				<dd> <a href="">游戏异常审核</a></dd>
+                <dd class="current"><a href="#">游戏审核设置</a></dd>
+				<dt>统计报表</dt>
+				<dd><a href="##">游戏明细表</a></dd>
+				<dd><a href="##">奖期营收报表</a></dd>
+				
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">一级菜单</a> &gt; <a href="#">二级级菜单</a> &gt; 三级菜单名</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<h3 class="ui-title">游戏审核设置（以下条件满足任意一个即进入审核列表）——修改</h3>
+                        <h3 class="ui-title"><a href="1.16.html">&lt;&lt;返回参数设置查看页</a></h3>
+                        <form action="?" id="J-search-save">
+						<ul class="ui-form">
+									<li>
+										<label for="" class="ui-label w-4">单人单期最大获奖金额：</label>
+										<input type="text" value="400,000.00" class="input w-2 input-money">
+										<span class="ui-info">元</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单人单期最大中/投比：</label>
+										<input type="text" value="0" class="input w-2">
+									</li>
+									
+									<li>
+										<label for="" class="ui-label w-4">单注最大获奖金额：</label>
+										<input type="text" value="1,000.00" class="input w-2  input-money">
+										<span class="ui-info">元</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单注最大中/投比：</label>
+										<input type="text" value="50.00" class="input w-2">
+									</li>
+                                    <li>
+										<label for="" class="ui-label w-4"></label>
+                                        <a href="javascript:void(0);" class="btn">返回<b class="btn-inner"></b></a>
+										<a href="javascript:void(0);" class="btn btn-important">保存<b class="btn-inner"></b></a>
+									</li>
+                                     <li>
+                                       <label for="" class="ui-label w-4">说明：</label>
+                                       <span class="ui-info">值为0或为空的参数，将不做审核判断。</span>
+                                    </li>
+						</ul>
+                        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+(function($){	
+	var panel = $('.ui-form');
+	panel.on('keyup', '.w-2', function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+	});
+	
+	$('.btn btn-important').click(function(){
+		$('#J-search-save').submit();
+	});
+	
+})(jQuery);
+</script>
+</body>
+</html>

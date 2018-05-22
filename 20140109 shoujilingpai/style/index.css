@@ -1,0 +1,445 @@
+@charset "UTF-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.clearfix:after,.clearfix:before{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+
+a{
+	text-decoration: none;
+}
+
+body{
+	font-family: 'Microsoft Yahei',Tahoma,Arial,Helvetica,Simsun,STHeiti;
+}
+
+/*header-banner*/
+.header-banner{
+	width: 100%;
+	height: 783px;
+	background: url(../image/header-banner-bg.png) no-repeat center 0 #ffba11;
+}
+
+.header-banner .header{
+	width: 100%;
+	height: 122px;
+	background: url(../image/header-banner-bg.png) no-repeat center 0 #1d1d29;
+}
+
+.warps{
+	width: 980px;
+	margin: 0px auto;
+}
+
+.header .logo{
+	float: left;
+	width: 215px;
+	height: 73px;
+	background: url(../image/logo.png);
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image/logo.png');
+	margin: 25px 0 0 0px;
+}
+
+.header .down-load{
+	float: left;
+	width: 160px;
+	height: 36px;
+	background: url(../image/down-load.png) no-repeat;
+	margin: 43px 0 0 0; 
+}
+
+.banner{
+	position: relative;
+	height: 661px;
+}
+
+.banner .iphone{
+	position: absolute;
+	top: -80px;
+	left: -230px;
+	width: 474px;
+	height: 735px;
+	background: url(../image/iphone.png) no-repeat;
+	opacity: 0;
+	filter:alpha(opacity=0);
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image/iphone.png');
+	_left: -136px;
+	z-index: 2
+}
+
+.banner .iphone .app{
+	position: absolute;
+	top: 183px;
+	left: 127px;
+	width: 215px;
+	height: 202px;
+	background: url(../image/app-thumb.png);
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image/app-thumb.png');
+	z-index: 1;
+}
+
+.banner .iphone{
+	-moz-transition: all 1.8s ease-in-out; /* FF3.5+ */
+	-o-transition: all 1.8s ease-in-out; /* Opera 10.5 */
+	-webkit-transition: all 1.8s ease-in-out; /* Saf3.1+, Chrome */
+	transition: all 1.8s ease-in-out;
+	transform: rotate(-35deg);
+	transform-origin:50% 100%;
+	-ms-transform: rotate(-35deg); /* IE 9 */
+	-ms-transform-origin:50% 100%;/* IE 9 */
+	-webkit-transform: rotate(-35deg); /* Safari and Chrome */
+	-webkit-transform-origin:50% 100%;/* Safari and Chrome */
+}
+
+.banner .android{
+	-moz-transition: all 1.8s ease-in-out; /* FF3.5+ */
+	-o-transition: all 1.8s ease-in-out; /* Opera 10.5 */
+	-webkit-transition: all 1.8s ease-in-out; /* Saf3.1+, Chrome */
+	transition: all 1.8s ease-in-out;
+	transform: rotate(45deg);
+	transform-origin:50% 100%;
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-ms-transform-origin:50% 100%; /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Safari and Chrome */
+	-webkit-transform-origin:50% 100%; /* Safari and Chrome */
+}
+
+
+.banner .iphone.current{
+	transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg); /* Safari and Chrome */
+}
+
+.banner .android.current{
+	transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg); /* Safari and Chrome */
+}
+
+.banner .iphone .shadow{
+	position: absolute;
+	top: 183px;
+	left: 127px;
+	width: 216px;
+	height: 202px;
+	background: url(../image/app-shadow.png);
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image/app-shadow.png');
+}
+
+.banner .android{
+	position: absolute;
+	top: 15px;
+	left: 200px;
+	width: 331px;
+	height: 490px;
+	opacity: 0;
+	filter:alpha(opacity=0);
+	background: url(../image/android.png) no-repeat;
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image/android.png');
+	_left: 132px;
+}
+
+.banner .star{
+	position: absolute;
+	top: 307px;
+	left: -123px;
+	width: 637px;
+	height: 226px;
+	opacity: 0;
+	filter:alpha(opacity=0);
+	background: url(../image/star.png);
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image/star.png');
+	z-index: 3;
+}
+
+.banner .account-safety{
+	position: absolute;
+	right: -100px;
+	top: 25px;
+	width: 535px;
+	height: 60px;
+	opacity: 0;
+	filter:alpha(opacity=0);
+	_filter:alpha(opacity=100);
+	background: url(../image/sologan-bg-top.png) no-repeat -5px 0;
+	_background: url(../image/sologan-bg-top-ie6.png) no-repeat -5px 0;
+	_right: 0;
+}
+
+.banner .security{
+	position: absolute;
+	right: -100px;
+	top: 108px;
+	width: 265px;
+	height: 49px;
+	opacity: 0;
+	filter:alpha(opacity=0);
+	_filter:alpha(opacity=100);
+	background: url(../image/sologan-bg-top.png) no-repeat -278px -77px;
+	_background: url(../image/sologan-bg-top-ie6.png) no-repeat -278px -77px;
+	_right: 0;
+}
+
+.banner .new-version{
+	position: absolute;
+	top: 172px;
+	right: -100px;
+	width: 400px;
+	height: 40px;
+	opacity: 0;
+	filter:alpha(opacity=0);
+	background: url(../image/sologan-bg-top.png) no-repeat -140px -139px;
+	_background: url(../image/sologan-bg-top-ie6.png) no-repeat -140px -139px;
+	_filter:alpha(opacity=100);
+	_right: 0;
+}
+
+.banner .sologan{
+	position: absolute;
+	top: 215px;
+	right: -25px;
+	width: 588px;
+	height: 338px;
+	background: url(../image/sologan-bg-bottom.png) no-repeat 22px 0;
+	_background:none;
+	_right: -45px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image/sologan-bg-bottom.png');
+}
+
+
+.banner .nav-warp{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 687px;
+	height: 73px;
+	background: url(../image/nav-bg.png) no-repeat;
+	z-index: 5
+}
+
+.banner .nav-warp .current-nav{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 229px;
+	height: 73px;
+	margin-top: -5px;
+	border-top: 5px solid #ff6600;
+	overflow: hidden;
+	z-index: 5
+}
+
+.banner .nav-warp .current-nav .bg-area{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 687px;
+	height: 73px;
+	background: url(../image/nav-current-bg.png) no-repeat #fff;
+}
+
+.banner .nav{
+	width: 100%;
+	height: 73px;
+}
+
+.banner .nav li{
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	width: 229px;
+	height: 73px;
+	cursor: pointer;
+}
+
+.content{
+	padding: 20px 0 20px 0;
+	height: 817px;
+	overflow: hidden;
+	-moz-transition: height 1.5s ease-in-out; /* FF3.5+ */
+	-o-transition: height 1.5s ease-in-out; /* Opera 10.5 */
+	-webkit-transition: height 1.5s ease-in-out; /* Saf3.1+, Chrome */
+	transition: height 1.5s ease-in-out;
+}
+
+
+.content .android-area{
+	padding-top: 20px;
+}
+.content .android-area .code-download{
+	float: left;
+	width: 370px;
+}
+
+.content .iphone-area{
+
+}
+
+.content .iphone-area .left-area{
+	float: left;
+	width: 465px;
+	padding-top: 20px;
+	overflow: hidden;
+}
+
+.content .iphone-area .left-area img{
+	margin-top: 30px;
+}
+
+.content .iphone-area .right-area p,
+.content .iphone-area .left-area p{
+	width: 330px;
+	font-size: 14px;
+	line-height: 25px;
+	padding-top: 20px;
+}
+
+.content .iphone-area .left-area p{
+	width: 405px;
+}
+
+.content .iphone-area .right-area{
+	float: left;
+	width: 370px;
+	padding-top: 20px;
+}
+
+.content .iphone-area h6{
+	height: 35px;
+	padding-left: 50px;
+	line-height: 35px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #1c744d;
+	overflow: hidden;
+}
+
+.content .iphone-area .app-title{
+	margin-top: 50px;
+}
+
+.content .iphone-area .code{
+	margin-top: 20px;
+}
+
+.content .android-area .code{
+	margin-top: 30px;
+}
+
+.content .numa,
+.content .numb,
+.content .numc{
+	background: url(../image/num-thumb.png) no-repeat;
+}
+
+.content .numa{
+	background-position: -5px -10px;
+}
+
+.content .numb{
+	background-position: -5px -89px;
+}
+
+.content .numc{
+	background-position: -5px -166px;
+}
+
+.content .android-area h6{
+	height: 35px;
+	padding-left: 50px;
+	line-height: 35px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #1c744d;
+	overflow: hidden;
+}
+.content .android-area p{
+	padding-top: 20px;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+.content .android-area .location-download{
+	float: left;
+	width: 278px;
+}
+
+
+
+.content .iphone-area .right-area a,
+.content .android-area .location-download a {
+	display: block;
+	margin: 10px 0 0 0;
+	width: 144px;
+	height: 32px;
+	line-height: 30px;
+	font-size: 14px;
+	color: #13613F;
+	text-align: center;
+	font-weight: bold;
+	background: url(../image/button_03.png) no-repeat 0 0;
+}
+
+.content .iphone-area .right-area a{
+	margin-top: 20px;
+}
+
+.content .iphone-area .right-area a:hover,
+.content .android-area .location-download a:hover{
+	background: url(../image/button_06.png) no-repeat 0 0;
+}
+
+.bottom{
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	background: #2a2b39;
+}
+

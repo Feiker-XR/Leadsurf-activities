@@ -1,0 +1,110 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{ font:12px/1.5 Microsoft Yahei, Arial, Helvetica, sans-serif;background:url(../images/bg-body.jpg) repeat-x center top #D42E9E;}
+.page{width:1024px;margin:0 auto;}
+.banner{position:relative;width:1024px;height:540px;margin:0 auto;background: url(../images/bg-banner.jpg) no-repeat center top;text-align:center;color:#555;line-height:1.8;}
+.banner .btn-signup{display:inline-block;width:346px;height:106px;margin-top:280px;background: url(../images/btn-signup.png) no-repeat 0 -104px;}
+.banner .btn-signup:hover{background-position:0 0;}
+.banner .text-date{font-size:26px;font-weight:700;color:#DB1C9D;}
+.banner .text-info{font-size:20px;font-weight:700;color:#DD1D63;}
+.banner .text-info strong{font-size:24px;}
+.banner .text-link a{font-size:20px;font-weight:700;color:#E2123B;}
+
+.content{width:1024px;margin:0 auto;}
+.content .prize{width:1024px;height:336px;margin:0 auto;background:url(../images/bg-prize.jpg) no-repeat center top;text-align:center;}
+.content .prize ul{padding-top:200px;}
+.content .prize li{display:inline-block;*display:inline;*zoom:1;width:220px;}
+.content .prize li strong,.content .prize li span{display:block;}
+.content .prize li strong{font-size:18px;font-weight:700;color:#DB1C9D;}
+.content .prize li span{font-size:14px;font-weight:700;color:#520D92;}
+.content .prize p{padding-top:25px;font-size:14px;font-weight:700;color:#DB1C9D;}
+
+.title-time,.title-rule,.title-mode,.title-lottery{width:888px;height:55px;margin:0 auto;background:url(../images/bg-title.png) no-repeat 1px 0;}
+.title-rule{background-position:1px -70px;}
+.title-mode{background-position:1px -140px;}
+.title-lottery{background-position:0 -210px;}
+
+.list{width:838px;margin:0 auto;padding-bottom:20px;background-color:#EEE;line-height:2;}
+.list li{width:710px;margin:0 auto;padding-left:12px;padding-bottom:5px;text-indent:-12px;font-size:14px;}
+.list-time{font-weight:700;color:#5B0141;}
+.list-time li{text-align:center;font-size:18px;}
+.list-time strong{color:#DB1C9D;}
+.list-mode li{padding-left:20px;text-indent:0;background:url(../images/ico-star-list.png) no-repeat 0 6px;}
+
+.explain{width:886px;height:334px;margin:0 auto;background:url(../images/bg-explain.png) no-repeat 0 0;color:#FDB7E7;}
+.explain dt{padding:15px 0;font-size:14px;text-align:center;}
+.explain dd{width:700px;margin:0 auto;padding-left:20px;line-height:1.7;background:url(../images/ico-explain-list.png) no-repeat 0 4px;}
+
+.footer{text-align:center;color:#FFF; padding:15px 0 15px;}
+
+.contact {
+    background-color: #601B9F;
+    color: #400278;
+    font-size: 14px;
+    height: 148px;
+    margin-left: 930px;
+    padding-top: 15px;
+    position: absolute;
+    text-align: center;
+    top: 420px;
+    width: 137px;
+    z-index: 1000;
+}
+.contact p {padding-bottom:10px;color:#FFF;}
+
+.number {
+    background: url("../images/contact-bg.png") no-repeat scroll 0 0 transparent;
+    height: 25px;
+    margin: 10px auto 0;
+    text-align: left;
+    vertical-align: bottom;
+    width: 110px;
+	line-height:25px;
+}
+
+.number a {
+	color:#400278;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 30px;
+    text-decoration: none;
+}

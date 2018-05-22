@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>组三组六豹子  封锁数据</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<style>
+	.ui-label {height:24px;}
+	.ui-form li {margin:5px 0;}
+	.table-cont {padding:10px;}
+	.table-params {width:240px;display:inline-block;}
+	.chart-cont {width:200px;height:300px;display:inline-block;}
+	.chart-tip {position:absolute;left:0;top:2px;z-index:500;background:#FFF;border:1px solid #CCC;padding:5px;line-height:150%;display:none;}
+	</style>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	
+	<script type="text/javascript" src="../js/jquery.flot.js"></script>
+	<script type="text/javascript" src="../js/jquery.flot.crosshair.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li class="current"><a href="1.171.html">封锁</a></li>
+									<li><a href="1.191.html">变价</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content" id="J-list-container">
+							
+								<ul class="ui-tab-title clearfix">
+									<li class="current"><a href="1.171.html">封锁数据</a></li>
+									<li><a href="1.181.html">封锁参数设定</a></li>
+								</ul>
+								
+								
+								
+								<ul class="ui-tab-title clearfix">
+									<li><a href="1.171.html">汇总数据</a></li>
+									<li><a href="1.172.html">定位胆百位</a></li>
+									<li><a href="1.173.html">定位胆十位</a></li>
+									<li><a href="1.174.html">定位胆个位</a></li>
+									<li class="current"><a href="1.175.html">组三·组六·豹子</a></li>
+									<li><a href="1.176.html">一码不定位</a></li>
+								</ul>
+								
+								
+								
+								<ul class="ui-search">
+									<li>
+										<label class="ui-label">彩种名称：</label>
+										<select id="J-select" class="ui-select w-2">
+											<option value="1">3D</option>
+											<option value="2">双色球</option>
+											<option value="3">11选5</option>
+										</select>
+									</li>
+									<li>
+										<label class="ui-label">奖期：</label>
+										<select class="ui-select" id="J-select-jump">
+											<option value="201412547547">201412547547(2014-12-15)</option>
+											<option value="201412547548">201412547548(2014-12-15)</option>
+										</select>
+									</li>
+
+								</ul>
+						
+						
+							<div class="table-cont">
+								<table class="table table-border table-params">
+								<tbody id="J-table-cont">
+								</tbody>
+								</table>
+								<div id="J-chart-cont" class="chart-cont"></div>
+							</div>
+						
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="J-chart-tip" class="chart-tip"></div>
+
+<script>
+var chartData = [];
+chartData.push([0, 100000]);
+chartData.push([1, -300000]);
+chartData.push([2, 600000]);
+
+</script>
+
+
+<script>
+(function($){
+	
+		var names = ['组三', '组六', '豹子'];
+		var tip = $('#J-chart-tip'),
+			table = $('#J-table-cont'),
+			tableStr = ['<tr><th colspan="3"><b>组三组六豹子盈亏报表</b></th></tr><tr><th>号码</th><th>盈亏值</th><th>操作</th></tr>'];
+			
+		$.each(chartData, function(){
+			tableStr.push('<tr><td>'+ names[this[0]] +'</td><td>'+ phoenix.util.formatMoney(this[1]) +'</td><td><a href="1.1751.html?type='+ this[0] +'">详情</a></td></tr>');
+			this[1] = (this[1]/10000).toFixed(2);
+		});
+		table.html(tableStr.join(''));
+		
+		
+		var plot = $.plot($("#J-chart-cont"), [{ data: chartData, color: "#009ED0" }], {
+			bars: {
+					show: true, 
+					barWidth:0.5, 
+					fill: 0.5 , 
+					align: "center"
+			},
+			points: {
+				show: true
+			},
+			xaxis: {tickSize:1},
+			yaxis: {tickSize:10},
+			grid: {
+				borderWidth: 1, 
+				markings: [{ color: "#FFF" },{ color: "#FFF"},{ },{}],
+				hoverable: true,
+				autoHighlight: true
+			}
+		});
+		
+		$("#J-chart-cont").bind('plothover', function(e, pos, it){
+			if(it) {
+				//console.log(it.dataIndex);
+				var x = it.datapoint[0],
+					y = it.datapoint[1].toFixed(2);
+				x = names[x];
+				tip.html('类型：' + x + '<br />盈亏值：' + y + '万')
+					.css({top: it.pageY - 55, left: it.pageX+25})
+					.fadeIn(200);
+			}else{
+				tip.hide();
+			}
+		});
+		
+		
+		$('#J-select-jump').change(function(){
+			var v = $.trim(this.value);
+			location.href = '?date=' + v;
+		});
+	
+})(jQuery);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>4.2充值列表</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	
+	<script type="text/javascript" src="../images/admin/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../images/admin/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../images/admin/phoenix.base.js"></script>
+	<script type="text/javascript" src="../images/admin/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../images/admin/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../images/admin/phoenix.util.js"></script>
+	<script type="text/javascript" src="../images/admin/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../images/admin/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../images/admin/phoenix.SuperSearch.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>充值管理</dt>
+				<dd class="current"><a href="">充值明细</a></dd>
+				<dd><a href="">异常充值</a></dd>
+				<dd><a href="">异常二次匹配</a></dd>
+				<dd><a href="">客户提取</a></dd>
+				<dd><a href="">资金设置</a></dd>
+				<dt>人工资金管理</dt>
+				<dd><a href="">现金打款</a></dd>
+				<dd><a href="#">账户余额加减</a></dd>
+				<dt>银行卡管理</dt>
+				<dd><a href="#">银行卡绑定记录</a></dd>
+				<dd><a href="#">可以银行卡</a></dd>
+				<dt>报表查询</dt>
+				<dd class="current"><a href="#">交易列表</a></dd>
+				<dd><a href="#">充提报表</a></dd>
+				<dd><a href="#">转账列表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">一级菜单</a> &gt; <a href="#">二级级菜单</a> &gt; 三级菜单名</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<ul class="ui-search">
+							<li class="name">
+								<label class="ui-label">默认时间：</label>
+								<input type="text" value="最近一个月" class="input input-disable">
+							</li>
+							<li>
+								<label class="ui-label">是否测试账户：</label>
+								<select class="ui-select">
+									<option value="所有类型">所有类型</option>
+									<option value="测试账户">测试账户</option>
+									<option value="非测试账户">非测试账户</option>
+								</select>
+							</li>
+							<li>
+								<label class="ui-label">是否冻结账户：</label>
+								<select class="ui-select">
+									<option value="所有类型">所有类型</option>
+									<option value="测试账户">冻结账户</option>
+									<option value="非测试账户">非冻结账户</option>
+								</select>
+							</li>
+						</ul>
+						<table class="table table-info table-function">
+							<thead>
+								<tr>
+									<th rowspan="2" class="sp-td">
+										<div class="sp-td-cont">
+											<div class="sp-td-title">用户名</div>
+										</div>
+									</th>
+									<th rowspan="2" class="sp-td">
+										<div class="sp-td-cont">
+											<div class="sp-td-title">所属组</div>
+										</div>
+									</th>
+									<th colspan="4">在线处理</th>
+									<th colspan="5">人工处理</th>
+									<th colspan="3">充值合计</th>
+								</tr>
+								<tr>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">在线充值</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">充值手续费</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">在线提现</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">提现手续费</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">人工充值</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">人工提现</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">活动</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">人工加币</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">管理员扣减</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">充值金额</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">提现金额</div>
+										</div>
+									</th>
+									<th class="sp-td">
+										<div class="sp-td-cont sp-td-cont-b">
+											<div class="sp-td-title">充提结余</div>
+										</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2012061511</td>
+									<td>总代</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+								</tr>
+								<tr>
+									<td>2012061511</td>
+									<td>总代</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+									<td>1,000.0000</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="page-wrapper">
+							<span class="page-text">
+								<span class="lower">共102条记录</span>
+							</span>
+							<div class="page page-right">
+								<a href="#" class="prev">上一步</a>
+								<a href="#">1</a>
+								<a href="#">2</a>
+								<a href="#" class="current">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">...</a>
+								<a href="#" class="next">下一步</a>
+								<span class="page-few">到第 <input type="text" value="" class="input"> /100页</span>
+								<input type="button" value="确 认" class="page-btn">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+(function() {
+	//操作组
+    var group = new phoenix.SuperSearchGroup();
+	//输入数据限制
+	//允许输入英文字母和数字
+	var allowWordAndNumber = function(v){
+		return v.replace(/[^A-Za-z0-9]/g, '');
+	};
+	//允许输入数字和小数
+	var allowNumber = function(){
+		var me = this,v = me.value,index;
+		me.value = v = v.replace(/^\.$/g, '');			
+		index = v.indexOf('.');
+		if(index > 0){
+			me.value = v = v.replace(/(.+\..*)(\.)/g, '$1');				
+		}
+		me.value = v = v.replace(/[^\d|^\.]/g, '');
+		me.value = v = v.replace(/^00/g, '0');		
+		if(v.split('.').length > 2){
+			arguments.callee.call(me);
+		}
+	};
+	
+	//获取两个input值
+	var getTowInputValue = function(){
+		var me = this,ipts = me.dom.find('input[type="text"]'),name = me.name,result = {};
+		result[name+'1'] = ipts[0].value;
+		result[name+'2'] = ipts[1].value;
+		return result;
+	};
+	//获取select类型值
+	var getSelectValue = function(){
+		var me = this,li = me.dom.find('li.current'),v = '',result = {};
+		if(li.size() > 0){
+			v = li.eq(0).attr('data-select-id');
+			result[me.name] = v;
+		}
+		return result;
+	};
+	
+	
+	//编号
+    var serial = new phoenix.SuperSearch({
+        name: 'serial',
+        keyCode: 'ctrl+83',
+        el: '#J-sp-serial',
+        group: group
+    });
+	$('#J-input-serial').keyup(function(){
+		this.value = allowWordAndNumber(this.value);
+	}).blur(function(){
+		this.value = allowWordAndNumber(this.value);
+	});
+	//用户名
+    var username = new phoenix.SuperSearch({
+        name: 'username',
+        keyCode: 'ctrl+85',
+        el: '#J-sp-username',
+        group: group
+    });
+	$('#J-input-username').keyup(function(){
+		this.value = allowWordAndNumber(this.value);
+	}).blur(function(){
+		this.value = allowWordAndNumber(this.value);
+	});
+	//申请时间
+    var requesttime = new phoenix.SuperSearch({
+        name: 'requesttime',
+        keyCode: 'ctrl+68',
+        type: 'time',
+        el: '#J-sp-request-time',
+        group: group,
+		expands:{getFormValue:getTowInputValue}
+    });
+    var requestTime1 = $('#sp-input-time-1'),requestTime2 = $('#sp-input-time-2'),requestDt1,requestDt2;
+    requestTime1.click(function() {
+        requestDt1 = new phoenix.DatePicker({
+            input: requestTime1,
+            isLockInputType: false
+        });
+        requestDt1.show();
+        requestDt1.addEvent('afterSetValue',
+        function() {
+            requestTime2.focus();
+            requestTime2.click();
+        })
+    });
+    requesttime.addEvent('afterFocus',
+    function() {
+        requestTime1.click()
+    });
+    requestTime2.click(function() {
+        requestDt2 = new phoenix.DatePicker({
+            input: requestTime2,
+            isLockInputType: false
+        }).show();
+    });
+    requesttime.addEvent('afterBlur',function() {
+		if (requestDt1) {
+			requestDt1.hide();
+		}
+		if (requestDt2) {
+			requestDt2.hide();
+		}
+	});
+	//申请充值银行
+    var banks = new phoenix.SuperSearch({
+        name: 'bank',
+        keyCode: 'ctrl+66',
+        type: 'select',
+        isAutoWidth: true,
+        el: '#J-sp-request-bank',
+        group: group,
+		expands:{getFormValue:getSelectValue}
+    });
+	//申请金额
+    var requestMoney = new phoenix.SuperSearch({
+        name: 'requestMoney',
+        keyCode: 'ctrl+85',
+        el: '#J-sp-request-money',
+        group: group,
+		expands:{getFormValue:getTowInputValue}
+    });
+	$('#J-input-requestmoney1').keyup(allowNumber).blur(allowNumber);
+	$('#J-input-requestmoney2').keyup(allowNumber).blur(allowNumber);
+	//附言
+    var message = new phoenix.SuperSearch({
+        name: 'message',
+        keyCode: 'ctrl+85',
+        el: '#J-sp-message',
+        group: group
+    });
+	//到账时间
+    var receivetime = new phoenix.SuperSearch({
+        name: 'receivetime',
+        keyCode: 'ctrl+68',
+        type: 'time',
+        el: '#J-sp-receive-time',
+        group: group,
+		expands:{getFormValue:getTowInputValue}
+    });
+    var receiveTime1 = $('#sp-input-receive-time-1'),receiveTime2 = $('#sp-input-receive-time-2'),receiveDt1,receiveDt2;
+    receiveTime1.click(function() {
+        receiveDt1 = new phoenix.DatePicker({
+            input: receiveTime1,
+            isLockInputType: false
+        });
+        receiveDt1.show();
+        receiveDt1.addEvent('afterSetValue',
+        function() {
+            receiveTime2.focus();
+            receiveTime2.click();
+        })
+    });
+    receivetime.addEvent('afterFocus',
+    function() {
+        receiveTime1.click()
+    });
+    receiveTime2.click(function() {
+        receiveDt2 = new phoenix.DatePicker({
+            input: receiveTime2,
+            isLockInputType: false
+        }).show();
+    });
+    receivetime.addEvent('afterBlur',function() {
+		if (receiveDt1) {
+			receiveDt1.hide();
+		}
+		if (receiveDt2) {
+			receiveDt2.hide();
+		}
+	});
+	//账户名
+    var accountName = new phoenix.SuperSearch({
+        name: 'accountName',
+        keyCode: 'ctrl+83',
+        el: '#J-sp-account-name',
+        group: group
+    });
+	//付款卡号
+    var cardnumber = new phoenix.SuperSearch({
+        name: 'cardnumber',
+        keyCode: 'ctrl+83',
+        el: '#J-sp-card-number',
+		isAutoWidth: true,
+        group: group
+    });
+	$('#J-input-cardnumber').keyup(allowNumber).blur(allowNumber);
+	//到账金额
+    var receivemoney = new phoenix.SuperSearch({
+        name: 'receivemoney',
+        keyCode: 'ctrl+83',
+        el: '#J-sp-receive-money',
+        group: group
+    });
+	$('#J-input-receivemoney1').keyup(allowNumber).blur(allowNumber);
+	$('#J-input-receivemoney2').keyup(allowNumber).blur(allowNumber);
+	//充值手续费
+    var receivemoney = new phoenix.SuperSearch({
+        name: 'loadingmoney',
+        keyCode: 'ctrl+83',
+        el: '#J-sp-loading-money',
+        group: group,
+		expands:{getFormValue:getTowInputValue}
+    });
+	$('#J-input-loadingmoney1').keyup(allowNumber).blur(allowNumber);
+	$('#J-input-loadingmoney2').keyup(allowNumber).blur(allowNumber);
+	//订单处理状态
+    var orderstatus = new phoenix.SuperSearch({
+        name: 'orderstatus',
+        type: 'select',
+        isAutoWidth: true,
+        keyCode: 'ctrl+83',
+        el: '#J-sp-order-status',
+        group: group,
+		expands:{getFormValue:getSelectValue}
+    });
+	
+	
+	//提交数据
+	group.addEvent('dataChange', function(){
+		var formData = group.getFormData();
+		$.ajax({
+			url:'ajax.php',
+			dataType:'json',
+			method:'post',
+			data:formData,
+			success:function(data){
+				if(data['isSuccess']){
+					var par = $('#J-data-row');
+					par.html('');
+					$('#J-row-tpl').tmpl(data['data']).appendTo(par);
+				}
+			}
+		});
+	});
+	
+	
+
+})();
+
+
+
+</script>
+</body>
+</html>

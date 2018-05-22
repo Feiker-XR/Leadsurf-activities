@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>jQuery手风琴图片展示</title>
+<style type="text/css">
+body{background:black;font-family:'Lucida Grande',​tahoma,​arial,​宋体;}
+*{margin:0;padding:0;}
+ul{list-style:none;}
+.pic-show{width:100%;overflow:hidden;}
+.pic-show-list{height:900px;overflow:hidden;}
+.pic-show-list li{position:relative;float:left;height:900px;border-left:1px solid #333;overflow:hidden;cursor:pointer;
+transition: all .3s ease-in-out 0s;
+}
+.pic-show-list li.current{}
+.pic-show-list .title{position:absolute;}
+.pic-show-list .content{position:absolute;}
+.pic-show-list img{
+position: absolute;
+left: 50%;
+margin-left: -200px;
+width: 400px;
+height: 100%;
+transition: all .5s ease 0s;
+}
+.pic-show-list .filter{z-index:1;}
+.pic-show-list .hide{opacity:0;}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var oPic=$('#pic-show');
+	var oPicLi =$('#pic-show li');
+	var oImgFilter = $('#pic-show .filter');
+	var nPicLiWidth = Math.floor(oPic.width()/oPicLi.length);
+	oPicLi.outerWidth(nPicLiWidth);
+	
+	oPicLi.each(function(){
+		var nPicLiWidth = oPicLi.width();
+		var nMoverWidth = 15;
+		
+		$(this).mouseover(function(){
+			$(this).addClass('current');
+			$(this).find('.filter').addClass('hide');
+			oPicLi.css("width",nPicLiWidth-nMoverWidth+"px")
+			$(this).css("width",nPicLiWidth+nMoverWidth*(oPicLi.length-1)+"px");
+			var index =$(this).index();
+		})
+		
+		$(this).mouseout(function(){
+			$(this).removeClass('current');
+			$(this).find('.filter').removeClass('hide');
+			oPicLi.css("width",nPicLiWidth+"px")
+		})
+	})
+	
+	$(window).resize(function(){
+		var nPicLiWidth = oPicLi.outerWidth(Math.floor(oPic.width()/oPicLi.length));
+		oPicLi.outerWidth(nPicLiWidth);
+	})
+})
+
+</script>
+</head>
+<body>
+<div class="pic-show" id="pic-show">
+	<ul class="pic-show-list clearfix">
+		<li>
+			<div class="title"><strong>2014</strong>更多更刺激新彩种上线</div>
+			<p class="content">独家推出首款“1分钟一开奖”的时时彩游戏&mdash;吉利分分彩，独家推出“只为您开奖”的一对一超高频游戏&mdash;顺利秒秒彩</p>
+			<img alt="" src="images/bg-list6-filter.jpg" class="filter">
+			<img alt="" src="images/bg-list6.jpg">
+		</li>
+		<li>
+			<div class="title"><strong>2012</strong>乐利时时彩</div>
+			<p class="content">推出乐利时时彩，成为唯一提供“真人视频时时彩”的平台</p>
+			<img alt="" src="images/bg-list5-filter.jpg" class="filter">
+			<img alt="" src="images/bg-list5.jpg">
+		</li>
+		<li>
+			<div class="title"><strong>2010</strong>大客户服务</div>
+			<p class="content">平台引入客户关系管理系统，并对VIP提供大客户专属服务</p>
+			<img alt="" src="images/bg-list4-filter.jpg" class="filter">
+			<img alt="" src="images/bg-list4.jpg">
+		</li>
+		<li>
+			<div class="title"><strong>2008</strong>完善代理制度</div>
+			<p class="content">建立并完善代理体系和管理制度，平台迈入规模化发展阶段</p>
+			<img alt="" src="images/bg-list3-filter.jpg" class="filter">
+			<img alt="" src="images/bg-list3.jpg">
+		</li>
+		<li>
+			<div class="title"><strong>2005</strong>建立凤凰娱乐</div>
+			<p class="content">获得博彩牌照，建立“凤凰娱乐”品牌，全面进军博彩行业</p>
+			<img alt="" src="images/bg-list2-filter.jpg" class="filter">
+			<img alt="" src="images/bg-list2.jpg">
+		</li>
+		<li>
+			<div class="title"><strong>2003</strong>凤凰集团成立</div>
+			<p class="content">凤凰集团成立，同年在香港、新加坡、台湾等地成立办事处</p>
+			<img alt="" src="images/bg-list1-filter.jpg" class="filter">
+			<img alt="" src="images/bg-list1.jpg">
+		</li>
+	</ul>
+</div>
+</body>
+</html>

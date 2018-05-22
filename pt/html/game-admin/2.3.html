@@ -1,0 +1,839 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+	<head>
+		<meta charset="UTF-8">
+		<title>2.3人工录号</title>
+		<link rel="stylesheet" href="../images/common/base.css" />
+		<link rel="stylesheet" href="../images/common/js-ui.css" />
+		<link rel="stylesheet" href="../images/admin/admin.css" />
+		
+		<style>
+		.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+		.j-ui-tip .sj {display:none;}
+		
+		.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+		
+		.pop-window-datepicker {z-index:710;}
+		
+		.search-time a {display:inline-block;border:1px solid #CCC;padding:10px 13px;color:#999;}
+		.search-time a:hover { text-decoration:none;}
+		.search-time a.current {border-color:#08AE8E;font-weight:bold;color:#08AE8E;}
+		.table-info .ball-list{max-width:650px;white-space:normal;}
+		.ball-list input{height: 40px;margin: 5px 5px 0 0;text-align: center;font-size:20px;color: #333;}
+		.ssq-token{font-size: 40px;display: inline-block;width: 35px;height: 50px;line-height: 42px;margin: 5px 5px 0 0;vertical-align: middle;color:#999;}
+		.dialog-content-unlock{line-height: 30px;font-size: 14px;}
+		.dialog-content-unlock .code-area{width: 100%;margin: 5px 0;}
+		.game-type-name{font-size: 30px;}
+		.history-link{text-decoration: underline;font-size:14px;}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../js/phoenix.base.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+		<script type="text/javascript" src="../js/phoenix.util.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+		<script type="text/javascript" src="../js/game/util/phoenix.Countdown.js" ></script>
+		<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+		
+		<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	</head>
+	<body>
+		<div class="menu">
+			<div class="menu-logo"></div>
+			<ul class="menu-list">
+				<li><a href="">首页</a></li>
+				<li><a href="">全局</a></li>
+				<li><a href="">用户</a></li>
+				<li class="current"><a href="">游戏</a></li>
+				<li><a href="">资金</a></li>
+				<li><a href="">市场促销</a></li>
+				<li><a href="">统计</a></li>
+				<li><a href="">内容</a></li>
+				<li><a href="">权限</a></li>
+			</ul>
+			<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+		</div>
+		<div class="col-content">
+			<div class="col-side">
+				<dl class="nav">
+					<dt>彩种管理</dt>
+					<dd> <a href="">彩种信息列表</a></dd>
+					<dt>奖期流程管理</dt>
+					<dd ><a href="2.1.html" >流程监控</a></dd>
+					<dd><a href="2.2.html">异常流程记录</a></dd>
+					<dd class="current"><a href="2.3.html">手工录号</a></dd>
+					<dt>方案&追号管理</dt>
+					<dd><a href="3.1.html">方案记录</a></dd>
+					<dd><a href="3.2.html">追号记录</a></dd>
+					<dd><a href="3.31.html">异常方案记录</a></dd>
+					<dt>报表管理</dt>
+					<dd><a href="4.1.html">单期盈亏表</a></dd>
+				</dl>
+			</div>
+			<div class="col-main">
+				<div class="col-crumbs"><div class="crumbs"></div></div>
+				<div class="col-content">
+					<div class="col-main">
+						<div class="main">
+							<h3 class="ui-title">manual Encoding-CQSSC</h3>
+							<ul class="ui-search">
+								<li class="search-time time" id="J-control-area">
+									<a class="current" href="javascript:;" 
+										data-ballLength="5"
+										data-textLimit="1"
+										data-formartNum=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-separated=""
+										data-isPureNum="true"
+										>CQSSC</a>
+									<a href="javascript:;" 
+										data-ballLength="5"
+										data-textLimit="1"
+										data-formartNum=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-separated=""
+										data-isPureNum="true"
+										>TJSSC</a>
+									<a href="javascript:;"
+										data-ballLength="5"
+										data-textLimit="1"
+										data-formartNum=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-separated=""
+										data-isPureNum="true"
+										>XJSSC</a>
+									<a href="javascript:;" 
+										data-ballLength="5"
+										data-textLimit="1"
+										data-formartNum=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-separated=""
+										data-isPureNum="true"
+										>HLJSSC</a>
+									<a href="javascript:;" 
+										data-ballLength="5"
+										data-textLimit="1"
+										data-formartNum=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-separated=""
+										data-isPureNum="true"
+										>JXSSC</a>
+									<a href="javascript:;" 
+										data-ballLength="5"
+										data-textLimit="1"
+										data-formartNum=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-separated=""
+										data-isPureNum="true"
+										>LLSSC</a>
+									<a href="javascript:;"
+										data-ballLength="5"
+										data-textLimit="1"
+										data-formartNum=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-separated=""
+										data-isPureNum="true"
+										>JLFFC</a>
+									<a href="javascript:;"
+										data-ballLength="5"
+										data-textLimit="2"
+										data-formartNum="true"
+										data-isPureNum="true"
+										data-separated="/[,\s，]+/g"
+										data-minNumber="1"
+										data-maxNumber="11"
+										>CQ11-5</a>
+									<a href="javascript:;"
+										data-ballLength="5"
+										data-textLimit="2"
+										data-formartNum="true"
+										data-isPureNum="true"
+										data-separated="/[,\s，]+/g"
+										data-minNumber="1"
+										data-maxNumber="11"
+										>JX11-5</a>
+									<a href="javascript:;"
+										data-ballLength="5"
+										data-textLimit="2"
+										data-formartNum="true"
+										data-isPureNum="true"
+										data-separated="/[,\s，]+/g"
+										data-minNumber="1"
+										data-maxNumber="11"
+										>GD11-5</a>
+									<a href="javascript:;"
+										data-ballLength="5"
+										data-textLimit="2"
+										data-formartNum="true"
+										data-isPureNum="true"
+										data-separated="/[,\s，]+/g"
+										data-minNumber="1"
+										data-maxNumber="11"
+										>LL11-5</a>
+									<a href="javascript:;"
+										data-ballLength="5"
+										data-textLimit="2"
+										data-formartNum="true"
+										data-isPureNum="true"
+										data-separated="/[,\s，]+/g"
+										data-minNumber="1"
+										data-maxNumber="11"
+										>SD11-5</a>
+									<a href="javascript:;" 
+										data-ballLength="20"
+										data-textLimit="2"
+										data-formartNum="true"
+										data-isPureNum="true"
+										data-separated="/[,\s，]+/g"
+										data-minNumber="1"
+										data-maxNumber="80"
+										>BJKL8</a>
+									<a href="javascript:;"
+										data-ballLength="3"
+										data-textLimit="1"
+										data-formartNum=""
+										data-separated=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-isPureNum="true"
+										>SSL</a>
+									<a href="javascript:;" 
+										data-ballLength="3"
+										data-textLimit="1"
+										data-formartNum=""
+										data-separated=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-isPureNum="true"
+										>3D</a>
+									<a href="javascript:;"
+										data-ballLength="5"
+										data-textLimit="1"
+										data-formartNum=""
+										data-separated=""
+										data-minNumber="0"
+										data-maxNumber="9"
+										data-isPureNum="true"
+										>P5</a>
+									<a href="javascript:;"
+										data-ballLength="7"
+										data-textLimit="2"
+										data-formartNum="true"
+										data-isPureNum="true"
+										data-separated="/[,\s，]+/g"
+										data-minNumber="1"
+										data-maxNumber="33"
+										>SSQ</a>
+								</li>
+							</ul>
+							<h3 class="ui-title">Source Management</h3>
+							<ul class="ui-form">
+								<li>
+									<label class="ui-label"></label>
+									<div class="select-position">
+										<form id="J-ball-data">
+											<table class="table table-info text-center">
+												<thead>
+													<tr>
+														<th></th>
+														<th>Draw:<span id="J-draw-area"></span></th>
+														<th>Drawing:<span id="J-drawing-area"></span></th>
+														<th>Current time:<span id="J-current-time"></span></th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<span class="game-type-name" id="J-game-name">CQSSC</span>
+															<input id="J-game-type" type="hidden" name="game-type" value="CQSSC">
+														</td>
+														<td colspan="3" class="ball-list">
+															<div id="J-input-area" class="" 
+																data-ballLength="5"
+																data-textLimit="1"
+																data-formartNum=""
+																data-isPureNum="true"
+																data-minNumber="0"
+																data-maxNumber="9"
+																data-separated=""
+															>
+																<input type="text" name="ball-num" class="input w-1"><input type="text" name="ball-num" class="input w-1"><input type="text" name="ball-num" class="input w-1"><input type="text" name="ball-num" class="input w-1"><input type="text" name="ball-num" class="input w-1">
+																<div>
+															</td>
+															<td>
+																<input id="J-submit-ball" type="submit" class="btn btn-important" value="submit">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</form>
+											</div>
+										</li>
+									</ul>
+									<h4 class="ui-title"><a href="#" class="history-link">History</a></h4>
+									<table class="table table-info text-center" id="J-data-table">
+										<thead>
+											<tr>
+												<th colspan="9">Game History</th>
+											</tr>
+											<tr>
+												<th>Draw</th>
+												<th>Result</th>
+												<th>Draw Status</th>
+												<th>Sales Close</th>
+												<th>1st Encoding</th>
+												<th>1st Source</th>
+												<th>2nd Encoding</th>
+												<th>2nd Source</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>140828001</td>
+												<td>12345</td>
+												<td>verified</td>
+												<td>2014-08-27 11:20:00</td>
+												<td>phoebe</td>
+												<td>2014-08-27 11:20:00</td>
+												<td>zoe</td>
+												<td>2014-08-27 11:20:00</td>
+												<td><a href="javascript:;" data-draw="140828001" class="btn btn-important unlock-btn">UNLOCK</a></td>
+											</tr>
+											<tr>
+												<td>140828001</td>
+												<td>12345</td>
+												<td>verified</td>
+												<td>2014-08-27 11:20:00</td>
+												<td>phoebe</td>
+												<td>2014-08-27 11:20:00</td>
+												<td>zoe</td>
+												<td>2014-08-27 11:20:00</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>140828001</td>
+												<td>12345</td>
+												<td>verified</td>
+												<td>2014-08-27 11:20:00</td>
+												<td>phoebe</td>
+												<td>2014-08-27 11:20:00</td>
+												<td>zoe</td>
+												<td>2014-08-27 11:20:00</td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<div class="page-wrapper clearfix">
+										<span class="page-text">共102条记录</span>
+										<div class="page page-right">
+											<a class="prev" href="#">上一步</a>
+											<a href="#">1</a>
+											<a href="#">2</a>
+											<a class="current" href="#">3</a>
+											<a href="#">4</a>
+											<a href="#">5</a>
+											<a href="#">6</a>
+											<a href="#">7</a>
+											<a href="#">8</a>
+											<a href="#">9</a>
+											<a href="#">...</a>
+											<a class="next" href="#">下一步</a>
+											<span class="page-few">到第 <input type="text" class="input" value=""> /100页</span>
+											<input type="button" class="page-btn" value="确 认">
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<script>
+				(function($){
+					
+						var topTimer = {}; 
+
+					smartInput = function(config) {
+						var defConfig = {
+							controlPanel: '#J-control-area',
+							controlNodetype: 'a',
+							dataSource: '',
+							container: '#J-input-area',
+							nodeName: 'input',
+							submit: '#J-submit-ball'
+						}
+						this['inputRules'] = {
+							//字数限制
+							textLimit: 1,
+							//字符格式化
+							formartNum: false,
+							//号码位数
+							ballLength: 5,
+							//
+							isPureNum: true,
+							//
+							minNumber: 0,
+							//
+							maxNumber: 9,
+							//分隔符
+							separated: ''
+						}
+						this.init($.extend(defConfig, config));
+					};
+					$.extend(smartInput['prototype'], {
+						init: function(cfg) {
+							var me = this;
+							me.cfg = cfg;
+							me.getInputRules();
+							me.bindEvent();
+						},
+						getInputRules: function() {
+							var me = this;
+							for (var name in me['inputRules']) {
+								me['inputRules'][name] = $(me['cfg']['container']).attr('data-' + name);
+							}
+						},
+						bindEvent: function() {
+							var me = this;
+							$(me['cfg']['controlPanel']).on('click', me['cfg']['controlNodetype'], function(event) {
+								me.fillInputArea(this);
+							});
+
+							//绑定按钮
+							$(me['cfg']['container']).on('input', me['cfg']['nodeName'], function(event) {
+								event.preventDefault();
+								me.handleInput(this);
+							});
+
+							//绑定按钮
+							$(me['cfg']['container']).on('click', me['cfg']['nodeName'], function(event) {
+								var innerText = this.value;
+								$(this).val('').focus().val(innerText).focus();
+							});
+
+							//绑定按钮
+							$(me['cfg']['container']).on('blur', me['cfg']['nodeName'], function(event) {
+								event.preventDefault();
+								me.formatNum(this);
+							});
+
+							//绑定按钮
+							$(me['cfg']['container']).on('keydown', me['cfg']['nodeName'], function(event) {
+								var value = this.value,
+									prevDom = $(this).prev(me['cfg']['nodeName']),
+									nextDom = $(this).next(me['cfg']['nodeName']);
+
+								//left
+								if (event.keyCode == 37) {
+									if (prevDom.size() > 0) {
+										prevDom.focus();
+									}
+									event.preventDefault();
+								}
+
+								//right
+								if (event.keyCode == 39) {
+									if (nextDom.size() > 0) {
+										nextDom.focus();
+									}
+									event.preventDefault();
+								}
+
+								//add
+								if (event.keyCode == 38) {
+									
+									if($(this).attr('data-maxNumber')){
+										if($.trim(this.value) !='' && Number(this.value) < $(this).attr('data-maxNumber')){
+											$(this).val(Number(value) + 1);
+										}
+									} else {
+										if($.trim(this.value) !='' && Number(this.value) < Number(me['inputRules']['maxNumber'])){
+											$(this).val(Number(value) + 1);
+										}
+									}
+
+									event.preventDefault();
+								}
+
+								//reduce
+								if (event.keyCode == 40) {
+
+									if($.trim(this.value)!='' && Number(this.value) > Number(me['inputRules']['minNumber'])){
+										$(this).val(Number(value) - 1);
+									}
+									
+									event.preventDefault();
+								}
+
+								if (event.keyCode == 8) {
+									if (prevDom.size() > 0 && $.trim(this.value) == '') {
+										prevDom.focus();
+										event.preventDefault();
+									}
+									
+								}
+								
+							});
+						},
+
+						lessTenFn: function(num){
+							var me = this,
+								value = num;
+
+							if (Number(num) < 10) {
+								value = '0' + Number(num);
+							}
+
+							return value;
+						},
+
+						formatNum: function(dom) {
+							var me = this,
+								inputRules = me['inputRules'],
+								$dom = $(dom),
+								value = $.trim($dom.val());
+
+							//过滤格式
+							if (value != '' && !!inputRules['formartNum']) {
+								value = me.lessTenFn(value);
+							}
+
+							//最大值
+							if($dom.attr('data-maxNumber')){
+								if(value != '' && Number(value) > Number($dom.attr('data-maxNumber'))) {
+									value = me.lessTenFn($dom.attr('data-maxNumber'));
+								}
+							} else {
+								if(value != '' && Number(value) > Number(inputRules['maxNumber'])) {
+									value = me.lessTenFn(inputRules['maxNumber']);
+								}
+							}
+
+							//最小值
+							if(value != '' && Number(value) < Number(inputRules['minNumber'])) {
+								value = me.lessTenFn(inputRules['minNumber']);
+							}
+
+							
+							
+
+							$dom.val(value);
+						},
+
+						handleInput: function(dom) {
+							var me = this,
+								inputRules = me['inputRules'],
+								$dom = $(dom),
+								index = $dom.index(),
+								value = $.trim($dom.val()),
+								valueList,
+								nextDom = $dom.next(me['cfg']['nodeName']),
+								limitNum = Number(inputRules['textLimit']),
+								valLength = value.length;
+
+								eval("valueList =  inputRules['separated'] ? value" +'.split(' + inputRules['separated'] +') : "'+value+'".split("")');
+
+							//过滤格式
+							if (!!inputRules['isPureNum']) {
+								value = $.trim(value.replace(/\D/gi, ''));
+								$dom.val(value);
+							}
+
+							//大于字数限制
+							//少于Dom位数
+							if (valLength >= limitNum) {
+								var limitText = value.substr(value.length - limitNum, limitNum);
+								$dom.val(limitText);
+								if (index < inputRules['ballLength'] && $.trim($dom.val()) != '') {
+									nextDom.val(nextDom.val()).focus();
+								}
+							}
+
+							//多位号码
+							if (valueList.length > 2) {
+								var surplusNum = inputRules['ballLength'] - index;
+								$dom.val(valueList[0]);
+								if (surplusNum > 0) {
+									for (var i = 0; i < valueList.length; i++) {
+										var current = $(me['cfg']['container']).find(me['cfg']['nodeName']).eq(index + i);
+
+										current.val(valueList[i]).trigger('input').trigger('blur');
+									};
+								}
+							}
+						},
+						fillInputArea: function(dom) {
+							var me = this,
+								$dom = $(dom),
+								gameType = $('#J-game-type'),
+								childLength = $dom.attr('data-ballLength');
+							$(me['cfg']['controlPanel']).children().removeClass('current');
+							$dom.addClass('current');
+							$('#J-game-name').text($.trim($dom.text()));
+							gameType.val($.trim($(this).text()));
+							$(me['cfg']['container']).html(function() {
+								var html = '';
+								for (var i = childLength - 1; i >= 0; i--) {
+									if(childLength == 7 && i == 0){
+										html += '<span class="ssq-token">+</span><input type="text" name="ball-num" data-maxNumber="16" class="input w-1">';
+									}else{
+										html += '<input type="text" name="ball-num" class="input w-1">';
+									}
+									
+								};
+								return html;
+							});
+							
+							$(me['cfg']['container'])
+								.attr('data-ballLength', $dom.attr('data-ballLength'))
+								.attr('data-textLimit', $dom.attr('data-textLimit'))
+								.attr('data-formartNum', $dom.attr('data-formartNum'))
+								.attr('data-minNumber', $dom.attr('data-minNumber'))
+								.attr('data-maxNumber', $dom.attr('data-maxNumber'))
+								.attr('data-isPureNum', $dom.attr('data-isPureNum'))
+								.attr('data-separated', $dom.attr('data-separated'));
+
+							me.getInputRules();
+
+							topTimer.stopCount();
+							getGameInfo(function(){
+								startCountDown();
+							});
+						},
+
+						checkNoEmpty: function(){
+							var me = this,
+								result = true,
+								$childDom = $(me['cfg']['container']).find(me['cfg']['nodeName']);
+
+							$.each($childDom, function(index, val) {
+								
+								if($.trim($(this).val())=='') {
+									result =  false;
+								}
+							});
+
+							return result;
+						},
+
+						disableChild: function(){
+							var me = this,
+								$childDom = $(me['cfg']['container']).find(me['cfg']['nodeName']);
+
+							$childDom.attr('disabled', 'disabled').val('');
+							$(me['cfg']['submit']).attr('disabled', 'disabled').removeClass('btn-important').addClass('btn-disable');
+						},
+
+						allowChild: function(){
+							var me = this,
+								$childDom = $(me['cfg']['container']).find(me['cfg']['nodeName']);
+							
+							$childDom.removeAttr('disabled');
+							$(me['cfg']['submit']).removeAttr('disabled').removeClass('btn-disable').addClass('btn-important');
+						}
+					});
+					var SMART = new smartInput();
+
+					var periods = '',
+						currentTime = '',
+						stopTime ='';
+
+					var submitBallData = function(){
+						var form = $('#J-ball-data'),
+							data = form.serialize();
+
+						if(SMART.checkNoEmpty()) {
+							$.ajax({
+								url: 'data.php',
+								type: 'POST',
+								dataType: 'json',
+								data: data
+							})
+							.done(function(r) {
+								
+								if(Number(r['isSuccess']) == 1) {
+									alert('录号成功');
+									window.location.reload();
+								}
+							})
+							.fail(function() {
+								alert('服务器错误，请稍后再试');
+							})
+							.always(function() {
+								//console.log("complete");
+							});
+						} else {
+							alert('请填写全部选球号码');
+						}
+					}
+
+					var getGameInfo = function(callback){
+						
+						$.ajax({
+							url: './getPeriodInfo.php',
+							type: 'GET',
+							dataType: 'JSON'
+						})
+						.done(function(r) {
+							var count = 0,
+								time = null;
+
+							if(Number(r['isSuccess']) == 1) {
+
+								SMART.allowChild();
+
+								currentTime = r['data']['currentTime'];
+								stopTime = r['data']['stopTime'];
+								periods = r['data']['periods'];
+
+								$('#J-draw-area').text(periods);
+								$('#J-drawing-area').text(stopTime.substr(11));					
+
+
+								callback && callback();
+							}else{
+								getGameInfo();
+							}
+						})
+						.fail(function() {
+							//防止频繁请求
+							//防止内存溢出
+							setTime(function(){
+								getGameInfo();
+							}, 1000);
+						})
+						.always(function() {
+							//console.log("complete");
+						});
+					};
+					
+					var startCountDown = function(){
+
+						//顶部倒计时
+						topTimer = new phoenix.CountDown({
+							//结束时间
+							'endTime' : stopTime,
+							//开始时间
+							'startTime': currentTime,
+							//是否需要循环计时
+							'isLoop' : false,
+							//需要渲染的DOM结构
+							'showDom' : '.deadline-number',
+							expands:{
+								//覆盖showTime渲染方法
+								_showTime:function(time){
+									var me = this,
+										h = me.checkNum(time.h) + '',
+										m = me.checkNum(time.m) + '',
+										s = me.checkNum(time.s) + '',
+										pointerAngle = (60 - parseInt(s)) * 6;
+
+									var num = new Date(currentTime).getTime()/ 1000 + 1;
+										currentTime = num * 1000;
+									var date = new Date(currentTime);
+
+									var surplusNum = (new Date(stopTime).getTime() - date) / 1000;
+
+									if(surplusNum < 15) {
+										SMART.disableChild();
+									}
+
+									$('#J-current-time').text(me.checkNum(date.getHours())+':'+me.checkNum(date.getMinutes())+':'+me.checkNum(date.getSeconds()));
+
+									me.fireEvent('afterShowTime', time, me);
+								}
+							}
+						});
+
+						topTimer.addEvent('afterTimeFinish', function(){
+							/*getGameInfo(function(){
+								topTimer.continueCount();
+							});
+							*/
+							window.location.reload();
+						});
+					}
+
+					getGameInfo(function(){
+						startCountDown();
+					});
+
+					$('#J-submit-ball').on('click', function(e){
+						submitBallData();
+
+						e.preventDefault();
+					});
+
+					$('body').on('click', '.unlock-btn', function(event) {
+						event.preventDefault();
+
+						var DrawNum = $(this).attr('data-draw');
+
+						/* Act on the event */
+						var msg = new phoenix.Message();
+						msg.show({
+							title:'unlock',
+							content: '<div class="dialog-content-unlock"><div>CQSSC 130920026</div><div>source 1 encoded 64249 at 11:21:23</div><div>source 1 encoded 64249 at 11:21:23</div><div>PLS.encode Draw Result</div><div><input type="text" class="code-area input"></div></div>',
+							cancelText:'cancel',
+							cancelIsShow: true,
+							cancelFun: function(){
+								this.hide();
+							},
+							confirmText:'unlock',
+							confirmIsShow: true,
+							confirmFun: function(){
+								var me = this,
+									$dom = me.getContentDom().find('.code-area');
+
+								if($.trim($dom.val()) == ''){
+									alert('请填写数值');
+									return;
+								}
+
+								$.ajax({
+									url: 'data.php',
+									type: 'GET',
+									dataType: 'json',
+									data: {'type':'unlock', 'Draw': DrawNum, 'ball': $dom.val()},
+								})
+								.done(function(r) {
+									
+									if(Number(r['isSuccess']) == 1) {
+										alert('修改成功');
+										window.location.reload();
+									}
+								})
+								.fail(function() {
+									alert('服务器错误，请稍后再试');
+								})
+								.always(function() {
+									//console.log("complete");
+								});
+								
+
+							}
+						})
+					});
+
+				})(jQuery);
+				</script>
+				
+				
+			</body>
+		</html>

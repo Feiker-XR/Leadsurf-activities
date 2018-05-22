@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>总代充提报表</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+	<script type="text/javascript">global_path_url="..";</script>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+    <script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+    <script type="text/javascript" src="../js/phoenix.SuperSearch.js" ></script>
+    <script type="text/javascript" src="../js/phoenix.pagination.js" ></script>
+    <script type="text/javascript" src="../js/phoenix.Common.js" ></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>充值相关</dt>
+				<dd><a href="">异常充值处理</a></dd>
+				<dd><a href="">充值相关配置</a></dd>
+				<dt>提现相关</dt>
+				<dd><a href="">风险提现处理</a></dd>
+				<dd><a href="#">提现相关处理</a></dd>
+				<dt>人工资金操作</dt>
+				<dd><a href="#">人工资金操作审核流程</a></dd>
+				<dt>银行卡相关</dt>
+				<dd><a href="#">银行管理</a></dd>
+				<dd><a href="#">用户银行卡绑定管理</a></dd>
+				<dd><a href="#">银行卡黑名单管理</a></dd>
+				<dt>统计报表</dt>
+				<dd class="current"><a href="#">总代充提报表</a></dd>
+				<dd><a href="#">充值明细报表</a></dd>
+				<dd><a href="#">提现明细报表</a></dd>
+				<dd><a href="#">充提报表</a></dd>
+				<dd><a href="#">总代每日报表</a></dd>
+				<dd><a href="#">自动收款明细报表</a></dd>
+				<dt>转账相关</dt>
+				<dd><a href="#">转账明细</a></dd>
+				<dd><a href="#">转账限额配置</a></dd>
+			</dl>
+		</div>
+		<div class="col-main entire-proxy">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">一级菜单</a> &gt; <a href="#">二级级菜单</a> &gt; 三级菜单名</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<h3 class="ui-title">总代充提报表</h3>
+						<form id="J-form" action="?">
+						<ul class="ui-search">
+							<li class="time">
+								<label for="" class="ui-label">时间：</label>
+								<input id="timeStart" type="text" value="" class="input"> 至 <input id="timeEnd" type="text" value="" class="input">
+							</li>
+							<li class="name">
+								<label class="ui-label">是否测试帐号：</label>
+								<select class="ui-select">
+									<option value="全部">全部</option>
+									<option value="是">是</option>
+									<option value="否">否</option>
+								</select>
+							</li>
+							<li class="name">
+								<label class="ui-label">是否冻结帐号：</label>
+								<select class="ui-select">
+									<option value="全部">全部</option>
+									<option value="是">是</option>
+									<option value="否">否</option>
+								</select>
+							</li>
+							<li><a href="javascript:void(0);" id="J-button-submit" class="btn btn-important">搜 索<b class="btn-inner"></b></a></li>
+						</ul>
+					</form>
+						<table id="J-table-data" class="table table-info text-center">
+							<thead>
+								<tr>
+									<th rowspan="3">总代</th>
+									<th rowspan="3">所属组</th>
+									<th colspan="5">游戏币</th>
+									<th colspan="5">现金-钱</th>
+									<th colspan="3">现金-钱</th>
+								</tr>
+								<tr>
+									<th colspan="3">人工加币</th>
+									<th rowspan="2">人工扣币</th>
+									<th rowspan="2">充值让利</th>
+									<th rowspan="2">客户充值（客户在线申请）</th>
+									<th rowspan="2">人工单（>19万）</th>
+									<th rowspan="2">客户提现（客户在线申请）</th>
+									<th rowspan="2">活动打款</th>
+									<th rowspan="2">人工单（代用户发起）</th>
+									<th rowspan="2">充值金额</th>
+									<th rowspan="2">提现金额</th>
+									<th rowspan="2">充提结余</th>
+								</tr>
+								<tr>
+									<th>人工加币（非活动非奖励）</th>
+									<th>活动加币</th>
+									<th>平台奖励</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>张三</td>
+									<td>总代</td>
+									<td>1672</td>
+									<td>1127</td>
+									<td>153</td>
+									<td>1965</td>
+									<td>4432</td>
+									<td>17899</td>
+									<td>190000</td>
+									<td>1232</td>
+									<td>5000</td>
+									<td>10</td>
+									<td>210851</td>
+									<td>12439</td>
+									<td>198412</td>
+								</tr>
+								<tr>
+									<td>张三</td>
+									<td>总代</td>
+									<td>1672</td>
+									<td>1127</td>
+									<td>153</td>
+									<td>1965</td>
+									<td>4432</td>
+									<td>17899</td>
+									<td>190000</td>
+									<td>1232</td>
+									<td>5000</td>
+									<td>10</td>
+									<td>210851</td>
+									<td>12439</td>
+									<td>198412</td>
+								</tr>
+								<tr>
+									<td>张三</td>
+									<td>总代</td>
+									<td>1672</td>
+									<td>1127</td>
+									<td>153</td>
+									<td>1965</td>
+									<td>4432</td>
+									<td>17899</td>
+									<td>190000</td>
+									<td>1232</td>
+									<td>5000</td>
+									<td>10</td>
+									<td>210851</td>
+									<td>12439</td>
+									<td>198412</td>
+								</tr>
+								<tr>
+									<td>张三</td>
+									<td>总代</td>
+									<td>1672</td>
+									<td>1127</td>
+									<td>153</td>
+									<td>1965</td>
+									<td>4432</td>
+									<td>17899</td>
+									<td>190000</td>
+									<td>1232</td>
+									<td>5000</td>
+									<td>10</td>
+									<td>210851</td>
+									<td>12439</td>
+									<td>198412</td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	(function($){
+	    var inputTimeStart = $('#timeStart'),
+			inputTimeEnd = $('#timeEnd');
+
+		inputTimeStart.click(function(){
+			var Dt = new phoenix.DatePicker({input:this});
+				Dt.show();
+		});	
+		inputTimeEnd.click(function(){
+			var Dt = new phoenix.DatePicker({input:this});
+				Dt.show();
+		});	
+
+		$('#J-button-submit').click(function(){
+			$('#J-form').submit();
+		});
+	})(jQuery);
+</script>
+</html>

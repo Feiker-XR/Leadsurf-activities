@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>八八大闯关 百万豪礼等你来战</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/base.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+	<aside id="sliderBar" class="slider-bar">
+		<a href="javascript:void(0);" class="current">第一关</a>
+		<a href="javascript:void(0);">第二关</a>
+		<a href="javascript:void(0);">第三关</a>
+	</aside>
+	<header class="banner">
+		<a href="javascript:void(0);" id="J-reg-button" class="btn-signup"><span></span></a>
+		<div class="deadline-number">截止报名时间：<strong></strong></div>
+	</header>
+	<section class="off-first">
+		<a href="javascript:void(0);" class="btn-first"><span></span></a>
+	</section>
+	<section class="off-second">
+		<a href="javascript:void(0);" class="btn-second"><span></span></a>
+	</section>
+	<section class="off-third">
+		<a href="javascript:void(0);" class="btn-third"><span></span></a>
+	</section>
+	<section class="activity-description">
+		<dl>
+			<dt>活动说明：</dt>
+			<dd>1、用户报名后在充值阶段，单笔充值满300元即可获得当天28元礼金抽奖资格，充值限定期内（8.8-8.14）每天送出188个，将在8.9-8.15日 21:00在乐利时时彩视频抽取，
+用户可以兼得，礼金在抽取后当日发放。</dd>
+			<dd>2、第一关充值达到1万元用户，8.15-8.18日投注每满1万元返还10元，不满1万元部分不计入。</dd>
+			<dd>3、每位用户只能申领大发礼金一次。</dd>
+			<dd>4、第二关奖品平台将在8.19日 21:00在乐利时时彩视频抽取，中奖用户请在平台公布中奖名单7个工作日内主动联系客服领取，联系领取后20个工作日内邮寄，过期未联系视为自动放弃。</dd>
+			<dd>5、用户需通过第二关，才可进入第三关，如在第二关时间内未达到8倍大发礼金投注额，最终达到50倍大发礼金投注额将不予返还礼金。</dd>
+			<dd>6、此次活动欢迎所有真实用户积极参与，但对刻意通过作弊骗取奖金的行为，娱乐平台有权不予发放奖金。</dd>
+			<dd>7、娱乐平台对与本活动相关的所有事项具有最终决定及解释权。</dd>
+		</dl>
+	</section>
+	<footer>&copy;2003-2014 凤凰娱乐平台 All rights reserved.</footer>
+</body>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+	(function(){
+		var currentTimeNum = 0,
+			currentTimeSave = null,
+			buttonClock = false,
+			saveTime = null,
+			activityEndTime = '2014/08/28,00:00:00',
+			$regButton = $('#J-reg-button');
+		
+		$("#sliderBar a").eq(0).bind('click',function(){
+			$('body,html').animate({scrollTop:404},600);
+			$("#sliderBar").animate({top:120},600);
+			$("#sliderBar a").removeClass("current").eq(0).addClass("current");
+		})
+		
+		$("#sliderBar a").eq(1).bind('click',function(){
+			$('body,html').animate({scrollTop:862},600);
+			$("#sliderBar").animate({top:120},600);
+			$("#sliderBar a").removeClass("current").eq(1).addClass("current");
+		})
+		
+		$("#sliderBar a").eq(2).bind('click',function(){
+			$('body,html').animate({scrollTop:1134},600);
+			$("#sliderBar").animate({top:120},600);
+			$("#sliderBar a").removeClass("current").eq(2).addClass("current");
+		})
+
+		//倒计时
+		//当前时间, 结束时间, 回调函数
+		var  _fresh = function(currentTime, endTime, callback) {  
+
+			var endtime = new Date(endTime) ||  new Date("2011/11/06,12:20:12");  
+			var nowtime = currentTime || new Date();  
+			var leftsecond = currentTimeSave != null ? currentTimeSave : parseInt((endtime.getTime() - nowtime)/1000);  
+			
+			
+
+			var d=parseInt(leftsecond/3600/24),  
+				h=parseInt((leftsecond/3600)%24),  
+				m=parseInt((leftsecond/60)%60),  
+				s=parseInt(leftsecond%60); 
+			
+			$('.deadline-number strong').html(d+"天"+h+"时"+m+"分");
+
+			//剩余时间
+			if(leftsecond <= 0) {
+				callback  && callback();
+				clearInterval(saveTime);
+				saveTime = null;
+		 	}  
+
+		 	currentTimeSave = currentTimeSave != null ? currentTimeSave - 1 : leftsecond - 1;
+		}
+
+		//定时器
+		var saveTimeFn = function(endTime){
+			
+			saveTime = setInterval(function(){
+
+				_fresh(currentTimeNum, endTime, function(){
+					$regButton.addClass('btn-signup-disable');
+				});
+			}, 1000);
+		};
+
+		$(function(){
+			$.ajax({
+				url: 'currentTime.json',
+				type: 'GET',
+				dataType: 'json'
+			})
+			.done(function(r) {
+				//读取服务器时间成功
+				//使用服务器时间
+				currentTimeNum = r['time'];
+				saveTimeFn(activityEndTime);
+			})
+			.fail(function() {
+				//读取服务器时间失败
+				//采用本机时间
+				currentTimeNum = new Date().getTime();
+				saveTimeFn(activityEndTime);
+			})
+		});
+
+		//按钮点击事件
+		$regButton.click(function(){
+			var $button = $(this);
+
+			if($button.hasClass('btn-signup-disable') || $button.hasClass('btn-signup-success')){
+				return;
+			}
+
+
+			if(buttonClock){
+				return;
+			}
+
+			buttonClock = true;
+
+			$.ajax({
+				url: 'resultData.json',
+				type: 'GET',
+				dataType: 'json'
+			})
+			.done(function(r) {
+
+				if(r['isSuccess'] == 1) {
+					$button.addClass('btn-signup-success');
+				} else {
+					alert(r['msg']);
+				}
+			})
+			.fail(function() {
+				
+				alert('网络问题，请稍候再试。');
+			})
+			.always(function() {
+				
+				buttonClock = false;
+			});
+			
+		});
+	})();
+</script>
+
+</html>

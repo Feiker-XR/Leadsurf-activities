@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>5.注册登录设置</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li class="current"><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>全局管理</dt>
+				<dd class="current"><a href="5.html">注册登录设置</a></dd>
+				<dd><a href="3.html">敏感词管理</a></dd>
+				<dd><a href="4.1.html">IP黑白名单</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><!-- <strong>当前位置：</strong><a href="#">客户管理</a> &gt; 列表 --></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+					<form id="J-form" action="?">
+						
+						<ul class="ui-form">
+							<li>
+								<label class="ui-label w-3" for="">同一IP重复注册（小时）：</label>
+								<input id="J-input-h" type="text" class="input w-1" value="0" />
+								<span class="ui-text-prompt">设定时间内，同一IP将无法进行多次注册。0或留空表示不限制</span>
+							</li>
+							<li>
+								<label class="ui-label w-3" for="">登录超时时间（分钟）：</label>
+								<input id="J-input-s" type="text" class="input w-1" value="0" />
+								<span class="ui-text-prompt">超出设定时间，将自动退出登录。0或留空表示不限制。</span>
+							</li>
+							<li class="radio-list">
+								<label class="ui-label w-3" for="">是否开启多端登录：</label>
+								<label for="ck1" class="label"><input id="ck1" name="type" type="radio" value="1" class="radio" checked="checked">开启（默认）</label>
+								<label for="ck2" class="label"><input id="ck2" name="type" type="radio" value="0" class="radio">关闭</label>
+								<span class="ui-text-prompt">开启后，同一账号可以在多端（Web/PC客户端/手机端）同时登录和操作，关闭该功能后，登录互踢功能生效。</span>
+							</li>
+							<li class="ui-btn">
+								<a class="btn btn-important" id="J-form-submit" href="javascript:void(0);">保 存<b class="btn-inner"></b></a>
+								<!-- <a class="btn" href="javascript:void(0);">取 消<b class="btn-inner"></b></a> -->
+							</li>
+						</ul>
+					</form>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+(function($){
+	var form = $('#J-form'),
+		button = $('#J-form-submit'),
+		h = $('#J-input-h'),
+		s = $('#J-input-s'),
+		fn;
+	fn = function(e){
+		var me = this,v = me.value,index;
+		me.value = v = v.replace(/^\.$/g, '');
+		index = v.indexOf('.');
+		if(index > 0){
+			me.value = v = v.replace(/(.+\..*)(\.)/g, '$1');
+			if(v.substring(index+1,v.length).length>2){
+				me.value= v = v.substring(0, v.indexOf(".") + 3);
+			}
+		}
+		me.value = v = v.replace(/[^\d|^\.]/g, '');
+		me.value = v = v.replace(/^00/g, '0');
+		if($.trim(me.value) == ''){
+			me.value = 0;
+		}
+	};
+	h.keyup(fn);
+	s.keyup(fn);
+	button.click(function(e){
+		e.preventDefault();
+		form.submit();
+	});
+	
+	
+})(jQuery);
+</script>
+
+
+</body>
+</html>

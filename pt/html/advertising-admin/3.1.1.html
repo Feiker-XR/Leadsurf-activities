@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>修改专题</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>广告</dt>
+				<dd><a href="1.1index.html">广告管理（发布）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告管理（审核）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告位管理</a></dd>
+				<dt>公告</dt>
+				<dd><a href="2.1freeze-account-list.html">公告管理（发布）</a></dd>
+				<dd><a href="#">公告管理（审核）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建公告</a></dd>
+				<dt>专题</dt>
+				<dd class="current"><a href="2.1freeze-account-list.html">专题管理（发布）</a></dd>
+				<dd><a href="#">专题管理（查看）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建专题</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">专题</a> &gt; <a href="#">专题管理</a> &gt; 修改专题</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+					<form action="?" id="J-form">
+						<ul class="ui-form">
+							<li>
+								<label class="ui-label">专题标题：</label>
+								<input id="J-input-title" type="text" class="input" value="" />  <span class="ui-prompt">(限40个字)</span>
+								<span class="ui-check"><i></i></span>
+							</li>
+							<li class="ui-combination">
+								<label class="ui-label">专题类别：</label>
+								<select id="J-select-type" class="ui-select">
+									<option value="">请选择</option>
+									<option value="1">节庆活动</option>
+									<option value="2">抽奖活动</option>
+									<option value="-1">新建类别</option>
+								</select>
+								<input id="J-type-text" type="text" class="input" value="" style="display:none;" />
+								<span class="ui-check"><i></i></span>
+							</li>
+							<li>
+								<label class="ui-label" for="name">填写链接：</label>
+								<input type="text" class="input" value="">
+								<span class="ui-check"><i></i></span>
+								<a id="J-button-link-add" class="ui-text-info" href="javascript:void(0)">新增</a>
+							</li>
+							<li class="ui-btn">
+								<a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">确 定<b class="btn-inner"></b></a>
+							</li>
+						</ul>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/template" id="J-template-row-link"><li class="ui-other">
+	<input name="<#=name#>" type="text" class="input" value="" />
+	<span class="ui-check"><i></i></span>
+	<a class="ui-text-info row-delete" href="javascript:void(0)">删除</a>
+</li>
+</script>
+
+	
+<script>
+(function(){
+	var form = $('#J-form'),linksNum = 1;
+	
+	//检测标题
+	var checkTitle = function(){
+		var dom = $('#J-input-title'),domv = $.trim(dom.val()),isPass = false;
+		if(domv == ''){
+			dom.parent().find('.ui-check').html('<i></i>标题不能为空').show();
+			isPass = false;
+		}else{
+			if(domv.length > 40){
+				dom.parent().find('.ui-check').html('<i></i>标题长度不能超过40个字符').show();
+				isPass = false;
+			}else{
+				dom.parent().find('.ui-check').hide();
+				isPass = true;
+			}
+
+		}
+		return isPass;
+	};
+	$('#J-input-title').blur(function(){
+		checkTitle();
+	});
+	
+	
+	//检测分类
+	var checkType = function(){
+		var dom = $('#J-select-type'),domv = $.trim(dom.val()),isPass = false,text = '';
+		if(domv == ''){
+			dom.parent().find('.ui-check').html('<i></i>请选择或新建一个类别').show();
+			isPass = false;
+		}else{
+			if(Number(domv) < 0){
+				text = $.trim($('#J-type-text').val());
+				if(text == ''){
+					dom.parent().find('.ui-check').html('<i></i>类别名称不能为空').show();
+					isPass = false;
+				}else if(text.length > 20){
+					dom.parent().find('.ui-check').html('<i></i>类别名称不能超过20个字符').show();
+					isPass = false;
+				}else{
+					dom.parent().find('.ui-check').hide();
+					isPass = true;
+				}
+			}else{
+				dom.parent().find('.ui-check').hide();
+				isPass = true;
+			}
+
+		}
+		return isPass;
+	};
+	$('#J-select-type').change(function(){
+		checkType();
+	});
+	$('#J-type-text').blur(function(){
+		checkType();
+	});
+	$('#J-select-type').change(function(){
+		if(Number(this.value) < 0){
+			$('#J-type-text').show();
+		}else{
+			$('#J-type-text').hide();
+		}
+	});
+	
+	
+	
+	//增加链接
+	$('#J-button-link-add').click(function(){
+		var par = $(this).parent();
+		if(linksNum >= 10){
+			return;
+		}
+		$($('#J-template-row-link').text().replace(/<#=name#>/g, 'link' + linksNum)).insertAfter(par);
+		linksNum += 1;
+	});
+	//删除链接
+	form.on('click', '.row-delete', function(){
+		$(this).parent().remove();
+		linksNum -= 1;
+	});
+	
+	
+	$('#J-button-submit').click(function(){
+		if(checkTitle() && checkType()){
+			form.submit();
+		}
+		
+	});
+	
+})();
+</script>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>新年活动</title>
+<meta id="viewport" name="viewport" content="target-densitydpi=medium-dpi, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" href="style/style.css?" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/phoenix.base.js" ></script>
+<script type="text/javascript" src="js/phoenix.Class.js" ></script>
+<script type="text/javascript" src="js/phoenix.Event.js" ></script>
+<script type="text/javascript" src="js/phoenix.Timer.js" ></script>
+<script type="text/javascript" src="js/phoenix.util.js" ></script>
+<script type="text/javascript" src="js/phoenix.Mask.js" ></script>
+</head>
+<body>
+	<div class="banner">
+		<a href="javascript:void(0);" class="btn-signup" style="display:none"></a>
+
+		<div class="countdown">
+				<input id="J-part3-day" value="30" type="hidden" />
+				<input id="J-part3-hour" value="0" type="hidden" />
+				<input id="J-part3-minute" value="0" type="hidden" />
+				<input id="J-part3-second" value="0" type="hidden" />
+			<div class="text">距离活动开始还有</div>
+			<div class="number">
+				<em id="J-p3-day-dom1" class="day-left">0</em>
+				<em id="J-p3-day-dom2" class="day-right">0</em>
+				<span>天</span>
+				<em id="J-p3-hour-dom1" class="min-left">0</em>
+				<em id="J-p3-hour-dom2" class="min-right">0</em>
+				<span>小时</span>
+				<em id="J-p3-minute-dom1" class="sec-left">0</em>
+				<em id="J-p3-minute-dom2" class="sec-right">0</em>
+				<span>分</span>
+			</div>
+		</div>
+		<img src="images/banner01.png" alt="三星 Galaxy Note 3 每天8部" />
+	</div>
+	<div class="content">
+		<ul class="activity-list">
+			<li>
+				<h3>活动时间：</h3>
+				<p>2014年1月27日-2月10日（红包充值及抽奖大轮盘活动时间）</p>
+				<p>2014年1月27日-2月25日（奖金排行榜计算时间及获取春节红包投注计算时间）</p>
+			</li>
+			<li>
+				<h3>活动范围：</h3>
+				<p>所有平台用户（不包括竞彩）</p>
+			</li>
+			<li>
+				<h3>豪礼1：千万红包大派送！</h3>
+				<p>在2014年1月27日0:00至2014年2月10日24:00期间，当您报名参与活动后第一次向平台充值时，我们将为您准备等额礼金，只要您达到要求时就能领取。首次充值金额越高，我们送得越多（普通用户礼金上限18888元，Vip用户礼金上限38888元）！</p>
+				<p>充值阶段期间用户在活动报名后第一次向平台银行大厅充值的金额即可获得等值金额的“马年礼金”；</p>
+				<p>投注阶段: 时间:2014年1月27日0:00至2014年2月25日24:00</p>
+				<p>用户在投注阶段期间，从充值成功获得礼金后，才开始累计投注额，当用户投注金额达到“礼金”金额的30倍时，既可以申领并使用“礼金”；</p>
+				<p>用户满足活动要求并点击“申领礼金“按钮后，平台将于2天内审核并将礼金礼金转换为游戏币打入符合资格用户账户，可参与游戏或提现；</p>
+				<p>“马年礼金”申领的最后期限是2014年3月5日24:00之前，在此时间之前未能成功申领“礼金”的用户将被视为放弃礼金。</p>
+			</li>
+			<li class="special-note">
+				<h3>特别说明：</h3>
+				<p>礼金金额是以用户在报名后第一次向平台充值的金额计算，第二次或以后的充值将不算计算入礼金金额内；</p>
+				<p>每位用户只能申领礼金一次。</p>
+			</li>
+			<li>
+				<h3>豪礼2：幸运大抽奖</h3>
+				<p>幸运大抽奖:用户每日投注每满388元即可获得一次轮盘抽奖的机会，投注越多，获得机会越多，每日最高可获得20次免费转轮盘的机会，除此之外，用户还可以花费5个积分一次继续博取大奖，奖品类型如下：</p>
+				<table class="table">
+							<thead>
+								<tr>
+									<th>奖品等级</th>
+									<th>奖品类型</th>
+									<th>奖品每日数量</th>
+									<th>奖品单个价值</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>乐利特等奖抽奖号码</td>
+									<td>乐利特等奖抽奖机会</td>
+									<td>机会不限</td>
+									<td>未知</td>
+								</tr>
+								<tr>
+									<td>5个积分</td>
+									<td>活动积分</td>
+									<td>3000</td>
+									<td>5元</td>
+								</tr>
+								<tr>
+									<td>10个积分</td>
+									<td>活动积分</td>
+									<td>2000</td>
+									<td>10元</td>
+								</tr>
+								<tr>
+									<td>20个积分</td>
+									<td>活动积分</td>
+									<td>1000</td>
+									<td>20元</td>
+								</tr>
+								<tr>
+									<td>100个积分</td>
+									<td>活动积分</td>
+									<td>100</td>
+									<td>100元</td>
+								</tr>
+								<tr>
+									<td rowspan="3">三等奖</td>
+									<td>iPad Air 16G</td>
+									<td rowspan="3">10</td>
+									<td rowspan="3">4000元</td>
+								</tr>
+								<tr>
+									<td>Sony NEX-5C微单套机</td>
+								</tr>
+								<tr>
+									<td>三星GALAXY Note 3</td>
+								</tr>
+								<tr>
+									<td rowspan="3">二等奖</td>
+									<td>Sony HDR-PJ660E摄像机</td>
+									<td rowspan="3">5</td>
+									<td rowspan="3">6000元</td>
+								</tr>
+								<tr>
+									<td>iPhone 5S 16G土豪金</td>
+								</tr>
+								<tr>
+									<td>周大福马年金条20G</td>
+								</tr>
+								<tr>
+									<td rowspan="3">一等奖</td>
+									<td>Macbook pro 15寸（ME665CH/A）</td>
+									<td rowspan="3">2</td>
+									<td rowspan="3">20000元</td>
+								</tr>
+								<tr>
+									<td>prada公文包</td>
+								</tr>
+								<tr>
+									<td>浪琴名匠系列男士机械表</td>
+								</tr>
+								<tr>
+									<td>乐利特等奖</td>
+									<td>劳力士男士腕表 116234</td>
+									<td>1</td>
+									<td>65000元</td>
+								</tr>
+								</tbody>
+						</table>
+			</li>
+			<li>
+				<h3>豪礼3：冲榜送大奖：</h3>
+				<p>在活动主页面点击“参与春节系列活动”后，即可报名参加此活动；</p>
+				<p>“奖金排行榜”：每日统计前一天0点-24点的所有参与活动用户所获奖金，进入奖金排行前五十的用户可以获得活动积分，积分从250分到5分不等，活动结束后积分总排名前十的用户可获得相应礼品；</p>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>奖金日排名</th>
+							<th>所获积分</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>250</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>180</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>150</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>120</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>100</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>90</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>80</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>70</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>60</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>50</td>
+						</tr>
+						<tr>
+									<td>11</td>
+									<td>40</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>40</td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>40</td>
+								</tr>
+								<tr>
+									<td>14</td>
+									<td>30</td>
+								</tr>
+								<tr>
+									<td>15</td>
+									<td>30</td>
+								</tr>
+								<tr>
+									<td>16</td>
+									<td>30</td>
+								</tr>
+								<tr>
+									<td>17</td>
+									<td>20</td>
+								</tr>
+								<tr>
+									<td>18</td>
+									<td>20</td>
+								</tr>
+								<tr>
+									<td>19</td>
+									<td>10</td>
+								</tr>
+								<tr>
+									<td>20</td>
+									<td>10</td>
+								</tr>
+								<tr>
+									<td>21~50</td>
+									<td>5</td>
+								</tr>
+					</tbody>
+				</table>
+				<p> 积分总排名可获奖品，前十用户在活动结束后，可在活动页面选择相应价值的奖品：</p>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>积分总排名</th>
+							<th>奖品价值</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>100000</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>80000</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>60000</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>50000</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>40000</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>30000</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>20000</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>15000</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>10000</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>8000</td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+			<li class="special-note">
+				<h3>特别说明：</h3>
+				<p>该排行榜排行规则为用户总获取积分排名，用户剩余积分不做排名，如A用户总获取20,000积分，但因玩抽奖游戏使用掉5,000积分，则他在积分排行榜上显示积分仍为20,000积分</p>
+			</li>
+
+
+			<li>
+				<h3>乐利特等奖：</h3>
+				<p>用户每次通过轮盘抽到乐利特等奖后，可获得一个五位幸运抽奖号码，平台将于第二天晚上9点在乐利视频中进行特等奖抽奖，届时乐利宝贝将抽出一个五位的幸运号码，如您所获号码与该号码匹配，则有幸中得大奖，如该号码无人中奖，则乐利宝贝继续抽出幸运号码，直到有人中奖。</p>
+				<p>积分兑奖：活动结束后，所有用户剩余积分可1:1兑换成游戏币，积分兑换截止时间为2014年3月5日24:00之前，截止此时间未能兑换游戏币的用户将视为放弃兑换。</p>
+			</li>
+		</ul>
+		<div class="copy">本次活动最终解释权归凤凰娱乐平台所有。</div>
+	</div>
+
+<script>
+(function($){
+	//活动3倒计时
+	var p3Timer;
+	var p3Day = $('#J-part3-day'),
+		p3Hour = $('#J-part3-hour'),
+		p3Minute = $('#J-part3-minute'),
+		p3Second = $('#J-part3-second'),
+		p3DayNum = Number(p3Day.val()),
+		p3HourNum = Number(p3Hour.val()),
+		p3MinuteNum = Number(p3Minute.val()),
+		p3SecondNum = Number(p3Second.val()),
+		p3TimeTotal = p3DayNum * 24 * 3600 + p3HourNum * 3600 + p3MinuteNum * 60 + p3SecondNum;
+	if(p3TimeTotal <= 0){
+		return;
+	}
+	
+	p3Timer = setInterval(function(){
+		p3DayNum = Math.floor(p3TimeTotal/3600/24);
+		p3HourNum = Math.floor(p3TimeTotal/3600%24);
+		p3MinuteNum = Math.floor(p3TimeTotal/60%60);
+		p3SecondNum = Math.floor(p3TimeTotal%60);
+		p3DayNum = p3DayNum < 10 ? '0' + p3DayNum : '' + p3DayNum;
+		p3HourNum = p3HourNum < 10 ? '0' + p3HourNum : '' + p3HourNum;
+		p3MinuteNum = p3MinuteNum < 10 ? '0' + p3MinuteNum : '' + p3MinuteNum;
+
+		$('#J-p3-day-dom1').text(p3DayNum.split('')[0]);
+		$('#J-p3-day-dom2').text(p3DayNum.split('')[1]);
+		$('#J-p3-hour-dom1').text(p3HourNum.split('')[0]);
+		$('#J-p3-hour-dom2').text(p3HourNum.split('')[1]);
+		$('#J-p3-minute-dom1').text(p3MinuteNum.split('')[0]);
+		$('#J-p3-minute-dom2').text(p3MinuteNum.split('')[1]);
+
+		if(p3TimeTotal <= 0){
+			clearInterval(p3Timer);
+			//$('#J-button-getRed').text('活动已结束').removeClass('btn-receive-current');
+			location.href = location.href;
+		}
+		p3TimeTotal--;
+	}, 1000);
+})(jQuery);
+</script>
+
+
+
+
+</body>
+</html>

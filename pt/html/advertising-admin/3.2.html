@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>3.2专题管理-发布管理界面</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.row-link-hidden {display:none;}
+	.ico-close,.ico-open {cursor:pointer;}
+	</style>
+	
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>广告</dt>
+				<dd class="current"><a href="1.1index.html">广告管理（发布）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告管理（审核）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告位管理</a></dd>
+				<dt>公告</dt>
+				<dd><a href="2.1freeze-account-list.html">公告管理（发布）</a></dd>
+				<dd><a href="#">公告管理（审核）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建公告</a></dd>
+				<dt>专题</dt>
+				<dd><a href="2.1freeze-account-list.html">专题管理（发布）</a></dd>
+				<dd><a href="#">专题管理（查看）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建专题</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><a href="#" target="_blank" class="more">新建专题</a><strong>当前位置：</strong><a href="#">专题</a> &gt; 专题管理</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+					<form action="?" id="J-form">
+						<ul class="ui-search">
+							<li>
+								<label for="" class="ui-label">专题标题：</label>
+								<input type="text" value="" class="input w-3">
+							</li>
+							<li>
+								<label class="ui-label">专题类型：</label>
+								<select class="ui-select w-2">
+									<option value="请选择">请选择</option>
+									<option value="节庆活动">节庆活动</option>
+									<option value="抽奖活动">抽奖活动</option>
+								</select>
+							</li>
+							<li><a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">搜 索<b class="btn-inner"></b></a></li>
+						</ul>
+					</form>
+						<table class="table table-info table-group" id="J-table">
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>专题标题</th>
+									<th>专题类别</th>
+									<th>活动链接</th>
+									<th>创建时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>4</td>
+									<td>新春快乐祝贺图</td>
+									<td>节庆活动</td>
+									<td class="table-toggle">
+										<span class="row-links">
+											<a href="#" target="_blank">http://ph158.com</a><br />
+											<a href="#" target="_blank">http://ph158.com</a><br />
+											<a href="#" target="_blank">http://ph158.com</a><br class="row-link-hidden" />
+											<a href="#" target="_blank" class="row-link-hidden">http://ph158.com</a><br class="row-link-hidden" />
+											<a href="#" target="_blank" class="row-link-hidden">http://ph158.com</a><br class="row-link-hidden" />
+											<a href="#" target="_blank" class="row-link-hidden">http://ph158.com</a><br class="row-link-hidden" />
+											<a href="#" target="_blank" class="row-link-hidden">http://ph158.com</a>
+											<i class="ico-close"></i>
+										</span>
+									</td>
+									<td>2013-02-01 10:20:30</td>
+									<td class="table-tool">
+										<a class="ico-edit" title="修改" href="javascript:void(0);"></a>
+									</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>新春快乐祝贺图</td>
+									<td>节庆活动</td>
+									<td class="table-toggle">
+										<a href="#" target="_blank">http://ph158.com</a>
+									</td>
+									<td>2013-02-01 10:20:30</td>
+									<td class="table-tool">
+										<a class="ico-edit" title="修改" href="javascript:void(0);"></a>
+									</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>新春快乐祝贺图</td>
+									<td>节庆活动</td>
+									<td class="table-toggle">
+										<span class="row-links">
+											<a href="#" target="_blank">http://ph158.com</a><br />
+											<a href="#" target="_blank">http://ph158.com</a><br />
+											<a href="#" target="_blank">http://ph158.com</a><br class="row-link-hidden" />
+											<a href="#" target="_blank" class="row-link-hidden">http://ph158.com</a><br class="row-link-hidden" />
+											<a href="#" target="_blank" class="row-link-hidden">http://ph158.com</a><br class="row-link-hidden" />
+											<a href="#" target="_blank" class="row-link-hidden">http://ph158.com</a><br class="row-link-hidden" />
+											<a href="#" target="_blank" class="row-link-hidden">http://ph158.com</a>
+											<i class="ico-close"></i>
+										</span>
+									</td>
+									<td>2013-02-01 10:20:30</td>
+									<td class="table-tool">
+										<a class="ico-edit" title="修改" href="javascript:void(0);"></a>
+									</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>新春快乐祝贺图</td>
+									<td>节庆活动</td>
+									<td class="table-toggle">
+										<a href="#" target="_blank">http://ph158.com</a>
+									</td>
+									<td>2013-02-01 10:20:30</td>
+									<td class="table-tool">
+										<a class="ico-edit" title="修改" href="javascript:void(0);"></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="page-wrapper">
+							<span class="page-text">
+								<span class="lower">共102条记录</span>
+							</span>
+							<div class="page page-right">
+								<a href="#" class="prev">上一步</a>
+								<a href="#">1</a>
+								<a href="#">2</a>
+								<a href="#" class="current">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">...</a>
+								<a href="#" class="next">下一步</a>
+								<span class="page-few">到第 <input type="text" value="" class="input"> /100页</span>
+								<input type="button" value="确 认" class="page-btn">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+(function(){
+	var table = $('#J-table');
+	
+	table.on('click', '.ico-close', function(){
+		var dom = $(this),par = dom.parent();
+		par.find('.row-link-hidden').removeClass('row-link-hidden');
+		dom.removeClass('ico-close').addClass('ico-open');
+	});
+	table.on('click', '.ico-open', function(){
+		var dom = $(this),par = dom.parent(),as = par.find('a'),brs = par.find('br');
+		as.each(function(i){
+			if(i > 2){
+				$(this).addClass('row-link-hidden');
+			}
+			if(i > 1 && i < brs.size()){
+				$(brs[i]).addClass('row-link-hidden');
+			}
+		});
+		dom.removeClass('ico-open').addClass('ico-close');
+	});
+	
+	$('#J-button-submit').click(function(){
+		$('#J-form').submit();
+	});
+	
+	
+})();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.151销售状态修改页</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<style>
+		.table-info td span{
+			text-decoration: underline;
+			cursor:pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li class="current"><a href="1.15.html">销售状态</a></li>
+									<li><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content clearfix">
+								<h3 class="ui-title">
+									彩种名称：重庆时时彩
+									<span class="info">销售状态：<span id="J-game-closebutton" class="color-green" style="cursor:pointer">在售</span><span class="color-gray">（ 说明：绿色文字表示销售中，红色文字表示停售中）</span></span>
+								</h3>
+								<table class="table table-info table-border">
+									<thead>
+										<tr>
+											<th>玩法群</th>
+											<th>玩法组</th>
+											<th>玩法/投注方式</th>
+											<th>玩法群</th>
+											<th>玩法组</th>
+											<th>玩法/投注方式</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td rowspan="15" class="color-green"><span data-param="qun">五星</span></td>
+											<td rowspan="2" class="color-green" ><span data-param="zu">直选</span></td>
+											<td class="color-green"><span data-param="dan">复式</td>
+											<td rowspan="15" class="color-green"><span data-param="qun">前三</span></td>
+											<td rowspan="4" class="color-green"><span data-param="zu">直选</span></td>
+											<td class="color-green"><span data-param="dan">复式</span></td>
+										</tr>
+										<tr>
+											<td class="color-green"><span data-param="dan">单式</span></td>
+											<td class="color-green"><span data-param="dan">单式</span></td>
+										</tr>
+										<tr>
+											<td rowspan="6" class="color-green"><span data-param="zu">组选</span></td>
+											<td class="color-green"><span data-param="dan">组选120（杂牌）</span></td>
+											<td class="color-green"><span data-param="dan">和值</span></td>
+										</tr>
+										<tr>
+											<td class="color-green"><span data-param="dan">组选60（对子）</span></td>
+											<td class="color-green"><span data-param="dan">跨度</span></td>
+										</tr>
+										<tr>
+											<td class="color-green"><span data-param="dan">组选30（两对）</span></td>
+											<td rowspan="7" class="color-green"><span data-param="zu">组选</span></td>
+											<td class="color-green"><span data-param="dan">组三</span></td>
+										</tr>
+										<tr>
+											<td class="color-green"><span data-param="dan">组选20（三条）</span></td>
+											<td class="color-green"><span data-param="dan">组六</span></td>
+										</tr>
+										<tr>
+											<td class="color-green"><span data-param="dan">组选10（葫芦）</span></td>
+											<td class="color-green"><span data-param="dan">组三单式</span></td>
+											
+										</tr>
+										<tr>
+											<td class="color-green"><span data-param="dan">组选5（四条）</span></td>
+											<td class="color-green"><span data-param="dan">组六单式</span></td>
+											
+										</tr>
+										<tr>
+											<td rowspan="3" class="color-red"><span data-param="zu">不定位</span></td>
+											<td><span data-param="dan">一码不定位</span></td>
+											<td><span data-param="dan">混合组选</span></td>
+											
+										</tr>
+										<tr>
+											<td><span data-param="dan">二码不定位</span></td>
+											<td><span data-param="dan">和值</span></td>
+											
+										</tr>
+										<tr>
+											<td><span data-param="dan">三码不定位</span></td>
+											<td><span data-param="dan">包胆</span></td>
+										</tr>
+										<tr>
+											<td rowspan="4"><span data-param="zu">趣味</span></td>
+											<td><span data-param="dan">一帆风顺</span></td>
+											<td rowspan="4" class="color-red"><span data-param="zu">不定位</span></td>
+											<td><span data-param="dan">一码不定位</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">好事成双</span></td>
+											<td><span data-param="dan">二码不定位</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">三星报喜</span></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">四季发财</span></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td rowspan="8"><span data-param="qun">四星</span></td>
+											<td rowspan="2"><span data-param="zu">直选</span></td>
+											<td><span data-param="dan">复式</span></td>
+											<td rowspan="8"><span data-param="qun">后二</span></td>
+											<td rowspan="4"><span data-param="zu">直选</span></td>
+											<td><span data-param="dan">复式</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">单式</span></td>
+											<td><span data-param="dan">单式</span></td>
+										</tr>
+										<tr>
+											<td rowspan="4"><span data-param="zu">组选</span></td>
+											<td><span data-param="dan">组选24</span></td>
+											<td><span data-param="dan">和值</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">组选12</span></td>
+											<td><span data-param="dan">跨度</span></td>
+										</tr>
+										<tr>
+											<td><span  data-param="dan">组选6</span></td>
+											<td rowspan="4" ><span data-param="zu">组选</span></td>
+											<td ><span data-param="dan">复式</span></td>
+										</tr>
+										<tr>
+											<td ><span data-param="dan">组选4</span></td>
+											<td ><span data-param="dan">单式</span></td>
+										</tr>
+										<tr>
+											<td rowspan="2" ><span data-param="zu">不定位</span></td>
+											<td ><span data-param="dan">一码不定位</span></td>
+											<td ><span data-param="dan">和值</span></td>
+										</tr>
+										<tr>
+											<td ><span data-param="dan">二码不定位</span></td>
+											<td ><span data-param="dan">包胆</span></td>
+										</tr>
+										<tr>
+											<td rowspan="15" ><span data-param="qun">后三</span></td>
+											<td rowspan="4" ><span data-param="zu">直选</span></td>
+											<td ><span data-param="dan">复式</span></td>
+											<td rowspan="8" ><span data-param="qun">前二</span></td>
+											<td rowspan="4" ><span data-param="zu">直选</span></td>
+											<td ><span data-param="dan">复式</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">单式</span></td>
+											<td><span data-param="dan">单式</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">和值</span></td>
+											<td><span data-param="dan">和值</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">跨度</span></td>
+											<td><span data-param="dan">跨度</span></td>
+										</tr>
+										<tr>
+											<td rowspan="7"><span data-param="zu">组选</span></td>
+											<td><span data-param="dan">组三</span></td>
+											<td rowspan="4"><span data-param="zu">组选</span></td>
+											<td><span data-param="dan">复式</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">组六</span></td>
+											<td><span data-param="dan">单式</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">组三单式</span></td>
+											<td><span data-param="dan">和值</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">组六单式</span></td>
+											<td><span data-param="dan">包胆</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">混合组选</span></td>
+											<td rowspan="5"><span data-param="qun">一星</span></td>
+											<td rowspan="5"><span data-param="zu">定位胆</span></td>
+											<td><span data-param="dan">万位</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">和值</span></td>
+											<td><span data-param="dan">千位</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">包胆</span></td>
+											<td><span data-param="dan">百位</span></td>
+										</tr>
+										<tr>
+											<td rowspan="4"><span data-param="zu">不定位</span></td>
+											<td><span data-param="dan">一码不定位</span></td>
+											<td><span data-param="dan">十位</span></td>
+										</tr>
+										<tr>
+											<td><span data-param="dan">二码不定位</span></td>
+											<td><span data-param="dan">个位</span></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		(function(){
+			var table = $('table.table-info'),
+				message = phoenix.Message.getInstance(),
+				gameType = $('#J-game-closebutton'),
+				ACTION = {};
+		
+			table.bind('click',function(e){
+				doAction(e);
+			});
+
+			ACTION.doActionqun = function(el){
+				message.show({
+					title:'温馨提示',
+					mask : true,
+					content:'<div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">停售玩法群，该玩法群下的玩法组、玩法将同时停售。您确定要停售所选彩种吗？</h4></div>',
+					confirmText: '关闭',
+					confirmIsShow: true,
+					confirmFun: function(){
+						var me =this;
+						me.hide();
+					},
+					closeText: '确认',
+					closeIsShow: true,
+					closeFun: function(){
+						var name = el.html();
+
+						$.ajax({
+							url:'#',
+							data : {'name':name},
+							type: 'POST',
+							dataType: 'json',
+							success: function(r){
+								//提交成功刷新页面
+								window.location.reload();
+							},
+							complete: function(){
+								
+							}
+						})
+					}
+				})
+			}
+
+			ACTION.doActionzu = function(el){
+				message.show({
+					title:'温馨提示',
+					mask : true,
+					content:'<div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">停售玩法组，该玩法组下的玩法将同时停售。您确定要停售所选玩法组吗？</h4></div>',
+					confirmText: '关闭',
+					confirmIsShow: true,
+					confirmFun: function(){
+						var me =this;
+						me.hide();
+					},
+					closeText: '确认',
+					closeIsShow: true,
+					closeFun: function(){
+						var name = el.html();
+
+						$.ajax({
+							url:'#',
+							data : {'name':name},
+							type: 'POST',
+							dataType: 'json',
+							success: function(r){
+								//提交成功刷新页面
+								window.location.reload();
+							},
+							complete: function(){
+								
+							}
+						})
+					}
+				})
+			}
+
+			ACTION.doActiondan = function(el){
+				message.show({
+					title:'温馨提示',
+					mask : true,
+					content:'<div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确定停售该彩种吗？</h4></div>',
+					confirmText: '关闭',
+					confirmIsShow: true,
+					confirmFun: function(){
+						var me =this;
+						me.hide();
+					},
+					closeText: '确认',
+					closeIsShow: true,
+					closeFun: function(){
+						var name = el.html();
+
+						$.ajax({
+							url:'#',
+							data : {'name':name},
+							type: 'POST',
+							dataType: 'json',
+							success: function(r){
+								//提交成功刷新页面
+								window.location.reload();
+							},
+							complete: function(){
+								
+							}
+						})
+					}
+				})
+			}
+		
+			var doAction = function(e){
+				var el = $(e.target);
+				if(el.attr('data-param') == 'undefined'){return};
+				var actionNameText = $(e.target).attr('data-param'),
+					actionFunText = 'doAction' + actionNameText;  
+				if(ACTION[actionFunText] && $.isFunction(ACTION[actionFunText])){
+					ACTION[actionFunText](el);
+				}
+			}
+
+
+			gameType.bind('click', function(){
+				message.show({
+					title:'温馨提示',
+					mask : true,
+					content:'<div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确定停售该彩种吗？</h4></div>',
+					confirmText: '关闭',
+					confirmIsShow: true,
+					confirmFun: function(){
+						var me =this;
+						me.hide();
+					},
+					closeText: '确认',
+					closeIsShow: true,
+					closeFun: function(){
+						var name = $(this).html();
+
+						$.ajax({
+							url:'#',
+							data : {'name':name},
+							type: 'POST',
+							dataType: 'json',
+							success: function(r){
+								//提交成功刷新页面
+								window.location.reload();
+							},
+							complete: function(){
+								
+							}
+						})
+					}
+				})
+			}) 
+		})()
+	</script>
+</body>
+</html>

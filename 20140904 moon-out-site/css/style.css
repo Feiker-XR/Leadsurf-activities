@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2014-06-19 15:57:02
+ * @version $Id$
+ */
+html,body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,th,td,em,form,input,select,textarea,button,header,section,aside,footer{margin:0;padding:0;}
+ul,li{list-style:none;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+img{border:none;}
+body{font:12px/1.5 Microsoft Yahei,Arial,Helvetica,sans-serif;color:#333;}
+.clearfix:after{content:".";display:block;height:0;clear:both;overflow:hidden;}
+.clearfix{*zoom:1;}
+
+.hide{
+	display: none;
+}
+
+body,
+input,
+select{
+	font-family: 'Microsoft Yahei',Tahoma,Arial,Helvetica,Simsun,STHeiti;
+}
+
+html,body{
+	width: 100%;
+}
+
+.container{
+	position: relative;
+	width: 100%;
+	height: 3800px;
+	overflow-x: hidden;
+}
+
+.layout{
+	position: absolute;
+	width: 1920px;
+	left: 50%;
+	margin-left: -960px;
+}
+
+.button-area{
+	position: absolute;
+	top: 410px;
+	left: 520px;
+	width: 860px;
+	height: 190px;
+}
+
+.button-area li{
+	float: left;
+	width: 210px;
+	height: 190px;
+	cursor: pointer;
+}
+
+.flash-video{
+	position: absolute;
+	top: 62px;
+	left: 720px;
+	width: 480px;
+	height: 270px;
+	background: #ccc
+}
+
+.activity-info{
+	display: block;
+	position: absolute;
+	bottom: 118px;
+	left: 904px;
+	width: 243px;
+	height: 70px;
+	text-indent: -9999em;
+	background: url(../images/button.png) no-repeat -3px 0;
+}
+
+.activity-info:hover{
+	background-position: -3px -90px;
+}
+
+.activity-info:active{
+	background-position: -3px -180px;
+}
+
+
+.button-area .a{
+	margin-right: 100px;
+}
+
+.button-area .b{
+	margin-right: 110px
+}
+
+.button-area .c{
+
+}
+
+.sectiona{
+	top: 0;
+	height: 673px;
+	background: url(../images/moon_01.jpg) no-repeat;
+}
+
+.sectionb{
+	top: 673px;
+	height: 433px;
+	background: url(../images/moon_02.jpg) no-repeat;
+}
+
+.sectionc{
+	top: 1106px;
+	height: 428px;
+	background: url(../images/moon_03.jpg) no-repeat;
+}
+
+.sectiond{
+	top: 1534px;
+	height: 1290px;
+	background: url(../images/moon_04.jpg) no-repeat;
+}
+
+.sectione{
+	top: 2824px;
+	height: 904px;
+	background: url(../images/moon_05.jpg) no-repeat;
+}
+
+.sectionf{
+	top: 3728px;
+	height: 72px;
+	background: url(../images/moon_06.jpg) no-repeat;
+}
+
+.code-small{
+	position: absolute;
+	top: 275px;
+	left: 1272px;
+	width: 100px;
+	height: 103px;
+	background: url(../images/code_03.png) no-repeat;
+}
+
+.code-big{
+	position: absolute;
+	top: 815px;
+	left: 1211px;
+	width: 180px;
+	height: 180px;
+	background: url(../images/code_07.png) no-repeat;
+}
+
+.side-bar{
+	position: fixed;
+	width: 80px;
+	height: 455px;
+	right: 10px;
+	top: 50%;
+	margin-top: -182px;
+	background: url(../images/sidebar.png) no-repeat 9px 12px;
+}
+
+.side-bar li{
+	width: 80px;
+	height: 80px;
+	margin-bottom: 19px;
+	cursor: pointer;
+	background: url(../images/hover.png) no-repeat -999px -999px;
+}
+
+.side-bar li.sectiona:hover{
+	background-position: -11px -21px;
+}
+
+.side-bar li.sectionc:hover{
+	background-position: -11px -120px;
+}
+
+.side-bar li.sectiond:hover{
+	background-position: -11px -219px;
+}
+
+.side-bar li.sectionf:hover{
+	background-position: -11px -318px;
+}
+
+.mooncake{
+	position: absolute;
+	bottom: 37px;
+	right: 485px;
+	width: 299px;
+	height: 150px;
+	background: url(../images/mooncake.jpg) no-repeat;
+}

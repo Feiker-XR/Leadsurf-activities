@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>新年活动</title>
+<meta id="viewport" name="viewport" content="target-densitydpi=medium-dpi, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" href="style/style.css?22" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/phoenix.base.js" ></script>
+<script type="text/javascript" src="js/phoenix.Class.js" ></script>
+<script type="text/javascript" src="js/phoenix.Event.js" ></script>
+<script type="text/javascript" src="js/phoenix.Timer.js" ></script>
+<script type="text/javascript" src="js/phoenix.util.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tween.js" ></script>
+<script type="text/javascript" src="js/phoenix.Input.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tip.js" ></script>
+<script type="text/javascript" src="js/phoenix.Mask.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tab.js" ></script>
+<script type="text/javascript" src="js/phoenix.Slider.js" ></script>
+
+<script type="text/javascript" src="js/GameFruit.js" ></script>
+</head>
+<body>
+	<div class="banner">
+		<img src="images/banner02.png" alt="三星 Galaxy Note 3 每天8部" />
+	</div>
+	<div class="content">
+		<h2>幸运大抽奖，日抽奖次次不落空<br />2014.01.27 - 2014.02.10</h2>
+		<div id="J-game-panel" class="main game-panel clearfix">
+			<img width="100%" src="images/bg-game-panel.png" alt="" />
+			<a id="J-button-start" class="btn-star" href="javascript:void(0);">开始抽奖</a>
+			<p class="remaining-number">今天还剩余<span id="J-game-user-times">20</span>次机会</p>
+			<div class="game-item game-item-0 current">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/10.png" width="100%" alt="" /></div>
+					<p class="text">乐利特等奖</p>
+				</div>
+			</div>
+			<div class="game-item game-item-1">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/8.png" width="100%" alt="" /></div>
+					<p class="text">Prada公文包</p>
+				</div>
+			</div>
+			<div class="game-item game-item-2">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/6.png" width="100%" alt="" /></div>
+					<p class="text">Sony微单套机</p>
+				</div>
+			</div>
+			<div class="game-item game-item-3">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/7.png" width="100%" alt="" /></div>
+					<p class="text">20个积分</p>
+				</div>
+			</div>
+			<div class="game-item game-item-4">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/9.png" width="100%" alt="" /></div>
+					<p class="text">iPad Air</p>
+				</div>
+			</div>
+			<div class="game-item game-item-5">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/5.png" width="100%" alt="" /></div>
+					<p class="text">100个积分</p>
+				</div>
+			</div>
+			<div class="game-item game-item-6">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/11.png" width="100%" alt="" /></div>
+					<p class="text">Sony摄像机</p>
+				</div>
+			</div>
+			<div class="game-item game-item-7">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/4.png" width="100%" alt="" /></div>
+					<p class="text">5个积分</p>
+				</div>
+			</div>
+			<div class="game-item game-item-8">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/12.png" width="100%" alt="" /></div>
+					<p class="text">iPhone 5S</p>
+				</div>
+			</div>
+			<div class="game-item game-item-9">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/10.png" width="100%" alt="" /></div>
+					<p class="text">乐利特等奖</p>
+				</div>
+			</div>
+			<div class="game-item game-item-10">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/1.png" width="100%" alt="" /></div>
+					<p class="text">Macbook pro</p>
+				</div>
+			</div>
+			<div class="game-item game-item-11">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/2.png" width="100%" alt="" /></div>
+					<p class="text">浪琴名匠系列</p>
+				</div>
+			</div>
+			<div class="game-item game-item-12">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/3.png" width="100%" alt="" /></div>
+					<p class="text">周大福马年金条</p>
+				</div>
+			</div>
+			<div class="game-item game-item-13">
+				<div class="game-item-inner">
+					<div class="pic"><img src="images/13.png" width="100%" alt="" /></div>
+					<p class="text">三星 Note3</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+	<!-- 所有奖品列表 -->
+	<!--
+	data-id : 商品id
+	data-type : 类型(虚拟类型/实物类型)
+	data-value : 价值金额
+	data-position : 对应的奖品位置
+	-->
+	<ul id="J-items-list" style="display:none;">
+		<li data-id="1" data-type="0" data-value="-1" data-img="">乐利特等奖抽奖机会</li>
+		<li data-id="2" data-type="0" data-value="5" data-img="">5个积分</li>
+		<li data-id="4" data-type="0" data-value="20" data-img="">20个积分</li>
+		<li data-id="5" data-type="0" data-value="100" data-img="">100个积分</li>
+		
+		<li data-id="6" data-type="1" data-value="4000" data-img="images/9.png">iPad Air</li>
+		<li data-id="7" data-type="1" data-value="4000" data-img="images/6.png">Sony NEX-5RL</li>
+		<li data-id="8" data-type="1" data-value="4000" data-img="images/13.png">三星GALAXY Note 3</li>
+		<li data-id="9" data-type="1" data-value="6000" data-img="images/11.png">Sony HDR-PJ660E</li>
+		<li data-id="10" data-type="1" data-value="6000" data-img="images/12.png">iPhone 5S 16G</li>
+		<li data-id="11" data-type="1" data-value="6000" data-img="images/3.png">周大福马年金条</li>
+		<li data-id="12" data-type="1" data-value="20000" data-img="images/1.png">Macbook pro</li>
+		<li data-id="13" data-type="1" data-value="20000" data-img="images/8.png">prada公文包</li>
+		<li data-id="14" data-type="1" data-value="20000" data-img="images/2.png">浪琴男士机械表</li>
+	</ul>
+
+		
+		
+		
+		
+		
+		
+		
+		<div class="cont-tab" id="J-cont-tab">
+			<div>
+					<div class="cont-tab-panel">
+						<ul>
+							<li><i></i> 1财神驾临，Terenc**** 于5分钟前 抽中了 iPhone 5s 土豪金，一起恭喜他吧！</li>
+						</ul>
+					</div>
+					<div class="cont-tab-panel">
+						<ul>
+							<li><i></i> 2福星高照，Terenc**** 于5分钟前 抽中了 乐利特等奖，幸运号码即将开奖！</li>
+						</ul>
+					</div>
+					<div class="cont-tab-panel">
+						<ul>
+							<li><i></i> 3人品大爆发了！Marco**于10分钟前抽中了劳力士男士腕表，土豪我们做朋友吧！人品大爆发了！Marco**于10分钟前抽中了劳力士男士腕表，土豪我们做朋友吧！</li>
+						</ul>
+					</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="btn-com">
+			<a id="J-button-to-play-game" class="btn-continue" href="list.html">查看中奖结果</a>
+			<a id="J-button-change-integration" class="btn-integration" href="exchange.html">积分兑换抽奖机会</a>
+		</div>
+		<ul class="activity-list">
+			<li>
+				<h3>乐利特等奖说明：</h3>
+				<p>1、用户每次通过轮盘抽到乐利特等奖后，可获得一个五位幸运抽奖号码，平台将于第二天晚上21：00在乐利视频中进行特等奖抽奖。届时乐利宝贝将抽出一个五位的幸运号码，如您所获号码与该号码匹配，则有幸中得大奖，如该号码无人中奖，则乐利宝贝继续抽出幸运号码，直到有人中奖。</p>
+				<p>2、中奖信息会通过公告、站内信、邮件等形式通知中奖者，奖品会在活动后三天内邮寄给中奖者。</p>
+			</li>
+		</ul>
+		<div class="copy">本次活动最终解释权归凤凰娱乐平台所有。</div>
+	</div>
+	
+	
+	
+	<div id="J-wd-item" style="display:none;" class="pop">
+		<h2>恭喜您中奖啦！</h2>
+		<div class="bd ">
+			<input type="hidden" id="J-wd-selectItem-id" value="">
+			<a class="pic-current" href="javascript:void(0);">
+				<img id="J-wd-item-img" alt="" src="about:blank" width="100%">
+			</a>
+			<h4>奖品名称：<span id="J-wd-item-title"></span><br>奖品价值：<em id="J-wd-item-money">0</em>元</h4>
+			<div class="pic-list clearfix">
+				<p>您亦可选择下列等值奖品替换：</p>
+				<ul id="J-wd-item-list">
+				
+				</ul>
+			</div>
+			<a id="J-wd-item-button-go" class="btn-submit" href="signup.html">立即领取</a>
+			<a class="btn-close control-close" href="javascript:void(0);">关闭</a>
+		</div>
+	</div>
+	
+	<div id="J-wd-submit-not" style="display:none;" class="pop">
+		<div class="bd ">
+			<h3>确定暂时不领取奖品吗？</h3>
+			<p>稍后您可以在“查看中奖结果”中领取本次中奖的奖品</p>
+			<a class="btn-check control-close-confirm btn-click" href="javascript:void(0);">确认</a>
+			<a class="btn-close control-close-cancel" href="javascript:void(0);">取消</a>
+		</div>
+	</div>
+	
+	
+	<div id="J-wd-bigPrize" style="display:none;" class="pop">
+		<div class="bd ">
+			
+			<h3>恭喜您，已获得<em>特等奖</em>积分！</h3>
+			<p class="wd-p-center">您的乐利特等奖号码为：</p>
+			<p class="wd-balls-cont">
+				<span class="wd-balls"></span> 
+				<span class="wd-balls"></span> 
+				<span class="wd-balls"></span>
+				<span class="wd-balls"></span> 
+				<span class="wd-balls"></span> 
+				<span class="wd-balls"></span>
+			</p>
+			<a class="btn-close" href="javascript:void(0);">关闭</a>
+		</div>
+	</div>
+	
+	
+	<div id="J-wd-int" style="display:none;" class="pop">
+		<div class="bd ">
+			<h3>恭喜您，获得<em id="J-wd-int-num">100</em>积分！</h3>
+			<p class="wd-p-center">积分已即时充值到您的账户，您可以即时查看积分变化。</p>
+			<a class="btn-close" href="javascript:void(0);">关闭</a>
+		</div>
+	</div>
+	
+	
+	
+<script type="text/javascript" src="js/prize-mobile.js"></script>
+
+</body>
+</html>

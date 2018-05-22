@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>变价  封锁数据</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li><a href="1.171.html">封锁</a></li>
+									<li class="current"><a href="1.191.html">变价</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content" id="J-list-container">
+							
+								<ul class="ui-tab-title clearfix">
+									<li class="current"><a href="1.191.html">变价</a></li>
+									<li><a href="1.192.html">变价参数设定</a></li>
+								</ul>
+								
+								
+								<h3 class="ui-title">
+									彩种名称：
+									<select id="J-select" class="ui-select w-2">
+										<option value="1">3D</option>
+										<option value="2">双色球</option>
+										<option value="3">11选5</option>
+									</select>
+									
+									
+									<a href="1.197.html" class="btn btn-small">+ 新增变价方案<b class="btn-inner"></b></a>
+								</h3>
+								
+								
+								
+								<div style="padding:10px;">
+								<form action="?" id="J-form">
+								<table id="J-table" class="table table-border">
+									<tr>
+										<th>序号</th>
+										<th class="text-center">变价方案标题</th>
+										<th>最后修改日期</th>
+										<th>状态</th>
+										<th>操作</th>
+									</tr>
+									<tr>
+										<td><input type="checkbox" value="1" /></td>
+										<td>W-200W_350万总封锁(先慢后快)</td>
+										<td>2013-02-06 10:28:49</td>
+										<td><span class="color-red">已发布</span></td>
+										<td>
+											<a data-id="1" data-action="publish" href="#">发布</a>
+											<a data-id="1" data-action="cancel" href="#">取消发布</a>
+											<a data-id="1" data-action="audit" href="#">审核通过</a>
+											<a href="1.196.html">修改</a>
+											<a href="1.195.html">查看</a>
+										</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" value="1" /></td>
+										<td>W-200W_350万总封锁(先慢后快)</td>
+										<td>2013-02-06 10:28:49</td>
+										<td><span class="color-green">已审核</span></td>
+										<td>
+											<a data-id="2" data-action="publish" href="#">发布</a>
+											<a data-id="2" data-action="cancel" href="#">取消发布</a>
+											<a data-id="2" data-action="audit" href="#">审核通过</a>
+											<a href="1.196.html">修改</a>
+											<a href="1.195.html">查看</a>
+										</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" value="1" /></td>
+										<td>W-200W_350万总封锁(先慢后快)</td>
+										<td>2013-02-06 10:28:49</td>
+										<td>未审核</td>
+										<td>
+											<a data-id="3" data-action="publish" href="#">发布</a>
+											<a data-id="3" data-action="cancel" href="#">取消发布</a>
+											<a data-id="3" data-action="audit" href="#">审核通过</a>
+											<a href="1.196.html">修改</a>
+											<a href="1.195.html">查看</a>
+										</td>
+									</tr>
+								</table>
+								</form>
+								<div class="page-wrapper clearfix" style="padding:10px">
+									<span class="page-text">
+										<label class="label" for="J-select-all"><input id="J-select-all" type="checkbox" class="checkbox">全选</label>
+										<a class="btn btn-small" href="#" id="J-delete-all">删除<b class="btn-inner"></b></a>
+									</span>
+								</div>
+								
+								
+								</div>
+								
+																
+								
+						
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<script>
+(function($){
+	//全选
+	$('#J-select-all').click(function(){
+		var inputs = $('#J-table').find('input[type="checkbox"]');
+		if(this.checked){
+			inputs.each(function(){
+				this.checked = true;
+			});
+		}else{
+			inputs.each(function(){
+				this.checked = false;
+			});
+		}
+	});
+	
+	
+	
+	$('#J-delete-all').click(function(e){
+		e.preventDefault();
+		var inputs = $('#J-table').find('input[type="checkbox"]'),isPass = false;
+		inputs.each(function(){
+			if(this.checked){
+				isPass = true;
+				return false;
+			}
+		});
+		if(isPass && confirm('你确认要删除所选项吗？')){
+			$('#J-form').submit();
+		}
+	});
+	
+	
+	$('#J-table').on('click', '[data-action]', function(){
+		var el = $(this),action = $.trim(el.attr('data-action')),id = $.trim(el.attr('data-id')),text = $.trim(el.text());
+		if(action && (action != '') && (id != '') && confirm('你确定要 '+ text +' 该条内容吗')){
+			$.ajax({
+				url:'?action=' + action + '&id=' + id,
+				dataType:'json',
+				success:function(data){
+					if(Number(data['isSuccess']) == 1){
+						location.href = location.href;
+					}else{
+						alert(data['msg']);
+					}
+				}
+			});
+		}
+	});
+	
+	
+	$('#J-select').change(function(){
+		location.href = '?game=' + this.value;
+	});
+	
+	
+})(jQuery);
+</script>
+</body>
+</html>

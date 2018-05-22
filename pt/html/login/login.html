@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>正常登录</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/login/login.css" />
+	
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Slider.js"></script>
+	
+</head>
+<body class="bg-content">
+
+	
+	<div class="login-header"></div>
+	<div class="login-body">
+		<div class="login-content">
+			<div class="login-logo"></div>
+			<ul class="login-list">
+				<li class="login-list-input">
+					
+					<i class="ico-name"></i>
+					<input id="J_username" type="text" class="login-input" value="请输入用户名" tabindex="1" />
+				</li>
+				<li class="login-list-input">
+					
+					<i class="ico-pwd"></i>
+					<input id="J_password" type="password" class="login-input" value="" tabindex="2" />
+					<a class="find-pwd" href="#">忘记密码？</a>
+				</li>
+				<li class="login-list-input verify-code">
+					
+					<img src="" alt="验证码" />
+					<input id="J_vcode" type="text" class="login-input" value="请输入验证码" tabindex="3" />
+				</li>
+				<li class="login-list-btn"><input id="J_submit" type="button" class="login-btn" value="登 录" tabindex="4" /></li>
+			</ul>
+			<p class="change_mode">验证平台真伪，请使用 <a href="#">安全登录</a></p>
+			<div id="J-slider" class="slider">
+				<ul class="slider-pic">
+					<li><a href="#"><img width="320" height="300" alt="pic1" src="../images/login/zzz-1.png"></a></li>
+					<li><a href="#"><img width="320" height="300" alt="pic2" src="../images/login/zzz-1.png"></a></li>
+					<li><a href="#"><img width="320" height="300" alt="pic3" src="../images/login/zzz-1.png"></a></li>
+				</ul>
+				<ul class="slider-num">
+					<li class="current">1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="login-footer"></div>
+	
+<script>
+(function($){
+	
+	var tab = new phoenix.Slider({par:'#J-slider', triggers:'.slider-num li', panels:'.slider-pic li', sliderDirection:'left', sliderIsCarousel:true});
+	
+})(jQuery);
+</script>
+
+	
+</body>
+</html>

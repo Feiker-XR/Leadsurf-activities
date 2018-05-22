@@ -1,0 +1,121 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{background-color: #F8F6DF; font:12px/1.5 Microsoft Yahei, Arial, Helvetica, sans-serif;}
+
+.banner{position:relative;width:1001px;height:466px;margin:0 auto;background: url(../images/banner.jpg) no-repeat center top #F8F6DF;color:#555;}
+.download{position:absolute;left:10px;top:230px;width:206px;height:56px;background:url(../images/un-download-btn.png) no-repeat;}
+.download:hover{background-position:0 -60px;}
+.download-more{position:absolute;left:230px;top:268px;color:#333;}
+.download-text{position:absolute;left:10px;top:296px;}
+.download-text em,.download-text a{font-style:normal;color:#FF9A00;}
+.download-text a:hover{color:#EA4F03;}
+.jump{position:absolute;width:523px;height:195px;background:url(../images/jump.png) no-repeat;z-index:10;}
+.jump .close{position:absolute;right:12px;top:19px;width:18px;height:18px;background:url(../images/close-2.png) no-repeat;}
+.jump .close:hover{background-position:0 -20px;}
+.jump .code{position:absolute;width:82px;height:83px;left:301px;top:83px;}
+.jump .code img{width:82px;height:83px;}
+
+.banner-extra{position:relative;height:57px;min-width:1024px;background:url(../images/banner.jpg) no-repeat center -420px;}
+.banner-extra-inner{position:relative;width:1024px;height:57px;margin:0 auto;}
+.banner-extra-text{position:absolute;left:355px;top:18px;font-size:14px;color:#FFF;}
+.banner-extra-text em,.banner-extra-text a{font-style:normal;color:#F1E702;}
+
+.content{width:1001px;margin:0 auto;background-color:#FFF;}
+.content .title{height:26px;margin-left:3px;padding-left:10px;border-left:6px solid #FF9A00;font-size:24px;line-height:24px;color:#707070;}
+.content .step{width:887px;height:215px;margin:30px auto 20px;background:url(../images/step.png) no-repeat 0 0;}
+.content dl{padding-left:30px;line-height:2;color:#8C8C8C;}
+.content dt{font-size:14px;}
+.content .tips{width:569px;height:23px;margin:5px 0 15px 30px;background:url(../images/tips.png) no-repeat 0 0;}
+.content-1,.content-2,.content-3,.content-4{width:1001px;}
+.content-1{height:437px;background:url(../images/content-1.jpg) no-repeat 0 0;}
+.content-2{height:460px;background:url(../images/content-2.jpg) no-repeat 0 0;}
+.content-3{height:400px;background:url(../images/content-3.jpg) no-repeat 0 0;}
+.content-4{height:412px;background:url(../images/content-4.jpg) no-repeat 0 0;}
+
+
+.details-btn{position:relative;display:block;width:248px;height:55px;margin:-27px auto 0;background:url(../images/un-details-btn.png) no-repeat;}
+.details-btn:hover{background-position:0 -60px;}
+
+.install{width:1001px;margin:0 auto;padding:15px 0 45px;background-color:#FFFEF5;}
+
+.install h3{padding:10px 50px;font-size:24px;color:#595959;}
+.install h3 em{margin-left:10px;font-size:14px;font-style:normal;color:#EB575B;}
+.install-list{width:934px;height:201px;margin:0 auto;padding:0 10px;background:url(../images/bg-install.png) no-repeat;}
+.install-list li{float:left;width:311px;}
+.install-list h4{padding:20px 0 0 25px;font-size:16px;color:#737373;}
+.install-list .website{width:160px;margin-top:71px;margin-left:33px;color:#737373;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.install-list .code{width:98px;height:98px;margin-left:25px;margin-top:10px;padding:10px;border:1px solid #DBDBDB;}
+.install-list .code img{width:98px;height:98px;}
+.install-list .text{margin-left:25px;color:#737373;}
+.install-list .text a{color:#EA4F03;}
+.install-list .btn{display:block;width:167px;height:44px;margin:20px 0 15px 25px;background:url(../images/download-btn.png) no-repeat;}
+.install-list .btn:hover{background-position:0 -50px;}
+
+.copyright{width:1024px;margin:0 auto;text-align:center;color:#6B6B6B; padding:25px 0;}
+.copyright .explain{margin-left:5px;color:#6B6B6B;}
+
+.pop{position:absolute;width:658px;padding:11px;background-color:#264235;}
+.pop .close{float:right;width:16px;height:16px;background:url(../images/close.png) no-repeat;}
+.pop .hd{padding-bottom:14px;font-size:24px;color:#FFCA00;text-align:center;}
+.pop .bd{padding:20px 30px;line-height:28px;font-size:14px;color:#5D5D5D;background-color:#FFF;border-radius:4px;}
+.pop .bd dt{margin-bottom:30px;}
+#mask{ 
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F000000', endColorstr='#7F000000');
+}
+:root #mask{
+	filter:none;	 /*处理IE9浏览器中的滤镜效果*/
+	background-color:rgba(0,0,0,0.5);
+}
+
+/*INSTALLATION WEBSITE CSS*/
+.installation-banner{height:176px;min-width:1024px;background: url(../images/installation-banner.jpg) no-repeat center top #1E3320;}
+.installation-banner-inner{position:relative;width:1024px;height:176px;margin:0 auto;}
+.pp_url{position:absolute; top:60px; left:701px; }
+.pp_url a{float:left;width:135px;height:38px;margin-right:10px;background:url(../images/un-pp.png) no-repeat;}
+.pp_url .pp{background-position:0 0;}
+.pp_url .pp:hover{background-position:0 -50px;}
+.pp_url .nine{width:143px;background-position:-150px 0;}
+.pp_url .nine:hover{background-position:-150px -50px;}
+.installation_1{position:relative;width:1024px;margin:-30px auto 0; background: url(../images/installation_1.jpg) no-repeat center;height: 346px; }
+.installation_2{width:1024px;margin:0 auto; background: url(../images/installation_2.jpg) no-repeat center;height: 326px; }
+.installation_3{width:1024px;margin:0 auto; background: url(../images/installation_3.jpg) no-repeat center;height: 1416px;}
+.installation-footer{margin-top:60px;}

@@ -1,0 +1,33 @@
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, th, td, em, form, input,select, textarea, button, header, section, aside, footer { margin: 0; padding: 0; }
+body {padding:15px; background: #FFF; font-size: 16px; -webkit-text-size-adjust: none; overflow-x: hidden; }
+ul, li { list-style: none; }
+img { border: none; }
+a { color: #287fc2; text-decoration: none; }
+input[type="text"], input[type="password"], input[type="tel"], input[type="number"], input[type="email"], input[type="date"], textarea {-webkit-box-sizing:border-box;background:#F8F8F8; border:1px solid #CACACA; font-size:16px;}
+input[type="submit"]{-webkit-box-sizing: border-box; width: 100%;height: 56px;background:#E8B201; background:-webkit-gradient(linear,left top,left bottom,from(#EDBE01),to(#E3A601));border:none;box-shadow:0 2px 3px rbag(0,0,0.3);font-size: 24px;  font-weight:bold; color: #FFF; border-radius: 6px; cursor: pointer; }
+input.btn-disable{ background: #cbcbcb; background: -webkit-gradient(linear, left top, left bottom, from(#d2d2d2), to(#c9c9c9)); border-color: #c2c2c2 #b6b6b6 #ababab; box-shadow:0 -1px 1px #eaeaea inset; color: #666; }
+input.input-error{border-color:#ff911a;color:#ff911a;}
+.clearfix:after,.clearfix:before{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+/* register */
+header{text-align:center;}
+.logo{margin:20px 0;width:50%;}
+.register li{padding:15px 0;position:relative;text-align:center;}
+.register input[type="text"],.register input[type="password"]{width:100%; height:44px; padding:0 5px; border-radius:0;}
+.verif .input-captcha[type="text"]{ float:left; width:60%;}
+.verif .img-captcha{ float:right; width:30%;height:44px;}
+.download{-webkit-box-sizing:border-box;position:relative;display:block;width:100%;height:90px;margin-top:40px;padding:20px;background-color:#022D1A;border-radius: 6px;}
+.download-text{padding-left:60px;color:#FCDD00;}
+.download-text strong{display:block;font-size:18px;font-weight:100;}
+.download:before {content: "";position:absolute;left:20px;top:20px;height:50px;width:50px;background:url('../images/ico-download.jpg');background-size:50px 50px;}
+.ui-check{position:absolute;top:60px;left:5px;height:30px;line-height:30px;font-size:16px;color:#B83546;display:none;}
+.ui-check-error{display:block;}
+.register-success li{padding:15px 0;text-align:center;}
+.register-success .text1{font-size:30px;}
+.register-success .text2{font-size:24px;}
+.register-success .text3{font-size:12px;}
+.register-success .name{background-color:#F3F3F3;font-size:20px;}
+
+
+
+

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>弹出框</title>
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+
+</head>
+<body>
+<!--<div class="ar-letter">-->
+    <!--<div class="ar-letter-title">-->
+        <!--<h3>vip新福利，红利那不停</h3>-->
+        <!--<p>系统管理员  2015-06-22 15:09:06</p>-->
+        <!--<span class="ar-count">5</span>-->
+        <!--<span class="ar-close">x</span>-->
+    <!--</div>-->
+    <!--<div class="ar-letter-content">-->
+        <!--<div class="div_scroll">-->
+            <!--<div class="ar-leftter-message">-->
+            <!--各位亲爱的凤凰VIP及用户：-->
+            <!--凤凰娱乐VIP新制度今日正式推出，全新推出VIP等级制度，VIP等级的提升将让您获得更丰富的特权及超值返利。-->
+            <!--新变化1：经验值累计多样化，高低频有区别-->
+            <!--玩家在高频游戏的每100元消费将累计1点经验值，玩家在低频的每80元消费即可累计1点经验值。-->
+            <!--新变化2：红利彩种-->
+            <!--VIP根据其等级不同将可以选择1-2个红利彩种，每周的固定时间段享受选定彩种上投注的特殊返利，详情见下表。-->
+            <!--新变化3：新游戏特权-->
+            <!--VIP玩家在凤凰上线各种新游戏时享受游戏币赠送，还可优先体验新游戏！-->
+            <!--成长体系规则说明：-->
+            <!--玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。-->
+            <!--经验值扣减：玩家在进入VIP后每个月按照对应VIP等级初始经验值的20%进行扣减。-->
+            <!--VIP的进入和退出：当玩家累计消费获得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。-->
+            <!--如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。-->
+            <!--玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。-->
+            <!--经验值扣减：玩家在进入VIP后每个月按照对应VIP等级初始经验值的20%进行扣减。-->
+            <!--VIP的进入和退出：当玩家累计消费获得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。-->
+            <!--如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="ar-letter-footer">-->
+        <!--<span class="ar-disabled">下一条</span>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+
+
+<!--引入js库-->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/mousewheel.js"></script>
+<script src="js/easyscroll.js"></script>
+
+
+<!--红包详细弹出框-->
+<script>
+;(function($) {
+
+    function arMessage() {
+        this.list = {
+            letter:[],
+            message:[]
+        }
+        this.mask = null;
+        this.domLetter = null;
+        this.domMsg = null;
+    }
+    arMessage.prototype = {
+        init: function() {
+            var me = this;
+            this.createBox();
+        },
+        /**
+         * 通过服务器获取消息
+         */
+        getMsg: function(){
+            var str =  {"message":[
+                {
+                    "status": "0" ,           // 0:特殊提示 1: 强制提示 2：强制提示并且5秒
+                    "title": "第一条信息" ,  //信息标题
+                    "author": "系统管理员" , //作者
+                    "time": "2015-06-11 10:00:00", //发布时间
+                    "content":"新变化3：新游戏特权VIP玩家在凤凰上线各种新游戏时享受游戏币赠送，还可优先体验新游戏！成长体系规则说明：玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级初始经验值的20%进行扣减。VIP的进入和退出：当玩家累计消费获得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级初始经验值的20%进行扣减。VIP的进入和退出：当玩家累计消费获得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。"
+                },
+                {
+                    "status": "0" ,           // 0:特殊提示 1: 强制提示 2：强制提示并且5秒
+                    "title": "第二条信息" ,  //信息标题
+                    "author": "系统管理员" , //作者
+                    "time": "2015-06-12 11:00:00", //发布时间
+                    "content":"新变化3：新游戏特权VIP玩家在凤凰上线各种新游戏时享受游戏币赠送，还可优先体验新游戏！成长体系规则说明：玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级初始经验值的20%进行扣减。VIP的进入和退出：当玩家累计消费获得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。"
+                },
+                {
+                    "status": "0" ,           // 0:特殊提示 1: 强制提示 2：强制提示并且5秒
+                    "title": "第三条信息" ,  //信息标题
+                    "author": "系统管理员" , //作者
+                    "time": "2015-06-13 12:00:00", //发布时间
+                    "content":"新变化3：新游戏特权VIP玩家在凤凰上线各种新游戏时享受游戏币赠送，还可优先体验新游戏！成长体系规则说明：玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级初始经验值的20%进行扣减。VIP的进入和退出：当玩家累计消费获得的经验值达到500："
+                },
+                {
+                    "status": "0" ,           // 0:特殊提示 1: 强制提示 2：强制提示并且5秒
+                    "title": "第四条信息" ,  //信息标题
+                    "author": "系统管理员" , //作者
+                    "time": "2015-06-12 11:00:00", //发布时间
+                    "content":"新变化3：新游戏特权VIP玩家在凤凰上线各种新游戏时享受游戏币赠送，还可优先体验新游戏！成长体系规则说明：玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级初始经验值的20%进行扣减。VIP的进入和退出：当玩家累计消费获得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。"
+                },
+                {
+                    "status": "0" ,           // 0:特殊提示 1: 强制提示 2：强制提示并且5秒
+                    "title": "第五条信息" ,  //信息标题
+                    "author": "系统管理员" , //作者
+                    "time": "2015-06-12 11:00:00", //发布时间
+                    "content":"新变化3：新游戏特权VIP玩家在凤凰上线各种新游戏时享受游戏币赠送，还可优先体验新游戏！成长体系规则说明：玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级初始经验值的20%进行扣减。VIP的进入和退出：当玩家累计消费获得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。"
+                },
+                {
+                    "status": "0" ,           // 0:特殊提示 1: 强制提示 2：强制提示并且5秒
+                    "title": "第六条信息" ,  //信息标题
+                    "author": "系统管理员" , //作者
+                    "time": "2015-06-12 11:00:00", //发布时间
+                    "content":"新变化3：新游戏特权VIP玩家在凤凰上线各种新游戏时享受游戏币赠送，还可优先体验新游戏！成长体系规则说明：玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。玩家每个月能获得的经验值是：高频消费/100+低频消费/80（举例）。经验值扣减：玩家在进入VIP后每个月按照对应VIP等级初始经验值的20%进行扣减。VIP的进入和退出：当玩家累计消费获得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬得的经验值达到5000点后，在次月会进入到VIP1等级中，开始 享有VIP1的特权，此后随着经验值和等级的上升享有更多的特权，当玩家因经验值扣减最终低于5000点时，将在次月失去VIP身份。如需查询自己是否为新的VIP用户以及经验值和等级情况，敬请联络VIP客服。"
+                }
+            ]
+            }
+            return str;
+        },
+        /**
+         * 创建窗口
+         */
+        createBox: function(){
+            var _oMsg = {};
+            var _this = this;
+            _oMsg = this.getMsg();
+            this.createList(_oMsg);  // 消息队列
+        },
+        /**
+         * 创建消息队列
+         * @param obj 服务器返回的消息对象
+         * @param callback   成功回调
+         */
+        createList: function(msg){
+            var _oMsg = msg;
+            if (!_oMsg) return; //如果没有消息 返回
+            for(var o in _oMsg.message){
+                var _status = _oMsg.message[o].status;
+                if(_status =="0" ){
+                    this.list.message.push(_oMsg.message[o]); // 把特殊消息推进队列
+                }else{
+                    this.list.letter.push(_oMsg.message[o]);  // 把站内信推进队列
+                }
+            }
+            if(this.list.letter.length){
+                this.createLetter();
+            }
+            if(this.list.message.length){
+                this.createMsg();
+            }
+
+
+        },
+        /**
+         * 创建letter容器
+         */
+        createLetter: function(){
+            if(!this.domLetter){
+                var domBox =$('<div class="ar-letter"><div class="ar-letter-title"><h3></h3><p></p><span' +
+                ' class="ar-count">5</span><span class="ar-close">x</span></div><div class="ar-letter-content"><div class="div_scroll"><div class="ar-leftter-message"></div></div></div><div class="ar-letter-footer"><a href="javascript:;">下一条</a></div></div>');
+
+                var mask = $('<div class="ar-mask"></div>');
+                this.mask = mask;
+                this.domLetter = domBox;
+                $('body').append(mask).append(domBox);
+
+                this.positionFixd(this.domLetter);
+            }
+            this.readLetter();
+        },
+        /**
+         * 创建msg容器
+         */
+        createMsg: function(){
+            var domBox = $('<div class="ar-bot-box"><div class="ar-bot-msg"><div class="ar-msg-title"></div><div class="ar-msg-content"></div><div class="ar-msg-footer"><span>查看详情</span></div><div class="ar-msg-close">x</div></div></div>');
+            $('body').append(domBox);
+            if(!this.domMsg){
+                this.domMsg = domBox;
+            }
+
+            this.readMsg();
+        },
+        /**
+         * 读取信息
+         * @param obj
+         */
+        readLetter: function(){
+
+            if(!this.domLetter){
+                this.createLetter();
+            }
+            this.mask.show();
+            this.domLetter.show();
+            var $box = this.domLetter;
+            var letter = this.list.letter.shift();
+            var _this = this;
+            var count = 5;
+            if(letter){
+                $box.find('.ar-letter-title h3').html(letter.title);
+                $box.find('.ar-letter-title p').html(letter.author +"  "+ letter.time);
+                $box.find('.ar-leftter-message').html(letter.content);
+                //$('.div_scroll').scroll_absolute(); //自定义滚动条 依赖 mousewheel.js easyscroll.js
+                var $btn = $box.find('.ar-letter-footer a'),
+                    $close = $box.find('.ar-close'),
+                    $count = $box.find('.ar-count'),
+                    $footer = $box.find('.ar-letter-footer');
+                if(this.list.letter.length){
+                    if(letter.status == '2') { //强制阅读5秒
+                        $btn.addClass('ar-disabled');
+                        $count.hide();
+                        $close.hide();
+                        $btn.off('click');
+
+                        var timer = setInterval(function(){
+                            $btn.html("下一条("+count+")");
+                            if(count--  == 0) {
+                                clearInterval(timer);
+                                $btn.removeClass('ar-disabled');
+                                $btn.html("下一条");
+                                $btn.click(function(){
+                                    _this.readLetter($box);
+                                });
+                            }
+                        },1000);
+                    }else {
+                        $count.hide();
+                        $close.hide();
+                        $btn.click(function(){
+                            _this.readLetter($box);
+                        });
+                    }
+                }else{
+                    $footer.hide();
+                    $close.click(function(){
+                        _this.closeLetter();
+                    })
+
+                    if(letter.status == '2') { //强制阅读5秒
+                        $btn.addClass('ar-disabled');
+                        $count.show();
+                        $close.hide();
+                        $btn.off('click');
+
+                        var timer = setInterval(function(){
+                            $count.html(count);
+                            if(count--  == 0) {
+                                clearInterval(timer);
+                                $btn.removeClass('ar-disabled');
+                                $count.hide();
+                                $close.show();
+                                $btn.click(function(){
+                                    _this.readLetter($box);
+                                });
+                            }
+                        },1000);
+                    }else {
+                        $count.hide();
+                        $close.show();
+                        $btn.click(function(){
+                            _this.readLetter($box);
+                        });
+                    }
+                }
+            }
+
+        },
+        /**
+         * 读取特殊消息
+         */
+        readMsg: function(){
+            var $box = this.domMsg;
+            var msg = this.list.message.shift();
+            var _this = this;
+            var $btn = $box.find('.ar-msg-footer span'),
+                $close = $box.find('.ar-msg-close');
+            if(msg){
+                $box.find('.ar-msg-title').html(msg.title);
+                $box.find('.ar-msg-content').html(msg.content.substr(0,38)+'...');
+                $box.find('.ar-bot-msg').animate({marginTop:"0px"},'fast');
+                $btn.off('click');
+                $close.off('click');
+                $btn.click(function(e){
+                    msg.status = '1';
+                    _this.list.letter.push(msg);
+                    $box.find('.ar-bot-msg').animate({marginTop:"140px"},'fast');
+                    _this.readLetter();
+                    _this.readMsg();
+                })
+                $close.click(function(){
+                    $box.find('.ar-bot-msg').animate({marginTop:"140px"},'fast');
+                    _this.readMsg();
+                })
+
+            };
+
+        },
+        /**
+         * 关闭消息窗口
+         */
+        closeLetter: function(){
+            this.mask.hide();
+            this.domLetter.hide();
+        },
+        positionFixd: function(obj){
+            var $box = $(obj);
+
+            function move(){
+                var height = $box.height(),
+                        width = $box.width(),
+                        wH = $(window).height(),
+                        wW = $(window).width(),
+                        scroll = $(document).scrollTop();
+                $box.css({left: (wW - width)/2, top: scroll + (wH - height)/2})
+
+            }
+            move();
+            $(window).on('scroll',function(){
+                move();
+            })
+            $(window).on('resize',function(){
+                move();
+            })
+
+        }
+
+    }
+    var armessage = new arMessage();
+    armessage.init();
+
+})(jQuery);
+</script>
+</body>
+</html>

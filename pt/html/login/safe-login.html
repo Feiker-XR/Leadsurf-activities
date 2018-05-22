@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>安全登录</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/login/login.css" />
+</head>
+<body class="bg-content safe-login">
+	<div class="login-header"></div>
+	<div class="login-body">
+		<div class="login-content">
+			<div class="login-mark"></div>
+			<div class="login-logo"></div>
+			<!-- 用户名、密码、验证码请自行选择是否使用 -->
+			<ul class="login-list">
+					<li class="login-list-input">
+						<div class="check-error"><i class="tri"></i><i class="error"></i>用户名不存在，请重试</div>
+						<i class="ico-name"></i>
+						<input type="text" class="login-input" value="请输入用户名" />
+					</li>
+					<li class="login-list-input verify-code">
+						<div class="check-info"><i class="tri"></i>点击图片刷新验证码</div>
+						<img src="" alt="验证码" />
+						<input type="text" class="login-input" value="请输入验证码" />
+					</li>
+					<li class="login-list-btn"><input type="button" class="login-btn" value="下一步" /></li>
+				</ul>
+			<p class="change_mode">返回使用 <a href="#">普通登录</a></p>
+			<div class="slider">
+				<ul class="slider-pic">
+					<li><a href="#"><img alt="pic1" src="../images/login/zzz-1.png"></a></li>
+					<li><a href="#"><img alt="pic2" src="../images/login/zzz-1.png"></a></li>
+					<li><a href="#"><img alt="pic3" src="../images/login/zzz-1.png"></a></li>
+				</ul>
+				<ul class="slider-num">
+					<li class="current">1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="login-footer"></div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+html,body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,th,td,em,form,input,select,textarea,button,header,section,aside,footer{margin:0;padding:0;}
+ul,li{list-style:none;}
+img{border:none;}
+body{font:12px/1.5 Microsoft Yahei,Arial,Helvetica,sans-serif;color:#333;}
+.clearfix:after{content:".";display:block;height:0;clear:both;overflow:hidden;}
+.clearfix{*zoom:1;}
+
+html{
+	width: 100%;
+}
+body{
+	width: 100%;
+	overflow-x: hidden;
+}
+body,
+input,
+select{
+	font-family: 'Microsoft Yahei',Tahoma,Arial,Helvetica,Simsun,STHeiti;
+}
+ 
+
+
+.windowbg {
+	width: 100%;
+	background:#3a1502 url(../images/allbg.jpg) no-repeat center top;
+	color: #c8af76;
+	font-size: 14px;
+	line-height: 25px;;
+}
+
+.main {
+	width: 1000px;
+	margin: 0 auto;
+}
+.banner {
+	height: 900px;
+	background: url('../images/banner.jpg') center top no-repeat;
+	position: relative;
+}
+.banner .logo {
+	height: 68px;
+	width: 178px;
+	position: absolute;
+	left: 26px;
+	top: 10px;
+	display: block;
+}
+.main .line {
+	width: 540px;
+	height: 0px;
+	border-bottom: 2px dashed #653f2d;
+	margin: 10px 0px 15px;
+}
+.main p {
+	width: 600px;
+	margin-bottom: 10px;
+}
+.warning {
+	padding-left: 20px;
+	background: url(../images/warning.jpg) no-repeat left 6px;
+}
+.s_table {
+	width: 600px;
+	text-align: center;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+.s_table td,
+.s_table th{
+	border: 2px solid #3c1501;
+	padding: 6px 0px;
+}
+.s_table th {
+	color: #e0b649;
+	background: #5b0609;
+}
+.s_table td {
+	color: #c7ce75;
+	background: #5b0609;
+}
+.s_table .level1 {
+	background: #682d00;
+}
+.s_table .level2 {
+	background: #614302;
+}
+.s_table .level3 {
+	background: #674b0d;
+}
+.surprise1 {
+	padding: 0px 32px;
+	background: url(../images/surprise1.jpg) no-repeat center top;
+	height: 478px;
+	padding-top: 88px;
+}
+.surprise2 {
+	padding: 0px 32px;
+	background: url(../images/surprise2.jpg) no-repeat center top;
+	height: 385px;
+	padding-top: 88px;
+}
+.surprise3 {
+	padding: 0px 32px;
+	background: url(../images/surprise3.jpg) no-repeat center top;
+	height: 479px;
+	padding-top: 88px;
+	position: relative;
+}
+
+.surprise1,
+.surprise2,
+.surprise3, {
+	padding: 0px 32px;
+}
+
+.surprise3 ul {
+	padding-top: 190px;
+}
+.surprise3 ul li {
+	width: 290px;
+	text-align: center;
+	float: left;
+}
+.footer {
+	height: 50px;
+	bottom: 0px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}

@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>查看下级报表</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	
+	
+	<link href="http://static.rfonlineedu.com:888/static/jquery-validation/1.9.0/validate.css" type="text/css" rel="stylesheet" />
+	<link href="http://static.rfonlineedu.com:888/static/styles/quickstart.css" type="text/css" rel="stylesheet" />
+	
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/bet/bet.css" />
+	
+	<link rel="stylesheet" href="http://static.rfonlineedu.com:888/static/images/login/login.css" />
+	<link rel="stylesheet" href="http://static.rfonlineedu.com:888/static/images/common/js-ui.css" />
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/jquery-ui-1.10.2.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/jquery.flot.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/jquery.flot.crosshair.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.base.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.util.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Timer.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Slider.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Hover.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Validator.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.BASE64.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/dateUtil.js"></script>	
+	<!--<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/datePicker.js"></script>-->
+    <script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/lotteryConfig.js"></script>	
+	<script type="text/javascript">
+		 global_params_notice = "all,ad_top",global_userName='admin';
+	</script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Notice.js"></script>
+	
+<script type="text/javascript">
+// 重写datePicker.js以去掉time选择器、可以直接把dataPicker.js的引用去掉
+$(document).ready(function() {
+    // 日期控件js 开始
+    var inputStart = $('#J-date-start'),
+        inputEnd = $('#J-date-end'),
+
+        dateFilterFn = function(e) {
+            var Dt = new phoenix.DatePicker({
+                input: this,
+                isShowTime: false,
+                setDisabled: function() {
+                    var me = this,
+                        tds = me.getContent()
+                            .find('td'),
+                        it, tempDate, _y, _m, _d;
+                    // n天前的某个日期
+                    before = dateUtil.getOneDateTime(time_now, -1 * 3600 * 24 * Number($('#J-date-bound').val()) + 1);
+
+                    tds.each(function() {
+                        it = $(this);
+                        _y = Number(it.attr('data-year'));
+                        _m = Number(it.attr('data-month'));
+                        _d = Number(it.text());
+                        tempDate = new Date(_y, _m, _d);
+                        if (tempDate < before || tempDate > dateUtil.now) {
+                            it.addClass('day-disabled');
+                        }
+                    });
+                }
+            });
+            Dt.show();
+        },
+        // 年月日
+        time_now, _arrDate = $.trim($('#J-data-now').val()).split(
+            /[^\d]/),
+        dateUtil = {}, setStartEndTime = function(
+            start, end) {
+            $('#J-time-start').val(start);
+            $('#J-time-end').val(end);
+        }, time_y = Number(_arrDate[0]),
+        time_m = Number(_arrDate[1]),
+        time_d = Number(_arrDate[2]),
+        time_h = Number(_arrDate[3]),
+        time_s = Number(_arrDate[4]);
+
+    time_now = new Date();
+
+    time_now.setFullYear(time_y);
+    time_now.setMonth(time_m - 1);
+    time_now.setDate(time_d);
+    time_now.setHours(time_h);
+    time_now.setMinutes(time_s);
+
+    dateUtil = {
+        now: time_now,
+        // 获取当前日期前后n秒的日期
+        getOneDateTime: function(now, n) {
+            var now_ms = now.getTime(),
+                n = n || 0,
+                d_n = now_ms + n * 1000,
+                d2 = new Date();
+            d2.setTime(d_n)
+            return d2;
+        },
+        getYestodayBound: function() {
+            var me = this,
+                now = me.now,
+                result = [],
+                d = new Date();
+            d.setFullYear(now.getFullYear());
+            d.setMonth(now.getMonth());
+            d.setDate(now.getDate() - 1);
+            result.push(me.formatDateToString(d, true));
+            result.push(me.formatDateToString(d, false));
+            return result;
+        },
+        getTodayBound: function() {
+            var me = this,
+                now = me.now,
+                result = [],
+                d = new Date();
+            d.setFullYear(now.getFullYear());
+            d.setMonth(now.getMonth());
+            d.setDate(now.getDate());
+            result.push(me.formatDateToString(d, true));
+            result.push(now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate());
+            return result;
+        },
+        // 前一周时间
+        // 7天前的 00:01 + 今天已过的时间
+        // 今天当成1天计算
+        getBeforeWeekBound: function() {
+            var me = this,
+                now = me.now,
+                result = [],
+                d = new Date();
+            d.setFullYear(now.getFullYear());
+            d.setMonth(now.getMonth());
+            d.setDate(now.getDate() - 7);
+            result.push(me.formatDateToString(d, true));
+            result.push(now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate());
+            return result;
+        },
+        formatDateToString: function(d, isFirst) {
+            var str = isFirst ? '00:01' : '23:59';
+            return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+        }
+    };
+    inputStart.off('click').on('click', dateFilterFn);
+    inputEnd.off('click').on('click', dateFilterFn);
+
+    // 初始化首次起始时间
+    setStartEndTime(dateUtil.getTodayBound()[0], dateUtil
+        .getTodayBound()[1]);
+
+    // 日期控件js 结束
+});
+</script>
+
+<script type="text/javascript"
+	src="http://static.rfonlineedu.com:888/static/js/userCenter/subUserReport.js"></script>
+<script type="text/javascript">
+var baseUrl = '';
+var staticFileContextPath='http://static.rfonlineedu.com:888';
+	</script>
+
+</head>
+<body>
+
+	<!-- toolbar start -->
+	<div class="bg-toolbar"></div>
+	<div class="toolbar">
+		<div class="g_33">
+        	<div id="J-top-game-menu" class="game-menu">
+				<a href="http://www2.joy188.com:888"><span class="game-menu-text">凤凰游戏</span></a>
+				<div class="game-menu-panel">
+					<div class="game-menu-inner clearfix">
+						<div class="game-menu-left">
+							<div class="game-menu-title">高频(13)</div>
+							<ul>
+								<li><a target="_blank" href="/gameBet/cqssc">重庆时时彩</a><span class="ico-addbonus"></span></li>
+								<li><a target="_blank" href="/gameBet/sd115">山东11选5</a></li>
+								<li><a target="_blank" href="/gameBet/jxssc">江西时时彩</a></li>
+								<li><a target="_blank"href="/gameBet/jx115">江西11选5</a></li>
+								<li><a target="_blank" href="/gameBet/hljssc">黑龙江时时彩</a></li>
+								<li><a target="_blank"href="/gameBet/gd115">广东11选5</a></li>
+								<li><a target="_blank" href="/gameBet/xjssc">新疆时时彩</a></li>
+								<li><a target="_blank" href="/gameBet/cq115">重庆11选5</a></li>
+								<li><a target="_blank" href="/gameBet/tjssc">天津时时彩</a></li>
+								<li><a target="_blank" href="/gameBet/ll115">乐利11选5</a><span class="ico-game-new"></span></li>
+								<li><a target="_blank" href="/gameBet/llssc">乐利时时彩</a></li>
+								<li><a target="_blank" href="/gameBet/bjkl8">北京快乐8</a></li>
+								<li class="border-none"><a target="_blank" href="/gameBet/shssl">上海时时乐</a></li>
+							</ul>
+						</div>
+						<div class="game-menu-right">
+							<div class="game-menu-title">低频(4)</div>
+							<ul>
+							<ul>
+								<li><a target="_blank" href="/gameBet/ssq">双色球</a></li>
+								<li><a target="_blank" href="/gameBet/fc3d">福彩3D</a></li>
+								<li><a target="_blank" href="/gameBet/p5">排列3/5</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+            
+            <ul class="menu">
+                <li class="user hover" id="J-user-panel">
+                    <a href="#">您好，<span>admin</span><i class="tri"></i></a>
+                    <div class="menu-nav">
+						<i class="tri"></i>
+						<a href="/gameUserCenter/queryOrdersEnter?time=7">游戏记录</a>
+						<a href="/gameUserCenter/queryCurrentUserReport">报表管理</a>
+						<a href="http://www2.joy188.com:888/bet/fuddetail">资金明细</a>
+						<a href="http://www2.joy188.com:888/safepersonal/safecenter">安全中心</a>
+					</div>
+                </li>
+                <li class="msg" id="J-msg-panel">
+                    <span class="msg-title" id="msg-title">0</span>
+                    <div class="msg-box" id="msg-box">
+                        <div class="msg-hd"><i class="tri"></i><a href="http://www2.joy188.com:888/Service/inbox" class="more">更多</a>我的未读消息<strong >(<span id="msgcount">0</span>)</strong></div>
+                        <div class="msg-bd" id="readmsg">
+                        <!--	<a href="">这里是消息提示提示消息</a>-->							
+                        </div>
+                    </div>
+                </li>
+             	<li class="balance"><span id="hiddBall" style="display:none">余额：<span id="spanBall"></span></span><span id="hiddenBall">余额已隐藏 <a href="#" id="showAllBall">显示</a></span></li>
+                <li class="recharge"><a href="http://www2.joy188.com:888/fund">充值</a></li>
+                <li class="withdrawals"><a href="http://www2.joy188.com:888/withdraw">提现</a></li>                
+                <li class="quit"><a href="http://www2.joy188.com:888/admin/login/logout">退出</a></li>
+            </ul>
+		</div>
+	</div>
+	<!-- toolbar end -->
+    
+	<!-- header start -->
+	<!-- toolbar end -->
+	<!-- header start -->
+	<div class="header">
+		<div class="g_33">
+			<h1 class="logo"><a title="首页" href="http://www2.joy188.com:888/index">firefrog</a></h1>
+			<div class="service">
+				<a title="客服" class="link-service" href="#">客服</a>
+				<a title="帮助" class="link-help" target="_blank" href="http://www2.joy188.com:888/help/goIndex">帮助</a>
+			</div>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="g_33 common-main">
+		
+
+
+		<div class="g_5">
+			<div class="common-side">
+				<div class="nav-side">
+					<dl class="side-bet">
+						<dt class="title">投注管理</dt>
+						<dd><a href="/gameUserCenter/queryOrdersEnter?time=7">投注记录</a></dd>
+						<dd><a href="/gameUserCenter/queryPlans?time=7">追号记录</a></dd>
+						<dd><a href="http://www2.joy188.com:888/bet/fuddetail">账户明细</a></dd>
+					</dl>
+					<dl class="side-safe">
+						<dt class="title">账户安全</dt>
+						<dd><a href="http://www2.joy188.com:888/safepersonal/safecenter">安全中心</a></dd>
+						<dd><a href="http://www2.joy188.com:888/bindcard">银行卡管理</a></dd>
+						<dd><a href="http://www2.joy188.com:888/safepersonal/personalinfo">个人资料</a></dd>
+						<dd><a href="http://www2.joy188.com:888/safepersonal/safecodeedit">密码管理</a></dd>
+						<dd><a href="/gameUserCenter/queryBonusDetails?type=1&awardType=0">奖金详情</a></dd>
+					</dl>
+					<dl class="side-service">
+						<dt class="title">服务</dt>
+						<dd><a href="http://www2.joy188.com:888/Service/inbox"  style="text-decoration:none;">站内信&nbsp;<span class="side-message-num" id="radiuscount" >&nbsp;&nbsp;<span id="noreadmsg">0</span>&nbsp;&nbsp;</span></a></dd>
+					</dl>
+					<dl class="side-proxy">
+						<dt class="title">代理中心</dt>
+						
+						<dd><a href="http://www2.joy188.com:888/proxy/index">代理首页</a></dd>
+						<dd><a href="http://www2.joy188.com:888/applycenter/index">开户中心</a></dd>
+						<dd><a href="http://www2.joy188.com:888/proxy/cusmag">客户管理</a></dd>
+						
+						<dd><a href="/gameUserCenter/queryCurrentUserReport">报表查询</a></dd>
+					</dl>
+					<dl class="side-funds">
+						<dt class="title">资金</dt>
+						<dd><a href="http://www2.joy188.com:888/fund">我要充值</a></dd>
+						<dd><a href="http://www2.joy188.com:888/withdraw">我要提现</a></dd>
+						<dd><a href="http://www2.joy188.com:888/transfer">我要转账</a></dd>
+						
+						<dd><a href="http://www2.joy188.com:888/remark">唯一附言</a></dd>
+						
+					</dl>
+				</div>
+			</div>
+		</div>
+		
+	<div class="g_28 g_last">
+		<div class="common-article">
+			<div class="title">报表查询</div>
+			<div class="content">
+				<form id="J-form" action="queryUserReportByComplexCondition" method="post">
+
+	<ul class="ui-search search-porxy clearfix">
+		<li class="name"><label for="name" class="ui-label">用户名：</label>
+			<input type="text" value="" id="account"
+			name="account" class="input" /></li>
+		<li class="type"><label class="ui-label">彩种：</label> <input
+			type="hidden" id="lotteryIdValue" value=""></input>
+			<em id="sel"></em></li>
+		<li class="date"><label for="dateStar" class="ui-label">起始日期：</label>
+			<input type="text" class="input" id="J-date-start" value=""
+			name="queryTimeView"> <input type="hidden" id="jdate"
+			value="" name="queryTime" /></li>
+		<li><a id="search" type="submit" class="btn btn-important"
+			href="javascript:void(0);">搜 索<b class="btn-inner"></b></a></li>
+	</ul>
+</form>
+				<div class="crumbs">
+					<strong>客户层级：</strong><a href="/gameUserCenter/queryCurrentUserReport">客户管理</a> &gt;
+					<em id="userChainId">/ <a href="/gameUserCenter/querySubUserReport?userId=31&queryTime=&lotteryId=">admin</a> /</em>
+				</div>
+				<div class="ui-tab">
+					<table class="table table-info">
+						<thead>
+							<tr>
+								<th>用户名</th>
+								<th>用户组</th>
+								<th>总代购费</th>
+								<th>返点</th>
+								<th>实际总代购费</th>
+								<th>中奖金额</th>
+								<th>总结算</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+								<!-- 增加class名"highlight-cell"以高亮显示表格元素 -->
+								<tr class="highlight-cell">
+									<td>admin</td>
+									<td>总代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td>
+										-</td>
+								</tr>							
+								
+								<tr>
+									<td>aa111</td>
+									<td>
+										
+										代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td>
+										-</td>
+								</tr>
+
+								<tr>
+									<td>aaa1</td>
+									<td>
+										用户
+										</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td>
+										-</td>
+								</tr>
+							
+								<tr>
+									<td>abdd</td>
+									<td>
+										
+										代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td>
+										-</td>
+								</tr>
+							
+								<tr>
+									<td>agr01test</td>
+									<td>
+										
+										代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>585,412.20</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>23,942.17</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>561,470.03</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>417,879.15</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>-143,590.88</td>
+									<td>
+											<a
+												href="/gameUserCenter/querySubUserReport?userId=970">查看下级</a>
+										
+										</td>
+								</tr>
+							
+								<tr>
+									<td>agr02test</td>
+									<td>
+										
+										代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>4,366.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>14.82</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>4,351.18</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>5,152.20</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>801.02</td>
+									<td>
+											<a
+												href="/gameUserCenter/querySubUserReport?userId=971">查看下级</a>
+										
+										</td>
+								</tr>
+							
+								<tr>
+									<td>agr03test</td>
+									<td>
+										
+										代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td>
+											<a
+												href="/gameUserCenter/querySubUserReport?userId=959">查看下级</a>
+										
+										</td>
+								</tr>
+							
+								<tr>
+									<td>agr04test</td>
+									<td>
+										
+										代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>1,065,780.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>29,680.85</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>1,036,099.15</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>981,003.94</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>-55,095.21</td>
+									<td>
+											<a
+												href="/gameUserCenter/querySubUserReport?userId=972">查看下级</a>
+										
+										</td>
+								</tr>
+							
+								<tr>
+									<td>agr111</td>
+									<td>
+										
+										代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td>
+										-</td>
+								</tr>
+							
+								<tr>
+									<td>agrwan</td>
+									<td>
+										
+										代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td>
+										-</td>
+								</tr>
+							
+								<tr>
+									<td>agrwhitney</td>
+									<td>
+										
+										代理</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>18.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>18.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>0.00</td>
+									<td><span class="price"><dfn>&yen;</dfn></span>-18.00</td>
+									<td>
+										-</td>
+								</tr>
+							
+						</tbody>
+					</table>
+					<form id="queryForm" action="/gameUserCenter/querySubUserReport?userId=31&queryTime=&lotteryId=" method="post">
+					<!-- start  -->
+					<input id="pageNo" type="hidden" name="pageNo" value="1">
+					<input id="pageSize" type="hidden" name="pageSize" value="10">
+				
+				
+					 <div class="page-wrapper">
+										<span class="page-text">
+											<span class="lower">共127条记录</span>
+										</span>
+										
+							<div class="page page-right">
+								
+								
+								
+								
+								
+
+								
+									
+										<a href="#" onclick="doCurrent(1)" class="current" >1</a>
+									
+										<a href="#" onclick="doCurrent(2)"  >2</a>
+									
+										<a href="#" onclick="doCurrent(3)"  >3</a>
+									
+										<a href="#" onclick="doCurrent(4)"  >4</a>
+									
+										<a href="#" onclick="doCurrent(5)"  >5</a>
+									
+										<a href="#" onclick="doCurrent(6)"  >6</a>
+									
+										<a href="#" onclick="doCurrent(7)"  >7</a>
+									
+										<a href="#" onclick="doCurrent(8)"  >8</a>
+									
+										<a href="#" onclick="doCurrent(9)"  >9</a>
+									
+										<a href="#" onclick="doCurrent(10)"  >10</a>
+									
+									<a href="javascript:void(0)" onclick="doForward(11)">.1.</a>
+								
+								<a href="#" onclick="doNext()" class="next">下一步</a>
+								<span class="page-few">到第 <input id="forwardPage" type="text" value="" class="input"> /13页</span>
+								<input type="button" value="确 认" class="page-btn" onclick="doForward(-1)">
+							</div>
+					</div>
+					
+					<!-- end  -->
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	
+<!-- <div id="footer" class="span12">
+	Copyright &copy; 2005-2012 <a href="http://www.winterframework.com">winterframework.com</a>
+</div> -->
+
+
+</body>
+<script>
+(function($){
+	//读取，修改余额可见状态值
+	var noreadmsg2="0",
+		cookieAllball = $.cookie("showAllBall"),
+		frcid = $.cookie("_frcid") == null ? 0 : $.cookie("_frcid"),
+		arrys,
+        userContextPath = 'http://www2.joy188.com:888';		
+	//alert(cookieAllball);
+	if(cookieAllball=="1"){	
+		$('#hiddBall').css("display","inline"); 
+		$('#hiddenBall').css("display","none");
+	}
+	else{	
+		$('#hiddBall').css("display","none");	
+		$('#hiddenBall').css("display","inline");
+	}
+	//显示余额
+	$('#showAllBall').click(function(){
+		$.cookie("showAllBall", "1", { expires: 7,path: '/'}); 
+		$('#hiddBall').css("display","inline"); 
+		$('#hiddenBall').css("display","none");
+	});
+	//隐藏余额
+	$('#hiddBall').click(function(){
+		$.cookie("showAllBall", "0", { expires: 7,path: '/'}); 
+		$('#hiddBall').css("display","none");	
+		$('#hiddenBall').css("display","inline");
+	});	
+	//用户名显示	
+	if (frcid != 0 && typeof(frcid)!="undefined"){
+		frcid = phoenix.util.decodeBase64(frcid);
+		arrys=frcid.split('|');
+		$('#userName').html(arrys[1]);
+	}else{
+		location.href = _logOut+ '/login/index';
+		
+	};
+	
+	new phoenix.Hover({triggers:'#J-msg-panel',panels:'.msg-box',currClass:'msg-trigger',hoverDelayOut:300});
+	new phoenix.Hover({triggers:'#J-user-panel',panels:'.menu-nav',currClass:'menu-trigger',hoverDelayOut:300});	
+	//顶部彩种菜单
+	new phoenix.Hover({triggers:'#J-top-game-menu',panels:'#J-top-game-menu .game-menu-panel',hoverDelayOut:300,currClass:'game-menu-current'});
+	//余额读取
+	try	{
+		$.ajax({
+			
+			dataType:'json',
+			cache:false,
+			url:'/gameBet/queryUserBal',				
+			data:'',				
+			success:function(data){		
+				var _userBall = data == '' ? 0 : data,
+					_userBallF =  phoenix.util.formatMoney( _userBall/10000) ;
+				$('#spanBall').html(_userBallF);
+			},
+			error:function(xhr, type){
+				
+			}
+	   });
+		
+	} catch (err) {		
+		alert("网络异常，读取信息失败");
+	}
+	try {
+		//自动查询此用户未读信件(四处)
+		$.ajax({
+			type:'post',
+			dataType:'json',
+			cache:false,
+			url:'/service/queryunreadmessage',				
+			data:'',				
+			success:function(json){				
+				if(json.unreadCnt !=0){																
+					var html = "";
+					$.each(json.receives, function (i){
+						if(i==4){
+							html += "<a href= \"http://www2.joy188.com:888/Service/sysmessages?id="+ json.receives[i].id +"&msgTpye=uMsg&unread=1&pro=" + json.unreadCnt + "\">"+json.receives[i].title+"..."+"</a>";								
+						}
+						else{
+							html += "<a href= \"http://www2.joy188.com:888/Service/sysmessages?id="+ json.receives[i].id +"&msgTpye=uMsg&unread=1&pro=" + json.unreadCnt + "\">"+json.receives[i].title+"</a>";
+						}
+					});
+					$("#readmsg").html(html);	
+					$("#msgcount,#msg-title,#noreadmsg,#msgcount2,#noreadmsg2").html(parseInt(json.unreadCnt));												
+					$('#radiuscount').show();
+				}
+				else {					
+					$("#readmsg").html("暂未收到新消息");
+					$('#radiuscount').hide();//没有信件事，左菜单小图标隐藏
+					$('#msg-title,#noreadmsg,#msgcount2,#noreadmsg2').html("0");	
+					$('#readmsg').attr("style","text-align:center; color:black;");			
+				}
+			},
+			error:function(xhr, type){
+				
+			},
+			complete:function(){   }
+	   });
+	   } catch (err) {		
+				alert("网络异常，读取信件信息失败");
+	   }	
+	
+})(jQuery);
+
+</script>
+</html>

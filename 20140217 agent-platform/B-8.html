@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>代理平台后台-在线客服管理</title>
+<link rel="stylesheet" href="style/style.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="">
+	<div class="wrapper">
+		<div class="main">
+			<h2>在线客服管理</h2>
+			<div class="ui-title">请填写客服名称和对应的QQ号码，最多允许设置6个客服。</div>
+			<form action="?" id="J-form">
+			<table class="ui-table" id="J-table">
+				<thead>
+					<tr>
+						<th>客服名称</th>
+						<th>QQ号码</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="text" class="input input-name" value="" maxlength="8" /></td>
+						<td><input type="text" class="input input-qq" value="" /></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" value="" maxlength="8" /></td>
+						<td><input type="text" class="input input-qq" value="" /></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" value="" maxlength="8" /></td>
+						<td><input type="text" class="input input-qq" value="" /></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" value="" maxlength="8" /></td>
+						<td><input type="text" class="input input-qq" value="" /></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" value="" maxlength="8" /></td>
+						<td><input type="text" class="input input-qq" value="" /></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" value="" maxlength="8" /></td>
+						<td><input type="text" class="input input-qq" value="" /></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<ul class="ui-form">
+				<li>
+					<label for="info" class="ui-label">模块悬浮：</label>
+					<label class="ui-radio"><input type="radio" value="S" id="">开启</label>
+					<label class="ui-radio"><input type="radio" value="S" checked="checked" id="">关闭（默认值）</label>
+				</li>
+				<li>
+										<div id="J-wd-msg-right" class="pop-mini w-4">
+											<i class="ico-success"></i>
+											<h4 class="pop-text"></h4>
+										</div>
+										<div id="J-wd-msg-error" class="pop-mini w-4">
+											<i class="ico-error"></i>
+											<h4 class="pop-text"></h4>
+										</div>
+				</li>
+				<li>
+					<label for="info" class="ui-label"></label>
+					<input type="button" class="ui-button" id="J-button-submit" value="提交并保存" />
+				</li>
+			</ul>
+			</form>
+		</div>
+		<div class="sub"></div>
+	</div>
+	
+	
+<script>
+(function($){
+	//type = 1 成功消息
+	//type = 0 错误消息
+	var msgDom = [$('#J-wd-msg-error'), $('#J-wd-msg-right')],
+		showMsg = function(type, text){
+			var el = msgDom[type];
+			msgDom[0].hide();
+			msgDom[1].hide();
+			el.find('.pop-text').html(text);
+			el.show();
+			setTimeout(function(){
+				el.hide();
+			}, 3000);
+		};
+		
+	$('#J-table').find('.input-qq').keyup(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+		this.value = this.value.substr(0, 12);
+	}).blur(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+		this.value = this.value.substr(0, 12);
+	});
+	
+	$('#J-button-submit').click(function(){
+		var names = $('#J-table').find('.input-name'),
+			qqs = $('#J-table').find('.input-qq'),
+			isPass = true;
+		names.each(function(i){
+			if($.trim(this.value) == ''){
+				isPass = false;
+				showMsg(0, '客服名称不能为空');
+				return false;
+			}
+			if($.trim(qqs.get(i).value) == ''){
+				isPass = false;
+				showMsg(0, 'QQ号码不能为空');
+				return false;
+			}
+		});
+		if(!isPass){
+			return;
+		}
+		
+		$('#J-form').submit();
+		
+	});
+	
+	
+	
+	
+	
+})(jQuery);
+</script>
+	
+	
+</body>
+</html>

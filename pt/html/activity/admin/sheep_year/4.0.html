@@ -1,0 +1,471 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.1彩种信息列表</title>
+	<link rel="stylesheet" href="../../../../product/images/common/base.css" />
+	<link rel="stylesheet" href="../../../../product/images/common/js-ui.css" />
+	<link rel="stylesheet" href="../../../../product/images/admin/admin.css" />
+	<script type="text/javascript" src="../../../../product/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../../../product/js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Countdown.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.pagination.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Common.js"></script>
+	<script type="text/javascript" src="../../../../product/js/game/util/phoenix.cookie.js" ></script>	
+	<script type="text/javascript" src="../../../../product/js/game/util/phoenix.EditConfirm.js" ></script>
+
+	<style>
+	.j-ui-tip-info {background:#FFFFE1;border:1px solid #CCC;font-size:12px;color:#F60;}
+	.j-ui-tip-info .sj-l {display:none;}
+	.clearfix {display:block;}
+	</style>
+
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs">
+				<div class="crumbs">
+					<strong>当前位置：</strong>
+					<a href="">活动</a>
+					&gt;
+					<a href="">活动管理</a>
+					&gt;
+					<a href="">2015春节活动</a>
+				</div>
+			</div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+
+						<div class="ui-tab">
+							
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="">活动总览</a></li>	
+									<li><a href="">红包活动数据</a></li>
+									<li><a href="">押大小活动数据</a></li>
+									<li class="current"><a href="">转盘抽奖活动数据</a></li>
+									<li><a href="">活动配置</a></li>
+									<li><a href="">操作日志</a></li>
+								</ul>
+							</div>
+							
+							<div class="ui-tab-content ui-tab-content-current">
+								
+								<ul class="ui-form">
+									<li>
+										<label class="ui-label w-1">&nbsp;</label>
+										<span class="ico-tab ico-tab-item ico-tab-current"><a href="#">全部</a></span>
+										<span class="ico-tab ico-tab-item"><a href="#">待审核（10）</a></span>
+										<span class="ico-tab ico-tab-item"><a href="#">已通过</a></span>
+										<span class="ico-tab ico-tab-item"><a href="#">未通过</a></span>
+									</li>
+								</ul>
+								
+								<form action="" id="J-form" method="post">
+									<input type="hidden" name="pageNo" value="1" id="pageNo">
+									<input type="hidden" name="msgType" value="0">
+									<ul class="ui-search">
+										<li>
+											<label for="" class="ui-label">用户名：</label>
+											<input type="text" value="" class="input w-3" name="title">
+										</li>
+										<li>
+											<label class="ui-label">来源：</label>
+											<select class="ui-select" name="sendSatus">
+												<option value="-1" selected="">全部</option>
+												<option value="1">3.0</option>
+												<option value="2">4.0</option>
+												<option value="3">Android</option>
+												<option value="4">iOS</option>
+											</select>
+										</li>
+										<li>
+											<label class="ui-label">操作状态：</label>
+											<select class="ui-select" name="sendSatus">
+												<option value="-1" selected="">全部</option>
+												<option value="1">待发布</option>
+											</select>
+										</li>
+										<li>
+											<a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">搜 索<b class="btn-inner"></b></a>
+											<a class="btn" href="">导出报表<b class="btn-inner"></b></a>
+										</li>
+									</ul>
+								</form>
+								
+								<table class="table table-info">
+									<thead class="text-center">
+										<tr>
+											<th>用户名</th>
+											<th>剩余次数</th>
+											<th>当前连胜次数</th>
+											<th>最高连胜次数</th>
+											<th>累计充值金额</th>
+											<th>来源</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody class="text-center">
+										<tr data-id="2">
+											<td><span data-username="公共测试">公共测试</span></td>
+											<td><span data-times="3">3</span></td>
+											<td>4</td>
+											<td>6</td>
+											<td>30,000.05</td>
+											<td>3.0</td>
+											<td>
+												<a data-action="detail" href="javascript:void(0);">详细</a>
+												<a data-action="update" href="javascript:void(0);">更新</a>
+											</td>
+										</tr>
+										<tr data-id="3">
+											<td><span data-username="公共测试">公共测试</span></td>
+											<td><span data-times="3">3</span></td>
+											<td>4</td>
+											<td>6</td>
+											<td>30,000.05</td>
+											<td>3.0</td>
+											<td>
+												<a data-action="detail" href="javascript:void(0);">详细</a>
+												<a data-action="update" href="javascript:void(0);">更新</a>
+											</td>
+										</tr>
+										<tr data-id="4">
+											<td><span data-username="公共测试">公共测试</span></td>
+											<td><span data-times="3">3</span></td>
+											<td>4</td>
+											<td>6</td>
+											<td>30,000.05</td>
+											<td>3.0</td>
+											<td>
+												<a data-action="detail" href="javascript:void(0);">详细</a>
+												<a data-action="update" href="javascript:void(0);">更新</a>
+											</td>
+										</tr>
+										<tr data-id="5">
+											<td><span data-username="公共测试">公共测试</span></td>
+											<td><span data-times="3">3</span></td>
+											<td>4</td>
+											<td>6</td>
+											<td>30,000.05</td>
+											<td>3.0</td>
+											<td>
+												<a data-action="detail" href="javascript:void(0);">详细</a>
+												<a data-action="update" href="javascript:void(0);">更新</a>
+											</td>
+										</tr>
+										<tr data-id="6">
+											<td><span data-username="公共测试">公共测试</span></td>
+											<!-- data-times和data-showtip的值应该相同，都是更新前的数据 -->
+											<!-- span的text value应该是更新后的值 -->
+											<td><span class="color-red" data-type="increase" data-updatetimes="2" data-showtip="3" data-times="3">5</span></td>
+											<td>4</td>
+											<td>6</td>
+											<td>30,000.05</td>
+											<td>3.0</td>
+											<td>
+												<a data-action="detail" href="javascript:void(0);">详细</a>
+												<a class="color-red" data-actionuser="Panda" data-action="publish" href="javascript:void(0);" data-reason="用户帐变消失，给用户手动补录">发布</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<script>
+								$(function(){
+									// 搜索相关
+								    $('#J-button-submit').click(function() {
+								        $('#J-form').submit();
+								    });
+
+									// TIPS
+									var inputTip = new phoenix.Tip.getInstance();
+									$('body').on('mouseover', '[data-showtip]', function() {
+										var dom = $(this),
+											text = dom.attr('data-showtip');
+										if (text) {
+											inputTip.setText('更新前：' + text);
+											inputTip.show(dom.outerWidth() + 4, dom.outerHeight() * -1, this);
+										}
+									}).on('mouseout', '[data-showtip]', function() {
+										var text = this.getAttribute('data-showtip');
+										if (text) {
+											inputTip.hide();
+										}
+									});
+
+									// 更新/发布
+									var minWindow = new phoenix.MiniWindow({ cls: 'pop' }),
+										minWindowDom = minWindow.getContainerDom(),
+										mask = phoenix.Mask.getInstance(),
+										editConfirm = new phoenix.EditConfirm();
+
+									minWindow.addEvent('beforeShow', function() {
+										mask.show();
+									});
+									minWindow.addEvent('afterHide', function() {
+										mask.hide();
+									});
+									$('[data-action]').on('click', function(){
+										var action = $(this).data('action');
+										// console.log(action);
+										if( !action ) return false;
+
+										var $tr = $(this).parents('tr:eq(0)'),
+											username = $tr.find('[data-username]').data('username'),
+											times = $tr.find('[data-times]').data('times')
+											id = $tr.data('id');
+										editConfirm.isFlag = false;
+										minWindowDom.width(488);
+
+										if( action == 'update' ){
+											minWindow.setTitle('更新');
+											minWindow.setContent(
+												'<div class="pop-title text-left"><strong>用户名：</strong>' + username + '</div>' +
+												'<div class="pop-title text-left"><p><strong>当前押大小剩余次数：</strong>' + times + '&nbsp;次</p>' + '</div>' +
+												'<div class="pop-title text-left">' +
+													'<select class="ui-select w-2" id="J-update-select">' +
+														'<option value="increase">添加</option>' +
+														'<option value="decrease">扣除</option>' +									
+													'</select>&nbsp;' +
+													'<input id="J-update-num" type="text" name="" value="" placeholder="输入次数" class="input w-2 input-money">&nbsp;次' +
+												'</div>' + 
+												'<div class="pop-title text-left">' +
+													'<p><strong>操作原因<span class="color-red">*</span></strong></p>' +
+													'<textarea id="J-update-reason" class="textarea w-6" name="" placeholder="请输入更新数据的原因"></textarea>' + 
+												'</div>' + 
+												'<div class="pop-title text-left"><strong>更新后押大小剩余次数：</strong><span id="J-update-times">' + times + '</span>&nbsp;次</div>' + 
+												'<div class="pop-btn">' +
+													'<a href="javascript:void(0);" class="btn btn-important" id="J-button-pop-confirm">确 认<b class="btn-inner"></b></a>' +
+													'<a href="javascript:void(0);" class="btn" id="J-button-pop-cancel">取 消<b class="btn-inner"></b></a>' +
+												'</div>'
+											);
+											minWindow.show();
+											$('#J-update-select, #J-update-num').on('change', function(){
+												// console.log('aaa')
+												var type = $('#J-update-select').val(),
+													num = parseInt($('#J-update-num').val());
+												if( type == 'decrease' && num > times ){
+													alert('扣除的剩余次数不能大于当前剩余次数');
+													num = 0;
+													$('#J-update-num').val(num);
+												}
+												doAmountUpdate(times, type, num);
+											});
+											$('#J-update-num').on('keyup', function(){
+												var val = parseInt($(this).val());
+												$(this).val(val);
+											});
+
+											$('#J-button-pop-confirm').on('click', function(e) {
+												e.preventDefault();
+												var type = $('#J-update-select').val(),
+													num = parseInt($('#J-update-num').val()),
+													reason = $('#J-update-reason').val();
+												if( type != 'increase' && type != 'decrease' ){
+													return alert('请选择操作类型！');
+												}
+												if( isNaN(num) || num < 0 ){
+													return alert('操作次数输入有误！');
+												}												
+												if( !reason ){
+													return alert('请输入更新数据的原因!');
+												}
+
+												minWindow.hide();
+												// 请开启以下注释，并去掉上一行代码
+												/*$.post('balala.php', {
+													type: type,
+													num: num,
+													reason: reason
+												}).done(function(resp){
+													var resp = $.parseJSON(resp);                
+													if( resp.status == 'ok' ){
+														minWindow.hide();
+														alert('操作成功！');
+														location.reload();
+													}else{
+														alert(resp.msg);
+													}
+												}).fail(function(xhr, textStatus, errorThrown){
+													alert('服务器返回错误："' + xhr.responseText + '". 失败，请重试！');
+												});*/
+
+											});
+											$('#J-button-pop-cancel').on('click', function() {
+												minWindow.hide();
+											});
+										}else if( action == 'publish' ){
+											var type       = $tr.find('[data-type]').data('type'),
+												num        = $tr.find('[data-updatetimes]').data('updatetimes'),
+												result     = type == 'increase' ? times + num : times - num,
+												actionuser = $tr.find('[data-actionuser]').data('actionuser'),
+												reason     = $tr.find('[data-reason]').data('reason');
+
+											minWindow.setTitle('发布');
+											minWindow.setContent(
+												'<div class="pop-title text-left"><strong>用户名：</strong>' + username + '</div>' +
+												'<div class="pop-title text-left">' +
+													'<p><strong>更新前押大小剩余次数：</strong>' + times + '&nbsp;次</p>' +
+													'<p><strong>更新内容：</strong>' + (type == 'increase' ? '添加' : '扣除') + num + '次</p>' +
+													'<p><strong>更新后押大小剩余次数：</strong>' + result + '&nbsp;次</p>' + 
+												'</div>' +
+												'<div class="pop-title text-left">' +
+													'<p><strong>操作人：</strong>' + actionuser + '</p>' +
+													'<p><strong>操作原因：</strong>' + reason + '</p>' +
+												'</div>' + 
+												'<div class="pop-btn">' +
+													'<a href="javascript:void(0);" class="btn btn-important" id="J-button-pop-confirm">同 意<b class="btn-inner"></b></a>' +
+													'<a href="javascript:void(0);" class="btn" id="J-button-pop-cancel">拒 绝<b class="btn-inner"></b></a>' +
+												'</div>'
+											);
+											minWindow.show();
+
+											$('#J-button-pop-confirm').on('click', function(e) {
+												e.preventDefault();
+												minWindow.hide();
+												// 请开启以下注释，并去掉上一行代码
+												/*$.post('balala.php', {actionid: id}).done(function(resp){
+													var resp = $.parseJSON(resp);                
+													if( resp.status == 'ok' ){
+														minWindow.hide();
+														alert('操作成功！');
+														location.reload();
+													}else{
+														alert(resp.msg);
+													}
+												}).fail(function(xhr, textStatus, errorThrown){
+													alert('服务器返回错误："' + xhr.responseText + '". 失败，请重试！');
+												});*/
+
+											});
+											$('#J-button-pop-cancel').on('click', function() {
+												minWindow.hide();
+											});
+										}else if( action == 'detail' ){
+											$.get('getDetails.php', {id: id}).done(function(resp){
+												var resp = $.parseJSON(resp);
+												if( resp.status == 'ok' ){
+													var tableHtml = createDetailTable(resp.data);
+													minWindowDom.width(800);
+													minWindow.setTitle('详细');
+													minWindow.setContent(
+														'<div class="pop-title text-left"><strong>用户名：</strong>' + username + 
+															'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+															'<strong>当前押大小剩余次数：</strong>' + times + '&nbsp;次' +
+														'</div>' + tableHtml + 
+														'<div class="pop-btn">' +
+															'<a href="javascript:void(0);" class="btn btn-important" id="J-button-pop-confirm">确 认<b class="btn-inner"></b></a>' +
+														'</div>'
+													);
+													minWindow.show();
+
+													$('#J-button-pop-confirm').on('click', function(e) {
+														minWindow.hide();
+													});
+												}else{
+													alert(resp.msg);
+												}
+											}).fail(function(xhr, textStatus, errorThrown){
+												alert('服务器返回错误："' + xhr.responseText + '". 失败，请重试！');
+											});
+													
+										}
+									});
+
+									function doAmountUpdate(times, type, num){
+										if( type == 'increase' ){
+											times += num;
+										}else{
+											times -= num;
+										}
+										// return times;
+										$('#J-update-times').text(times);
+									}
+
+									function createDetailTable(data){
+										var html = '<table class="table table-info">' +
+														'<thead class="text-center"><tr><th>时间</th><th>充值金额</th><th>获得次数</th><th>使用次数</th><th>押大小结果</th></tr></thead>' +
+														'<tbody class="text-center">';
+
+										$.each(data, function(i, n){
+											html += '<tr>';
+											$.each(n, function(k,v){
+												html += '<td>' + v + '</td>';
+											});
+											html += '</tr>';
+										});
+										html += '</tbody></table>';
+										console.log(html);
+										return html;
+									}				
+								});
+								</script>
+								<!-- PAGER 分页 -->
+								<div class="page-wrapper clearfix">
+									<input id="pageNo" type="hidden" name="pageNo" value="1">
+									<input id="pageSize" type="hidden" name="pageSize" value="10">
+									<div class="page-wrapper"><span class="page-text"><span class="lower">共1451条记录</span></span>
+										<div class="page page-right"><a href="javascript:void(0)" onclick="doCurrent(1)" class="current">1</a><a href="javascript:void(0)" onclick="doCurrent(2)">2</a><a href="javascript:void(0)" onclick="doCurrent(3)">3</a><a href="javascript:void(0)" onclick="doCurrent(4)">4</a><a href="javascript:void(0)" onclick="doCurrent(5)">5</a><a href="javascript:void(0)" onclick="doCurrent(6)">6</a><a href="javascript:void(0)" onclick="doCurrent(7)">7</a><a href="javascript:void(0)" onclick="doCurrent(8)">8</a><a href="javascript:void(0)" onclick="doCurrent(9)">9</a><a href="javascript:void(0)" onclick="doCurrent(10)">10</a><a href="javascript:void(0)" onclick="doForward(11)">...</a><a href="javascript:void(0)" onclick="doNext()" class="next">下一步</a><span class="page-few">到第 <input id="forwardPage" type="text" value="" class="input"> /146页</span>
+											<input type="button" value="确 认" class="page-btn" onclick="doForward(-1)">
+										</div>
+									</div>
+								</div>
+
+							</div>
+								
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

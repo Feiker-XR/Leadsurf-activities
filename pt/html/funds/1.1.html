@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>我要充值</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/funds/funds.css" />
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+</head>
+<body>
+	
+	<!-- toolbar start -->
+	<div class="bg-toolbar"></div>
+	<div class="toolbar">
+		<div class="g_33">
+				<ul class="menu">
+					<li class="user hover">
+						<a href="#">您好，VIC<i class="tri"></i></a>
+						<div class="menu-nav" style="display:none;">
+							<i class="tri"></i>
+							<a href="">游戏记录</a>
+							<a href="">报表管理</a>
+							<a href="">资金明细</a>
+							<a href="">安全中心</a>
+						</div>
+					</li>
+					<li class="msg">
+						<a href="#" class="msg-title">12</a>
+						<div class="msg-box" style="display:none;">
+							<div class="msg-hd"><i class="tri"></i><a href="#" class="more">更多</a>我的未读消息<strong>（12）</strong></div>
+							<div class="msg-bd">
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息</a>
+							</div>
+						</div>
+					</li>
+					<li class="balance">余额：10000.00</li>
+					<li class="recharge"><a href="#">充值</a></li>
+					<li class="withdrawals"><a href="#">提现</a></li>
+					<li class="quit"><a href="#">退出</a></li>
+				</ul>
+		</div>
+	</div>
+	<!-- toolbar end -->
+	<!-- header start -->
+	<div class="header">
+		<div class="g_33">
+			<h1 class="logo"><a title="首页" href="#">PH158</a></h1>
+			<div class="service">
+				<a title="客服" class="link-service" href="#">客服</a>
+				<a title="帮助" class="link-help" href="#">帮助</a>
+			</div>
+		</div>
+	</div>
+	<!-- header end -->
+	
+	<div class="g_33 common-main">
+		<div class="g_5">
+			<div class="common-side">
+				<div class="nav-side">
+					<dl class="side-bet">
+						<dt class="title">投注管理</dt>
+						<dd><a href="../bet/1.1bet-bets.html">游戏记录</a></dd>
+						<dd><a href="../bet/1.7bet-chas.html">追号记录</a></dd>
+						<dd><a href="../bet/1.7bet-chas.html">账户明细</a></dd>
+					</dl>
+					<dl class="side-safe">
+						<dt class="title">账户安全</dt>
+						<dd><a href="../ucenter/2.3safe-safe.html">安全中心</a></dd>
+						<dd><a href="../ucenter/2.3safe-safe.html">银行卡管理</a></dd>
+						<dd><a href="../ucenter/2.1safe-personal.html">个人资料</a></dd>
+						<dd><a href="../ucenter/2.11-2.12safe-change-pwd.html">密码管理</a></dd>
+					</dl>
+					<dl class="side-service">
+						<dt class="title">服务</dt>
+						<dd><a href="../service/3.1service-inbox.html">积分</a></dd>
+						<dd><a href="../service/3.1service-inbox.html">红包</a></dd>
+						<dd><a href="../service/3.1service-inbox.html">站内信</a></dd>
+					</dl>
+					<dl class="side-proxy">
+						<dt class="title">代理中心</dt>
+						<dd><a href="../proxy/4.1proxy-index.html">卡户</a></dd>
+						<dd><a href="../proxy/4.23proxy-account-center-management.html">开户中心</a></dd>
+						<dd><a href="../proxy/4.2proxy-customer-management.html">客户管理</a></dd>
+						<dd><a href="../proxy/4.15proxy-report-query.html">报表查询</a></dd>
+					</dl>
+					<dl class="side-funds">
+						<dt class="title">代理中心</dt>
+						<dd><a href="../proxy/4.1proxy-index.html">我要充值</a></dd>
+						<dd><a href="../proxy/4.23proxy-account-center-management.html">我要提现</a></dd>
+						<dd><a href="../proxy/4.2proxy-customer-management.html">上下级转账</a></dd>
+						<dd><a href="../funds/6.html">唯一附言</a></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="g_28 g_last">
+			<div class="common-content">
+				<div class="title">我要充值</div>
+				<div class="content bank-select">
+					<div class="step">
+						<table class="step-table">
+							<tbody>
+								<tr>
+									<td class="current"><div class="con">1.选择银行并填写金额</div></td>
+									<td><div class="tri"><div class="con">2.确认充值信息</div></div></td>
+									<td><div class="tri"><div class="con">3.登录网上银行汇款</div></div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<ul class="ui-form bank-select-from">
+						<li class="bank-select-from-li">
+							<label class="ui-label">发卡银行：</label>
+							<div class="bank-more">
+								<div class="bank-label">
+									<span title="建设银行" class="ico-bank CCB" style="display:none;"></span>
+									<span class="bank-drop-text">- 请选择银行 -</span>
+									<a class="bank-drop" href="javascript:void(0);"><i class="ico-up"></i></a>
+								</div>
+								<div class="bank-more-content" style="display:none;">
+									<div class="bank-list">
+										<span class="ico-bank CMB"></span>
+										<span class="ico-bank ICBC"></span>
+										<span class="ico-bank CIB"></span>
+										<span class="ico-bank BOCO"></span>
+										<span class="ico-bank CCB"></span>
+										<span class="ico-bank ABC"></span>
+										<span class="ico-bank CITIC"></span>
+										<span class="ico-bank CMBC"></span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="ui-text">
+							<div class="prompt">充值金额：单笔最低充值金额为100元，最高4.5万元<br />充值时限：请在30分钟内完成充值</div>
+						</li>
+						<li>
+							<label class="ui-label">充值金额：</label>
+							<input type="text" class="input w-4" value="">
+							<span class="ui-text-info">元</span>
+							<span class="ui-prompt"><i class="error"></i>充值限额：最低100元，最高45000元</span>
+						</li>
+						<li class="ui-btn"><a href="javascript:void(0);" class="btn btn-important">下一步<b class="btn-inner"></b></a></li>
+					</ul>
+					<div style="padding:20px;color:#999;">
+						注：您还在为每次充值填写不一样的附言而烦恼吗？  <a href="#">立即设置唯一附言</a>，从此只需记一个专属您自己的附言，充值更方便。
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="footer footer-important">
+		<div class="g_33">
+			<span class="copy">&copy; 2001-2012 591PH. All right reserved. 凤凰游戏平台版权所有</span><a href="#">帮助中心</a> | <a href="#">在线客服</a> | <a href="#">游戏介绍</a> | <a href="#">下载客户端</a> | <a href="#">翻墙工具</a>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+<script type="text/tpl" id="J-template-checkstatus">
+<div>
+	<p class="wd-title">对不起，您尚有一笔充值申请未完成，请完成后再发起</p>
+	<div>
+		<table width="100%" border="0" cellspacing="10" cellpadding="0">
+		  <tr>
+			<td align="right" width="130" class="wd-td-bold">充值银行：</td>
+			<td><#=bankFrom#></td>
+		  </tr>
+		  <tr>
+			<td align="right" class="wd-td-bold">充值金额：</td>
+			<td><#=money#></td>
+		  </tr>
+		  <tr>
+			<td align="right" class="wd-td-bold">收款银行：</td>
+			<td><#=bankTo#></td>
+		  </tr>
+		  <tr>
+			<td align="right" class="wd-td-bold">收款账户名：</td>
+			<td><#=name#></td>
+		  </tr>
+		  <tr>
+			<td align="right" class="wd-td-bold">收款Email地址：</td>
+			<td><#=email#></td>
+		  </tr>
+		  <tr>
+			<td align="right" class="wd-td-bold">附言：</td>
+			<td><#=message#></td>
+		  </tr>
+		  <tr>
+			<td align="right" class="wd-td-bold">开户行名称：</td>
+			<td><#=bankOpen#></td>
+		  </tr>
+	  </table>
+		<p class="wd-control-panel">
+			您还可以 &nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#" class="btn btn-important" id="J-button-order-cancel">撤销申请<b class="btn-inner"></b></a>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#">充值记录</a>
+		</p>
+		<p class="wd-tip">
+			* 如您已完成付款，请勿撤销，我们将尽快为您处理。
+		</p>
+	</div>
+</div>
+</script>
+<script type="text/tpl" id="J-template-cancel-confirm">
+<div>
+	<p class="wd-title" style="text-align:center;">您的充值申请已撤销成功！</p>
+		<p class="wd-control-panel">
+			<a href="#" class="btn btn-important closeBtn">继续充值<b class="btn-inner"></b></a>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#">充值记录</a>
+		</p>
+</div>
+</script>
+
+
+
+
+<script>
+(function(){
+	var	minWindow = new phoenix.MiniWindow({cls:'ui-wd-funds-expired'}),
+		mask = phoenix.Mask.getInstance();
+	minWindow.dom.css({
+		width:400
+	});
+	minWindow.addEvent('beforeShow', function(){
+		mask.show();
+	});
+	minWindow.addEvent('afterHide', function(){
+		mask.hide();
+	});
+	
+	var checkOrderStatus = function(){
+		$.ajax({
+			url:'checkstatus.json',
+			dataType:'json',
+			success:function(data){
+				//var data = {isSuccess:1, type:'', msg:'请求成功', data:{bankFrom:'充值银行名称', money:'充值金额', bankTo:'收款银行', name:'收款人', email:'收款Email地址', message:'附言', bankOpen:'开户行名称'}};
+				if(Number(data['isSuccess']) == 1){
+					var str = $('#J-template-checkstatus').html(),
+						reg,
+						p;
+					for(p in data['data']){
+						reg = RegExp('<#=' + p + '#>', 'g');
+						str = str.replace(reg, data['data'][p]);
+					}
+					minWindow.setTitle('温馨提示');
+					minWindow.setContent(str);
+					minWindow.show();
+					$('#J-button-order-cancel').click(function(e){
+						e.preventDefault();
+						$.ajax({
+							url:'cancelorder.json',
+							dataType:'json',
+							cache:false,
+							success:function(data){
+								if(Number(data['isSuccess']) == 1){
+									minWindow.hide();
+									minWindow.setContent($('#J-template-cancel-confirm').html());
+									minWindow.show();
+								}else{
+									alert(data['msg']);
+								}
+							}
+						});
+					});
+				}else{
+					
+				}
+			}
+		});
+	};
+	
+	
+	checkOrderStatus();
+	
+	
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

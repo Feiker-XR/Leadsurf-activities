@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <title>JqueryRotate Test</title>
+    <style>
+        html, body, p, h1, h2, h3, h4, h5, h6, ul, ol {
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+
+        .rotary-rotary {
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            width: 500px;
+            height: 500px;
+        }
+
+        .rotary-rotary img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game3">
+    <div class="rotary-rotary">
+        <img id="rotary" src="images/s3_turnplate.png">
+    </div>
+</div>
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jQueryRotate.2.2.js"></script>
+<script src="js/game3.js"></script>
+<script>
+    function MyTest() {
+        this.angle = 0;
+        this.timer = null;
+        this.$t = $('#rotary');
+    }
+    MyTest.prototype = {
+
+        rotate: function () {
+            var me = this;
+            this.timer = setInterval(function () {
+                me.angle += 3;
+                // me.$t.rotate(me.angle);
+                $('#rotary').rotate(me.angle);
+            }, 150);
+        }
+    };
+    var mytest = new MyTest();
+    mytest.rotate();
+</script>
+</body>
+</html>

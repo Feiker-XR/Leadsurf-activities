@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>2.1邮件-邮件配置</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	
+	.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+	
+	.pop-window-datepicker {z-index:710;}
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>站内信</dt>
+				<dd>发送站内信</dd>
+				<dd class="current"><a href="">系统消息管理</a></dd>
+				<dd>用户消息管理</dd>
+				<dt>邮件</dt>
+				<dd><a href="">邮件配置</a></dd>
+				<dd><a href="">邮件测试</a></dd>
+				<dt>通知任务</dt>
+				<dd><a href="#">通知任务管理</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">邮件</a> &gt; <a href="#">邮件管理</a> &gt; <a href="#">邮件配置</a></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li class="current">邮件配置</li>
+									<li><a href="2.2.html">邮件测试</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content">
+							
+								<form action="?" id="J-form">
+								<ul class="ui-form">
+									<li>
+										<label class="ui-label" for="">邮件发送方式：</label>
+										<select id="J-select-mailtype" class="ui-select w-2">
+											<option value="smtp" selected="selected">smtp</option>
+											<option value="pop">pop</option>
+											<option value="imap">imap</option>
+										</select>
+									</li>
+									<li>
+										<label class="ui-label" for=""><span class="type-mailtype">smtp</span>服务器：</label>
+										<input id="J-input-server" type="text" value="" class="input w-3">
+										<span class="ui-check"><i></i>服务器地址不能为空</span>
+									</li>
+									<li>
+										<label class="ui-label" for=""><span class="type-mailtype">smtp</span>端口：</label>
+										<input id="J-input-port" type="text" value="" class="input w-1">
+										<span class="ui-check"><i></i>端口不能为空</span>
+									</li>
+									<li>
+										<label class="ui-label" for="">发件人邮箱：</label>
+										<input id="J-input-sender" type="text" value="" class="input w-3">
+										<span class="ui-check"><i></i>发件人邮箱不能为空</span>
+									</li>
+									<li>
+										<label class="ui-label" for="">收件人名称：</label>
+										<input id="J-input-receive" type="text" value="" class="input w-2">
+										<span class="ui-check"><i></i>收件人名称不能为空</span>
+									</li>
+									<li id="J-panel-switch">
+										<label for="" class="ui-label"><span class="type-mailtype">smtp</span>用户身份验证：</label>
+										<span class="radio-list">
+											<label for="J-user-switch-1" class="label"><input name="userSwitch" type="radio" value="1" class="radio radio-switch" id="J-user-switch-1">开启</label>
+											<label for="J-user-switch-2" class="label"><input name="userSwitch" type="radio" value="0" class="radio radio-switch" id="J-user-switch-2" checked="checked">关闭</label>
+										</span>
+										<span class="ui-text-prompt">如果<span class="type-mailtype">smtp</span>服务器要求通过身份验证才可以发邮件，请选择开启。</span>
+									</li>
+									<li class="panel-user" style="display:none;">
+										<label class="ui-label" for="">验证用户名：</label>
+										<input id="J-input-username" type="text" value="" class="input w-3">
+										<span class="ui-check"><i></i>验证用户名不能为空</span>
+									</li>
+									<li class="panel-user" style="display:none;">
+										<label class="ui-label" for="">验证密码：</label>
+										<input id="J-input-password" type="text" value="" class="input w-3">
+										<span class="ui-check"><i></i>验证密码不能为空</span>
+									</li>
+									<li class="ui-btn">
+										<a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">确 定<b class="btn-inner"></b></a>
+									</li>
+								</ul>
+								</form>
+								
+								
+								
+							</div>
+						</div>
+							
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<script>
+(function($){
+	var form = $('#J-form');
+	
+	
+	$('#J-select-mailtype').change(function(){
+		form.find('.type-mailtype').text(this.options[this.options.selectedIndex].text);
+	});
+	
+	
+	var isNeedUsername = function(){
+		var radios = $('#J-panel-switch').find('input[type="radio"]'),v;
+		radios.each(function(){
+			if(this.checked){
+				v = this.value;
+				return false;
+			}
+		});
+		return v == '1' ? true : false;
+	};
+	
+	
+	var checkServer = function(){
+		var input = $('#J-input-server'),inputv = $.trim(input.val()),isPass = false;
+		if(inputv == ''){
+			input.parent().find('.ui-check').show();
+			isPass = false;
+			input.focus();
+		}else{
+			input.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-server').blur(function(){
+		checkServer();
+	});
+	
+	
+	var checkPort = function(){
+		var input = $('#J-input-port'),inputv = $.trim(input.val()),isPass = false;
+		if(inputv == ''){
+			input.parent().find('.ui-check').show();
+			isPass = false;
+			input.focus();
+		}else{
+			input.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-port').blur(function(){
+		checkPort();
+	});
+	
+	
+	
+	var checkSender = function(){
+		var input = $('#J-input-sender'),inputv = $.trim(input.val()),isPass = false;
+		if(inputv == ''){
+			input.parent().find('.ui-check').html('<i></i>发件人邮箱不能为空').show();
+			isPass = false;
+			input.focus();
+		}else if(!(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/).test(inputv)){
+			input.parent().find('.ui-check').html('<i></i>发件人邮箱格式填写不正确').show();
+			isPass = false;
+			input.focus();
+		}else{
+			input.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-sender').blur(function(){
+		checkSender();
+	});
+	
+	
+	var checkReceive = function(){
+		var input = $('#J-input-receive'),inputv = $.trim(input.val()),isPass = false;
+		if(inputv == ''){
+			input.parent().find('.ui-check').show();
+			isPass = false;
+			input.focus();
+		}else{
+			input.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-receive').blur(function(){
+		checkReceive();
+	});
+	
+	
+	var checkUsername = function(){
+		var input = $('#J-input-username'),inputv = $.trim(input.val()),isPass = false;
+		if(!isNeedUsername()){
+			return true;
+		}
+		if(inputv == ''){
+			input.parent().find('.ui-check').show();
+			isPass = false;
+			input.focus();
+		}else{
+			input.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-username').blur(function(){
+		checkUsername();
+	});
+	
+	
+	var checkPassword = function(){
+		var input = $('#J-input-password'),inputv = $.trim(input.val()),isPass = false;
+		if(!isNeedUsername()){
+			return true;
+		}
+		if(inputv == ''){
+			input.parent().find('.ui-check').show();
+			isPass = false;
+			input.focus();
+		}else{
+			input.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-password').blur(function(){
+		checkPassword();
+	});
+	
+	
+	$('#J-input-port').keyup(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+	});
+	
+	
+	
+	$('#J-button-submit').click(function(){
+		if(checkServer() && checkPort() && checkSender() && checkReceive() && checkUsername() && checkPassword()){
+			form.submit();
+		}
+	});
+	
+	
+	form.on('click', '.radio-switch', function(){
+		var v = this.value;
+		if(v == '1'){
+			form.find('.panel-user').show();
+		}else{
+			form.find('.panel-user').hide();
+		}
+	});
+	
+	
+	
+})(jQuery);
+</script>
+
+
+
+	
+	
+</body>
+</html>

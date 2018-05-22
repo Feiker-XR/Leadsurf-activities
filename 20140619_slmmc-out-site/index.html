@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>顺利秒秒彩 体验秒赢快感</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/base.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+	<aside id="J-code" class="code-area">
+		<div class="rope"></div>
+		<div class="code">
+			<img src="images/code.png" class="code-thumb" alt="扫一扫立即安装" />
+			<a target="_blank" href="http://www.ph158.com/m/">手机客户端下载</a>
+		</div>
+	</aside>
+    <header>
+    	<div class="slogan-area"></div>
+    	<section class="banner">
+    		<div class="bottom-layout"></div>
+    		<div class="show-ie"></div>
+    		<div class="animate-area">
+    			<div class="logo"></div>
+    			<div class="liewen"></div>
+    			<div class="stone"></div>
+    			<div class="slogan"></div>
+    			<div class="mountain"></div>
+    			<div class="lightning"></div>
+    		</div>
+    	</section>
+    </header>
+    <section class="slmmc-desc">
+    	<div class="desc-bg"></div>
+    	<div class="apply-activity">
+    		<div class="activity-time">
+    			<h4>6.26-6.30预约顺利秒秒彩试玩且在7.1日当天投注顺利秒秒彩满2元的客户独享2大特权</h4>
+				<p>◆免费在7.1后的3个工作日内获得顺利秒秒彩试玩补贴金2元</p>
+				<p>◆免费在7.1-7.10期间获得20台13寸MacBook Air抽奖机会</p>
+    		</div>
+    		<div id="J-cursor" class="cursor"></div>
+    		<div class="slogan-text">0元体验特权<br> 点击立即注册</div>
+    		<a id="J-apply-button" target="_blank" href="http://www.ph851.com/link/regview.html?link=20140602175318nvb
+" class="button-apply">立即注册</a>
+    	</div>
+    </section>
+    <section class="slmmc-prize clearfix">
+    	<figure class="game-slogan">
+    		<img src="images/game-desc.jpg" >
+    	</figure>
+    	<figure class="prize-desc">
+    		<img src="images/prize-desc.jpg" >
+    	</figure>
+    	<article class="prompt">
+    		<p>1.  活动限娱乐平台有效账户参与，有效账户指已在平台绑定真实银行卡（至少有一次提款记录的银行卡）的账户，   一张真实银行卡仅限参与一次。</p>
+			<p>2.  预约顺利秒秒彩试玩，试玩金为先试玩后补贴形式，即符合活动参与条件客户在7月1日投注顺利秒秒彩满2元，娱乐平台将在7月1日后的3个工作日内
+			      发放顺利秒秒彩试玩补贴金2元。</p>
+			<p>3.  7.2~7.11日每天晚上9点在乐利时时彩频道现场直播抽奖。</p>
+			<p>4.  顺利人生奖只能获得1次，娱乐平台将按累计中奖金额降序或累计中奖次数降序顺延奖项给后续客户。</p>
+			<p>5.  奖品的具体型号以娱乐平台当日采购为准，恕不另行通知。</p>
+			<p>6.  中奖客户请在平台公布名单后的7个工作日内联系在线客服兑奖，逾期不兑视为自动弃奖。</p>
+			<p>7.  本活动欢迎所有客户积极参与，但对刻意作弊骗取奖金客户，娱乐平台有权不予发放奖金。</p>
+			<p>8.  娱乐平台对与本活动相关的所有事项保留最终决定权和解释权。</p>
+    	</article>
+    </section>
+    <section class="about-us">
+    	<article class="about-us-desc">
+    		<h4>关于我们</h4>
+    		凤凰娱乐创立于2003年，拥有 First Cagayan（第一卡格扬）颁发的博彩牌照, 并经第三方游戏平台
+			Gaming Laboratories International（GLI）权威认证。10年来凤凰凭借一流的技术、优质的服务、
+			良好的口碑，赢得了众多玩家的信任和推崇，是亚洲彩票业的领导品牌。
+    	</article>
+    </section>
+    <footer>
+    	<div class="company-info">
+
+    	</div>
+    	<div class="copy-right">
+    		凤凰娱乐平台 版权所有
+    	</div>
+    </footer>
+</body>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script>
+	(function(){
+		var cotrolBarDom = $('.control_bar'),
+			cursorDom = $('#J-cursor');
+
+		codeDown = function() {
+			var codeDom = $('#J-code');
+
+
+			cotrolBarDom.attr('title', '收起');
+			cotrolBarDom.html('');
+			cotrolBarDom.removeClass('close');
+			cotrolBarDom.addClass('open');
+
+			codeDom.animate({
+				top: -460
+			},1000,'easeOutElastic', function() {
+				cotrolBarTag = true;
+
+			});
+		}
+
+		codeUp = function() {
+			var codeDom = $('#J-code');
+
+			cotrolBarDom.attr('title', '展开');
+			cotrolBarDom.html('手机购彩更轻松');
+			cotrolBarDom.removeClass('open');
+			cotrolBarDom.addClass('close');
+
+			codeDom.animate({
+				top: -999
+			},1000,'easeOutElastic', function() {
+				cotrolBarTag = false;
+			});
+		}
+
+		//二维码下拉
+		cotrolBarDom.bind('click', function() {
+
+			if(cotrolBarTag){
+				codeUp();
+			}else{
+				codeDown();
+			}
+		});
+
+		//动画
+		animateStep = function() {
+			var $logo = $('.banner .logo'),
+				$liewen = $('.banner .liewen'),
+				$slogan = $('.banner .slogan'),
+				$stone = $('.banner .stone'),
+				$lightning = $('.banner .lightning');
+
+			$logo.animate({top : 93}, 600, 'easeInOutBounce', function(){
+				$liewen.css({height: 111});
+
+				$slogan.css({opacity : 1, top : 70, left : 330});
+
+				setTimeout(function() {
+  					$lightning.css({opacity : 1, top : -55, left : 350});
+
+  					setTimeout(function() {
+  						codeDown();
+  					}, 600);
+				}, 500);
+			});
+
+			$stone.css({opacity : 1, left : 330, top : 268});
+
+
+		};
+
+
+		cursorAnimate = function() {
+
+			cursorDom.animate({
+				top : 60
+			}, 500, function() {
+				cursorDom.animate({
+					top : 70
+				}, 500, function() {
+					cursorAnimate();
+				});
+			});
+		};
+
+		cursorAnimate();
+
+		//动画
+		if(!$.support.leadingWhitespace || BrowserDetect['browser'] && BrowserDetect['version'] < 10) {
+
+			$('.banner').css('background', 'url(images/banner-ie.jpg) no-repeat center 0 #ae071c');
+			$('.animate-area').hide();
+		} else {
+
+			setTimeout(function(){
+				animateStep();
+			}, 1000);
+			
+		}
+	})();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50186483-3', 'fenghuang158.com');
+  ga('send', 'pageview');
+</script>
+</html>

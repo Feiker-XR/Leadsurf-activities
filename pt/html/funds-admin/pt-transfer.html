@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>转账限额配置</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>充值相关</dt>
+				<dd><a href="">异常充值处理</a></dd>
+				<dd><a href="">充值相关配置</a></dd>
+				<dt>提现相关</dt>
+				<dd><a href="">风险提现处理</a></dd>
+				<dd><a href="#">提现相关处理</a></dd>
+				<dt>人工资金操作</dt>
+				<dd><a href="#">人工资金操作审核流程</a></dd>
+				<dt>银行卡相关</dt>
+				<dd><a href="#">银行管理</a></dd>
+				<dd><a href="#">用户银行卡绑定管理</a></dd>
+				<dd><a href="#">银行卡黑名单管理</a></dd>
+				<dt>统计报表</dt>
+				<dd><a href="#">充值明细报表</a></dd>
+				<dd><a href="#">提现明细报表</a></dd>
+				<dd><a href="#">充提报表</a></dd>
+				<dd><a href="#">总代每日报表</a></dd>
+				<dd><a href="#">自动收款明细报表</a></dd>
+				<dt>转账相关</dt>
+				<dd><a href="#">账间互转明细</a></dd>
+				<dd class="current"><a href="#">账间互转限额配置</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">资金中心</a> &gt; 频道互转相关配置</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<ul class="ui-tab-title ui-tab-title2 clearfix" id="Tabs">
+							<li class="current">频道互转上下限配置</li>
+							<li class="">PT转账配额配置</li>
+						</ul>
+						<div class="ui-tab-content">
+							<table class="table table-info table-function">
+								<tbody>
+									<tr>
+										<td class="w-4">每日频道互转次数</td>
+										<td>
+											<span class="ui-info">普通用户：</span>
+											<select class="ui-select w-1">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+												<option value="8">8</option>
+												<option value="9">9</option>
+												<option value="10">10</option>
+												<option value="不限">不限</option>
+											</select>
+											<span class="ui-text-info">次</span>&nbsp;&nbsp;
+											<span class="ui-info">VIP用户：</span>
+											<select class="ui-select w-1">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+												<option value="8">8</option>
+												<option value="9">9</option>
+												<option value="10">10</option>
+												<option value="不限">不限</option>
+											</select>
+											<span class="ui-text-info">次</span>
+										</td>
+									</tr>
+									<tr>
+										<td>单次转账上限</td>
+										<td>
+											<ul class="set-list">
+												<li>
+													<span class="ui-info">普通用户：</span><br />
+													<span class="ui-info">最低：</span>
+													<input type="text" class="input w-1" value="100">
+													<span class="ui-info">元</span>&nbsp;&nbsp;
+													<span class="ui-info">最高：</span>
+													<input type="text" class="input w-1" value="50000">
+													<span class="ui-info">元</span>
+												</li>
+												<li>
+													<span class="ui-info">VIP用户：</span><br />
+													<span class="ui-info">最低：</span>
+													<input type="text" class="input w-1" value="100">
+													<span class="ui-info">元</span>&nbsp;&nbsp;
+													<span class="ui-info">最高：</span>
+													<input type="text" class="input w-1" value="50000">
+													<span class="ui-info">元</span>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td class="ui-btn">
+											<a class="btn btn-important" href="javascript:void(0);">保 存<b class="btn-inner"></b></a>
+											<a class="btn" href="javascript:void(0);">撤销编辑<b class="btn-inner"></b></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="ui-tab-content">
+							<table class="table table-info table-function">
+								<tbody>
+									<tr>
+										<td class="w-4">可转出额度系数</td>
+										<td>
+											<input type="text" class="input w-1" value="5">
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td class="ui-btn">
+											<a class="btn btn-important" href="javascript:void(0);">保 存<b class="btn-inner"></b></a>
+											<a class="btn" href="javascript:void(0);">撤销编辑<b class="btn-inner"></b></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="http://static.firefrog.com/static/js/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="http://static.firefrog.com/static/js/phoenix.base.js" type="text/javascript"></script>
+	<script src="http://static.firefrog.com/static/js/phoenix.Class.js" type="text/javascript"></script>
+	<script src="http://static.firefrog.com/static/js/phoenix.Event.js" type="text/javascript"></script>
+	<script src="http://static.firefrog.com/static/js/phoenix.Tab.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			
+			new phoenix.Tab({
+			triggers      :'.ui-tab-title li',
+			panels        :'.ui-tab-content',
+			eventType     :'click',
+			currPanelClass:'ui-tab-content-current',
+		});
+		})
+	</script>
+</body>
+</html>

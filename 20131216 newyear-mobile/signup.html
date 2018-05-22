@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>填写领奖信息</title>
+<meta id="viewport" name="viewport" content="target-densitydpi=medium-dpi, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" href="style/style.css?" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/phoenix.base.js" ></script>
+<script type="text/javascript" src="js/phoenix.Class.js" ></script>
+<script type="text/javascript" src="js/phoenix.Event.js" ></script>
+<script type="text/javascript" src="js/phoenix.Timer.js" ></script>
+<script type="text/javascript" src="js/phoenix.util.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tween.js" ></script>
+<script type="text/javascript" src="js/phoenix.Input.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tip.js" ></script>
+<script type="text/javascript" src="js/phoenix.Mask.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tab.js" ></script>
+</head>
+<body>
+
+
+			<style>
+				body {background:#CB223F}
+				.common-button {position:absolute;bottom:10px;display:block;width:60px;height:32px;line-height:32px;text-align:center;color:#FFF;padding-left:2px;}
+				.button-left {left:10px;background:#8E182C url(images/button-left.gif) no-repeat 10px 12px;}
+				.button-right {right:10px;background:#8E182C url(images/button-right.gif) no-repeat 10px 7px;padding-left:16px;}
+			</style>
+			<a id="J-button-back" class="common-button button-left" href="#">返回</a>
+			<a id="J-button-refresh" class="common-button button-right" href="#">刷新</a>
+			<script>
+			(function(){
+				$('#J-button-back').click(function(e){
+					e.preventDefault();
+					history.back(-1);
+				});
+				$('#J-button-refresh').click(function(){
+					location.href = location.href;
+				});
+			})();
+			</script>
+
+
+	
+	<div class="content">
+		<p class="description">为了保证您的账号安全性，请填写手机号码和电子邮箱，凤凰平台的客服将会联系您，向您确认您的收货地址。</p>
+		<ul class="ui-form">
+			<li>
+				<label class="ui-label" for="">手机号码：</label>
+				<input id="J-wd-item-mobile" type="text" class="input" value="">
+			</li>
+			<li>
+				<label class="ui-label" for="">E-Mail：</label>
+				<input id="J-wd-item-email" type="text" class="input" value="">
+			</li>
+			<li>
+				<label class="ui-label" for=""></label>
+				<a id="J-wd-item-submit" href="javascript:void(0);" class="btn-submit">确认并领取奖品</a>
+			</li>
+			<div id="J-error-mobile" class="check-error" style="display:none;">手机号码格式错误，请填写正确的手机号码</div>
+			<div id="J-error-email" class="check-error" style="display:none;">电子邮箱格式错误，请填写正确的电子邮箱</div>
+
+		</ul>
+	</div>
+	
+	
+	
+	<div id="J-wd-submit-success" style="display:none;" class="pop">
+		<div class="bd ">
+			<h3>恭喜您，奖品领取成功！</h3>
+			<p class="wd-p-center">请联系客服，奖品将会在活动结束后邮寄给您！</p>
+			<a class="btn-close btn-back" href="javascript:void(0);">确定</a>
+		</div>
+	</div>
+	
+	
+	<div id="J-wd-submit-not" style="display:none;" class="pop">
+		<div class="bd ">
+			<h3>确定暂时不领取奖品吗？</h3>
+			<p>稍后您可以在“查看中奖结果”中领取本次中奖的奖品</p>
+			<a class="btn-check control-close-confirm btn-click" href="javascript:void(0);">确认</a>
+			<a class="btn-close control-close-cancel" href="javascript:void(0);">取消</a>
+		</div>
+	</div>
+	
+	
+	
+<script>
+
+	var mask = phoenix.Mask.getInstance(),
+		tip = phoenix.Tip.getInstance(),
+		currentWd = null; 
+	//公共关闭窗口按钮
+	$('.pop .ico-close, .pop .btn-close, .btn-click, .control-refresh').click(function(){
+		var el = $(this);
+		if(el.hasClass('control-close')){
+			var wd = $('#J-wd-submit-not');
+			hideWd();
+			showWd(wd);
+		}else if(el.hasClass('control-close-cancel')){
+			$('#J-wd-submit-not').hide();
+			$('#J-wd-item').show();
+		}else if(el.hasClass('control-close-confirm')){
+			$('#J-wd-submit-not').hide();
+			$('#J-wd-item').hide();
+			hideWd();
+		}else if(el.hasClass('control-refresh')){
+			location.href = location.href;
+		}else if(el.hasClass('btn-back')){
+			location.href = 'game.html';
+		}else{
+			hideWd();
+		}
+	});
+	function showWd(dom){
+		//phoenix.util.toViewCenter(dom);
+		dom.css('marginTop', dom.height()/2*-1);
+		mask.show();
+		dom.show();
+		currentWd = dom;
+	}
+	function hideWd(){
+		if(currentWd && currentWd.hide){
+			currentWd.hide();
+			mask.hide();
+		}
+	}
+
+
+	var subIsLoading = false;
+	var subMobile = $('#J-wd-item-mobile');
+	var subEmail = $('#J-wd-item-email');
+	new phoenix.Input({el:subMobile,defText:'手机号码'});
+	new phoenix.Input({el:subEmail,defText:'电子邮件'});
+	function checkSubMobile(){
+		var mobile = $.trim(subMobile.val()),isPass = false;
+		if(!(/^1\d{10}/).test(mobile)){
+			$('#J-error-mobile').show();
+			isPass = false;
+		}else{
+			isPass = true;
+			$('#J-error-mobile').hide();
+		}
+		return isPass;
+	}
+	function checkSubEmail(){
+		var email = $.trim(subEmail.val()),isPass = false;
+		if(!(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/).test(email)){
+			$('#J-error-email').show();
+			isPass = false;
+		}else{
+			isPass = true;
+			$('#J-error-email').hide();
+		}
+		return isPass;
+	}
+	subMobile.blur(checkSubMobile);
+	subEmail.blur(checkSubEmail);
+	$('#J-wd-item-submit').click(function(e){
+		var mobile = $.trim(subMobile.val()),email = $.trim(subEmail.val()),itemId = Number($('#J-wd-selectItem-id').val());
+		if(subIsLoading || !checkSubMobile() || !checkSubEmail()){
+			return;
+		}
+		$.ajax({
+			url:'submitcontact.json',
+			dataType:'json',
+			data:{mobile:mobile,email:email,itemid:itemId},
+			method:'post',
+			cache:false,
+			sendBefore:function(){
+				subIsloading = true;
+			},
+			success:function(data){
+				if(Number(data['isSuccess']) == 1){
+					var wd = $('#J-wd-submit-success');
+					hideWd();
+					showWd(wd);
+				}else{
+					alert(data['msg']);
+				}
+			},
+			complete:function(){
+				subIsloading = false;
+			}
+		});
+	});
+	
+</script>
+	
+
+</body>
+</html>

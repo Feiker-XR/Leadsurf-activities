@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    function random_second(except){
+        var no = Math.floor(Math.random()*3);
+        var num_str = '';
+        function getExcept(except){
+            var result = Math.floor(Math.random()*5);
+            if(Number(result) === Number(except)){
+                arguments.callee(except);
+            }else{
+                return result;
+            }
+
+        }
+        var third = getExcept(except)
+        for(var i=0;i<3;i++){
+            if(i == no){
+                num_str += third +'';
+            }else{
+                num_str += except+'';
+            }
+        }
+
+        return num_str.split('').join(',');
+    }
+    random_second(3);
+</script>
+</html>

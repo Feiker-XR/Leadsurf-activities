@@ -1,0 +1,89 @@
+<ion-view view-title="顺利秒秒彩">
+  <div class="bar bar-header bar-stable">
+    <a class="button button-icon icon ion-chevron-left"></a>
+    <a href="###" class="button button-icon icon ion-android-volume-up"></a>
+    <a href="###" class="button button-icon icon ion-android-volume-off"></a>
+  </div>
+
+  <ion-content class="has-footer has-header bg-drawing" overflow-scroll="true" id="drawingContent">
+    <!--老虎机-->
+    <div class="slot" id="slot">
+      <div class="slot-center">
+        <div class="slot-number">
+          <div class="slot-light"></div>
+          <ul class="number-list">
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+          </ul>
+        </div>
+        <div class="drawbar">
+          <span class="drawbar-up"></span>
+          <span class="drawbar-down"></span>
+        </div>
+        <div class="big-win"></div>
+      </div>
+    </div>
+
+    <!--开奖结果-->
+    <div class="drawing-box">
+      <div class="drawing-account">
+        <h3>第<span>1/10</span>期<strong>开奖中</strong></h3>
+        <h2>总奖金：
+          <span id="countUp"style="float: right" ></span></h2>
+      </div>
+      <div class="drawing-list">
+        <div class="drawing-list-shadow"></div>
+        <ul class="wining-list">
+          <li class="wining repeated-item" ng-repeat="item in winnings">
+            <div class="wining-bg">
+              <dl>
+                <dt>{{item.numbers}}</dt>
+                <dd>{{item.type}}</dd>
+              </dl>
+              <span class="wining-money">{{item.money}}</span>
+            </div>
+          </li>
+          <li class="wining wining-first" ng-click="delete"><div class="wining-bg"></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--彩票方案操作-->
+    <div class="result-box">
+      <div class="result-operate">
+        <span class="ar-btn">自选号码</span>
+        <span class="ar-btn">机选一注</span>
+        <span class="ar-btn">清空</span>
+      </div>
+      <div class="result-list">
+        <div class="result-list-shadow"></div>
+        <ul class="scheme-list">
+          <li class="scheme">
+            <dl>
+              <dt>0123456789 | 0123456789|0123456789| 0123456789 | 0123456789</dt>
+              <dd>五星直选   1注x2角 </dd>
+            </dl>
+            <span class="scheme-multiple">2倍</span>
+            <span class="scheme-delete"></span>
+          </li>
+          <li class="scheme">
+            <dl>
+              <dt>0123456789 | 012345678</dt>
+              <dd>五星直选   1注x2角 </dd>
+            </dl>
+            <span class="scheme-multiple">2倍</span>
+            <span class="scheme-delete"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer bar-custom">
+    <span class="bar-btn active">暂停</span>
+  </div>
+</ion-view>
+
+

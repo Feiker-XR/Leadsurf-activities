@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>3.1方案追号管理-方案记录</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">				
+				<dt>彩种管理</dt>
+				<dd> <a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd ><a href="2.1.html" >流程监控</a></dd>
+				<dd ><a href="2.2.html">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd class="current">  <a href="3.1.html">方案记录</a></dd>
+				<dd><a href="3.2.html">追号记录</a></dd>
+				<dd><a href="3.31.html">异常方案记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="4.1.html">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+					
+
+					
+						
+					<form action="?" id="J-search-form">
+						<ul class="ui-search" id="J-search-panel">
+							<li>
+								<label class="ui-label">彩种名称：</label>
+								<select class="ui-select">
+									<option value="全部彩种">全部彩种</option>
+									<option value="重庆时时彩">重庆时时彩</option>
+									<option value="乐利时时彩">乐利时时彩</option>
+									<option value="江西时时彩">江西时时彩</option>
+									<option value="新疆时时彩">新疆时时彩</option>
+									<option value="天津时时彩">天津时时彩</option>
+									<option value="黑龙江时时彩">黑龙江时时彩</option>
+									<option value="上海时时彩">上海时时彩</option>
+									<option value="山东11选5">山东11选5</option>
+									<option value="江西11选5">江西11选5</option>
+									<option value="广东11选5">广东11选5</option>
+									<option value="重庆11选5">重庆11选5</option>
+									<option value="乐利11选5">乐利11选5</option>
+									<option value="北京快乐8">北京快乐8</option>
+									<option value="3D">3D</option>
+									<option value="排列5">排列5</option>
+									<option value="双色球">双色球</option>
+									<option value="全部彩种">全部彩种</option>
+								</select>
+							</li>
+							<li>
+								<label for="" class="ui-label">搜索用户/方案：</label>
+								<input type="text" value="" class="input w-3">
+								<label class="label" for="ck1"><input type="checkbox" checked="checked" class="checkbox" value="1" name="type" id="ck1">包含下级</label>
+							</li>
+							<li class="time">
+								<label for="" class="ui-label">投注时间：</label>
+								<select class="ui-select" id="J-select-time">
+									<option value="1" selected="selected">今天</option>
+									<option value="2">2天</option>
+									<option value="3">3天</option>
+									<option value="4">4天</option>
+									<option value="5">5天</option>
+									<option value="6">6天</option>
+									<option value="7">7天</option>
+									<option value="-1">全部</option>
+									<option value="0">自定义</option>
+								</select>
+								<input id="J-time-start" type="text" value="" class="input"> - <input id="J-time-end" type="text" value="" class="input">
+							</li>
+							<li>
+								<label for="" class="ui-label">状态：</label>
+								<select class="ui-select">
+									<option value="等待开奖">等待开奖</option>
+									<option value="处理中">处理中</option>
+									<option value="未中奖">未中奖</option>
+									<option value="已派奖">已派奖</option>
+									<option value="系统撤单">系统撤单</option>
+									<option value="用户撤单">用户撤单</option>
+									<option value="存在异常">存在异常</option>
+									<option value="全部">全部</option>
+								</select>
+								
+								
+					
+							</li>
+							<li>
+								<label for="" class="ui-label">奖金：</label>
+								<input type="text" value="" class="input input-money w-1"> - <input type="text" value="" class="input input-money w-1">
+							</li>
+							<li>
+								<label class="ui-label">每页记录数：</label>
+								<input type="text" value="" class="input input-num w-1">
+							</li>
+							<li>
+								<a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">搜 索<b class="btn-inner"></b></a>
+								<a id="J-button-export" class="btn" href="javascript:void(0);">导出报表<b class="btn-inner"></b></a>
+							</li>
+						</ul>
+					</form>
+						
+						
+						
+						
+						<div class="alert alert-waring">
+							<i></i>
+							<div class="txt">
+								<h4>没有符合条件的记录，请更改查询条件！</h4>
+							</div>
+						</div>
+						
+						
+						
+						<table class="table table-info">
+							<thead>
+								<tr>
+									<th>方案编号</th>
+									<th>彩种名称</th>
+									<th>期号</th>
+									<th>用户名</th>
+									<th class="table-toggle"><a href="#">投注时间<i class="ico-up-current"></i></a></th>
+									<th class="table-toggle"><a href="#">投注金额（&yen;）<i class="ico-up-current"></i><i class="ico-down-current"></i></a></th>
+									<th class="table-toggle"><a href="#">奖金（&yen;）<i class="ico-up-current"></i><i class="ico-down-current"></i></a></th>
+									<th class="table-toggle"><a href="#">方案中投比<i class="ico-up-current"></i><i class="ico-down-current"></i></a></th>
+									<th>状态</th>
+									<th>开奖号码</th>
+									<th>是否为追号单</th>
+									<th>版本号</th>
+									<th>来源</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="3.11.html">DCQC1352365536FGC</a></td>
+									<td>重庆时时彩</td>
+									<td><a href="3.11.html">20130717-011</a></td>
+									<td><a href="3.11.html">jiandfirsn</a></td>
+									<td>2013-07-17 09:25:18</td>
+									<td>250.00</td>
+									<td></td>
+									<td></td>
+									<td>等待开奖</td>
+									<td></td>
+									<td>是</td>
+									<td>Web3.4</td>
+									<td>chrome</td>
+								</tr>
+								<tr>
+									<td><a href="3.11.html">DCQC1352365536FGC</a></td>
+									<td>重庆时时彩</td>
+									<td><a href="3.11.html">20130717-011</a></td>
+									<td><a href="3.11.html">jiandfirsn</a></td>
+									<td>2013-07-17 09:25:18</td>
+									<td>250.00</td>
+									<td></td>
+									<td></td>
+									<td>等待开奖</td>
+									<td></td>
+									<td>是</td>
+									<td>Web3.4</td>
+									<td>chrome</td>
+								</tr>
+								<tr>
+									<td>小结</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>5,250.00</td>
+									<td>555,250.00</td>
+									<td>2006.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+
+							</tbody>
+						</table>
+						
+						<div class="page-wrapper clearfix">
+							<span class="page-text">共102条记录</span>
+							<div class="page page-right">
+								<a class="prev" href="#">上一步</a>
+								<a href="#">1</a>
+								<a href="#">2</a>
+								<a class="current" href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">...</a>
+								<a class="next" href="#">下一步</a>
+								<span class="page-few">到第 <input type="text" class="input" value=""> /100页</span>
+								<input type="button" class="page-btn" value="确 认">
+							</div>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="J-form-hidden" style="display:none;">
+
+						<input type="hidden" name="lotteryId" id="J-hidden-lotteryId" value="1" />
+						<input type="hidden" name="lotteryName" id="J-hidden-lotteryName" value="时时彩" />
+						<input type="hidden" name="userName" id="J-hidden-userName" value="哇哈哈" />
+						<input type="hidden" name="startTime" id="J-hidden-startTime" value="2013-10-14 17:11:22" />
+						<input type="hidden" name="endTime" id="J-hidden-endTime" value="2013-10-16 17:11:22" />
+						<input type="hidden" name="statusId" id="J-hidden-statusId" value="1" />
+						<input type="hidden" name="status" id="J-hidden-status" value="处理中" />
+						<input type="hidden" name="startMoney" id="J-hidden-startMoney" value="200.00" />
+						<input type="hidden" name="endMoney" id="J-hidden-endMoney" value="400.50" />
+						
+						<input type="hidden" name="sortTime" id="J-hidden-sortTime" value="1" />
+						<input type="hidden" name="sortLotteryMoney" id="J-hidden-sortLotteryMoney" value="1" />
+						<input type="hidden" name="sortMoney" id="J-hidden-sortMoney" value="1" />
+						<input type="hidden" name="sortProportion" id="J-hidden-sortProportion" value="1" />
+	</div>
+
+<script type="text/template" id="J-tpl-export">
+<form action="?action=download" target="_blank" id="J-download-form">
+
+						<input type="hidden" name="action" value="download" />
+						
+						<input type="hidden" name="lotteryId" id="J-hidden-lotteryId" value="1" />
+						<input type="hidden" name="lotteryName" id="J-hidden-lotteryName" value="时时彩" />
+						<input type="hidden" name="userName" id="J-hidden-userName" value="哇哈哈" />
+						<input type="hidden" name="startTime" id="J-hidden-startTime" value="2013-10-14 17:11:22" />
+						<input type="hidden" name="endTime" id="J-hidden-endTime" value="2013-10-16 17:11:22" />
+						<input type="hidden" name="statusId" id="J-hidden-statusId" value="1" />
+						<input type="hidden" name="status" id="J-hidden-status" value="处理中" />
+						<input type="hidden" name="startMoney" id="J-hidden-startMoney" value="200.00" />
+						<input type="hidden" name="endMoney" id="J-hidden-endMoney" value="400.50" />
+						
+						<input type="hidden" name="sortTime" id="J-hidden-sortTime" value="1" />
+						<input type="hidden" name="sortLotteryMoney" id="J-hidden-sortLotteryMoney" value="1" />
+						<input type="hidden" name="sortMoney" id="J-hidden-sortMoney" value="1" />
+						<input type="hidden" name="sortProportion" id="J-hidden-sortProportion" value="1" />
+
+						
+<ul class="ui-form ui-form-small">
+									<li><span class="ui-singleline">为您导出符合以下条件的数据</span></li>
+									<li data-data="<#=lotteryName#>">
+										<label class="ui-label w-2" for="">彩种名称：</label>
+										<span class="ui-singleline"><#=lotteryName#></span>
+									</li>
+									<li data-data="<#=userName#>">
+										<label class="ui-label w-2" for="">用户名：</label>
+										<span class="ui-singleline"><#=userName#></span>
+									</li>
+									<li data-data="<#=startTime#><#=endTime#>">
+										<label class="ui-label w-2" for="">投注时间：</label>
+										<span class="ui-singleline"><#=startTime#> - <#=endTime#></span>
+									</li>
+									<li data-data="<#=status#>">
+										<label class="ui-label w-2" for="">状态：</label>
+										<span class="ui-singleline"><#=status#></span>
+									</li>
+									<li data-data="<#=startMoney#><#=endMoney#>">
+										<label class="ui-label w-2" for="">已获奖金：</label>
+										<span class="ui-singleline"><#=startMoney#> 元 - <#=endMoney#> 元</span>
+									</li>
+</ul>
+<ul class="ui-form ui-form-small">
+									<li style="text-align:center;"><span class="ui-singleline">请选择导出报表的格式</span></li>
+									<li class="radio-list" style="text-align:center;">
+										<label class="label" for="J-radio-doc-type-1"><input checked="checked" id="J-radio-doc-type-1" name="radio-doc-type" type="radio" class="radio radio-doc-type" value="1">excel</label>
+										<label class="label" for="J-radio-doc-type-2"><input id="J-radio-doc-type-2" name="radio-doc-type" type="radio" class="radio radio-doc-type" value="2">txt</label>
+									</li>
+</ul>
+</form>
+</script>
+	
+	
+<script>
+(function($){
+	//弹窗
+	var Wd = phoenix.Message.getInstance(),
+		panel = $('#J-search-panel'),
+		inputStart = $('#J-time-start'),
+		inputEnd = $('#J-time-end'),
+		selectTime = $('#J-select-time'),
+		optionTime = selectTime.find('option'),
+		setTimeFn = null,
+		setSelect = null;
+	
+	inputStart.focus(function(){
+		var d = new phoenix.DatePicker({input:this,isShowTime:true});
+		d.show();
+		d.addEvent('afterSetValue', function(){
+			setSelect(0);
+		});
+	});
+	inputEnd.focus(function(){
+		var d = new phoenix.DatePicker({input:this,isShowTime:true});
+		d.show();
+		d.addEvent('afterSetValue', function(){
+			setSelect(0);
+		});
+	});
+	
+	selectTime.change(function(){
+		var v = Number(this.value);
+		if(optionTime.get(optionTime.size() -1).value == this.value){
+			inputStart.focus();
+		}else{
+			if(v > 0){
+				setTimeFn(v);
+			}
+		}
+	});
+	setTimeFn = function(day){
+		var now = new Date(),y = now.getFullYear(),m = now.getMonth(),d = now.getDate(),h = now.getHours(),mm = now.getMinutes(),s = now.getSeconds(),newDate;
+		newDate = new Date(y, m, d - day + 1, 0, 0, 1);
+		
+		inputStart.val(newDate.getFullYear()+ '-' + (newDate.getMonth()+1) + '-'+  newDate.getDate() +'  00:00:01');
+		inputEnd.val(y+ '-' + (m+1) + '-'+  d +'  '+ h +':'+ mm +':'+ s);
+	};
+	setSelect = function(v){
+		var i = 0,len = optionTime.size();
+		for(;i < len;i++){
+			if(Number(v) == Number(optionTime[i].value)){
+				optionTime[i].setAttribute('selected', 'selected');
+			}else{
+				optionTime[i].removeAttribute('selected');
+			}
+		}
+
+	};
+	setTimeFn(Number(selectTime.val()));
+
+	
+	panel.on('keyup', '.input-money', function(){
+		var v = this.value;
+		v = v.replace(/[^\d^\.]/g, '').split('.');
+		if(v.length > 2){
+			v.pop();
+		}
+		v = v.join('.');
+		this.value = v;
+	}).on('blur', '.input-money', function(){
+		var v = this.value.replace(/[^\d^\.]/g, '');
+		if($.trim(v) != ''){
+			this.value = phoenix.util.formatMoney(v);
+		}
+	}).on('keyup', '.input-num', function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+	});
+	
+	
+	$('#J-button-submit').click(function(){
+		$('#J-search-form').submit();
+	});
+	
+	$('#J-button-export').click(function(){
+		var ipts = $('#J-form-hidden').find('input[type="hidden"]'),data = {},htmlStr = '';
+		ipts.each(function(){
+			var name = this.getAttribute('name');
+			data[name] = this.value;
+		});
+		htmlStr = phoenix.util.template($('#J-tpl-export').text(), data);
+		
+		Wd.show({
+			mask:true,
+			title:'温馨提示',
+			content:htmlStr,
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$('#J-download-form').submit();
+				Wd.hide();
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+	
+	
+})(jQuery);
+</script>
+	
+	
+	
+	
+	
+</body>
+</html>

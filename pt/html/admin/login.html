@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>正常登录</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tree.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<style>
+	
+	.login-input:focus, .login-input-focus {
+		background: none;
+	 	color: none;
+	}
+	.input-focus, .input-focus:hover {
+		background: none;
+		border-color: none;
+		color: none;
+		box-shadow: none;
+	}
+	.msg-tips{
+		text-align: center;
+		color: #ff0000;
+		width: 100%;
+		height: 50px;
+		font-size: 14px;
+		line-height: 60px;
+		overflow: hidden;
+	}
+	.login-list{
+		margin-top: 0px;
+	}
+	.msg-tips .errorImg{
+		display: inline-block;
+		*zoom: 1;
+		*display: inline;
+		width: 20px;
+		height: 20px;
+		vertical-align: middle;
+		background: #ff0000;
+		margin-right:10px;
+	}
+	</style>
+</head>
+<body class="bg-content">
+	<div class="login-content">
+		<div class="login-logo"></div>
+		<div class="msg-tips"></div>
+		<form action="#" >
+			<ul class="login-list">
+				<li class="login-list-input">
+					<i class="ico-name"></i>
+					<input id="J_username" type="text" class="login-input" value="请输入后台用户名" tabindex="1" />
+				</li>
+				<li class="login-list-input">
+					<i class="ico-pwd"></i>
+					<input id="J_password" type="password" class="login-input" value="" tabindex="2" />
+				</li>
+				<li class="login-list-input">
+					<input id="J_passcard" type="text" tabindex="3" value="请输入密码卡密码" class="login-input" id="J_vcode">
+				</li>
+				<li class="login-list-btn"><input id="J_submit" type="button" class="login-btn" value="登 录" tabindex="4" /></li>
+			</ul>
+		</form>
+	</div>
+<script>
+	(function(){
+		new phoenix.Input({el:'#J_username',defText:'请输入后台用户名'});
+		new phoenix.Input({el:'#J_passcard',defText:'请输入密码卡密码'});
+
+		var subButtonDom = $('#J_submit');
+		var msg = $('.msg-tips'),
+			name = $('#J_username'),
+			passCard = $('#J_passcard'),
+			password = $('#J_password');
+
+		subButtonDom.click(function(){
+			var nameVal = name.val(),
+				passVal = password.val(),
+				cardVal = passCard.val();
+
+			if(nameVal == '请输入后台用户名' || nameVal == ''){
+				msg.html('<span class="errorImg"></span>请输入用户名');
+				return;
+			}
+
+			if(passVal == '请输入登录密码' || passVal == ''){
+				msg.html('<span class="errorImg"></span>请输入密码');
+				return;
+			}
+
+			if(cardVal == '请输入密码卡密码' || cardVal == ''){
+				msg.html('<span class="errorImg"></span>请输入密码卡密码');
+				return;
+			}	
+
+			msg.html('');
+		})
+
+	})();
+</script>
+</body>
+</html>

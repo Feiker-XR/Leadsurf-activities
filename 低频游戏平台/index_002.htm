@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>低频游戏平台  - 欢迎登录  v1.1.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<link href="index_data_002/main.css" rel="stylesheet" type="text/css">
+<script src="index_data_002/ga.js" async="" type="text/javascript"></script><script language="javascript" type="text/javascript" src="%E4%BD%8E%E9%A2%91%E6%B8%B8%E6%88%8F%E5%B9%B3%E5%8F%B0%20v1.1.2_files/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="index_data/common.js"></script>
+<script language="javascript" type="text/javascript" src="index_data_002/jquery.js"></script>
+<script language="javascript">
+$(function(){
+	$('#marquee_container').width($(window).width() - $('#nav').width() - 30);
+    $.each($(".list-div").find("td"),function(){
+        if($(this).html()==""){
+            $(this).html("&nbsp;");
+        }
+    });
+	$.ajax({
+		type : 'GET',
+		url  : './?controller=default&action=marquee',
+		async: false,
+		timeout: 20000,
+		dataType: 'json',
+		cache: true,
+		success: function(data)
+		{
+			if(data.link)
+			{
+				html = '<a href="./?controller=help&action=notice&nid='+data.id+'" target="mainframe">'+data.subject+'</a>';
+			}
+			else
+			{
+				html = data.subject;
+			}
+			$("marquee").html(html);
+			$('marquee').marquee('pointer').mouseover(function () {
+				$(this).trigger('stop');
+			}).mouseout(function () {
+				$(this).trigger('start');
+			}).mousemove(function (event) {
+				if ($(this).data('drag') == true) {
+					this.scrollLeft = $(this).data('scrollX') + ($(this).data('x') - event.clientX);
+				}
+			}).mousedown(function (event) {
+				$(this).data('drag', true).data('x', event.clientX).data('scrollX', this.scrollLeft);
+			}).mouseup(function () {
+				$(this).data('drag', false);
+});
+		},
+		error: function()
+		{
+			$("marquee").html("");
+		}
+	});
+	$(window).scroll(function() {
+		$('#right_01').css('top', $(this).scrollTop() + "px");
+	});
+});
+</script>
+</head>
+<body>
+<h1 style="left:0; top:0; position:absolute;" id="right_01">
+	<div style="float:left; margin-right: 20px;" id="nav"><span class="action-span1"><a href="http://www.ph158.com/lowgame/index.php" target="_top">低频游戏</a>  - 欢迎登录 </span><img src="index_data_002/announcement.gif" border="0"></div>
+	<div style="width: 1488px; cursor: pointer; height: 28px; overflow: hidden;" id="marquee_container"><div class="pointer" style="display: block-inline; width: 1488px; height: 0px; overflow: hidden;"><div style="float: left; white-space: nowrap; padding: 0px 1488px;"></div></div></div>
+</h1>
+<div style="margin-top: 28px"></div><style type="text/css">
+    .notice04 *{font-size: 16px !important;}
+    .notice04 a{color:blue;}
+</style>
+<style type="text/css">
+/* 圣诞狂周活动新加样式，请开发人员调用 */
+h4,p,dl,dt,dd{margin:0;padding:0;}
+.alert_info{position:absolute;*margin:18px 0 0 -48px;padding:4px 5px;border:1px solid #880E0F;background-color:#FFE400;text-align:left;word-wrap:break-word;word-break:break-all;}
+
+.base_pop{text-align:left;border:1px solid #BC1617;color:#FFF;}
+.base_pop a{color:#AA1213;text-decoration:underline;}
+.base_pop a:hover{color:#06F}
+.pop_hd{height:30px;padding-left:10px;padding-top:30px;line-height:30px;background:#AA1213 url("bg-head.png") 57px 0 no-repeat;font-size:14px;}
+.pop_hd h4{text-align:center;font-size:14px;}
+.pop_hd .close{position:absolute;top:-15px;right:-15px;width:44px;height:45px;background:url("ico-close.png") 0 0 no-repeat;}
+.pop_hd .hat{position:absolute;top:-30px;left:-43px;width:99px;height:77px;background:url("ico-hat.png") 0 0 no-repeat;}
+
+.pop_bd{background-color:#AA1213;}
+.pop_bd .table_text th,.pop_bd .table_text td{padding:2px;}
+.pop_bd .table_text th{width:72px;text-align:right;vertical-align:top;}
+.pop_bd .table_info{border-collapse:collapse;text-align:center;color:#AA1213;}
+.pop_bd .table_info th,.pop_bd .table_info td{padding:4px 5px;border:1px solid #AA1213;background-color:#FFF;}
+.pop_content{padding:10px 35px 35px;}
+.pop_content_text{text-indent:2em;}
+.pop_content_num{position:relative;height:150px;margin:10px 0;text-align:center;background-color:#FFF;font-weight:700;}
+.pop_content_num:after{content:".";display:inline-block;height:100%;width:0;vertical-align:middle;overflow:hidden;}
+.pop_content_num .align_word{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;font-size:14px;line-height:20px;font-family:"微软雅黑", Arial, "Microsoft Sans Serif", "宋体";letter-spacing:0;word-spacing:0;color:#AA1213;}
+.pop_content_num .win_num{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;font-size:14px;line-height:20px;font-family:"微软雅黑", Arial, "Microsoft Sans Serif", "宋体";letter-spacing:0;word-spacing:0;color:#AA1213;text-align:left;}
+.pop_content_num .win_num dt,.pop_content_num .win_num dd{padding:0 4px;line-height:30px;}
+.pop_content_num .win_num dt{padding-bottom:5px;}
+.pop_buttons{padding:0 0 15px;background-color:#AA1213;text-align:center;}
+.btn_get_num{position:absolute;top:50px;right:0;width:170px;height:50px;border:0 none;background-color:#CE1C1A;font-size:14px;font-weight:700;color:#FFF;cursor:pointer;}
+.btn_get_num:hover{background-color:#DD2A28;}
+.btn_default,.btn_primary{display:inline-block;*display:inline;*zoom: 1;height:35px;padding:0 24px;*padding:0 20px;margin-left:.5em;line-height:28px;*line-height:26px;font-size:14px;font-weight:700;color:#AA1213;text-align:center;vertical-align:middle;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);cursor:pointer;border:0 none;background-color: #FFF;}
+
+.btn_primary:hover{background-color:#EFEFEF;}
+.btn:first-child{margin-left:0;}
+</style>
+	<div class="base_pop" style="position:absolute;left:50px;top:50px;width:680px;">
+		<div class="pop_hd">
+			<a href="javascript:void(0);" class="close"></a>
+			<a href="javascript:void(0);" class="hat"></a>
+			<h4>乐利陪您过双节 大屏Note3天天送</h4>
+		</div>
+		<div class="pop_bd">
+			<div class="pop_content">
+				<p class="pop_content_text">尊敬的玩家，您好，根据您昨日的投注金额以及活动规则，您今天获得了0 / 1 / 5 / 20 个抽奖号码，您的历史活动号码将在“活动历史记录”中查看</p>
+				<div class="pop_content_num">
+					<img src="banner.jpg" alt="三星 Galaxy GALAXY Note 3" />
+					<input type="button" value="点击获取抽奖号码" class="btn_get_num">
+				</div>
+				
+				<!-- 没有达到获取号码的条件 -->
+				<div class="pop_content_num">
+					<div class="align_word">您今天没有达到获取号码的条件，详情请参考活动规则</div>
+				</div>
+				<!-- 未到获取号码的时间 -->
+				<div class="pop_content_num">
+					<div class="align_word">您好，尚未到达获取抽奖号码时间，请于xxx点再次查看</div>
+				</div>
+				<!-- 符合条件的客户（重复点选） -->
+				<div class="pop_content_num">
+					<dl class="win_num">
+						<dt>您得到的抽奖号码为：</dt>
+						<dd>0000，1111，2222，3333，4444，5555，6666，7777，8888，9999</dd>
+						<dd>0000，1111，2222，3333，4444，5555，6666，7777</dd>
+					</dl>
+				</div>
+				<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table_text">
+					<tbody>
+						<tr>
+							<th>★活动时间：</th>
+							<td>1、2013年12月23日0:00～2014年1月5日24:00期间的乐利时时彩和乐利11选5的效投注量，但必须同一个投注日对乐利时时彩及乐利11选5均有投注，方可获得抽奖资格；
+</td>
+						</tr>
+						<tr>
+							<th></th>
+							<td>2、活动期间，按自然日统计用户的有效投注量，12月23日0:00-24:00为第一个投注量统计日，1月5日0:00-24:00为最后一个投注量统计日。
+</td>
+						</tr>
+						<tr>
+							<th>★抽奖奖品：</th>
+							<td>三星 Galaxy GALAXY Note 3（N9002），每天8部。</td>
+						</tr>
+						<tr>
+							<th>★参与方式：</th>
+							<td>于活动期间，投注乐利时时彩及乐利11选5，单日有效投注达到或超过188元即可获得1个抽奖号码，单日有效投注达到或超过988元即可获得5个抽奖号码，单日有效投注达到或超过3888元即可获得20个抽奖号码，（必须两个彩种均有投注，如当天乐利11选5投注2元，乐利时时彩投注186元，即可满足抽奖条件），并有效期内（投注后第二天的0:30~ 21:00）点击《参与抽奖》按钮，即可获得参与抽奖的机会。
+</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="pop_buttons">
+				<input type="button" class="btn_primary" name="save" value="确定">
+			</div>
+		</div>
+	</div>
+	<div class="base_pop" style="position:absolute;left:800px;top:50px;width:680px;">
+		<div class="pop_hd">
+			<a href="" class="close"></a>
+			<a href="javascript:void(0);" class="hat"></a>
+			<h4>参与活动历史记录</h4>
+		</div>
+		<div class="pop_bd">
+			<div class="pop_content">
+				<table width="100%" cellspacing="1" cellpadding="0" border="0" class="table_info">
+					<tbody>
+						<tr>
+							<th>日期</th>
+							<th>投注金额（元）</th>
+							<th>获取号码</th>
+							<th>中奖号码</th>
+							<th>结果</th>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td><a href="">号码详情</a><div class="alert_info" style="width:250px;">0000,1111,2222,3333,4444,5555,6666,7777,8888,9999,0000,1111,2222,3333,4444,5555,6666,7777,8888,9999</div></td>
+							<td>5525,6868,9656</td>
+							<td>未中奖</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td><a href="">号码详情</a></td>
+							<td>5525,6868,9656</td>
+							<td>未参与</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+						<tr>
+							<td>2012-3-35</td>
+							<td>5000</td>
+							<td>2596</td>
+							<td>5525,6868,9656</td>
+							<td>中奖（6868）</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+<center>
+<div class="right_021">
+ <div id="right_02_01">
+    <div class="right_02_02"></div>
+    <div style="height:44px;width:90%; float:left; line-height:44px;">网站公告</div>
+    <div class="right_02_04"></div>
+</div>
+<div class="notice">
+<div class="notice01" style="font-size:20px;font-weight:bold">娱乐平台 24小时开奖</div>
+<div class="notice02">时间:2012-12-10 12:03</div>
+<div class="notice03"></div>
+<div class="notice04" style="line-height:22px;padding:20px 200px;">即日起，娱
+乐平台领导行业，率先提供【24小时】不间断开奖的游戏及服务体验。
+
+娱乐平台在传统的高频及低频游戏时间外，将【乐利时时彩】视频开奖时间延长为：每天下午18:00至次日上午10:00。由性感火热的乐利宝贝让您24小
+时好运不间断,欢乐不间断！更多详情请点击银行大厅广告，或访问【乐利彩博客】：http://lollylotto.blog.163.com
+
+12月10日
+娱乐平台</div>
+</div>
+<div class="height51">
+<div class="right_02_241"></div>
+<div class="right_02_251"></div>
+</div>
+</div>
+</center>
+<div class="right_021">
+<div class="height51">
+<div class="right_02_281"></div>
+<div class="right_02_291"></div>
+</div>
+<div class="footer">
+    <div class="foottxt">
+    <div class="footleft">
+资金安全建议：为了您的资金安全，建议定期更换您的资金密码。
+<br>浏览器建议：首选为IE6或IE7浏览器，其次为火狐和Google浏览器。
+<br>分辨率建议：使用800×600以上的分辨率。
+</div>
+</div>
+</div>
+<div class="height51">
+<div class="right_02_241"></div>
+<div class="right_02_251"></div>
+</div>
+</div>
+<script>
+if (document.getElementById("listDiv12"))
+{
+  document.getElementById("listDiv").onmouseover = function(e)
+  {
+    obj = Utils.srcElement(e);
+    if (obj)
+    {
+      if (obj.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode;
+      else if (obj.parentNode.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode.parentNode;
+      else return;
+
+      for (i = 0; i < row.cells.length; i++)
+      {
+        if (row.cells[i].tagName != "TH") row.cells[i].style.backgroundColor = '#d5d8de';
+      }
+    }
+  }
+  document.getElementById("listDiv").onmouseout = function(e)
+  {
+    obj = Utils.srcElement(e);
+
+    if (obj)
+    {
+      if (obj.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode;
+      else if (obj.parentNode.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode.parentNode;
+      else return;
+
+      for (i = 0; i < row.cells.length; i++)
+      {
+          if (row.cells[i].tagName != "TH") row.cells[i].style.backgroundColor = '#d5d8de';
+      }
+    }
+  }
+}
+</script>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25847605-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Analytics Code -->
+</body></html>
+<!-- Start Analytics Tracker -->

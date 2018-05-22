@@ -1,0 +1,16 @@
+@charset "utf-8";
+html,body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,th,td,em,form,input,select,textarea,button,header,section,aside,footer{margin:0;padding:0;}
+ul,li{list-style:none;}
+img{border:none;}
+
+body{font:12px/1.5 Microsoft Yahei,Arial,Helvetica,sans-serif;color:#333;overflow-x:hidden;}
+.bg1{position:relative;left:50%;margin-left:-960px;width:1920px;height:260px;background:url("images/bg1.jpg") no-repeat center 0;}
+.bg2{position:relative;left:50%;margin-left:-960px;width:1920px;height:480px;background:url("images/bg2.jpg") no-repeat center 0;}
+.bg3{position:relative;left:50%;margin-left:-960px;width:1920px;height:350px;background:url("images/bg3.jpg") no-repeat center 0;}
+.bg4{position:relative;left:50%;margin-left:-960px;width:1920px;height:340px;background:url("images/bg4.jpg") no-repeat center 0;}
+.bg5{position:relative;left:50%;margin-left:-960px;width:1920px;height:548px;background:url("images/bg5.jpg") no-repeat center 0;}
+.weibo-link{position:absolute;left:50%;top:172px;margin-left:-104px;width:159px;height:41px;background:url("images/weibo-link.png") no-repeat 0 0;transition: opacity .5s ease;}
+.weibo-link:hover{opacity:0;background:none\9;}
+.register-link{position:absolute;left:50%;top:140px;margin-left:347px;width:240px;height:90px;}
+.register-link:hover{background:url("images/register-link.jpg") no-repeat 0 0;}
+.copyright{padding-top:490px;text-align:center;font-size:14px;color:#367DB3;}

@@ -1,0 +1,522 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>4.0用户中心首页</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="../images/common/base.css" />
+<link rel="stylesheet" href="../images/ucenter/home.css" />
+<script src="../js/game/util/jquery-1.9.1.js" ></script>
+<script src="../js/game/util/jquery.tmpl.js" ></script>
+<script src="../js/game/util/phoenix.base.js" ></script>
+<script src="../js/game/util/phoenix.Class.js" ></script>
+<script src="../js/game/util/phoenix.Event.js" ></script>
+<script src="../js/game/util/phoenix.util.js" ></script>
+<script src="../js/game/util/phoenix.Tab.js" ></script>
+<script src="../js/game/util/phoenix.Hover.js" ></script>
+<script src="../js/game/util/phoenix.Tip.js" ></script>
+
+<script src="../js/jquery.cycle2.min.js"></script>
+</head>
+<body class="ucenter-home">
+	<!-- toolbar start -->
+	<div class="bg-toolbar"></div>
+	<div class="toolbar">
+		<div class="g_33">
+			<div id="J-top-game-menu" class="game-menu">
+				<span class="game-menu-text">凤凰游戏</span>
+				<div class="game-menu-panel">
+					<div class="game-menu-inner clearfix">
+						<div class="game-menu-left">
+							<div class="game-menu-title">高频(13)</div>
+							<ul>
+								<li><a href="#">重庆时时彩</a><!-- <span class="ico-addbonus"></span> --></li>
+								<li><a href="#">山东11选5</a></li>
+								<li><a href="#">江西时时彩</a></li>
+								<li><a href="#">江西11选5</a></li>
+								<li><a href="#">黑龙江时时彩</a></li>
+								<li><a href="#">广东11选5</a></li>
+								<li><a href="#">新疆时时彩</a></li>
+								<li><a href="#">重庆11选5</a></li>
+								<li><a href="#">天津时时彩</a></li>
+								<li><a href="#">乐利11选5</a><span class="ico-game-new"></span></li>
+								<li><a href="#">乐利时时彩</a></li>
+								<li><a href="#">北京快乐8</a></li>
+								<li class="border-none"><a href="#">上海时时乐</a></li>
+							</ul>
+						</div>
+						<div class="game-menu-right">
+							<div class="game-menu-title">低频(4)</div>
+							<ul>
+								<li><a href="#">双色球</a></li>
+								<li><a href="#">福彩3D</a></li>
+								<li><a href="#">排列3/5</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <a href="#" class="download-app">手机投注送红包，速度下载！</a> -->
+			<ul class="menu">
+				<li class="user hover">
+					<a href="#">您好，VIC</a>
+				</li>
+				<li id="J-user-msg" class="msg">
+					<a href="#" class="msg-title">12</a>
+					<div class="msg-box">
+						<div class="msg-hd"><i class="tri"></i><a href="#" class="more">更多</a>我的未读消息<strong>（12）</strong></div>
+						<div class="msg-bd">
+							<a href="">这里是消息提示提示消息</a>
+							<a href="">这里是消息提示提示消息</a>
+							<a href="">这里是消息提示提示消息</a>
+							<a href="">这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息</a>
+						</div>
+					</div>
+				</li>
+				<li id="J-user-center" class="ucenter hover">
+					<a href="#">用户中心<i class="tri"></i></a>
+					<div class="menu-nav">
+						<i class="tri"></i>
+						<a href="">游戏记录</a>
+						<a href="">报表管理</a>
+						<a href="">资金明细</a>
+						<a href="">安全中心</a>
+						<a href="">安全退出</a>
+					</div>
+				</li>
+				<li class="balance">余额：10000.00</li>
+				<li class="recharge"><a href="#">充值</a></li>
+				<li class="withdrawals"><a href="#">提现</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- toolbar end -->
+	<!-- header start -->
+	<div class="header">
+		<div class="g_33">
+			<h1 class="logo"><a title="凤凰娱乐" href="#">凤凰娱乐</a></h1>
+			<div class="service">
+				<a title="客服" class="link-service" href="#">客服</a>
+				<a title="帮助" class="link-help" href="#">帮助</a>
+			</div>
+			<ul class="header_tools">
+				<li class="user_info">
+					<div class="user_head">
+						<span class="avatar"></span>
+						<span class="user_vip">vip</span>
+					</div>
+					<h2>欢迎你,舌尖上的彩票大王</h2>
+					<div class="user_action user_action_bet">
+						<div class="user_action_head">
+							<span>投注管理<b class="caret"></b></span>
+						</div>
+						<div class="action_menus">
+							<a href="">投注记录</a>
+							<a href="">追号记录</a>
+							<a href="">帐户明细</a>
+						</div>
+						<div class="action_shadow"></div>
+					</div>
+					<div class="user_action user_action_account">
+						<div class="user_action_head">
+							<span>帐户安全<b class="caret"></b></span>
+						</div>
+						<div class="action_menus">
+							<a href="">安全中心</a>
+							<a href="">银行卡管理</a>
+							<a href="">个人资料</a>
+							<a href="">密码管理</a>
+							<a href="">资金详情</a>
+						</div>
+						<div class="action_shadow"></div>
+					</div>
+					<div class="user_action user_action_agent">
+						<div class="user_action_head">
+							<span>代理中心<b class="caret"></b></span>
+						</div>
+						<div class="action_menus">
+							<a href="">代理首页</a>
+							<a href="">开户中心</a>
+							<a href="">客户管理</a>
+							<a href="">报表查询</a>
+						</div>
+						<div class="action_shadow"></div>
+					</div>
+				</li>
+				<li class="account_info">
+					<p>余额：<span class="balance">137,743,58.00</span>元</p>
+					<p>
+						<a href="" class="button_link deposit highlight_button_link"><i class="inline_block"></i>充值</a>
+						<a href="" class="button_link withdraw">提现</a>
+					</p>
+				</li>
+				<li class="game_info">
+					<div class="last_game_info">
+						<span>上次玩过的游戏</span>
+						<!-- 下面不需要显示彩种logo的时候 -->
+						<!-- <span class="game_name">北京快乐8</span> -->
+						<span class="game_issue">第20140812期</span>
+					</div>
+					<div class="win_prize">中奖18000.00元</div>
+					<div class="game_info_display">
+						<!-- 没有玩过游戏时 -->
+						<!-- <div class="none_game">
+							<p>您还没有任何投注数据</p>
+							<p>不妨看看我们为您推荐的彩种</p>
+						</div>-->
+
+						<!-- 北京快乐8,20个球 -->
+						<!-- red_ball表示红球，blue_ball为蓝球 ball_num_xx为球的序号 -->
+						<!-- <div class="game_balls_display small_balls_display">
+							<span class="red_ball ball_num_00"><em>00</em></span>
+							<span class="red_ball ball_num_01"><em>01</em></span>
+							<span class="red_ball ball_num_02"><em>02</em></span>
+							<span class="red_ball ball_num_03"><em>03</em></span>
+							<span class="red_ball ball_num_04"><em>04</em></span>
+							<span class="red_ball ball_num_05"><em>05</em></span>
+							<span class="red_ball ball_num_06"><em>06</em></span>
+							<span class="red_ball ball_num_07"><em>07</em></span>
+							<span class="red_ball ball_num_08"><em>08</em></span>
+							<span class="red_ball ball_num_09"><em>09</em></span>
+							<span class="red_ball ball_num_10"><em>10</em></span>
+							<span class="red_ball ball_num_11"><em>11</em></span>
+							<span class="red_ball ball_num_12"><em>12</em></span>
+							<span class="red_ball ball_num_13"><em>13</em></span>
+							<span class="red_ball ball_num_14"><em>14</em></span>
+							<span class="red_ball ball_num_15"><em>15</em></span>
+							<span class="red_ball ball_num_16"><em>16</em></span>
+							<span class="red_ball ball_num_17"><em>17</em></span>
+							<span class="red_ball ball_num_18"><em>18</em></span>
+							<span class="red_ball ball_num_19"><em>19</em></span>
+						</div> -->
+
+						<!-- 其他类游戏使用 -->
+						<!-- <div class="game_balls_display">
+							<img src="../images/ucenter/home/logos/shuangseqiu.png" alt="">
+							<span class="red_ball ball_num_00"><em>00</em></span>
+							<span class="red_ball ball_num_01"><em>01</em></span>
+							<span class="red_ball ball_num_02"><em>02</em></span>
+							<span class="red_ball ball_num_03"><em>03</em></span>
+							<span class="red_ball ball_num_04"><em>04</em></span>
+							<span class="red_ball ball_num_05"><em>05</em></span>
+							<span class="blue_ball ball_num_07"><em>07</em></span>
+						</div> -->
+
+						<!-- 等待开奖：所有等待开奖的一律用这个 -->						
+						<div class="game_balls_display">
+							<img src="../images/ucenter/home/logos/shuangseqiu.png" alt="">
+							<span class="red_ball"><i>等</i></span>
+							<span class="red_ball"><i>待</i></span>
+							<span class="red_ball"><i>开</i></span>
+							<span class="red_ball"><i>奖</i></span>
+						</div>
+
+						<!-- 这个按钮一直都会显示 -->
+						<a href="" class="button_link try_luck">试试手气</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header end -->
+	
+	<!-- container start -->
+	<div id="container">
+		<div id="sidebar">
+			<div class="game_icon_display">
+				<a href=""><img src="../images/ucenter/home/game_icon_display_llc.jpg" alt="乐利彩"></a>
+				<a href=""><img src="../images/ucenter/home/game_icon_display_ffc.jpg" alt="吉利分分彩"></a>
+				<a href=""><img src="../images/ucenter/home/game_icon_display_mmc.jpg" alt="秒秒彩"></a>
+				<a href=""><img src="../images/ucenter/home/game_icon_display_11x5.jpg" alt="11选5"></a>
+				<a href=""><img src="../images/ucenter/home/game_icon_display_commingsoon.jpg" alt=""></a>
+				<a href=""><img src="../images/ucenter/home/game_icon_display_commingsoon.jpg" alt=""></a>
+			</div>
+
+			<div class="game_category block">
+				<div class="high_frequency">
+					<h2>高频彩</h2>
+					<div class="category_list">
+						<a href="">重庆时时彩<span class="new">N</span></a>
+						<a href="">江西时时彩</a>
+						<a href="">黑龙江时时彩<span class="hot">H</span></a>
+						<a href="">新疆时时彩</a>
+						<a href="">天津时时彩</a>
+						<a href="">山东11选5</a>
+						<a href="">广东11选5</a>
+						<a href="">北京快乐8</a>
+						<a href="">重庆11选5</a>
+						<a href="">江西11选5</a>
+						<a href="">上海时时乐</a>
+					</div>
+				</div>
+				<div class="low_frequency">
+					<h2>低频彩</h2>
+					<div class="category_list">
+						<a href="">双色球<span class="hot">H</span></a>
+						<a href="">3D</a>
+						<a href="">排列3/5</a>
+					</div>
+				</div>				
+			</div>
+
+			<div class="news_list block">
+				<div class="block_top">
+					<h2>平台公告</h2>
+					<a href="" class="more">查看更多>></a>
+				</div>
+				<ul class="lists">
+					<li class="no_border">
+						<span class="time">9月3日</span>
+						<a href="">天津时时彩隆重上线</a>
+					</li>
+					<li>
+						<span class="time">9月3日</span>
+						<a href="">天津时时彩隆重上线</a>
+					</li>
+					<li>
+						<span class="time">9月3日</span>
+						<a href="">天津时时彩隆重上线</a>
+					</li>
+					<li>
+						<span class="time">9月3日</span>
+						<a href="">天津时时彩隆重上线天津时时彩隆重上线天津时时彩隆重上线</a>
+					</li>
+					<li>
+						<span class="time">9月3日</span>
+						<a href="">天津时时彩隆重上线</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="app_download">
+				<div class="app_content">
+					<h3 class="inline_block">点击下载</h3>
+					<a href="" class="inline_block ios">iOS下载</a>
+					<a href="" class="inline_block android">Android下载</a>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div id="focus" class="cycle-slideshow"
+				data-cycle-slides="> .item"
+				data-cycle-pager="> .cycle-pager-wrap .cycle-pager"
+				data-cycle-prev="> .prev"
+				data-cycle-next="> .next"
+				data-cycle-fx="scrollHorz"
+				data-cycle-timeout="4000"
+				data-cycle-loader="wait"
+				data-cycle-speed="800"
+				data-pause-on-hover="true"
+			>
+				<div class="cycle-pager-wrap">
+					<div class="cycle-pager"></div>
+				</div>
+				<span class="prev_next prev">&#9664;</span>
+				<span class="prev_next next">&#9654;</span>
+				<div class="item">
+					<a href=""><img src="../images/ucenter/home/transparent.gif" alt="" style="background:#ccc;"></a>
+				</div>
+				<div class="item">
+					<a href=""><img src="../images/ucenter/home/transparent.gif" alt="" style="background:#f20;"></a>
+				</div>
+				<div class="item">
+					<a href=""><img src="../images/ucenter/home/transparent.gif" alt="" style="background:#c03;"></a>
+				</div>
+				<div class="item">
+					<a href=""><img src="../images/ucenter/home/transparent.gif" alt="" style="background:#f00;"></a>
+				</div>
+				<div class="item">
+					<a href=""><img src="../images/ucenter/home/transparent.gif" alt="" style="background:#62a;"></a>
+				</div>
+			</div>
+
+			<div id="game_log" class="block">
+				<ul class="log_tabs">
+					<li>
+						<a href="javascript:void(0);">游戏记录</a>
+						<span class="arrow"><span></span></span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">追号记录</a>
+						<span class="arrow"><span></span></span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">帐变记录</a>
+						<span class="arrow"><span></span></span>
+					</li>
+				</ul>
+				<div class="log_panels">
+					<div class="panel">
+						<table class="log_table">
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+						</table>
+						<p class="more">
+							<a href="">查看更多&gt;&gt;</a>
+						</p>
+					</div>
+					<div class="panel">
+						<table class="log_table">
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td>交易成功</td>
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td>交易成功
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td>交易成功
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td>交易成功
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+							 <tr>
+								<td class="first_td">重庆时时彩</td>
+								<td>120.00</td>
+								<td>等待开奖</td>
+								<td>交易成功
+								<td class="last_td">昨天 09:23</td>
+							 </tr>
+						</table>
+						<p class="more">
+							<a href="">查看更多&gt;&gt;</a>
+						</p>
+					</div>
+					<div class="panel">
+						<div class="no_log">暂无记录</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="uc_ads">
+				<a href="" class="left"><img src="../images/ucenter/home/uc_ad_01.jpg" alt=""></a>
+				<a href="" class="right"><img src="../images/ucenter/home/uc_ad_02.jpg" alt=""></a>
+			</div>
+
+		</div>
+
+		<ul id="content_foot">
+			<li class="c_foot_bank">
+				<h3>15家银行合作 <span>充值提现更方便</span></h3>
+				<p><img src="../images/ucenter/home/c_foot_01.jpg" alt=""></p>
+			</li>
+			<li class="c_foot_safety">
+				<h3>100%奖金安全 <span>全球顶级安全协议</span></h3>
+				<p><img src="../images/ucenter/home/c_foot_02.jpg" alt=""></p>
+			</li>
+			<li class="c_foot_help">
+				<h3>使用帮助</h3>
+				<p>
+					<a class="inline_block" href="">玩法介绍</a>
+					<a class="inline_block" href="">如何充值</a>
+					<a class="inline_block" href="">提现需知</a>
+				</p>
+			</li>
+		</ul>
+
+	</div>
+	<!-- container end -->
+
+	<!-- footer start -->
+	<div class="uc-footer">
+		<ul class="link-map">
+			<li><a href="#">关于我们</a></li>
+			<li class="line"></li>
+			<li><a href="#">帮助中心</a></li>
+			<li class="line"></li>
+			<li><a href="#">在线客服</a></li>
+			<li class="line"></li>
+			<li><a href="#">手机投注</a></li>
+		</ul>
+		<p class="copyright">© 2001-2012 591PH. All rights reserved. 凤凰游戏平台版权所有</p>
+	</div>
+	<!-- footer end -->
+<script>
+(function() {
+	// 顶部彩种菜单
+	new phoenix.Hover({
+		triggers      :'#J-top-game-menu',
+		panels        :'#J-top-game-menu .game-menu-panel',
+		hoverDelayOut :300,
+		currClass     :'game-menu-current'
+	});
+	// 顶部用户中心
+	new phoenix.Hover({
+		triggers      :'#J-user-center',
+		panels        :'#J-user-center .menu-nav',
+		hoverDelayOut :300
+	});
+	// 顶部用户消息
+	new phoenix.Hover({
+		triggers      :'#J-user-msg',
+		panels        :'#J-user-msg .msg-box',
+		hoverDelayOut :300
+	});
+})();
+$(function(){
+	$('.header_tools .user_action').hover(function(){
+		$(this).addClass('user_action_active')
+			.find('.action_menus, .action_shadow').slideDown(200).end()
+			.find('.caret').addClass('active_caret');
+	}, function(){
+		$(this).removeClass('user_action_active')
+			.find('.action_menus, .action_shadow').slideUp(200).end()
+			.find('.caret').removeClass('active_caret');
+	});
+	// 游戏记录tab切换
+	new phoenix.Tab({
+		par           : '#game_log',
+		triggers      : '.log_tabs li',
+		panels        : '.log_panels .panel',
+		eventType     : 'click',
+		currClass     : 'active',
+		currPanelClass: 'active'
+	});
+});
+</script>
+</body>
+</html>

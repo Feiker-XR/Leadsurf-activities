@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>5.3游戏异常审核</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	table .tr_hover{ background:#FFC;}	
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>审核管理</dt>
+				<dd class="current"> <a href="">游戏异常审核</a></dd>
+                <dd><a href="#">游戏审核设置</a></dd>
+				<dt>统计报表</dt>
+				<dd><a href="##">游戏明细表</a></dd>
+				<dd><a href="##">奖期营收报表</a></dd>
+				
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<ul class="ui-form" id="J-lotterys-panel">
+							
+							<li>
+								<label class="ui-label w-2 big">彩种名称：</label>
+                                
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-014期"><a href="#">重庆时时彩</a></span>
+                                    <span class="ico-tab ico-tab-item ico-tab-current" data-number="20130911-015期"><a href="#">江西时时彩</a></span>
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-016期"><a href="#">新疆时时彩</a></span>
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-017期"><a href="#">天津时时彩</a></span>
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-018期"><a href="#">黑龙江时时彩</a></span>
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-019期"><a href="#">上海时时乐</a></span>
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-020期"><a href="#">山东11选5</a></span>
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-021期"><a href="#">江西11选5</a></span>
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-022期"><a href="#">广东11选5</a></span>
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-023期"><a href="#">重启11选5</a></span>
+                                    <span class="ico-tab ico-tab-item" data-number="20130911-024期"><a href="#">北京快乐8</a></span>
+                                
+							</li>
+							
+							
+							<li>
+								<label class="ui-label w-2 big">时间：</label>
+								<span class="ico-tab ico-tab-current"><a href="#">今天</a></span>
+								<span class="ico-tab"><a href="#">三天</a></span>
+								<span class="ico-tab"><a href="#">一周</a></span>
+								<span class="ico-tab"><a href="#">全部</a></span>
+							</li>
+							<li>
+                            	<label class="ui-label w-2 big">状态：</label>
+                                <select class="ui-select">
+                                	<option value="全部">全部</option>
+									<option value="已完成">已完成</option>
+									<option value="待处理">待处理</option>
+									
+								</select>
+                            </li>
+						</ul>
+						
+						<table class="table table-info" id="J-data-table">
+							<thead>
+								<tr>
+									<th>期号</th>
+									<th>销售日期</th>
+									<th>理论开奖时间</th>
+									<th>开奖号码确认时间</th>
+									<th>状态</th>
+                                    <th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>20130717</td>
+									<td>20130717-011</td>
+									<td>00:30:00-00:40:00</td>
+									<td>00:35:00</td>
+									<td>无需审核</td>
+									<td>--</td>
+								</tr>
+								<tr>
+									<td>20130717</td>
+									<td>20130717-011</td>
+									<td>00:30:00-00:40:00</td>
+									<td>00:35:00</td>
+									<td>已完成</td>
+									<td><a class="tip-detail" href="5.1.html">详情</a></td>
+								</tr>
+								<tr>
+									<td>20130717</td>
+									<td>20130717-011</td>
+									<td>00:30:00-00:40:00</td>
+									<td>00:35:00</td>
+									<td>待处理</td>
+									<td><a class="btn btn-small" href="5.2.html">立即处理<b class="btn-inner"></b></a></td>
+								</tr>
+                                <tr>
+									<td>20130717</td>
+									<td>20130717-011</td>
+									<td>00:30:00-00:40:00</td>
+									<td>00:35:00</td>
+									<td>待处理</td>
+									<td><a class="btn btn-small" href="5.2.html">立即处理<b class="btn-inner"></b></a></td>
+								</tr>
+                                <tr>
+									<td>20130717</td>
+									<td>20130717-011</td>
+									<td>00:30:00-00:40:00</td>
+									<td>00:35:00</td>
+									<td>无需审核</td>
+									<td>--</td>
+								</tr>
+                                <tr>
+									<td>20130717</td>
+									<td>20130717-011</td>
+									<td>00:30:00-00:40:00</td>
+									<td>00:35:00</td>
+									<td>无需审核</td>
+									<td>--</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<div class="page-wrapper clearfix">
+							<span class="page-text">共102条记录</span>
+							<div class="page page-right">
+								<a class="prev" href="#">上一步</a>
+								<a href="#">1</a>
+								<a href="#">2</a>
+								<a class="current" href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">...</a>
+								<a class="next" href="#">下一步</a>
+								<span class="page-few">到第 <input type="text" class="input" value=""> /100页</span>
+								<input type="button" class="page-btn" value="确 认">
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<script>
+(function($){
+
+	var Tip = phoenix.Tip.getInstance();
+	//乐透期数提示
+	$('#J-lotterys-panel').on('mouseover', '.ico-tab-item', function(){
+		Tip.setText(this.getAttribute('data-number'));
+		Tip.show(-14, Tip.dom.height()*-1-14, this);
+	}).on('mouseout', '.ico-tab-item', function(){
+		Tip.hide();
+	});
+	
+	
+	$('#J-data-table').on('click', '.tip-detail', function(e){
+		var dom = $(this);
+		Tip.setText(dom.parent().find('.tip-hidden').text());
+		Tip.show(dom.width()*-1-10, dom.height()*-1-20, dom.parent());
+	}).on('mouseout', '.tip-detail', function(){
+		Tip.hide();
+	});
+	
+	 $("table tr").hover(function(){$(this).addClass("tr_hover")},function(){ $(this).removeClass("tr_hover")});
+	
+})(jQuery);
+</script>	
+	
+</body>
+</html>

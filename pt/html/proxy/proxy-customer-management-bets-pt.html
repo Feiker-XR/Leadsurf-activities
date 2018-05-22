@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>代理中心-客户管理-投注查询-PT</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/proxy/proxy.css" />
+</head>
+<body>
+	<!-- toolbar start -->
+	<div class="bg-toolbar"></div>
+	<div class="toolbar">
+		<div class="g_33">
+			<ul class="menu">
+				<li class="user hover">
+					<a href="#">您好，VIC<i class="tri"></i></a>
+					<div class="menu-nav" style="display:none;">
+						<i class="tri"></i>
+						<a href="">游戏记录</a>
+						<a href="">报表管理</a>
+						<a href="">资金明细</a>
+						<a href="">安全中心</a>
+					</div>
+				</li>
+				<li class="msg">
+					<a href="#" class="msg-title">12</a>
+					<div class="msg-box" style="display:none;">
+						<div class="msg-hd"><i class="tri"></i><a href="#" class="more">更多</a>我的未读消息<strong>（12）</strong></div>
+						<div class="msg-bd">
+							<a href="">这里是消息提示提示消息</a>
+							<a href="">这里是消息提示提示消息</a>
+							<a href="">这里是消息提示提示消息</a>
+							<a href="">这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息</a>
+						</div>
+					</div>
+				</li>
+				<li class="balance">余额：10000.00</li>
+				<li class="recharge"><a href="#">充值</a></li>
+				<li class="withdrawals"><a href="#">提现</a></li>
+				<li class="quit"><a href="#">退出</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- toolbar end -->
+	<!-- header start -->
+	<div class="header">
+		<div class="g_33">
+			<h1 class="logo"><a title="首页" href="#">PH158</a></h1>
+			<div class="service">
+				<a title="客服" class="link-service" href="#">客服</a>
+				<a title="帮助" class="link-help" href="#">帮助</a>
+			</div>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="g_33 common-main">
+		<div class="g_5">
+			<div class="common-side">
+				<div class="nav-side">
+					<dl class="side-bet">
+						<dt class="title">投注管理</dt>
+						<dd><a href="#">游戏记录</a></dd>
+						<dd><a href="#">追号记录</a></dd>
+						<dd><a href="#">账户明细</a></dd>
+					</dl>
+					<dl class="side-safe">
+						<dt class="title">账户安全</dt>
+						<dd><a href="#">安全中心</a></dd>
+						<dd><a href="#">银行卡管理</a></dd>
+						<dd><a href="#">个人资料</a></dd>
+						<dd><a href="#">密码管理</a></dd>
+					</dl>
+					<dl class="side-service">
+						<dt class="title">服务</dt>
+						<dd><a href="#">站内信</a></dd>
+					</dl>
+					<dl class="side-proxy">
+						<dt class="title">代理中心</dt>
+						<dd><a href="#">代理首页</a></dd>
+						<dd><a href="#">开户中心</a></dd>
+						<dd><a href="#">客户管理</a></dd>
+						<dd><a href="#">报表查询</a></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="g_28 g_last">
+			<div class="common-article">
+				<div class="title">投注查询</div>
+				<div class="content">
+					<div class="ui-tab-title tab-title-bg clearfix">
+						<ul>
+							<li>彩票</li>
+							<li class="current">娱乐城</li>
+						</ul>
+					</div>
+					<!-- start -->
+					<ul class="ui-search search-bg-none clearfix">
+						<li class="search-more">展开<i class="ico-down"></i></li>
+						<li class="type">
+							<label class="ui-label">游戏名称：</label>
+							<select class="ui-select">
+								<option value="全部游戏">全部游戏</option>
+								<option value="老虎机">老虎机</option>
+								<option value="老虎机">老虎机</option>
+								<option value="老虎机">老虎机</option>
+							</select>
+						</li>
+						<li class="time">
+							<label class="ui-label">时间：</label>
+							<span class="ico-tab">今天</span>
+							<span class="ico-tab ico-tab-current">三天</span>
+							<span class="ico-tab">七天</span>
+						</li>
+						<li class="state">
+							<label class="ui-label">状态：</label>
+							<span class="ico-tab">全部</span>
+							<span class="ico-tab">已中奖</span>
+							<span class="ico-tab">未中奖</span>
+						</li>
+					</ul>
+					<ul class="ui-search ui-search-more search-bg-none clearfix">
+						<li class="date">
+							<label class="ui-label" for="dateStar">起始日期：</label>
+							<input type="text" class="input" id="dateStar" value="2012-12-31 00:00"> - <input type="text" class="input" value="">
+						</li>
+						<li class="number">
+							<label class="ui-label" for="number">投注单号：</label>
+							<input type="text" class="input" id="number" value="如：ABC7779">
+						</li>
+						</li>
+						<li class="name">
+							<label class="ui-label" for="name">用户名：</label>
+							<input type="text" class="input" id="number" value="">
+						</li>
+						<li class="btn-search">
+							<a href="javascript:void(0);" class="btn btn-important">搜索<b class="btn-inner"></b></a>
+							<a href="javascript:void(0);" class="btn btn-link">恢复默认项</a>
+						</li>
+					</ul>
+					<!-- end -->
+					<!-- start -->
+					<table class="table table-info">
+						<thead>
+							<tr>
+								<th>用户名</th>
+								<th>游戏名称</th>
+								<th>投注单号</th>
+								<th>投注时间</th>
+								<th>投注金额</th>
+								<th>奖金</th>
+								<th>盈亏</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>到上冯绍峰</td>
+								<td>复仇者</td>
+								<td>20121218012</td>
+								<td>2012-02-28 22:22:00</td>
+								<td><span class="price"><dfn>¥</dfn>300.00</span></td>
+								<td><span class="price"><dfn>¥</dfn>3,000.00</span></td>
+								<td><span class="price color-green"><dfn>¥</dfn>&nbsp;+3,000.00</span></td>
+							</tr>
+							<tr>
+								<td>到上冯绍峰</td>
+								<td>复仇者</td>
+								<td>20121218012</td>
+								<td>2012-02-28 22:22:00</td>
+								<td><span class="price"><dfn>¥</dfn>300.00</span></td>
+								<td><span class="price"><dfn>¥</dfn>3,000.00</span></td>
+								<td><span class="price color-red"><dfn>¥</dfn>&nbsp;-3,000.00</span></td>
+							</tr>
+							<tr>
+								<td>到上冯绍峰</td>
+								<td>复仇者</td>
+								<td>20121218012</td>
+								<td>2012-02-28 22:22:00</td>
+								<td><span class="price"><dfn>¥</dfn>300.00</span></td>
+								<td><span class="price"><dfn>¥</dfn>3,000.00</span></td>
+								<td><span class="price color-red"><dfn>¥</dfn>&nbsp;-3,000.00</span></td>
+							</tr>
+							<tr>
+								<td>到上冯绍峰</td>
+								<td>复仇者</td>
+								<td>20121218012</td>
+								<td>2012-02-28 22:22:00</td>
+								<td><span class="price"><dfn>¥</dfn>300.00</span></td>
+								<td><span class="price"><dfn>¥</dfn>3,000.00</span></td>
+								<td><span class="price color-red"><dfn>¥</dfn>&nbsp;-3,000.00</span></td>
+							</tr>
+							<tr>
+								<td>到上冯绍峰</td>
+								<td>复仇者</td>
+								<td>20121218012</td>
+								<td>2012-02-28 22:22:00</td>
+								<td><span class="price"><dfn>¥</dfn>300.00</span></td>
+								<td><span class="price"><dfn>¥</dfn>3,000.00</span></td>
+								<td><span class="price color-red"><dfn>¥</dfn>&nbsp;-3,000.00</span></td>
+							</tr>
+							<tr>
+								<td>到上冯绍峰</td>
+								<td>复仇者</td>
+								<td>20121218012</td>
+								<td>2012-02-28 22:22:00</td>
+								<td><span class="price"><dfn>¥</dfn>300.00</span></td>
+								<td><span class="price"><dfn>¥</dfn>3,000.00</span></td>
+								<td><span class="price color-red"><dfn>¥</dfn>&nbsp;-3,000.00</span></td>
+							</tr>
+							<tr>
+								<td>小结</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><span class="price"><dfn>¥</dfn>300.00</span></td>
+								<td><span class="price"><dfn>¥</dfn>3,000.00</span></td>
+								<td><span class="price color-red"><dfn>¥</dfn>&nbsp;-3,000.00</span></td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- end -->
+					<!-- start -->
+					<div class="page-wrapper">
+						<span class="page-text page-left">共25条记录</span>
+						<span class="page-show page-right">
+							每页显示
+							<select name="" id="" class="ui-select">
+								<option value="15">15</option>
+								<option value="30">30</option>
+								<option value="45">45</option>
+								<option value="60">60</option>
+								<option value="75">75</option>
+								<option value="90">90</option>
+							</select>
+						</span>
+						<div class="page">
+							<a href="#" class="prev">上一步</a>
+							<a href="#">1</a>
+							<a href="#">2</a>
+							<a href="#" class="current">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">7</a>
+							<a href="#">8</a>
+							<a href="#">9</a>
+							<a href="#">...</a>
+							<a href="#" class="next">下一步</a>
+							<span class="page-few">到第 <input type="text" value="" class="input"> /100页</span>
+							<input type="button" value="确 认" class="page-btn">
+						</div>
+					</div>
+					<!-- end -->
+					<!-- start -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer 不使用的情况下请自行删除 -->
+	<div class="footer footer-important">
+		<div class="g_33">
+			<span class="copy">&copy; 2001-2012 591PH. All right reserved. 凤凰游戏平台版权所有</span><a href="#">帮助中心</a> | <a href="#">在线客服</a> | <a href="#">游戏介绍</a> | <a href="#">下载客户端</a> | <a href="#">翻墙工具</a>
+		</div>
+	</div>
+</body>
+</html>

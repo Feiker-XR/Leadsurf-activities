@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>代理平台后台-首页内容模块配置</title>
+<link rel="stylesheet" href="style/style.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="">
+	<div class="wrapper">
+		<div class="main">
+			<h2>首页内容模块设置</h2>
+			<div class="ui-title">首页内容模块的配置</div>
+			
+<script type="text/tpl" id="J-tpl-mode"><div class="ui-form-mode">
+				<a class="close wd-close" href="#" data-action="del" data-id="-1">删除</a>
+				<ul class="ui-form" data-id="">
+					<li>
+						<label class="ui-label" for="info">模块名</label>
+						<input type="text" class="input" value="" maxlength="16" />
+					</li>
+					<li>
+						<label class="ui-label" for="info">文章分类</label>
+						<select name="" id="" class="ui-select">
+							<option value="">请选择文章分类</option>
+							<option value="2">2</option>
+						</select>
+					</li>
+					<li>
+						<label class="ui-label" for="info">显示数量</label>
+						<select name="" id="" class="ui-select">
+							<option value="1">5篇</option>
+							<option value="2">2</option>
+						</select>
+					</li>
+					<li>
+						<label class="ui-label" for="info">文章类型</label>
+						<select name="" id="" class="ui-select">
+							<option value="1">最新文章</option>
+							<option value="2">最热文章</option>
+						</select>
+					</li>
+				</ul>
+			</div>
+</script>
+		<div id="J-container">
+			<div class="ui-form-mode">
+				<a class="close wd-close" href="#" data-id="1" data-action="del">删除</a>
+				<ul class="ui-form" data-id="1">
+					<li>
+						<label class="ui-label" for="info">模块名</label>
+						<input type="text" class="input" value="双色球" maxlength="16" />
+					</li>
+					<li>
+						<label class="ui-label" for="info">文章分类</label>
+						<select name="" class="ui-select">
+							<option value="">请选择文章分类</option>
+							<option value="2">2</option>
+						</select>
+					</li>
+					<li>
+						<label class="ui-label" for="info">显示数量</label>
+						<select name="" class="ui-select">
+							<option value="1">5篇</option>
+							<option value="2">2</option>
+						</select>
+					</li>
+					<li>
+						<label class="ui-label" for="info">文章类型</label>
+						<select name="" class="ui-select">
+							<option value="1">最新文章</option>
+							<option value="2">最热文章</option>
+						</select>
+					</li>
+				</ul>
+			</div>
+		</div>
+			<a class="add ui-label" href="#" id="J-button-add" style="margin-left:10px;"> + 添加模块</a>
+
+			<div id="J-wd-msg-right" class="pop-mini w-4">
+				<i class="ico-success"></i>
+				<h4 class="pop-text"></h4>
+			</div>
+			<div id="J-wd-msg-error" class="pop-mini w-4">
+				<i class="ico-error"></i>
+				<h4 class="pop-text"></h4>
+			</div>
+
+
+
+			<ul class="ui-form">
+				<li style="text-align:center;">
+					<input id="J-button-submit" type="button" value="提交并保存" class="ui-button">
+				</li>
+			</ul>
+			
+			
+
+		</div>
+		<div class="sub"></div>
+	</div>
+<script>
+(function($){
+	//type = 1 成功消息
+	//type = 0 错误消息
+	var msgDom = [$('#J-wd-msg-error'), $('#J-wd-msg-right')],
+		showMsg = function(type, text){
+			var el = msgDom[type];
+			msgDom[0].hide();
+			msgDom[1].hide();
+			el.find('.pop-text').html(text);
+			el.show();
+			setTimeout(function(){
+				el.hide();
+			}, 3000);
+		},
+		//锁定按钮
+		lockButton = function(el){
+			var el = $(el),background = el.css('background'),color = el.css('color'),text = el.val();
+			el.attr('data-background', background);
+			el.attr('data-color', color);
+			el.attr('data-text', text);
+			el.val('提交中...').css({background:'#CCC',color:'#666'});
+		},
+		//解锁
+		unlockButton = function(el){
+			var el = $(el);
+			el.val(el.attr('data-text')).css({background:el.attr('data-background'), color: el.attr('data-color')});
+		};
+	$('#J-button-submit').click(function(){
+		var me = this,
+			its = $('#J-container').children(),
+			isPass = true,
+			data = [];
+		its.each(function(){
+			var el = $(this),vTitle = '',vType = '',vNum = '',vSort = '',id;
+			vTitle = $.trim(el.find('input').eq(0).val());
+			vType = $.trim(el.find('select').eq(0).val());
+			vNum = $.trim(el.find('select').eq(1).val());
+			vSort = $.trim(el.find('select').eq(2).val());
+			id = el.parent().parent().attr('data-id');
+			id = !id ? '' : $.trim(id);
+			if(vTitle == ''){
+				isPass = false;
+				showMsg(0, '模块名字不能为空');
+				return false;
+			}
+			if(vType == ''){
+				isPass = false;
+				showMsg(0, '请选择文章分类');
+				return false;
+			}
+			data.push({title:vTitle,type:vType,num:vNum,sort:vSort,id:id});
+		});
+		
+		if(!isPass){
+			return;
+		}
+		
+		$.ajax({
+			url:'?',
+			dataType:'json',
+			method:'POST',
+			data:{'param':data},
+			beforeSend:function(){
+				lockButton(me);
+			},
+			success:function(data){
+				//showMsg(0, '参数提交错误');
+				showMsg(1, '数据保存成功');
+				//location.href = location.href;
+			},
+			complete:function(){
+				unlockButton(me);
+			}
+		});
+		
+	});
+	
+	
+	//添加
+	$('#J-button-add').click(function(e){
+		e.preventDefault();
+		var its = $('#J-container').find('.ui-form-mode');
+		if(its.size() >= 8){
+			return;
+		}
+		$($('#J-tpl-mode').html()).appendTo($('#J-container'));
+	});
+	
+	
+	$('#J-container').on('click', function(e){
+		var el = $(e.target),action = el.attr('data-action'),id;
+		switch(action){
+			case 'del':
+				id = Number(el.attr('data-id'));
+				//新增内容
+				if(id < 0){
+					el.parent().remove();
+				}else{
+				//原有内容
+					$.ajax({
+						url:'?',
+						success:function(){
+							el.parent().remove();
+						}
+					});
+				}
+			break;
+			default:
+			break;
+		}
+	});
+	
+})(jQuery);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

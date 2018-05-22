@@ -1,0 +1,64 @@
+@charset "UTF-8";
+html,body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,th,td,em,form,input,select,textarea,button,header,section,aside,footer{margin:0;padding:0;}
+input,button,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+ul,li{list-style:none;}
+img{border:none;}
+body{font:12px/1.5 Microsoft Yahei,Arial,Helvetica,sans-serif;color:#333;}
+.clearfix:after{content:".";display:block;height:0;clear:both;overflow:hidden;}
+.clearfix{*zoom:1;}
+
+.code{position:fixed;z-index:100;left:50%;bottom:200px;margin-left:470px;padding:5px;background-color:#57234F;color:#9C6794;text-align:center;box-shadow:0 0 3px rgba(0,0,0,.7) inset}
+.content-inner{width:930px;margin:0 auto;}
+.banner{height:650px;background:#3F1D36 url(../images/banner.jpg) no-repeat center 0;}
+.logo{position:absolute;top:0;left:50%;margin-left:-470px;width:170px;height:80px;}
+.activity-link{position:absolute;left:50%;top:452px;padding:10px;margin-left:-470px;font-size:14px;color:#AE9CA9;line-height:2;*width:530px;
+transition:0.3s linear 0s;
+}
+.activity-link-current{background-color:#330529;background-color:rgba(55,1,41,.6);border-radius:3px;}
+.activity-link-title{padding-right:30px;font-weight:700;font-size:16px;color:#EFCBEB;cursor:pointer;background:url("../images/ico-link.png") no-repeat 250px center;}
+.activity-link:hover .activity-link-title{color:#DAA8D5;}
+.activity-link-content{display:none;}
+.activity-link-current .activity-link-content{display:block;}
+.activity-link-content strong{color:#BFAD5F;}
+.activity-link-content a{float:right;padding:3px 5px;font-size:12px;line-height:1.5;color:#FFF;background-color:#7D3775;text-decoration:none;border-radius:3px;}
+.activity-link-content a:hover{box-shadow:0 2px 3px rgba(0,0,0,.5);}
+
+.activity-title{position:relative;top:-30px;border-bottom:1px solid #90568A;font-size:18px;overflow:hidden;}
+.activity-title strong{float:left;padding:5px 10px;background-color:#90568A;color:#FFF;border-radius:3px 3px 0 0;}
+.activity-content{padding-bottom:100px;background-color:#3E1E35;}
+.activity-content-list{line-height:2;background:url("../images/un-pic.jpg") no-repeat 0 0;}
+.activity-content-list li{overflow:hidden;}
+.activity-content-list .pic{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;width:170px;height:110px;margin:25px 0;border-right:1px dashed #90568A;}
+.activity-content-list .text{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;padding-left:30px;color:#A2949E;font-size:16px;}
+.activity-content-list h4{font-size:18px;color:#D8D2D6;}
+.activity-content-list h4 span,.activity-content-list h4 strong{margin-left:10px;font-size:16px;}
+.activity-content-list h4 strong{color:#CAA1D6;}
+.activity-content-list h4 span{font-weight:100;}
+.activity-content-list p{padding-left:80px;}
+.activity-content-list em{display:inline-block;vertical-align:middle;width:18px;height:18px;margin-right:5px;line-height:18px;text-align:center;background-color:#BBB1B8;color:#624D5D;font-style:normal;border-radius:50%;}
+
+.table{width:840px;margin-top:30px;}
+.table table{width:100%;color:#BDB2BA;text-align:center;font-size:14px;}
+.table th{padding:10px;background-color:#572F4C;border:2px solid #3C1F34;font-size:16px;}
+.table td{padding:10px;background-color:#43233A;border:2px solid #3C1F34;cursor:pointer;}
+.table .color1,.table .color1 td{background-color:#633D59;}
+.table .color2{background-color:#4B2941;}
+.table-title{height:46px;line-height:56px;padding-left:80px;font-size:18px;font-weight:700;color:#D8D2D6;background-image:url("../images/un-ico.png");background-repeat:no-repeat;}
+.table-title strong{font-size:16px;color:#CAA1D6;}
+.table-title strong a{color:#CAA1D6;}
+
+.table1 .table-title{background-position:2px 4px;}
+.table2 .table-title{background-position:-2px -46px;}
+.table3 .table-title{background-position:2px -100px;}
+
+.activity-description{padding:70px 0;background-color:#472542;}
+.activity-description .activity-title{top:0;}
+.activity-description-list{margin-top:10px;line-height:2;color:#A2949E;font-size:16px}
+
+.footer{background-color: #572F4C;}
+.footer-link{width:960px;margin:0 auto;padding: 18px 0;text-align:center;}
+.footer a{color:#90709B;text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+.footer-copyright{color:#795970;}

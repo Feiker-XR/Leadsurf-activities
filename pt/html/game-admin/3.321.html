@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>3.321方案/追号管理-异常记录-方案比较异常</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	.table-info .number {padding:4px;}
+	.table-info .number-eidt {color:#F00;}
+	</style>
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd> <a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd ><a href="2.1.html" >流程监控</a></dd>
+				<dd ><a href="2.2.html">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd >  <a href="3.1.html">方案记录</a></dd>
+				<dd ><a href="3.2.html">追号记录</a></dd>
+				<dd class="current"><a href="3.31.html">异常方案记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="4.1.html">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+				
+				
+				
+					<div class="main">
+					
+					
+						<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="3.31.html">风险记录</a></li>
+									<li class="current">恶意记录</li>
+								</ul>
+						</div>
+					
+					
+					
+						<h3 class="ui-title"><a href="3.32.html" >&lt;&lt;回到上级</a></h3>
+						<ul class="ui-form">
+							<li>
+								<label class="ui-label w-2 big">彩种名称：</label>
+								<span class="ui-singleline w-2">重庆时时彩</span>
+								<label class="ui-label w-2 big">方案编号：</label>
+								<span class="ui-singleline w-5">DCQC1332534536342<a href="" target="_blank">（相关追号记录）</a></span>
+								
+							</li>
+							<li>
+								<label class="ui-label w-2 big">期号：</label>
+								<span class="ui-singleline w-2">20121218012</span>
+								<label class="ui-label w-2 big">投注时间：</label>
+								<span class="ui-singleline w-5">2012-10-09 11:34:33</span>
+								
+								<label class="ui-label w-2 big">异常原因：</label>
+								<span class="ui-singleline">方案比较异常（修改数据）</span>
+							</li>
+							<li>
+								<label class="ui-label w-2 big">投注总金额：</label>
+								<span class="ui-singleline w-2">&yen;30.20元</span>
+								<label class="ui-label w-2 big">未派奖金：</label>
+								<span class="ui-singleline w-5">&yen;130.20元</span>
+								<label class="ui-label w-2 big">开奖号码：</label>
+								<span class="ui-singleline w-2">1 2 3 4 5</span>
+							</li>
+							<li>
+								<label class="ui-label w-2 big">用户名：</label>
+								<span class="ui-singleline w-2">zoe</span>
+								<label class="ui-label w-2 big">版本号：</label>
+								<span class="ui-singleline w-5">IOS 3.4</span>
+								<label class="ui-label w-2 big">来源：</label>
+								<span class="ui-singleline w-2">iphone5</span>
+							</li>
+
+						</ul>
+
+						<table class="table table-info" id="J-table">
+							<thead>
+								<tr>
+									<th>玩法：</th>
+									<th>注数：</th>
+									<th>倍数：</th>
+									<th>投注金额：</th>
+									<th>模式：</th>
+									<th>状态：</th>
+									<th>奖金：</th>
+									<th>中/投比：</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>后三_直选复式</td>
+									<td>2注</td>
+									<td>1倍</td>
+									<td>&yen;2.00</td>
+									<td>元</td>
+									<td>已派奖</td>
+									<td>&yen;1700.00</td>
+									<td>585.00</td>
+								</tr>
+								<tr>
+									<td>投注内容</td>
+									<td colspan="7" class="table-toggle" style="white-space:normal">-,-,1,234</td>
+								</tr>
+								<tr>
+									<td>后三_直选复式</td>
+									<td>2注</td>
+									<td>1倍</td>
+									<td>&yen;2.00</td>
+									<td>元</td>
+									<td>已派奖</td>
+									<td>&yen;1700.00</td>
+									<td>585.00</td>
+								</tr>
+								<tr>
+									<td>投注内容</td>
+									<td colspan="7" class="table-toggle" style="white-space:normal">
+									
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number number-eidt" data-old-data="456">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number number-eidt" data-old-data="887">345</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									<span class="number">123</span>
+									
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						
+							
+						<div style="height:400px"></div>
+							
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+<script>
+(function($){
+	var Tip = phoenix.Tip.getInstance();
+	
+	$('#J-table').on('mouseover', '.number-eidt', function(){
+		Tip.setText('原值：' + this.getAttribute('data-old-data'));
+		Tip.show(-17, -30, this);
+	}).on('mouseout', '.number-eidt', function(){
+		Tip.hide();
+	});
+	
+	
+})(jQuery);
+</script>
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

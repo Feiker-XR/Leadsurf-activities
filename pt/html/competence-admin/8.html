@@ -1,0 +1,462 @@
+	<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>8.权限组管理</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<style>
+	.table-info th {font-weight:bold;}
+	.table-info tr:hover {background:#FFFFE1;}
+	.table-tool a {margin:0}
+	.table-info .ico-nochild {background:url(../images/common/Sys_ModuleIcos.png) no-repeat 0 -64px;width:19px;height:19px;margin:0 2px;padding:0;margin-left:19px;}
+	.table-tool .ico-fold,.table-tool .ico-unfold {width:38px;height:19px;background:url(../images/common/Sys_ModuleIcos.png) no-repeat 12px -26px;}
+	.table-tool .ico-unfold {background-position:3px 3px;}
+	
+	
+	.table-info td {padding-top:0;padding-bottom:0;}
+	.table-tool a { cursor:default;}
+	.table-tool .ico-fold, .table-tool .ico-unfold,.table-info .ico-nochild {height:32px;}
+	.table-info tr td {border-bottom:0;}
+	.table-info tr:nth-child(even) {background-color:#FFF;}
+	.table-info tr:nth-child(even):hover {background-color:#FFFFE1;}
+	
+	.table-info tr.row-space-1 {border-bottom:1px dotted #E3E3E3;border-top:1px dotted #E3E3E3;background:#F9F9F9;}
+	.table-info tr.row-space-1:hover {background-color:#FFFFE1;}
+	</style>
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li class="current"><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li class="current"><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>权限中心</dt>
+				<dd class="current"><a href="8.html">权限组管理</a></dd>
+				<dd><a href="9.html">创建权限组</a></dd>
+				<dd><a href="7.html">用户管理</a></dd>
+				<dd><a href="11.html">添加用户</a></dd>
+				<dd><a href="12.html">操作日志</a></dd>
+				<dd><a href="10.html">修改密码</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<table class="table table-info" id="J-table">
+							<thead>
+								<tr>
+									<th>权限组名</th>
+									<th>创建人</th>
+									<th>创建时间</th>
+									<th>最后修改人</th>
+									<th>最后修改时间</th>
+									<th>状态</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr data-pid="0" data-id="1" class="row-space-1">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-fold"></a>COO</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>正常</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								<tr data-pid="1" data-id="2" class="row-space-2">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-fold"></a>客服部经理</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>正常</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								<tr  data-pid="2" data-id="3" class="row-space-3">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-nochild"></a>客服一组</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>正常</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								<tr data-pid="2" data-id="4" class="row-space-3">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-fold"></a>客服二组</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td class="red-color">禁用</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								<tr data-pid="4" data-id="8" class="row-space-4">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-nochild"></a>员工A</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td class="red-color">禁用</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								<tr data-pid="0" data-id="5" class="row-space-1">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-fold"></a>CTO</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>正常</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								<tr data-pid="5" data-id="6" class="row-space-2">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-nochild"></a>客服二组</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td class="red-color">禁用</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								<tr data-pid="5" data-id="7" class="row-space-2">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-fold"></a>员工B</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td class="red-color">禁用</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								<tr data-pid="7" data-id="9" class="row-space-3">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-fold"></a>员工B-1</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td class="red-color">禁用</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								<tr data-pid="9" data-id="10" class="row-space-4">
+									<td class="table-tool"><span class="row-space"></span><a href="#" class="row-control ico-nochild"></a>员工B-1</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td>admin</td>
+									<td>2013-11-11 12:32</td>
+									<td class="red-color">禁用</td>
+									<td>
+										<a href="8.4.html">查看组权限</a>
+										<a href="8.5.html">查看组成员</a>
+										<a href="8.6.html">复制组</a>
+										<a href="8.3.html">修改组</a>
+										<a href="8.2.html">增加子组</a>
+										<a href="#" class="row-action-close">禁用组</a>
+										<a href="#" class="row-action-open">启用组</a>
+										<a href="#" class="row-action-delete">删除组</a>
+									</td>
+								</tr>
+								
+							</tbody>
+						</table>
+						<div class="page-wrapper clearfix">
+							<span class="page-text">共23个组</span>
+							<div class="page page-right">
+								<a href="#" class="prev">上一页</a>
+								<span>2/200</span>
+								<a href="#" class="next">下一页</a>
+							</div>
+						</div>
+						
+
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<script>
+(function($){
+	//弹窗
+	var Wd = phoenix.Message.getInstance();
+	
+	
+	var table = $('#J-table');
+	/**
+	//树形菜单
+	var findChild = function(id, arr){
+			var arr = arr || [],trs,fn = arguments.callee,
+			trs = table.find('tr[data-pid="'+ id +'"]');
+			arr = arr.concat(trs);
+			trs.each(function(i){
+				arr = arr.concat(fn.call(null, this.getAttribute('data-id'), arr));
+			});
+			return arr;
+		},
+		findParent = function(id){
+			return table.find('tr[data-id="'+ id +'"]');
+		};
+		
+	table.on('click', '.row-control', function(e){
+		e.preventDefault();
+		var el = $(this),ctCls = 'row-control',closeCls = 'ico-unfold',openCls = 'ico-fold',
+			id = el.parents('tr').attr('data-id'),
+			childs;
+		if(el.hasClass('ico-nochild')){
+			return;
+		}
+		//收起
+		if(el.hasClass(openCls)){
+			el.removeClass().addClass(ctCls + ' ' + closeCls);
+			childs = findChild(id);
+			$.each(childs, function(){
+				this.hide();
+			});
+		}else{
+		//展开
+			el.removeClass().addClass(ctCls + ' ' + openCls);
+			childs = findChild(id);
+			$.each(childs, function(){
+				var me = this;
+				this.each(function(){
+					var dom = $(this),par = findParent(dom.attr('data-pid'));
+					if(par.css('display') != 'none' && par.find('.ico-unfold').size() == 0){
+						dom.show();
+					}
+				});
+			});
+			
+		}
+	});
+	**/
+	
+	
+	//行操作动作
+	table.on('click', '.row-action-close', function(e){
+		e.preventDefault();
+		var tr = $(this).parent().parent(),
+			title = tr.find('.table-tool').text(),
+			id = tr.attr('data-id');
+		Wd.show({
+			mask:true,
+			title:'禁用组提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">你确定要禁用组<b>['+ title +']</b>吗？禁用成功后该组的所有成员将不能登录管理后台。</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=delete&id=' + id,
+					dataType:'json',
+					success:function(data){
+						//测试数据
+						data = {isSuccess:1,type:'success',data:{}};
+								
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							alert(data['msg']);
+						}
+						Wd.hide();
+						
+						location.href = location.href;
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	table.on('click', '.row-action-open', function(e){
+		e.preventDefault();
+		var tr = $(this).parent().parent(),
+			title = tr.find('.table-tool').text(),
+			id = tr.attr('data-id');
+		Wd.show({
+			mask:true,
+			title:'启用组提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">你确定要启用组<b>['+ title +']</b>吗？启用成功后该组的所有成员将恢复正常使用。</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=delete&id=' + id,
+					dataType:'json',
+					success:function(data){
+						//测试数据
+						data = {isSuccess:1,type:'success',data:{}};
+								
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							alert(data['msg']);
+						}
+						Wd.hide();
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	table.on('click', '.row-action-delete', function(e){
+		e.preventDefault();
+		var tr = $(this).parent().parent(),
+			title = tr.find('.table-tool').text(),
+			id = tr.attr('data-id');
+		Wd.show({
+			mask:true,
+			title:'删除组提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">你确定要删除组<b>['+ title +']</b>吗？删除后将不能恢复</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=delete&id=' + id,
+					dataType:'json',
+					success:function(data){
+						//测试数据
+						data = {isSuccess:0,type:'success',data:{}};
+								
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							Wd.show({
+								mask:true,
+								title:'删除组提示',
+								content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您不能删除该组，原因：该组中包含管理员，请先删除或转移管理员。</h4></div></div>',
+								confirmIsShow:true,
+								confirmFun:function(){
+									Wd.hide();
+								}
+							});
+							
+							
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+		
+	});
+	
+	
+})(jQuery);
+</script>
+	
+	
+</body>
+</html>

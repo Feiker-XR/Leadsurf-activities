@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>代理平台后台-视频直播配置</title>
+<link rel="stylesheet" href="style/style.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="">
+	<div class="wrapper">
+		<div class="main">
+			<h2>视频直播配置</h2>
+			<div class="ui-title">官方乐利宝贝开奖直播视频，将官方提供的视频链接粘贴至此</div>
+			<form id="J-form" action="?">
+			<ul class="ui-form">
+				<li>
+					<label class="ui-label" for="info">视频播放地址：</label>
+					<textarea id="J-textarea" class="ui-textarea" rows="10" cols="30" id="" name=""></textarea>
+				</li>
+				<li>
+				
+					<div id="J-wd-msg-right" class="pop-mini w-4">
+						<i class="ico-success"></i>
+						<h4 class="pop-text"></h4>
+					</div>
+					<div id="J-wd-msg-error" class="pop-mini w-4">
+						<i class="ico-error"></i>
+						<h4 class="pop-text"></h4>
+					</div>
+					
+					<label class="ui-label" for="">&nbsp;</label>
+					<input type="button" id="J-button-submit" value="提交并保存" class="ui-button">
+				</li>
+			</ul>
+			</form>
+	
+
+
+		</div>
+		<div class="sub"></div>
+	</div>
+
+<script>
+(function($){
+	//type = 1 成功消息
+	//type = 0 错误消息
+	var msgDom = [$('#J-wd-msg-error'), $('#J-wd-msg-right')],
+		showMsg = function(type, text){
+			var el = msgDom[type];
+			msgDom[0].hide();
+			msgDom[1].hide();
+			el.find('.pop-text').html(text);
+			el.show();
+			setTimeout(function(){
+				el.hide();
+			}, 3000);
+		};
+		
+	$('#J-button-submit').click(function(){
+		var text = $.trim($('#J-textarea').val());
+		if(text == ""){
+			showMsg(0, '视频地址不能为空');
+			return;
+		}
+		$('#J-form').submit();
+	});
+	
+	$('#J-textarea').keyup(function(){
+		this.value = this.value.substr(0, 300);		
+	}).blur(function(){
+		this.value = this.value.substr(0, 300);		
+	});
+	
+})(jQuery);
+
+</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,203 @@
+/* INIT */
+.intro .pad,
+.intro .text,
+.intro .arrow1,
+.intro .arrow2{
+	opacity: 0;
+}
+
+/* ltr
+** Left To Right
+ */
+@keyframes ltr
+{
+	0%   { margin-left: -8%; opacity: 0; }
+	100% { margin-left: 0; opacity: 1; }
+}
+
+@-moz-keyframes ltr /* Firefox */
+{
+	0%   { margin-left: -8%; opacity: 0; }
+	100% { margin-left: 0; opacity: 1; }
+}
+
+@-webkit-keyframes ltr /* Safari 和 Chrome */
+{
+	0%   { margin-left: -8%; opacity: 0; }
+	100% { margin-left: 0; opacity: 1; }
+}
+
+@-o-keyframes ltr /* Opera */
+{
+	0%   { margin-left: -8%; opacity: 0; }
+	100% { margin-left: 0; opacity: 1; }
+}
+
+/* rtl
+** Right To Left
+ */
+@keyframes rtl
+{
+	0%   { margin-right: -8%; opacity: 0; }
+	100% { margin-right: 0; opacity: 1; }
+}
+
+@-moz-keyframes rtl /* Firefox */
+{
+	0%   { margin-right: -8%; opacity: 0; }
+	100% { margin-right: 0; opacity: 1; }
+}
+
+@-webkit-keyframes rtl /* Safari 和 Chrome */
+{
+	0%   { margin-right: -8%; opacity: 0; }
+	100% { margin-right: 0; opacity: 1; }
+}
+
+@-o-keyframes rtl /* Opera */
+{
+	0%   { margin-right: -8%; opacity: 0; }
+	100% { margin-right: 0; opacity: 1; }
+}
+
+/* ttb
+** Top To Bottom
+ */
+@keyframes ttb
+{
+	0%   { margin-top: -8%; opacity: 0; }
+	100% { margin-top: 0; opacity: 1; }
+}
+
+@-moz-keyframes ttb /* Firefox */
+{
+	0%   { margin-top: -8%; opacity: 0; }
+	100% { margin-top: 0; opacity: 1; }
+}
+
+@-webkit-keyframes ttb /* Safari 和 Chrome */
+{
+	0%   { margin-top: -8%; opacity: 0; }
+	100% { margin-top: 0; opacity: 1; }
+}
+
+@-o-keyframes ttb /* Opera */
+{
+	0%   { margin-top: -8%; opacity: 0; }
+	100% { margin-top: 0; opacity: 1; }
+}
+
+/* btt
+** Bottom To Top
+ */
+@keyframes btt
+{
+	0%   { margin-top: 8%; opacity: 0; }
+	100% { margin-top: 0; opacity: 1; }
+}
+
+@-moz-keyframes btt /* Firefox */
+{
+	0%   { margin-top: 8%; opacity: 0; }
+	100% { margin-top: 0; opacity: 1; }
+}
+
+@-webkit-keyframes btt /* Safari 和 Chrome */
+{
+	0%   { margin-top: 8%; opacity: 0; }
+	100% { margin-top: 0; opacity: 1; }
+}
+
+@-o-keyframes btt /* Opera */
+{
+	0%   { margin-top: 8%; opacity: 0; }
+	100% { margin-top: 0; opacity: 1; }
+}
+
+/* opac
+ */
+@keyframes opac
+{
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@-moz-keyframes opac /* Firefox */
+{
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@-webkit-keyframes opac /* Safari 和 Chrome */
+{
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@-o-keyframes opac /* Opera */
+{
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+/* scale
+ */
+@keyframes scale
+{
+	0%   { transform:scale(.8); opacity: 0; }
+	100% { transform:scale(1); opacity: 1; }
+}
+
+@-moz-keyframes scale /* Firefox */
+{
+	0%   { -moz-transform:scale(.8); opacity: 0; }
+	100% { -moz-transform:scale(1); opacity: 1; }
+}
+
+@-webkit-keyframes scale /* Safari 和 Chrome */
+{
+	0%   { -webkit-transform:scale(.8); opacity: 0; }
+	100% { -webkit-transform:scale(1); opacity: 1; }
+}
+
+@-o-keyframes scale /* Opera */
+{
+	0%   { -o-transform:scale(.8); opacity: 0; }
+	100% { -o-transform:scale(1); opacity: 1; }
+}
+
+.intro_inview .anim_opac{
+	-webkit-animation: opac 0.8s ease 0s forwards;
+	-moz-animation   : opac 0.8s ease 0s forwards;
+	-o-animation     : opac 0.8s ease 0s forwards;
+	animation        : opac 0.8s ease 0s forwards;
+}
+.intro_inview .anim_rtl{
+	-webkit-animation: rtl 0.8s ease 0.5s forwards;
+	-moz-animation   : rtl 0.8s ease 0.5s forwards;
+	-o-animation     : rtl 0.8s ease 0.5s forwards;
+	animation        : rtl 0.8s ease 0.5s forwards;
+}
+.intro_inview .anim_ltr{
+	-webkit-animation: ltr 0.8s ease 0.5s forwards;
+	-moz-animation   : ltr 0.8s ease 0.5s forwards;
+	-o-animation     : ltr 0.8s ease 0.5s forwards;
+	animation        : ltr 0.8s ease 0.5s forwards;
+}
+.intro_inview .anim_ttb{
+	-webkit-animation: ttb 0.8s ease 0.8s forwards;
+	-moz-animation   : ttb 0.8s ease 0.8s forwards;
+	-o-animation     : ttb 0.8s ease 0.8s forwards;
+	animation        : ttb 0.8s ease 0.8s forwards;
+}
+.intro_inview .anim_btt{
+	-webkit-animation: btt 0.8s ease 0.8s forwards;
+	-moz-animation   : btt 0.8s ease 0.8s forwards;
+	-o-animation     : btt 0.8s ease 0.8s forwards;
+	animation        : btt 0.8s ease 0.8s forwards;
+}
+.intro_inview .anim_scale{
+	-webkit-animation: scale 0.8s ease 0s forwards;
+	-moz-animation   : scale 0.8s ease 0s forwards;
+	-o-animation     : scale 0.8s ease 0s forwards;
+	animation        : scale 0.8s ease 0s forwards;
+}

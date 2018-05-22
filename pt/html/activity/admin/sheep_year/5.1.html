@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>5.1转盘抽奖</title>
+	<link rel="stylesheet" href="../../../../product/images/common/base.css" />
+	<link rel="stylesheet" href="../../../../product/images/common/js-ui.css" />
+	<link rel="stylesheet" href="../../../../product/images/admin/admin.css" />
+	<script type="text/javascript" src="../../../../product/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../../../product/js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Countdown.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.pagination.js"></script>
+	<script type="text/javascript" src="../../../../product/js/phoenix.Common.js"></script>
+	<script type="text/javascript" src="../../../../product/js/game/util/phoenix.cookie.js" ></script>	
+	<script type="text/javascript" src="../../../../product/js/game/util/phoenix.EditConfirm.js" ></script>
+
+	<style>
+	.j-ui-tip-info {background:#FFFFE1;border:1px solid #CCC;font-size:12px;color:#F60;}
+	.j-ui-tip-info .sj-l {display:none;}
+	.clearfix {display:block;}
+	.j-ui-datepicker {z-index:701;}
+	.container-rewards{line-height:30px;}
+	</style>
+
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs">
+				<div class="crumbs">
+					<strong>当前位置：</strong>
+					<a href="">活动</a>
+					&gt;
+					<a href="">活动管理</a>
+					&gt;
+					<a href="">2015春节活动</a>
+				</div>
+			</div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+
+						<div class="ui-tab">
+							
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="">活动总览</a></li>	
+									<li><a href="">红包活动数据</a></li>
+									<li><a href="">押大小活动数据</a></li>
+									<li><a href="">转盘抽奖活动数据</a></li>
+									<li class="current"><a href="">活动配置</a></li>
+									<li><a href="">操作日志</a></li>
+								</ul>
+							</div>
+							
+							<div class="ui-tab-content ui-tab-content-current">
+								<ul class="ui-form">
+									<li>
+										<label class="ui-label w-1">&nbsp;</label>
+										<span class="ico-tab ico-tab-item"><a href="#">押大小</a></span>
+										<span class="ico-tab ico-tab-item"><a href="#">转盘抽奖</a></span>
+									</li>
+								</ul>
+								<table class="table table-info">
+									<thead class="text-center">
+										<tr>
+											<th>奖项</th>
+											<th>奖金</th>
+											<th>概率</th>
+											<th>奖品数量</th>
+											<th>奖品维护</th>
+											<th>已中奖品数量</th>
+											<th>剩余奖品数量</th>
+										</tr>
+									</thead>
+									<tbody class="text-center">
+										<tr data-id="2">
+											<td>押中奖</td>
+											<td><input value-"5.00" class="input w-2"></td>
+											<td><input value-"30" class="input w-2"> %</td>
+											<td><input value-"5000" class="input w-2"></td>
+											<td>
+												<a href="#" class="btn btn-link">已开启</a>
+												<a href="#" data-model="on"  data-action="setting" class="btn btn-link">设置</a>
+											</td>
+											<td>250</td>
+											<td>4750</td>
+										</tr>
+										<tr data-id="3">
+											<td>押错奖</td>
+											<td><input value-"1.00" class="input w-2"></td>
+											<td><input value-"70" class="input w-2"> %</td>
+											<td><input value-"5000" class="input w-2"></td>
+											<td>
+												<a href="#" class="btn btn-link">未开启</a>
+												<a href="#" data-model="off"  data-action="setting" class="btn btn-link">设置</a>
+											</td>
+											<td>200</td>
+											<td>4800</td>
+										</tr>
+										<tr data-id="4">
+											<td>押中奖</td>
+											<td><input value-"5.00" class="input w-2"></td>
+											<td><input value-"30" class="input w-2"> %</td>
+											<td><input value-"5000" class="input w-2"></td>
+											<td>
+												<a href="#" class="btn btn-link">已开启</a>
+												<a href="#" class="btn btn-link">设置</a>
+											</td>
+											<td>250</td>
+											<td>4750</td>
+										</tr>
+									</tbody>
+								</table>
+								<lable class="ui-form text-center">
+									<li>
+										<a href="#" class="btn btn-important w-2">保存</a>
+									</li>
+								</lable>
+							</div>
+							<textarea id="J-control-rewards" style="display:none">
+								<form id="form1" action="#">
+									<div class="container-rewards text-center">
+										<div class="desc">
+											<p>奖品维护功能可以将按时间动态控制奖品数量</p>
+											<p>当前状态：<span><#=status#></span></p>
+										</div>
+										<table class="table table-info">
+											<thead>
+												<tr>
+													<th></th>
+													<th>时间</th>
+													<th>增加奖品数量</th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody class="J-rewards-list">
+												<#=list#>
+											</tbody>
+										</table>
+										<ul class="ui-form">
+											<li>
+												<a href="#" class="btn add-info">添加</a>
+											</li>
+										</ul>
+										<input type="hidden" name="action" value="<#=actionNum#>">
+										<div class="rewards-num">
+											奖品数量：<span class="J-rewards-num"><#=length#></span>
+										</div>
+									</div>
+								</form>
+							</textarea>
+						</div>
+						<script>
+							$(function(){
+								var MSG = new phoenix.Message();
+								var URL = 'getDetails.php?type=rewards';
+								var STATUSURL = 'getDetails.php?type=status';
+
+								$('body').on('click', '[data-action="setting"]', function(){
+									var $this = $(this),
+										model = $this.attr('data-model');
+
+									getSource(model);
+								});
+
+								bindEvent = function(){
+
+									$('body').on('click', '.add-info', function(){
+										var	$this = $(this),
+											$parent = $this.parents('.container-rewards:eq(0)'),
+											$dom = $parent.find('.J-rewards-list'),
+											$tr = $dom.find('tr:last'),
+											$rewardsDom = $parent.find('.J-rewards-num'),
+											index = (Number($tr.find('[name="rs-index"]').val()) + 1) || 1;
+
+										$dom.append('<tr id="re-index-'+index+'">'
+												+ '<td>'+index+'.<input type="hidden" name="rs-index" value="'+index+'"></td>'
+												+ '<td>'
+												+ '	<input name="rs-time" type="text" class="input w-2 date-picker" value="">'
+												+ '</td>'
+												+ '<td>'
+												+ '	<input name="rs-num" type="num" class="input w-2" value="0"> 个'
+												+ '</td>'
+												+ '<td>'
+												+ '	<a href="#" class="btn btn-link del">x</a>'
+												+ '</td>'
+											+ '</tr>');
+
+										$rewardsDom.text(Number($rewardsDom.text()) + 1);
+									});
+
+
+									$('body').on('focus', '.date-picker', function(){
+										 (new phoenix.DatePicker({
+								            input: $(this),
+								            isShowTime: true
+								        })).show();
+									});
+
+									$('body').on('focus', '.del', function(){
+										var $rewardsDom = $(this).parents('.container-rewards:eq(0)').find('.J-rewards-num');
+										$(this).parents('tr:eq(0)').remove();
+										$rewardsDom.text(Number($rewardsDom.text()) - 1);
+									});
+								};
+
+								//读取数据
+								getSource = function(model){
+
+									$.get(URL, {'model':model}, function(res) {
+										if(res && res['status'] == 'ok'){
+											render(res['data']);
+										}
+									}, 'json');
+								};
+
+								render = function(data){
+									var template = $('#J-control-rewards').val();
+									
+									rebulidData(data);
+
+									MSG.show({
+										'content': replaceHtml(data, template),
+										'confirmIsShow': true,
+										'confirmText': data['action'],
+										'confirmFun': function(){
+											var formData = $('#form1').serialize();
+											$.post(STATUSURL, formData, function(data) {
+												var me = this;
+
+												MSG.hide();
+											}, 'json');
+										}
+									});
+								};
+
+								rebulidData = function(data){
+
+									//判断状态 1是开启 0是关闭
+									if(Number(data['status']) == 1){
+										data['status'] = '开启';
+										data['action'] = '关闭';
+										data['actionNum'] = 0;
+									}else{
+										data['status'] = '未开启';
+										data['action'] = '开启';
+										data['actionNum'] = 1;
+									}
+
+									data['list'] = '';
+
+									for (var i = 0; i < data['rewards'].length; i++) {
+										var current = data['rewards'][i];
+										data['list'] += '<tr id="re-index-'+current['index']+'">'
+												+ '<td>'+(i+1)+'.<input type="hidden" name="rs-index" value="'+current['index']+'"></td>'
+												+ '<td>'
+												+ '	<input name="rs-time" type="text" class="input w-2 date-picker" value="'+current['time']+'">'
+												+ '</td>'
+												+ '<td>'
+												+ '	<input name="rs-num" type="num" class="input w-2" value="'+current['number']+'"> 个'
+												+ '</td>'
+												+ '<td>'
+												+ '	<a href="#" class="btn btn-link del">x</a>'
+												+ '</td>'
+											+ '</tr>';
+									};
+									
+								};
+
+								replaceHtml = function(data, html){
+									var result = html;
+
+									for(var name in data){
+										var nameExp = new RegExp('<#='+name+'#>', 'ig');
+										result  = result.replace(nameExp, data[name]);
+									}
+									
+									return result;
+								};
+
+
+								bindEvent();
+							});
+						</script>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

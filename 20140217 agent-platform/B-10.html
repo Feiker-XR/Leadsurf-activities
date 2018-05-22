@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>代理平台后台-热门彩种推荐</title>
+<link rel="stylesheet" href="style/style.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="">
+	<div class="wrapper">
+		<div class="main">
+			<h2>热门彩种推荐</h2>
+			<div class="ui-title">此处配置的是首页“热门彩种推荐”区域菜单，最多可配置20条。</div>
+			<form action="?" id="J-form">
+			<table class="ui-table" id="J-table">
+				<thead>
+					<tr>
+						<th>显示顺序</th>
+						<th>彩种名称</th>
+						<th>链接地址</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody id="J-tbody">
+					<tr>
+						<td><input type="text" class="input input-sort" value="1" style="width:48px;" /></td>
+						<td><input type="text" class="input input-name" value="" maxlength="16" /></td>
+						<td><input type="text" class="input input-url" value="http://" maxlength="100" /></td>
+						<td><a data-action="del" data-id="1" href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-sort" value="2" style="width:48px;" /></td>
+						<td><input type="text" class="input input-name" value="" maxlength="16" /></td>
+						<td><input type="text" class="input input-url" value="http://" maxlength="100" /></td>
+						<td><a data-action="del" data-id="2" href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-sort" value="3" style="width:48px;" /></td>
+						<td><input type="text" class="input input-name" value="" maxlength="16" /></td>
+						<td><input type="text" class="input input-url" value="http://" maxlength="100" /></td>
+						<td><a data-action="del" data-id="3" href="#">删除</a></td>
+					</tr>
+					
+					
+					<tr>
+						<td><input type="text" class="input input-sort" value="4" style="width:48px;" /></td>
+						<td><input type="text" class="input input-name" value="" maxlength="16" /></td>
+						<td><input type="text" class="input input-url" value="http://" maxlength="100" /></td>
+						<td><a data-action="del" data-id="4" href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-sort" value="5" style="width:48px;" /></td>
+						<td><input type="text" class="input input-name" value="" maxlength="16" /></td>
+						<td><input type="text" class="input input-url" value="http://" maxlength="100" /></td>
+						<td><a data-action="del" data-id="5" href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-sort" value="6" style="width:48px;" /></td>
+						<td><input type="text" class="input input-name" value="" maxlength="16" /></td>
+						<td><input type="text" class="input input-url" value="http://" maxlength="100" /></td>
+						<td><a data-action="del" data-id="6" href="#">删除</a></td>
+					</tr>
+					
+					<tr>
+						<td><input type="text" class="input input-sort" value="7" style="width:48px;" /></td>
+						<td><input type="text" class="input input-name" value="" maxlength="16" /></td>
+						<td><input type="text" class="input input-url" value="http://" maxlength="100" /></td>
+						<td><a data-action="del" data-id="7" href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-sort" value="8" style="width:48px;" /></td>
+						<td><input type="text" class="input input-name" value="" maxlength="16" /></td>
+						<td><input type="text" class="input input-url" value="http://" maxlength="100" /></td>
+						<td><a data-action="del" data-id="8" href="#">删除</a></td>
+					</tr>
+					
+					
+					
+					<tr>
+						<td colspan="4"><a id="J-button-add" href="#" class="add"> + 添加一条记录</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+										<div id="J-wd-msg-right" class="pop-mini w-4">
+											<i class="ico-success"></i>
+											<h4 class="pop-text"></h4>
+										</div>
+										<div id="J-wd-msg-error" class="pop-mini w-4">
+											<i class="ico-error"></i>
+											<h4 class="pop-text"></h4>
+										</div>
+			</div>
+			</form>
+			<ul class="ui-form">
+				<li style="text-align:center;">
+					<input type="button" class="ui-button" id="J-button-submit" value="提交并保存">
+				</li>
+			</ul>
+			
+
+
+			
+
+		</div>
+		<div class="sub"></div>
+	</div>
+	
+	
+			<div id="J-pop-msg" class="pop pop-msg" style="display:none;">
+				<div class="hd clearfix"><a class="close wd-close" href="#">关闭</a>确定要删除吗？</div>
+				<div class="bd">
+					<div class="pop-btn">
+						<a id="J-button-del-submit" class="btn-confirm" href="#">确定</a>
+						<a class="btn-cancel wd-close" href="#">取消</a>
+					</div>
+				</div>
+			</div>
+	
+	
+<div id="J-wd-mask" class="pop-mask"></div>
+<input type="hidden" id="J-hidden-id" value="" />
+
+<script type="text/tpl" id="J-tpl-row"><tr><td><input type="text" class="input" value="10" style="width:48px;" /></td>
+	<td><input type="text" class="input" value="" maxlength="16" /></td>
+	<td><input type="text" class="input" value="http://" maxlength="100" /></td>
+	<td><a data-action="del" data-id="<#=id#>" href="#">删除</a></td>
+</tr>
+</script>
+
+
+
+<script>
+(function($){
+	//type = 1 成功消息
+	//type = 0 错误消息
+	var msgDom = [$('#J-wd-msg-error'), $('#J-wd-msg-right')],
+		showMsg = function(type, text){
+			var el = msgDom[type];
+			msgDom[0].hide();
+			msgDom[1].hide();
+			el.find('.pop-text').html(text);
+			el.show();
+			setTimeout(function(){
+				el.hide();
+			}, 3000);
+		};
+	var panelMsg = $('#J-pop-msg');
+	var toViewCenter = function(el){
+		var el = $(el),bWidth = $(document).width(),bHeight = $('body').height(),wd = $(window),
+			h = el.height();
+		console.log(bWidth);
+		el.css({'top':wd.scrollTop() + wd.height()/2 - h/2 + 100, 'left': bWidth/2 - el.width()/2});
+	};
+	var showMask = function(){
+		$('#J-wd-mask').css({'opacity':.5, 'height':$(document).height()}).show();
+	};
+	var hideMask = function(){
+		$('#J-wd-mask').hide();
+	};
+	var wdShow = function(){
+		toViewCenter(panelMsg);
+		panelMsg.css('opacity', 0).show().animate({'top':parseInt(panelMsg.css('top')) - 100, 'opacity': 1});
+		showMask();
+	};
+	var wdHide = function(){
+		panelMsg.css('opacity', 1).animate({'top':parseInt(panelMsg.css('top')) + 100, 'opacity': 0}, function(){
+			panelMsg.hide();
+		});
+		hideMask();
+	};
+	panelMsg.find('.wd-close').click(function(e){
+		e.preventDefault();
+		wdHide();
+	});
+
+	
+	//删除
+	$('#J-table').on('click', function(e){
+		var el = $(e.target),action = el.attr('data-action'),id;
+		if(!action || $.trim(action) == ''){
+			return;
+		}
+		e.preventDefault();
+		if($('#J-tbody').find('tr').size() < 10){
+			return;
+		}
+		
+		switch(action){
+			case 'del':
+				showMask();
+				wdShow();
+				id = el.attr('data-id');
+				$('#J-hidden-id').val(id);
+				
+			break;
+			default:
+			break;
+		}
+	});
+	
+	$('#J-button-del-submit').click(function(e){
+		e.preventDefault();
+		var id = $.trim($('#J-hidden-id').val());
+		$.ajax({
+			url:'?id=' + id,
+			success:function(){
+				var tr = $('#J-tbody').find('[data-id="'+ id +'"]').parent().parent();
+				tr.remove();
+				wdHide();
+			}
+		});
+	});
+	
+	//添加
+	var startId = 0;
+	$('#J-button-add').click(function(e){
+		e.preventDefault();
+		var trs = $('#J-tbody').children(),last = trs[trs.size() - 2],st = Number($(last).find('input').eq(0).val()) + 1,
+			newTr = $($('#J-tpl-row').html().replace(/<#=id#>/g, 'newid-' + startId));
+			startId++;
+		if(trs.size() >= 21){
+			return;
+		}
+		newTr.find('input').eq(0).val(st);
+		newTr.insertBefore(trs[trs.size() - 1]);
+	});
+
+	
+	$('#J-table').find('.input-sort').keyup(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+		this.value = Number(this.value) > 99 ? 99 : this.value;
+		this.value = Number(this.value) < 1 ? 1 : this.value;
+	}).blur(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+		this.value = Number(this.value) > 99 ? 99 : this.value;
+		this.value = Number(this.value) < 1 ? 1 : this.value;
+	});
+	
+	
+	
+	
+	
+	$('#J-button-submit').click(function(){
+		var table = $('#J-table'),
+			sorts = table.find('.input-sort'),
+			names = table.find('.input-name'),
+			urls = table.find('.input-url'),
+			isPass = true;
+			
+		names.each(function(i){
+			var name = $.trim(names[i].value),
+				url = $.trim(urls[i].value).replace('http://', '');
+			if(name == '' && url != ''){
+				isPass = false;
+				showMsg(0, '彩种名称不能为空');
+				names.eq(i).focus();
+				return false;
+			}
+			if(name != '' && url == ''){
+				isPass = false;
+				showMsg(0, '链接地址不能为空');
+				urls.eq(i).focus();
+				return false;
+			}
+		});
+		if(!isPass){
+			return;
+		}
+		
+		$('#J-form').submit();
+	});
+	
+	
+	
+	
+	
+	
+})(jQuery);
+</script>
+
+
+
+</body>
+</html>

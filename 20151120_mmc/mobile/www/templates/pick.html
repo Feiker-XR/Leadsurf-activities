@@ -1,0 +1,249 @@
+<ion-view >
+  <div class="bar bar-header bar-stable">
+
+    <!--弹出选择菜单-->
+    <div class="ar-popmenu" ng-show="menuShow">
+      <ul>
+        <li>往期开奖</li>
+        <li>新手帮助</li>
+        <li>玩法介绍</li>
+        <li>遗漏工具</li>
+        <li>冷热工具</li>
+        <li>圆角模式</li>
+      </ul>
+    </div>
+    <a class="button button-icon icon ion-chevron-left"></a>
+    <h1 class="title" ng-click="poptypeshow = !poptypeshow">五星组选20<span class="icon ion-chevron-down"></span></h1>
+    <a href="javascript:;" class="button button-icon icon ion-more" ng-click="menuShow = !menuShow"></a>
+  </div>
+  <!--游戏类型-->
+  <div class="ar-poptype" ng-class="{active: poptypeshow}">
+    <div class="strategy-select">
+      <div class="strategy-history">
+        <ul>
+          <li class="active">五星组选120</li>
+          <li>五星组选60</li>
+          <li>五星组选30</li>
+          <li>五星组选16</li>
+          <li>五星组选16</li>
+        </ul>
+      </div>
+      <div class="strategy-list">
+        <dl>
+          <dt>五星直选</dt>
+          <dd>复试</dd>
+        </dl>
+        <dl>
+          <dt>五星组选</dt>
+          <dd class="active">组选120</dd>
+          <dd>组选60</dd>
+          <dd>组选30</dd>
+          <dd>组选20</dd>
+          <dd>组选10</dd>
+          <dd>组选5</dd>
+        </dl>
+        <dl>
+          <dt>四星直选</dt>
+          <dd>复试</dd>
+        </dl>
+        <dl>
+          <dt>四星组选</dt>
+          <dd>组选24</dd>
+          <dd>组选12</dd>
+        </dl>
+
+      </div>
+    </div>
+  </div>
+  <ion-content class="has-footer has-header" delegate-handle="scroll1" on-scroll-complete="showHistory()">
+
+    <!--游戏记录-->
+    <div class="game-history">
+      <ul>
+        <li><span class="time">第四期</span>3，4，4，4，5，6，4，4</li>
+        <li><span class="time">第四期</span>3，4，4，4，5，6，4，4</li>
+      </ul>
+      <div class="history-bar">
+        <div class="history-bar-title">下滑查看开奖记录<span class="ai-random">机选一注</span></div>
+        <span class="history-down">∨</span>
+      </div>
+    </div>
+
+    <!--选号容器-->
+    <div class="number-select-content">
+      <div class="number-select-list">
+        <div class="list-top">
+          <h3>万</h3>
+          <ol>
+            <li class="active">大</li>
+            <li>小</li>
+            <li>全</li>
+            <li>单</li>
+            <li>双</li>
+            <li>清</li>
+          </ol>
+        </div>
+        <ul class="ball-list">
+          <li class="active">0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+        </ul>
+      </div>
+      <div class="number-select-list">
+        <div class="list-top">
+          <h3>千</h3>
+          <ol>
+            <li>大</li>
+            <li>小</li>
+            <li>全</li>
+            <li>单</li>
+            <li>双</li>
+            <li>清</li>
+          </ol>
+        </div>
+        <ul class="ball-list">
+          <li class="active">0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+        </ul>
+      </div>
+      <div class="number-select-list">
+        <div class="list-top">
+          <h3>百</h3>
+          <ol>
+            <li>大</li>
+            <li>小</li>
+            <li>全</li>
+            <li>单</li>
+            <li>双</li>
+            <li>清</li>
+          </ol>
+        </div>
+        <ul class="ball-list">
+          <li class="active">0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+        </ul>
+      </div>
+      <div class="number-select-list">
+        <div class="list-top">
+          <h3>十</h3>
+          <ol>
+            <li>大</li>
+            <li>小</li>
+            <li>全</li>
+            <li>单</li>
+            <li>双</li>
+            <li>清</li>
+          </ol>
+        </div>
+        <ul class="ball-list">
+          <li class="active">0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+        </ul>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <!--<div class="extra-operate" ng-class="{ extraOperateShow : extraisShow}">-->
+    <!--<div class="extra-box">-->
+      <!--<label>倍投</label>-->
+      <!--<p>-->
+        <!--<span class="op-plus">-</span>-->
+        <!--<input type="text" ng-maxLength="3" value="1">-->
+        <!--<span class="op-minus">+</span>-->
+      <!--</p>-->
+    <!--</div>-->
+
+  <!--</div>-->
+
+  <div class="bar bar-footer bar-stable active">
+    <div class="select-result" href="#/pick/confirm">
+      <div class="result-title" >
+        <span ng-click="extraisShow = !extraisShow" ng-class="{ titleText : extraisShow}">倍投</span>
+        <input ng-class="{ titleInput : extraisShow}" type="tel" value="1">
+      </div>
+      <dl class="result-money">
+        <dt>已选12456注x2元</dt>
+        <dd>1234056.10元</dd>
+      </dl>
+      <span class="result-plus">+</span>
+    </div>
+    <div class="result-next">号码篮<span class="result-count">99</span></div>
+  </div>
+</ion-view>
+
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-content>
+      <!--游戏类型-->
+      <div class="strategy-select">
+        <div class="strategy-history">
+          <ul>
+            <li class="active">五星组选120</li>
+            <li>五星组选60</li>
+            <li>五星组选30</li>
+            <li>五星组选16</li>
+            <li>五星组选16</li>
+          </ul>
+        </div>
+        <div class="strategy-list">
+          <dl>
+            <dt>五星直选</dt>
+            <dd>复试</dd>
+          </dl>
+          <dl>
+            <dt>五星组选</dt>
+            <dd class="active">组选120</dd>
+            <dd>组选60</dd>
+            <dd>组选30</dd>
+            <dd>组选20</dd>
+            <dd>组选10</dd>
+            <dd>组选5</dd>
+          </dl>
+          <dl>
+            <dt>四星直选</dt>
+            <dd>复试</dd>
+          </dl>
+          <dl>
+            <dt>四星组选</dt>
+            <dd>组选24</dd>
+            <dd>组选12</dd>
+          </dl>
+
+        </div>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>

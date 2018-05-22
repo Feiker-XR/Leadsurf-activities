@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>新春抽红包</title>
+    <meta name="description" content="新春抽红包">
+    <meta name="keywords" content="凤凰 凤凰娱乐 凤凰彩票 新春活动 120个 红包 天天送">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="float">
+            <a href="javascript:void(0)" id="custom-service"></a>
+            <a href="http://pt.fh885.com/pt/index/" target="_blank"></a>
+        </div>
+        <header>
+            <div class="layout">
+                <div class="banner"></div>
+                <div id="flipball" class="flipball_wrap"></div>
+            </div>
+        </header>
+
+        <article class="article">
+            <div class="layout">
+                <div class="slider">
+                    <ul class="slider-pic clearfix">
+                        <li class="flip flip1">
+                            <div class="cover1"></div>
+                            <div class="cover2"></div>
+                        </li>
+                        </li>
+                        <li class="flip flip2">
+                            <div class="cover1"></div>
+                            <div class="cover2"></div>
+                        </li>
+                        <li class="flip flip3">
+                            <div class="cover1"></div>
+                            <div class="cover2"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-notice">
+                    <div class="notice" id="notice">
+                        <ul>
+                            <li>恭喜<span class="name">us**21</span>获得<span class="num">300</span>元奖金！</li>
+                            <li>恭喜<span class="name">us**22</span>获得<span class="num">301</span>元奖金！</li>
+                            <li>恭喜<span class="name">us**23</span>获得<span class="num">302</span>元奖金！</li>
+                            <li>恭喜<span class="name">us**24</span>获得<span class="num">303</span>元奖金！</li>
+                            <li>恭喜<span class="name">us**25</span>获得<span class="num">304</span>元奖金！</li>
+                            <li>恭喜<span class="name">us**26</span>获得<span class="num">305</span>元奖金！</li>
+                            <li>恭喜<span class="name">us**27</span>获得<span class="num">346</span>元奖金！</li>
+                            <li>恭喜<span class="name">us**28</span>获得<span class="num">37</span>元奖金！</li>
+                            <li>恭喜<span class="name">us**29</span>获得<span class="num">8</span>元奖金！</li>
+                            <li>恭喜<span class="name">us**20</span>获得<span class="num">9</span>元奖金！</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="layout">
+                <div class="content">
+                    <h3>活动内容</h3>
+                    <p>玩家于前一日转帐进PT达<strong>500元</strong>及PT有效流水<strong>3000元</strong>以上即可抢红包<br />销量越高，就有机会获得更高金额的红包噢！</p>
+                    <p>系统会自动侦测玩家的转帐与销量，销量越高的玩家就有机会获得更高金额的红包噢！最高8888元</p>
+                    <h3>活动说明</h3>
+                    <ul class="list">
+                        <li>1. 活动仅适用于凤凰娱乐平台老虎机有效用户参与。有效用户:开通老虎机账号，并在平台至少有过一次存款的用户。</li>
+                        <li>2. 有效流水仅限平台及客户端的老虎机游戏，除地妖之穴、海洋公主、热带滚筒、三倍利润游戏外均可参与，彩票、百家乐、真人娱乐等非老虎机游戏均不参与。</li>
+                        <li>3. 活动期间内，红包将在活动隔天派至玩家的PT帐户中，所获得的红包奖励需达到1倍流水投注额方可提款。</li>
+                        <li>4. 本活动不与首存优惠并存。</li>
+                        <li>5. 对于违规者，凤凰娱乐有权取消其相关红利及其盈利。</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <footer class="footer">
+            <div class="layout">
+                <div class="copy-right">&copy;2003-2016 凤凰娱乐 All Rights Reserved</div>
+            </div>
+        </footer>
+    </div>
+    <div class="mask"></div>
+    <div class="loginbox" id="loginbox">
+        <h3 class="title">请输入您的平台账号</h3>
+        <p>请务必填写正确！<br />前一日转入PT500元及流水3000元才可参加此活动。</p>
+        <input type="text" class="input" value="user">
+        <a id="closelogin" href="javascript:;" class="btn"></a>
+    </div>
+    <div class="userbox" id="userbox">
+        <h3 class="title">恭喜您获得了<strong id="money">209</strong>元奖励</h3>
+        <p>领奖请查阅活动说明</p>
+        <a id="closeuser" href="javascript:;" class="btn"></a>
+    </div>
+<!--引入js库-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/mousewheel.js"></script>
+<script type="text/javascript" src="js/easyscroll.js"></script>
+<script type="text/javascript" src="js/ball_utils.js"></script>
+
+<script>
+    //拉霸
+    $('#flipball').flipball({
+        ballsize: 4, // 彩球个数
+        initball: '0,0,0,0', // 初始化彩球数据
+        loop: 5, // 彩球滚动循环次数（必须为整数）
+        timeout: 5000, // 彩球滚动动画执行时间基数
+        delay: 1500, // 每个彩球动画执行延迟时间基数
+        offset: [39, 42], // 球的宽高
+        handbar: '.handle_hand'
+    });
+    var isFinished = true;
+    setInterval(function(){
+        if(isFinished){
+            isFinished = false;
+            //[8,8,8,8]请传参数进来
+            $('#flipball').flipball().flip([8,8,8,8], true, function() {
+                isFinished = true;
+            })
+        }
+    },500)
+    
+    
+    //控制弹窗居中
+    function positionFixd(obj){
+        var $box = $(obj);
+
+        function move(){
+            var height = $box.height(),
+                    width = $box.width(),
+                    wH = $(window).height(),
+                    wW = $(window).width(),
+                    scroll = $(document).scrollTop();
+            $box.css({left: (wW - width)/2, top: scroll + (wH - height)/2},"fast")
+
+        }
+        $(document).ready(function(){
+            setTimeout(move(),100);
+        })
+        $(window).resize(function(){
+            setTimeout(move(),100);
+        })
+        $(window).scroll(function(){
+            setTimeout(move(),100);
+        })
+
+    }
+
+    //弹出框
+    $(function(){
+        var $mask = $('.mask'),
+            $login = $('#loginbox'),
+            $user = $('#userbox'),
+            $close = $('#closelogin'),
+            $closeUser = $('#closeuser'),
+            $money = $('#money');
+            $mask.show();
+            positionFixd($login);
+            $login.fadeIn();
+            //返回中奖金额
+            $money.text(123)
+        $close.click(function(){
+            $mask.hide();
+            $login.hide();
+        })
+        $closeUser.click(function(){
+            $mask.hide();
+            $user.hide();
+
+        })
+    });
+
+    //中奖公告滚动
+    $(function() {
+        var $this = $("#notice");
+        var scrollTimer;
+        $this.hover(function() {
+            clearInterval(scrollTimer);
+        }, function() {
+            scrollTimer = setInterval(function() {
+                scrollNews($this);
+            }, 2000);
+        }).trigger("mouseleave");
+
+        function scrollNews(obj) {
+            var $self = obj.find("ul");
+            var lineHeight = $self.find("li:first").height();
+            $self.animate({
+                "marginTop": -lineHeight + "px"
+            }, 600, function() {
+                $self.css({
+                    marginTop: 0
+                }).find("li:first").appendTo($self);
+            })
+        }
+    });
+
+    //红包
+    $(function(){
+        var $hb = $(".slider .flip");
+        $hb.on('mouseover',function(){
+            $(this).stop().animate({
+                marginTop:-10
+            },300);
+        }).on('mouseout',function(){
+            $(this).stop().animate({
+                marginTop:0
+            },300);
+        });
+
+        $hb.on("click",function(){
+            //todo 请求网络
+            //成功后执行
+            var $this = $(this);
+            $(this).find('.cover2').fadeIn();
+            positionFixd($('#userbox'));
+            setTimeout(function(){
+                $('.mask').show();
+                $('#userbox').fadeIn();
+            },500)
+            
+            
+        });
+    });
+    //客服代码
+    (function(){       
+        function async_load(){           
+            var s = document.createElement('script');          
+            s.type = 'text/javascript';          
+            s.async = true;           
+            s.src = "http://www.26hn.com:7006/web/code/code.jsp?c=1&s=21";           
+            var x = document.getElementsByTagName('script')[0];          
+            x.parentNode.insertBefore(s, x);      
+        }       
+        if (window.attachEvent)           
+        window.attachEvent('onload', async_load);
+        else 
+        window.addEventListener('load', async_load, false);  
+
+        $("#custom-service").click(function(){
+            if(typeof hj5107 != "undefined"){
+                hj5107.openChat();
+            }
+        });
+    })();
+</script>
+</body>
+</html>

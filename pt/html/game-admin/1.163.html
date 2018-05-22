@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.161参数设置修改页</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.EditConfirm.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li class="current"><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content">
+								<h3 class="ui-title"><a href="1.16.html">&lt;&lt;返回参数设置查看页</a></h3>
+								<h3 class="ui-title">彩种名称：重庆时时彩</h3>
+								<h3 class="ui-title">投注相关参数</h3>
+								<ul class="ui-form">
+									<li>
+										<label for="" class="ui-label w-4 ">撤单起始金额：</label>
+										<input type="text" value="3,000.00" class="input w-2 input-money">
+										<span class="ui-info">元</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">撤单手续费比例：</label>
+										<input type="text" value="3" class="input w-2">
+										<span class="ui-info">%</span>
+									</li>
+								</ul>
+								<h3 class="ui-title">用户/方案处理相关参数</h3>
+								<ul class="ui-form">
+									<li>
+										<label for="" class="ui-label w-4">单人单期最大获奖金额：</label>
+										<input type="text" value="400,000.00" class="input w-2 input-money">
+										<span class="ui-info">元</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单人单期最大中/投比：</label>
+										<input type="text" value="0" class="input w-2">
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单人最大连续中奖次数：</label>
+										<input type="text" value="3" class="input w-2">
+										<span class="ui-info">次</span>
+										<span class="ui-prompt">（一个订单中的一个注单中奖计为一次中奖，数量为一期或连续期数中所有中奖注单数量加和）</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单注最大获奖金额：</label>
+										<input type="text" value="1,000.00" class="input w-2  input-money">
+										<span class="ui-info">元</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单注最大中/投比：</label>
+										<input type="text" value="50.00" class="input w-2">
+									</li>
+								</ul>
+								<h3 class="ui-title">用户/方案处理相关参数</h3>
+								<ul class="ui-form">
+									<li>
+										<label for="" class="ui-label w-4">超过理论开奖：</label>
+										<input type="text" value="500" class="input w-2">
+										<span class="ui-info">秒及以上，定义为官方未开奖</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">早于理论开奖：</label>
+										<input type="text" value="30" class="input w-2">
+										<span class="ui-info">秒及以上，定义为官方提前开奖</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">超过理论开奖：</label>
+										<input type="text" value="30" class="input w-2">
+										<span class="ui-info">秒及以上，定义为官方延迟开奖</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">管理员在开奖后：</label>
+										<input type="text" value="30" class="input w-2 numa-in">
+										<span class="ui-info">分钟内（含<em style="font-style:none" class="numa-out">120</em>分钟）可进行单笔撤单</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">管理员在开奖后：</label>
+										<input type="text" value="300" class="input w-2 numb-in">
+										<span class="ui-info">分钟内（含<em style="font-style:none" class="numb-out">300</em>分钟）可进行流程异常处理</span>
+										<span class="ui-prompt">（超过该时间范围后，该奖期不可再做任何后台操作）</span>
+									</li>
+								</ul>
+								<h3 class="ui-title">视频管理</h3>
+								<ul class="ui-form">
+									<li>
+										<label for="" class="ui-label w-4">是否有视频入口：</label>
+										<input type="radio" value="500" name="video" class="radio w-1"> 是  <input type="radio" value="500" name="video" class="radio w-1"> 否
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">视频链接：</label>
+										<span class="ui-multiline">
+											<table id="J-video-control" class="table table-border table-function">
+												<thead>
+													<tr>
+														<th>视频位置</th>
+														<th>链接</th>
+														<th>状态</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>流畅1</td>
+														<td class="url">rtmp://103.22.191.40/live/livestream</td>
+														<td>开启</td>
+														<td>
+															<a data-id="1" data-type="edit" class="edit" href="#">修改</a>
+															<a data-id="1" data-type="remove" class="remove" href="#">删除</a>
+														</td>
+													</tr>
+													<tr>
+														<td>流畅2</td>
+														<td class="url">rtmp://103.22.191.40/live/livestream</td>
+														<td>开启</td>
+														<td>
+															<a data-id="2" data-type="edit" class="edit" href="#">修改</a>
+															<a data-id="2" data-type="remove" class="remove" href="#">删除</a>
+														</td>
+													</tr>
+													<tr>
+														<td>流畅3</td>
+														<td class="url">rtmp://103.22.191.40/live/livestream</td>
+														<td>开启</td>
+														<td>
+															<a data-id="3" data-type="edit" class="edit" href="#">修改</a>
+															<a data-id="3" data-type="add" class="add" href="#">新增</a>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		var formatMoney = function(num){
+			if(num == ''){
+				num = '0';
+			}
+			var num = num.replace(/,/g, ''),
+				num = parseFloat(num),
+				re = /(-?\d+)(\d{3})/;
+		
+			if(Number.prototype.toFixed){
+				num = (num).toFixed(2);
+			}else{
+				num = Math.round(num*100)/100
+			}
+			num  =  '' + num;
+			while(re.test(num)){
+				num = num.replace(re,"$1,$2");
+			}
+			return num;  
+		};
+		var inputs = $('input.input-money'),checkFn;					
+			checkFn = function(){
+				var me = this,v = me.value,index;
+				me.value = v = v.replace(/^\.$/g, '');
+				index = v.indexOf('.');
+				if(index > 0){
+					me.value = v = v.replace(/(.+\..*)(\.)/g, '$1');
+					if(v.substring(index+1,v.length).length>2){
+						me.value= v = v.substring(0, v.indexOf(".") + 3);
+					}
+				}
+				me.value = v = v.replace(/[^\d|^\.]/g, '');
+				me.value = v = v.replace(/^00/g, '0'); 						
+			};	
+			var formatNum = function(){
+				var me = this,v = me.value,index;
+				me.value = formatMoney(v);	
+			};
+			inputs.keyup(checkFn);
+			inputs.blur(formatNum);
+
+		(function(){
+			var buttona = $('.numa-in'),
+				buttonb = $('.numb-in');
+
+			buttona.bind('input',function(){
+				$('.numa-out').html($(this).val());
+			})
+			buttona.bind('propertychange',function(){
+				$('.numa-out').html($(this).val());	
+			})
+			buttonb.bind('input',function(){
+				$('.numb-out').html($(this).val());
+			})
+			buttonb.bind('propertychange',function(){
+				$('.numb-out').html($(this).val());
+			});
+			
+			var editConfirm = new phoenix.EditConfirm();
+		})();
+		
+		$(function(){
+			var $videoDom = $('#J-video-control'),
+				msg = new phoenix.Message();
+
+			//发送请求
+			var request = function(type, data, $dom){
+
+				$.ajax({
+					url: '#',
+					type: 'GET',
+					dataType: 'json',
+					data: data,
+				})
+				.done(function(r) {
+					
+					if(Number(r['isSuccess']) === 1){
+						window.location.reload();
+					}
+				})
+				.fail(function() {
+
+				})
+				.always(function() {
+
+				});
+			};	
+
+			var control = function(type, id, dom, position, url){
+				
+				var htmlSave = {
+
+					'edit': ['<table><tr><td width="100" align="right">视频位置名称：</td><td style="padding-left:20px">流畅' + id + '</td></tr>',
+							'<tr><td align="right">url：</td><td style="padding-left:20px"><input type="text" class="input w-4 url"></td></tr>',
+							'<tr><td align="right">状态：</td><td style="padding-left:20px"><input type="radio" name="edit1" value="1" class="radio" checked="check"> 开启 <input type="radio" value="0" name="edit1" class="radio url"> 关闭</td></tr></table>'].join(''),
+
+					'remove': ['<div class="bd text-center">',
+								'<div class="pop-waring">',
+									'<i class="ico-waring <#=icon-class#>"></i>',
+									'<h4 class="pop-text">您确定要删除该条视频设置吗？<br /></h4>',
+								'</div>',
+							'</div>'].join(''),
+
+					'add': ['<table><tr><td width="100" align="right">视频位置名称：</td><td style="padding-left:20px">流畅' + id + '</td></tr>',
+							'<tr><td align="right">url：</td><td style="padding-left:20px"><input type="text" class="input w-4 url"></td></tr>',
+							'<tr><td align="right">状态：</td><td style="padding-left:20px"><input type="radio" name="edit1" value="1" class="radio url" checked="check"> 开启 <input type="radio" value="0" name="edit1" class="radio url"> 关闭</td></tr></table>'].join('')
+				}
+
+				$dom = $('<div style="line-height: 35px;">' + htmlSave[type] + '</div>')
+
+				if(type == 'edit'){
+					$dom.find('.url').val(url);
+
+					msg.show({
+						title: '修改视频链接',
+						mask: true,
+						content: $dom,
+						confirmIsShow: true,
+						confirmFun: function(){
+
+							request(type, {
+								'type': type,
+								'id': id,
+								'url': $dom.find('.url').val(),
+								'status': $dom.find('input[name="edit1"]:checked').val()
+							}, dom);
+
+						},
+						cancelIsShow: true,
+						cancelFun: function(){
+							this.hide();
+						}
+					});
+				}
+
+				if(type == 'remove'){
+					msg.show({
+						mask: true,
+						content: $dom,
+						confirmIsShow: true,
+						confirmFun: function(){
+
+							request(type, {
+								'type': type,
+								'id': id
+							}, dom);
+
+						},
+						cancelIsShow: true,
+						cancelFun: function(){
+							this.hide();
+						}
+					});
+				}
+
+				if(type == 'add'){
+					msg.show({
+						title: '新增视频链接',
+						mask: true,
+						content: $dom,
+						confirmIsShow: true,
+						confirmFun: function(){
+
+							request(type, {
+								'type': type,
+								'id': id,
+								'url': $dom.find('.url').val(),
+								'status': $dom.find('input[name="edit1"]:checked').val()
+							}, dom);
+
+						},
+						cancelIsShow: true,
+						cancelFun: function(){
+							this.hide();
+						}
+					});
+				}
+			}
+
+			$videoDom.on('click', '.edit,.add,.remove', function(){
+				var $dom = $(this),
+					position = $dom.attr('data-position'),
+					dataId = $dom.attr('data-id'),
+					dataType = $dom.attr('data-type');
+
+				control(dataType, dataId, $dom, position, $dom.parents('tr').eq(0).find('.url').text());
+			});	
+		});
+		
+	</script>
+</body>
+</html>

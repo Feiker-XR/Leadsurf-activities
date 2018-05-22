@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>3.11方案追号管理-方案记录-方案详情</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	
+	.panel-lotterys {height:144px;line-height:24px;overflow:hidden;}
+	.ico-view-more {text-align:center;padding:0 0 10px 0;cursor:pointer;display:none;}
+	
+	</style>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd> <a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd ><a href="2.1.html" >流程监控</a></dd>
+				<dd ><a href="2.2.html">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd class="current">  <a href="3.1.html">方案记录</a></dd>
+				<dd><a href="3.2.html">追号记录</a></dd>
+				<dd><a href="3.31.html">异常方案记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="4.1.html">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<h3 class="ui-title"><a href="3.1.html"  >&lt;&lt;回到方案记录列表</a></h3>
+						<ul class="ui-form">
+							<li>
+								<label class="ui-label w-2 big">彩种名称：</label>
+								<span class="ui-singleline w-2">重庆时时彩</span>
+								<label class="ui-label w-2 big">方案编号：</label>
+								<span class="ui-singleline">DCQC1332534536342 <a href="" target="_blank">（相关追号记录）</a></span>
+							</li>
+							<li>
+								<label class="ui-label w-2 big">期号：</label>
+								<span class="ui-singleline w-2">20121218012</span>
+								<label class="ui-label w-2 big">投注时间：</label>
+								<span class="ui-singleline w-3">2012-10-09 11:34:33</span>
+							</li>
+							<li>
+								<label class="ui-label w-2 big">投注总金额：</label>
+								<span class="ui-singleline w-2">&yen;30.20元</span>
+								<label class="ui-label w-2 big">总奖金：</label>
+								<span class="ui-singleline w-2">&yen;0.00元</span>
+								<label class="ui-label w-2 big">开奖号码：</label>
+								<span class="ui-singleline w-2">1 2 3 4 5</span>
+							</li>
+							<li>
+
+								
+								
+
+							</li>
+							<li>
+								<label class="ui-label w-2 big">用户名：</label>
+								<span class="ui-singleline w-2">哇哈哈</span>
+								<label class="ui-label w-2 big">版本号：</label>
+								<span class="ui-singleline w-2">web 3.4</span>
+								<label class="ui-label w-2 big">来源：</label>
+								<span class="ui-singleline w-2">chrome</span>
+							</li>
+						</ul>
+						<h3 class="ui-title">
+							<a class="btn" id="J-button-cancel" data-id="1"  href="javascript:void(0);">撤销方案<b class="btn-inner"></b></a>
+						</h3>
+						<table id="J-table" class="table table-info">
+							<thead>
+								<tr>
+									<th>玩法：</th>
+									<th>注数：</th>
+									<th>倍数：</th>
+									<th>投注金额：</th>
+									<th>模式：</th>
+									<th>状态：</th>
+									<th>奖金：</th>
+									<th>中/投比：</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>后三_直选复式</td>
+									<td>2注</td>
+									<td>1倍</td>
+									<td>&yen;2.00</td>
+									<td>元</td>
+									<td>已派奖</td>
+									<td>&yen;1700.00</td>
+									<td>585.00</td>
+								</tr>
+								<tr>
+									<td>投注内容</td>
+									<td colspan="7" class="table-toggle" style="white-space:normal">
+									<div class="panel-lotterys">
+										<div class="panel-lotterys-inner">
+									123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 
+									123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 
+										</div>
+									</div>
+									<div class="ico-view-more" class="clearfix">
+										<i class="ico-close"></i>
+									</div>
+									</td>
+								</tr>
+								<tr>
+									<td>后三_直选复式</td>
+									<td>2注</td>
+									<td>1倍</td>
+									<td>&yen;2.00</td>
+									<td>元</td>
+									<td>已派奖</td>
+									<td>&yen;1700.00</td>
+									<td>585.00</td>
+								</tr>
+								<tr>
+									<td>投注内容</td>
+									<td colspan="7" class="table-toggle" style="white-space:normal">
+									<div class="panel-lotterys">
+										<div class="panel-lotterys-inner">
+									123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 
+									123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 456 768 123 145 
+										</div>
+									</div>
+									<div class="ico-view-more" class="clearfix">
+										<i class="ico-close"></i>
+									</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<div style="margin:10px 60px;border:1px solid #DEDEDE">
+						<h3 class="ui-title" style="background:#F3F3F3;border:0;">相关交易记录</h3>
+						<table class="table table-info" style="margin-top:0">
+							<thead>
+								<tr>
+									<th>交易流水号</th>
+									<th>交易时间</th>
+									<th>摘要</th>
+									<th>收入</th>
+									<th>支出</th>
+									<th>账户余额</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>20120612511</td>
+									<td>2013-07-23 21:15:26</td>
+									<td>销售返点</td>
+									<td class="color-green">+0.0900</td>
+									<td></td>
+									<td>&yen;1700.00</td>
+								</tr>
+								<tr>
+									<td>20120612511</td>
+									<td>2013-07-23 21:15:26</td>
+									<td>销售返点</td>
+									<td></td>
+									<td class="color-red">-0.0900</td>
+									<td>&yen;1700.00</td>
+								</tr>
+							</tbody>
+						</table>
+						<h4 class="ui-title"><a target="_blank" href="#" class="more">前往交易记录表查看全部明细&gt;&gt;</a></h4>
+						</div>
+						<div style="height:400px;"></div>
+						
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<div class="pop w-4" style="position:absolute;display:none;" id="J-msg-success"><i class="ico-success"></i><h4 class="pop-text">方案已被撤销</h4></div>
+	
+	
+<script>
+(function($){
+	//弹窗
+	var Wd = phoenix.Message.getInstance(),table = $('#J-table'),panels = table.find('.panel-lotterys-inner'),panelHeight = 144;
+	
+	$('#J-button-cancel').click(function(){
+		var id = this.getAttribute('data-id');
+		Wd.show({
+			mask:true,
+			title:'温馨提示',
+			content:'<div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确定要撤销该方案吗？</h4></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				
+				$.ajax({
+					url:'data.php?action=cancel&id=' + id,
+					dataType:'json',
+					success:function(data){
+						//data['isSuccess'] = 0;
+						//data['msg'] = '哇哈哈';
+						if(Number(data['isSuccess']) == 1){
+							var dom = $('#J-msg-success');
+							phoenix.util.toViewCenter(dom);
+							dom.show();
+							setTimeout(function(){
+								location.href = location.href;
+							},2000);
+							Wd.hide();
+						}else{
+							Wd.show({
+								title:'温馨提示',
+								mask:true,
+								content:'<div class="pop-title"><i class="ico-error"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div>',
+								cancelText:'关闭',
+								cancelIsShow:true,
+								cancelFun:function(){
+									Wd.hide();
+								}
+							});
+						}
+						
+					}
+				});
+				
+				Wd.hide();
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+	
+	
+	$('#J-table').on('click', '.ico-view-more', function(){
+		var dom = $(this),panel = dom.parent().find('.panel-lotterys');
+		if(panel.height() > panelHeight){
+			panel.css({height:panelHeight});
+			dom.find('i').removeClass('ico-open').addClass('ico-close');
+		}else{
+			panel.css({height:'auto'});
+			dom.find('i').removeClass('ico-close').addClass('ico-open');
+		}
+		
+
+	});
+	
+	panels.each(function(){
+		var dom = $(this);
+		if(dom.height() > panelHeight){
+			dom.parent().parent().find('.ico-view-more').show();
+		}
+	});
+	
+	
+	
+})(jQuery);
+</script>	
+	
+	
+	
+	
+</body>
+</html>

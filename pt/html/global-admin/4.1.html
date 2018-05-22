@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>4.1IP黑名单</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li class="current"><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>全局管理</dt>
+				<dd><a href="5.html">注册登录设置</a></dd>
+				<dd><a href="3.html">敏感词管理</a></dd>
+				<dd class="current"><a href="4.1.html">IP黑白名单</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><!-- <strong>当前位置：</strong><a href="#">客户管理</a> &gt; 列表 --></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li class="current">黑名单设置</li>
+									<li><a href="4.2.html">白名单设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content">
+							
+								<div style="padding:10px 0 0 10px;">
+									<label>状态：</label>
+									<div id="J-switch" class="switch has-switch">
+										<div class="switch-on">
+											<span class="switch-left">开启</span><label>&nbsp;</label><span class="switch-right">关闭</span>
+											<input class="switch-type" type="hidden" value="1" />
+											<input class="switch-value" type="hidden" value="1" />
+										</div>
+									</div>
+								</div>
+							
+								<ul class="prompt" style="margin:10px 10px 0;">
+									<li>可以通过添加禁止IP阻止恶意用户,启用黑名单模式后，被屏蔽的用户将不能正常访问平台,请慎重操作。</li>
+									<li>可以使用“*”作为通配符禁止某段地址。</li>
+								</ul>
+								<form action="?" id="J-form">
+								<ul class="ui-search">
+									<li id="J-input-ip">
+										<label for="" class="ui-label">+新增：</label>
+										<input type="text" class="input w-1"  value="" style="text-align:center;"> . 
+										<input type="text" class="input w-1"  value="" style="text-align:center;"> . 
+										<input type="text" class="input w-1"  value="" style="text-align:center;"> . 
+										<input type="text" class="input w-1"  value="" style="text-align:center;">
+									</li>
+									
+									<li>
+										<label for="" class="ui-label">有效期：</label>
+										<input id="J-days" type="text" class="input w-1"  value="" style="text-align:center;">
+										<span class="ui-info">天</span>
+									</li>
+									<li><a href="javascript:void(0);" id="J-submit" class="btn btn-important">提 交<b class="btn-inner"></b></a></li>
+								</ul>
+								</form>
+								
+								<table class="table table-info" id="J-table-list">
+									<thead>
+										<tr>
+											<th class="w-1"></th>
+											<th>IP地址</th>
+											<th>地理位置</th>
+											<th>操作者</th>
+											<th>起始时间</th>
+											<th>终止时间</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="checkbox" class="checkbox" value="1"></td>
+											<td>192.168.1.1</td>
+											<td>上海</td>
+											<td>vava</td>
+											<td>2012-01-24 23:23</td>
+											<td>2012-01-24 23:23</td>
+											<td><a href="javascript:void(0)" class="ip-list-delete" data-id="1">删除</a></td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" class="checkbox" value="2"></td>
+											<td>192.168.1.1</td>
+											<td>上海</td>
+											<td>vava</td>
+											<td>2012-01-24 23:23</td>
+											<td>2012-01-24 23:23</td>
+											<td><a href="javascript:void(0)" class="ip-list-delete" data-id="2">删除</a></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="page-wrapper clearfix">
+									<span class="page-text">
+										<label class="label"><input id="J-select-all" type="checkbox" class="checkbox">全选</label>
+										<a class="btn btn-small" href="javascript:void(0);" id="J-delete-all">删除<b class="btn-inner"></b></a>
+										<span class="lower">共XXXX条记录</span>
+									</span>
+									<div class="page page-right">
+										<a href="#" class="prev">上一页</a>
+										<span>2/200</span>
+										<a href="#" class="next">下一页</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+(function($){
+	//弹窗
+	var Wd = phoenix.Message.getInstance();
+	
+	//全选
+	$('#J-select-all').click(function(){
+		var inputs = $('#J-table-list').find('input[type="checkbox"]');
+		if(this.checked){
+			inputs.each(function(){
+				this.checked = true;
+			});
+		}else{
+			inputs.each(function(){
+				this.checked = false;
+			});
+		}
+	});
+	
+	//开关
+	$('#J-switch').click(function(e){
+		var dom = $(this).children().eq(0),cls = '',clsOn = 'switch-on',clsOff = 'switch-off',type = dom.find('.switch-type'),input = dom.find('.switch-value'),value;
+		cls = dom.hasClass(clsOn) ? clsOff : clsOn;
+		value = cls == clsOn ? 1 : 0;
+		
+		$.ajax({
+			url:'data.php?type=' + type.val() + '&value=' + value,
+			dataType:'json',
+			success:function(data){
+				//data['isSuccess'] = 0;
+				if(Number(data['isSuccess']) == 1){
+					dom.removeClass().addClass(cls);
+					if(cls == clsOn){
+						input.val(1);
+					}else{
+						input.val(0);
+					}
+				}else{
+					Wd.show({
+						mask:true,
+						title:'温馨提示',
+						content:'<div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">只能开启任意一个模式，不能同时开启，关闭其中一个模式才能开启另外一个；可以同时关闭两个模式.</h4></div>',
+						confirmIsShow:true,
+						confirmFun:function(){
+							Wd.hide();
+						}
+					});
+				}
+			}
+		});
+		
+
+		
+	});
+	
+	//ip输入
+	$('#J-input-ip').on('keyup', 'input[type="text"]', function(){
+		var v = this.value.replace(/[^\d]/g, '')||this.value.replace(/[^*]/g, '');
+		    v = this.value.replace(/[^*]/g, '')||this.value.replace(/[^\d]/g, '');
+		this.value = v;
+		if(v == ''){
+			return;
+		}
+		if(parseInt(v)==0 || parseInt(v)>0)
+		{
+		    this.value=parseInt(v);
+		}
+		if(Number(v) > 255){
+			this.value = 255;
+		}
+	});
+	
+	//天数
+	$('#J-days').keyup(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+		var v=this.value;
+		if(v<=0)
+		{
+		   this.value=1;
+		}
+	});
+	
+	//表单提交
+	$('#J-submit').click(function(){
+		var ips = $('#J-input-ip').find('input[type="text"]'),days = $('#J-days'),i = 0;
+		ips.each(function(){
+			if($.trim(this.value) == ''){
+				alert('ip地址段不能为空');
+				this.focus();
+				return false;
+			}
+			i++;
+		});
+		if(i > 3 && $.trim(days.val()) == ''){
+			alert('请填写天数');
+			days.focus();
+			return;
+		}
+		if(i < 4){
+			return;
+		}
+		$('#J-form').submit();
+	});
+	
+	
+	//批量删除
+	$('#J-delete-all').click(function(){
+		var inputs = $('#J-table-list').find('input[type="checkbox"]'),result = [];
+		inputs.each(function(){
+			if(this.checked){
+				result.push(this.value);
+			}
+		});
+		if(result.length < 1){
+			return;
+		}
+		Wd.show({
+			mask:true,
+			title:'提示',
+			content:'你确定要删除列表中所选的ip记录吗？',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=deleteall',
+					dataType:'json',
+					method:'post',
+					data:{ids:result.join(',')},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							Wd.hide();
+							location.href = location.href;
+						}else{
+							alert('msg');
+							Wd.hide();
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+	//列表删除单行
+	$('#J-table-list').on('click', '.ip-list-delete', function(){
+		var id = Number($(this).attr('data-id'));
+		Wd.show({
+			mask:true,
+			title:'提示',
+			content:'你确定要删除该条ip记录吗？',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?action=delete&id=' + id,
+					dataType:'json',
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							alert('msg');
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+	
+	
+})(jQuery);
+</script>
+	
+	
+</body>
+</html>

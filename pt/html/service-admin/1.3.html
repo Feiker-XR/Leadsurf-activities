@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.3站内信-发送站内信-按用户组</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+	.pop-window-datepicker {z-index:710;}
+	.upload-file-button {outline:none;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);filter:alpha(opacity=0);opacity: 0;position:absolute;top:0px; left:0px; width:107px; height:30px;z-index:1;background:#000}
+	.ui-check {display:none;}
+	
+	.btn-disabled,.btn-disabled:hover {color:#CCC; cursor:default;border-color:#CACACA;}
+	
+	.ui-form .J-panel-gourp {margin:0;}
+	
+	.panel-group-line {border-bottom:1px dotted #CCC;}
+	
+	.checkbox-list {border-bottom:1px dotted #CCC;display:inline-block;padding-bottom:10px;}
+	.checkbox-list-last {border:0;}
+	
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	
+	<script type="text/javascript" src="../js/xheditor121/jquery/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="../js/xheditor121/xheditor-1.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/xheditor121/xheditor_lang/zh-cn.js"></script>
+
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>站内信</dt>
+				<dd>发送站内信</dd>
+				<dd class="current"><a href="">系统消息管理</a></dd>
+				<dd>用户消息管理</dd>
+				<dt>邮件</dt>
+				<dd><a href="">邮件配置</a></dd>
+				<dd><a href="">邮件测试</a></dd>
+				<dt>通知任务</dt>
+				<dd><a href="#">通知任务管理</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">通知中心</a> &gt; <a href="#">站内信</a> &gt; <a href="#">已发信息</a></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<form id="J-form-upload" name="form1" enctype="multipart/form-data" method="post" action="upload.php" target="check_file_frame" style="position:relative;">
+							<input name="file" type="file" id="J-upload-file" class="upload-file-button" size="40" hidefocus="true" value="导入" />
+						</form>
+						
+						
+						<form action="?" method="post" id="J-form">
+						<ul class="ui-form">
+							<li>
+								<label for="" class="ui-label">接受用户：</label>
+								<span class="radio-list" id="J-radio-list">
+									<label for="J-switch-a" class="label"><input name="type" type="radio" value="1" class="radio" id="J-switch-a" checked="checked">按用户组</label>
+									<label for="J-switch-b" class="label"><input name="type" type="radio" value="2" class="radio" id="J-switch-b">按用户名</label>
+								</span>
+							</li>
+							<li class="J-panel-gourp">
+								<label for="" class="ui-label">用户组：</label>
+								<span class="checkbox-list">
+									<label for="J-checkbox-all" class="label"><input id="J-checkbox-all" type="checkbox" value="1" class="checkbox">全部客户</label>
+								</span>
+							</li>
+							<li class="J-panel-gourp">
+								<label for="" class="ui-label"></label>
+								<span class="checkbox-list">
+									<label for="J-usergroup-2" class="label"><input type="checkbox" value="2" class="checkbox" id="J-usergroup-2">总代</label>
+									<label for="J-usergroup-3" class="label"><input type="checkbox" value="3" class="checkbox" id="J-usergroup-3">一级代理</label>
+									<label for="J-usergroup-4" class="label"><input type="checkbox" value="4" class="checkbox" id="J-usergroup-4">二级代理</label>
+									<label for="J-usergroup-5" class="label"><input type="checkbox" value="5" class="checkbox" id="J-usergroup-5">三级代理</label>
+									<label for="J-usergroup-6" class="label"><input type="checkbox" value="6" class="checkbox" id="J-usergroup-6">四级代理</label>
+									<label for="J-usergroup-7" class="label"><input type="checkbox" value="7" class="checkbox" id="J-usergroup-7">五级代理</label>
+									<label for="J-usergroup-8" class="label"><input type="checkbox" value="8" class="checkbox" id="J-usergroup-8">六级代理</label>
+									<label for="J-usergroup-9" class="label"><input type="checkbox" value="9" class="checkbox" id="J-usergroup-9">XX代理</label>
+									<label for="J-usergroup-10" class="label"><input type="checkbox" value="10" class="checkbox" id="J-usergroup-10">玩家</label>
+								</span>
+							</li>
+							<li class="J-panel-gourp">
+								<label for="" class="ui-label"></label>
+								<span class="checkbox-list checkbox-list-last">
+									<label for="J-usergroup-11" class="label"><input type="checkbox" value="11" class="checkbox" id="J-usergroup-11">VIP</label>
+									<label for="J-usergroup-12" class="label"><input type="checkbox" value="12" class="checkbox" id="J-usergroup-12">非VIP</label>
+								</span>
+								<span class="ui-check"><i></i>请选择一个用户组</span>
+							</li>
+							
+							
+							
+							<li id="J-panel-username" style="display:none;">
+								<label for="" class="ui-label">用户名：</label>
+								<div class="textarea w-10" style="border:none;position:relative;">
+
+									<iframe src="upload.php" name="check_file_frame" style="display:none;"></iframe>
+									<div style="padding:0 0 10px 0;">
+									<a class="btn" href="javascript:void(0);" onClick="document.getElementById('J-form-upload').file.click();">+ 导入用户名<b class="btn-inner"></b></a>&nbsp;&nbsp;（支持txt/csv格式文件）
+									</div>
+									<div>
+									<textarea id="J-textarea-username" style="border:1px solid #CCC;"></textarea>
+									<span class="ui-check"><i></i>请导入或者填写接收人用户名</span>
+									</div>
+								</div>
+							</li>
+							
+							
+							<li>
+								<label for="" class="ui-label">主题：</label>
+								<input id="J-input-title" type="text" class="input w-8" value="主题长度不得超过40字符" />
+								<span class="ui-check"><i></i>主题不能为空</span>
+							</li>
+							<li>
+								<label for="" class="ui-label">内容：</label>
+								<div class="textarea">
+									<textarea id="J-content"  rows="12" cols="80" style="width:100%;height:300px;">
+												用虚拟光区就可以直接打开,需要加载的哦! 是SQL Server数据库文件.DVD镜像文件。 mdf和.mds,其实用daemon将这个文件变成光盘里的文件不是很好用的
+									</textarea>
+								</div>
+							</li>
+							<li>
+								<label for="" class="ui-label">发送时间：</label>
+								<select class="ui-select w-2" id="J-select-date">
+									<option value="1" selected="selected">当前时间</option>
+									<option value="2">指定时间</option>
+								</select>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<input id="J-daatepicker" type="text" class="input w-3" style="display:none;" />
+								
+								<span class="ui-check"><i></i>请选择一个时间</span>
+							</li>
+							<li>
+								<label for="" class="ui-label">消息有效时间：</label>
+								<input type="text" class="input w-1" value="48" id="J-input-time" style="text-align:center;" />
+								<span class="ui-text-info">小时</span>
+							</li>
+							<li class="ui-btn">
+								<a id="J-button-view" class="btn btn-important" href="javascript:void(0);">预 览<b class="btn-inner"></b></a>
+								<a id="J-button-submit" class="btn btn-disabled" href="javascript:void(0);">发 送<b class="btn-inner"></b></a>
+								<a class="btn" href="1.2.html">取消<b class="btn-inner"></b></a>
+							</li>
+						</ul>
+						</form>
+						
+						
+						<div style="height:600px;"></div>
+						
+						
+						<!--
+						<div class="pop w-4" style="position:absolute;left:100px;">
+							<i class="ico-success"></i>
+							<h4 class="pop-text">发送成功</h4>
+						</div>
+						
+						<div class="pop w-4" style="position:absolute;left:400px;">
+							<i class="ico-error"></i>
+							<h4 class="pop-text">发送失败，请重试</h4>
+						</div>
+						-->
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<script>
+
+function uploadResponse(str){
+	$('#J-textarea-username').val(str);
+}
+
+(function($){
+	var editor = $('#J-content').xheditor({upImgUrl:"upload.php",upImgExt:"jpg,jpeg,gif,png"});
+	var textareaUsername = new phoenix.Input({el:'#J-textarea-username',defText:'多个用户名用；分开'});
+	var InputTitle = new phoenix.Input({el:'#J-input-title',defText:'主题长度不得超过40字符'});
+	var formKeys = ['user', 'title', 'content', 'time'];
+	var formHas = {user:false,title:false,content:false,time:true};
+	var checkUser = function(){
+		//检测是否有填写用户名
+		var types = $('#J-radio-list').find('input[type="radio"]'),typesValue = '1',ipts,checkNum = 0,isPass = false;
+		types.each(function(){
+			var v = this.value;
+			if(this.checked){
+				typesValue = v;
+				return false;
+			}
+		});
+		if(typesValue == '1'){
+			ipts = $('.J-panel-gourp').find('input[type="checkbox"]');
+			ipts.each(function(){
+				if(this.checked){
+					checkNum += 1;
+				}
+			});
+			if(checkNum < 1){
+				$('.J-panel-gourp').find('.ui-check').show();
+				isPass = false;
+			}else{
+				$('.J-panel-gourp').find('.ui-check').hide();
+				isPass = true;
+			}
+		}else{
+			var usernames = $('#J-textarea-username'),userValue = $.trim(usernames.val()).replace(textareaUsername.defConfig.defText, '');
+			if(userValue == ''){
+				usernames.parent().find('.ui-check').show();
+				isPass = false;
+			}else{
+				usernames.parent().find('.ui-check').hide();
+				isPass = true;
+			}
+		}
+		formHas['user'] = isPass;
+		checkForm();
+	};
+	$('.J-panel-gourp').find('input[type="checkbox"]').click(function(){
+		if(this.checked){
+			$('.J-panel-gourp').find('.ui-check').hide();
+		}
+		checkUser();
+	});
+	$('#J-textarea-username').blur(function(){
+		checkUser();
+	});
+	
+	
+	
+	var checkTitle = function(){
+		//检测标题
+		var title = $('#J-input-title'),titleValue = $.trim(title.val()).replace(InputTitle.defConfig.defText, ''),titleValue2 = titleValue.replace(/[^\x00-\xff]/g, 'xx');
+		if(titleValue == ''){
+			title.parent().find('.ui-check').html('<i></i>主题不能为空').show();
+			isPass = false;
+		}else{
+			if(titleValue2.length > 40){
+				title.parent().find('.ui-check').html('<i></i>主题长度不得超过40字符').show();
+				isPass = false;
+			}else{
+				title.parent().find('.ui-check').hide();
+				isPass = true;
+			}
+		}
+		formHas['title'] = isPass;
+		checkForm();
+	};
+	$('#J-input-title').blur(function(){
+		checkTitle();
+	});
+	
+	
+	var checkContent = function(){
+		var v = $.trim($('#J-content').val());
+		if(v == ''){
+			formHas['content'] = false;
+		}else{
+			formHas['content'] = true;
+		}
+	};
+	
+	
+	var checkTime = function(){
+		var isPass = false;
+		if($('#J-select-date').val() == '2' && $.trim($('#J-daatepicker').val()) == ''){
+			$('#J-daatepicker').parent().find('.ui-check').show();
+			isPass = false;
+		}else{
+			$('#J-daatepicker').parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		
+		formHas['time'] = isPass;
+		checkForm();
+	};
+	
+
+	
+	var checkForm = function(){
+		var i = 0,len = formKeys.length;
+		checkContent();
+		for(;i < len;i++){
+			if(!formHas[formKeys[i]]){
+				$('#J-button-submit').removeClass('btn-important').addClass('btn-disabled');
+				return false;
+			}
+		}
+		$('#J-button-submit').removeClass('btn-disabled').addClass('btn-important');
+		return true;
+	};
+	
+
+	$('#J-radio-list input[type="radio"]').bind('click', function(){
+		var v = $.trim(this.value);
+		if(v == '1'){
+			$('.J-panel-gourp').show();
+			$('#J-panel-username').hide();
+		}else{
+			$('.J-panel-gourp').hide();
+			$('#J-panel-username').show();
+		}
+		checkUser();
+	});
+	
+	
+	
+
+	
+	$('#J-upload-file').bind('propertychange',function(){
+		$(this).parent().submit();
+	}).bind('change',function(){
+		$(this).parent().submit();
+	});
+	
+	
+	
+	
+
+	$('#J-input-time').keyup(function(){
+		var v = this.value;
+		this.value = v.replace(/[^\d^\.]/g, '');
+	});
+	
+	
+	$('#J-select-date').change(function(){
+		var v = this.value;
+		if(v == '2'){
+			$('#J-daatepicker').show().focus();
+		}else{
+			$('#J-daatepicker').hide();
+		}
+		checkTime();
+	});
+	
+	$('#J-daatepicker').focus(function(){
+		var dt = new phoenix.DatePicker({input:this,isShowTime:true});
+			dt.show();
+			dt.addEvent('afterSetValue', function(){
+				$('#J-daatepicker').parent().find('.ui-check').hide();
+				checkTime();
+			});
+	});
+	
+	
+	//表单预览
+	$('#J-button-view').click(function(){
+		var wd = window.open('');
+		wd.document.write(editor.getSource());
+	});
+	//表单提交
+	$('#J-button-submit').click(function(){
+		if($(this).hasClass('btn-disabled')){
+			return;
+		}
+		if(checkForm()){
+			$('#J-form').submit();
+		}
+	});
+	
+	
+	//选择全部客户
+	$('#J-checkbox-all').click(function(){
+		var me = this,ipts = $('.J-panel-gourp').find('input[type="checkbox"]');
+		if(this.checked){
+			ipts.each(function(){
+				if(me != this){
+					this.disabled = true;
+					this.checked = true;
+				}
+			});
+		}else{
+			ipts.each(function(){
+				if(me != this){
+					this.disabled = false;
+					this.checked = false;
+				}
+			});
+		}
+		checkUser();
+	});
+	
+	
+})(jQuery);
+</script>
+
+
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,121 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{background-color: #FDFBE6; font:12px/1.5 Microsoft Yahei, Arial, Helvetica, sans-serif;}
+
+.banner{position:relative;height:416px;min-width:1024px;background: url(../images/banner.jpg) no-repeat center top #1E3320;}
+.banner-inner{position:relative;width:1024px;height:416px;margin:0 auto;}
+.download{position:absolute;left:90px;top:236px;width:204px;height:54px;background:url(../images/un-download-btn.png) no-repeat ;}
+.download:hover{background-position:0 -60px;}
+.download-text{position:absolute;left:90px;top:306px;font-size:12px;color:#FFF;line-height:22px;}
+.download-text em,.download-text a{font-style:normal;color:#F1E702;}
+.download-more{color: #CCC;
+    left: 310px;
+    position: absolute;
+    top: 268px;
+}
+.banner-extra{position:relative;height:57px;min-width:1024px;background:url(../images/banner.jpg) no-repeat center -420px;}
+.banner-extra-inner{position:relative;width:1024px;height:57px;margin:0 auto;}
+.banner-extra-text{position:absolute;left:355px;top:18px;font-size:14px;color:#FFF;}
+.banner-extra-text em,.banner-extra-text a{font-style:normal;color:#F1E702;}
+
+.ad{margin:56px auto;background:url(../images/bg-ad.png) no-repeat center top;overflow:hidden;}
+.ad-pic{margin:40px auto 30px;overflow:hidden;}
+.ad-pic ul{
+}
+.ad-pic li{padding:20px 0;min-width:1024px;text-align:center;}
+.ad-pic img{vertical-align:middle;}
+.ad-num{text-align:center;}
+.ad-num li{width:16px;height:0;padding-top:16px;display:inline-block;*display:inline;*zoom:1;margin:0 5px;background:url(../images/un-ad-num.png) no-repeat -20px 0;overflow:hidden;cursor:pointer;}
+.ad-num .current{background-position:0 0}
+
+.details{position: relative;width:914px;height:293px;margin:0 auto 100px;padding:70px 45px 30px 65px;background: url(../images/details.jpg) no-repeat center 0;}
+.details-text{height:293px;font-size:14px;line-height:28px;color:#0E3820;overflow-y:auto;}
+.details-text dl{padding:5px 0 23px;}
+.details-text dt{font-size:16px;font-weight:700;}
+.details-btn{position:absolute;left:370px;bottom:-21px;width:248px;height:55px;background:url(../images/un-details-btn.png) no-repeat;}
+.details-btn:hover{background-position:0 -60px;}
+
+.install{padding:15px 0 45px;border-top:1px solid #EFEEE4;background-color:#FFFEF5;}
+.install-inner{width:1024px;margin:0 auto;}
+.install h3{padding:10px 50px;font-size:24px;color:#595959;}
+.install h3 em{margin-left:10px;font-size:14px;font-style:normal;color:#EB575B;}
+.install-list{width:934px;height:201px;margin:0 auto;padding:0 10px;background:url(../images/bg-install.png) no-repeat;}
+.install-list li{float:left;width:311px;}
+.install-list h4{padding:20px 0 0 25px;font-size:16px;color:#737373;}
+.install-list .website{width:160px;margin-top:71px;margin-left:33px;color:#737373;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.install-list .code{width:98px;height:98px;margin-left:25px;margin-top:10px;padding:10px;border:1px solid #DBDBDB;}
+.install-list .code img{width:98px;height:98px;}
+.install-list .text{margin-left:25px;color:#737373;}
+.install-list .text a{color:#EA4F03;}
+.install-list .btn{display:block;width:167px;height:44px;margin:20px 0 15px 25px;background:url(../images/download-btn.png) no-repeat;}
+.install-list .btn:hover{background-position:0 -50px;}
+
+.footer{border-top:1px solid #EFEEE7;background-color:#FFF;}
+.copyright{width:1024px;margin:0 auto;text-align:center;color:#6B6B6B; padding:25px 0;}
+.copyright .explain{margin-left:5px;color:#6B6B6B;}
+
+.pop{position:absolute;width:658px;padding:11px;background-color:#264235;}
+.pop .close{float:right;width:16px;height:16px;background:url(../images/close.png) no-repeat;}
+.pop .hd{padding-bottom:14px;font-size:24px;color:#FFCA00;text-align:center;}
+.pop .bd{padding:20px 30px;line-height:28px;font-size:14px;color:#5D5D5D;background-color:#FFF;border-radius:4px;}
+.pop .bd dt{margin-bottom:30px;}
+#mask{ 
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F000000', endColorstr='#7F000000');
+}
+:root #mask{
+	filter:none;	 /*处理IE9浏览器中的滤镜效果*/
+	background-color:rgba(0,0,0,0.5);
+}
+
+/*INSTALLATION WEBSITE CSS*/
+.installation-banner{height:176px;min-width:1024px;background: url(../images/installation-banner.jpg) no-repeat center top #1E3320;}
+.installation-banner-inner{position:relative;width:1024px;height:176px;margin:0 auto;}
+.pp_url{position:absolute; top:60px; left:701px; }
+.pp_url a{float:left;width:135px;height:38px;margin-right:10px;background:url(../images/un-pp.png) no-repeat;}
+.pp_url .pp{background-position:0 0;}
+.pp_url .pp:hover{background-position:0 -50px;}
+.pp_url .nine{width:143px;background-position:-150px 0;}
+.pp_url .nine:hover{background-position:-150px -50px;}
+.installation_1{position:relative;width:1024px;margin:-30px auto 0; background: url(../images/installation_1.jpg) no-repeat center;height: 346px; }
+.installation_2{width:1024px;margin:0 auto; background: url(../images/installation_2.jpg) no-repeat center;height: 326px; }
+.installation_3{width:1024px;margin:0 auto; background: url(../images/installation_3.jpg) no-repeat center;height: 1416px;}
+.installation-footer{margin-top:60px;}

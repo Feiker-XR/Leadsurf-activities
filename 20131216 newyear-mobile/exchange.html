@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>积分兑换抽奖机会</title>
+<meta id="viewport" name="viewport" content="target-densitydpi=medium-dpi, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" href="style/style.css?" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/phoenix.base.js" ></script>
+<script type="text/javascript" src="js/phoenix.Class.js" ></script>
+<script type="text/javascript" src="js/phoenix.Event.js" ></script>
+<script type="text/javascript" src="js/phoenix.Timer.js" ></script>
+<script type="text/javascript" src="js/phoenix.util.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tween.js" ></script>
+<script type="text/javascript" src="js/phoenix.Input.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tip.js" ></script>
+<script type="text/javascript" src="js/phoenix.Mask.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tab.js" ></script>
+<script type="text/javascript" src="js/phoenix.Slider.js" ></script>
+</head>
+<body>
+
+
+			<style>
+				body {background:#CB223F}
+				.common-button {position:absolute;bottom:10px;display:block;width:60px;height:32px;line-height:32px;text-align:center;color:#FFF;padding-left:2px;}
+				.button-left {left:10px;background:#8E182C url(images/button-left.gif) no-repeat 10px 12px;}
+				.button-right {right:10px;background:#8E182C url(images/button-right.gif) no-repeat 10px 7px;padding-left:16px;}
+			</style>
+			<a id="J-button-back" class="common-button button-left" href="#">返回</a>
+			<a id="J-button-refresh" class="common-button button-right" href="#">刷新</a>
+			<script>
+			(function(){
+				$('#J-button-back').click(function(e){
+					e.preventDefault();
+					history.back(-1);
+				});
+				$('#J-button-refresh').click(function(){
+					location.href = location.href;
+				});
+			})();
+			</script>
+
+
+	<div class="content">
+
+
+		<p class="description">5个积分可以兑换一次抽奖机会，兑换的抽奖机会必须在今日内用完，过期无效。</p>
+		<ul class="ui-form">
+			<li>
+				<label class="ui-label" for="">目前可用积分：</label>
+				<span class="ui-text-info"><span id="J-user-integration">600</span>分</span>
+				<span class="ui-text-prompt">(可兑换12次)</span>
+			</li>
+			<li>
+				<label class="ui-label" for="">兑换：</label>
+				<input id="J-input-change-num" type="text" class="input" value="" style="width:80px;">
+				<span class="ui-text-info">次抽奖机会</span>
+			</li>
+			<li>
+				<label class="ui-label" for=""></label>
+				<a href="javascript:void(0);" id="J-button-change-submit" class="btn-submit">确认兑换</a>
+			</li>
+			<div id="J-wd-change-input-num" class="check-error" style="display:none;">请输入有效的数字</div>
+		</ul>
+	</div>
+	
+	
+	
+	
+	<div id="J-wd-change-success" style="display:none;" class="pop">
+		<div class="bd ">
+			<h3>恭喜您，成功使用积分兑换<span id="J-change-success-num"></span>次抽奖机会！</h3>
+			<p class="wd-p-center">目前可用积分： <span id="J-change-success-inte"></span> 分</p>
+			<a class="btn-close" href="javascript:void(0);">继续兑换</a>
+			<a class="btn-close" href="game.html">返回抽奖</a>
+		</div>
+	</div>
+	
+	
+	
+	<div id="J-wd-change-fail" style="display:none;" class="pop">
+		<div class="bd ">
+			<h3>很遗憾，兑换失败，您的可用积分额度不够！</h3>
+			<a class="btn-close" href="javascript:void(0);">关闭</a>
+		</div>
+	</div>
+	
+	
+<script>
+(function($){
+	var mask = phoenix.Mask.getInstance(),
+		tip = phoenix.Tip.getInstance(),
+		currentWd = null;
+		
+	
+	//公共关闭窗口按钮
+	$('.pop .ico-close, .pop .btn-close, .btn-click, .control-refresh').click(function(){
+		var el = $(this);
+		if(el.hasClass('control-close')){
+			var wd = $('#J-wd-submit-not');
+			hideWd();
+			showWd(wd);
+		}else if(el.hasClass('control-close-cancel')){
+			$('#J-wd-submit-not').hide();
+			$('#J-wd-item').show();
+		}else if(el.hasClass('control-close-confirm')){
+			$('#J-wd-submit-not').hide();
+			$('#J-wd-item').hide();
+			hideWd();
+		}else if(el.hasClass('control-refresh')){
+			location.href = location.href;
+		}else{
+			hideWd();
+		}
+	});
+	function showWd(dom){
+		//phoenix.util.toViewCenter(dom);
+		mask.show();
+		dom.show();
+		currentWd = dom;
+	}
+	function hideWd(){
+		if(currentWd && currentWd.hide){
+			currentWd.hide();
+			mask.hide();
+		}
+	}
+	
+	
+	
+	
+	
+	$('#J-button-change-submit').click(function(){
+		var num = Number($('#J-input-change-num').val());
+		if(num < 1){
+			$('#J-wd-change-input-num').show();
+			$('#J-input-change-num').focus();
+			return;
+		}
+		$('#J-wd-change-input-num').hide();
+		$.ajax({
+			url:'changeintegration.json',
+			dataType:'json',
+			cache:false,
+			data:{num:num},
+			success:function(data){
+				if(Number(data['isSuccess']) == 1){
+					var addtimes = data['data']['addtimes'],times = data['data']['times'],inte = data['data']['integration'];
+					hideWd();
+					$('#J-change-success-inte').text(inte);
+					$('#J-change-success-num').text(addtimes);
+					$('#J-game-user-times').text(times);
+					$('#J-user-info-game-times').text(times);
+					showWd($('#J-wd-change-success'));
+				}else{
+					hideWd();
+					showWd($('#J-wd-change-fail'));
+				}
+			}
+			
+		});
+	});
+	$('#J-input-change-num').keyup(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+	}).blur(function(){
+		var v = Number(this.value),maxnum = Math.floor(Number($('#J-user-integration').text())/5);
+		this.value = v > maxnum ? maxnum : v;
+		if(Number(this.value) > 0){
+			$('#J-wd-change-input-num').hide();
+		}else{
+			$('#J-wd-change-input-num').show();
+		}
+	});
+	
+	
+	
+})(jQuery);
+</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+

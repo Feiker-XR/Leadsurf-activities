@@ -1,0 +1,655 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8" />
+<title>凤凰娱乐 - 羊年活动</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta content="initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" media="screen" href="css/animation.css" />
+<link rel="stylesheet" media="screen" href="css/hongbao.css" />
+</head>
+<body>
+
+
+
+<div id="game1" class="screen" data-anchor="game1" >
+	
+	<img src="images/s1_bg.jpg" alt="" />
+	<div class="lantern lantern1"></div>
+	<div class="lantern lantern2"></div>
+	<div class="lantern lantern3"></div>
+	<div class="game1-box1 screen-wrap" id="J-reward-panel">
+		<h2 class="seo_txt">羊年玩大的！你的红包你做主~</h2>
+		<div class="riband"></div>
+		<div class="redpacket item rp-step-2 cycle-slide cycle-sentinel">
+	<div class="rp-cover1" style="visibility: hidden;"></div>
+			<div class="rp-cover2" style="visibility: hidden;"></div>
+			<div class="rp-content" style="opacity: 0; visibility: hidden;">
+				<div class="rp-c-top" style="visibility: hidden;">
+					<div class="rp-button" data-action="forbidden" style="visibility: hidden;">申领红包</div>
+				</div>
+				<div class="rp-c-rule" style="visibility: hidden;">
+					<p style="visibility: hidden;">20天内完成红包金额的30倍的有效投注即可申领</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="redpacket item rp-step-2 cycle-slide cycle-slide-active" id="redpacket1" style="bottom: 0px; position: absolute;left: 0px; z-index: 99; opacity: 1; display: block; visibility: visible;">			<div class="rp-cover1"></div>
+			<div class="rp-cover2"></div>
+			<div class="rp-content" style="opacity: 1;">
+				<div class="rp-c-top">
+					<div class="rp-button" data-action="forbidden">申领红包</div>
+				</div>
+				<div class="rp-c-rule">
+					<p>20天内完成红包金额的30倍的有效投注即可申领</p>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		
+	</div>
+	<ul class="slider-dot">
+		<li class="current"></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<div class="game1-box2">
+		<div class="screen-wrap">
+			<div class="event-info">
+				<p>一个红包不够？给你三个！就这么任性！</p>
+			</div>
+		</div>
+	</div>
+	<div class="game1-box3">
+		<a data-rule="rule1.html" href="javascript:void(0);" class="event-rules" id="rules1">查看活动规则</a>
+		<a href="javascript:void(0);" class="event-next" id="next1">进入下一个活动</a>
+	</div>
+</div>
+
+<div id="game2" class="screen">
+	<div class="screen-wrap">
+		<div class="slogan">
+			<img src="images/s2_slogan.png" alt="" />
+		</div>
+		<a  href="javascript:void(0);" class="betting-records" data-action="forbidden">我的记录</a>
+		<div class="dice-status">
+			<div class="dice-status-1">
+				<p class="status-times"><span data-amount="dice">27</span>次</p>
+				
+				
+			</div>
+			<div class="dice-status-2">
+				<p class="status-times"><span id="dice-win-continus">0</span>次</p>
+			</div>
+		</div>
+		
+		<div class="dice-bell" id="dice-table">
+			<div id="dice-ball1" class="dice-ball dice-num-1"></div>
+			<div id="dice-ball2" class="dice-ball dice-num-3"></div>
+			<div id="dice-ball3" class="dice-ball dice-num-5"></div>
+		</div>
+		
+		
+		<div class="dice-desktop">
+			<a href="javascript:void(0);"  data-action="forbidden" class="dice-button dice-button-big">
+				<span>押大</span>
+				<p>11-18</p>
+			</a>
+			<a href="javascript:void(0);" data-action="forbidden" class="dice-button dice-button-small">
+				<span>押小</span>
+				<p>3-10</p>
+			</a>
+			
+		</div>
+		<div class="dice-desktop-info">
+				<p>活动时间：2015年2月5 00:00:00 至 2015年3月15 23:59:59</p>
+			</div>
+		<div class="game2-box3">
+			<a data-rule="rule1.html" href="javascript:void(0);" class="event-rules" id="rules2">查看活动规则</a>
+			<a href="javascript:void(0);" class="event-next" id="next2">进入下一个活动（VIP专享）</a>
+		</div>
+	</div>
+</div>
+
+<div id="game3" class="screen">
+	<div class="screen-wrap">
+		<div class="rotary-table">
+			<div class="rotary-pointer"></div>
+			<div class="rotary-rotary">
+				<img id="rotary" src="images/s3_turnplate.png">
+			</div>
+		</div>
+		<div class="rotary-desktop">
+			<a href="javascript:void(0);" data-action="forbidden" class="rotary-button">抽奖</a>
+		</div>
+		
+		<div class="rotary-status-history">
+			<div class="rotary-status">
+				<p>您还可以抽奖</p>
+				<p class="status-times">
+					<span data-amount="rotary">0</span>次
+				</p>
+				<div class="status-links">
+					<a data-modal="result" href="javascript:void(0);" data-action="forbidden">我的中奖结果</a>
+				</div>
+				<!-- <div class="not-vip-status">
+					<p>本活动仅限VIP会员参加，成为VIP会员可享受更多特权，<a href="" target="_blank">查看更多VIP特权</a></p>
+				</div> -->
+			</div>
+			<div class="rotary-history">
+				<h3>中奖名单</h3>
+				<div id="rh-cycle" class="rh-cycle cycle-slideshow"
+					data-cycle-slides="> div"
+					data-cycle-fx=carousel
+					data-cycle-timeout=2000
+					data-cycle-carousel-visible=4
+					data-cycle-carousel-vertical=true
+					data-cycle-easing="linear"
+				>	
+				
+					
+			    	<div class="rh-list">
+			    	<span class="rh-name">mm***15</span>
+			    	<span class="rh-desc">20元奖金</span>
+			    	<span class="rh-date">5小时前</span>
+			    </div>
+				
+				<div class="rh-list">
+			    	<span class="rh-name">z1***45</span>
+			    	<span class="rh-desc">500元奖金</span>
+			    	<span class="rh-date">8小时前</span>
+			    </div>
+				<div class="rh-list">
+			    	<span class="rh-name">yy***11</span>
+			    	<span class="rh-desc">20元奖金</span>
+			    	<span class="rh-date">14小时前</span>
+			    </div>
+				<div class="rh-list">
+			    	<span class="rh-name">zz***54</span>
+			    	<span class="rh-desc">100元奖金</span>
+			    	<span class="rh-date">18小时前</span>
+			    </div>
+			    	<div class="rh-list">
+			    	<span class="rh-name">x***20</span>
+			    	<span class="rh-desc">10元奖金</span>
+			    	<span class="rh-date">21小时前</span>
+			    </div>
+			  
+			    	<div class="rh-list">
+			    	<span class="rh-name">a***sq</span>
+			    	<span class="rh-desc">20元奖金</span>
+			    	<span class="rh-date">22小时前</span>
+			    </div>
+			  
+			    	<div class="rh-list">
+			    	<span class="rh-name">zh***77</span>
+			    	<span class="rh-desc">100元奖金</span>
+			    	<span class="rh-date">23小时前</span>
+			    </div>
+			  
+			    	<div class="rh-list">
+			    	<span class="rh-name">li***q1</span>
+			    	<span class="rh-desc">200元奖金</span>
+			    	<span class="rh-date">1天前</span>
+			    </div>
+			  
+			    	<div class="rh-list">
+			    	<span class="rh-name">王***文</span>
+			    	<span class="rh-desc">20元奖金</span>
+			    	<span class="rh-date">1天前</span>
+			    </div>
+			  
+			    	<div class="rh-list">
+			    	<span class="rh-name">av***07</span>
+			    	<span class="rh-desc">10000元奖金</span>
+			    	<span class="rh-date">1天前</span>
+			    </div>
+			    	
+			  
+			    	<div class="rh-list">
+			    	<span class="rh-name">yy***11</span>
+			    	<span class="rh-desc">10元奖金</span>
+			    	<span class="rh-date">1天前</span>
+			    </div>
+			    	<div class="rh-list">
+			    	<span class="rh-name">an***23</span>
+			    	<span class="rh-desc">200元奖金</span>
+			    	<span class="rh-date">1天前</span>
+			    </div>
+			  
+				
+				</div>
+			</div>
+		</div>
+		<div class="event-info">
+			<p>活动时间：2015年2月19日00:00:00 至 2015年2月25日 23:59:59</p>
+		</div>
+		<div class="game3-box3">
+			<a data-rule="rule1.html" href="javascript:void(0);" class="event-rules" id="rules3">查看活动规则</a>
+			<a href="javascript:void(0);" class="event-next" id="next3">回到顶部</a>
+		</div>
+
+	</div>
+</div>
+
+
+<div id="rule-modal" class="pop-modal">
+	<div class="modal-head">
+		<h2>你的红包你做主</h2>
+		<span class="modal-close" data-modal="close">&times;</span>
+	</div>
+	<div class="modal-body">
+		<ul class="rule-detail">
+	<li>用户从填写报名金额后（一旦填写不可修改），开始累计投注额，新旧平台投注额均计入统计,20天内但不超过活动结束时间，有效投注金额达到30倍后即可获得红包申领资格，红包将派发到新平台账户中（有效投注指已开奖投注）；</li>
+	<li>活动参与时间是从2015年2月5日00:00:00开始，2015年3月15日23:59:59结束；</li>
+	<li>全部彩种均可参与。PC端和移动端有效投注均记录在内；</li>
+	<li>用户报名金额最低100元，最高为当前可提现额度，普通用户上限28888元，VIP用户上限38888元；</li>
+	<li>用户最多可申领三个红包，需要获得上次红包申领资格，并在页面点击申领或前次红包失效后，才能再次参与；</li>
+	<li>用户点击放弃红包，该红包领取资格作废，可申领下一个红包，重新统计投注金额；</li>
+    <li>用户有效投注金额每天更新一次，当天有效投注金额需隔天查看；</li>
+	<li>VIP身份判定以填写红包金额时是否为VIP为准；</li>
+	<li>红包申领的最后期限是2015年3月18日23:59:59前，在此时间之前未成功申领的用户视为自动放弃红包。红包将在申领后三个工作日内派发至用户新平台账户。</li>
+		</ul>
+	</div>
+</div>
+
+<div id="dice-modal" class="pop-modal dice-win">
+	<span class="modal-close" data-modal="close">&times;</span>
+	<ul class="dm-result">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<div class="modal-body">
+		<p class="dm-title">连胜8次,赌神非你莫属！</p>
+		<p class="dm-desc">获得赌神奖励￥200奖金</p>
+	</div>
+</div>
+
+<div id="rotary-modal" class="pop-modal">
+	<span class="modal-close" data-modal="close">&times;</span>
+	<div class="modal-body">
+		<p class="dm-desc">50元</p>
+	</div>
+</div>
+<div id="J-messages-giveup" class="msg-giveup">
+	<p>
+		请确认是否要放弃红包，
+		<span>放弃后该红包领取资格作废</span>
+		，可申领下一个红包。
+	</p>
+	<div style="text-align:center">
+	<a href="javascript:void(0);" class="cancel">取消</a>
+	<a href="javascript:void(0);" class="enter">确认</a>
+	<a href="javascript:void(0);" class="close"></a>
+	</div>
+</div>
+<div id="game1-event-rules" class="pop">
+	<h3>你的红包你做主</h3>
+	<ol>
+	<li>1.用户从填写报名金额后（一旦填写不可修改），开始累计投注额，新旧平台投注额均计入统计,20天内但不超过活动结束时间，有效投注金额达到30倍后即可获得红包申领资格，红包将派发到新平台账户中（有效投注指已开奖投注）；</li>
+	<li>2.活动参与时间是从2015年2月5日00:00:00开始，2015年3月15日23:59:59结束；</li>
+	<li>3.全部彩种均可参与。PC端和移动端有效投注均记录在内；</li>
+	<li>4.用户报名金额最低100元，最高为当前可提现额度，普通用户上限28888元，VIP用户上限38888元；</li>
+	<li>5.用户最多可申领三个红包，需要获得上次红包申领资格，并在页面点击申领或前次红包失效后，才能再次参与；</li>
+	<li>6.用户点击放弃红包，该红包领取资格作废，可申领下一个红包，重新统计投注金额；</li>
+    <li>7.用户有效投注金额每天更新一次，当天有效投注金额需隔天查看；</li>
+	<li>8.VIP身份判定以填写红包金额时是否为VIP为准；</li>
+	<li>9.红包申领的最后期限是2015年3月18日23:59:59前，在此时间之前未成功申领的用户视为自动放弃红包。红包将在申领后三个工作日内派发至用户新平台账户。</li>
+	</ol>
+	<a href="javascript:;" class="cancel">关闭</a>
+</div>
+
+<div id="game2-event-rules" class="pop">
+	<h3>喜气羊羊大小通吃</h3>
+	<ol>
+	<li>1.单笔充值每达到500元，即可获得一次骰子押大小机会，押中得5元，押不中得1元，每连续压中8次可再得200元；</li>
+	<li>2.活动参与时间是从2015年2月5日00:00:00开始，2015年3月15日23:59:59结束；</li>
+	<li>3.在活动时间范围内充值的，且充值金额除以500的整数值即为抽奖次数，单笔不满500部分不累计；</li>
+	<li>4.投骰子押大小将在2015年3月18日23:59:59截止，超过此日期未押的用户将视为自动弃奖品；</li>
+	<li>5.抽奖获得的奖金将在三个工作日内派发至用户新平台账户。</li>
+	</ol>
+	<a href="javascript:;" class="cancel">关闭</a>
+</div>
+
+<div id="game3-event-rules" class="pop">
+	<h3>三羊开泰转运盘</h3>
+	<ol>
+	<li>1.活动仅限VIP参与，单笔充值每达到20000元，获得三羊开泰大宝箱抽奖资格，喜气羊羊大小通吃可以兼得；</li>
+	<li>2.活动参与时间是从2015年2月19日00:00:00开始，2015年2月25日23:59:59结束；</li>
+	<li>3.在活动时间范围内充值的，且充值金额除以20000的整数值即为抽奖次数，单笔不满20000部分不累计；</li>
+	<li>4.抽奖将在2015年2月28日23:59:59截止，超过此日期未抽奖的用户将视为自动放弃奖品；</li>
+	<li>5.抽奖获得的奖金将在三个工作日内派发至用户新平台账户。</li>
+	</ol>
+	<a href="javascript:;" class="cancel">关闭</a>
+</div>
+
+
+<div id="J-messages-ensure" class="msg-giveup msg-ensure">
+	<p>
+		红包金额一经确认不可更改，在20天内完成红包金额的30倍的有效投注即可申领，请确认是否提交？
+	</p>
+	<div style="text-align:center">
+	<a href="javascript:;" class="cancel">取消</a>
+	<a href="javascript:;" class="enter">确认</a>
+	<a href="javascript:;" class="close"></a>
+	</div>
+</div>
+<div id="J-messages-timeout" class="pop-modal ac-timeout">
+	<span class="modal-close" data-modal="close">&times;</span>
+	<p>
+		<span class="face"></span> <span class="desc">活动已经结束</span>
+	</p>
+</div>
+<div id="J-rules-tips" class="rules-tips pop-modal">
+	<a href="javascript:;" class="close" data-modal="close"></a>
+	<div class="info-content"></div>
+</div>
+<div id="overlay-shadow"></div>
+<div id="J-messages-forbidden" class="pop pop2">
+	<span class="modal-close" data-modal="close">×</span>
+	<h3>没注册就想玩游戏就是耍流氓！立即去注册</h3>
+	<a href="http://www.fh885.com/register/?id=2604345&exp=1737944342328&pid=12157511&token=ef5c" class="cancel" target="_blank">注册</a>
+</div>
+<div class="dice-history">
+		<a href="javascript:;" class="close" data-modal="close"></a>
+			<table id="dice-history">
+				<thead>
+					<tr>
+						<th class="col-white">我的记录</th>
+						<th>押大小结果</th>
+						<th>押大小内容</th>
+						<th>奖金</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+					
+				    
+					<tr>
+						<td class="col-white">02-04 15:22:41</td>
+						<td>
+							<div class="dice-result-icon">
+							    
+								<span class="dice-6">6</span>
+								
+								<span class="dice-2">2</span>
+								
+								<span class="dice-5">5</span>
+								
+							</div>
+						</td>
+						<td>小</td>
+						<td>￥1</td>
+					</tr>
+					
+				
+				    
+					<tr>
+						<td class="col-white">02-04 15:22:37</td>
+						<td>
+							<div class="dice-result-icon">
+							    
+								<span class="dice-5">5</span>
+								
+								<span class="dice-3">3</span>
+								
+								<span class="dice-4">4</span>
+								
+							</div>
+						</td>
+						<td>大</td>
+						<td>￥5</td>
+					</tr>
+					
+				
+				    
+					<tr>
+						<td class="col-white">02-04 15:22:34</td>
+						<td>
+							<div class="dice-result-icon">
+							    
+								<span class="dice-6">6</span>
+								
+								<span class="dice-3">3</span>
+								
+								<span class="dice-4">4</span>
+								
+							</div>
+						</td>
+						<td>小</td>
+						<td>￥1</td>
+					</tr>
+					
+				
+				    
+					<tr>
+						<td class="col-white">02-04 15:22:29</td>
+						<td>
+							<div class="dice-result-icon">
+							    
+								<span class="dice-3">3</span>
+								
+								<span class="dice-2">2</span>
+								
+								<span class="dice-6">6</span>
+								
+							</div>
+						</td>
+						<td>大</td>
+						<td>￥5</td>
+					</tr>
+					
+				
+				    
+					<tr>
+						<td class="col-white">02-04 15:22:15</td>
+						<td>
+							<div class="dice-result-icon">
+							    
+								<span class="dice-2">2</span>
+								
+								<span class="dice-3">3</span>
+								
+								<span class="dice-6">6</span>
+								
+							</div>
+						</td>
+						<td>大</td>
+						<td>￥5</td>
+					</tr>
+					
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				    
+				
+				</tbody>
+			</table>
+		</div>
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.cycle2.min.js"></script>
+<script src="js/jquery.cycle2.carousel.min.js"></script>
+<script src="js/jquery.inview.min.js"></script>
+<script src="js/jQueryRotate.2.2.js"></script>
+<script src="js/index.js"></script>
+<script src="js/game2.js"></script>
+<script src="js/game3.js"></script>
+<script src="js/hongbao.js"></script>
+<script type="text/javascript">
+$("#next1").click(function(){
+	var h1 = $("#game1").height();
+	$('body,html').animate({scrollTop:h1},1000);
+});
+$("#next2").click(function(){
+	var h2 = $("#game2").height();
+	$('body,html').animate({scrollTop:h2*2},1000);
+});
+$("#next3").click(function(){
+	$('body,html').animate({scrollTop:0},1000);
+});
+
+$("#rules1").click(function(){
+	$('#game1-event-rules').show();
+});
+$("#rules2").click(function(){
+	$('#game2-event-rules').show();
+});
+$("#rules3").click(function(){
+	$('#game3-event-rules').show();
+});
+
+$(".pop .modal-close").click(function(){
+	$('.pop').hide();
+});
+
+
+$(".dice-history .close").click(function(){
+	$(".dice-history").hide();
+	$('#overlay-shadow').hide();
+});
+
+
+</script>
+</body>
+</html>

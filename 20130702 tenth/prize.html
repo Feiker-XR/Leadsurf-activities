@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>奖品细则</title>
+<style type="text/css">
+*{padding:0;margin:0;}
+li{list-style:none;}
+body{background-color:#2A011D;font:12px/1.5 "微软雅黑";
+-moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+.content{width:927px;margin:0 auto;}
+
+.menu{position:fixed;_position:absolute;z-index:1;top:0;width:927px;height:54px;background-color:rgba(0,0,0,0.6);background-color:#111\9;text-align:center;}
+.menu a{display:inline-block;height:54px;padding:0 40px;line-height:54px;border-right:1px solid #7E5377;font-size:20px;color:#FFF;text-decoration:none;}
+.menu a:hover{color:#F6EAA0;}
+.menu .last{border-right:0 none;}
+.tab-title{position:absolute;bottom:0;right:28px;}
+.tab-title li{float:left;width:102px;height:36px;line-height:36px;text-align:center;font-size:16px;font-weight:700;}
+.tab-title li:hover{cursor:pointer;}
+.tab-title li.current{color:#FFF;background:url(images/bg-menu.png) 0 0 no-repeat;cursor:default;}
+.tab-content{width:927px;height:750px;overflow:hidden;}
+.tab-content li{display:none;}
+.tab-content .current{display:block;}
+.title1{position:relative;width:927px;height:162px;background:url(images/title1.jpg) 0 0 no-repeat;}
+.title2{width:927px;height:142px;background:url(images/title2.jpg) 0 0 no-repeat;}
+.title3{width:927px;height:142px;background:url(images/title3.jpg) 0 0 no-repeat;}
+.title4{width:927px;height:142px;background:url(images/title4.jpg) 0 0 no-repeat;}
+.title1{width:927px;height:162px;background:url(images/title1.jpg) 0 0 no-repeat;}
+.list101{width:927px;height:430px;background:url(images/pic101.jpg) 0 0 no-repeat;}
+.list102{width:927px;height:320px;background:url(images/pic102.jpg) 0 0 no-repeat;}
+.list201{width:927px;height:430px;background:url(images/pic201.jpg) 0 0 no-repeat;}
+.list202{width:927px;height:320px;background:url(images/pic202.jpg) 0 0 no-repeat;}
+.list301{width:927px;height:430px;background:url(images/pic301.jpg) 0 0 no-repeat;}
+.list302{width:927px;height:320px;background:url(images/pic302.jpg) 0 0 no-repeat;}
+.list401{width:927px;height:430px;background:url(images/pic401.jpg) 0 0 no-repeat;}
+.list402{width:927px;height:320px;background:url(images/pic402.jpg) 0 0 no-repeat;}
+.list501{width:927px;height:725px;background:url(images/pic501.jpg) 0 0 no-repeat;}
+.list502{width:927px;height:725px;background:url(images/pic502.jpg) 0 0 no-repeat;}
+
+.content2{position:relative;width:927px;height:725px;overflow:hidden;}
+.content3{width:927px;height:385px;margin-top:10px;background:url(images/content3.png) 0 0 no-repeat;}
+.content4{width:927px;height:337px;margin-top:10px;background:url(images/content4.png) 0 0 no-repeat;}
+.content2 li{display:none;}
+.content2 .current{display:block;}
+.notes{width:927px;height:190px;margin-top:10px;background:url(images/notes.png) 0 0 no-repeat;}
+.pre,.next{position:absolute;z-index:10;top:50%;margin-top:-35px;width:42px;height:69px;background-image:url(images/un-btn2.png);}
+.pre{left:0;background-position:0 -70px;}
+.pre:hover{background-position:0 0;}
+.next{right:0;background-position:-50px -70px;}
+.next:hover{background-position:-50px 0;}
+.copyright{padding:30px 0;color:#FFF;text-align:center;font-size:16px;}
+</style>
+</head>
+<body class="">
+	
+	
+	<div class="content">
+		<div class="menu" style="display:none;">
+			<a href="javascript:void(0);" class="a1">豪车任意换</a>
+			<a href="javascript:void(0);" class="a2">大牌全免单</a>
+			<a href="javascript:void(0);" class="a3">周周送加奖</a>
+			<a href="javascript:void(0);" class="a4 last">好礼天天抽</a>
+		</div>
+		<div class="title1" id="title1" style="margin-top:-50px;">
+			<ul class="tab-title">
+				<li>全匹配</li>
+				<li>匹配二码</li>
+				<li>匹配一码</li>
+				<li>无匹配</li>
+			</ul>
+		</div>
+		<ul class="tab-content">
+			<li class="list1">
+				<div class="list101"></div>
+				<div class="list102"></div>
+			</li>
+			<li class="list2">
+				<div class="list201"></div>
+				<div class="list202"></div>
+			</li>
+			<li class="list3">
+				<div class="list301"></div>
+				<div class="list302"></div>
+			</li>
+			<li class="list4">
+				<div class="list401"></div>
+				<div class="list402"></div>
+			</li>
+		</ul>
+		<div class="notes"></div>
+		<h3 class="title2" id="title2"></h3>
+		<div class="content2">
+			<a href="javascript:void(0);" class="pre"></a>
+			<a href="javascript:void(0);" class="next"></a>
+			<ul>
+				<li class="list501"></li>
+				<li class="list502"></li>
+			</ul>
+		</div>
+		<h3 class="title3" id="title3"></h3>
+		<div class="content3"></div>
+		<h3 class="title4" id="title4"></h3>
+		<div class="content4"></div>
+		<p class="copyright">Copyright&copy;凤凰娱乐版权所有</p>
+	</div>
+	
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	
+	/*
+	$(function(){
+	// 图片上下翻滚
+	var len = $('.slidebtn>ul>li').length;
+	var index = 0;
+	var autoplay;
+	$('.slidebtn li').mouseover(function(){
+	index = $('.slidebtn li').index(this);
+	showImg(index);
+	}).eq(0).mouseover();
+	$('.slidebox').hover(function(){
+	clearInterval(autoplay);
+	},function(){
+	autoplay = setInterval(function(){
+	showImg(index)
+	index++;
+	if(index==len){
+	index=0;
+	}
+	},3000);
+	}).trigger('mouseleave');
+	function showImg(index){
+	var picheight = $('.slidebox').height();
+	$('.slidepic').stop(true,false).animate({top:-picheight*index},600)
+	$('.slidebtn li').removeClass('current').eq(index).addClass('current');
+	};
+	// 图片左右翻滚
+	var size = $('.slidebtn-01>ul>li').length;
+	var frist = 0;
+	var datetime;
+	$('.slidebtn-01 li').mouseover(function(){
+	frist = $('.slidebtn-01 li').index(this);
+	showpic(frist);
+	}).eq(0).mouseover();
+	$('.slidebox-01').hover(function(){
+	clearInterval(datetime);
+	},function(){
+	datetime = setInterval(function(){
+	showpic(frist)
+	frist++;
+	if(frist==size){
+	frist=0;
+	}
+	},3000);
+	}).trigger('mouseleave');
+	function showpic(frist){
+	var imgheight = $('.slidebox-01').width();
+	$('.slidepic-01').stop(true,false).animate({left:-imgheight*frist},600)
+	$('.slidebtn-01 li').removeClass('current').eq(frist).addClass('current');
+	};
+	});
+*/
+	//图片淡隐淡现
+	
+	/*
+	var _titles = $(".tab-title li");
+	var _bodies = $(".tab-content li");
+	var _count = _titles.length;
+	var _current = 0;
+	var _intervalID = null;
+	
+	var stop = function(){
+		window.clearInterval(_intervalID);
+	};
+	var slide = function(opts){
+		if (opts){
+			_current = opts.current || 0;
+		} else{
+			_current = (_current >= (_count - 1)) ? 0 :(++_current);
+		};
+		_bodies.filter(":visible").fadeOut(defaultOpts.fadeOutTime, function(){
+			_bodies.eq(_current).fadeIn(defaultOpts.fadeInTime);
+			_bodies.removeClass("current").eq(_current).addClass("current");
+		});
+		//_titles.removeClass("current").eq(_current).addClass("current");
+	};
+	var go = function(){
+		stop();
+		_intervalID = window.setInterval(function(){
+			slide();
+		}, defaultOpts.interval);
+	};
+	var itemMouseOver = function(target, items){
+		stop();
+		var i = $.inArray(target, items);
+		slide({ current:i });
+	};
+	_titles.click(function(){
+		if($(this).attr('class')!='current'){
+			itemMouseOver(this, _titles);
+		}else{
+			stop();
+		}
+	}, go);
+	_bodies.click(stop, go);
+	go();
+	*/
+	var defaultOpts ={ interval:3000, fadeInTime:300, fadeOutTime:200 };
+	var tabTitle = $(".tab-title li");
+	var tabContent = $(".tab-content li");
+	var _current = 0;
+	var _count = tabTitle.length;
+	tabTitle.removeClass("current").eq(_current).addClass("current");
+	tabContent.removeClass("current").eq(_current).addClass("current");
+	tabTitle.click(function(){
+		_current = tabTitle.index(this);
+		showpic(_current);
+	}); 
+	function showpic(opts){
+		var _count = (_current <= 0) ? 3 : _current-1;
+		//tabContent.removeClass("current").eq(_current).addClass("current");
+		tabTitle.removeClass("current").eq(_current).addClass("current");
+		//tabContent.filter(":visible").fadeOut(defaultOpts.fadeOutTime, function(){
+		tabContent.eq(_count).fadeOut(defaultOpts.fadeOutTime, function(){
+			tabContent.hide();
+			tabContent.eq(_current).fadeIn(defaultOpts.fadeInTime);
+			//tabContent.removeClass("current").eq(_current).addClass("current");
+		});
+	};
+	var pre = $(".pre");
+	var next = $(".next");
+	var content = $(".content2 li");
+	content.removeClass("current").eq(_current).addClass("current");
+	pre.click(function(){
+		$.each(content ,function(i){
+			if($(this).is(':hidden')){
+				$(this).fadeIn('slow');
+			}else{
+				$(this).hide();
+			}
+		})
+	});
+	next.click(function(){
+		$.each(content ,function(i){
+			if($(this).is(':hidden')){
+				$(this).fadeIn('slow');
+			}else{
+				$(this).hide();
+			}
+		})
+	});
+	$(".a1").click(function(){
+		$('body,html').animate({scrollTop:0},1000);
+	})
+	$(".a2").click(function(){
+		$('body,html').animate({scrollTop:1057},1000);
+	})
+	$(".a3").click(function(){
+		$('body,html').animate({scrollTop:1925},1000);
+	})
+	$(".a4").click(function(){
+		$('body,html').animate({scrollTop:2522},1000);
+	})
+	
+	
+	</script>
+</body>
+</html>

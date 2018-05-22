@@ -1,0 +1,310 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2014-06-19 15:57:02
+ * @version $Id$
+ */
+html,body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,th,td,em,form,input,select,textarea,button,header,section,aside,footer{margin:0;padding:0;}
+ul,li{list-style:none;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+img{border:none;}
+body{font:12px/1.5 Microsoft Yahei,Arial,Helvetica,sans-serif;color:#333;}
+.clearfix:after{content:".";display:block;height:0;clear:both;overflow:hidden;}
+.clearfix{*zoom:1;}
+
+html{
+    width: 100%;
+}
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+body,
+input,
+select{
+    font-family: 'Microsoft Yahei',Tahoma,Arial,Helvetica,Simsun,STHeiti;
+}
+
+.hide{
+    display: none;
+}
+.layout{
+    width: 980px;
+    margin: 0px auto;
+    position: relative;
+}
+.layout:after{content:'';display:block;overflow:hidden;clear:both;}
+
+
+.float{
+    position: fixed;
+    z-index: 111;
+    top: 540px;
+    left: 50%;
+    margin-left: 490px;
+    width: 90px;
+    height: 293px;
+    background: url(../images/float.png) 0 0 no-repeat;
+    cursor: pointer;
+}
+.float a{
+    display: block;
+    width: 90px;
+    height: 90px;
+}
+.wrap{
+    position: relative;
+    left: 50%;
+    width: 1920px;
+    margin-left: -960px;
+    background: #300701 url(../images/bg.jpg) center 0 no-repeat;
+}
+.banner{
+    width: 980px;
+    height: 697px;
+    background: url(../images/banner.jpg) center 0 no-repeat;
+}
+
+
+/*article*/
+.article{
+    margin-top: -80px
+}
+.slider{
+    float: left;
+}
+.slider li{
+    
+}
+.flip {
+    float: left;
+    position: relative;
+    width: 190px;
+    height: 240px;
+    margin: 0 20px;
+    background: url(../images/bg-hongbao.png) no-repeat;
+    cursor: pointer;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+}
+.flip .cover1 {
+    width: 110px;
+    height: 31px;
+    position: absolute;
+    left: 40px;
+    top: 21px;
+    z-index: 4;
+    background-image: url(../images/bg-hongbao.png);
+    background-repeat: no-repeat;
+}
+.flip1 .cover1 {
+    background-position: -200px -120px
+}
+.flip2 .cover1 {
+    background-position: -200px -160px
+}
+.flip3 .cover1 {
+    background-position: -200px -200px
+}
+.flip .cover2 {
+    display: none;
+    width: 190px;
+    height: 110px;
+    position: absolute;
+    left: 0;
+    top: -28px;
+    z-index: 6;
+    background: url(../images/bg-hongbao.png) -200px 0 no-repeat;
+}
+.bg-notice{
+    float: right;
+    width: 224px;
+    height: 144px;
+    padding:60px 24px 21px;
+    background: url(../images/notice.jpg) center 0 no-repeat;
+}
+.notice{
+    position: relative;
+    width: 224px;
+    height: 144px;
+    overflow: hidden;
+    
+}
+.notice ul{
+    position: absolute;
+}
+.notice li{
+    line-height: 24px;
+    font-size: 14px;
+    color: #E1BF45;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.notice .name{
+    display: inline-block;
+    width: 50px;
+    padding: 0 10px;
+    text-align: center;
+}
+.notice .num{
+    display: inline-block;
+    width: 36px;
+    text-align: center;
+    color: #FFF;
+}
+
+.flipball_wrap{
+    position:absolute;
+    right: 56px;
+    bottom: 126px;
+    width:152px;
+    height:42px;
+    overflow:hidden;
+    z-index:5;
+}
+.flipball_wrap .flipball{
+    float:left;
+    width:36px;
+    height:420px;
+    background: url(../images/balls.png) 0 0 repeat-y;
+    text-indent:-9999em;
+}
+
+.content{
+    position: relative;
+    width: 980px;
+    padding-top:20px;
+    font-size: 14px;
+    color: #E4CE51;
+}
+.content h3{
+    height: 70px;
+    line-height: 70px;
+    padding-left: 60px;
+    margin-top: 30px;
+    font-size: 38px;
+    background: url(../images/title.png) no-repeat 0 10px;
+}
+.content p{
+    padding-left: 60px;
+    margin-top: 5px;
+    line-height: 2;
+    font-size: 18px;
+    font-weight: 700;
+    color: #C6953F;
+}
+.content p strong{
+    margin: 0 5px;
+    color: #FFF;
+}
+.content .table{
+    width: 800px;
+    border-collapse:collapse;
+}
+.content .table th,.content .table td{
+    padding: 3px 8px;
+    border:1px solid #130B35;
+    text-indent: 0;
+    text-align: center;
+}
+.content .table th{
+    background-color: #34265B;
+    color: #E5BA6E;
+}
+.content .table td{
+    background-color: #261D45;
+    color: #FFF5E3;
+}
+.content .list{
+    padding-left: 60px;
+}
+.content .list li{
+    text-indent: -1em;
+    padding-left: 1em;
+    line-height: 2;
+    color: #C6953F;
+}
+/*footer*/
+.footer{
+    margin-top: 30px;
+}
+.footer .copy-right{
+    overflow: hidden;
+    color: #908745;
+    line-height: 50px;
+    text-align: center;
+}
+.mask {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    z-index:1001;
+}
+.loginbox,.userbox{
+    height: 225px;
+    width: 428px;
+    background: url(../images/pop.png) no-repeat;
+    color: #E1BF44;
+    font-size: 14px;
+    text-align: center;
+    z-index:1002;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    display:none;
+}
+.loginbox .title,.userbox .title{
+    height:40px;
+    margin:10px 12px 0;
+    line-height: 40px;
+    border-bottom: 1px solid #7B1A1D;
+    font-size: 18px;
+}
+.userbox .title{
+    margin-top: 50px;
+    border-bottom: 0 none;
+    font-size: 24px;
+}
+.userbox .title strong{
+    margin: 0 10px;
+    color: #FFF;
+}
+.loginbox p{
+    padding:5px 0 10px;
+}
+.userbox p{
+    padding: 15px 0;
+}
+.loginbox .input{
+    width: 240px;
+    padding: 8px;
+    border: 0 none;
+    background-color: #000;
+    font-size: 16px;
+    color: #E1BF44; 
+    border-radius: 3px;
+}
+.loginbox .btn,.userbox .btn{
+    width: 110px;
+    height: 38px;
+    display: block;
+    margin: 15px auto 0;
+    background: url(../images/un-btn.png) no-repeat;
+}
+.loginbox .btn:hover,.userbox .btn:hover{
+    background-position: -120px -1px;
+}

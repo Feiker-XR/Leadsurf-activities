@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>变价参数修改  封锁数据</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<style>
+	.ui-label {width:500px;}
+	
+	.table-params {width:740px;}
+	.table-params th {text-align:center;background:#F1F1F1;}
+	.table-params .table-align-right {text-align:right;}
+								
+	.table-cont {padding:10px;text-align:center;}
+	.table-chart {}
+	.table-chart th {font-weight:bold;background:#F1F1F1;}
+	
+	.table-cont .input {color:#333;}
+	</style>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li><a href="1.171.html">封锁</a></li>
+									<li class="current"><a href="1.191.html">变价</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content" id="J-list-container">
+							
+								<ul class="ui-tab-title clearfix">
+									<li><a href="1.191.html">变价</a></li>
+									<li class="current"><a href="1.192.html">变价参数设定</a></li>
+								</ul>
+								
+								
+								
+								<h3 class="ui-title">
+									<a href="1.192.html">&lt;&lt;返回参数设置查看页</a>
+								</h3>
+								
+								
+								
+								<form action="?" id="J-form">
+								<div class="table-cont">
+
+									
+									
+									<table class="table table-border table-params">
+										<tbody><tr>
+											<th colspan="2"><b>↑ 向上变价参数</b></th>
+										</tr>
+										<tr>
+											<td width="240" class="table-align-right">靓号区三星直选购买倍数最大倍数：</td>
+											<td><input id="J-input-up-multiple" type="text" value="5" class="input w-1" /></td>
+										</tr>
+										<tr>
+											<td class="table-align-right">靓号区显示时间：</td>
+											<td>
+												<input id="J-input-up-time-start" type="text" value="18:00:00" class="input w-2" />--<input id="J-input-up-time-end" type="text" value="18:00:00" class="input w-2" />
+												<span class="ui-check"><i></i></span>
+											</td>
+										</tr>
+										<tr>
+											<td class="table-align-right">极限上调奖金公司最小留水：</td>
+											<td><input id="J-input-profit" type="text" value="-0.5" class="input w-1" /></td>
+										</tr>
+									</tbody></table>
+									
+									
+									
+									<br />
+									
+									
+									
+									
+									<table class="table table-border table-params">
+										<tbody><tr>
+											<th colspan="2"><b>↓ 向下变价参数</b></th>
+										</tr>
+										<tr>
+											<td width="240" class="table-align-right">极限下调奖金最小值：</td>
+											<td><input id="J-input-down-money" type="text" value="1,000.00" class="input w-2" /></td>
+										</tr>
+										<tr>
+											<td class="table-align-right">变价开始-结束时间：</td>
+											<td>
+												<input id="J-input-down-time-start" type="text" value="18:00:00" class="input w-2" />--<input id="J-input-down-time-end" type="text" value="18:00:00" class="input w-2" />
+												<span class="ui-check"><i></i></span>
+											</td>
+										</tr>
+									</tbody></table>
+									
+
+									
+								</div>		
+								
+								
+								<h3 class="ui-title">
+									<a id="J-button-submit" href="#" class="btn btn-important" style="float:left;">保存<b class="btn-inner"></b></a>
+								</h3>
+													
+								</form>
+						
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<script>
+(function($){
+	
+	$('#J-input-down-money').keyup(function(){
+		var el = $(this),v = $.trim(el.val());
+		el.val(v.replace(/[^\d|\.]/g, ''));
+	}).blur(function(){
+		var v = this.value.replace(/[^\d|^\.]/g, ''),arr = [],last;
+		arr = v.split('.');
+		if(arr.length > 1){
+			last = arr.pop();
+			v = arr.join('').replace('.', '') + '.' + last;
+		}
+		this.value = phoenix.util.formatMoney(v);
+	});
+	
+	
+	$('#J-input-up-multiple').keyup(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+	});
+	
+	
+	$('#J-input-profit').keyup(function(){
+		this.value = this.value.replace(/[^\d\-|\.]/g, '');
+	});
+	
+	
+	$('#J-input-down-time-start, #J-input-down-time-end, #J-input-up-time-start, #J-input-up-time-end').keyup(function(){
+		this.value = this.value.replace(/[^\d|\:]/g, '');
+	}).blur(function(e){
+		checkTime(this);
+	});
+	
+	var checkTime = function(dom){
+		var el = $(dom),v = el.val().replace(/\s/g, ''),arr = v.split(':'),isPass = true;
+		if(arr.length != 3){
+			isPass = false;
+			el.parent().find('.ui-check').html('<i></i>时间范围格式不正确').css('display', 'inline-block');
+		}else if(Number(arr[0]) > 24 || Number(arr[1]) > 59 || Number(arr[2]) > 59){
+			isPass = false;
+			el.parent().find('.ui-check').html('<i></i>时间范围格式不正确').css('display', 'inline-block');
+		}else{
+			isPass = true;
+			el.parent().find('.ui-check').hide();
+		}
+		return isPass;
+	};
+	
+	
+	
+	$('#J-button-submit').click(function(e){
+		e.preventDefault();
+		var isPass = true;
+		$('#J-input-down-time-start, #J-input-down-time-end, #J-input-up-time-start, #J-input-up-time-end').each(function(){
+			if(!checkTime(this)){
+				isPass = false;
+				return false;
+			}
+		});
+		if(isPass){
+			$('#J-form').submit();
+		}
+	});
+	
+	
+})(jQuery);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

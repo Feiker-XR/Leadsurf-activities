@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>2014世界杯狂欢节</title>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+	<div class="banner"></div>
+	<div class="tab">
+		<div class="tab-title ">
+			<ul class="clearfix">
+				<li class="current">
+					<h3>1/8决赛</h3>
+					<div class="time-text">距离猜球结束还剩</div>
+					<div id="J-eight-time" class="time-number"></div>
+				</li>
+				<li>
+					<h3>1/4决赛</h3>
+					<div class="time-text">猜球时间</div>
+					<div id="J-four-time" class="time-number">7月2日 10:00 - 7月4日 23:59</div>
+				</li>
+				<li class="disable">
+					<h3>半决赛</h3>
+					<div class="time-text">猜球时间</div>
+					<div id="J-two-time" class="time-number">7月6日 10:00 - 7月8日 23:59</div>
+				</li>
+				<li class="disable">
+					<h3>季军赛</h3>
+					<div class="time-text">猜球时间</div>
+					<div id="J-third-time" class="time-number">7月10日 10:00 - 7月11日 23:59</div>
+				</li>
+				<li class="disable">
+					<h3>总决赛</h3>
+					<div class="time-text">猜球时间</div>
+					<div id="J-champion-time" class="time-number">7月12日 10:00 - 7月13日 23:59</div>
+				</li>
+			</ul>
+		</div>
+		<div id="J-game-panel" class="tab-content">
+			<ul class="clearfix">
+				<li id="eight-one" data-game="eight">
+					<p class="select-text">点击猜选获胜球队，每场比赛均需猜选，一旦提交不可撤销，请慎重猜选哦!</p>
+					<div class="team-list">
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-success"><i></i>恭喜您猜中了</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+					</div>
+				</li>
+				<li id="four-one" data-game="four">
+					<p class="select-text">点击猜选获胜球队，每场比赛均需猜选，一旦提交不可撤销，请慎重猜选哦!</p>
+					<div class="team-list">
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-success"><i></i>恭喜您猜中了</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+					</div>
+				</li>
+				<li id="two-one" data-game="two">
+					<p class="select-text">点击猜选获胜球队，每场比赛均需猜选，一旦提交不可撤销，请慎重猜选哦!</p>
+					<div class="team-list-middle">
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-success"><i></i>恭喜您猜中了</div>
+						</div>
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-error"><i></i>对不起，没有猜中</div>
+						</div>
+					</div>
+				</li>
+				<li id="third" data-game="third">
+					<p class="select-text">点击猜选获胜球队，一旦提交不可撤销，请慎重猜选哦!</p>
+					<div class="team-list-large">
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-success"><i></i>恭喜您猜中了</div>
+						</div>
+					</div>
+				</li>
+				<li id="champion" data-game="champion">
+					<p class="select-text">点击猜选获胜球队，一旦提交不可撤销，请慎重猜选哦!</p>
+					<div class="team-list-large">
+						<div class="team">
+							<div class="team-left"><img src="images/glby_b.png" alt="" /><span>哥伦比亚</span></div>
+							<div class="team-right"><img src="images/gsdlj_b.png" alt="" /><span>哥斯达黎加</span></div>
+							<div class="team-win"></div>
+							<div class="text-success"><i></i>恭喜您猜中了</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="bg-btn-submit">
+		<a href="javascript:void(0)" class="btn-submit" id="J-submit-guess" data-game="eight">提交猜球</a>
+		<a href="javascript:void(0)" class="btn-submit btn-disable" id="J-submit-over" style="display:none;">已提交</a>
+		<a href="javascript:void(0)" class="btn-submit btn-disable" id="J-guess-over" style="display:none;">猜球结束</a>
+		<p class="countdown"></p>
+	</div>
+	<div class="text-info">
+		<div class="text-info-inner">
+			<h3>如何获得积分？</h3>
+			<p>根据世界杯赛制，只要在活动期间内猜中1/8~总决赛各获胜球队，即可获得对应的积分奖励，具体积分规则见下表：</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<td>场次</td>
+						<td>比赛时间</td>
+						<td>猜球时间</td>
+						<td>累计投注时间</td>
+						<td>每场积分数</td>
+						<td>可累计积分</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1/8赛</td>
+						<td>6月29日 0:00-7月2日 4:00</td>
+						<td>6月27日 0:00-6月28日 23:59</td>
+						<td rowspan="5">第一次猜球当日0点-7月13日23:59</td>
+						<td>1</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>1/4赛</td>
+						<td>7月5日 0:00-7月6日 4:00</td>
+						<td>7月2日 10:00-7月4日 23:59</td>
+						<td>1</td>
+						<td>12</td>
+					</tr>
+					<tr>
+						<td>半决赛</td>
+						<td>7月9日 4:00-7月10日 4:00</td>
+						<td>7月6日 10:00-7月8日 23:59</td>
+						<td>1</td>
+						<td>14</td>
+					</tr>
+					<tr>
+						<td>季军赛</td>
+						<td>7月13日 4:00</td>
+						<td>7月10日 10:00-7月11日 23:59</td>
+						<td>1</td>
+						<td>15</td>
+					</tr>
+					<tr>
+						<td>总决赛</td>
+						<td>7月14日 3:00</td>
+						<td>7月12日 10:00-7月13日 23:59</td>
+						<td>2</td>
+						<td>17</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3>积分如何兑换奖金？</h3>
+			<p>活动期间所获积分每一个积分抵一元。自用户第一次参与活动之日起至活动结束累计投注额，每满千元给予所获积分总数对应奖金奖励。<br />获得奖金=活动期间累计投注额/1000（取整数值） * 所获得的积分数<br />例如：A用户在6月27日参与活动，至活动结束共投注10500元，获得17积分，则用户共可获得10500/1000（取整数部分为10）*17=170元奖金奖励。</p>
+			<h3>超级预言帝奖励：</h3>
+			<p>在1/8赛、1/4赛、半决赛、季军赛及总决赛的每个活动时间段，猜中获胜球队，还可得平台送出的bonus奖励或超级bonus奖励。</p>
+			<h4>Bonus奖励：</h4>
+			<table class="table">
+				<thead>
+					<tr>
+						<td style="width:78px;">奖励组别</td>
+						<td style="width:600px;">活动期间投注额</td>
+						<td style="width:177px;">累计猜对场次</td>
+						<td>奖励</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="text-align:center">A</td>
+						<td>自第一次猜球当日0点起截止6月28日23:59累计投注额>20元</td>
+						<td>1/8赛猜中3场及以上</td>
+						<td>获得1次抽奖机会，奖品为20元秒秒彩彩金，总计500份奖品</td>
+					</tr>
+					<tr>
+						<td style="text-align:center">B</td>
+						<td>自第一次猜球当日0点起截止7月1日23:59累计投注额>500元</td>
+						<td>1/4赛猜中2场及以上</td>
+						<td>获得1次抽奖机会，奖品为100元手机话费，总计100份奖品</td>
+					</tr>
+					<tr>
+						<td style="text-align:center">C</td>
+						<td>自第一次猜球当日0点起截止7月10日23:59累计投注额>5,000元</td>
+						<td>总决赛猜中冠军</td>
+						<td>获得1次抽奖机会，奖品为价值2,188元的新秀丽(Samsonite)万向轮拉杆箱 登机箱 20寸，总计6份奖品</td>
+					</tr>
+					<tr>
+						<td style="text-align:center">D</td>
+						<td rowspan="3">自第一次猜球当日0点起截止7.10累计投注额>5,000元</td>
+						<td>累计14场</td>
+						<td>送1,000元游戏币</td>
+					</tr>
+					<tr>
+						<td style="text-align:center">E</td>
+						<td>累计15场</td>
+						<td>送2,000元游戏币</td>
+					</tr>
+					<tr>
+						<td style="text-align:center">F</td>
+						<td>累计16场</td>
+						<td>送3,000元游戏币</td>
+					</tr>
+				</tbody>
+			</table>
+			<h4>Bonus奖励备注：</h4>
+			<p>1.	A/B/C组别可兼得并可继续累积至下一组别，D/E/F组别不可兼得，取高奖励组送出。<br/>
+			2.	抽奖为电子抽奖，每阶段抽奖均在乐利时时彩频道现场直播。<br/>
+			3.	1/8赛中奖客户在7.2日晚9点抽出，秒秒彩彩金为先试玩后补贴形式，中奖客户限在7月9日零点前投注秒秒彩满20元，平台于7.9日后三个工作日内统一发放补贴20元。<br/>
+			4.	1/4赛中奖客户在7.6日晚9点抽出，中奖客户请在平台公布名单后的7个工作日内联系在线客服兑奖，逾期不兑视为自动弃奖。<br/>
+			5.	决赛中奖客户在7.14日晚9点抽出，中奖客户请在平台公布名单后的7个工作日内联系在线客服兑奖，逾期不兑视为自动弃奖。
+</p>
+
+
+			<h4>超级Bonus奖励：</h4>
+			<table class="table">
+				<thead>
+					<tr>
+						<td style="width:78px;">奖励组别</td>
+						<td style="width:600px;">活动期间投注额</td>
+						<td style="width:177px;">累计猜对场次</td>
+						<td>奖励</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="text-align:center">A</td>
+						<td>自第一次猜球当日0点起截止6月28日23:59投注额>5万</td>
+						<td>1/8赛猜中6场及以上</td>
+						<td>送1,000元游戏币</td>
+					</tr>
+					<tr>
+						<td style="text-align:center">B</td>
+						<td>自第一次猜球当日0点起截止7月1日23:59投注额>38万</td>
+						<td>1/4赛猜中4场</td>
+						<td>送8,000元游戏币</td>
+					</tr>
+					<tr>
+						<td style="text-align:center">C</td>
+						<td>达到B组参与条件，且自第一次猜球当日0点起截止7月10日23:59投注额>58万</td>
+						<td>14场</td>
+						<td>送3万元游戏币</td>
+					</tr>
+					<tr>
+						<td style="text-align:center">D</td>
+						<td>达到B组参与条件，且自第一次猜球当日0点起截止7月10日23:59投注额>68万</td>
+						<td>15场</td>
+						<td>送10万元游戏币</td>
+					</tr>
+					<tr>
+						<td style="text-align:center">E</td>
+						<td>达到B组参与条件，且自第一次猜球当日0点起截止7月10日23:59投注额>200万</td>
+						<td>16场</td>
+						<td>送价值100万元名车一台</td>
+					</tr>
+				</tbody>
+			</table>
+			<h4>超级Bonus奖励备注：</h4>
+			<p>1.  A/B组别可兼得并可继续累积至下一组别，C/D/E组别不可兼得，取高奖励组送出。<br />
+			2.  A组别奖励在1/8比赛结束后的3个工作日内送出，B组别奖励在1/4赛结束后的3个工作日内送出，C/D/E组别奖励在决赛结束后的3个工作日内送出。<br />
+			3.	超级Bonus奖励与Bonus奖励不可兼得，取高奖励组送出。</p>
+			<h3>温馨提示：</h3>
+			<p>1.	客户点击提交猜球即记为参与活动，从提交猜球之日开始累计投注额。<br />
+			2.	猜中球队即可获得对应场次的积分，每一个积分抵一元，活动期间内积分可累积获得，活动结束后积分清零。<br />
+			3.	参与活动的客户需要在指定猜球时间内完成每期猜球，点击提交猜球后不可撤销，请慎重选择后点击。<br />
+			4.	达到Bonus要求即可获得奖励，奖励的游戏币奖金为自客户点击提交猜球当日“每阶段的总投注金额/1000之后的整数x获得的积分数，不满1000元不计入奖励范围”。<br />
+			5.	投注计算均以当天实际已经开奖的有效投注量计算（撤单、未开奖、追号均不计算在内），如客户在23:58投注，00:01开奖，则该投注金额不计算在内。<br />
+			6.	本活动欢迎所有客户积极参与，但对刻意作弊骗取奖励客户，娱乐平台有权不予发放奖励。<br />
+			7.	实物奖品获得者可选择按实物奖品价值的50%兑换游戏币，中奖客户请在平台公布名单后的7个工作日内联系在线客服兑奖，逾期不兑视为自动弃奖。
+<br />
+			8.	娱乐平台对与本活动相关的所有事项保留最终决定权和解释权。</p>
+		</div>
+	</div>
+	<div class="part2"></div>
+	<div class="part1"><a class="weibo-link" target="_blank" href="http://weibo.com/u/3218014733"></a></div>
+	<p class="copyright" style="padding:20px 0;background-color:#1C2127;color:#367DB3;text-align:center;">注：娱乐平台对与本活动相关的所有事项具有最终决定及解释权<br>凤凰娱乐平台 版权所有</p>
+	<div id="sliderBar" class="slider-bar">
+		<a target="_blank" href="http://www.ph158.com">返回平台</a>
+		<a href="javascript:void(0)" class="back-top" id="backTop"></a>
+	</div>
+	<textarea id="J-dialog-success" style="display:none">
+		<div class="pop dialog-success" style="position:fixed;top:50%;left:50%;margin: -88px 0 0 -200px;z-index:11">
+			<div class="hd"></div>
+			<div class="bd">
+				<div class="pop-title pop-title-success">
+					<i></i>
+					<h4>提交成功</h4>
+				</div>
+				<p class="pop-text">请在比赛结束后，来此查看结果</p>
+				<div class="pop-btn">
+					<a class="btn confirm-btn" href="javascript:void(0);">确定</a>
+				</div>
+			</div>
+		</div>
+	</textarea>
+
+	<textarea id="J-dialog-error" style="display:none">
+		<div class="pop dialog-error" style="position:fixed;top:50%;left:50%;margin: -88px 0 0 -200px;z-index:11">
+			<div class="hd"></div>
+			<div class="bd">
+				<div class="pop-title pop-title-error">
+					<i></i>
+					<h4 >提交失败</h4>
+				</div>
+				<p class="pop-text">请继续猜选，您必须选完每场比赛</p>
+				<div class="pop-btn">
+					<a class="btn confirm-btn" href="javascript:void(0);">确定</a>
+				</div>
+			</div>
+		</div>
+	</textarea>
+
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script>
+		//遮罩层组件
+		(function(){
+				window.mask = function(){
+
+					this.init();
+				};
+
+				var html = $('html'),
+				doc = $(document),
+				instance;
+				
+				mask.prototype = {
+					init:function(cfg){
+						var me = this;
+
+						cfg = {
+							//参照物，将以该参照物的大小设置遮罩宽高
+							target:'body',
+							//
+							opacity:.5,
+							//
+							'background-color':'#333',
+							//
+							'z-index':10,
+							effectShow:function(){
+								this.dom.show();
+							},
+							effectHide:function(){
+								this.dom.hide();
+							}
+						}
+
+						me.dom = $('<div class="j-ui-mask" style="display:none;position:absolute;left:0;top:0;"></div>').appendTo('body').css({'opacity':cfg['opacity'],'background-color':cfg['background-color'],'z-index':cfg['z-index']});
+
+						me.effectShow = cfg.effectShow;
+						me.effectHide = cfg.effectHide;
+					},
+					show:function(){
+						var me = this,w = doc.width(),h = doc.height();
+						me.dom.css({width:w,height:h});
+						this.effectShow();
+					},
+					hide:function(){
+						this.effectHide();
+						//this.fireEvent('afterHide');
+					},
+					css:function(styles){
+						this.dom.css(styles);
+					}
+
+				};
+			})();
+		(function(){
+			//猜球结束
+
+			/*
+			currentGame
+			当前比赛标志示意:
+			eight 八分之一比赛
+			four 四分之一比赛
+			two 二分之一决赛
+			third 季军比赛
+			champion 冠军决赛
+			 */
+
+				//是否在投注时间
+			var mask = new window.mask(),
+				saveTime = null,
+				timeMark = true,
+				currentTimeSave = null,
+				currentTimeNum = null,
+				currentGame = 'eight',
+				//头部导航时间
+				$tabAreaTimeDom =  $('#J-'+ currentGame +'-time'),
+				$submitDom = $('#J-submit-guess'),
+				$panelDom = $('#J-game-panel'),
+				$confirmBtn = '.confirm-btn',
+				$cancelSelectedDom = '.team-win .close', 
+				$teamSelectDom = '.team-left, .team-right';
+
+			//个阶段时间标记
+			//请后端配置成PHP参数方便修改
+			var timeMark = {
+				//八分之一决赛
+				eight : {
+					start : '2014/06/27,00:00:00',
+					end : '2014/06/28,23:59:00'
+				},
+				//四分之一决赛
+				four : {
+					start : '2014/07/02,10:00:00',
+					end : '2014/07/04,23:59:00'
+				},
+				//半决赛
+				two : {
+					start : '2014/07/06,10:00:00',
+					end : '2014/07/08,23:59:00'
+				},
+				//季军塞
+				third : {
+					start : '2014/07/10,10:00:00',
+					end : '2014/07/11,23:59:00'
+				},
+				//决赛
+				champion : {
+					start : '2014/07/12,10:00:00',
+					end : '2014/07/13,23:59:00'
+				}
+			}
+
+			//球队猜奖模型
+			var guessWinnerData = {
+
+				//8强
+				eight : {
+					match1:{
+						entryTeam: [],
+						winner: ''
+					},match2:{
+						entryTeam: [],
+						winner: ''
+					},match3:{
+						entryTeam: [],
+						winner: ''
+					},match4:{
+						entryTeam: [],
+						winner: ''
+					},match5:{
+						entryTeam: [],
+						winner: ''
+					},match6:{
+						entryTeam: [],
+						winner: ''
+					},match7:{
+						entryTeam: [],
+						winner: ''
+					},match8:{
+						entryTeam: [],
+						winner: ''
+					}},
+
+				//4强
+				four : {match1:{
+						entryTeam: [],
+						winner: ''
+					},match2:{
+						entryTeam: [],
+						winner: ''
+					},match3:{
+						entryTeam: [],
+						winner: ''
+					},match4:{
+						entryTeam: [],
+						winner: ''
+					}},
+
+				//半决赛
+				two : {match1:{
+						entryTeam: [],
+						winner: ''
+					},match2:{
+						entryTeam: [],
+						winner: ''
+					}},
+
+				//季军
+				third : {
+					entryTeam: [],
+					winner: ''
+				},
+
+				//冠军
+				champion : {
+					entryTeam: [],	
+					winner: ''
+				}
+			};
+
+			//倒计时
+			//当前时间, 结束时间, 回调函数
+			function _fresh(currentTime, endTime, callback) {  
+				var endtime = new Date(endTime) ||  new Date("2011/11/06,12:20:12");  
+				var nowtime = currentTime || new Date();  
+				var leftsecond = currentTimeSave != null ? currentTimeSave : parseInt((endtime.getTime() - nowtime)/1000);  
+				
+
+				__d=parseInt(leftsecond/3600/24);  
+				__h=parseInt((leftsecond/3600)%24);  
+				__m=parseInt((leftsecond/60)%60);  
+				__s=parseInt(leftsecond%60);  
+				
+				//document.getElementById("times").innerHTML=__d+"天 "+__h+"小时"+__m+"分"+__s+"秒";  
+				$('.countdown').html('距离猜球结束还剩：<strong>'+__d+"</strong>天 <strong>"+__h+"</strong>小时<strong>"+__m+"</strong>分");
+				$tabAreaTimeDom.html('<strong>'+__d+"</strong>天 <strong>"+__h+"</strong>小时<strong>"+__m+"</strong>分");
+
+				//剩余时间
+				if(leftsecond <= 0) {
+
+					callback  && callback();
+					clearInterval(saveTime);
+					saveTime = null;
+			 	}  
+
+			 	currentTimeSave = currentTimeSave != null ? currentTimeSave - 1 : leftsecond - 1;
+			}
+
+			//定时器
+			saveTimeFn = function(endTime){
+				
+				saveTime = setInterval(function(){
+
+					_fresh(currentTimeNum, endTime, function(){
+						window.location.reload();
+					});
+				}, 1000);
+			};
+
+			//时间计算
+			timeMath = {
+				//从服务器获取当前时间
+				getCurrentTime: function(callback) {
+					
+					$.ajax({
+						url: 'currentTime.json',
+						type: 'GET',
+						dataType: 'json'
+					})
+					.done(function(r) {
+
+						//当前时间[服务器端]
+						currentTimeNum = r['time'];
+
+						if(callback) {
+							callback && callback();							
+						}
+					})
+					//当服务器取时错误
+					.fail(function() {
+
+						//当前时间[本地]
+						currentTimeNum = new Date();
+
+						saveTime = setInterval(function(){
+							callback && callback();						
+						}, 1000);
+					})
+					.always(function() {
+						
+					});
+				},
+
+				eight : function() {
+					var time = currentTimeNum;
+
+					this.getCurrentTime(function(){
+						
+						saveTimeFn(timeMark['eight']['end']);
+					});
+					
+				},
+
+				four: function() {
+
+					this.getCurrentTime(function(){
+								
+						saveTimeFn(timeMark['four']['end']);
+					});
+				},
+
+				two: function() {
+
+					this.getCurrentTime(function(){
+
+						saveTimeFn(timeMark['two']['end']);
+					});
+				},
+
+				third: function() {
+
+					this.getCurrentTime(function(){
+						
+						saveTimeFn(timeMark['third']['end']);
+					});
+				},
+
+				champion: function() {
+
+					this.getCurrentTime(function(){
+
+						saveTimeFn(timeMark['champion']['end']);
+					});
+				}
+
+			}
+
+			//绑定UI事件
+			bindEvents = function(){
+				//点击选择球队
+				$panelDom.on('click', $teamSelectDom, function(e){
+					var $currentDom = $(this),
+						currentModeText = $currentDom.parents('li').eq(0).attr('data-game'),
+						$resultDom = $currentDom.parent().find('.team-win');
+
+					//检查
+					if(checkGameMode(currentModeText)) {
+
+						//组建数据
+						fillData($currentDom);
+						//渲染UI
+						$resultDom.html($currentDom.html()).append('<i class="close"></i>');
+					};
+				});
+
+				//取消按钮操作
+				$panelDom.on('click', $cancelSelectedDom, function(){
+					var $currentDom = $(this);
+
+					//清空数据
+					clearData($currentDom);
+					//渲染UI
+					$currentDom.parent().html('');
+				});
+
+				//提交操作
+				$submitDom.on('click', function(){
+					var $currentDom = $(this),
+						modeNameText = $currentDom.attr('data-game');
+
+					//判断是否当前阶段
+					if(!checkGameMode(modeNameText)){
+						return;
+					}
+
+					//提交数据
+					submitGuessData(modeNameText, $currentDom);
+				});
+
+				//关闭弹窗
+				$('body').on('click', $confirmBtn, function(){
+					var $currentDom = $(this),
+						wrapDom = $currentDom.parents('div.pop').eq(0);
+ 
+ 					wrapDom.remove();
+ 					mask.hide();
+				});
+				
+			};
+
+			//搭建数据
+			fillData = function(dom){
+				var parentDom = dom.parent(),
+					indexNum = Number(parentDom.index()) + 1,
+					gameModeText = dom.parents('li').eq(0).attr('data-game'),
+					winnerTeamText = '',
+					entryTeamArr = [];
+
+					//比赛球队数据
+					entryTeamArr.push(parentDom.find('.team-left span').text());
+					entryTeamArr.push(parentDom.find('.team-right span').text());
+					//获胜队信息
+					winnerTeamText = dom.find('span').text();
+					//比赛球队信息
+					guessWinnerData[gameModeText]['match' + indexNum]['entryTeam'] = entryTeamArr;
+					//竞猜胜利球队
+					guessWinnerData[gameModeText]['match' + indexNum]['winner'] = winnerTeamText;
+			};
+
+			//清空数据
+			clearData = function(dom){
+				var parentDom = dom.parent().parent(),
+					indexNum = Number(parentDom.index()) + 1,
+					gameModeText = dom.parents('li').eq(0).attr('data-game'),
+					winnerTeamText = '',
+					entryTeamArr = [];
+
+					//比赛球队信息
+					guessWinnerData[gameModeText]['match' + indexNum]['entryTeam'] = entryTeamArr;
+					//竞猜胜利球队
+					guessWinnerData[gameModeText]['match' + indexNum]['winner'] = winnerTeamText;
+			};
+
+			//check当前的比赛类型
+			checkGameMode = function(currentMode){
+
+				//对比比赛是否统一
+				if(currentMode == currentGame) {
+
+					return true;
+				} else {
+
+					return false;
+				}
+			};
+
+			//提交竞猜数据
+			submitGuessData = function(modeName, $dom){
+				var guessData = {};
+
+				if(checkData[modeName]()) {
+					guessData = guessWinnerData[modeName];
+
+					$.ajax({
+						url: 'resultData.json',
+						type: 'POST',
+						dataType: 'JSON',
+						data: guessData,
+					})
+					.done(function(r) {
+
+						//投注成功
+						dialog['success']();
+
+						$dom.hide();
+						$('#J-submit-over').show();
+						$('.team-win .close').remove();
+						//重置当前游戏状态
+						currentGame = '';
+
+					})
+					.fail(function(r) {
+						alert('服务器错误~提交失败，请稍候尝试');
+					})
+					.always(function() {
+						
+					});
+					
+				} else {
+					
+					//投注成功
+					dialog['error']();
+				}
+			};
+
+			//弹窗相关
+			dialog = {
+					
+				//提交成功弹窗
+				success: function(){
+					var contentDomText = $('#J-dialog-success').val(),
+						dialogDomNum = $('div.pop').size();
+
+					//存在窗体
+					if(dialogDomNum > 0 ){
+						mask.hide();
+						$('div.pop').remove();
+					}
+
+					mask.show();
+					$('body').append(contentDomText);
+				}, 
+				//提交失败弹窗
+				error: function(){
+					var contentDomText = $('#J-dialog-error').val(),
+						dialogDomNum = $('div.pop').size();
+
+					//存在窗体
+					if(dialogDomNum > 0 ){
+						mask.hide();
+						$('div.pop').remove();
+					}
+
+					mask.show();
+					$('body').append(contentDomText);
+				}
+
+			}
+
+			checkData = {
+				eight : function(){
+					var data = guessWinnerData['eight'],
+						result = true;
+
+					for(var i in data) {
+
+						//判断是否有数据为空
+						if(data[i]['entryTeam'].length == 0 || data[i]['winner'] == '') {
+							result = false;
+							break;
+						}
+					}
+
+					return result;
+				},
+				four : function(){
+					var data = guessWinnerData['four'],
+						result = true;
+
+					for(var i in data) {
+
+						//判断是否有数据为空
+						if(data[i]['entryTeam'].length == 0 || data[i]['winner'] == '') {
+							result = false;
+							break;
+						}
+					}
+
+					return result;
+				},
+				two : function(){
+					var data = guessWinnerData['two'],
+						result = true;
+
+					for(var i in data) {
+
+						//判断是否有数据为空
+						if(data[i]['entryTeam'].length == 0 || data[i]['winner'] == '') {
+							result = false;
+							break;
+						}
+					}
+
+					return result;
+				},
+				third : function(){
+					var data = guessWinnerData['third'],
+						result = true;
+
+						if(data['entryTeam'].length == 0 || data['winner'] == '') {
+							result = false;
+						}
+
+						return result;
+				},
+				champion : function(){
+					var data = guessWinnerData['champion'],
+						result = true;
+
+						if(data['entryTeam'].length == 0 || data['winner'] == '') {
+							result = false;
+						}
+
+						return result;
+				}
+			}
+
+			//绑定UI操作
+			bindEvents();
+			//检测是否在当前猜球时间
+			checkGameStepCountDown = function() {
+				var currentGameName = currentGame,
+					currentStep = timeMark[currentGame],
+					start = new Date(currentStep['start']),
+					end = new Date(currentStep['end']);
+
+				
+				timeMath.getCurrentTime(function() {
+					
+					
+					if(currentTimeNum >  start && currentTimeNum < end) {
+						//当前倒计时
+						timeMath[currentGameName]();	
+					}
+				});
+			
+			}
+			
+			checkGameStepCountDown();
+		})();
+		
+
+	</script>
+	<script type="text/javascript">
+		(function($){
+			var win = $(window),float = $('#sliderBar'),backTop = $('#backTop'),top = parseInt(float.css('top')),sTop = win.scrollTop(),_sTop = sTop;
+			
+			setInterval(function(){
+				_sTop = win.scrollTop();
+				if(sTop != _sTop){
+					float.stop().animate({_top:top + _sTop}, 250);
+					sTop = _sTop;
+				}
+			},50);
+			
+			backTop.click(function(){
+				$('body,html').animate({scrollTop:0},1000);
+			});
+			
+		})(jQuery); 
+		
+	</script>
+</body>
+</html>

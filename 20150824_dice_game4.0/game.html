@@ -1,0 +1,676 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>大富翁</title>
+
+<style type="text/css">
+*{margin:0;padding:0;}
+body{font: 12px/1.5 microsoft yahei,Tahoma,Arial,"宋体",sans-serif;;}
+li{list-style:none;}
+.monopoly-bar{
+	position:fixed;
+	_position:absolute;
+	right:20px;
+	top:50%;
+	width:125px;
+	height:142px;
+	margin-top:-70px;
+	background:url(images/float-monopoly.png) no-repeat right 0;
+	cursor:pointer;
+}
+.monopoly-pop{
+	display: none;
+	position:fixed;
+	_position:absolute;
+	z-index:800;
+	left:50%;
+	top:50%;
+	width:890px;
+	height:623px;
+	margin:-311px 0 0 -445px;
+	background:url(images/bg-monopoly.png) no-repeat 0 0;
+}
+.monopoly-star{
+	position:absolute;
+	z-index: 1;
+	right: 120px;
+	bottom: 10px;
+	width: 124px;
+	height: 124px;
+	background: url(images/un-monopoly.png) no-repeat 0 0;
+	cursor: pointer;
+}
+.monopoly-star:hover{
+	background-position: -130px 0;
+}
+.monopoly-rules{
+	position:absolute;
+	z-index: 1;
+	right: 240px;
+	bottom: 10px;
+	width: 66px;
+	height: 66px;
+	background: url(images/un-monopoly.png) no-repeat 0 -130px;
+	cursor: pointer;
+}
+.monopoly-rules:hover{
+	background-position: -70px -130px;
+}
+.monopoly-step{
+	position: absolute;
+	bottom: 0;
+	left: 99px;
+	width: 714px;
+	height: 370px;
+}
+.monopoly-step-list li{
+	position: absolute;
+	width: 150px;
+	height: 81px;
+	background-image: url(images/monopoly-step.png);
+	background-repeat: no-repeat;
+}
+
+#d_1{left:34px; top:143px;background-position: -320px -170px;}
+#d_2{left:117px; top:185px;background-position: -470px -170px;}
+#d_3{left:200px; top:227px;background-position: -320px -250px;}
+#d_4{left:283px; top:269px;background-position: -470px -250px;}
+#d_5{left:366px; top:227px;background-position: -320px -330px;}
+#d_6{left:449px; top:185px;background-position: -470px -330px;}
+#d_7{left:532px; top:143px;background-position: -320px -410px;}
+#d_8{left:449px; top:101px;background-position: -470px -410px;}
+#d_9{left:203px; top:14px;width:310px;height:162px;background-position: -320px 0;}
+
+.monopoly-step-hover{
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-image: url(images/monopoly-step.png);
+	background-repeat: no-repeat;
+}
+.monopoly-step1-hover{background-position: 0 -170px;}
+.monopoly-step2-hover{background-position: -160px -170px;}
+.monopoly-step3-hover{background-position: 0 -250px;}
+.monopoly-step4-hover{background-position: -160px -250px;}
+.monopoly-step5-hover{background-position: 0 -330px;}
+.monopoly-step6-hover{background-position: -160px -330px;}
+.monopoly-step7-hover{background-position: 0 -410px;}
+.monopoly-step8-hover{background-position: -160px -410px;}
+.monopoly-step9-hover{background-position: 0 0;}
+
+.monopoly-light{
+	display: none;
+	position: absolute;
+	left:50%;
+	top:-105px;
+	margin-left: -122px;
+	width: 255px;
+	height: 148px;
+	background: url(images/un-light.png) no-repeat center -362px ;
+}
+#d_9 .monopoly-light{
+	top:-210px;
+	width: 587px;
+	height: 316px;
+	margin-left: -293px;
+	background-position: center 0;
+}
+.lottery-notice{
+	position: absolute;
+	left:260px;
+	top:186px;
+	width:390px;
+	height:30px;
+	line-height: 30px;
+	font-size: 14px;
+	overflow: hidden;
+}
+.lottery-notice h3{
+	float:left;
+	padding-left: 10px;
+	color:#FFF;
+}
+.lottery-notice ul{
+	position: absolute;
+	margin-left: 100px;
+}
+.lottery-notice li{
+	height: 30px;
+	color: #FFED36;
+	font-weight: 700;
+}
+
+.dice-wrap{
+	position:absolute;
+	width: 160px;
+	height: 110px;
+	left: 50%;
+	bottom:100px;
+	margin-left: -70px;
+	z-index:1;
+}
+.dice{
+	position: absolute;
+	width: 50px;
+	height: 60px;
+	background: url(images/un-dice.png) no-repeat;
+}
+.dice_1{background-position:0 0;}
+.dice_2{background-position:-60px 0;}
+.dice_3{background-position:-120px 0;}
+.dice_4{background-position:-180px 0;}
+.dice_5{background-position:-240px 0;}
+.dice_6{background-position:-300px 0;}
+#dice1{left:0;top:0;}
+#dice2{left:110px;top:0;}
+#dice3{left:55px;top:50px;}
+.dice-point{
+	display: none;
+	position: absolute;
+	top: -40px;
+	left: -40px;
+	width: 39px;
+	height: 41px;
+	background: url(images/un-monopoly.png) no-repeat -140px -130px;
+	color: #154777;
+	line-height: 40px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+}
+.human{
+	position:absolute;
+	z-index:2;
+	width:62px;
+	height:164px;
+	top:19px;
+	left:78px;
+	background-image: url(images/un-human.png);
+	background-repeat: no-repeat;
+	
+}
+.human-run{animation: run 0.6s steps(2) infinite;}
+@keyframes run {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -124px 0; // 2帧
+  }
+}
+.lottery-pop,.rules-pop{
+	display: none;
+	position: fixed;
+	z-index:800;
+	left:50%;
+	top:50%;
+	margin:-141px 0 0 -241px;
+	width:480px;
+	height:280px;
+	border:1px solid #555B7F;
+	background-color: #353B5C;
+	text-align: center;
+	border-radius: 5px;
+}
+.monopoly-pop .close,
+.lottery-pop .close,
+.rules-pop .close{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background: url(images/un-monopoly.png) no-repeat -190px -130px;
+	transition:.3s;
+}
+.monopoly-pop .close{
+	right: 100px;
+	top: 50px;
+}
+.lottery-pop .close,
+.rules-pop .close{
+	right: -10px;
+	top: -10px;
+}
+.monopoly-pop .close:hover,
+.lottery-pop .close:hover,
+.rules-pop .close:hover{
+	transform:rotate(180deg);
+}
+.lottery-pop .btn,.rules-pop .btn{
+	display: inline-block;
+	width:180px;height:56px;border-bottom:4px solid #9A891E;line-height:56px;text-align:center;font-size:20px;font-weight:700;color:#66603E;cursor:pointer;text-decoration:none;border-radius:5px;
+	background-image:-webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.3));
+	background-image:linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.3));
+	background-color:#FFEA00;
+	text-shadow:0 1px 2px rgba(0,0,0,.15);
+	transition: .6s;
+}
+.lottery-pop .btn:hover,.rules-pop .btn:hover{
+	background-color: #F8F600;
+}
+.lottery-pop h3{
+	width: 300px;
+	height: 50px;
+	padding: 17px 0 27px 160px;
+	line-height: 50px;
+	text-align: left;
+	font-size: 36px;
+	color: #202543;
+	background: url(images/lottery-pop-title.png) no-repeat;
+}
+.lottery-pop .info{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 400px;
+	height: 58px;
+	line-height: 58px;
+	border-bottom: 1px solid #576191;
+	background-color: #202543;
+	font-size: 36px;
+	font-weight: 700;
+	color: #8A94CC;
+	border-radius: 10px;
+	box-shadow:0 1px 2px rgba(0,0,0,.3);
+}
+.lottery-pop .info strong{
+	margin: 0 15px;
+	color: #FFEA00;
+}
+.lottery-pop .text{
+	margin: 10px 0;
+	font-size: 16px;
+	color:#8896E4;
+}
+.redBall em,
+.blueBall em{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	margin: 0 5px;
+	background-color: #DB200D;
+	text-align: center;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 14px;
+	color: #FFF;
+	border-radius: 50%;
+	background-image:-webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.3));
+	background-image:-moz-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.3));
+	background-image:linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.3));
+	box-shadow:0 1px 2px rgba(0,0,0,.3);
+}
+.blueBall em{
+	background-color: #6070DB;
+}
+
+.rules-pop h3{
+	padding-top: 10px;
+	font-size: 24px;
+	color: #E1F7DF;
+	text-align: center;
+}
+.rules-pop ul{
+	padding:10px 20px;
+	text-align: left;
+}
+.rules-pop li{
+	padding-left: 10px;
+	line-height: 2;
+	font-size: 14px;
+	color: #8896E4;
+}
+.rules-pop li:before{
+	content:'';
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	margin: 12px 0 0 -10px;
+	background-color: #AAB7FF;
+	border-radius: 50%;
+
+}
+.rules-pop li strong{
+	font-weight: 100;
+	color: #F9EEAE;
+}
+#diceMask{
+	display: none;
+	position: absolute;
+	z-index: 700;
+	width: 100%;
+	height: 100%;
+	background:none;
+}
+#mask{
+	display: none;
+	position: absolute;
+	z-index: 700;
+	width: 100%;
+	height: 100%;
+	background:rgba(0,0,0,.5);
+}
+</style>
+</head>
+<body>
+<div id="monopolyBar" class="monopoly-bar">
+</div>
+<div class="monopoly-pop" id="monopolyPop">
+	<a href="javascript:void(0);" class="close" id="monopolyPopClose"></a>
+	<div class="lottery-notice">
+		<h3>中奖公告：</h3>
+		<ul>
+			<li>恭喜XX中的神秘大奖</li>
+			<li>恭喜XX1中的神秘大奖</li>
+			<li>恭喜XX2中的神秘大奖</li>
+		</ul>
+	</div>
+	<div class="monopoly-star" id="monopolyStar"></div>
+	<div class="monopoly-rules" id="monopolyRules"></div>
+	<div class="dice-wrap" id="dice">
+		<span class="dice dice_1" id="dice1"></span>
+		<span class="dice dice_2" id="dice2"></span>
+		<span class="dice dice_3" id="dice3"></span>
+	</div>
+	
+	<div class="monopoly-step">
+		<div class="human">
+			<div class="dice-point" id="dicePoint"></div>
+		</div>
+		<ul id="prize" class="monopoly-step-list">
+			<li id="d_1">
+				<div class="monopoly-step-hover monopoly-step1-hover"></div>
+				<div class="monopoly-light"></div>
+			</li>
+			<li id="d_2">
+				<div class="monopoly-step-hover monopoly-step2-hover"></div>
+				<div class="monopoly-light"></div>
+			</li>
+			<li id="d_3">
+				<div class="monopoly-step-hover monopoly-step3-hover"></div>
+				<div class="monopoly-light"></div>
+			</li>
+			<li id="d_4">
+				<div class="monopoly-step-hover monopoly-step4-hover"></div>
+				<div class="monopoly-light"></div>
+			</li>
+			<li id="d_5">
+				<div class="monopoly-step-hover monopoly-step5-hover"></div>
+				<div class="monopoly-light"></div>
+			</li>
+			<li id="d_6">
+				<div class="monopoly-step-hover monopoly-step6-hover"></div>
+				<div class="monopoly-light"></div>
+			</li>
+			<li id="d_7">
+				<div class="monopoly-step-hover monopoly-step7-hover"></div>
+				<div class="monopoly-light"></div>
+			</li>
+			<li id="d_8">
+				<div class="monopoly-step-hover monopoly-step8-hover"></div>
+				<div class="monopoly-light"></div>
+			</li>
+			<li id="d_9">
+				<div class="monopoly-step-hover monopoly-step9-hover"></div>
+				<div class="monopoly-light"></div>
+			</li>
+		</ul>
+	</div>
+	<div class="lottery-pop" id="lotteryPop">
+		<a href="javascript:void(0);" class="close" id="lotteryPopClose"></a>
+		<h3 id="title"></h3>
+		<div class="info">恭喜您获得<strong id="msg"></strong>元</div>
+		<div class="text" id='text'></div>
+		<a href="javascript:void(0);" class="btn" target="_blank" id="lotteryPopBtn">立即去投注</a>
+	</div>
+	<div class="rules-pop" id="rulesPop">
+		<a href="javascript:void(0);" class="close" id="rulesPopClose"></a>
+		<h3>游戏规则</h3>
+		<ul>
+			<li>每天登录有<strong>一次</strong>掷骰子的机会。</li>
+			<li>用户点击“丢骰子”后，<strong>三个骰子点数相加总额</strong>为棋子所移动格数，所停留格子上的奖励为当前中奖内容。</li>
+			<li>格子共9格，当所掷点数<strong>超过9时</strong>，棋子将<strong>往回走</strong>。</li>
+			<li>掷骰子一次机会用完，按钮将无法点击，于每天<strong>00:00</strong>重置。</li>
+		</ul>
+		<a href="javascript:void(0);" class="btn" id="rulesPopBtn">确定</a>
+	</div>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+<script type="text/javascript">
+$(function(){
+	//玩法链接地址
+	var arrLink = [
+		['pt.html',' PT老虎机上线了','PT'],
+		['K3.html','骰宝快三，玩的就是刺激','骰宝'],
+		['llssc.html','乐利时时彩,美女视频陪你投注哦','乐利时时彩'],
+		['ssq.html','您的双色球幸运号码：' + redBall() + blueBall(),'幸运双色球'],
+		['ffc.html','吉利分分彩,一分钟一开奖','吉利分分彩']
+	];
+	//每个格子数据
+	var database = {
+		0:arrLink[0],
+		1:null,
+		2:arrLink[1],
+		3:null,
+		4:arrLink[2],
+		5:null,
+		6:arrLink[3],
+		7:arrLink[4],
+		8:null
+	}
+	function resetDatabase(){
+		database[1] = createRandomData('奖金翻倍');
+		database[3] = createRandomData('哇哦，命运大奖');
+		database[5] = createRandomData('奖金翻倍');
+		database[8] = createRandomData('哇哦，机会大奖');
+	}
+	//奖金翻倍，命运大奖，机会大奖数据随机
+	function createRandomData(title){
+		var arr = arrLink[parseInt(Math.random()*arrLink.length)].slice();
+		arr[2]=title;
+	 	return arr;
+    }
+    //随机生成双色球号码
+    function createRandomNumber(num ,from ,to ){
+		var arr=new Array();
+		for(var i=from;i<=to;i++){
+			arr.push(i);
+		}
+		arr.sort(function(){
+			return 0.5-Math.random();
+		});
+		arr.length = num;
+		arr.sort(function(a,b){
+			return a - b;
+		});
+		return arr;
+	}
+	function redBall(){
+		var arr = createRandomNumber(5,1,33);
+		$('#text').append('<span id="redBall"><span class="redBall"></span></span>');
+		for(var i=0;i<arr.length;i++){
+			$('.redBall').append('<em>'+arr[i]+'</em>');
+		}
+		return $('#redBall').html();
+	}
+	function blueBall(){
+		var arr = createRandomNumber(1,1,16);
+		$('#text').append('<span id="blueBall"><span class="blueBall"></span></span>');
+		for(var i=0;i<arr.length;i++){
+			$('.blueBall').append('<em>'+arr[i]+'</em>');
+		}
+		return $('#blueBall').html();
+	}
+	//骰子动画
+	function diceroll(dice,num){
+		dice.attr("class","dice");//清除上次动画后的点数
+		var maxNum = 6;
+		var time = setInterval(function(){
+			maxNum > 1 ? maxNum-- : maxNum = 6;
+			dice.attr('class', 'dice dice_' + maxNum);
+		},100);
+		setTimeout(function(){
+			clearInterval(time);
+			dice.attr('class', 'dice dice_' + num);
+		},1000);
+	}
+	//点数移动路径
+	function roll(i,step){
+		var time = setInterval(function(){
+			if(i>9){
+				var t = 19-i;//点数大于9，往回走
+				$("#d_"+t).addClass('current').find('.monopoly-step-hover').fadeIn(200);
+				$("#d_"+t).siblings().removeClass('current').find('.monopoly-step-hover').fadeOut(200);
+			}
+			$("#d_"+i).addClass('current').find('.monopoly-step-hover').fadeIn(200)
+			$("#d_"+i).siblings().removeClass('current').find('.monopoly-step-hover').fadeOut(200);
+			if(i==step){
+				clearInterval(time); //如果到达指定位置则停止
+				if(i>9){
+					i = 19-i;
+				}
+				setTimeout(function(){
+					$("#d_"+(i-1)).addClass('end').find('.monopoly-light').fadeIn(200);
+					$('.human').removeClass('human-run');
+				},1000)
+			}
+			i++;//继续前进
+			move();
+		},500);
+	}
+	//人物移动
+	function move(){
+		var human = $('.human');
+		var destination = $('#prize .current');
+		human.addClass('human-run');
+		human.animate({
+			top:destination.position().top - human.height() + destination.height()/2,
+			left:destination.position().left - human.width()/2 + destination.width()/2
+		},500,'linear');
+	}
+	$('body').append('<div id="mask"></div>');//加蒙版
+	$("#monopolyPop").append("<div id='diceMask'></div>");//加遮罩
+	//大富翁弹窗
+	$("#monopolyBar").click(function(){
+		$('#mask').fadeIn(200);
+		$('#monopolyPop').fadeIn(500);
+		resetDatabase();//生成数据
+		$.ajax({
+			url:'dice.php',
+			dataType:'json',
+			success:function(res){
+				if(Number(res['status']) == 1){//如果已经参加过今日活动,显示之前中奖信息
+					var historyPrize = res['historyPrize']
+					var historyPoints =  res['historyPoints'];
+					if(historyPoints > 9){
+						historyPoints = 19-historyPoints;
+					}
+					$('#diceMask').show();
+					$('#lotteryPop').fadeIn(500);
+					$("#msg").html(historyPrize);//历史中奖金额
+					$("#lotteryPop .btn").attr("href",database[historyPoints-1][0]);//历史中奖信息，按钮链接地址
+					$("#text").html(database[historyPoints-1][1]);//历史中奖信息，彩种文字提示
+					$("#title").html(database[historyPoints-1][2]);//历史中奖信息，弹窗title
+					return false;
+				}else{
+					//点击开始游戏
+					$("#monopolyStar").click(function(){
+						$('#diceMask').show();
+						$("#prize li").attr("class","");
+						$("#prize li").eq(0).addClass('current');
+						var dice1 = $("#dice1");
+						var dice2 = $("#dice2");
+						var dice3 = $("#dice3");
+						var num1 = res['points'][0];
+						var num2 = res['points'][1];
+						var num3 = res['points'][2];
+						diceroll(dice1,num1);//掷色子1动画
+						diceroll(dice2,num2);//掷色子2动画
+						diceroll(dice3,num3);//掷色子2动画
+						var num = parseInt(num1)+parseInt(num2)+parseInt(num3);
+						$("#dicePoint").text(num).delay(1000).fadeIn(500).delay(num*500+1000).fadeOut(500);
+						roll(0, num);
+						var newNum = num;
+						if(num > 9){
+							newNum = 19-num;
+						}
+						if(newNum == 2 || newNum == 6){
+							res.prize= res.prize/2+' x 2';
+						}
+						$("#msg").html(res.prize);
+						$("#lotteryPop .btn").attr("href",database[newNum-1][0]);
+						$("#text").html(database[newNum-1][1]);
+						$("#title").html(database[newNum-1][2]);
+						setTimeout(function(){
+							$('#lotteryPop').fadeIn(500);
+						},num*500+2000);	
+						$(this).unbind('click');
+					});
+				}
+			},
+			error:function(){
+				alert('请求失败，重新刷新');//请求失败，重新刷新
+			}
+		});
+	});
+	$("#monopolyPopClose").click(function(){
+		$('#monopolyPop').fadeOut(500);
+		$('#mask').fadeOut(200);
+	});
+	//获奖信息弹窗
+	$("#lotteryPopClose").click(function(){
+		$('#monopolyPop').fadeOut(500);
+		$('#mask').fadeOut(200);
+	});
+	$("#lotteryPopBtn").click(function(){
+		$('#lotteryPop').fadeOut(500);
+	});
+	//游戏规则弹窗
+	$("#monopolyRules").click(function(){
+		$("#diceMask").show();//加遮罩
+		$('#rulesPop').fadeIn(500);
+	});
+	$("#rulesPopClose").click(function(){
+		$('#rulesPop').fadeOut(500);
+		$('#mask').fadeOut(200);
+	});
+	$("#rulesPopBtn").click(function(){
+		$('#rulesPop').fadeOut(500);
+		$('#mask').fadeOut(200);
+	});
+	$('#monopolyPop .close').click(function(){
+		$("#diceMask").hide();//移除遮罩
+	});
+	//获奖信息滚动
+	(function(){
+		var timer = null;
+		var oListUl = $(".lottery-notice ul");
+		var oListLi = $(".lottery-notice li");
+		var nReplace = nTopHeight = oListLi.eq(0).outerHeight();
+		oListUl.html(oListUl.html() + oListUl.html());
+		clearInterval(timer);console.log(oListLi.eq(0));
+		function roll(){
+			if(nTopHeight > oListUl.outerHeight()/2){
+				oListUl.css("top",0);
+				nTopHeight = nReplace;
+			}
+			oListUl.animate({
+				top:-nTopHeight
+			},800);
+			nTopHeight += nReplace;
+		}
+		var timer = setInterval(roll,4000);
+
+		oListUl.mouseover(function(){
+			clearInterval(timer);
+		});
+		oListUl.mouseout(function(){
+			timer = setInterval(roll,4000);
+		});
+	})();
+});
+</script>
+</body>
+</html>

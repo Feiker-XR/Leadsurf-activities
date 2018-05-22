@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<link rel="stylesheet" href="style/register.css" />
+	<style>
+	#J-form input {ime-mode:disabled;}
+	</style>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/phoenix.base.js"></script>
+	<script type="text/javascript" src="js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="js/phoenix.Slider.js"></script>
+	<script type="text/javascript" src="js/phoenix.Input.js"></script>
+</head>
+<body>
+		<div class="register-box">
+			<div class="register-top">
+				<div class="logo"></div>
+				<div class="login">已有账号，立即<a href="">登录</a></div>
+			</div>
+			<div class="register-content clearfix">
+				<div class="slider" id="J-slider">
+					<ul class="slider-pic">
+						<li><a href="#"><img src="images/img1.png" alt="" /></a></li>
+						<li><a href="#"><img src="images/img1.png" alt="" /></a></li>
+						<li><a href="#"><img src="images/img1.png" alt="" /></a></li>
+						<li><a href="#"><img src="images/img1.png" alt="" /></a></li>
+					</ul>
+					<ul class="slider-number">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="ui-form">
+					<form action="register-success.html" id="J-form">
+					<ul>
+						<li>
+							<label class="ui-label">用&nbsp;&nbsp;户&nbsp;&nbsp;名</label>
+							<input id="J-input-username" type="text" value="" class="input">
+							<i class="check-right"></i>
+							<i class="check-loading"></i>
+							<span class="ui-check"></span>
+						</li>
+						<li>
+							<label class="ui-label">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+							<input id="J-input-password" type="text" value="" class="input">
+							<i class="check-right"></i>
+							<span class="ui-check"></span>
+						</li>
+						<li>
+							<label class="ui-label">确认密码</label>
+							<input id="J-input-password2" type="text" value="" class="input">
+							<i class="check-right"></i>
+							<span class="ui-check"></span>
+						</li>
+						<li class="ui-verify-code">
+							<label class="ui-label">验&nbsp;&nbsp;证&nbsp;&nbsp;码</label>
+							<input id="J-input-vcode" type="text" value="" class="input">
+							<img id="img-code" class="verify-code" onClick="this.src='http://www.ph158.com/index.php?useValid=' + Math.random()" src="http://www.ph158.com/index.php?useValid=0.2145167330466049" title="看不清，请点击更换图片" alt="验证码" />
+							<i class="check-right"></i>
+							<i class="check-loading"></i>
+							<span class="ui-check"></span>
+						</li>
+						<li class="ui-btn"><a id="J-button-submit" class="btn" href="javascript:void(0);">提交注册</a></li>
+					</ul>
+					</form>
+				</div>
+			</div>
+			<p class="copy">为了更好的操作体验首选Google Chrome、Firefox或IE9浏览器</p>
+		</div>
+		
+		
+<script>
+(function($){
+	var username = $('#J-input-username'),password = $('#J-input-password'),password2 = $('#J-input-password2'),vcode = $('#J-input-vcode');
+	var disabledCn = function(){
+		this.value = this.value.replace(/[\u4E00-\u9FA5]/g, '');
+	};
+	var changeType = function(e){
+		if(e.type == 'focus'){
+			this.type = 'password';
+		}else{
+			this.type = 'text';
+		}
+	};
+	
+	
+	var usernameObj = new phoenix.Input({el:username,defText:'6-16位字符，由字母和数字组成'});
+	var passwordObj = new phoenix.Input({el:password,defText:'6-16位字符组成，区分大小写'});
+	var password2Obj = new phoenix.Input({el:password2,defText:'请重新输入一遍密码'});
+	var vcodeObj = new phoenix.Input({el:vcode,defText:'请输入验证码'});
+	
+	username.keyup(disabledCn);
+	password.keyup(disabledCn);
+	password2.keyup(disabledCn);
+	vcode.keyup(disabledCn);
+	
+	password.focus(function(){
+		this.type = 'password';
+	}).blur(function(){
+		if(this.value == '' || this.value == passwordObj.defConfig.defText){
+			this.type = 'text';
+		}
+	});
+	password2.focus(function(){
+		this.type = 'password';
+	}).blur(function(){
+		if(this.value == '' || this.value == password2Obj.defConfig.defText){
+			this.type = 'text';
+		}
+	});
+	
+	var checkUsername = function(isForm){
+		var v = username.val(),isPass = false;
+		if(isForm && (v == '' || v == usernameObj.defConfig.defText)){
+			isPass = false;
+			username.parent().find('.ui-check').html('用户名不能为空').show();
+			return isPass;
+		}
+		if(v.length < 6 || v.length > 16){
+			isPass = false;
+			username.parent().find('.ui-check').html('长度有误，请输入6-16位字符').show();
+		}else if((/[^A-Za-z0-9]/g).test(v)){
+			isPass = false;
+			username.parent().find('.ui-check').html('用户名只能由字母和数字组成').show();
+		}else if(!(/^[A-Za-z]{1}.*$/).test(v)){
+			isPass = false;
+			username.parent().find('.ui-check').html('首字符必须是英文字母').show();
+		}else if((/^\d+$/g).test(v)){
+			isPass = false;
+			username.parent().find('.ui-check').html('用户名不能是纯数字').show();
+		}else{
+			isPass = true;
+			username.parent().find('.ui-check').hide();
+		}
+		if(!isPass){
+			username.parent().find('.check-right').css('display', 'none');
+		}
+		return isPass;
+	};
+	username.blur(function(){
+		var v = this.value;
+		if(v == '' || v == usernameObj.defConfig.defText){
+			return;
+		}
+		if(checkUsername()){
+			$.ajax({
+				url:'data.json',
+				dataType:'json',
+				beforeSend:function(){
+					username.parent().find('.check-loading').css('display', 'inline-block');
+				},
+				success:function(data){
+					//data = {isSuccess:0,msg:'该用户名已被抢注'};
+					if(Number(data['isSuccess']) == 1){
+						username.parent().find('.check-right').css('display', 'inline-block');
+					}else{
+						username.parent().find('.ui-check').html(data['msg']).show();
+					}
+				},
+				complete:function(){
+					username.parent().find('.check-loading').css('display', 'none');
+				}
+			});
+		}
+	});
+	
+	var checkPassword = function(isForm){
+		var v = password.val(),isPass = false;
+		if(isForm && (v == '' || v == passwordObj.defConfig.defText)){
+			isPass = false;
+			password.parent().find('.ui-check').html('密码不能为空').show();
+			return isPass;
+		}
+		if(v.length < 6 || v.length > 16){
+			isPass = false;
+			password.parent().find('.ui-check').html('长度有误，请输入6-16位字符').show();
+		}else if(v != '' && username.val() == v){
+			isPass = false;
+			password.parent().find('.ui-check').html('密码不能和用户一致').show();
+		}else if((/(.)\1{2}/).test(v)){
+			isPass = false;
+			password.parent().find('.ui-check').html('密码不允许连续三位相同').show();
+		}else if(!((/[A-Za-z]+/).test(v) && (/[0-9]+/).test(v))){
+			isPass = false;
+			password.parent().find('.ui-check').html('密码必须包含数字和字母').show();
+		}else{
+			isPass = true;
+			password.parent().find('.ui-check').hide();
+		}
+		if(!isPass){
+			password.parent().find('.check-right').css('display', 'none');
+		}else{
+			password.parent().find('.check-right').css('display', 'inline-block');
+		}
+		return isPass;
+	};
+	password.blur(function(){
+		var v = this.value;
+		if(v == '' || v == passwordObj.defConfig.defText){
+			return;
+		}
+		checkPassword();
+	});
+	
+	var checkPassword2 = function(isForm){
+		var v = password2.val(),isPass = false;
+		if(isForm && (v == '' || v == password2Obj.defConfig.defText)){
+			isPass = false;
+			password2.parent().find('.ui-check').html('密码不能为空').show();
+			return isPass;
+		}
+		if(v != password.val()){
+			isPass = false;
+			password2.parent().find('.ui-check').html('两次输入的密码不一致，请重新输入').show();
+		}else{
+			isPass = true;
+			password2.parent().find('.ui-check').hide();
+		}
+		if(!isPass){
+			password2.parent().find('.check-right').css('display', 'none');
+		}else{
+			password2.parent().find('.check-right').css('display', 'inline-block');
+		}
+		return isPass;
+	};
+	password2.blur(function(){
+		var v = this.value;
+		if(v == '' || v == password2Obj.defConfig.defText){
+			return;
+		}
+		checkPassword2();
+	});
+	
+	
+	var checkVcode = function(isForm){
+		var v = vcode.val(),isPass = false;
+		if(isForm && (v == '' || v == vcodeObj.defConfig.defText)){
+			isPass = false;
+			vcode.parent().find('.ui-check').html('验证码不能为空').show();
+			return isPass;
+		}
+		if(!(/\d{4}/).test(v)){
+			isPass = false;
+			vcode.parent().find('.ui-check').html('验证码错误，请重新输入').show();
+		}else{
+			isPass = true;
+			vcode.parent().find('.ui-check').hide();
+		}
+		return isPass;
+	};
+	vcode.blur(function(){
+		var v = this.value;
+		if(v == '' || v == vcodeObj.defConfig.defText){
+			return;
+		}
+		if(checkVcode()){
+			$.ajax({
+				url:'data.json',
+				dataType:'json',
+				beforeSend:function(){
+					vcode.parent().find('.check-loading').css('display', 'inline-block');
+				},
+				success:function(data){
+					//data = {isSuccess:0,msg:'验证码错误，请重新输入'};
+					if(Number(data['isSuccess']) == 1){
+						vcode.parent().find('.check-right').css('display', 'inline-block');
+					}else{
+						vcode.parent().find('.ui-check').html(data['msg']).show();
+					}
+				},
+				complete:function(){
+					vcode.parent().find('.check-loading').css('display', 'none');
+				}
+			});
+		}
+	});
+	
+	
+	$('#J-button-submit').click(function(){
+		checkUsername(true);
+		checkPassword(true);
+		checkPassword2(true);
+		checkVcode(true);
+		if(checkUsername(true) && checkPassword(true) && checkPassword2(true) && checkVcode(true)){
+			$('#J-form').submit();
+		}
+	});
+	$(document).keyup(function(e){
+		if(e.keyCode == 13){
+			checkUsername(true);
+			checkPassword(true);
+			checkPassword2(true);
+			checkVcode(true);
+			if(checkUsername(true) && checkPassword(true) && checkPassword2(true) && checkVcode(true)){
+				$('#J-form').submit();
+			}
+		}
+	});
+	
+	
+	var slider = new phoenix.Slider({
+		panels:'.slider-pic li',
+		triggers:'.slider-number li',
+		sliderDirection:'left',
+		sliderIsCarousel:true
+	});
+
+	
+})(jQuery);
+</script>	
+		
+		
+		
+</body>
+</html>

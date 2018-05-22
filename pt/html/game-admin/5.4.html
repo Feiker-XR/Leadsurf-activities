@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>5.4单期收支报表</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	
+	.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+	
+	.pop-window-datepicker {z-index:710;}
+	
+	.search-time a {display:inline-block;border:1px solid #CCC;padding:5px 10px;color:#999;}
+	.search-time a:hover { text-decoration:none;}
+	.search-time a.current {border-color:#08AE8E;font-weight:bold;color:#08AE8E}
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">			
+			<dl class="nav">
+				<dt>审核管理</dt>
+				<dd class="current"> <a href="">游戏异常审核</a></dd>
+                <dd><a href="#">游戏审核设置</a></dd>
+				<dt>统计报表</dt>
+				<dd><a href="##">游戏明细表</a></dd>
+				<dd><a href="##">奖期营收报表</a></dd>
+				
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+					
+					<form action="?" id="J-form">
+						<ul class="ui-search" id="J-search-panel">
+							<li>
+								<label class="ui-label">彩种名称：</label>
+								<select class="ui-select">
+									<option value="全部彩种">全部彩种</option>
+									<option value="重庆时时彩">重庆时时彩</option>
+									<option value="乐利时时彩">乐利时时彩</option>
+									<option value="江西时时彩">江西时时彩</option>
+									<option value="新疆时时彩">新疆时时彩</option>
+									<option value="天津时时彩">天津时时彩</option>
+									<option value="黑龙江时时彩">黑龙江时时彩</option>
+									<option value="上海时时彩">上海时时彩</option>
+									<option value="山东11选5">山东11选5</option>
+									<option value="江西11选5">江西11选5</option>
+									<option value="广东11选5">广东11选5</option>
+									<option value="重庆11选5">重庆11选5</option>
+									<option value="乐利11选5">乐利11选5</option>
+									<option value="北京快乐8">北京快乐8</option>
+									<option value="3D">3D</option>
+									<option value="排列5">排列5</option>
+									<option value="双色球">双色球</option>
+									<option value="全部彩种">全部彩种</option>
+								</select>
+							</li>
+							<li class="time">
+								<label for="" class="ui-label">奖期：</label>
+								<input  type="text" value="" class="input">
+							</li>
+							
+							<li class="search-time time">
+								<label for="" class="ui-label">时间：</label>
+								<a href="#">今天</a>
+								<a class="current" href="#">3天</a>
+								<a href="#">一周</a>
+								<a href="#">全部</a>
+							</li>
+							
+							
+							<li>
+								<label class="ui-label">每页记录数：</label>
+								<input type="text" value="" class="input input-num w-1">
+							</li>
+							<li><a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">搜 索<b class="btn-inner"></b></a></li>
+						</ul>
+						
+					</form>
+						
+						
+						<table class="table table-info" id="J-data-table">
+							<thead>
+								<tr>
+									<th>彩种名称</th>
+									<th>期号</th>
+									<th>销售时间段</th>
+									<th>实际投注</th>
+									<th>游戏撤销投注</th>
+									<th>撤单手续费</th>
+									<th>待派奖金</th>
+									<th>实派奖金</th>
+									<th>实派返点</th>
+									<th>目前营收<div class="color-gray">投注金额+手续费-实派（奖金+返点）</div></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>重庆时时彩</td>
+									<td><a class="tip-detail" href="##">20130717-011</a></td>
+									<td>00:30:00-00:40:00</td>
+									<td>3,128,301.0000</td>
+									<td>28,301.0000</td>
+									<td>201.0000</td>
+									<td><span class="color-red">3,128,301.0000</span></td>
+									<td>3,128,301.0000</td>
+									<td>3,128,301.0000</td>
+									<td><span class="color-red">3,128,301.0000</span></td>
+								</tr>
+								<tr>
+									<td>重庆时时彩</td>
+									<td><a class="tip-detail" href="##">20130717-011</a></td>
+									<td>00:30:00-00:40:00</td>
+									<td>3,128,301.0000</td>
+									<td>28,301.0000</td>
+									<td>201.0000</td>
+									<td><span class="color-red">3,128,301.0000</span></td>
+									<td>3,128,301.0000</td>
+									<td>3,128,301.0000</td>
+									<td><span class="color-green">3,128,301.0000</span></td>
+								</tr>
+
+							</tbody>
+						</table>
+						
+						<div class="page-wrapper clearfix">
+							<span class="page-text">共102条记录</span>
+							<div class="page page-right">
+								<a class="prev" href="#">上一步</a>
+								<a href="#">1</a>
+								<a href="#">2</a>
+								<a class="current" href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">...</a>
+								<a class="next" href="#">下一步</a>
+								<span class="page-few">到第 <input type="text" class="input" value=""> /100页</span>
+								<input type="button" class="page-btn" value="确 认">
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<script>
+(function($){	
+	
+	
+	
+	var Tip = new phoenix.Tip.getInstance(),panel = $('#J-search-panel');
+	$('#J-data-table').on('click', '.tip-detail', function(e){
+		var dom = $(this);
+		Tip.setText(dom.parent().find('.tip-hidden').text());
+		Tip.show(Tip.dom.outerWidth()*-1, Tip.dom.outerHeight()*-1, dom);
+	}).on('mouseout', '.tip-detail', function(){
+		Tip.hide();
+	});
+	panel.on('keyup', '.input-num', function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+	});
+	
+	$('#J-button-submit').click(function(){
+		$('#J-form').submit();
+	});
+	
+})(jQuery);
+</script>
+
+
+
+	
+	
+</body>
+</html>

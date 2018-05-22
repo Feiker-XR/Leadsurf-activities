@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>4.1任务-通知任务管理</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	
+	.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+	
+	.pop-window-datepicker {z-index:710;}
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>站内信</dt>
+				<dd>发送站内信</dd>
+				<dd class="current"><a href="">系统消息管理</a></dd>
+				<dd>用户消息管理</dd>
+				<dt>邮件</dt>
+				<dd><a href="">邮件配置</a></dd>
+				<dd><a href="">邮件测试</a></dd>
+				<dt>通知任务</dt>
+				<dd><a href="#">通知任务管理</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">通知中心</a> &gt; <a href="#">站内信</a> &gt; <a href="#">系统任务</a></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+							
+						<table class="table table-info table-border" id="J-table">
+							<thead>
+								<tr>
+									<th></th>
+									<th>模板名</th>
+									<th>发送任务方式</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="10">信息变动</td>
+									<td>注册成功</td>
+									<td><label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label></td>
+									<td class="link-list">
+										<a data-id="1" class="row-open" href="#">启用</a>
+										<a href="" target="_blank">修改站内信模板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>邮箱绑定</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">桌面通知</label>
+									</td>
+									<td class="link-list">
+										<a data-id="2" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+										<a href="" target="_blank">修改桌面通知模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>邮箱修改</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">桌面通知</label>
+									</td>
+									<td class="link-list">
+										<a data-id="3" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+										<a href="" target="_blank">修改桌面通知模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>安全问题设置</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">桌面通知</label>
+									</td>
+									<td class="link-list">
+										<a data-id="4" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>安全问题修改</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">桌面通知</label>
+									</td>
+									<td class="link-list">
+										<a data-id="5" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>安全密码设置</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">桌面通知</label>
+									</td>
+									<td class="link-list">
+										<a data-id="5" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+										<a href="" target="_blank">修改桌面通知模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>安全密码修改</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+									</td>
+									<td class="link-list">
+										<a data-id="5" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>预留信息设置</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+									</td>
+									<td class="link-list">
+										<a data-id="5" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>预留信息修改</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+									</td>
+									<td class="link-list">
+										<a data-id="5" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>登录密码修改</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+									</td>
+									<td class="link-list">
+										<a data-id="5" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="3">资金变动</td>
+									<td>充值</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">桌面通知</label>
+									</td>
+									<td class="link-list">
+										<a data-id="5" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>提现</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">桌面通知</label>
+									</td>
+									<td class="link-list">
+										<a data-id="5" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td>转账</td>
+									<td class="checkbox-list">
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">邮箱</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">站内信</label>
+										<label class="label" for="e"><input type="checkbox" id="e" class="checkbox" value="1">桌面通知</label>
+									</td>
+									<td class="link-list">
+										<a data-id="5" class="row-cancel" href="#">禁用</a>
+										<a href="" target="_blank">修改站内信米板</a>
+										<a href="" target="_blank">修改邮件模板</a>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4" class="text-center"><a href="javascript:void(0);" class="btn btn-important">保存<b class="btn-inner"></b></a></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<script>
+(function($){
+	var table = $('#J-table'),
+		Wd = phoenix.Message.getInstance();
+	
+	table.on('click', '.row-open', function(e){
+		var dom = $(this),id = dom.attr('data-id');
+		e.preventDefault();
+		Wd.show({
+			mask:true,
+			title:'温馨提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">你确定要启用该通知任务吗？</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?id=' + id,
+					dataType:'json',
+					success:function(data){
+						//测试数据
+						data = {isSuccess:1,type:'success',data:{}};
+								
+						if(Number(data['isSuccess']) == 1){
+							dom.removeClass('row-open').addClass('row-cancel').text('禁用');
+							
+						}else{
+							alert(data['msg']);
+						}
+						Wd.hide();
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	table.on('click', '.row-cancel', function(e){
+		var dom = $(this),id = dom.attr('data-id');
+		e.preventDefault();
+		Wd.show({
+			mask:true,
+			title:'温馨提示',
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">你确定要禁用该通知任务吗？</h4></div></div>',
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?id=' + id,
+					dataType:'json',
+					success:function(data){
+						//测试数据
+						data = {isSuccess:1,type:'success',data:{}};
+								
+						if(Number(data['isSuccess']) == 1){
+							dom.removeClass('row-cancel').addClass('row-open').text('启用');
+							
+						}else{
+							alert(data['msg']);
+						}
+						Wd.hide();
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+	});
+	
+	
+})(jQuery);
+</script>
+
+
+
+	
+	
+</body>
+</html>

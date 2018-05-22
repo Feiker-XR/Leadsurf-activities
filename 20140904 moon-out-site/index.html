@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>中秋活动</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div id="J-sectiona" class="sectiona layout">
+			<div class="code-small"></div>
+			<ul class="button-area">
+				<li data-target="sectionc" class="a"></li>
+				<li data-target="sectiond" class="b"></li>
+				<li data-target="sectionf" class="c"></li>
+			</ul>
+		</div>
+		<div id="J-sectionb" class="sectionb layout">
+			<div class="flash-video">
+				<embed src="http://player.youku.com/player.php/sid/XNzcwNTEyNjI4/v.swf" allowFullScreen="true" quality="high" width="480" height="270" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+			</div>
+		</div>
+		<div id="J-sectionc" class="sectionc layout">
+			<div class="mooncake"></div>
+		</div>
+		<div id="J-sectiond" class="sectiond layout">
+			<a href="http://www.ph158.org/link/regview.html?link=20140701181609hkw" class="activity-info">活动详情</a>
+			<div class="code-big"></div>
+		</div>
+		<div id="J-sectione" class="sectione layout"></div>
+		<div id="J-sectionf" class="sectionf layout"></div>
+	</div>
+	<ul id="J-sidebar" class="side-bar">
+		<li data-target="sectiona" class="sectiona"></li>
+		<li data-target="sectionc" class="sectionc"></li>
+		<li data-target="sectiond" class="sectiond"></li>
+		<li data-target="sectionf" class="sectionf"></li>
+	</ul>
+</body>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+(function($) {
+	var button = $('#J-sidebar, #J-sectiona');
+
+	button.on('click', 'li', function(event) {
+		event.preventDefault();
+		/* Act on the event */
+		$('body,html').animate({scrollTop:$('#J-' + $(this).attr('data-target')).offset().top},1000);
+	});
+})(jQuery);
+</script>
+ 
+</html>

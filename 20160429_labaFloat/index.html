@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>凤凰拉霸</title>
+    <meta name="description" content="凤凰拉霸">
+    <meta name="keywords" content="凤凰 凤凰娱乐 凤凰彩票 凤凰拉霸 注册 红包 奖金">
+</head>
+<style>
+    .float{
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        width: 232px;
+        height: 420px;
+        margin-top: -210px;
+        background: url(images/float.png) no-repeat;
+    }
+    .end-time{
+        position: absolute;
+        top: 285px;
+        left: 60px;
+        width: 120px;
+        text-align: center;
+        font-family: microsoft yahei;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1;
+        color: #FFF;
+        text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    }
+    .end-time strong{
+        display: block;
+        font-size: 64px;
+    }
+</style>
+<body>
+    <a href="#" class="float">
+        <div id="endTime" class="end-time"></div>
+    </a>
+<!--引入js库-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var configServer = "config.php";
+        function counter(time){
+            var hour = time.getHours();
+            var minute = time.getMinutes();
+            var second = time.getSeconds();
+            time.setSeconds(time.getSeconds()-1);
+            $("#endTime").html(hour + ':' + minute + '<strong>'+ second +'</strong>');
+        }
+        $.ajax({
+            url:configServer,
+            dataType:'json',
+            success:function(res){
+                if (Number(res['isSuccess']) == 1){
+                    //倒计时  
+                    var endTime = res['endTime'];
+                    var time = new Date(+endTime);
+                    setInterval(function(){
+                        counter(time)
+                    }, 1000);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

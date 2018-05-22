@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>代理平台后台-移动客户端下载配置</title>
+<link rel="stylesheet" href="style/style.css"/>
+<style>
+.ui-form .J-input {width:350px;}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="">
+	<div class="wrapper">
+		<div class="main">
+			<h2>移动客户端下载配置</h2>
+			<form id="J-form" action="?">
+			<ul class="ui-form">
+				<li>
+					<label class="ui-label" for="info">iPhone下载：</label>
+					<input maxlength="100" type="text" value="请输入链接地址，如：http://baidu.com" class="input J-input">
+				</li>
+				<li>
+					<label class="ui-label" for="info">Android下载：</label>
+					<input maxlength="100" type="text" value="请输入链接地址，如：http://baidu.com" class="input J-input">
+				</li>
+				<li>
+					<label class="ui-label" for="info">更多下载方式：</label>
+					<input maxlength="100" type="text" value="请输入链接地址，如：http://baidu.com" class="input J-input">
+				</li>
+				<li>
+					<label class="ui-label" for="info">手机二维码：</label>
+					<span class="ui-code"><img src="" alt="" /></span>
+					<input type="file" />
+				</li>
+				<li>
+					<label class="ui-label" for="">&nbsp;</label>
+					<input id="J-button-submit" type="button" value="提交并保存" class="ui-button">
+				</li>
+			</ul>
+			</form>
+			
+			
+			<div class="pop-mini w-4" style="position:absolute;left:100px;">
+				<i class="ico-success"></i>
+				<h4 class="pop-text">操作成功</h4>
+			</div>
+		</div>
+		<div class="sub"></div>
+	</div>
+<script>
+(function($){
+	var input = $('.J-input'),text = '请输入链接地址，如：http://baidu.com';
+	input.val(text);
+	input.focus(function(){
+		if(this.value == text){
+			this.value = '';
+		}
+	}).blur(function(){
+		if($.trim(this.value) == ''){
+			this.value = text;
+		}
+	});
+
+	
+	$('#J-button-submit').click(function(){
+		$('#J-form').submit();
+	});
+	
+})(jQuery);
+</script>
+</body>
+</html>

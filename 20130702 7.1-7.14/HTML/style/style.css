@@ -1,0 +1,90 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/****************END OF RESET.CSS*******************/
+
+body{background:url(../images/bg.png) repeat-x; font-family: Arial, Helvetica, sans-serif, Microsoft Yahei;}
+
+.container{width: 960px; margin: 0 auto; }
+.banner{margin:0 auto; width:943px; height:356px; background: url(../images/banner.jpg) no-repeat top center;}
+
+.content{width:960px; color: #6a3906;}
+
+.content table{width: 835px; margin:0 auto 0 auto; text-align: center;}
+
+.content td.title{background: url(../images/cloud-title.png) no-repeat; width: 136px; height: 100px; }
+.content p.title-text{font-size:17px; font-weight: bolder; margin: 40px 0 0 140px; white-space: nowrap; }
+
+.content tr.rule-1{}
+.content td.cloud-1{width: 180px; height:22px; vertical-align: middle; font-weight: bold; text-align: left;}
+.content td.cloud-1 img{padding-right: 10px;}
+.content td.cloud-1-table{width: 100px; }
+.content table.bonus{width: 350px; border: 1px solid #996c33; font-size: 14px;}
+.content table.bonus td{border: 1px solid #996c33; padding: 9px;}
+.content td.money{background: url(../images/money.png) no-repeat left bottom; width: 200px;}
+
+.content tr.rule-2{height: 150px;}
+.content td.cloud-2{width: 180px; height:22px; margin-top:20px; vertical-align: middle; font-size:16px; font-weight: bold; text-align: left;}
+.cloud-title{white-space: nowrap; word-wrap: normal;}
+.content td.cloud-2 img{padding-right: 10px;}
+.content td.cloud-2 p{font-weight: normal; font-size:14px; padding: 15px 0 0 40px; white-space: nowrap;word-wrap: normal;}
+
+.content tr.rule-3{height: 150px;}
+.content td.cloud-3{width: 180px; height:22px; margin-top:20px; vertical-align: middle; font-size:16px; font-weight: bold; text-align: left;white-space: nowrap;word-wrap: normal;}
+.content td.cloud-3 img{padding-right: 10px;}
+.content td.cloud-3 p{font-weight: normal; font-size:14px; padding: 15px 0 0 40px;white-space: nowrap;word-wrap: normal;}
+
+.reminder{margin-top: 30px; width: 835px; margin-bottom: 30px; color: #640a02;}
+.reminder td.reminder-title{background:url(../images/reminder.png) no-repeat; width: 220px; height: 135px;}
+.reminder td.reminder-list{vertical-align: middle;}
+.reminder td li{list-style-type: decimal; list-style-position: inside; text-align: left; font-size:14px; line-height: 40px;}
+
+.footer{text-align: center; height: 58px;}
+.footer p{padding-top: 20px; font-size: 12px; color:#6a3906; }
+
+.contact{position: absolute; z-index: 1000; background-color:#e74738; margin-left:810px; top:420px; text-align: center; width:137px; height:148px; color:#640a02; font-size:14px; padding-top:15px;  }
+.contact p{padding-bottom: 10px;}
+.number{background: url(../images/contact-bg.png) no-repeat; width: 110px; height: 25px; text-align: left; margin:5px auto 0 auto; vertical-align: bottom; padding-top: 5px;}
+.number a{color: #6e010a; padding-left: 30px; font-weight: bold; font-size:12px; text-decoration: none;}
+.number a:hover{text-decoration: underline;}

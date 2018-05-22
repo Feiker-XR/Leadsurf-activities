@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>2.2邮件-测试邮件</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	
+	.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+	
+	.pop-window-datepicker {z-index:710;}
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>站内信</dt>
+				<dd>发送站内信</dd>
+				<dd class="current"><a href="">系统消息管理</a></dd>
+				<dd>用户消息管理</dd>
+				<dt>邮件</dt>
+				<dd><a href="">邮件配置</a></dd>
+				<dd><a href="">邮件测试</a></dd>
+				<dt>通知任务</dt>
+				<dd><a href="#">通知任务管理</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">邮件</a> &gt; <a href="#">邮件管理</a> &gt; <a href="#">邮件配置</a></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="2.1.html">邮件配置</a></li>
+									<li class="current">邮件测试</li>
+								</ul>
+							</div>
+							<div class="ui-tab-content">
+							<form action="?" id="J-form">
+								<ul class="ui-form">
+									<li>
+										<label class="ui-label" for="">发件人邮箱：</label>
+										<input id="J-input-email" type="text" value="" class="input w-3">
+										<span class="ui-check"><i></i>发件人邮箱不能为空</span>
+									</li>
+									<li>
+										<label class="ui-label" for="">收件人名称：</label>
+										<input id="J-input-username" type="text" value="" class="input w-2">
+										<span class="ui-check"><i></i>收件人名称不能为空</span>
+									</li>
+									<li>
+										<label class="ui-label" for="">邮件标题：</label>
+										<input id="J-input-title" type="text" value="" class="input w-6">
+										<span class="ui-check"><i></i>邮件标题不能为空</span>
+									</li>
+									<li>
+										<label class="ui-label" for="">邮件内容：</label>
+										<div class="textarea w-10">
+											<textarea id="J-textarea-content"></textarea>
+											<span class="ui-check"><i></i>邮件内容不能为空</span>
+										</div>
+									</li>
+									<li class="ui-btn">
+										<a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">发 送<b class="btn-inner"></b></a>
+									</li>
+								</ul>
+							</form>
+							</div>
+						</div>
+							
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<script>
+(function($){
+	var start = $('#J-time-start'),
+		end = $('#J-time-end');
+	start.focus(function(){
+		(new phoenix.DatePicker({input:start})).show();
+	});
+	end.focus(function(){
+		(new phoenix.DatePicker({input:end})).show();
+	});
+	
+	
+	var checkEmail = function(){
+		var email = $('#J-input-email'),emailv = $.trim(email.val()),isPass = false;
+		if(emailv == ''){
+			email.parent().find('.ui-check').html('<i></i>发件人邮箱不能为空').show();
+			isPass = false;
+			email.focus();
+		}else if(!(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/).test(emailv)){
+			email.parent().find('.ui-check').html('<i></i>邮箱格式填写不正确').show();
+			isPass = false;
+			email.focus();
+		}else{
+			email.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-email').blur(function(){
+		checkEmail();
+	});
+	var checkUsername = function(){
+		var username = $('#J-input-username'),usernamev = $.trim(username.val()),isPass = false;
+		if(usernamev == ''){
+			username.parent().find('.ui-check').html('<i></i>收件人名称不能为空').show();
+			isPass = false;
+			username.focus();
+		}else{
+			username.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-username').blur(function(){
+		checkUsername();
+	});
+	var checkTitle = function(){
+		var title = $('#J-input-title'),titlev = $.trim(title.val()),isPass = false;
+		if(titlev == ''){
+			title.parent().find('.ui-check').html('<i></i>邮件标题不能为空').show();
+			isPass = false;
+			title.focus();
+		}else{
+			title.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-title').blur(function(){
+		checkTitle();
+	});
+	var checkContent = function(){
+		var content = $('#J-textarea-content'),contentv = $.trim(content.val()),isPass = false;
+		if(contentv == ''){
+			content.parent().find('.ui-check').html('<i></i>邮件内容不能为空').show();
+			isPass = false;
+			content.focus();
+		}else{
+			content.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-textarea-content').blur(function(){
+		checkContent();
+	});
+	
+	$('#J-button-submit').click(function(){
+		if(checkEmail() && checkUsername() && checkTitle() && checkContent()){
+			$('#J-form').submit();
+		}
+	});
+
+	
+})(jQuery);
+</script>
+
+
+
+	
+	
+</body>
+</html>

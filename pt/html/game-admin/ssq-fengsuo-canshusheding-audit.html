@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>组三组六豹子盈亏详情  封锁数据</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<style>
+	.ui-label {height:24px;}
+	.ui-form li {margin:5px 0;}
+	</style>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li class="current"><a href="1.171.html">封锁</a></li>
+									<li><a href="1.191.html">变价</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content" id="J-list-container">
+							
+								<ul class="ui-tab-title clearfix">
+									<li><a href="1.171.html">封锁数据</a></li>
+									<li class="current"><a href="1.181.html">封锁参数设定</a></li>
+								</ul>
+
+								<!--ssq-content-area start-->
+								<div id="J-content-info" class="ssq-content-area ssq-audit">
+									<div class="tab-title">
+										<span>双色球封锁参数设置项</span>
+										<a id="J-audit-button" href="#" class="w-2 button-audit btn btn-important">审核</a>
+									</div>
+									<table class="table table-info text-center">
+										<thead>
+											<tr>
+												<th colspan="3">封锁参数设置</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>5红球封锁注数</td>
+												<td>蓝球封锁注数</td>
+												<td>最大风险值</td>
+											</tr>
+											<tr>
+												<td>
+													<span class="tips-area">
+														<span>300</span>
+														<span class="tips-bonus">原值 300</span>
+													</span>
+												</td>
+												<td>
+													<span class="tips-area">
+														<span>10,000</span>
+														<span class="tips-bonus">原值 3000</span>
+													</span>
+												</td>
+												<td>4,050,000</td>
+											</tr>
+										</tbody>
+									</table>	
+									<div class="tab-title">封锁详情</div>
+									<table class="table table-info text-center">
+										<thead>
+											<tr>
+												<th rowspan="2">奖级</th>
+												<th colspan="2">
+													中奖条件
+												</th>
+												<th rowspan="2">封锁注数</th>
+												<th rowspan="2">单注奖金</th>
+												<th rowspan="2">奖项风险值</th>
+											</tr>
+											<tr>
+												<th>
+													红球
+												</th>
+												<th>
+													蓝球
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>三等奖</td>
+												<td class="text-left">
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+												</td>
+												<td>
+													<span class="ball blue"></span>
+												</td>
+												<td>300</td>
+												<td>3,500</td>
+												<td id="lv3">1,050,000.00</td>
+											</tr>
+											<tr>
+												<td rowspan="2">四等奖</td>
+												<td class="text-left">
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+												</td>
+												<td></td>
+												<td>300</td>
+												<td>300</td>
+												<td id="lv41">90,000.00</td>
+											</tr>
+											<tr>
+												<td class="text-left">
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+												</td>
+												<td>
+													<span class="ball blue"></span>
+												</td>
+												<td>8,400</td>
+												<td>300</td>
+												<td id="lv42">2,520,000.00</td>
+											</tr>
+											<tr>
+												<td rowspan="2">五等奖</td>
+												<td class="text-left">
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+												</td>
+												<td></td>
+												<td>8,400</td>
+												<td>18</td>
+												<td id="lv51">151,200.00</td>
+											</tr>
+											<tr>
+												<td class="text-left">
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+												</td>
+												<td>
+													<span class="ball blue"></span>
+												</td>
+												<td>10,000</td>
+												<td>18</td>
+												<td id="lv52">180,000.00</td>
+											</tr>
+											<tr>
+												<td rowspan="3">六等奖</td>
+												<td class="text-left">
+													<span class="ball red"></span>
+													<span class="ball red"></span>
+												</td>
+												<td>
+													<span class="ball blue"></span>
+												</td>
+												<td>8,400</td>
+												<td>18</td>
+												<td id="lv61">100,000.00</td>
+											</tr>
+											<tr>
+												<td class="text-left">
+													<span class="ball red"></span>
+												</td>
+												<td>
+													<span class="ball blue"></span>
+												</td>
+												<td>10,000</td>
+												<td>18</td>
+												<td id="lv62">100,000.00</td>
+											</tr>
+											<tr>
+												<td class="text-left"></td>
+												<td>
+													<span class="ball blue"></span>
+												</td>
+												<td>10,000</td>
+												<td>18</td>
+												<td id="lv63">100,000.00</td>
+											</tr>
+											<tr>
+												<td colspan="5">最大风险值</td>
+												<td><strong id="maxnum">4,050,000</strong></td>
+											</tr>
+										</tbody>
+									</table>	
+								</div>	
+								<!--ssq-content-area over-->	
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	(function(){
+		var msg = new phoenix.Message();
+		var $button = $('#J-audit-button');
+
+		$button.click(function(){
+			msg.show({
+				content : '<div class="bd">'+
+				            '<div class="pop-title">'+
+				                '<i class="ico-waring"></i>'+
+				                '<h4 class="pop-text"> 您确认审核通过当前内容吗？</h4>'+
+				            '</div>'+
+				        '</div>',
+				mask: true,
+				confirmIsShow : true,
+				confirmFun: function(){
+					
+					$.ajax({
+						url: 'data.php',
+						type: 'GET',
+						dataType: 'json',
+						data: {isAudit: 1},
+					})
+					.done(function() {
+						
+					})
+					.fail(function() {
+						console.log("error");
+					})
+					.always(function() {
+						console.log("complete");
+					});
+					
+				},
+				cancelIsShow: true,
+				cancelFun: function(){
+					var me = this;
+
+					me.hide();
+				}
+
+			});
+		});
+	})();
+</script>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>5.1游戏异常审核-异常（已完成）</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	
+	.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+	
+	.pop-window-datepicker {z-index:710;}
+	</style>
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>审核管理</dt>
+				<dd class="current"> <a href="">游戏异常审核</a></dd>
+                <dd><a href="#">游戏审核设置</a></dd>
+				<dt>统计报表</dt>
+				<dd><a href="##">游戏明细表</a></dd>
+				<dd><a href="##">奖期营收报表</a></dd>
+				
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+                    
+                    	<h3 class="ui-title"><a href="3.1.html" class="more" >去查看本期方案记录&gt;&gt;</a>
+                        
+                        </h3>
+                        <ul class="ui-form  lottery-info">
+                            <li>
+                                <label class="ui-label w-2 big">彩种名称：</label>
+                                <span class="ui-singleline w-2">重庆时时彩</span>
+                                <label class="ui-label w-3 big">期号：</label>
+                                <span class="ui-singleline">2013071720130717 </span>
+                                <label class="ui-label w-3 big">销售时间：</label>
+                                <span class="ui-singleline">20130717 </span>
+                            </li>
+                            <li>
+                                <label class="ui-label w-2 big">理论开奖时间：</label>
+                                <span class="ui-singleline w-2">20121218012</span>
+                                <label class="ui-label w-3 big">开奖号码确认时间：</label>
+                                <span class="ui-singleline w-3">2012-10-09 11:34:33</span>
+                            </li>
+                            <li>
+                                <label class="ui-label w-2 big">处理状态：</label>
+                                <span class="ui-singleline w-5">异常记录 <span class="color-red">33</span> 条，已处理 <span class="color-green">20</span> 条。</span>
+                            </li>
+                        </ul>
+                    
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="5.2.html">待处理</a></li>
+									<li class="current">已完成</li>
+								</ul>
+							</div>
+							<div class="ui-tab-content">
+                            	
+                                <table class="table table-info" id="J-table">
+							<thead>
+								<tr>
+									
+									<th>用户名</th>
+									<th>单期奖金(&yen;)</th>
+									<th>单期中/投比</th>
+									<th>连续中奖期数</th>
+									<th>连续中奖次数 <i id="J-th-question" class="icon-question">?</i></th>
+                                    <th>单注最大奖金(&yen;)</th>
+									<th>辅助查看内容</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									
+									<td class="table-tool"><a class="ico-control ico-unfold" href="javascript:void(0);"></a><a href="" class="link">jiohfkjsbh</a></td>
+									
+									<td>1,000,000.00</td>
+									<td>133.33</td>
+									<td>5</td>
+									<td class="color-red">6</td>
+                                    <td>400,000.00</td>
+									<td>
+										<a href="" target="_blank">方案记录</a>
+										<a href="" target="_blank">交易记录</a>
+                                        <a href="" target="_blank">冻结用户</a>
+									</td>
+								</tr>
+								<tr style="display:none;">
+									<td></td>
+									<td colspan="6">
+										<table class="table table-border">
+											<thead>
+												<tr>
+                                                	
+													<th>方案编号</th>
+													<th>投注时间</th>
+													<th>投注金额(&yen;)</th>
+													<th>奖金(&yen;)</th>
+													<th>方案中/投比</th>
+													<th>单注最大奖金(&yen;)</th>
+													<th>单注最大中/投比</th>
+													<th>是否为追号单</th>
+													
+													<th>来源</th>
+													<th>审核</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+                                                	
+													<td><a href="" target="_blank">DCQC130320012FGC</a></td>
+													<td>2012-01-08 09:25:18 </td>
+													<td>250.00</td>
+													<td>300,000.00</td>
+													<td>1200.00</td>
+													<td>300,000.00</td>
+													<td>160.00</td>
+													<td>是</td>
+													<td>WEB</td>
+													
+													<td><a class="button-action button-noaudit" href="javascript:void(0);">审核</a></td>
+												</tr>
+												<tr>
+                                                	
+													<td><a href="" target="_blank">DCQC130320012FGC</a></td>
+													<td>2012-01-08 09:25:18 </td>
+													<td>250.00</td>
+													<td>300,000.00</td>
+													<td>1200.00</td>
+													<td>300,000.00</td>
+													<td>160.00</td>
+													<td>是</td>
+													<td>WEB</td>
+													
+													<td><a class="button-action button-noaudit" href="javascript:void(0);">审核</a></td>
+												</tr>
+												<tr>
+                                                	
+													<td><a href="" target="_blank">DCQC130320012FGC</a></td>
+													<td>2012-01-08 09:25:18 </td>
+													<td>250.00</td>
+													<td>300,000.00</td>
+													<td>1200.00</td>
+													<td>300,000.00</td>
+													<td>160.00</td>
+													<td>是</td>
+													<td>APP</td>
+													
+													<td><a class="button-action button-noaudit" href="javascript:void(0);">审核</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+
+								<tr>
+									
+									<td class="table-tool"><a class="ico-control ico-unfold" href="javascript:void(0);"></a><a href="" class="link">jiohfkjsbh</a></td>
+									
+									<td>1,000,000.00</td>
+									<td>133.33</td>
+									<td>5</td>
+									<td class="color-red">6</td>
+                                    <td>400,000.00</td>
+									<td>
+										<a href="" target="_blank">方案记录</a>
+										<a href="" target="_blank">交易记录</a>
+                                        <a href="" target="_blank">冻结用户</a>
+									</td>
+								</tr>
+								
+								<tr style="display:none;">
+									<td></td>
+									<td colspan="6">
+										<table class="table table-border">
+											<thead>
+												<tr>
+													<th>方案编号</th>
+													<th>投注时间</th>
+													<th>投注金额(&yen;)</th>
+													<th>奖金(&yen;)</th>
+													<th>方案中/投比</th>
+													<th>单注最大奖金(&yen;)</th>
+													<th>单注最大中/投比</th>
+													<th>是否为追号单</th>
+													
+													<th>来源</th>
+													<th>审核</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+                                                	
+													<td><a href="" target="_blank">DCQC130320012FGC</a></td>
+													<td>2012-01-08 09:25:18 </td>
+													<td>250.00</td>
+													<td>300,000.00</td>
+													<td>1200.00</td>
+													<td>300,000.00</td>
+													<td>160.00</td>
+													<td>是</td>
+													<td>WEB</td>
+													
+													<td><a class="button-action button-noaudit" href="javascript:void(0);">审核</a></td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								
+                                <tr>
+									
+									<td class="table-tool"><a class="ico-control ico-unfold" href="javascript:void(0);"></a><a href="" class="link">jiohfkjsbh</a></td>
+									
+									<td>1,000,000.00</td>
+									<td>133.33</td>
+									<td>5</td>
+									<td class="color-red">6</td>
+                                    <td>400,000.00</td>
+									<td>
+										<a href="" target="_blank">方案记录</a>
+										<a href="" target="_blank">交易记录</a>
+                                        <a href="" target="_blank">冻结用户</a>
+									</td>
+								</tr>
+								
+								<tr style="display:none;">
+									<td></td>
+									<td colspan="6">
+										<table class="table table-border">
+											<thead>
+												<tr>
+													<th>方案编号</th>
+													<th>投注时间</th>
+													<th>投注金额(&yen;)</th>
+													<th>奖金(&yen;)</th>
+													<th>方案中/投比</th>
+													<th>单注最大奖金(&yen;)</th>
+													<th>单注最大中/投比</th>
+													<th>是否为追号单</th>
+													
+													<th>来源</th>
+													<th>审核</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+                                                	
+													<td><a href="" target="_blank">DCQC130320012FGC</a></td>
+													<td>2012-01-08 09:25:18 </td>
+													<td>250.00</td>
+													<td>300,000.00</td>
+													<td>1200.00</td>
+													<td>300,000.00</td>
+													<td>160.00</td>
+													<td>是</td>
+													<td>WEB</td>
+													
+													<td><a class="button-action button-noaudit" href="javascript:void(0);">审核</a></td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+						
+								<div class="page-wrapper">
+							<span class="page-text">
+								<span class="lower">共102条记录</span>
+							</span>
+							<div class="page page-right">
+								<a class="prev" href="#">上一步</a>
+								<a href="#">1</a>
+								<a href="#">2</a>
+								<a class="current" href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">...</a>
+								<a class="next" href="#">下一步</a>
+								<span class="page-few">到第 <input type="text" class="input" value=""> /100页</span>
+								<input type="button" class="page-btn" value="确 认">
+							</div>
+						</div>
+						
+						
+							</div>
+						</div>
+				
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div id="J-form-hidden" style="display:none;">
+	
+						<input type="hidden" name="lotteryId" id="J-hidden-lotteryId" value="1" />
+						<input type="hidden" name="lotteryName" id="J-hidden-lotteryName" value="时时彩" />
+						<input type="hidden" name="userName" id="J-hidden-userName" value="哇哈哈" />
+						<input type="hidden" name="days" id="J-hidden-days" value="3" />
+						<input type="hidden" name="startTime" id="J-hidden-startTime" value="2013-10-14 17:11:22" />
+						<input type="hidden" name="endTime" id="J-hidden-endTime" value="2013-10-16 17:11:22" />
+						<input type="hidden" name="statusId" id="J-hidden-statusId" value="1" />
+						<input type="hidden" name="status" id="J-hidden-status" value="处理中" />
+
+						
+						<input type="hidden" name="singleBonus" id="J-hidden-singleBonus" value="100" />
+						<input type="hidden" name="singleProportion" id="J-hidden-singleProportion" value="2" />
+						<input type="hidden" name="singleOneBonus" id="J-hidden-singleOneBonus" value="100" />
+						<input type="hidden" name="singleOneProportion" id="J-hidden-singleOneProportion" value="1" />
+						<input type="hidden" name="times" id="J-hidden-times" value="2" />
+						
+						
+	</div>
+
+<script type="text/template" id="J-tpl-export">
+<form action="?action=download" target="_blank" id="J-download-form">
+
+						<input type="hidden" name="action" value="download" />
+						
+						<input type="hidden" name="lotteryId" id="J-hidden-lotteryId" value="1" />
+						<input type="hidden" name="lotteryName" id="J-hidden-lotteryName" value="时时彩" />
+						<input type="hidden" name="userName" id="J-hidden-userName" value="哇哈哈" />
+						<input type="hidden" name="days" id="J-hidden-days" value="3" />
+						<input type="hidden" name="startTime" id="J-hidden-startTime" value="2013-10-14 17:11:22" />
+						<input type="hidden" name="endTime" id="J-hidden-endTime" value="2013-10-16 17:11:22" />
+						<input type="hidden" name="statusId" id="J-hidden-statusId" value="1" />
+						<input type="hidden" name="status" id="J-hidden-status" value="处理中" />
+						
+						<input type="hidden" name="singleBonus" id="J-hidden-singleBonus" value="100" />
+						<input type="hidden" name="singleProportion" id="J-hidden-singleProportion" value="2" />
+						<input type="hidden" name="singleOneBonus" id="J-hidden-singleOneBonus" value="100" />
+						<input type="hidden" name="singleOneProportion" id="J-hidden-singleOneProportion" value="1" />
+						<input type="hidden" name="times" id="J-hidden-times" value="2" />
+						
+
+						
+<ul class="ui-form ui-form-small">
+									<li><span class="ui-singleline">为您导出符合以下条件的数据</span></li>
+									<li data-data="<#=lotteryName#>">
+										<label class="ui-label w-2" for="">彩种名称：</label>
+										<span class="ui-singleline"><#=lotteryName#></span>
+									</li>
+									<li data-data="<#=userName#>">
+										<label class="ui-label w-2" for="">用户名：</label>
+										<span class="ui-singleline"><#=userName#></span>
+									</li>
+									<li data-data="<#=startTime#><#=endTime#>">
+										<label class="ui-label w-2" for="">投注时间：</label>
+										<span class="ui-singleline"><#=startTime#> - <#=endTime#></span>
+									</li>
+									<li data-data="<#=days#>">
+										<label class="ui-label w-2" for="">投注时间：</label>
+										<span class="ui-singleline"><#=days#>天</span>
+									</li>
+									<li data-data="<#=status#>">
+										<label class="ui-label w-2" for="">状态：</label>
+										<span class="ui-singleline"><#=status#></span>
+									</li>
+
+</ul>
+<ul class="ui-form ui-form-small">
+									<li style="text-align:center;"><span class="ui-singleline">请选择导出报表的格式</span></li>
+									<li class="radio-list" style="text-align:center;">
+										<label class="label" for="J-radio-doc-type-1"><input checked="checked" id="J-radio-doc-type-1" name="radio-doc-type" type="radio" class="radio radio-doc-type" value="1">excel</label>
+										<label class="label" for="J-radio-doc-type-2"><input id="J-radio-doc-type-2" name="radio-doc-type" type="radio" class="radio radio-doc-type" value="2">txt</label>
+									</li>
+</ul>
+</form>
+</script>
+	
+	
+	
+<script id="J-tpl-noaudit" type="text/template">
+审核备注：
+<div><textarea style="width:400px;height:80px;"></textarea></div>
+</script>
+	
+	
+	
+<script>
+(function($){
+	//弹窗
+	var Wd = phoenix.Message.getInstance(),
+		table = $('#J-table'),
+		Tip = phoenix.Tip.getInstance();
+	
+	$('#J-th-question').hover(function(){
+		Tip.setText('用户在连续中奖期数中的所有中奖次数加和，<br />一个方案中的任一注单中奖即记为一次');
+		Tip.show(-260, -54, this);
+	},function(){
+		Tip.hide();
+	});
+	
+	
+	
+	$('#J-button-all').click(function(){
+		var dom = $(this),text = $.trim(dom.text()),cls = 'open';
+		if(dom.hasClass(cls)){
+			dom.removeClass(cls);
+			dom.html('展开<b class="btn-inner"></b>');
+			table.find('.ico-control').each(function(){
+				var el = $(this),tr = el.parent().parent().next();
+				el.removeClass('ico-fold').addClass('ico-unfold');
+				tr.hide();
+			});
+		}else{
+			dom.addClass(cls);
+			dom.html('收起<b class="btn-inner"></b>');
+			table.find('.ico-control').each(function(){
+				var el = $(this),tr = el.parent().parent().next();
+				el.removeClass('ico-unfold').addClass('ico-fold');
+				tr.show();
+			});
+		}
+
+	});
+	
+	table.on('click', '.ico-control', function(){
+		var dom = $(this),cls1 = 'ico-unfold',cls2 = 'ico-fold',tr = dom.parent().parent().next();
+		if(dom.hasClass(cls1)){
+			dom.removeClass(cls1).addClass(cls2);
+			tr.show();
+		}else{
+			dom.removeClass(cls2).addClass(cls1);
+			tr.hide();
+		}
+	});
+	
+	table.on('click', '.button-action', function(){
+		var dom = $(this);
+		//未审核
+		if(dom.hasClass('button-noaudit')){
+			Wd.show({
+				mask:true,
+				content:$('#J-tpl-noaudit').text(),
+				confirmIsShow:true,
+				confirmText:'通过',
+				confirmFun:function(){
+					$.ajax({
+						url:'data.php?type=1',
+						dataType:'json',
+						success:function(data){
+							if(Number(data['isSuccess']) == 1){
+								dom.removeClass('button-noaudit').html('<span style="color:#999;">已通过</span>');
+								Wd.hide();
+							}else{
+								Wd.show({
+									mask:true,
+									content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+									cancelIsShow:true,
+									cancelText:'关闭',
+									cancelFun:function(){
+										Wd.hide();
+									}
+								});
+							}
+						}
+					});
+				},
+				cancelIsShow:true,
+				cancelText:'不通过',
+				cancelFun:function(){
+					
+					Wd.show({
+						mask:true,
+						content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确定该方案审核不通过吗？</h4></div></div>',
+						confirmIsShow:true,
+						confirmText:'确定',
+						confirmFun:function(){
+							$.ajax({
+								url:'data.php?type=2',
+								dataType:'json',
+								success:function(data){
+									if(Number(data['isSuccess']) == 1){
+										dom.removeClass('button-noaudit').html('<span style="color:red;">未通过</span>');
+										Wd.hide();
+									}else{
+										Wd.show({
+											mask:true,
+											content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+											cancelIsShow:true,
+											cancelText:'关闭',
+											cancelFun:function(){
+												Wd.hide();
+											}
+										});
+									}
+								}
+							});
+						},
+						cancelIsShow:true,
+						cancelText:'取消',
+						cancelFun:function(){
+							Wd.hide();
+						}
+					});
+					
+
+				}
+			});
+		}
+	});
+	
+})(jQuery);
+</script>
+	
+	
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,63 @@
+<div class="container ar-login-box">
+    <div class="page-header">
+        <h1 class="ar-title1">代理报表管理</h1>
+    </div>
+    <div class="tile tile-login">
+        <div class="input-icon">
+            <span class="fa-user fa"></span>
+            <input type="text" class="form-control" placeholder="用户名">
+        </div>
+        <div class="input-icon">
+            <span class="fa-lock fa"></span>
+            <input type="password" class="form-control" placeholder="●●●●●●">
+        </div>
+
+        <a href="#fakeLink" class="btn btn-block btn-primary" id="login">登录</a>
+
+        <div class="login-action clearfix">
+            <div class="col-md-8 col-xs-9">
+                <label class="checkbox" for="checkbox1">
+                    <span class="icons"><span class="first-icon"></span><span class="second-icon fa fa-check"></span></span><input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">记住账户名
+                </label>
+            </div>
+            <div class="col-md-4 col-xs-3">
+                <a href="#fakeLink">忘记密码?</a>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">登录失败</h4>
+                    </div>
+                    <div class="modal-body">
+                        账号或密码错误
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tile tile-login" style="display: none;">
+        <img class="logo" src="images/yzm.png" alt="" width="150">
+        <input type="text" class="form-control" placeholder="请输入验证码">
+        <a href="#fakeLink" class="btn btn-block btn-primary">确定</a>
+    </div>
+</div>
+<script>
+        $('#login').click(function(){
+            $('#myModal').modal('show');
+        })
+        if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
+            bodyTag = document.getElementsByTagName('body')[0];
+            bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';
+        }
+        setTimeout(function() {
+            window.scrollTo(0, 1)
+        }, 0);
+</script>

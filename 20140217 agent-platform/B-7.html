@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>代理平台后台-评分管理模块</title>
+<link rel="stylesheet" href="style/style.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="style/jquery-ui-1.10.4.custom.css">
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+</head>
+<body class="">
+	<div class="wrapper">
+		<div class="main">
+			<h2>评分管理模块</h2>
+			
+			
+			<div id="J-tab" class="ui-tab">
+				<ul class="ui-tab-title">
+					<li class="current">综合评分管理</li>
+					<li>用户评价</li>
+				</ul>
+				<form id="J-form" action="?">
+				<ul class="ui-tab-content">
+					<li class="ui-tab-panel">
+						<div class="ui-title">每项得分的数值范围应在85 - 99之间选择，综合得分是6项评分的平均值。</div>
+
+						
+						<ul class="ui-form">
+							<li>
+								<label for="info" class="ui-label">品牌信誉：</label>
+								<select class="ui-select" id="" name="" style="width:60px;">
+									<option value="1">99</option>
+									<option value="2">98</option>
+								</select>
+								<span class="ui-info">分</span>
+							</li>
+							<li>
+								<label for="info" class="ui-label">彩种玩法：</label>
+								<select class="ui-select" id="" name="" style="width:60px;">
+									<option value="1">99</option>
+									<option value="2">98</option>
+								</select>
+								<span class="ui-info">分</span>
+							</li>
+							<li>
+								<label for="info" class="ui-label">资金充提：</label>
+								<select class="ui-select" id="" name="" style="width:60px;">
+									<option value="1">99</option>
+									<option value="2">98</option>
+								</select>
+								<span class="ui-info">分</span>
+							</li>
+							<li>
+								<label for="info" class="ui-label">服务质量：</label>
+								<select class="ui-select" id="" name="" style="width:60px;">
+									<option value="1">99</option>
+									<option value="2">98</option>
+								</select>
+								<span class="ui-info">分</span>
+							</li>
+							<li>
+								<label for="info" class="ui-label">操作体验：</label>
+								<select class="ui-select" id="" name="" style="width:60px;">
+									<option value="1">99</option>
+									<option value="2">98</option>
+								</select>
+								<span class="ui-info">分</span>
+							</li>
+							<li>
+								<label for="info" class="ui-label">加奖活动：</label>
+								<select class="ui-select" id="" name="" style="width:60px;">
+									<option value="1">99</option>
+									<option value="2">98</option>
+								</select>
+								<span class="ui-info">分</span>
+							</li>
+							<li>
+								<label for="info" class="ui-label">您的综合评分为：</label>
+								<span class="ui-info"><strong>98</strong>分</span>
+							</li>
+							<li>
+								<label for="info" class="ui-label">总评人数：</label>
+								<input id="J-input" type="text" class="input" style="width:60px;" value="1" />
+								<span class="ui-info">人</span>
+								<span class="ui-text-info">建议填写500-99999以内的任意数值</span>
+							</li>
+						</ul>
+					</li>
+					<li id="J-panel-user" class="ui-tab-panel" style="display:none">
+						<div class="ui-title">每条评价包含用户昵称、头像、评论内容、时间及评分。（为了让用户感觉到真实性，请定期更新维护。）</div>
+						<table class="ui-table">
+							<tbody>
+							
+							
+							
+								<tr>
+									<td rowspan="2">
+										<p class="ui-text-title">用户头像</p>
+										<div class="user-pic"></div>
+										<input type="file">
+									</td>
+									<td>
+										<p class="ui-text-title">用户昵称</p>
+										<input type="text" value="" maxlength="100" class="input input-name" style="width:100px" />
+									</td>
+									<td>
+										<p class="ui-text-title">评分</p>
+										<select class="ui-select" id="" name="" style="width:100px">
+											<option value="1">1</option>
+											<option value="2">2</option>
+										</select>
+									</td>
+									<td>
+										<p class="ui-text-title" >时间</p>
+										<input type="text" value="2014/02/06" class="input input-time" style="width:100px" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+									<p class="ui-text-title">评价内容</p>
+									<textarea name="" id="" cols="30" rows="10" class="ui-textarea" style="width:360px"></textarea>
+									</td>
+								</tr>
+								
+								
+								
+								
+								
+								<tr>
+									<td rowspan="2">
+										<p class="ui-text-title">用户头像</p>
+										<div class="user-pic"></div>
+										<input type="file">
+									</td>
+									<td>
+										<p class="ui-text-title">用户昵称</p>
+										<input type="text" value="" maxlength="100" class="input input-name" style="width:100px" />
+									</td>
+									<td>
+										<p class="ui-text-title">评分</p>
+										<select class="ui-select" id="" name="" style="width:100px">
+											<option value="1">1</option>
+											<option value="2">2</option>
+										</select>
+									</td>
+									<td>
+										<p class="ui-text-title" >时间</p>
+										<input type="text" value="2014/02/06" class="input input-time" style="width:100px" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+									<p class="ui-text-title">评价内容</p>
+									<textarea name="" id="" cols="30" rows="10" class="ui-textarea" style="width:360px"></textarea>
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td rowspan="2">
+										<p class="ui-text-title">用户头像</p>
+										<div class="user-pic"></div>
+										<input type="file">
+									</td>
+									<td>
+										<p class="ui-text-title">用户昵称</p>
+										<input type="text" value="" maxlength="100" class="input input-name" style="width:100px" />
+									</td>
+									<td>
+										<p class="ui-text-title">评分</p>
+										<select class="ui-select" id="" name="" style="width:100px">
+											<option value="1">1</option>
+											<option value="2">2</option>
+										</select>
+									</td>
+									<td>
+										<p class="ui-text-title" >时间</p>
+										<input type="text" value="2014/02/06" class="input input-time" style="width:100px" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+									<p class="ui-text-title">评价内容</p>
+									<textarea name="" id="" cols="30" rows="10" class="ui-textarea" style="width:360px"></textarea>
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td rowspan="2">
+										<p class="ui-text-title">用户头像</p>
+										<div class="user-pic"></div>
+										<input type="file">
+									</td>
+									<td>
+										<p class="ui-text-title">用户昵称</p>
+										<input type="text" value="" maxlength="100" class="input input-name" style="width:100px" />
+									</td>
+									<td>
+										<p class="ui-text-title">评分</p>
+										<select class="ui-select" id="" name="" style="width:100px">
+											<option value="1">1</option>
+											<option value="2">2</option>
+										</select>
+									</td>
+									<td>
+										<p class="ui-text-title" >时间</p>
+										<input type="text" value="2014/02/06" class="input input-time" style="width:100px" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+									<p class="ui-text-title">评价内容</p>
+									<textarea name="" id="" cols="30" rows="10" class="ui-textarea" style="width:360px"></textarea>
+									</td>
+								</tr>
+								
+								
+								
+								
+								<tr>
+									<td rowspan="2">
+										<p class="ui-text-title">用户头像</p>
+										<div class="user-pic"></div>
+										<input type="file">
+									</td>
+									<td>
+										<p class="ui-text-title">用户昵称</p>
+										<input type="text" value="" maxlength="100" class="input input-name" style="width:100px" />
+									</td>
+									<td>
+										<p class="ui-text-title">评分</p>
+										<select class="ui-select" id="" name="" style="width:100px">
+											<option value="1">1</option>
+											<option value="2">2</option>
+										</select>
+									</td>
+									<td>
+										<p class="ui-text-title" >时间</p>
+										<input type="text" value="2014/02/06" class="input" style="width:100px" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+									<p class="ui-text-title">评价内容</p>
+									<textarea name="" id="" cols="30" rows="10" class="ui-textarea" style="width:360px"></textarea>
+									</td>
+								</tr>
+								
+								
+								
+							</tbody>
+						</table>
+					</li>
+				</ul>
+				
+						
+										<div id="J-wd-msg-right" class="pop-mini w-4">
+											<i class="ico-success"></i>
+											<h4 class="pop-text"></h4>
+										</div>
+										<div id="J-wd-msg-error" class="pop-mini w-4">
+											<i class="ico-error"></i>
+											<h4 class="pop-text"></h4>
+										</div>
+				
+				<div style="text-align:center;padding:20px;">
+					<input type="button" value="提交并保存" class="ui-button J-button-submit" />
+				</div>
+				</form>
+
+
+
+
+			</div>
+			
+			
+			
+			<div class="sub"></div>
+		</div>
+	</div>
+
+
+<script>
+(function($){
+	//type = 1 成功消息
+	//type = 0 错误消息
+	var msgDom = [$('#J-wd-msg-error'), $('#J-wd-msg-right')],
+		showMsg = function(type, text){
+			var el = msgDom[type];
+			msgDom[0].hide();
+			msgDom[1].hide();
+			el.find('.pop-text').html(text);
+			el.show();
+			setTimeout(function(){
+				el.hide();
+			}, 3000);
+		};
+	//tab切换
+	var par = $('#J-tab'),
+		triggers = par.find('.ui-tab-title li'),
+		panels = par.find('.ui-tab-panel');
+	triggers.click(function(){
+		var index = triggers.index(this),cls = 'current';
+		triggers.removeClass(cls);
+		triggers.eq(index).addClass(cls);
+		panels.hide();
+		panels.eq(index).show();
+	});
+	
+	$('#J-input').keyup(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+		var v = Number(this.value);
+		if(v > 99999){
+			this.value = 99999;
+		}
+	}).blur(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+		var v = Number(this.value);
+		if(v < 500){
+			this.value = 500;
+		}
+	});
+	
+	
+	$(".input-time").datepicker();
+	
+	$('#J-panel-user').find('.ui-textarea').keyup(function(){
+		this.value = this.value.substr(0, 100);
+	}).blur(function(){
+		this.value = this.value.substr(0, 100);
+	});
+	
+	
+	
+	
+	$('.J-button-submit').click(function(){
+		var names = $('#J-panel-user').find('.input-name'),
+			comments = $('#J-panel-user').find('.ui-textarea'),
+			isPass = true;
+		names.each(function(i){
+			if($.trim(this.value) == ''){
+				isPass = false;
+				showMsg(0, '昵称不能为空');
+				return false;
+			}
+			if($.trim(comments.get(i).value) == ''){
+				isPass = false;
+				showMsg(0, '评价内容不能为空');
+				return false;
+			}
+		});
+		if(!isPass){
+			return;
+		}
+		
+		$('#J-form').submit();
+		
+	});
+	
+	
+	
+})(jQuery);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.clearfix {
+*zoom:1;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
+
+body{background-color:#525264; font:12px/1.5 Arial,"宋体",Helvetica,sans-serif;}
+.register-box{position:absolute;top:50%;left:50%;margin-top:-250px;margin-left:-490px;width:980px;height:500px;background-color:#FFF;border-radius:5px;box-shadow:1px 2px 3px rgba(0,0,0,0.3);}
+.register-top{padding:30px 40px;overflow:hidden;}
+.register-top .logo{float:left;width:214px;height:62px;background:url(../images/register-logo.png) 0 0 no-repeat;}
+.register-top .login{float:right;padding-top:10px;padding-right:10px;font-family:microsoft yahei;font-size:18px;color:#888;}
+.register-top .login a{color:#DB4313;text-decoration:none;}
+.register-content{padding-left:40px;}
+.slider{float:left;width:500px;overflow:hidden;position:relative;}
+.slider-pic{height:300px;}
+.slider-pic li {float:left;}
+.slider-number{padding:20px;text-align:center;}
+.slider-number li{display:inline-block;*display:inline;*zoom:1;width:6px;height:6px;margin:0 3px;overflow:hidden;background-color:#E0E0E0;border-radius:3px;}
+.slider-number li.current{background-color:#B3264F;}
+.input{display:inline-block;width:262px;height:18px;padding:7px 4px;border:1px solid #CECECE;background-color:#FFF;line-height:18px;font-size:12px;color:#BDBDBD;vertical-align:middle;}
+.input:hover{border-color: #999;}
+.input-error, .input-error:hover {border-color: #E30B0B;}
+.btn{display:inline-block;width:131px;height:44px;text-align:center;line-height:44px;background:url(../images/un-btn.png) 0 0 no-repeat;font-size:14px;font-weight:700;color:#555;text-decoration:none;}
+.btn:hover{width:131px;height:44px;background:url(../images/un-btn.png) 0 -50px no-repeat;}
+.ui-form {float:left;color:#555;}
+.ui-form li {position:relative;padding-bottom:35px;}
+.ui-form .verify-code {
+    cursor: pointer;
+    display: inline-block;
+    height: 34px;
+    margin-left: 14px;
+    vertical-align: middle;
+    width: 100px;
+}
+.ui-label {
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    margin-right: -4px;
+    padding-right: 10px;
+    text-align: right;
+    vertical-align: middle;
+    width: 110px;
+}
+.ui-select {
+    border: 1px solid #CECECE;
+    height: 34px;
+    padding: 7px 4px;
+    vertical-align: middle;
+    width: 200px;
+}
+.ui-btn{margin-left: 120px;}
+.ui-check{position:absolute;top:38px;left:120px;color:#E20000;white-space: nowrap;display:none;}
+.check-right{display:inline-block;width:19px;height:14px;margin-left:5px;background:url(../images/ico-check-right.png) 0 0 no-repeat;vertical-align:middle;display:none;}
+.check-loading{display:inline-block;width:19px;height:14px;margin-left:5px;background:url(../images/ico-loading.gif) 0 0 no-repeat;vertical-align:middle;display:none;}
+
+.ui-verify-code .input{width:145px;}
+.copy{position:absolute;bottom:-36px;width:100%;text-align:center;color:#82828C;}
+.alert {padding: 50px 10px;text-align: center;}
+.alert i {display: inline-block;width: 57px;height: 57px;margin-right: 15px;background:url(../images/ico-alert.png) 0 0 no-repeat;vertical-align: top;}
+.alert .txt {display: inline-block;*display:inline;*zoom:1;line-height: 24px;text-align: left;vertical-align: middle;overflow: hidden;font-family:microsoft yahei;font-size:14px;color:#333;}
+.alert .txt h4{font-size:20px;}
+.alert .txt a{color:#333;text-decoration:none;}
+.alert .txt .btn{margin:20px 0;background-position:0 -100px;color:#FFF;}
+.alert .txt .btn:hover{margin:20px 0;background-position:0 -150px;}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>JULY PRIZE</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style/reset.css"/>
+<link rel="stylesheet" href="style/style.css"/>
+</head>
+<body>
+	<div class="container">
+		<div class="banner"></div>
+		<div class="content">
+			<!--<ul>
+				<li><img src="images/cloud-title.png" alt="Title" /></li>
+				<li>活动期间，以周为单位，当周日均奖金达到一定标准，即可获得每周一次的额外奖金:</li>
+			</ul>-->
+			
+			
+			<table>
+				<tr>
+					<td colspan="3" class="title"><p class="title-text">活动期间，以周为单位，当周日均奖金达到一定标准，即可获得每周一次的额外奖金:</p></td>
+					
+				</tr>
+				<tr class="rule-1">
+					<td class="cloud-1"><img src="images/cloud-1.png" alt="Rule #1" />奖励发放标准:</td>
+					<td class="cloud-1-table">
+						<table class="bonus">
+							<tr>
+								<td>一周日均奖金范围（元）</td>
+								<td>每周奖励金额（元）</td>
+							</tr>
+							<tr>
+								<td>118～687.99</td>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>688～2,887.99</td>
+								<td>48</td>
+							</tr>
+							<tr>
+								<td>2,888～18,887.99</td>
+								<td>218</td>
+							</tr>
+							<tr>
+								<td>18,888～199,999.99</td>
+								<td>1568</td>
+							</tr>
+						</table>
+					</td>
+					<td class="money"></td>
+				</tr>
+				<tr class="rule-2">
+					<td colspan="3" class="cloud-2">
+						<div class="cloud-title"><img src="images/cloud-2.png" alt="Rule #2" />一周日均奖金计算方法:</div>
+						<p>活动期间，用户一周（周一00:00～周日24:00）内所获得的总奖金额除以7天即为本周的每日平均奖金;</p>
+					</td>					
+				</tr>
+				<tr class="rule-3">
+					<td colspan="3" class="cloud-3">
+						<div class="cloud-title"><img src="images/cloud-3.png" alt="Rule #3" /> 奖励的发放:</div>
+						<p>(1) 平台将在每周结束后两天内将加奖奖金以游戏币的形式打入获奖用户账户；</p>
+						<p>(2) 奖励每周发放一次。</p>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="reminder">
+				<table>
+					<tr>
+						<td class="reminder-title"></td>
+						<td class="reminder-list">
+							<ol>
+								<li>每位用户仅可在每周一次性获得一次符合条件的最高加奖，不可重复获奖；</li>
+								<li>7月1日-7日为活动第一周，7月8日-7月14日为活动第二周；</li>
+								<li>奖金计算以活动期间已实际已经开奖的奖金计算；</li>
+								<li>娱乐平台对与本活动相关的所有事项具有最终决定及解释权。</li>
+							</ol>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="footer">
+				<p>© 2001-2013 PH158. 娱乐平台拥有本次活动的最终解释权. All rights reserved.</p>
+			</div>
+			
+			<div id="float" class="contact" >
+				<p>赶快联系凤凰总代</p>
+				<h3 class="number"><a href="#">915661855</a></h3>
+				<h3 class="number"><a href="#">2806407633</a></h3>
+				<h3 class="number"><a href="#">977127862</a></h3>
+			</div>
+		</div>
+	</div>
+	
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>	
+<script>
+(function($){
+	var win = $(window),float = $('#float'),top = parseInt(float.css('top')),sTop = win.scrollTop(),_sTop = sTop,
+	vbox = $('#videobox'),vboxTop = parseInt(vbox.css('top'));
+	vbox.css('left', win.width()/2 - vbox.width()/2);
+	
+	setInterval(function(){
+		_sTop = win.scrollTop();
+		if(sTop != _sTop){
+			float.stop().animate({top:top + _sTop}, 250);
+			sTop = _sTop;
+			
+		}
+	},50);
+	
+	win.resize(function(e){
+		vbox.css('left', win.width()/2 - vbox.width()/2);
+	});
+	
+})(jQuery);
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe1cc8b23c900eec1540892c56d0ff62f' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

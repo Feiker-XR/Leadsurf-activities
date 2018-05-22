@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>代理平台后台-SEO配置</title>
+<link rel="stylesheet" href="style/style.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="">
+	<div class="wrapper">
+		<div class="main">
+			<h2>SEO配置</h2>
+			<form id="J-form" action="?">
+			<ul class="ui-form">
+				<li>
+					<p class="ui-text-title">网站描述 (Description)</p>
+					<textarea class="ui-textarea" rows="10" cols="30" id="" name=""></textarea>
+					<p class="ui-text-prompt">输入你的网站描述，一般不超过200个字符</p>
+				</li>
+				<li>
+					<p class="ui-text-title">网站关键词 (Keywords)</p>
+					<textarea class="ui-textarea" rows="10" cols="30" id="" name=""></textarea>
+					<p class="ui-text-prompt">输入你的网站关键词，每个关键词中间请用英文逗号＂,＂隔开，一般不超过100个字符</p>
+				</li>
+				<li>
+					<p class="ui-text-title">网站统计代码</p>
+					<textarea class="ui-textarea" rows="10" cols="30" id="" name=""></textarea>
+					<p class="ui-text-prompt">请输入统计代码，例如百度统计、站长统计</p>
+				</li>
+				<li>
+					<p class="ui-text-title">备案信息</p>
+					<input type="text" value="1" class="input">
+					<p class="ui-text-prompt">网站备案号</p>
+				</li>
+				<li>
+					<input id="J-button-submit" type="button" value="提交并保存" class="ui-button">
+				</li>
+			</ul>
+			</form>
+			
+
+		</div>
+		<div class="sub"></div>
+	</div>
+
+<script>
+(function($){
+	
+	$('#J-button-submit').click(function(){
+		$('#J-form').submit();
+	});
+	
+})(jQuery);
+</script>
+
+</body>
+</html>

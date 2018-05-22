@@ -1,0 +1,1181 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>2.11奖期流程管理-流程监控-流程监控详情页（异常处理）</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	
+	.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+	
+	.pop-window-datepicker {z-index:710;}
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd> <a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd ><a href="2.1.html" >流程监控</a></dd>
+				<dd class="current"><a href="2.2.html">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="3.1.html">方案记录</a></dd>
+				<dd><a href="3.2.html">追号记录</a></dd>
+				<dd><a href="3.31.html">异常方案记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="4.1.html">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<h3 class="ui-title"><a href="#" class="more">去查看本期方案记录>></a></h3>
+						<ul class="ui-form">
+							<li>
+								<label class="ui-label w-3 big">彩种名称：</label>
+								<span class="ui-singleline">重庆时时彩</span>
+								<label class="ui-label w-2 big">期号：</label>
+								<span class="ui-singleline">20120108-033</span>
+								<label class="ui-label w-2 big">开奖号码：</label>
+								<span class="ui-singleline">1 2 3 4 5</span>
+							</li>
+							<li>
+								<label class="ui-label w-3 big">异常情况描述：</label>
+								<span class="ui-singleline">官方提前开奖110秒(派奖已暂缓)、存在风险方案（待审核）、存在恶意方案</span>
+							</li>
+							<li>
+								<label class="ui-label w-3 big">异常情况描述：</label>
+								<span class="ui-singleline">官方提前开奖110秒(已处理)、存在风险方案（待审核）、存在恶意方案</span>
+							</li>
+							<li>
+								<label class="ui-label w-3 big">异常情况描述：</label>
+								<span class="ui-singleline">官方提前开奖10秒</span>
+							</li>
+							<li>
+								<label class="ui-label w-3 big">异常情况描述：</label>
+								<span class="ui-singleline">存在风险方案（待审核）</span>
+							</li>
+							
+						</ul>
+						<h3 class="ui-title" style="background:#EEE;"><a href="#" class="more">去查看全部异常流程记录>></a>异常流程处理</h3>
+						<ul class="ui-form" id="J-panel-container">
+							<li>
+								<label class="ui-label w-3 ">异常描述：</label>
+								<span class="ui-singleline">系统检查到官方提前开奖120秒，开奖时间早于销售截止时间。为尽量避免损失，系统已自动截止当期销售，并暂停派奖</span>
+							</li>
+							<li>
+								<label class="ui-label w-3 ">处理建议：</label>
+								<span class="ui-singleline">存在官方提前开奖情况，请选择输入官方实际开奖时间操作</span>
+							</li>
+							<li>
+								<label class="ui-label w-3 ">建议操作项：</label>
+								<span class="ico-tab" id="J-button-addtime"><span class="ico-question-text" style="display:none;">帮助说明1</span><i class="icon-question">?</i>输入官方实际开奖时间</span>
+								<span class="ico-tab" id="J-button-addnumber"><span class="ico-question-text" style="display:none;">帮助说明11</span><i class="icon-question">?</i>输入官方实际开奖号码</span>
+								<span class="ico-tab" id="J-button-putoff"><span class="ico-question-text" style="display:none;">帮助说明22</span><i class="icon-question">?</i>暂缓派奖</span>
+								<span class="ico-tab" id="J-button-puton"><span class="ico-question-text" style="display:none;">帮助说明33</span><i class="icon-question">?</i>继续派奖</span>
+							</li>
+							<li>
+								<label class="ui-label w-3 ">其他操作项：</label>
+								<span class="ico-tab" id="J-button-cancel"><span class="ico-question-text" style="display:none;">帮助说明2</span><i class="icon-question">?</i>撤销本期方案</span>
+								<span class="ico-tab" id="J-button-cancel-more"><span class="ico-question-text" style="display:none;">帮助说明3</span><i class="icon-question">?</i>撤销后续追号</span>
+								<span class="ico-tab" id="J-button-addnumber-self"><span class="ico-question-text" style="display:none;">帮助说明4</span><i class="icon-question">?</i>输入开奖号码</span>
+							</li>
+						</ul>
+						<h3 class="ui-title" style="background:#EEE;"><a href="#" class="more">去查看全部异常方案记录&gt;&gt;</a>异常方案处理</h3>
+						
+						<ul class="ui-form">
+							<li>
+								<label class="ui-label w-2"></label>
+								<span class="ui-singleline">本期无异常方案需要处理</span>
+							</li>
+						</ul>
+						
+						
+						<h4 class="ui-title"><a id="J-button-passall" class="btn btn-small" href="javascript:void(0);">全部审核通过<b class="btn-inner"></b></a>风险方案</h4>
+						
+						<div class="prompt">小结：本期奖金异常用户已经审核完毕，共计审核用户5名，方案6条，审核通过5条，不通过1条</div>
+						
+						<table class="table table-info" id="J-table">
+							<thead>
+								<tr>
+									<th class="w-1"><a id="J-button-all" class="btn btn-small" href="javascript:void(0);">展开<b class="btn-inner"></b></a></th>
+									<th>用户名</th>
+									<th>单期奖金(&yen;)</th>
+									<th>单期中/投比</th>
+									<th>连续中奖期数</th>
+									<th>连续中奖注数</th>
+									<th>单注最大奖金（&yen;）</th>
+									<th>辅助查看内容</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>&nbsp;</td>
+									<td class="table-tool"><a class="ico-control ico-unfold" href="javascript:void(0);"></a><a href="" class="link">jiohfkjsbh</a></td>
+									<td>1,000,000.00</td>
+									<td>133.33</td>
+									<td>5</td>
+									<td>5</td>
+									<td>1,000,000.00</td>
+									<td>
+										<a href="">方案记录</a>
+										<a href="">交易记录</a>
+									</td>
+								</tr>
+								<tr style="display:none;">
+									<td>&nbsp;</td>
+									<td colspan="7">
+										<table class="table table-border">
+											<thead>
+												<tr>
+													<th>方案编号</th>
+													<th>投注时间</th>
+													<th>投注金额(&yen;)</th>
+													<th>奖金(&yen;)</th>
+													<th>方案中/投比</th>
+													<th>单注最大奖金(&yen;)</th>
+													<th>单注最大中/投比</th>
+													<th>是否为追号单</th>
+													<th>来源</th>
+													<th>审核</th>
+												</tr>
+											</thead>
+											<tbody>
+												<td><a href="">DCQC130320012FGC</a></td>
+												<td>2012-01-08 09:25:18 </td>
+												<td>250.00</td>
+												<td>1,000,000.00</td>
+												<td>20,000.00</td>
+												<td>1,000,000.00</td>
+												<td>100.00</td>
+												<td>是</td>
+												<td>web3.4</td>
+												<td><a class="button-action button-noaudit" href="javascript:void(0);">未审核</a><input type="hidden" class="record-hidden-id" value="1" /></td>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td class="table-tool"><a class="ico-control ico-unfold" href="javascript:void(0);"></a><a href="" class="link">jiohfkjsbh</a></td>
+									<td>1,000,000.00</td>
+									<td>133.33</td>
+									<td>5</td>
+									<td>5</td>
+									<td>1,000,000.00</td>
+									<td>
+										<a href="" target="_blank">方案记录</a>
+										<a href="" target="_blank">交易记录</a>
+									</td>
+								</tr>
+								<tr style="display:none;">
+									<td>&nbsp;</td>
+									<td colspan="7">
+									
+										<table class="table table-border">
+											<thead>
+												<tr>
+													<th>方案编号</th>
+													<th>投注时间</th>
+													<th>投注金额(&yen;)</th>
+													<th>奖金(&yen;)</th>
+													<th>方案中/投比</th>
+													<th>单注最大奖金(&yen;)</th>
+													<th>单注最大中/投比</th>
+													<th>是否为追号单</th>
+													<th>来源</th>
+													<th>审核</th>
+												</tr>
+											</thead>
+											<tbody>
+												<td><a href="">DCQC130320012FGC</a></td>
+												<td>2012-01-08 09:25:18 </td>
+												<td>250.00</td>
+												<td>1,000,000.00</td>
+												<td>20,000.00</td>
+												<td>1,000,000.00</td>
+												<td>100.00</td>
+												<td>是</td>
+												<td>web3.4</td>
+												<td><a class="button-action button-noaudit" href="javascript:void(0);">未审核</a><input type="hidden" class="record-hidden-id" value="2" /></td>
+											</tbody>
+										</table>
+									
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td class="table-tool"><a class="ico-control ico-unfold" href="javascript:void(0);"></a><a href="" class="link">jiohfkjsbh</a></td>
+									<td>1,000,000.00</td>
+									<td>133.33</td>
+									<td>5</td>
+									<td>5</td>
+									<td>1,000,000.00</td>
+									<td>
+										<a href="" target="_blank">方案记录</a>
+										<a href="" target="_blank">交易记录</a>
+									</td>
+								</tr>
+								<tr style="display:none;">
+									<td>&nbsp;</td>
+									<td colspan="7">
+									
+										<table class="table table-border">
+											<thead>
+												<tr>
+													<th>方案编号</th>
+													<th>投注时间</th>
+													<th>投注金额(&yen;)</th>
+													<th>奖金(&yen;)</th>
+													<th>方案中/投比</th>
+													<th>单注最大奖金(&yen;)</th>
+													<th>单注最大中/投比</th>
+													<th>是否为追号单</th>
+													<th>来源</th>
+													<th>审核</th>
+												</tr>
+											</thead>
+											<tbody>
+												<td><a href="">DCQC130320012FGC</a></td>
+												<td>2012-01-08 09:25:18 </td>
+												<td>250.00</td>
+												<td>1,000,000.00</td>
+												<td>20,000.00</td>
+												<td>1,000,000.00</td>
+												<td>100.00</td>
+												<td>是</td>
+												<td>web3.4</td>
+												<td><span style="color:red;">未通过</span></td>
+											</tbody>
+										</table>
+									
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td>&nbsp;</td>
+									<td class="table-tool"><a class="ico-control ico-unfold" href="javascript:void(0);"></a><a href="" class="link">jiohfkjsbh</a></td>
+									<td>1,000,000.00</td>
+									<td>133.33</td>
+									<td>5</td>
+									<td>5</td>
+									<td>1,000,000.00</td>
+									<td>
+										<a href="" target="_blank">方案记录</a>
+										<a href="" target="_blank">交易记录</a>
+									</td>
+								</tr>
+								<tr style="display:none;">
+									<td>&nbsp;</td>
+									<td colspan="7">
+									
+										<table class="table table-border">
+											<thead>
+												<tr>
+													<th>方案编号</th>
+													<th>投注时间</th>
+													<th>投注金额(&yen;)</th>
+													<th>奖金(&yen;)</th>
+													<th>方案中/投比</th>
+													<th>单注最大奖金(&yen;)</th>
+													<th>单注最大中/投比</th>
+													<th>是否为追号单</th>
+													<th>来源</th>
+													<th>审核</th>
+												</tr>
+											</thead>
+											<tbody>
+												<td><a href="">DCQC130320012FGC</a></td>
+												<td>2012-01-08 09:25:18 </td>
+												<td>250.00</td>
+												<td>1,000,000.00</td>
+												<td>20,000.00</td>
+												<td>1,000,000.00</td>
+												<td>100.00</td>
+												<td>是</td>
+												<td>web3.4</td>
+												<td><span style="color:#999;">已通过</span></td>
+											</tbody>
+										</table>
+									
+									</td>
+								</tr>				
+								
+							</tbody>
+						</table>
+						<div class="page-wrapper">
+							<span class="page-text">
+								<span class="lower">共102条记录</span>
+							</span>
+							<div class="page page-right">
+								<a class="prev" href="#">上一步</a>
+								<a href="#">1</a>
+								<a href="#">2</a>
+								<a class="current" href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">...</a>
+								<a class="next" href="#">下一步</a>
+								<span class="page-few">到第 <input type="text" class="input" value=""> /100页</span>
+								<input type="button" class="page-btn" value="确 认">
+							</div>
+						</div>
+						<h4 class="ui-title">恶意方案</h4>
+						<table class="table table-info">
+							<thead>
+								<tr>
+									<th>方案编号</th>
+									<th>用户名</th>
+									<th>投注时间</th>
+									<th>投注金额</th>
+									<th>异常原因</th>
+									<th>用户状态</th>
+									<th>操作项</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="">DCQC130320012FGC</a></td>
+									<td><a href="">long</a></td>
+									<td>2012-01-08 09:25:18</td>
+									<td>10.00</td>
+									<td>方案比对错误</td>
+									<td>未冻结</td>
+									<td><a href="" target="_blank">去冻结用户</a></td>
+								</tr>
+								<tr>
+									<td><a href="">DCQC130320012FGC</a></td>
+									<td><a href="">long</a></td>
+									<td>2012-01-08 09:25:18</td>
+									<td>10.00</td>
+									<td>方案比对错误</td>
+									<td>未冻结</td>
+									<td><a href="" target="_blank">去冻结用户</a></td>
+								</tr>
+								<tr>
+									<td><a href="">DCQC130320012FGC</a></td>
+									<td><a href="">long</a></td>
+									<td>2012-01-08 09:25:18</td>
+									<td>10.00</td>
+									<td>方案比对错误</td>
+									<td>未冻结</td>
+									<td><a href="" target="_blank">去冻结用户</a></td>
+								</tr>
+							</tbody>
+						</table>
+
+
+
+
+						<div style="height:400px;"></div>
+						
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script id="J-tpl-noaudit" type="text/template">
+审核备注：
+<div><textarea style="width:400px;height:80px;"></textarea></div>
+</script>
+
+<script id="J-tpl-addtime" type="text/template">
+	<ul class="ui-form ui-form-small">
+		<li>
+			<label for="" class="ui-label">重庆时时彩：</label>
+			<span class="ui-singleline">20120108-033期</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">平台销售截止时间：</label>
+			<span class="ui-singleline">2012-08-09  00:05:50</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">输入官方实际开奖时间：</label>
+			<input id="J-input-date" type="text" value="" class="input"> <span class="color-red">*</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">异常处理备注：</label>
+			<input id="J-input-text" type="text" value="" class="input">
+		</li>
+	</ul>
+</script>
+
+
+<script id="J-tpl-addnumber" type="text/template">
+	<ul class="ui-form ui-form-small">
+		<li>
+			<label for="" class="ui-label">重庆时时彩：</label>
+			<span class="ui-singleline">20120108-033期</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">已开号码：</label>
+			<span class="ui-singleline">1 2 3 4 5</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">输入官方实际开奖号码：</label>
+			<input id="J-input-number" type="text" value="" class="input"> <span class="color-red">*</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">异常处理备注：</label>
+			<input id="J-input-text" type="text" value="" class="input">
+		</li>
+		<li style="text-align:center;color:#999;">
+			开奖号码标准格式如：
+			<span id="J-standard-number"></span>
+		</li>
+	</ul>
+</script>
+
+
+<script id="J-tpl-putoff" type="text/template">
+	<ul class="ui-form ui-form-small">
+		<li>
+			<label for="" class="ui-label">重庆时时彩：</label>
+			<span class="ui-singleline">20120108-033期</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">&nbsp;</label>
+			<span class="ui-singleline">暂缓派奖</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">异常处理备注：</label>
+			<input id="J-input-text" type="text" value="" class="input">
+		</li>
+	</ul>
+</script>
+
+
+<script id="J-tpl-puton" type="text/template">
+	<ul class="ui-form ui-form-small">
+		<li>
+			<label for="" class="ui-label">重庆时时彩：</label>
+			<span class="ui-singleline">20120108-033期</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">&nbsp;</label>
+			<span class="ui-singleline">继续派奖</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">异常处理备注：</label>
+			<input id="J-input-text" type="text" value="" class="input">
+		</li>
+	</ul>
+</script>
+
+
+<script id="J-tpl-cancel" type="text/template">
+	<ul class="ui-form ui-form-small">
+		<li>
+			<label for="" class="ui-label">重庆时时彩：</label>
+			<span class="ui-singleline">20120108-033期</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">&nbsp;</label>
+			<span class="ui-singleline">批量撤销本期方案</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">异常处理备注：</label>
+			<input id="J-input-text" type="text" value="" class="input">
+		</li>
+	</ul>
+</script>
+
+
+
+<script id="J-tpl-cancel-more" type="text/template">
+	<ul class="ui-form ui-form-small">
+		<li>
+			<label for="" class="ui-label">重庆时时彩：</label>
+			<span class="ui-singleline">20120108-033期</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">&nbsp;</label>
+			<span class="ui-singleline">批量撤销后续追号</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">开始期号：</label>
+			<span class="ui-singleline"><input id="J-input-number-start" type="text" value="" class="input"> <span class="color-red">*</span></span>
+		</li>
+		<li>
+			<label for="" class="ui-label">终止期号：</label>
+			<span class="ui-singleline"><input id="J-input-number-end" type="text" value="" class="input"> <span class="color-red">
+		</li>
+		<li>
+			<label for="" class="ui-label">异常处理备注：</label>
+			<input id="J-input-text" type="text" value="" class="input">
+		</li>
+		<li style="color:#999;">
+			注：请输入撤销追号的开始和终止期号，如果需要撤销后续已生成的所有期，则只需要输入开始期号。期号格式如：20120108-033
+		</li>
+	</ul>
+</script>
+
+
+
+<script id="J-tpl-addnumber-self" type="text/template">
+	<ul class="ui-form ui-form-small">
+		<li>
+			<label for="" class="ui-label">重庆时时彩：</label>
+			<span class="ui-singleline">20120108-033期</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">输入开奖号码：</label>
+			<input id="J-input-number" type="text" value="" class="input"> <span class="color-red">*</span>
+		</li>
+		<li>
+			<label for="" class="ui-label">异常处理备注：</label>
+			<input id="J-input-text" type="text" value="" class="input">
+		</li>
+		<li style="text-align:center;color:#999;">
+			开奖号码标准格式如：
+			<span id="J-standard-number"></span>
+		</li>
+	</ul>
+</script>
+
+
+
+
+
+<script>
+(function($){
+	
+	var Tip = phoenix.Tip.getInstance(),table = $('#J-table'),Wd = phoenix.Message.getInstance();
+	
+	$('#J-panel-container').on('mouseover', '.icon-question', function(){
+		var dom = $(this),text = dom.parent().find('.ico-question-text').html();
+		Tip.setText(text);
+		Tip.show(dom.width(), dom.height()*-1-10, dom);
+	}).on('mouseout', '.icon-question', function(){
+		Tip.hide();
+	});
+	
+	
+	table.on('click', '.ico-control', function(){
+		var dom = $(this),cls1 = 'ico-unfold',cls2 = 'ico-fold',tr = dom.parent().parent().next();
+		if(dom.hasClass(cls1)){
+			dom.removeClass(cls1).addClass(cls2);
+			tr.show();
+		}else{
+			dom.removeClass(cls2).addClass(cls1);
+			tr.hide();
+		}
+	});
+	
+	
+	$('#J-button-all').click(function(){
+		var dom = $(this),text = $.trim(dom.text()),cls = 'open';
+		if(dom.hasClass(cls)){
+			dom.removeClass(cls);
+			dom.html('展开<b class="btn-inner"></b>');
+			table.find('.ico-control').each(function(){
+				var el = $(this),tr = el.parent().parent().next();
+				el.removeClass('ico-fold').addClass('ico-unfold');
+				tr.hide();
+			});
+		}else{
+			dom.addClass(cls);
+			dom.html('收起<b class="btn-inner"></b>');
+			table.find('.ico-control').each(function(){
+				var el = $(this),tr = el.parent().parent().next();
+				el.removeClass('ico-unfold').addClass('ico-fold');
+				tr.show();
+			});
+		}
+
+	});
+	
+	
+	
+	table.on('click', '.button-action', function(){
+		var dom = $(this);
+		//未审核
+		if(dom.hasClass('button-noaudit')){
+			Wd.show({
+				mask:true,
+				content:$('#J-tpl-noaudit').text(),
+				confirmIsShow:true,
+				confirmText:'通过',
+				confirmFun:function(){
+					$.ajax({
+						url:'data.php?type=1',
+						dataType:'json',
+						success:function(data){
+							if(Number(data['isSuccess']) == 1){
+								dom.parent().removeClass('button-noaudit').html('<span style="color:#999;">已通过</span>');
+								Wd.hide();
+							}else{
+								Wd.show({
+									mask:true,
+									content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+									cancelIsShow:true,
+									cancelText:'关闭',
+									cancelFun:function(){
+										Wd.hide();
+									}
+								});
+							}
+						}
+					});
+				},
+				cancelIsShow:true,
+				cancelText:'不通过',
+				cancelFun:function(){
+					
+					Wd.show({
+						mask:true,
+						content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确定该方案审核不通过吗？<br />审核不通过后，该方案将同时记为恶意方案。<br />奖金保持被冻结状态。</h4></div></div>',
+						confirmIsShow:true,
+						confirmText:'确定',
+						confirmFun:function(){
+							$.ajax({
+								url:'data.php?type=2',
+								dataType:'json',
+								success:function(data){
+									if(Number(data['isSuccess']) == 1){
+										dom.parent().removeClass('button-noaudit').html('<span style="color:red;">未通过</span>');
+										Wd.hide();
+									}else{
+										Wd.show({
+											mask:true,
+											content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+											cancelIsShow:true,
+											cancelText:'关闭',
+											cancelFun:function(){
+												Wd.hide();
+											}
+										});
+									}
+								}
+							});
+						},
+						cancelIsShow:true,
+						cancelText:'取消',
+						cancelFun:function(){
+							Wd.hide();
+						}
+					});
+					
+
+				}
+			});
+		}
+	});
+	
+	
+	$('#J-button-passall').click(function(){
+		var arr = [];
+		table.find('.record-hidden-id').each(function(){
+			arr.push(this.value);
+		});
+		if(arr.length < 1){
+			alert('没有未通过审核的奖期');
+			return;
+		}
+		
+		Wd.show({
+			mask:true,
+			content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确定要审核通过所有未审核的方案吗？</h4></div></div>',
+			confirmIsShow:true,
+			confirmText:'确定',
+			confirmFun:function(){
+				$.ajax({
+					url:'data.php?ids=' + arr.join(','),
+					dataType:'json',
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							Wd.show({
+								mask:true,
+								content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+								cancelIsShow:true,
+								cancelText:'关闭',
+								cancelFun:function(){
+									Wd.hide();
+								}
+							});
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelText:'取消',
+			cancelFun:function(){
+				Wd.hide();
+			}
+		});
+		
+		
+	});
+	
+	
+	//输入官方实际开奖时间
+	$('#J-button-addtime').click(function(){
+		Wd.show({
+			mask:true,
+			content:$('#J-tpl-addtime').text(),
+			confirmIsShow:true,
+			confirmText:'确定',
+			confirmFun:function(){
+				var date = $.trim($('#J-input-date').val()),
+					text = $('#J-input-text').val();
+				
+				if(date == ''){
+					alert('时间不能为空');
+					$('#J-input-date').focus();
+					return;
+				}
+				$.ajax({
+					url:'data.php',
+					method:'post',
+					dataType:'json',
+					data:{'time':date,'text':text},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							Wd.show({
+								mask:true,
+								content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+								cancelIsShow:true,
+								cancelText:'关闭',
+								cancelFun:function(){
+									Wd.hide();
+								}
+							});
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelText:'取消',
+			cancelFun:function(){
+				Wd.hide();
+			},
+			callback:function(){
+				$('#J-input-date').focus(function(){
+					(new phoenix.DatePicker({input:'#J-input-date',cls:'pop-window-datepicker',isShowTime:true})).show();
+				});
+				Wd.win.dom.css('marginTop', -100);
+				$('#J-input-date').focus();
+			}
+		});
+		
+	});
+	
+	
+	
+	
+	
+	//输入官方实际开奖号码
+	$('#J-button-addnumber').click(function(){
+		Wd.show({
+			mask:true,
+			content:$('#J-tpl-addnumber').text(),
+			confirmIsShow:true,
+			confirmText:'开始处理',
+			confirmFun:function(){
+				var number = $.trim($('#J-input-number').val()),
+					standard = $.trim($('#J-standard-number').text()).replace(/\d/g, '0').replace(/[^\d]/g, ','),
+					text = $('#J-input-text').val();
+				
+				if(number == ''){
+					alert('开奖号码不能为空');
+					$('#J-input-number').focus();
+					return;
+				}
+				if(standard != number.replace(/\d/g, '0').replace(/[^\d]/g, ',')){
+					alert('开奖号码格式不正确\n请参照提示中的范例输入');
+					$('#J-input-number').focus();
+					return;
+				}
+				$.ajax({
+					url:'data.php',
+					method:'post',
+					dataType:'json',
+					data:{'number':number,'text':text},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							Wd.show({
+								mask:true,
+								content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+								cancelIsShow:true,
+								cancelText:'关闭',
+								cancelFun:function(){
+									Wd.hide();
+								}
+							});
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelText:'取消',
+			cancelFun:function(){
+				Wd.hide();
+			},
+			callback:function(){
+				$('#J-input-number').focus();
+				//
+				$.ajax({
+					url:'data.php',
+					dataType:'json',
+					success:function(data){
+						//测试数据
+						data = {'isSuccess':1,'msg':'','data':{'standardNumber':'1,2,3,4,5'}};
+						
+						if(Number(data['isSuccess']) == 1){
+							$('#J-standard-number').text(data['data']['standardNumber']);
+						}else{
+							alert(data['msg']);
+							Wd.hide();
+						}
+					}
+				});
+			}
+		});
+		
+	});
+	
+	
+	
+	//暂缓派奖
+	$('#J-button-putoff').click(function(){
+		Wd.show({
+			mask:true,
+			content:$('#J-tpl-putoff').text(),
+			confirmIsShow:true,
+			confirmText:'开始处理',
+			confirmFun:function(){
+				var text = $('#J-input-text').val();
+				
+				$.ajax({
+					url:'data.php?acton=putoff',
+					method:'post',
+					dataType:'json',
+					data:{'text':text},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							Wd.show({
+								mask:true,
+								content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+								cancelIsShow:true,
+								cancelText:'关闭',
+								cancelFun:function(){
+									Wd.hide();
+								}
+							});
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelText:'取消',
+			cancelFun:function(){
+				Wd.hide();
+			},
+			callback:function(){
+				$('#J-input-text').focus();
+			}
+		});
+		
+	});
+	
+	
+	
+	//继续派奖
+	$('#J-button-puton').click(function(){
+		Wd.show({
+			mask:true,
+			content:$('#J-tpl-puton').text(),
+			confirmIsShow:true,
+			confirmText:'开始处理',
+			confirmFun:function(){
+				var text = $('#J-input-text').val();
+				
+				$.ajax({
+					url:'data.php?acton=puton',
+					method:'post',
+					dataType:'json',
+					data:{'text':text},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							Wd.show({
+								mask:true,
+								content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+								cancelIsShow:true,
+								cancelText:'关闭',
+								cancelFun:function(){
+									Wd.hide();
+								}
+							});
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelText:'取消',
+			cancelFun:function(){
+				Wd.hide();
+			},
+			callback:function(){
+				$('#J-input-text').focus();
+			}
+		});
+		
+	});
+	
+	
+	
+	//撤销本期方案
+	$('#J-button-cancel').click(function(){
+		Wd.show({
+			mask:true,
+			content:$('#J-tpl-cancel').text(),
+			confirmIsShow:true,
+			confirmText:'开始处理',
+			confirmFun:function(){
+				var text = $('#J-input-text').val();
+				
+				$.ajax({
+					url:'data.php?acton=cancel',
+					method:'post',
+					dataType:'json',
+					data:{'text':text},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							Wd.show({
+								mask:true,
+								content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+								cancelIsShow:true,
+								cancelText:'关闭',
+								cancelFun:function(){
+									Wd.hide();
+								}
+							});
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelText:'取消',
+			cancelFun:function(){
+				Wd.hide();
+			},
+			callback:function(){
+				$('#J-input-text').focus();
+			}
+		});
+		
+	});
+	
+	
+	//撤销后期追号
+	$('#J-button-cancel-more').click(function(){
+		Wd.show({
+			mask:true,
+			content:$('#J-tpl-cancel-more').text(),
+			confirmIsShow:true,
+			confirmText:'开始处理',
+			confirmFun:function(){
+				var text = $('#J-input-text').val(),
+					start = $('#J-input-number-start').val(),
+					end = $('#J-input-number-end').val();
+				if($.trim(start) == ''){
+					alert('开始期号不能为空');
+					$('#J-input-number-start').focus();
+					return;
+				}
+				
+				
+				$.ajax({
+					url:'data.php?acton=cancelmore',
+					method:'post',
+					dataType:'json',
+					data:{'text':text,'start':start,'end':end},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							Wd.show({
+								mask:true,
+								content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+								cancelIsShow:true,
+								cancelText:'关闭',
+								cancelFun:function(){
+									Wd.hide();
+								}
+							});
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelText:'取消',
+			cancelFun:function(){
+				Wd.hide();
+			},
+			callback:function(){
+				$('#J-input-number-start').focus();
+			}
+		});
+		
+	});
+	
+
+
+
+	//输入开奖号码
+	$('#J-button-addnumber-self').click(function(){
+		Wd.show({
+			mask:true,
+			content:$('#J-tpl-addnumber-self').text(),
+			confirmIsShow:true,
+			confirmText:'开始处理',
+			confirmFun:function(){
+				var number = $.trim($('#J-input-number').val()),
+					standard = $.trim($('#J-standard-number').text()).replace(/\d/g, '0').replace(/[^\d]/g, ','),
+					text = $('#J-input-text').val();
+				
+				if(number == ''){
+					alert('开奖号码不能为空');
+					$('#J-input-number').focus();
+					return;
+				}
+				if(standard != number.replace(/\d/g, '0').replace(/[^\d]/g, ',')){
+					alert('开奖号码格式不正确\n请参照提示中的范例输入');
+					$('#J-input-number').focus();
+					return;
+				}
+				$.ajax({
+					url:'data.php',
+					method:'post',
+					dataType:'json',
+					data:{'number':number,'text':text},
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							location.href = location.href;
+						}else{
+							Wd.show({
+								mask:true,
+								content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+ data['msg'] +'</h4></div></div>',
+								cancelIsShow:true,
+								cancelText:'关闭',
+								cancelFun:function(){
+									Wd.hide();
+								}
+							});
+						}
+					}
+				});
+			},
+			cancelIsShow:true,
+			cancelText:'取消',
+			cancelFun:function(){
+				Wd.hide();
+			},
+			callback:function(){
+				$('#J-input-number').focus();
+				//
+				$.ajax({
+					url:'data.php',
+					dataType:'json',
+					success:function(data){
+						//测试数据
+						data = {'isSuccess':1,'msg':'','data':{'standardNumber':'1,2,3,4,5'}};
+						
+						if(Number(data['isSuccess']) == 1){
+							$('#J-standard-number').text(data['data']['standardNumber']);
+						}else{
+							alert(data['msg']);
+							Wd.hide();
+						}
+					}
+				});
+			}
+		});
+		
+	});
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+	
+})(jQuery);
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

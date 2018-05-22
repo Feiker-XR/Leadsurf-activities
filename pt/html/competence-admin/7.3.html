@@ -1,0 +1,121 @@
+	<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>7.3用户搜索-无结果</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li class="current"><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>权限中心</dt>
+				<dd><a href="8.html">权限组管理</a></dd>
+				<dd><a href="9.html">创建权限组</a></dd>
+				<dd class="current"><a href="7.html">用户管理</a></dd>
+				<dd><a href="11.html">添加用户</a></dd>
+				<dd><a href="12.html">操作日志</a></dd>
+				<dd><a href="10.html">修改密码</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+					
+					<form id="J-form" action="?">
+						<ul class="ui-search">
+							<li class="name">
+								<select class="ui-select">
+									<option value="用户名">用户名</option>
+									<option value="邮箱">Email</option>
+									<option value="座机">座机</option>
+									<option value="手机">手机</option>
+								</select>
+								<input id="J-search-username" type="text" value="请输入您的用户名" id="J-search-username" class="input">
+							</li>
+							<li>
+								<label class="ui-label">权限组：</label>
+								<select class="ui-select">
+									<option value="所有组">所有组</option>
+									<option value="CFO">CFO</option>
+									<option value="一级代理">|--会计经理</option>
+									<option value="二级代理">&nbsp;&nbsp;|--业务会计员</option>
+								</select>
+							</li>
+							<li>
+								<label class="ui-label">状态：</label>
+								<select class="ui-select">
+									<option value="所有状态">所有状态</option>
+									<option value="正常">正常</option>
+									<option value="锁定">锁定</option>
+									<option value="待删除">待删除</option>
+								</select>
+							</li>
+							<li><a href="javascript:void(0);" id="J-button-submit" class="btn btn-important">搜 索<b class="btn-inner"></b></a></li>
+						</ul>
+					</form>
+						
+						<div class="alert alert-waring">
+							<i></i>
+							<div class="txt">
+								<h4>没有符合条件的记录，请更改查询条件！</h4>
+							</div>
+						</div>
+						
+
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<script>
+	(function(){
+		new phoenix.Input({el:'#J-search-username',defText:'请输入您的用户名'});
+
+		$('#J-button-submit').click(function(){
+			$('#J-form').submit();
+		});
+	})();
+</script>
+	
+	
+	
+</body>
+</html>

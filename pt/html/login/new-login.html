@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>安全登录</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/login/new-login.css" />
+</head>
+<body class="bg-content new-login">
+	<div class="wrap-login">
+		 <div class="logo">
+		 	<a herf=""></a>
+		 </div>
+		 <div class="nav-wrap clearfix">
+			<div class="guest-point guest-area">
+				<span class="help-icon">有问题资讯在线客服？</span><a href="javascript:;">点击此处</a>
+			</div>
+			 <ul class="nav">
+			 	<li class="">
+			 		<a href="#">旧平台登陆</a>
+			 	</li>
+			 	<li class="second current">
+			 		<a href="#">新平台登陆</a><a id="J-question-button" href="#" class="question"></a>
+			 	</li>
+			 </ul>
+		 </div>
+		 <div class="info-panel clearfix">
+		 	<div class="left-shadow"></div>
+		 	<div class="login-info-area">
+		 		<form action="#" method="post">
+		 			<div class="user-info clearfix">
+		 				<input type="text" id="J-user-name" data-name="name" name="user-name" class="user-name" placeholder="用户名">
+		 				<div class="line"></div>
+		 				<input type="password" id="J-user-password" data-name="password" name="user-password" placeholder="密码" class="user-password">
+		 				<a href="#" class="forget-password"  tabindex="-1">忘记密码？</a>
+		 				<a href="javascript:;" title="清除用户名" data-name="name" class="clear-name"  tabindex="-1">清除用户名</a>
+		 				<a href="javascript:;" title="清除密码" data-name="password" class="clear-password"  tabindex="-1">清除密码</a>
+		 			</div>
+		 			<div class="user-info ver-area clearfix">
+		 				<div class="var-img-area"></div>
+		 				<input type="text" id="J-verification" data-name="verification" name="user-name" class="user-ver" placeholder="验证码">
+		 			</div>
+		 			<div id="J-msg-show" data-display="hide" class="msg-show"></div>
+		 			<input id="J-form-submit" class="submit-btn" type="submit" value="登 录">
+		 			<div class="login-tips">验证平台真伪，请使用<a href="new-login-safe.html" class="link">安全登陆</a></div>
+		 		</form>
+		 	</div>
+		 	<div class="banner-area">
+		 		<div id="focus" class="cycle-slideshow"
+					data-cycle-slides="> .item"
+					data-cycle-pager="> .cycle-pager-wrap .cycle-pager"
+					data-cycle-fx="scrollHorz"
+					data-cycle-timeout="4000"
+					data-cycle-loader="wait"
+					data-cycle-speed="800"
+					data-pause-on-hover="true"
+				>
+					<div class="cycle-pager-wrap">
+						<div class="cycle-pager"></div>
+					</div>
+					<div class="item">
+						<a href=""><img src="../images/login/new-login/banner.jpg" alt="" style="background:#ccc;"></a>
+					</div>
+					<div class="item">
+						<a href=""><img src="../images/login/new-login/banner.jpg" alt="" style="background:#f20;"></a>
+					</div>
+					<div class="item">
+						<a href=""><img src="../images/login/new-login/banner.jpg" alt="" style="background:#c03;"></a>
+					</div>
+				</div>
+			</div>
+		 	<div class="right-shadow"></div>
+		 </div>
+		 <div class="shadow-bottom"></div>
+		 <div class="suggest-browser">
+	    	<ul>
+	    		<li class="chrome">
+	    			<a href="http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html" target="_blank"></a>
+	    		</li>
+	    		<li class="ie">
+	    			<a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank"></a>
+	    		</li>
+	    		<li class="firefox">
+	    			<a href="https://www.mozilla.org/zh-CN/firefox/new" target="_blank"></a>
+	    		</li>
+	    	</ul>
+	    	<p class="browser-desc">
+	    		为了更好的操作体验首选火狐Google Chrome、Firefox 或 IE9 浏览器，点击可立即下载。
+	    	</p>
+	    </div>
+	</div>
+	<div id="migrate_overlay_shadow" style="height: 955px; margin: 0px; padding: 0px; width: 1920px; opacity: 0.600000023841858; display: block; overflow: hidden;">&nbsp;</div>
+	<div id="about_new_plat_layer" class="migrate_overlay_layer" style="opacity: 1; display: block; overflow: visible;">
+	    <div class="overlay_title">
+	        <h2>五步了解新平台</h2>
+	        <span data-action="close" class="overlay_close">×</span>
+	    </div>
+	    <div class="overlay_body">
+	        <div class="plat_layer_tabs">
+	        	<span class="plat_layer_tabs_bar"></span>
+	        	<a style="left:0%" class="tabs1 active" href="#">1</a>
+	        	<a style="left:25%" class="tabs2" href="#">2</a>
+	        	<a style="left:50%" class="tabs3" href="#">3</a>
+	        	<a style="left:75%" class="tabs4" href="#">4</a>
+	        	<a style="left:100%" class="tabs5" href="#">5</a>
+	        </div>
+	        <div class="plat_layer_content" data-cycle="">
+	            <img style="opacity: 1; display: block; overflow: visible; background-color: rgb(255, 255, 0);" src="images/p1.jpg" alt="">
+	            <img style="opacity: 1; display: none; overflow: visible; background-color: rgb(204, 204, 0);" src="images/p2.jpg" alt="">
+	            <img style="opacity: 1; display: none; overflow: visible; background-color: rgb(153, 153, 0);" src="images/p3.jpg" alt="">
+	            <img style="opacity: 1; display: none; overflow: visible; background-color: rgb(102, 102, 0);" src="images/p4.jpg" alt="">
+	            <img style="opacity: 1; display: none; overflow: visible; background-color: rgb(51, 51, 0);" src="images/p5.jpg" alt="">
+	            <img style="opacity: 1; display: none; overflow: visible; background-color: rgb(51, 51, 0);" src="images/p6.jpg" alt="">
+	        </div>
+	    </div>
+	</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/jquery.cycle2.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+(function($){
+	var ajaxLock = false,
+		$cycles = $('#about_new_plat_layer').fadeOut(0),
+		$shadow = $('#migrate_overlay_shadow').fadeOut(0),
+		$close = $cycles .find('.overlay_close'),
+		$cycleLayer = $cycles.find('.plat_layer_content > img'),
+		$userName = $('#J-user-name'),
+		$passWord = $('#J-user-password'),
+		$submitDom = $('#J-form-submit');
+
+   $cycles.find('.plat_layer_tabs a').on('click', function(){
+   		$(this).parent().find('a').removeClass('active');
+   		$(this).addClass('active');
+   		$cycleLayer.fadeOut().eq(Number($(this).text())-1).fadeIn();;
+   });
+
+    //显示弹层
+    showDialog = function(){
+    	
+    	if($cycles.is(':hidden') && $shadow.is(':hidden')){
+    		$cycles.show();
+    		$shadow.show(); 
+    	}
+    };
+
+    hideDialog = function(){
+
+    	if(!$cycles.is(':hidden') && !$shadow.is(':hidden')){
+    		$cycles.hide();
+    		$shadow.hide(); 
+    	}
+    };
+
+    $('#J-question-button').click(function(event) {
+    	showDialog();
+    });
+
+    $(document).click(function(event) {
+    	var $dom = $(event.target);
+    	if($dom.is($cycles) || $cycles.has($dom).size()>0 || $dom.is($('#J-question-button'))){
+    		return;
+    	}
+    	hideDialog();
+    });
+
+    $close.click(function(event) {
+    	hideDialog();
+    });
+
+
+	//检查用户信息
+	checkInfo = function(dom){
+		var $dom = $(dom),
+			name = $(dom).attr('data-name'),
+			$tipsDom = $('.clear-' + name),
+			text = $.trim($dom.val());
+
+		if(text){
+			$tipsDom.show();
+		} else {
+			$tipsDom.hide();
+		}
+	};
+
+	$('.clear-password, .clear-name').click(function(event) {
+		var mark = $(this).attr('data-name');
+
+		$('#J-user-' + mark).val('');
+		$(this).hide();
+
+		if(mark == 'password'){
+			$('.forget-password').css('right', 10);
+		}
+	});
+
+	//用户名称
+	$userName.bind('input propertychange', function(){
+		checkInfo(this);
+	});
+
+	//用户密码
+	$passWord.bind('input propertychange', function(){
+		checkInfo(this);
+	});
+
+	$passWord.focus(function(event) {
+		$('.forget-password').css('right', -200);
+	})
+	.blur(function(){
+		if($passWord.val()){
+			return;
+		}
+		$('.forget-password').css('right', 10);
+	});
+
+	//显示消息
+	showMsg = function(msg){
+		var msgDom = $('#J-msg-show'),
+			warningInfo = '<span class="warning"></span> '
+
+		openMsgDom();
+		msgDom.html(warningInfo + msg);
+	}
+
+	//关闭消息显示
+	hideMsgDom = function(){
+		var msgDom = $('#J-msg-show');
+
+		msgDom.css('height', 0).attr('data-display', 'hide').html('');
+	}
+
+	//关闭消息显示
+	openMsgDom = function(){
+		var msgDom = $('#J-msg-show'),
+			status = msgDom.attr('data-display');
+		
+		if(status == 'hide'){
+			msgDom.css('height', 20).attr('data-display', 'show');
+		}
+	}
+
+	//提交
+	$submitDom.bind('click', function(e){
+		var userName = $.trim($userName.val()),
+			passWord = $.trim($passWord.val()),
+			$verification = $('#J-verification');
+
+		if(userName==''){
+			showMsg('用户名不能为空');
+			return false;
+		}
+
+		if(userName.length < 4 || userName.length > 16) {
+			showMsg('用户名长度有误，请输入4-16位字符');
+			return false;
+		}
+
+		if(passWord==''){
+			showMsg('密码不能为空');
+			return false;
+		}
+
+		//验证码
+		if($verification.size() > 0){
+			if($.trim($verification.val())==''){
+				showMsg('验证码不能为空');
+				return false;
+			}
+		}
+
+		if(ajaxLock){
+			return;
+		}
+		ajaxLock = true;
+
+		//关闭消息提示
+		hideMsgDom();
+
+		$.ajax({
+			url: 'result.php',
+			type: 'POST',
+			dataType: 'json',
+			data: {'username': userName, 'password': passWord, 'type': 'normal'}
+		})
+		.done(function(r) {
+			
+			if(Number(r['isSuccess']) == 1) {
+				alert('登陆成功');
+			} else {
+				showMsg(r['msg']);
+			}
+		})
+		.fail(function() {
+			
+		})
+		.always(function() {
+
+			ajaxLock = false;
+		});
+		
+		e.preventDefault();
+	});
+
+})(jQuery);
+</script>
+</html>

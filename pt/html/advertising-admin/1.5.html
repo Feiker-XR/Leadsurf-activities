@@ -1,0 +1,622 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>新建广告位</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Hover.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>广告</dt>
+				<dd class="current"><a href="1.1index.html">广告管理（发布）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告管理（审核）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告位管理</a></dd>
+				<dt>公告</dt>
+				<dd><a href="2.1freeze-account-list.html">公告管理（发布）</a></dd>
+				<dd><a href="#">公告管理（审核）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建公告</a></dd>
+				<dt>专题</dt>
+				<dd><a href="2.1freeze-account-list.html">专题管理（发布）</a></dd>
+				<dd><a href="#">专题管理（查看）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建专题</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+		
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">广告</a> &gt; <a href="#">广告管理</a> &gt; 新建广告位</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+
+
+					
+					
+						
+						<input type="hidden" id="J-input-ids" value="" />
+						<input type="hidden" id="J-input-params" value="" />
+						<input type="hidden" id="J-input-imgid" value="" />
+						<input type="hidden" id="J-input-placeholder" value="" />
+						<ul class="ui-form">
+							<li class="checkbox-list">
+								<label class="ui-label">选择页面：</label>
+								<input id="J-input-page-title" type="text" class="input input-disable" value="" disabled="disabled" />
+								<a id="J-button-select-page" href="javascript:void(0)" class="ui-info">点击选择</a>
+								<span class="ui-check"><i></i>请选择一个页面</span>
+							</li>
+							<li>
+								<label class="ui-label">广告位置名称：</label>
+								<input id="J-input-title" type="text" class="input" value="" />  <span class="ui-prompt">(限10个字)</span>
+								<span class="ui-check"><i></i>广告位名称不能为空</span>
+							</li>
+							<li>
+								<label class="ui-label">广告位参数：</label>
+								<input id="J-input-params-title" type="text" class="input input-disable" value="" disabled="disabled" />
+								<a id="J-button-select-params" href="javascript:void(0)" class="ui-info">点击选择</a>
+								<span class="ui-check"><i></i>请选择一个广告参数</span>
+							</li>
+							
+							<li class="pic-size">
+								<label class="ui-label" for="name">广告位尺寸：</label>
+								<span class="ui-singleline">宽 <input id="J-input-img-w" type="text" class="input input-disable" value="" disabled="disabled" style="text-align:center;"> 像素</span>
+								<span class="ui-singleline">高 <input id="J-input-img-h" type="text" class="input" value="" style="text-align:center;"> 像素</span>
+								<span class="ui-check"><i></i>广告位高度不能为空</span>
+							</li>
+							<li id="J-panel-upload">
+								<label class="ui-label">上传预览图：</label>
+								<form id="J-form-upload" name="form1" enctype="multipart/form-data" method="post" action="upload.php" target="check_file_frame" style="display:inline;">
+									<input name="file" type="file" id="J-upload-file" class="upload-file-button" size="40" hidefocus="true" value=""/>
+								</form>
+								<!-- <a id="J-button-uploadimg" class="btn" href="javascript:void(0);">上传预览图<b class="btn-inner"></b></a> -->
+								<span class="ui-prompt">支持格式：JPG、GIF、PNG，不可超过100k</span>
+								<span class="ui-check"><i></i>请上传预览图</span>
+							</li>
+							<li style="margin:0;">
+								<iframe src="upload.php" style="margin-left:150px;height:50px;" name="check_file_frame" frameborder="0"></iframe>
+							</li>
+							<li>
+								<label class="ui-label" for="name">链接打开方式：</label>
+								<span class="radio-list">
+									<label class="label" for="J-radio-target-blank"><input name="radioTarget" id="J-radio-target-blank" type="radio" class="radio" value="1" checked="checked" />新窗口</label>
+									<label class="label" for="J-radio-target-self"><input name="radioTarget" id="J-radio-target-self" type="radio" class="radio" value="1" />原窗口</label>
+								</span>
+							</li>
+							<li style="margin-bottom:0;">
+								<label class="ui-label" for="name">占位图：</label>
+								<span class="radio-list" id="J-panel-radio-position">
+									<label class="label" for="J-radio-position-open"><input name="radioPosition" id="J-radio-position-open" type="radio" class="radio" value="1" />开启</label>
+									<label class="label" for="J-radio-position-close"><input name="radioPosition" id="J-radio-position-close" type="radio" class="radio" value="2" checked="checked" />禁用</label>
+								</span>
+							</li>
+							<li class="ui-other" id="J-panel-img-position" style="padding:0;margin:0;display:none">
+								<iframe id="J-iframe-placeholder" src="about:blank;" width="100%" height="170" name="check_file_frame_placeholder" frameborder="0"></iframe>
+								<div>
+									<label class="ui-label">上传图片：</label>
+									<form id="J-form-upload-placeholder" name="form2" enctype="multipart/form-data" method="post" action="upload-placeholder.php" target="check_file_frame_placeholder" style="display:inline;">
+										<input name="file" type="file" id="J-upload-file-placeholder" class="upload-file-button" size="40" hidefocus="true" value="" />
+									</form>
+									<!-- <a class="btn" href="javascript:void(0);" onClick="document.getElementById('J-form-upload-placeholder').file.click();">上传占位图<b class="btn-inner"></b></a> -->
+									<span class="ui-prompt">图片尺寸必须和广告位尺寸一致</span>
+									<span class="ui-check"><i></i>请选择或上传一个占位图</span>
+								</div>
+							</li>
+							<li>
+								<label class="ui-label" for="name">位置状态：</label>
+								<span class="ui-singleline">开启</span>
+							</li>
+							<li class="ui-btn">
+								<a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">确 定<b class="btn-inner"></b></a>
+							</li>
+						</ul>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div id="J-img-move" style="display:none;position:absolute;left:0;top:0;"><img src="about:blank" /></div>
+
+	
+<textarea id="J-tpl-selectpages" style="display:none;">
+<div style="height:200px;overflow-y:scroll" id="J-panel-pages">
+<table class="table">
+<tbody>
+	<tr>
+		<td class="table-tool text-left"><label for="radio-page-1" class="label"><input name="radio-page" id="radio-page-1" type="radio" class="checkbox" value="1"><span class="pageTitle">低频</span></label></td>
+	</tr>
+	<tr>
+		<td class="table-tool text-left"><label for="radio-page-2" class="label"><input name="radio-page" id="radio-page-2" type="radio" class="checkbox" value="2"><span class="pageTitle">高频</span></label></td>
+	</tr>
+	<tr>
+		<td class="table-tool text-left"><label for="radio-page-3" class="label"><input name="radio-page" id="radio-page-3" type="radio" class="checkbox" value="3"><span class="pageTitle">黑龙江时时彩</span></label></td>
+	</tr>
+	<tr>
+		<td class="table-tool text-left"><label for="radio-page-4" class="label"><input name="radio-page" id="radio-page-4" type="radio" class="checkbox" value="4"><span class="pageTitle">江西时时彩</span></label></td>
+	</tr>
+</tbody>
+</table>
+</div>
+</textarea>
+
+<textarea id="J-tpl-selectparams" style="display:none;">
+<div style="height:200px;overflow-y:scroll" id="J-panel-params">
+<table class="table">
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>参数</th>
+						<th>尺寸</th>
+						<th>位置</th>
+						<th>页面</th>
+					</tr>
+				</thead>
+				<tbody>
+					<#=list#>
+				</tbody>
+			</table>
+</div>
+</textarea>
+
+
+<textarea id="J-tpl-selectparams-list" style="display:none;"></textarea>
+
+
+
+<script>
+
+
+function global_img(msg){
+	if(Number(msg['isSuccess']) == 1){
+		$('#J-input-imgid').val(msg['data']['id']);
+		$('#J-panel-upload').find('.ui-check').hide();
+	}else{
+		$('#J-input-imgid').val('');
+		$('#J-panel-upload').find('.ui-check').show();
+	}
+}
+function global_img_placeholder(msg){
+	if(Number(msg['isSuccess']) == 1){
+		if(msg['data']['action'] == 'select'){
+			$('#J-input-placeholder').val(msg['data']['id']);
+			$('#J-panel-img-position').find('.ui-check').hide();
+		}
+		if(msg['data']['action'] == 'del'){
+			$('#J-input-placeholder').val('');
+		}
+		var re=msg['data'];
+		$.each(re,function(i){
+			var image="<input type='hidden' id='image"+i+"' name='image"+i+"' value='"+re[i].src+"' />";
+			$("#J-upload-file-placeholder").append(image);
+		});
+	}else{
+		alert(data['msg']);
+	}
+}
+
+(function($){
+	var Wd = phoenix.Message.getInstance();
+	
+	$('#J-upload-file').click(function(e){
+		if($.trim($('#J-input-params').val()) == ''){
+			Wd.show({
+				mask:true,
+				title:'提示',
+				content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">必须先选择"广告位参数"，才能进行图片上传操作</h4></div></div>',
+				confirmIsShow:true,
+				cancelIsShow:true,
+				confirmFun:function(){
+					Wd.hide();
+				},
+				cancelFun:function(){
+					Wd.hide();
+				},
+				callback:function(){
+				}
+			});
+			e.preventDefault();
+		}
+	});
+	
+	$('#J-input-img-h').keyup(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+	});
+	
+	$('#J-panel-radio-position').find('input[type="radio"]').click(function(){
+		var v = this.value,param;
+		if(v == '1'){
+			param = $.trim($('#J-input-params').val());
+			if(param != ''){
+				$('#J-iframe-placeholder').attr('src', 'upload-placeholder.php?paramid=' + param);
+				$('#J-panel-img-position').show();
+			}else{
+				Wd.show({
+					mask:true,
+					title:'提示',
+					content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">必须先选择"广告位参数"，才能载入占位符图片</h4></div></div>',
+					confirmIsShow:true,
+					cancelIsShow:true,
+					confirmFun:function(){
+						Wd.hide();
+					},
+					cancelFun:function(){
+						Wd.hide();
+					},
+					callback:function(){
+					}
+				});
+				return false;
+			}
+		}else{
+			$('#J-panel-img-position').hide();
+		}
+	});
+	
+	//选择广告页面
+	$('#J-button-select-page').click(function(){
+		var iptids = $('#J-input-ids').val().split(',');
+		Wd.show({
+			mask:true,
+			title:'选择页面',
+			content:$('#J-tpl-selectpages').val(),
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				var ipts = $('#J-panel-pages').find('.checkbox'),ids = [],names = [];
+				ipts.each(function(){
+					if(this.checked){
+						ids.push(this.value);
+						names.push($(this).parent().find('.pageTitle').text());
+					}
+				});
+				if(ids.length < 1){
+					return;
+				}
+				
+			
+				$.ajax({
+					url:'data.json?action=getParamList',
+					dataType:'json',
+					method:'post',
+					data:{ids:ids.join(',')},
+					success:function(data){
+					
+						var data = {isSuccess:1,msg:'',data:[{id:1,param:'left_1',width:100,height:-1,pos:'左侧居中',page:'高低频通用'},{id:2,param:'right_1',width:130,height:-1,pos:'左侧居中',page:'高低频通用'}]}	,
+							strArr = [];
+						
+						if(ids.join(',') != $('#J-input-ids').val()){
+							$('#J-input-params').val('');
+							$('#J-input-params-title').val('');
+							$('#J-input-imgid').val('');
+							$('#J-input-placeholder').val('');
+						}
+					
+						if(Number(data['isSuccess']) == 1){
+							Wd.hide();
+							$('#J-input-page-title').val(names.join(';'));
+							$('#J-input-ids').val(ids.join(','));
+							checkPage();
+							
+							$.each(data['data'], function(){
+								var w = this.width < 0 ? '不限制' : this.width,
+									h = this.height < 0 ? '不限制' : this.height;
+								strArr.push('<tr><td><input name="radioParam" type="radio" class="radio" value="'+ this.id +'"></td><td><span class="paramTitle">'+ this.param +'</span></td><td><span class="paramWidth">'+ w +'</span>*'+ h +'</td><td>'+ this.pos +'</td><td>'+ this.page +'</td></tr>');
+							});
+							$('#J-tpl-selectparams-list').val($('#J-tpl-selectparams').val().replace(/<#=list#>/g, strArr.join('')));
+							
+						}else{
+							alert('msg');
+							Wd.hide();
+						}
+					}
+				});
+			},
+			cancelFun:function(){
+				Wd.hide();
+			},
+			callback:function(){
+				var ipts,id,v;
+				if(iptids.length > 0){
+					ipts = $('#J-panel-pages').find('.checkbox');
+					ipts.each(function(){
+						v = this;
+						$.each(iptids, function(){
+							id = this;
+							if(v.value == id){
+								v.checked = true;
+							}
+						});
+					});
+				}
+			}
+		});
+	});
+	
+	
+	
+	
+	//选择广告参数
+	$('#J-button-select-params').click(function(){
+		var iptids = $('#J-input-params').val().split(','),pageids = $.trim($('#J-input-ids').val());
+		if(pageids == ''){
+				Wd.show({
+					mask:true,
+					title:'提示',
+					content:'<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">必须先选择页面，才能选择参数</h4></div></div>',
+					confirmIsShow:true,
+					cancelIsShow:true,
+					confirmFun:function(){
+						Wd.hide();
+					},
+					cancelFun:function(){
+						Wd.hide();
+					},
+					callback:function(){
+					}
+				});
+			return;
+		}
+		
+		Wd.show({
+			mask:true,
+			title:'选择参数',
+			content:$('#J-tpl-selectparams-list').val(),
+			confirmIsShow:true,
+			cancelIsShow:true,
+			confirmFun:function(){
+				var ipts = $('#J-panel-params').find('.radio'),ids = [],names = [],ws = [];
+				ipts.each(function(){
+					if(this.checked){
+						ids.push(this.value);
+						names.push($(this).parent().parent().find('.paramTitle').text());
+						ws.push($(this).parent().parent().find('.paramWidth').text());
+					}
+				});
+				if(ids.length < 1){
+					return;
+				}
+				
+				Wd.hide();
+				$('#J-input-params-title').val(names.join(';'));
+				$('#J-input-params').val(ids.join(','));
+				$('#J-input-img-w').val(ws.join(','));
+				$('#J-iframe-placeholder').attr('src', 'upload-placeholder.php?paramid=' + ids.join(','));
+				checkParam();
+			},
+			cancelFun:function(){
+				Wd.hide();
+			},
+			callback:function(){
+				var ipts,id,v;
+				if(iptids.length > 0){
+					ipts = $('#J-panel-params').find('.radio');
+					ipts.each(function(){
+						v = this;
+						$.each(iptids, function(){
+							id = this;
+							if(v.value == id){
+								v.checked = true;
+							}
+						});
+					});
+				}
+			}
+		});
+	});
+	
+	
+	//检测页面
+	var checkPage = function(){
+		var dom = $('#J-input-page-title'),domv = $.trim(dom.val()),isPass = false;
+		if(domv == ''){
+			dom.parent().find('.ui-check').show();
+			isPass = false;
+		}else{
+			dom.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-page-title').blur(function(){
+		checkPage();
+	});
+	
+	//检测标题
+	var checkTitle = function(){
+		var dom = $('#J-input-title'),domv = $.trim(dom.val()),isPass = false;
+		if(domv == ''){
+			dom.parent().find('.ui-check').html('<i></i>广告位置名称不能为空').show();
+			isPass = false;
+		}else if(domv.length > 10){
+			dom.parent().find('.ui-check').html('<i></i>广告位置名称不能超过10个字符').show();
+			isPass = false;
+		}else{
+			dom.parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-title').blur(function(){
+		checkTitle();
+	});
+	
+	//检测广告参数
+	var checkParam = function(){
+		var dom = $('#J-input-params'),domv = $.trim(dom.val()),isPass = false;
+		if(domv == ''){
+			$('#J-input-params-title').parent().find('.ui-check').show();
+			isPass = false;
+		}else{
+			$('#J-input-params-title').parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	
+	//检测图片高
+	var checkHeight = function(){
+		var dom = $('#J-input-img-h'),domv = $.trim(dom.val()),isPass = false;
+		if(domv == ''){
+			dom.parent().parent().find('.ui-check').show();
+			isPass = false;
+		}else{
+			dom.parent().parent().find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-img-h').blur(function(){
+		checkHeight();
+	});
+	
+	
+	//检测预览图
+	var checkImg = function(){
+		var dom = $('#J-input-imgid'),domv = $.trim(dom.val()),isPass = false;
+		if(domv == ''){
+			$('#J-panel-upload').find('.ui-check').show();
+			isPass = false;
+		}else{
+			$('#J-panel-upload').find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	$('#J-input-img-h').blur(function(){
+		checkImg();
+	});
+	
+	
+	//检测占位图
+	var checkPlaceholder = function(){
+		var dom = $('#J-input-placeholder'),domv = $.trim(dom.val()),isPass = false,isNeed = false;
+		$('#J-panel-radio-position').find('input[type="radio"]').each(function(){
+			if(this.checked && this.value == '1'){
+				isNeed = true;
+				return false;
+			}
+		});
+		if(!isNeed){
+			$('#J-panel-img-position').find('.ui-check').hide();
+			return true;
+		}
+		if(domv == ''){
+			$('#J-panel-img-position').find('.ui-check').show();
+			isPass = false;
+		}else{
+			$('#J-panel-img-position').find('.ui-check').hide();
+			isPass = true;
+		}
+		return isPass;
+	};
+	
+	
+	
+	//文件上传按钮
+	$('#J-upload-file').bind('propertychange',function(){
+		$(this).parent().submit();
+	}).bind('change',function(){
+		$(this).parent().submit();
+	});
+	//文件上传按钮
+	$('#J-upload-file-placeholder').bind('propertychange',function(){
+		$(this).parent().submit();
+		$("#J-form-upload-placeholder").find("[type='hidden']").remove();
+	}).bind('change',function(){
+		$(this).parent().submit();
+		$("#J-form-upload-placeholder").find("[type='hidden']").remove();
+	});
+	
+						
+						
+						
+	//提交表单
+	$('#J-button-submit').click(function(){
+		//console.log(checkPage(), checkTitle(), checkParam(), checkHeight(), checkImg(), checkPlaceholder());
+		if(checkPage() && checkTitle() && checkParam() && checkHeight() && checkImg() && checkPlaceholder()){
+			var pageids = $('#J-input-ids').val(),
+				params = $('#J-input-params').val(),
+				imgid = $('#J-input-imgid').val(),
+				placeholder = $('#J-input-placeholder').val();
+
+			$.ajax({
+				url:'data.json',
+				dataType:'json',
+				data:{pageids:pageids, params:params, imgid:imgid, placeholder:placeholder},
+				success:function(data){
+					if(Number(data['isSuccess']) == 1){
+						
+						Wd.show({
+							mask:true,
+							title:'提示',
+							confirmText:'继续创建',
+							cancelText:'进入管理',
+							content:'<div class="bd text-center"><div class="pop-title"><i class="ico-success"></i><h4 class="pop-text">创建成功</h4></div></div>',
+							confirmIsShow:true,
+							cancelIsShow:true,
+							confirmFun:function(){
+								Wd.hide();
+								location.href = location.href;
+							},
+							cancelFun:function(){
+								Wd.hide();
+								location.href = '1.7.html';
+							},
+							callback:function(){
+							}
+						});
+						
+					}else{
+						alert(data['msg']);
+					}
+				}
+			});
+		}
+	});	
+	
+})(jQuery);
+</script>
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

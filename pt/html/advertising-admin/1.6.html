@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>广告管理-解绑和排序广告</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.table-group .table-toggle a {color:#009B7D; text-decoration:underline;}
+	.j-ui-tip {border:1px solid #CCC;padding:10px;}
+	.j-ui-tip .sj {display:none;}
+	.row-show {position:relative;}
+	.row-show-pass {position:relative;}
+	.row-show-panel {display:none;position:absolute;background:#FFFFE1;border:1px solid #CCC;padding:10px;}
+	.row-show-panel-current {display:block;}
+	</style>
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Hover.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+    <script type="text/javascript" src="../js/sortabletable.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>广告</dt>
+				<dd><a href="1.1index.html">广告管理（发布）</a></dd>
+				<dd><a href="1.71proxy-list.html">广告管理（审核）</a></dd>
+				<dd class="current"><a href="1.71proxy-list.html">广告位管理</a></dd>
+				<dt>公告</dt>
+				<dd><a href="2.1freeze-account-list.html">公告管理（发布）</a></dd>
+				<dd><a href="#">公告管理（审核）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建公告</a></dd>
+				<dt>专题</dt>
+				<dd><a href="2.1freeze-account-list.html">专题管理（发布）</a></dd>
+				<dd><a href="#">专题管理（查看）</a></dd>
+				<dd><a href="2.2account-complaints.html">新建专题</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">广告位管理</a> &gt; 解绑和排序广告</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main sequence">
+						<form action="?" id="J-form">
+						<table class="table table-info tabel-group" id="J-table">
+							<thead>
+								<tr>
+									<th>缩略图</th>
+									<th>广告名称</th>
+									<th>展示用户组</th>
+									<th class="table-toggle">有效期</th>
+									<th>状态</th>
+									<th>审核状态</th>
+									<th class="table-toggle">排序</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<input name="check" type="checkbox" class="checkbox" value="1" />
+										<a href="" class="thumbnail"><img class="row-img-small" src="" alt="" data-src-big="https://www.google.com.ph/images/srpr/logo11w.png" data-width="10" data-height="20" /></a>
+									</td>
+									<td>新春快乐祝贺图</td>
+									<td>代理</td>
+									<td>2013-02-01 10:20:30<br />2013-02-02 10:20:30</td>
+									<td>进行中</td>
+									<td>已通过</td>
+									<td><input type="text" value="333" class="input w-1 input-num"></td>
+								</tr>
+								<tr>
+									<td>
+										<input name="check" type="checkbox" class="checkbox" value="2" />
+										<a href="" class="thumbnail"><img class="row-img-small" src="" alt="" data-src-big="https://www.google.com.ph/images/srpr/logo11w.png" data-width="10" data-height="20" /></a>
+									</td>
+									<td>会员新春快乐祝贺图</td>
+									<td>会员</td>
+									<td>2013-02-10 10:20:30<br />2013-02-02 10:20:30</td>
+									<td>进行中</td>
+									<td>已通过</td>
+									<td><input type="text" value="222" class="input w-1 input-num"></td>
+								</tr>
+                                								<tr>
+									<td>
+										<input name="check" type="checkbox" class="checkbox" value="2" />
+										<a href="" class="thumbnail"><img class="row-img-small" src="" alt="" data-src-big="https://www.google.com.ph/images/srpr/logo11w.png" data-width="10" data-height="20" /></a>
+									</td>
+									<td>3新春快乐祝贺图</td>
+									<td>3会员</td>
+									<td>2013-02-10 10:20:30<br />2013-02-02 10:20:30</td>
+									<td>进行中</td>
+									<td>已通过</td>
+									<td><input type="text" value="111" class="input w-1 input-num"></td>
+								</tr>
+							</tbody>
+						</table>
+						</form>
+						<p class="text-right"><a id="J-button-submit" href="javascript:void(0);" class="btn btn-important">确 定<b class="btn-inner"></b></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+<script>
+(function($){
+	
+	var st1 = new SortableTable(document.getElementById("J-table"),
+	["None", "None", "None", "None", "None", "None", "Number"]);
+	
+	var table = $('#J-table');
+	//弹窗
+	var Wd = phoenix.Message.getInstance(),
+		Tip = phoenix.Tip.getInstance();
+		
+	
+	//缩略图
+	table.on('mouseenter', '.row-img-small', function(){
+		var dom = $(this),src = dom.attr('data-src-big'),w = dom.attr('data-width'),h = dom.attr('data-height');
+		Tip.setText('<img width="400" src="'+ src +'" /><div style="text-align:center;font-size:12px;color:#333;line-height:180%;">尺寸：'+ w +' * '+ h +'</div>');
+		Tip.show(dom.width()+5, -4, this);
+	}).on('mouseleave', '.row-img-small', function(){
+		Tip.hide();
+	});
+	
+	table.on('keyup', '.input-num', function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+	});
+	
+	
+	$('#J-button-submit').click(function(){
+		var vs = [];
+		table.find('input[type="checkbox"]').each(function(){
+			if(this.checked){
+				vs.push(this.value);
+			}
+		});
+		$.ajax({
+			url:'data.json',
+			dataType:'json',
+			data:{},
+			success:function(data){
+				if(Number(data['isSuccess']) == 1){
+						Wd.show({
+							mask:true,
+							title:'提示',
+							confirmText:'确定',
+							cancelText:'关闭',
+							content:'<div class="bd text-center"><div class="pop-title"><i class="ico-success"></i><h4 class="pop-text">操作成功</h4></div></div>',
+							confirmIsShow:true,
+							cancelIsShow:true,
+							confirmFun:function(){
+								Wd.hide();
+								location.href = location.href;
+							},
+							cancelFun:function(){
+								Wd.hide();
+								location.href = location.href;
+							},
+							callback:function(){
+							}
+						});
+				}else{
+					alert(data['msg']);
+				}
+			}
+		});
+		
+		//$('#J-form').submit();
+	});
+	
+	
+})(jQuery);
+</script>	
+	
+	
+	
+</body>
+</html>

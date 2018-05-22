@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>代理平台后台-中奖名单配置</title>
+<link rel="stylesheet" href="style/style.css"/>
+<style>
+.input-money {width:60px;}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="">
+	<div class="wrapper">
+		<div class="main">
+			<h2>在线客服管理</h2>
+			<div class="ui-title">配置后显示为：Max*****ky 中奖获得  5000000 元。（为了让用户感觉到真实性，建议经常更换用户名和中奖金额。）</div>
+			<form id="J-form" action="?">
+			<table class="ui-table" id="J-table">
+				<thead>
+					<tr>
+						<th>用户名称</th>
+						<th></th>
+						<th>中奖金额</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10" value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="input input-name" maxlength="10"  value="" /></td>
+						<td>中奖获得</td>
+						<td><input type="text" class="input input-money" value="" /></td>
+						<td>元</td>
+					</tr>
+				</tbody>
+			</table>
+			</form>
+										<div id="J-wd-msg-right" class="pop-mini w-4">
+											<i class="ico-success"></i>
+											<h4 class="pop-text"></h4>
+										</div>
+										<div id="J-wd-msg-error" class="pop-mini w-4">
+											<i class="ico-error"></i>
+											<h4 class="pop-text"></h4>
+										</div>
+			<ul class="ui-form">
+				<li style="text-align:center;">
+					<input type="button" class="ui-button" id="J-button-submit" value="提交并保存">
+				</li>
+			</ul>
+			
+			<div class="pop-mini w-4" style="position:absolute;left:100px;">
+				<i class="ico-success"></i>
+				<h4 class="pop-text">操作成功</h4>
+			</div>
+			<div class="pop-mini w-4" style="position:absolute;left:400px;">
+				<i class="ico-error"></i>
+				<h4 class="pop-text">客服名称不能为空</h4>
+			</div>
+		</div>
+		<div class="sub"></div>
+	</div>
+
+
+
+
+<script>
+(function($){
+	//type = 1 成功消息
+	//type = 0 错误消息
+	var msgDom = [$('#J-wd-msg-error'), $('#J-wd-msg-right')],
+		showMsg = function(type, text){
+			var el = msgDom[type];
+			msgDom[0].hide();
+			msgDom[1].hide();
+			el.find('.pop-text').html(text);
+			el.show();
+			setTimeout(function(){
+				el.hide();
+			}, 3000);
+		};
+		
+	$('#J-table').find('.input-money').keyup(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+		this.value = Number(this.value) > 9999999 ? 9999999 : this.value;
+	}).blur(function(){
+		this.value = this.value.replace(/[^\d]/g, '');
+		this.value = Number(this.value) > 9999999 ? 9999999 : this.value;
+	});
+	
+	$('#J-button-submit').click(function(){
+		var names = $('#J-table').find('.input-name'),
+			moneys = $('#J-table').find('.input-money'),
+			isPass = true;
+		names.each(function(i){
+			if($.trim(this.value) == ''){
+				isPass = false;
+				showMsg(0, '用户名不能为空');
+				names.eq(i).focus();
+				return false;
+			}
+			if($.trim(moneys.get(i).value) == ''){
+				isPass = false;
+				showMsg(0, '中奖金额不能为空');
+				moneys.eq(i).focus();
+				return false;
+			}
+		});
+		if(!isPass){
+			return;
+		}
+		
+		$('#J-form').submit();
+		
+	});
+	
+	
+	
+	
+	
+})(jQuery);
+</script>
+
+
+
+
+</body>
+</html>

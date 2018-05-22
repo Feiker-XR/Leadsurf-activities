@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>查看中奖结果</title>
+<meta id="viewport" name="viewport" content="target-densitydpi=medium-dpi, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" href="style/style.css?" />
+<style>
+.j-ui-tip {background:#FFFFE1;font-size:12px;border:1px solid #666;color:333;}
+.j-ui-tip-info {color:#333;margin-right:10px;width:200px;}
+.j-ui-tip .sj {background:none;display:none;}
+.table tr:hover td {background:#FFFFE1;}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/phoenix.base.js" ></script>
+<script type="text/javascript" src="js/phoenix.Class.js" ></script>
+<script type="text/javascript" src="js/phoenix.Event.js" ></script>
+<script type="text/javascript" src="js/phoenix.util.js" ></script>
+<script type="text/javascript" src="js/phoenix.Tip.js" ></script>
+<script type="text/javascript" src="js/phoenix.Mask.js" ></script>
+
+</head>
+<body>
+	
+	
+			<style>
+				body {background:#CB223F}
+				.common-button {position:absolute;bottom:10px;display:block;width:60px;height:32px;line-height:32px;text-align:center;color:#FFF;padding-left:2px;}
+				.button-left {left:10px;background:#8E182C url(images/button-left.gif) no-repeat 10px 12px;}
+				.button-right {right:10px;background:#8E182C url(images/button-right.gif) no-repeat 10px 7px;padding-left:16px;}
+			</style>
+			<a id="J-button-back" class="common-button button-left" href="#">返回</a>
+			<a id="J-button-refresh" class="common-button button-right" href="#">刷新</a>
+			<script>
+			(function(){
+				$('#J-button-back').click(function(e){
+					e.preventDefault();
+					history.back(-1);
+				});
+				$('#J-button-refresh').click(function(){
+					location.href = location.href;
+				});
+			})();
+			</script>
+	
+	
+	
+	<div class="content">
+		<table class="table" id="J-table">
+			<thead>
+				<tr>
+					<th>日期</th>
+					<th>获得奖品</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>未选择奖品</td>
+							<td><a href="javascript:void(0);" class="color-green" data-action="select" data-value="2000" data-id="13">选择奖品</a></td>
+						</tr>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>iPhone5s土豪金</td>
+							<td>
+								<a href="javascript:void(0);" class="color-green" data-action="viewcontact" data-value="2000" data-id="1">查看联系方式</a>
+								<input class="hidden-mobile" type="hidden" value="13565658857" />
+								<input class="hidden-email" type="hidden" value="google@tom.com" />
+							</td>
+						</tr>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>iPhone5s土豪金</td>
+							<td>
+								<a href="javascript:void(0);" class="color-green" data-action="viewcontact" data-value="2000" data-id="1">查看联系方式</a>
+								<input class="hidden-mobile" type="hidden" value="13565658857" />
+								<input class="hidden-email" type="hidden" value="google@tom.com" />
+							</td>
+						</tr>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>iPhone5s土豪金</td>
+							<td>
+								<a href="javascript:void(0);" class="color-green" data-action="viewcontact" data-value="2000" data-id="1">查看联系方式</a>
+								<input class="hidden-mobile" type="hidden" value="13565658857" />
+								<input class="hidden-email" type="hidden" value="google@tom.com" />
+							</td>
+						</tr>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>iPhone5s土豪金</td>
+							<td>
+								<a href="javascript:void(0);" class="color-green" data-action="viewcontact" data-value="2000" data-id="1">查看联系方式</a>
+								<input class="hidden-mobile" type="hidden" value="13565658857" />
+								<input class="hidden-email" type="hidden" value="google@tom.com" />
+							</td>
+						</tr>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>乐利特别奖：58901</td>
+							<td>
+								<a href="javascript:void(0);" class="color-green" data-action="viewtime" data-value="2000" data-id="1">查看开奖时间</a>
+								<input class="hidden-date" type="hidden" value="2013年12月20日上午5点" />
+							</td>
+						</tr>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>乐利特别奖：58901</td>
+							<td>
+								<a href="javascript:void(0);" class="color-green" data-action="viewtime" data-value="2000" data-id="1">查看开奖时间</a>
+								<input class="hidden-date" type="hidden" value="2013年12月20日上午5点" />
+							</td>
+						</tr>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>iPhone5s土豪金</td>
+							<td>
+								<a href="javascript:void(0);" class="color-green" data-action="viewcontact" data-value="2000" data-id="1">查看联系方式</a>
+								<input class="hidden-mobile" type="hidden" value="13565658857" />
+								<input class="hidden-email" type="hidden" value="google@tom.com" />
+							</td>
+						</tr>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>乐利特别奖：58901</td>
+							<td>
+								<a href="javascript:void(0);" class="color-green" data-action="viewtime" data-value="2000" data-id="1">查看开奖时间</a>
+								<input class="hidden-date" type="hidden" value="2013年12月20日上午5点" />
+							</td>
+						</tr>
+						<tr>
+							<td>2014-10-25 14:24:24</td>
+							<td>乐利特别奖：58901</td>
+							<td>
+								<a href="javascript:void(0);" class="color-green" data-action="viewtime" data-value="2000" data-id="1">查看开奖时间</a>
+								<input class="hidden-date" type="hidden" value="2013年12月20日上午5点" />
+							</td>
+						</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<ul id="J-items-list" style="display:none;">
+		<li data-id="1" data-type="0" data-value="-1" data-img="">乐利特等奖抽奖机会</li>
+		<li data-id="2" data-type="0" data-value="5" data-img="">5个积分</li>
+		<li data-id="4" data-type="0" data-value="20" data-img="">20个积分</li>
+		<li data-id="5" data-type="0" data-value="100" data-img="">100个积分</li>
+		
+		<li data-id="6" data-type="1" data-value="4000" data-img="images/9.png">iPad Air</li>
+		<li data-id="7" data-type="1" data-value="4000" data-img="images/6.png">Sony NEX-5RL</li>
+		<li data-id="8" data-type="1" data-value="4000" data-img="images/13.png">三星GALAXY Note 3</li>
+		<li data-id="9" data-type="1" data-value="6000" data-img="images/11.png">Sony HDR-PJ660E</li>
+		<li data-id="10" data-type="1" data-value="6000" data-img="images/12.png">iPhone 5S 16G</li>
+		<li data-id="11" data-type="1" data-value="6000" data-img="images/3.png">周大福马年金条</li>
+		<li data-id="12" data-type="1" data-value="20000" data-img="images/1.png">Macbook pro</li>
+		<li data-id="13" data-type="1" data-value="20000" data-img="images/8.png">prada公文包</li>
+		<li data-id="14" data-type="1" data-value="20000" data-img="images/2.png">浪琴男士机械表</li>
+	</ul>
+	
+	
+	
+	
+	<div id="J-wd-detail" style="display:none;" class="pop">
+		<div class="bd ">
+			<p class="wd-p-center" id="J-wd-text"></p>
+			<a class="btn-close" href="javascript:void(0);">关闭</a>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	<div id="J-wd-item" style="display:none;" class="pop">
+		<h2>请选择奖品！</h2>
+		<div class="bd ">
+			<input type="hidden" id="J-wd-selectItem-id" value="">
+			<a class="pic-current" href="javascript:void(0);">
+				<img id="J-wd-item-img" alt="" src="about:blank" width="100%">
+			</a>
+			<h4>奖品名称：<span id="J-wd-item-title"></span><br>奖品价值：<em id="J-wd-item-money">0</em>元</h4>
+			<div class="pic-list clearfix">
+				<p>您亦可选择下列等值奖品替换：</p>
+				<ul id="J-wd-item-list">
+				
+				</ul>
+			</div>
+			<a id="J-wd-item-button-go" class="btn-submit"  href="signup.html">立即领取</a>
+			<a class="btn-close" href="javascript:void(0);">关闭</a>
+		</div>
+	</div>
+	
+	
+	
+	
+
+<script>
+(function($){
+
+	var prizeData = {};
+	$.each($('#J-items-list > li'), function(){
+		var el = $(this),id = $.trim(el.attr('data-id')),title = $.trim(el.text()),value = Number(el.attr('data-value')),type = Number(el.attr('data-type')),img = $.trim(el.attr('data-img'));
+		prizeData[id] = {id:id,title:title,value:value,type:type,img:img};
+	});
+
+	$('#J-wd-item-button-go').click(function(){
+		hideWd();
+	});
+
+	$('#J-wd-item').on('click', '.wd-item-list-select', function(){
+		var el = $(this),cls = 'current';
+		var gobutton = $('#J-wd-item-button-go');
+		$('#J-wd-item-img').attr('src', el.attr('data-img'));
+		$('#J-wd-item-title').text(el.attr('data-title'));
+		$('#J-wd-selectItem-id').val(el.attr('data-id'));
+		el.parent().find('.wd-item-list-select').removeClass(cls);
+		el.addClass(cls);
+		gobutton.attr('href', gobutton.attr('href').replace(/\?.*$/g, '') + '?id=' + el.attr('data-id'));
+	});
+
+
+
+	var mask = phoenix.Mask.getInstance(),
+		tip = phoenix.Tip.getInstance(),
+		currentWd = null; 
+	//公共关闭窗口按钮
+	$('.pop .ico-close, .pop .btn-close, .btn-click, .control-refresh').click(function(){
+		var el = $(this);
+		if(el.hasClass('control-close')){
+			var wd = $('#J-wd-submit-not');
+			hideWd();
+			showWd(wd);
+		}else if(el.hasClass('control-close-cancel')){
+			$('#J-wd-submit-not').hide();
+			$('#J-wd-item').show();
+		}else if(el.hasClass('control-close-confirm')){
+			$('#J-wd-submit-not').hide();
+			$('#J-wd-item').hide();
+			hideWd();
+		}else if(el.hasClass('control-refresh')){
+			location.href = location.href;
+		}else{
+			hideWd();
+		}
+	});
+	function showWd(dom){
+		//phoenix.util.toViewCenter(dom);
+		dom.css('marginTop', dom.height()/2*-1);
+		mask.show();
+		dom.show();
+		currentWd = dom;
+	}
+	function hideWd(){
+		if(currentWd && currentWd.hide){
+			currentWd.hide();
+			mask.hide();
+		}
+	}
+
+
+
+	var table = $('#J-table');
+	table.on('click', 'a', function(){
+		var el = $(this),action = $.trim(el.attr('data-action')),id = Number(el.attr('data-id')),value = Number(el.attr('data-value'));
+		if(!action || (action == '')){
+			return;
+		}
+		switch(action){
+			case 'select':
+				selectItems(id);
+			break;
+			default:
+			break;
+		}
+	});
+	table.on('click', 'a', function(){
+		var el = $(this),action = $.trim(el.attr('data-action')),id = Number(el.attr('data-id')),value = Number(el.attr('data-value'));
+		if(!action || (action == '')){
+			return;
+		}
+		switch(action){
+			case 'viewcontact':
+				var mobile = el.parent().find('.hidden-mobile').val(),email = el.parent().find('.hidden-email').val();
+				$('#J-wd-text').html('手机号码：' + mobile + '<br />' + '电子邮箱：' + email);
+				showWd($('#J-wd-detail'));
+			break;
+			case 'viewtime':
+				var date = el.parent().find('.hidden-date').val();
+				$('#J-wd-text').html('请在'+ date +'关注乐利视频开奖直播，届时将会进行乐利特别奖现场抽奖。');
+				showWd($('#J-wd-detail'));
+			break;
+			default:
+			break;
+		}
+	});
+	
+	
+	
+	//选择同等价值实体物品
+	function selectItems(id){
+		//实物类型
+			//同等奖品价值
+			hideWd();
+			var strArr = [];
+			var prizeItem = prizeData[id];
+			var itemArr = getPizeByValue(prizeItem['value']);
+			var wd = $('#J-wd-item');
+			var gobutton = $('#J-wd-item-button-go');
+			$('#J-wd-item-img').attr('src', prizeItem['img']);
+			$.each(itemArr, function(){
+				cls = prizeItem['id'] == this['id'] ? 'current' : '';
+				
+				strArr.push('<li class="wd-item-list-select '+ cls +'" data-img="'+ this['img'] +'" data-title="'+ this['title'] +'" data-id="'+ this['id'] +'"><img src="'+ this['img'] +'" alt="" width="100%" ><span>'+ this['title'] +'<br>价值：<em>'+ this['value'] +'</em>元</span></li>');
+				
+			});
+			$('#J-wd-item-list').html(strArr.join(''));
+			$('#J-wd-item-money').text(prizeItem['value']);
+			$('#J-wd-item-title').text(prizeItem['title']);
+			$('#J-wd-selectItem-id').val(prizeItem['id']);
+			
+			gobutton.attr('href', gobutton.attr('href').replace(/\?.*$/g, '') + '?id=' + id);
+			
+			showWd(wd);
+	}
+	function getPizeByValue(value){
+		var p,arr = [];
+		for(p in prizeData){
+			if(prizeData.hasOwnProperty(p) && prizeData[p]['value'] == value){
+				arr.push(prizeData[p]);
+			}
+		}
+		return arr;
+	}
+	
+	
+	
+})(jQuery);
+</script>
+
+
+
+</body>
+</html>

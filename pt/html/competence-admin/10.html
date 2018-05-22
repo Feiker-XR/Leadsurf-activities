@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>10.修改密码</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li class="current"><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>权限中心</dt>
+				<dd><a href="8.html">权限组管理</a></dd>
+				<dd><a href="9.html">创建权限组</a></dd>
+				<dd><a href="7.html">用户管理</a></dd>
+				<dd><a href="11.html">添加用户</a></dd>
+				<dd><a href="12.html">操作日志</a></dd>
+				<dd class="current"><a href="10.html">修改密码</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">客户管理</a> &gt; 列表</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<form id="info-content">
+							<ul class="ui-form">
+								<li>
+									<label class="ui-label" for="">当前密码：</label>
+									<input id="oldpassword" name="currentPassword" type="password" value="" class="input w-4" />
+									<span class="ui-text-prompt"></span>
+								</li>
+								<li>
+									<label class="ui-label" for="">新登录密码：</label>
+									<input id="newpassword" name="newPassword" type="password" value="" class="input w-4" />
+									<span class="ui-check"></span>
+								</li>
+								<li>
+									<label class="ui-label" for="">确认新密码：</label>
+									<input id="confirmpassword" type="password" value="" class="input w-4" />
+									<span class="ui-check"></span>
+								</li>
+								<li class="ui-btn">
+									<a id="submit" class="btn btn-important" href="javascript:void(0);">修改<b class="btn-inner"></b></a>
+								</li>
+							</ul>
+						</form>
+						<div id="successTips" class="pop pop-success w-4" style="display:none;position:absolute;left:50%;top:50%;margin:-23px 0 0 -111px;z-index:601">
+							<i class="ico-success"></i>
+							<h4 class="pop-text">修改密码成功</h4>
+						</div>
+						
+						<div id="errorTips" class="pop pop-error w-4" style="display:none;position:absolute;left:50%;top:50%;margin:-23px 0 0 -111px;z-index:601">
+							<i class="ico-error"></i>
+							<h4 class="pop-text">修改密码失败，请重试</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+	(function(win, host){
+		var oldVal = '',
+			newVal = '',
+			confirmVal = '',
+			oldDom = $('#oldpassword'),
+			newDom = $('#newpassword'),
+			confirmDom = $('#confirmpassword'),
+			formDom = $('#info-content'),
+			submitButtonDom = $('#submit'),
+			mask = phoenix.Mask.getInstance(),
+			message = phoenix.Message.getInstance();
+
+			oldDom.val('');
+			newDom.val('');
+			confirmDom.val('');
+
+			oldDom.focus(function(){
+				var tipsDom = $(this).next();
+				if($.trim($(this).val())==''){
+					tipsDom.html('请输入当前登录密码');
+					tipsDom.show();
+				}
+			});
+			newDom.focus(function(){
+				var tipsDom = $(this).next();
+				tipsDom.html('6-20位字符组成，区分大小写');
+				tipsDom.show();
+			});
+			confirmDom.focus(function(){
+				var tipsDom = $(this).next();
+				if($.trim($(this).val)==''){
+					tipsDom.html('请再次输入登录密码');
+					tipsDom.show();
+				}
+			});
+
+			oldDom.blur(function(){
+				var tipsDom = $(this).next();
+				if($(this).val() == ''){
+					tipsDom.html('请输入当前登录密码');
+					tipsDom.show();
+				}else{
+					tipsDom.html('');
+					oldVal = $(this).val();
+				}
+			});
+			newDom.blur(function(){
+				var tipsDom = $(this).next(),
+					content = $(this).val();
+				if(content.length >= 6 && content.length <= 20){
+					tipsDom.html('');
+					newVal = content;
+				}else{
+					tipsDom.html('6-20位字符组成，区分大小写');
+					tipsDom.show();
+				}
+			});
+			confirmDom.blur(function(){
+				var tipsDom = $(this).next(),
+					password = newDom.val();
+
+				if($.trim($(this).val()) == ''){
+					tipsDom.html('请再次输入登录密码');
+					tipsDom.show();
+					return;
+				}
+
+				if($(this).val() == password){
+					tipsDom.html('');
+					confirmVal = password;
+				}else{
+					tipsDom.html('两次密码输入不一致');
+					tipsDom.show();
+				}
+			});
+
+			submitButtonDom.click(function(){
+				var data = formDom.serialize(),
+					successDom = $('#successTips'),
+					errorDom = $('#errorTips');
+
+
+				//密码
+				if(oldVal == ''){
+					oldDom.next().html('请输入当前登录密码');
+					oldDom.show();
+					oldDom.focus();
+					return;
+				}
+
+				//新密码
+				if(newVal == ''){
+					newDom.next().html('6-20位字符组成，区分大小写');
+					newDom.show();
+					newDom.focus();
+					return;
+				}
+
+				//确认新密码
+				if(confirmVal == ''){
+					confirmDom.next().html('请再次输入登录密码');
+					confirmDom.show();
+					confirmDom.focus();
+					return;
+				}
+
+				$.ajax({
+					url: '#',
+					dataType: 'json',
+					type: 'GET',
+					data: data,
+					success:function(data){
+						if(Number(data['isSuccess']) == 1){
+							successDom.show();
+							mask.show();
+							setTimeout(function(){
+								successDom.hide();
+								mask.hide()
+							},2000)
+						}else{
+							errorDom.show();
+							mask.show();
+							setTimeout(function(){
+								errorDom.hide();
+								mask.hide()
+							},2000)
+						}
+					},
+					complete: function(){
+
+					}
+				});
+			});
+
+	})(window, phoenix);
+</script>
+</body>
+</html>

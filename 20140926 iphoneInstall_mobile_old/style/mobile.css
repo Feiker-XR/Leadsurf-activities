@@ -1,0 +1,18 @@
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, th, td, em, form, input,select, textarea, button, header, section, aside, footer { margin: 0; padding: 0; }
+body{min-width:320px;-webkit-text-size-adjust: none; overflow-x: hidden; }
+ul, li { list-style: none; }
+img { border: none; }
+a { color: #287fc2; text-decoration: none; }
+.banner,.content,.function{width:100%;min-width:320px;max-width:800px;margin:0 auto;}
+.banner img,.content img,.function img{display:block;width:100%;}
+.banner{position:relative;}
+.btn{position:absolute;left:20%;bottom:-10%;width:60%;
+/*
+height:20%;border:6px solid #B30000;font-size:200%;font-weight:700;color:#CC1414;text-shadow:0 1px 2px  #FFDF8A;text-align:center;border-radius:80px;box-shadow:0 2px 3px #FFF2A7 inset;
+background-color:#FFDF49;
+background-image:-webkit-linear-gradient(top,#FFDF4A,#FEBB34);
+background-image:-moz-linear-gradient(top,#FFDF4A,#FEBB34);
+background-image:-o-linear-gradient(top,#FFDF4A,#FEBB34);
+background-image:linear-gradient(top,#FFDF4A,#FEBB34);
+*/
+}

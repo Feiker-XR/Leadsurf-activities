@@ -1,0 +1,726 @@
+	<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>盈亏报表</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li class="current"><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>权限中心</dt>
+				<dd><a href="8.html">权限组管理</a></dd>
+				<dd><a href="9.html">创建权限组</a></dd>
+				<dd><a href="7.html">用户管理</a></dd>
+				<dd><a href="11.html">添加用户</a></dd>
+				<dd class="current"><a href="13.html">盈亏报表</a></dd>
+				<dd><a href="10.html">修改密码</a></dd>
+			</dl>
+		</div>
+		<div class="col-main sale-game-details">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<form id="J-form" action="?">
+							<ul class="ui-search">
+								<li class="time">
+									<label for="" class="ui-label">时间：</label>
+									<input id="timeStart" type="text" value="" class="input"> 至 <input id="timeEnd" type="text" value="" class="input">
+								</li>
+								<li class="name">
+									<label class="ui-label">彩种：</label>
+									<select class="ui-select">
+										<option value="所有">所有</option>
+										<option value="元">元</option>
+										<option value="角">角</option>
+									</select>
+								</li>
+								<li class="name">
+									<label class="ui-label">模式：</label>
+									<select class="ui-select">
+										<option value="所有">所有</option>
+										<option value="元">元</option>
+										<option value="角">角</option>
+									</select>
+								</li>
+								<li><a href="javascript:void(0);" id="J-button-submit" class="btn btn-important">搜 索<b class="btn-inner"></b></a></li>
+							</ul>
+						</form>
+						<table class="table table-info">
+							<thead>
+								<tr>
+									<th>游戏</th>
+									<th>玩法</th>
+									<th>总代购费</th>
+									<th>实际总代购费</th>
+									<th>中奖金额</th>
+									<th>总结算</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr align="center">
+									<td rowspan="1" >
+									<b>CQSSC<script>$("#titlename").html("游戏")</script></b>
+									</td>
+									<td >五码区间三星</td>
+									<td height="37" >0.0000</td>
+									<td >0.0000</td>
+									<td >0.0000</td>
+									<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td rowspan="9" >
+								<b>五星</b>
+								</td>
+								<td >五星直选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星组合</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星通选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星组选120</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星组选60</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星组选30</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星组选20</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星组选10</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星组选5</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td rowspan="7" >
+								<b>四星</b>
+								</td>
+								<td >四星直选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四星组合</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四星通选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四星组选24</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四星组选12</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四星组选6</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四星组选4</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td rowspan="12" >
+								<b>后三</b>
+								</td>
+								<td >后三直选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三直选_和值</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三组选_组三</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三组选_组六</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三组选_混合</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三组选_和值</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三直选_跨度</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三组选_包胆</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三组合</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三通选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三_和值尾数</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三特殊号</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td rowspan="12" >
+								<b>前三</b>
+								</td>
+								<td >前三直选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三直选_和值</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三组选_组三</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三组选_组六</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三组选_混合</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三组选_和值</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三直选_跨度</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三组选_包胆</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三组合</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三通选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三_和值尾数</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三特殊号</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td rowspan="12" >
+								<b>二星</b>
+								</td>
+								<td >前二直选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后二直选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前二组选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后二组选</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前二直选和值</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前二直选跨度</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后二直选和值</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后二直选跨度</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前二组选和值</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前二组选包胆</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后二组选和值</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后二组选包胆</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td rowspan="5" >
+								<b>一星</b>
+								</td>
+								<td >万位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >千位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >百位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >十位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >个位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td rowspan="8" >
+								<b>不定位</b>
+								</td>
+								<td >后三一码不定位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三二码不定位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四星一码不定位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四星二码不定位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星二码不定位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >五星三码不定位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三一码不定位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三二码不定位</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td rowspan="4" >
+								<b>大小单双</b>
+								</td>
+								<td >前二大小单双</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后二大小单双</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三大小单双</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三大小单双</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td rowspan="11" >
+								<b>趣味</b>
+								</td>
+								<td >五码趣味三星</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四码趣味三星</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三趣味二星</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三趣味二星</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四码区间三星</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >后三区间二星</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >前三区间二星</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >一帆风顺</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >好事成双</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >三星报喜</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+								<tr align="center">
+								<td >四季发财</td>
+								<td height="37" >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								<td >0.0000</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+	;(function(){
+		var inputTimeStart = $('#timeStart'),
+			inputTimeEnd = $('#timeEnd');
+
+		inputTimeStart.click(function(){
+			var Dt = new phoenix.DatePicker({input:this});
+				Dt.show();
+		});	
+		inputTimeEnd.click(function(){
+			var Dt = new phoenix.DatePicker({input:this});
+				Dt.show();
+		});	
+		
+		new phoenix.Input({el:'#J-search-username',defText:'请输入您的用户名'});
+		
+		$('#J-search-ip').keyup(function(){
+			this.value = this.value.replace(/[^?:(\.|\d)]/g, '');
+		});
+		
+		
+		$('#J-button-submit').click(function(){
+			$('#J-form').submit();
+		});
+		
+	})();
+</script>
+</body>
+</html>

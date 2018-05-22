@@ -1,0 +1,360 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2014-06-19 15:57:02
+ * @version $Id$
+ */
+html,body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,th,td,em,form,input,select,textarea,button,header,section,aside,footer{margin:0;padding:0;}
+ul,li{list-style:none;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+img{border:none;}
+body{font:12px/1.5 Microsoft Yahei,Arial,Helvetica,sans-serif;color:#333;}
+.clearfix:after{content:".";display:block;height:0;clear:both;overflow:hidden;}
+.clearfix{*zoom:1;}
+
+
+/*code-area*/
+.code-area{
+	display: block;
+	position: absolute;
+	top: -1058px;
+	right: 15px;
+	width: 128px;
+	height: 800px;
+	z-index: 1;
+}
+
+.code-area .rope{
+	width: 2px;
+	height: 800px;
+	margin: 0px auto;
+	background: #fff9e6;
+}
+
+.code-area .code{
+	_position: relative;
+	width: 128px;
+	height: 133px;
+	padding: 20px 0 0 0;
+	text-align: center;
+	font-size: 16px;
+	color: #000;
+	background: #fff9e6;
+}
+
+.code-area .control_bar{
+	_position: absolute;
+	_bottom: -16px;
+	_left: 0;
+	width: 100%;
+	height: 40px;
+	line-height: 20px;
+	overflow: hidden;
+	margin: 10px 0 0 0;
+	cursor: pointer;
+}
+
+.code-area .code-thumb{
+	display: block;
+	width: 93px;
+	height: 93px;
+	margin: 0px auto;
+	border: none;
+}
+
+.code-area .code h6{
+	padding-top: 10px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.code-area .code p{
+	margin-top: 5px;
+}
+
+.code-area .code a{
+	display: block;
+	margin: 5px 0 0 0;
+	font-size: 14px;
+	color: #000;
+	text-decoration: none;
+}
+
+/*header*/
+header{
+	width: 100%;
+}
+
+header .slogan-area{
+	width: 100%;
+	height: 55px;
+	background: url(../images/slogan.png) no-repeat center 10px #242424;
+}
+
+header .banner{
+	position: relative;
+	width: 100%;
+	height: 513px;
+	background: url(../images/banner-bg.jpg) no-repeat center 0 #ae071c;
+}
+
+header .animate-area{
+	position: relative;
+	width: 980px;
+	height: 100%;
+	margin: 0px auto;
+}
+
+header .animate-area div{
+	-moz-transition: all 1s ease-in-out; /* FF3.5+ */
+	-o-transition: all 1s ease-in-out; /* Opera 10.5 */
+	-webkit-transition: all 1s ease-in-out; /* Saf3.1+, Chrome */
+	transition: all 1s ease-in-out;
+}
+
+
+header .show-id{
+	display: none;
+	
+}
+
+/*logo*/
+header .animate-area .logo{
+	position: absolute;
+	top: -500px;
+	left: -40px;
+	width: 419px;
+	height: 349px;
+	background: url(../images/banner-logo.png) no-repeat;
+	-moz-transition: none; /* FF3.5+ */
+	-o-transition: none; /* Opera 10.5 */
+	-webkit-transition: none; /* Saf3.1+, Chrome */
+	transition: none;
+}
+
+header .animate-area .liewen{
+	position: absolute;
+	top: 403px;
+	left: -34px;
+	width: 286px;
+	height: 0;
+	z-index: 3;
+	overflow: hidden;
+	background: url(../images/liewen.png) no-repeat;
+	-moz-transition: all 0.3s ease-in-out; /* FF3.5+ */
+	-o-transition: all 0.3s ease-in-out; /* Opera 10.5 */
+	-webkit-transition: all 0.3s ease-in-out; /* Saf3.1+, Chrome */
+	transition: all 0.3s ease-in-out;
+}
+
+header .animate-area .stone{
+	position: absolute;
+	opacity: 0;
+	top: 368px;
+	left: 230px;
+	width: 133px;
+	height: 150px;
+	background: url(../images/stone.png) no-repeat;
+	-webkit-transition: all 0.2s ease-in-out 0.2s; /* Saf3.1+, Chrome */
+	   -moz-transition: all 0.2s ease-in-out 0.2s; /* FF3.5+ */
+	     -o-transition: all 0.2s ease-in-out 0.2s; /* Opera 10.5 */
+	        transition: all 0.2s ease-in-out 0.2s;
+}
+
+header .animate-area .slogan{
+	position: absolute;
+	top: -50px;
+	opacity: 0;
+	left: 400px;
+	width: 660px;
+	height: 183px;
+	background: url(../images/banner-slogan.png) no-repeat;
+	-webkit-transition: all 0.2s ease-in-out 0.2s; /* Saf3.1+, Chrome */
+	   -moz-transition: all 0.2s ease-in-out 0.2s; /* FF3.5+ */
+	     -o-transition: all 0.2s ease-in-out 0.2s; /* Opera 10.5 */
+	        transition: all 0.2s ease-in-out 0.2s;
+}
+
+header .animate-area .mountain{
+	position: absolute;
+	top: 370px;
+	left: -232px;
+	width: 751px;
+	height: 91px;
+	z-index: 2;
+	background: url(../images/mountain.png) no-repeat;
+}
+
+header .animate-area .lightning{
+	position: absolute;
+	opacity: 0;
+	top: -305px;
+	left: 500px;
+	width: 640px;
+	height: 494px;
+	z-index: 1;
+	background: url(../images/lightning.png) no-repeat;
+	-webkit-transition: all 0.1s ease; /* Saf3.1+, Chrome */
+	   -moz-transition: all 0.1s ease; /* FF3.5+ */
+	     -o-transition: all 0.1s ease; /* Opera 10.5 */
+	        transition: all 0.1s ease;
+}
+
+.bottom-layout{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 61px;
+	background: #ffffeb;
+}
+
+.slmmc-desc{
+	width: 100%;
+	padding: 0 0 50px 0;
+	background: url(../images/bg.jpg) repeat-x 0 0;
+}
+
+.slmmc-desc .desc-bg{
+	width: 1030px;
+	height: 331px;
+	margin: 0px auto;
+	background: url(../images/mmc-desc.jpg) no-repeat 0 0;
+}
+
+.slmmc-desc .apply-activity{
+	position: relative;
+	width: 1030px;
+	height: 125px;
+	margin: 0px auto;
+	background: url(../images/apply-bg.jpg) no-repeat 0 0;
+}
+
+.slmmc-desc .slogan-text {
+	float: right;
+	width: 170px;
+	height: 102px;
+	padding: 23px 0 0 0;
+	color: #fff;
+	font-size: 22px;
+}
+
+.slmmc-desc .activity-time{
+	position: absolute;
+	top: 3px;
+	left: 15px;
+	width: 430px;
+	height: 90px;
+	padding: 10px 0 0 10px;
+	color: #eb4e57;
+	background: url(../images/activity-bg.jpg) repeat-x 0 0;
+}
+
+.slmmc-desc .activity-time h4{
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.slmmc-desc .activity-time p{
+	line-height: 20px;
+	font-weight: bold;
+}
+
+
+.slmmc-desc .button-apply{
+	float: right;
+	width: 285px;
+	height: 125px;
+	padding-left: 15px;
+	font-size: 50px;
+	color: #fff9e6;
+	line-height: 110px;
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-transition: all 0.1s ease; /* Saf3.1+, Chrome */
+	   -moz-transition: all 0.1s ease; /* FF3.5+ */
+	     -o-transition: all 0.1s ease; /* Opera 10.5 */
+	        transition: all 0.1s ease;
+}
+
+.slmmc-desc .cursor{
+	position: absolute;
+	top: 70px;
+	right: 175px;
+	width: 68px;
+	height: 65px;
+	background: url(../images/hand.png) no-repeat 0 0;
+}
+
+.slmmc-desc .button-apply:hover{
+	margin-right: -10px;
+
+}
+
+.slmmc-desc .button-apply:active{
+	margin-top: 5px;
+}
+
+.slmmc-prize{
+	width: 100%;
+	padding-top: 60px;
+	background: #ffffeb;
+}
+
+.slmmc-prize .game-slogan{
+	width: 1001px;
+	height: 65px;
+	margin: 0px auto;
+}
+
+.slmmc-prize .prize-desc{
+	width: 1042px;
+	height: 203px;
+	margin: 30px auto 0px auto;
+}
+
+.slmmc-prize .prompt{
+	width: 952px;
+	height: 372px;
+	padding: 70px 40px 0 50px;
+	margin: 0px auto;
+	font-size: 14px;
+	line-height: 35px;
+	background: url(../images/prompt-bg.jpg) no-repeat 0 0;
+}
+
+.about-us{
+	width: 100%;
+	height: 330px;
+	background: url(../images/about-us.jpg) no-repeat center 0 #ae071c;
+}
+
+.about-us-desc{
+	display: none;
+}
+
+footer .company-info{
+	width: 100%;
+	height: 170px;
+	background: url(../images/company-info.jpg) no-repeat center 15px #242424;
+}
+
+footer .copy-right{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	border-top: 1px solid #2d2d2d;
+	font-size: 14px;
+	color: #888;
+	text-align: center;
+	background: #242424;
+}
+
+footer .copy-right .text{
+	
+}

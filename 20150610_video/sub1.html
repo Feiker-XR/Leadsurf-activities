@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>凤凰端午粽好运</title>
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+<div class="sub1">
+    <div class="sub1M">
+        <a class="backto" href="index.html" name="返回首页" title="返回首页"></a>
+        <div class="events">
+            <h2 class="sub_title">金粽抽赏金</h2>
+            <p class="sub_info">报名抽赏金！天天在视频上抽出一位幸运用户参加金粽抽赏金，<br>
+                现场CALL OUT 现金送给你！<br>
+                每日报名金粽抽赏金截止时间  20:00</p>
+            <div class="sub_time">
+                <p class="time1">今日抽奖期数 <span>2015-06-18</span></p>
+                <p class="time2">報名截止剩餘時間: <span id="timeshow">00:00:00</span></p>
+            </div>
+            <div class="zz_price">
+                <p class="zz">
+                    普通用户<span class="normal">388元</span><br>
+                    VIP用户<span class="vip">1888元</span><br>
+                </p>
+                <p class="zz">
+                    普通用户<span class="normal">588元</span><br>
+                    VIP用户<span class="vip">2888元</span><br>
+                </p>
+                <p class="zz">
+                    普通用户<span class="normal">888元</span><br>
+                    VIP用户<span class="vip">3888元</span><br>
+                </p>
+                <p class="zz">
+                    普通用户<span class="normal">1888元</span><br>
+                    VIP用户<span class="vip">6888元</span><br>
+                </p>
+            </div>
+            <div class="form">
+                <ul>
+                    <li>
+                        <input type="text" placeholders="用户账号（必须为有效凤凰账号）" />
+                    </li>
+                    <li>
+                        <input type="text" placeholders="用户昵称或姓氏" />
+                    </li>
+                    <li>
+                        <input type="text" placeholders="联络电话" />
+                    </li>
+                </ul>
+                <a href="#" class="submit">送出报名</a>
+                <a href="#" class="service">或客服电话</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footerContent">
+        <p>© 2001-2015 凤凰娱乐 All Rights Reserved</p>
+    </div>
+</div>
+<!--placeholder兼容-->
+<script>
+    $(function(){
+        var $input = $('input');
+        $input.each(function(){
+            var _this = $(this);
+            var tip = _this.attr('placeholders');
+            _this.val(tip);
+            _this.focus(function(){
+                _this.val('');
+            }).blur(function(){
+                if(!_this.val().trim()){
+                    _this.val(tip);
+                }
+            })
+        })
+    })
+</script>
+<script>
+    $(function(){
+        var $timeshow = $('#timeshow');
+        var timer = null;
+        //时间倒计时
+        var countdown = function(){
+            var result = '';
+            var zero = new Date();
+            zero.setSeconds(0);
+            zero.setMinutes(0);
+            zero.setHours(0);
+            zero = zero.getTime();
+            var timeline = new Date();
+            timeline.setSeconds(0);
+            timeline.setMinutes(0);
+            timeline.setHours(20);
+            timeline = Number(timeline.getTime()) - Number(zero);
+            var nowTime = new Date();
+            nowTime = Number(nowTime.getTime()) - Number(zero);;
+
+            var timeFix = function(str){
+                var array = str.split(':');
+                for (x in array){
+                    if(array[x].length<2){
+                        array[x] ='0'+ array[x];
+                    }
+                }
+                return array.join(':')
+            }
+
+            if( nowTime >=timeline ){
+                result = '00:00:00';
+                clearInterval(timer);
+            }else {
+                var SysSecond = (timeline - nowTime)/1000;
+                var second = Math.floor(SysSecond % 60);             // 计算秒
+                var minite = Math.floor((SysSecond / 60) % 60);      //计算分
+                var hour = Math.floor((SysSecond / 3600) % 24);      //计算小时
+                result = hour+':'+minite +':'+second;
+                $timeshow.html(timeFix(result))
+            }
+        }
+        timer = setInterval(countdown,1000)
+    })
+</script>
+</body>
+</html>

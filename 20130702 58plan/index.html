@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>58 Plan</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style/reset.css"  type="text/css" media="screen"/>
+<link rel="stylesheet" href="style/style.css"  type="text/css" media="screen"/>
+
+</head>
+<body>
+	<div class="container">
+		<div class="banner"></div>
+		<div class="content">
+			
+			<p class="intro">3月19日～3月25日期间在娱乐平台成功开户，并投注满<span class="textYellow">58</span>元者，<br/>将立即获得<span class="textYellow">58</span>元现金返还，直接打入您的银行账户！赶快加入<span class="textYellow">“我发”</span>计划！</p>
+			<div class="partition"></div>
+			
+			<!----MECHANICS 1----> 
+			<h3 class="mechanics-img"></h3>
+			<ul class="mechanics">
+				<li class="mechanics-list">活动期间新开户，绑定真实有效的银行卡（被重复绑定的银行卡无法获得奖金）</li>
+				<li class="mechanics-list">新开户客户在活动期间累计有效投注达到或超过58元，即可获得娱乐平台返还相应现金58元，直接打入绑定的唯一银行卡中(请不要绑定信用卡，否则平台将不予打款)</li>
+			</ul>
+			
+			<!----MECHANICS 2---->
+			<h3 class="mechanics-img mechanics-img-2"></h3>
+			<ul class="mechanics">
+				<li class="mechanics-list">娱乐平台将在活动结束后的两个工作日内将中奖客户所获奖金一次性打入客户绑定的符合活动要求的有效银行卡中</li>
+			</ul>
+			
+			<div class="partition"></div>
+			<div class="reminder">
+				<p class="reminder-title">注意事项</p>
+				<ul >
+					<li class="reminder-list">每个新开账户有且只有一次获奖机会，在同一账户下绑定多张银行卡，不得重复领奖</li>
+					<li class="reminder-list">绑定的银行卡不得与平台任何其他银行卡重复，如有重复的情况发生，平台将以该卡第一次被绑定的时间为准（如果第一次绑定的时间在活动期间以外，则不得参与本次活动）</li>
+					<li class="reminder-list">活动期间平台已绑定的银行卡解绑，并再次绑定于新开账户的，平台将视其为无效，不得参与本次活动。但3月19日0点前前解绑的银行卡在活动期间重新绑定至新开账户的，视为有效</li>
+					<li class="reminder-list">因客户绑定的银行卡为无效或错误等任何原因，造成娱乐平台打款失败的，娱乐平台将不予补发本次活动的奖金</li>
+					<li class="reminder-list">此次活动欢迎所有真实用户积极参与，但对于任何不正当得利的行为，娱乐平台将取消该用户参与活动的资格</li>
+					<li class="reminder-list">娱乐平台对与本活动相关的所有事项具有最终决定及解释权。</li>
+				</ul>
+			</div>		
+			
+		</div>
+		<div class="footer">
+				© 2001-2013 PH158. 娱乐平台拥有本次活动的最终解释权. All rights reserved.
+		</div>
+		<div id="float" class="contact" >
+			赶快联系总代开户
+			<h3 class="number"><a href="#">915661855</a></h3>
+			<h3 class="number"><a href="#">2806407633</a></h3>
+			<h3 class="number"><a href="#">977127862</a></h3>
+		</div>
+	</div>
+	
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>	
+<script>
+(function($){
+	var win = $(window),float = $('#float'),top = parseInt(float.css('top')),sTop = win.scrollTop(),_sTop = sTop,
+	vbox = $('#videobox'),vboxTop = parseInt(vbox.css('top'));
+	vbox.css('left', win.width()/2 - vbox.width()/2);
+	
+	setInterval(function(){
+		_sTop = win.scrollTop();
+		if(sTop != _sTop){
+			float.stop().animate({top:top + _sTop}, 250);
+			sTop = _sTop;
+			
+		}
+	},50);
+	
+	win.resize(function(e){
+		vbox.css('left', win.width()/2 - vbox.width()/2);
+	});
+	
+})(jQuery);
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe1cc8b23c900eec1540892c56d0ff62f' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

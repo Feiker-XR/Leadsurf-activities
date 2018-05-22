@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>ANVO - ABOUT</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style/style.css"/>
+</head>
+<body>
+	<div class="header">
+		<div class="header_content">
+			<div>
+				<a href="#" class="logo"></a>
+			</div>
+			<ul class="main-menu">
+				<li>
+					<a href="#" class="menu1"></a>
+					<ul class="menu1-list">
+						<li>Overview</li>
+						<li>Mission</li>
+						<li>Vision</li>
+						<li>Values</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="menu2"></a>
+					<ul class="menu2-list">
+						<li>Consulting</li>
+						<li>Customer Service</li>
+						<li>Technology</li>
+						<li>Marketing</li>
+						<li>Finance</li>
+						<li>Human Resources</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="menu3"></a>
+					<ul class="menu3-list">
+						<li>Benefits</li>
+						<li>Job Openings</li>
+						<li>Employee Relations</li>
+					</ul>
+				</li>
+				<li class="main-tab"><a href="#" class="menu4"></a></li>				
+			</ul>
+			<div class="mini-menu">
+				<ul>
+					<li><a href="#">CONTACT</a></li> | 
+					<li><a href="#">SITE MAP</a></li>
+				</ul>
+			</div>
+			<br class="clearboth"/>
+		</div>
+	</div>
+	<div class="about_banner">	
+		<div class="about_banner_center"></div>
+		<div class="about_banner_top"></div>
+		<div class="about_banner_left"></div>
+		<div class="about_banner_right"></div>
+	</div>
+			
+	<div class="inner-content">			
+		<table>
+			<tr>
+				<td width="191px">
+					<div>ANVO</div>
+					<ul>
+						<li>About Anvo</li>
+						<li>Solutions</li>
+						<li>Career</li>
+						<li>CSR</li>
+					</ul>
+				</td>
+				<td class="about_content">
+					<div class="vision">
+					To empower today's fastest growing companies and maximize the benefits of the economy for optimized business value in order for us to offer superior performance to our clients, thereby creating wealth for all our clients.
+					</div>
+					<div class="mission">
+					<span>ANVO partners with today’s fastest growing companies to sustain and enhance their strategic capabilities by optimizing quality, cost, and critical front- to back-office processes.</span>
+					
+<span>We aim to provide our clients and partners with innovative, customer centric & real world solutions by applying best practices and new ideas to help our clients maximize the customer experience in a cost effective manner.</h1>
+We aim to create new opportunities by playing a key role in guiding our clients to emerging and traditional outsourcing destinations within the framework of our valuable client's distinct needs and requirements.
+We aim to conduct ourselves as good corporate citizens providing honest and ethical business solutions.
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="footer">
+		<ul>
+			<li  class="with-border"><a href="#">About Anvo</a></li>
+			<li  class="with-border"><a href="#">Join Us</a></li>
+			<li  class="with-border"><a href="#">Site Map</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+		<div class="footer-left"></div>
+		<div class="footer-right"></div>
+		<div class="copyright">
+			<img src="images/anvo_black.png" alt="ANVO BLACK" />
+			<div class="reserved">Copyright © 2013 Anvo Inc. All rights reserved.</div>
+		</div>
+	</div>
+	
+<script src="js/jquery-1.7.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	
+	/*
+	$(function(){
+	// 图片上下翻滚
+	var len = $('.slidebtn>ul>li').length;
+	var index = 0;
+	var autoplay;
+	$('.slidebtn li').mouseover(function(){
+	index = $('.slidebtn li').index(this);
+	showImg(index);
+	}).eq(0).mouseover();
+	$('.slidebox').hover(function(){
+	clearInterval(autoplay);
+	},function(){
+	autoplay = setInterval(function(){
+	showImg(index)
+	index++;
+	if(index==len){
+	index=0;
+	}
+	},3000);
+	}).trigger('mouseleave');
+	function showImg(index){
+	var picheight = $('.slidebox').height();
+	$('.slidepic').stop(true,false).animate({top:-picheight*index},600)
+	$('.slidebtn li').removeClass('current').eq(index).addClass('current');
+	};
+	// 图片左右翻滚
+	var size = $('.slidebtn-01>ul>li').length;
+	var frist = 0;
+	var datetime;
+	$('.slidebtn-01 li').mouseover(function(){
+	frist = $('.slidebtn-01 li').index(this);
+	showpic(frist);
+	}).eq(0).mouseover();
+	$('.slidebox-01').hover(function(){
+	clearInterval(datetime);
+	},function(){
+	datetime = setInterval(function(){
+	showpic(frist)
+	frist++;
+	if(frist==size){
+	frist=0;
+	}
+	},3000);
+	}).trigger('mouseleave');
+	function showpic(frist){
+	var imgheight = $('.slidebox-01').width();
+	$('.slidepic-01').stop(true,false).animate({left:-imgheight*frist},600)
+	$('.slidebtn-01 li').removeClass('current').eq(frist).addClass('current');
+	};
+	});
+*/
+	//图片淡隐淡现
+	var defaultOpts ={ interval:3000, fadeInTime:300, fadeOutTime:200 };
+	var _titles = $(".banner-buttons li");
+	var _bodies = $(".banner-pic li");
+	var _count = _titles.length;
+	var _current = 0;
+	var _intervalID = null;
+	
+	var stop = function(){
+		window.clearInterval(_intervalID);
+	};
+	var slide = function(opts){
+		if (opts){
+			_current = opts.current || 0;
+		} else{
+			_current = (_current >= (_count - 1)) ? 0 :(++_current);
+		};
+		_bodies.filter(":visible").fadeOut(defaultOpts.fadeOutTime, function(){
+			_bodies.eq(_current).fadeIn(defaultOpts.fadeInTime);
+			_bodies.removeClass("current").eq(_current).addClass("current");
+		});
+		_titles.removeClass("current").eq(_current).addClass("current");
+	};
+	var go = function(){
+		stop();
+		_intervalID = window.setInterval(function(){
+			slide();
+		}, defaultOpts.interval);
+	};
+	var itemMouseOver = function(target, items){
+		stop();
+		var i = $.inArray(target, items);
+		slide({ current:i });
+	};
+	_titles.hover(function(){
+		if($(this).attr('class')!='current'){
+			itemMouseOver(this, _titles);
+		}else{
+			stop();
+		}
+	}, go);
+	_bodies.hover(stop, go);
+	go();
+	
+	var tabTitle = $(".mini-tab-ul li");
+	var tabContent = $(".mini-tab-content .mini-tab-content-list");
+	var first = 0;
+	tabTitle.removeClass("current").eq(1).addClass("current");
+	tabTitle.click(function(){
+		frist = tabTitle.index(this);
+		showpic(frist);
+	}); 
+	function showpic(frist){
+		tabContent.removeClass('current').eq(frist).addClass('current');
+		tabTitle.removeClass('current').eq(frist).addClass('current');
+	};
+</script>	
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>吉利分分彩-幸运摇奖机</title>
+<meta id="viewport" name="viewport" content="target-densitydpi=medium-dpi, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" href="style/style.css" />
+<style type="text/css">
+
+	.lottery-balls em {
+		display: inline-block;
+		*zoom:1;
+		*display: inline;
+		---background: url("../image/lottery-balls.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+		color: #DF4D60;
+		font-size: 40px;
+		height: 45px;
+		line-height: 45px;
+		margin: 0px;
+		overflow: hidden;
+		position: relative;
+		text-align: center;
+		width: 45px;
+	}
+
+	.lottery-balls em ul {
+	  left: 0;
+	  position: absolute;
+	  top: 0;
+	  width: 45px;
+	}
+
+
+</style>
+</head>
+<body>
+	<div class="banner"><img src="images/banner.jpg" alt="" width="100%" /></div>
+	<div class="content">
+		<a href="javascript:void(0)" class="btn-return">返回</a>
+		<a href="javascript:void(0)" class="btn-refresh">刷新</a>
+		<div class="menu">
+			<a href="red.html" class="btn">吉利投注送红包</a>
+			<a href="home.html" class="btn">吉利刮刮卡</a>
+			<a href="ernie.html" class="btn current">幸运摇奖机</a>
+		</div>
+		<h3 class="clearfix">
+			<div class="selcect-simulation">
+				<span class="select">第三期</span>
+				<select id="date-select">
+					<option value="1">第一期</option>
+					<option value="2">第二期</option>
+					<option selected="selected" value="3">第三期</option>
+					<option value="4">第四期</option>
+					<option value="5">第五期</option>
+				</select>
+			</div>
+			幸运摇奖机
+		</h3>
+		<div class="countdown-wrapper">
+			<div class="countdown">
+				<!-- 到期时间，单位 秒 -->
+				<input type="hidden" id="J-value-money-countdown-2" value="500">
+				<!-- 当前期索引 -->
+				<input type="hidden" id="J-value-current" value="0" />
+				<div class="countdown-text">距离本期开奖还有</div>
+				<div id="J-panel-money-countdown-2" class="countdown-number">
+					<em class="hours">--</em>
+					<span style="font-size:20px">天</span>
+					<em class="hours">--</em>
+					<span>:</span>
+					<em class="minutes">--</em>
+					<span>:</span>
+					<em class="seconds">--</em>
+				</div>
+			</div>
+		</div>
+		<h3 style="text-align:center;">本期开奖号码为</h3>
+		<div id="J-panel-balls" class="lottery-balls clearfix">
+			<em>
+				<span style="display:none">?</span>
+				<ul>
+					<li>0</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+				</ul>
+			</em>
+			<em>
+				<span style="display:none">?</span>
+				<ul>
+					<li>0</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+				</ul>
+			</em>
+			<em>
+				<span style="display:none">?</span>
+				<ul>
+					<li>0</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+				</ul>
+			</em>
+			<em>
+				<span style="display:none">?</span>
+				<ul>
+					<li>0</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+				</ul>
+			</em>
+			<em>
+				<span style="display:none">?</span>
+				<ul>
+					<li>0</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+				</ul>
+			</em>
+			<em>
+				<span style="display:none">?</span>
+				<ul>
+					<li>0</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+				</ul>
+			</em>
+		</div>
+		<h3>活动规则：</h3>
+		<ul class="text-list">
+			<li>娱乐平台每三天将进行一次幸运号码抽奖，总共将进行五次幸运号码抽奖，每次抽奖所抽取的号码范围为抽奖前三天获得幸运抽奖号码的用户，每次抽奖将抽出一个幸运号码，用户获得的抽奖号码与幸运号码匹配即可有机会获得价值三万元的万国IWC IW356501 男士机械表；</li>
+			<li>抽奖规则：平台将在活动页面设置抽奖号码区域，活动开始后，在活动页面的抽奖区域将滚动抽奖号码，并在第三天的24:00:00停止滚动，开出当期幸运抽奖号码；</li>
+		</ul>
+		<h3>抽奖时间说明：</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>奖期</th>
+					<th>摇奖时间</th>
+					<th>奖期其实截止时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>第一期</td>
+					<td>3月12号24:00</td>
+					<td>3月10号00:00 - 3月12号23:59分 </td>
+				</tr>
+				<tr>
+					<td>第二期</td>
+					<td>3月12号24:00</td>
+					<td>3月10号00:00 - 3月12号23:59分 </td>
+				</tr>
+				<tr>
+					<td>第三期</td>
+					<td>3月12号24:00</td>
+					<td>3月10号00:00 - 3月12号23:59分 </td>
+				</tr>
+				<tr>
+					<td>第四期</td>
+					<td>3月12号24:00</td>
+					<td>3月10号00:00 - 3月12号23:59分 </td>
+				</tr>
+				<tr>
+					<td>第五期</td>
+					<td>3月12号24:00</td>
+					<td>3月10号00:00 - 3月12号23:59分 </td>
+				</tr>
+			</tbody>
+		</table>
+		<h3>奖品：</h3>
+		<div class="pic-text">
+			<div class="pic"><img src="images/watch.png" alt="" width="100%" /><i>x5</i></div>
+			<div class="text">
+				<p class="title">品牌：万国IWC</p>
+				<p class="title">型号：IW356501男士机械表</p>
+				<p>表壳物料：精钢</p>
+				<p>表带材质：鳄鱼皮</p>
+				<p>表盘材质：钢镀铑</p>
+				<p>表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;镜：双面蓝宝石水晶玻璃</p>
+			</div>
+		</div>
+		<h3>派奖方式：</h3>
+		<ul class="text-list">
+			<li>抽取的实物奖品娱乐平台将通过公告及站内信等方式通知中奖用户，中奖用户也可主动联系在线客服提供奖品收货地址及联系信息；</li>
+			<li>用户也可自行点击频道左侧的“我的刮刮卡”按钮查看以往获得的刮刮卡张数、获得时间、红包金额及抽奖号码和是否中奖；</li>
+			<li>平台每天将前一天中奖用户所获红包以游戏币的形式打入获奖用户账户。24:00:00停止滚动，开出当期幸运抽奖号码。</li>
+		</ul>
+	</div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/guaguaka-mobile-ernie.js"></script>
+</body>
+</html>

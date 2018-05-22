@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>11.添加用户</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<style>
+		.pop .btn.confirm{
+			background: url("../images/common/ui-btn.png") repeat scroll 0 -240px transparent;
+			border: 0 none;
+			border-radius: 0 0 0 0;
+			color: #FFFFFF;
+			height: 34px;
+			line-height: 34px
+		}
+		.pb20{
+			width:770px;
+		}
+		.pb20 .btn{
+			margin-right: 30px
+		}
+		.w-9 {width:764px!important}
+		.tree-list #J-tree-container,.tree-list #J-tree-container2 {padding-bottom:20px;}
+		.ui-tree-node:hover {background:#FFFFe1;}
+		.ui-tree-check,.ui-tree-del {float:right;height:24px;line-height:24px;padding-right:5px;}
+		.ui-tree-del {cursor:pointer}
+	</style>
+	
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tree.js"></script>
+
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li class="current"><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>权限中心</dt>
+				<dd><a href="8.html">权限组管理</a></dd>
+				<dd><a href="9.html">创建权限组</a></dd>
+				<dd><a href="7.html">用户管理</a></dd>
+				<dd class="current"><a href="11.html">添加用户</a></dd>
+				<dd><a href="12.html">操作日志</a></dd>
+				<dd><a href="10.html">修改密码</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">客户管理</a> &gt; 列表</div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<form action="#" id="info-content">
+							<input id="J-user-id" type="hidden" value="" />
+							<ul class="ui-form">
+								<li>
+									<label class="ui-label" for="">用户名：</label>
+									<input name="username" id="userName" type="username" value="" class="input w-4" />
+									<span class="ui-text-prompt"></span>
+								</li>
+								<li>
+									<label class="ui-label" for="">密码：</label>
+									<input name="password" id="passWord" type="password" value="" class="input w-4" />
+									<span class="ui-text-prompt"></span>
+								</li>
+								<li>
+									<label class="ui-label" for="">确认密码：</label>
+									<input id="confirmPassWord" type="password" value="" class="input w-4" />
+									<span class="ui-text-prompt"></span>
+								</li>
+								<li>
+									<label class="ui-label" for="">密码卡绑定：</label>
+									<input name="passCard" id="passwordCard" type="text" value="" class="input w-4" />
+									<span class="ui-text-prompt"></span>
+								</li>
+								<li>
+									<label class="ui-label" for="">电话：</label>
+									<input id="input-phone" name="telephone" type="text" value="" class="input w-4" maxlength="20" />
+									<span class="ui-text-prompt"></span>
+								</li>
+								<li>
+									<label class="ui-label" for="">Email：</label>
+									<input id="input-email" name="email" type="text" value="" class="input w-4" />
+									<span class="ui-text-prompt"></span>
+								</li>
+								<li>
+									<label class="ui-label" for="">所属权限组：</label>
+									<select name="group" class="ui-select" id="J-group-select">
+										<option value="">请选择所属权限组</option>
+										<option value="CFO">CFO</option>
+										<option value="一级代理">|--会计经理</option>
+										<option value="二级代理">&nbsp;&nbsp;|--业务会计员</option>
+									</select>
+									<span class="ui-text-prompt"></span>
+								</li>
+								<li class="ui-btn">
+									<a id="editButton" class="btn btn-important" href="javascript:void(0);">添 加<b class="btn-inner"></b></a>
+								</li>
+							</ul>
+						</form>
+						<div id="successTips" class="pop pop-success w-4" style="display:none;position:absolute;left:50%;top:50%;margin:-23px 0 0 -111px;z-index:601">
+							<i class="ico-success"></i>
+							<h4 class="pop-text">添加用户成功</h4>
+						</div>
+			
+						<div id="errorTips" class="pop pop-error w-4" style="display:none;position:absolute;left:50%;top:50%;margin:-23px 0 0 -111px;z-index:601">
+							<i class="ico-error"></i>
+							<h4 class="pop-text">添加用户失败，请重试</h4>
+						</div>	
+						
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+	;(function(){
+		var pass = '',
+			userName = false,
+			password = false,
+			passConfirm = false,
+			passCard = false,
+			phone = false,
+			eMail = false,
+			//用户名
+			usernameDom = $('#userName'),
+			//密码框
+			passWordDom = $('#passWord'),
+			//密码提示
+			passWordTips = '<span style="color:#ff0000">6-20位字符组成，区分大小写<span>'
+			//密码卡
+			confirmPassWordDom = $('#confirmPassWord'),
+			//确认密码框
+			passwordCardDom = $('#passwordCard'),
+			//电话
+			phoneDom = $('#input-phone'),
+			//邮箱
+			emailDom = $('#input-email'),
+			//表单
+			formDom = $('#info-content'),
+			//修改按钮
+			editButtonDom = $('#editButton'),
+			//用户列表弹窗
+			userListDom = $('#userList').text(),
+			//遮罩
+			mask = phoenix.Mask.getInstance(),
+			//弹窗
+			message = phoenix.Message.getInstance(),
+			//ajax栈
+			ajaxStack = 0;
+			
+			
+			
+			
+			//检测用户名
+			var checkUserName = function(){
+				var el = usernameDom,v = $.trim(el.val()),tipsDom = el.next();
+				if(v == ''){
+					tipsDom.html('<span style="color:#ff0000">用户名不能为空</span>');
+					return userName = false;
+				}
+				if((/[^a-zA-Z0-9]/).test(v)){
+					tipsDom.html('<span style="color:#ff0000">用户名只能由字母和数字组成</span>');
+					return userName = false;
+				}
+				if(v.length < 3 || v.length > 16){
+					tipsDom.html('<span style="color:#ff0000">长度有误，请输入3-16位字符</span>');
+					return userName = false;
+				}
+				if(!(/^[a-zA-Z0-9]{3,16}$/).test(v)){
+					tipsDom.html('<span style="color:#ff0000">3-16位字符，由字母和数字组成</span>');
+					return userName = false;
+				}
+				$.ajax({
+					url: 'checkUsername.json',
+					dataType: 'json',
+					data:{'username':v},
+					cache:false,
+					type: 'POST',
+					beforeSend:function(){
+						ajaxStack += 1;
+					},
+					success:function(data){
+						//{"isSuccess": 1,"type":"","msg":"用户名可以使用"}
+						//{"isSuccess": 0,"type":"","msg":"该用户名已存在"}
+						if(Number(data['isSuccess']) == 1){
+							tipsDom.html(data['msg']).hide();
+							userName = true;
+						}else{
+							userName = false;
+							tipsDom.html('<span style="color:#ff0000">' + data['msg'] + '</span>');
+						}
+					},
+					complete: function(){
+						ajaxStack -= 1;
+					}
+				});
+				return userName;
+			}
+			usernameDom.focus(function(){
+				var tipsDom = $(this).next();
+				tipsDom.html('3-16位字符，由字母和数字组成');
+			});
+			usernameDom.blur(checkUserName);
+			
+			
+			
+			
+			
+			//检查密码
+			var checkPassword = function(){
+				var tipsDom = passWordDom.next(),v = $.trim(passWordDom.val());
+				if(v == ''){
+					tipsDom.html('<span style="color:#ff0000">密码不能为空<span>');
+					return password = false;
+				}
+				if(!(/^.{6,20}$/).test(v)){
+					tipsDom.html('<span style="color:#ff0000">长度有误，请输入6-20位字符<span>');
+					return password = false;
+				}
+				
+				password = true;
+				tipsDom.html('');
+				pass = passWordDom.val();
+				
+				return password;
+			};
+			//密码提示
+			passWordDom.focus(function(){
+				var tipsDom = $(this).next();
+				tipsDom.html('6-20位字符组成，区分大小写');
+			});
+			passWordDom.blur(checkPassword);
+			
+			
+			//确认密码检查
+			var checkConfirmPassword = function(){
+				var tipsDom = confirmPassWordDom.next(),v = $.trim(confirmPassWordDom.val());
+				if(v == ''){
+					tipsDom.html('<span style="color:#ff0000">确认密码不能为空</span>');
+					return passConfirm = false;
+				}
+				
+				if($.trim(confirmPassWordDom.val()) != $.trim(passWordDom.val())){
+					tipsDom.html('<span style="color:#ff0000">两次输入的密码不一致</span>');
+					return passConfirm = false;
+				}
+				
+				passConfirm = true;
+				tipsDom.html('');
+				
+				return passConfirm;
+			};
+			confirmPassWordDom.focus(function(){
+				var tipsDom = $(this).next();
+				tipsDom.html('请重新输入一遍密码');
+			});
+			confirmPassWordDom.blur(checkConfirmPassword);
+			
+			
+			//密码卡绑定
+			var checkCard = function(){
+				var tipsDom = passwordCardDom.next(),v = $.trim(passwordCardDom.val());
+				if(v == ''){
+					tipsDom.html('<span style="color:#ff0000">密码卡不能为空</span>');
+					return passCard = false;
+				}
+				if(!(/^\d{9}$/).test(v)){
+					tipsDom.html('<span style="color:#ff0000">密码卡序列号由9位数字组成</span>');
+					return passCard = false;
+				}
+				$.ajax({
+					url: 'checkCard.json',
+					dataType: 'json',
+					data:{'cardNo':v},
+					cache:false,
+					type: 'POST',
+					beforeSend:function(){
+						ajaxStack += 1;
+					},
+					success:function(data){
+						//{"isSuccess": 1,"type":"","msg":"密码卡可以使用"}
+						//{"isSuccess": 0,"type":"","msg":"密码卡有误，请重试"}
+						//{"isSuccess": 0,"type":"","msg":"密码卡被占用"}
+						if(Number(data['isSuccess']) == 1){
+							tipsDom.html('');
+							passCard = true;
+						}else{
+							tipsDom.html('<span style="color:#ff0000">' + data['msg'] + '</span>');
+							passCard = false;
+						}
+					},
+					complete: function(){
+						ajaxStack -= 1;
+					}
+				});
+				return passCard;
+			};
+			passwordCardDom.focus(function(){
+				var tipsDom = $(this).next();
+				if($.trim(pass) == ''){
+					tipsDom.html('密码卡序列号由9位数字组成');
+				}
+			});
+			passwordCardDom.blur(checkCard);
+			
+			
+			//电话
+			var checkPhone = function(){
+				var tipsDom = phoneDom.next(),v = $.trim(phoneDom.val());
+				if(v == ''){
+					tipsDom.html('<span style="color:#ff0000">电话不能为空</span>');
+					return phone = false;
+				}
+				phone = true;
+				tipsDom.html('');
+				return phone;
+				
+			};
+			phoneDom.focus(function(){
+				var tipsDom = $(this).next();
+				tipsDom.html('1-20位字符组成');
+			});
+			phoneDom.blur(checkPhone);
+			
+			
+			
+			//Email
+			var checkEmail = function(){
+				var tipsDom = emailDom.next(),v = $.trim(emailDom.val());
+				if(v == ''){
+					tipsDom.html('<span style="color:#ff0000">Email不能为空</span>');
+					return email = false;
+				}
+				if(v.length < 6 || v.length > 50){
+					tipsDom.html('<span style="color:#ff0000">长度有误，请输入6-50位字符</span>');
+					return email = false;
+				}
+				if(!(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/).test(v)){
+					tipsDom.html('<span style="color:#ff0000">请输入正确的email</span>');
+					return email = false;
+				}else{
+					email = true;
+					tipsDom.html('');
+				}
+				return email;
+			};
+			emailDom.focus(function(){
+				var tipsDom = $(this).next();
+				tipsDom.html('6-50位字符组成，例如abc@163.com');
+			});
+			emailDom.blur(checkEmail);
+			
+			
+			
+			//提交
+			var submitTimer;
+			editButtonDom.click(function(){
+				var data = formDom.serialize(),
+					groupDom = $('#J-group-select'),
+					fn = arguments.callee;
+					
+				if(!checkUserName() || !checkPassword() || !checkConfirmPassword() || !checkCard() || !checkPhone() || !checkEmail()){
+					return;
+				}
+				if($.trim(groupDom.val()) == ''){
+					groupDom.next().html('<span style="color:#ff0000">请选择所属权限组</span>');
+					return;
+				}else{
+					groupDom.next().html('');
+				}
+				
+				
+				if(ajaxStack > 0){
+					clearTimeout(submitTimer);
+					submitTimer = setTimeout(function(){
+						if(ajaxStack <= 0){
+							submitDataFn();
+							clearTimeout(submitTimer);
+						}
+					}, 20);
+				}else{
+					ajaxStack = 0;
+					clearTimeout(submitTimer);
+				}
+			});
+			var submitDataFn = function(){
+					var successDom = $('#successTips'),
+						errorDom = $('#errorTips');
+					$.ajax({
+						url: 'submit.json',
+						dataType: 'json',
+						method:'POST',
+						data: {'userName':$.trim(usernameDom.val()), 'password':$.trim(passWordDom.val()), 'passCard':$.trim(confirmPassWordDom.val()), 'phone':$.trim(phoneDom.val()), 'eMail':$.trim(emailDom.val()), 'group':$.trim($('#J-group-select').val())},
+						success:function(data){
+							if(Number(data['isSuccess']) == 1){
+								successDom.show();
+								mask.show();
+								setTimeout(function(){
+									successDom.hide();
+									mask.hide();
+									location.href = location.href;
+								},2000)
+							}else{
+								errorTips.show();
+								mask.show();
+								setTimeout(function(){
+									errorTips.hide();
+									mask.hide()
+								},2000)
+							}
+						},
+						complete: function(){
+	
+						}
+					});
+			};
+			
+			
+			
+	})();
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

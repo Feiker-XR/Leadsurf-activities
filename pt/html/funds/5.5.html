@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>资金 - 平台转账</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/funds/funds.css" />
+</head>
+<body>
+	
+	<!-- toolbar start -->
+	<div class="bg-toolbar"></div>
+	<div class="toolbar">
+		<div class="g_33">
+				<ul class="menu">
+					<li class="user hover">
+						<a href="#">您好，VIC<i class="tri"></i></a>
+						<div class="menu-nav" style="display:none;">
+							<i class="tri"></i>
+							<a href="">游戏记录</a>
+							<a href="">报表管理</a>
+							<a href="">资金明细</a>
+							<a href="">安全中心</a>
+						</div>
+					</li>
+					<li class="msg">
+						<a href="#" class="msg-title">12</a>
+						<div class="msg-box" style="display:none;">
+							<div class="msg-hd"><i class="tri"></i><a href="#" class="more">更多</a>我的未读消息<strong>（12）</strong></div>
+							<div class="msg-bd">
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息</a>
+							</div>
+						</div>
+					</li>
+					<li class="balance">余额：10000.00</li>
+					<li class="recharge"><a href="#">充值</a></li>
+					<li class="withdrawals"><a href="#">提现</a></li>
+					<li class="quit"><a href="#">退出</a></li>
+				</ul>
+		</div>
+	</div>
+	<!-- toolbar end -->
+	<!-- header start -->
+	<div class="header">
+		<div class="g_33">
+			<h1 class="logo"><a title="首页" href="#">PH158</a></h1>
+			<div class="service">
+				<a title="客服" class="link-service" href="#">客服</a>
+				<a title="帮助" class="link-help" href="#">帮助</a>
+			</div>
+		</div>
+	</div>
+	<!-- header end -->
+	
+	<div class="g_33 common-main">
+		<div class="g_5">
+			<div class="common-side">
+				<div class="nav-side">
+					<dl class="side-bet">
+						<dt class="title">投注管理</dt>
+						<dd><a href="../bet/1.1bet-bets.html">游戏记录</a></dd>
+						<dd><a href="../bet/1.7bet-chas.html">追号记录</a></dd>
+						<dd><a href="../bet/1.7bet-chas.html">账户明细</a></dd>
+					</dl>
+					<dl class="side-safe">
+						<dt class="title">账户安全</dt>
+						<dd><a href="../ucenter/2.3safe-safe.html">安全中心</a></dd>
+						<dd><a href="../ucenter/2.3safe-safe.html">银行卡管理</a></dd>
+						<dd><a href="../ucenter/2.1safe-personal.html">个人资料</a></dd>
+						<dd><a href="../ucenter/2.11-2.12safe-change-pwd.html">密码管理</a></dd>
+					</dl>
+					<dl class="side-service">
+						<dt class="title">服务</dt>
+						<dd><a href="../service/3.1service-inbox.html">积分</a></dd>
+						<dd><a href="../service/3.1service-inbox.html">红包</a></dd>
+						<dd><a href="../service/3.1service-inbox.html">站内信</a></dd>
+					</dl>
+					<dl class="side-proxy">
+						<dt class="title">代理中心</dt>
+						<dd><a href="../proxy/4.1proxy-index.html">代理首页</a></dd>
+						<dd><a href="../proxy/4.23proxy-account-center-management.html">开户中心</a></dd>
+						<dd><a href="../proxy/4.2proxy-customer-management.html">客户管理</a></dd>
+						<dd><a href="../proxy/4.15proxy-report-query.html">报表查询</a></dd>
+					</dl>
+					<dl class="side-funds">
+						<dt class="title">代理中心</dt>
+						<dd><a href="../proxy/4.1proxy-index.html">我要充值</a></dd>
+						<dd><a href="../proxy/4.23proxy-account-center-management.html">我要提现</a></dd>
+						<dd><a href="../proxy/4.2proxy-customer-management.html">上下级转账</a></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		
+		<div class="g_28 g_last">
+			<div class="common-article">
+				<div class="recharge">
+					<table>
+						<tr>
+							<td>vava1314</td>
+							<td>可用余额：<span class="color-red">1,000.0000元</span></td>
+							<td>可提现余额余额：<span class="color-red">900.0000元</span></td>
+							<td><a class="btn" href="javascript:void(0);">充 值<b class="btn-inner"></b></a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="content">
+					<div class="ui-tab">
+						<div class="ui-tab-title tab-title-bg clearfix">
+							<ul>
+								<li>账户明细</li>
+								<li>充值记录</li>
+								<li>提现记录</li>
+								<li>转账记录</li>
+								<li class="current">投注记录</li>
+								<li>奖金与返点</li>
+							</ul>
+						</div>
+						<div class="ui-tab-content">
+							<!-- start -->
+							<ul class="ui-search search-fund clearfix">
+								<li class="status">
+									<label class="ui-label">所有类型：</label>
+									<select class="ui-select">
+										<option value="所有类型">所有类型</option>
+										<option value="只看追号">只看追号</option>
+										<option value="只看投注">只看投注</option>
+									</select>
+								</li>
+								<li class="number">
+									<label for="name" class="ui-label">方案编号：</label>
+									<input type="text" value="" id="name" class="input">
+								</li>
+								<li class="serial-number">
+									<label for="name" class="ui-label">交易流水号：</label>
+									<input type="text" value="" id="name" class="input">
+								</li>
+								<li class="date">
+									<label for="dateStar" class="ui-label">起始日期：</label>
+									<input type="text" value="2012-12-31 00:00" id="dateStar" class="input"> - <input type="text" value="" class="input">
+								</li>
+								<li class="button"><a class="btn btn-important" href="javascript:void(0);">查 询<b class="btn-inner"></b></a></li>
+							</ul>
+							
+							<table class="table table-info">
+								<thead>
+									<tr>
+										<th>交易流水号</th>
+										<th>交易时间</th>
+										<th>方案号</th>
+										<th>类型</th>
+										<th>摘要</th>
+										<th>收入</th>
+										<th>支出</th>
+										<th>状态</th>
+										<th>游戏</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td></td>
+										<td>500.0000</td>
+										<td>进行中</td>
+										<td>双色球</td>
+									</tr>
+									<tr>
+										<td>2011120947940291</td>
+										<td>2011.12.09 19:28:23</td>
+										<td>ABC7779</td>
+										<td>投注单</td>
+										<td>投注扣款</td>
+										<td>500.0000</td>
+										<td></td>
+										<td>已成功</td>
+										<td>双色球</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="cumulative-recharge">累计投注：300.0000元</div>
+							<div class="page-wrapper">
+								<span class="page-text">共102条记录</span>
+								<div class="page page-right">
+									<a class="prev" href="#">上一步</a>
+									<a href="#">1</a>
+									<a href="#">2</a>
+									<a class="current" href="#">3</a>
+									<a href="#">4</a>
+									<a href="#">5</a>
+									<a href="#">6</a>
+									<a href="#">7</a>
+									<a href="#">8</a>
+									<a href="#">9</a>
+									<a href="#">...</a>
+									<a class="next" href="#">下一步</a>
+									<span class="page-few">到第 <input type="text" class="input" value=""> /100页</span>
+									<input type="button" class="page-btn" value="确 认">
+								</div>
+							</div>
+							<!-- end -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<dl class="fund-info-supplement">
+				<dt>说明：您可以查询您的账户最近3个月内的转账记录。</dt>
+			</dl>
+		</div>
+		
+	</div>
+	<div class="footer footer-important">
+		<div class="g_33">
+			<span class="copy">&copy; 2001-2012 591PH. All right reserved. 凤凰游戏平台版权所有</span><a href="#">帮助中心</a> | <a href="#">在线客服</a> | <a href="#">游戏介绍</a> | <a href="#">下载客户端</a> | <a href="#">翻墙工具</a>
+		</div>
+	</div>
+</body>
+</html>

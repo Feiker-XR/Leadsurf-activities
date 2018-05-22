@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+	<head>
+		<meta charset="UTF-8">
+		<title>3.3人工批量操作</title>
+		<link rel="stylesheet" href="../images/common/base.css" />
+		<link rel="stylesheet" href="../images/admin/admin.css" />
+		<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../js/phoenix.base.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+		<script type="text/javascript" src="../js/phoenix.util.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Input.js"></script>
+		<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+		<script type="text/javascript" src="../js/phoenix.Tree.js"></script>
+	</head>
+	<body class="">
+		<div class="menu">
+			<div class="menu-logo"></div>
+			<ul class="menu-list">
+				<li><a href="">首页</a></li>
+				<li><a href="">全局</a></li>
+				<li><a href="">用户</a></li>
+				<li><a href="">游戏</a></li>
+				<li><a href="">资金</a></li>
+				<li><a href="">市场促销</a></li>
+				<li><a href="">统计</a></li>
+				<li><a href="">内容</a></li>
+				<li><a href="">权限</a></li>
+			</ul>
+			<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+		</div>
+		<div class="col-content">
+			<div class="col-side">
+				<dl class="nav">
+					<dt>充值相关</dt>
+					<dd><a href="">异常充值处理</a></dd>
+					<dd><a href="">充值相关配置</a></dd>
+					<dt>提现相关</dt>
+					<dd><a href="">风险提现处理</a></dd>
+					<dd><a href="#">提现相关处理</a></dd>
+					<dt>人工资金操作</dt>
+					<dd class="current"><a href="#">人工资金操作审核流程</a></dd>
+					<dt>银行卡相关</dt>
+					<dd><a href="#">银行管理</a></dd>
+					<dd><a href="#">用户银行卡绑定管理</a></dd>
+					<dd><a href="#">银行卡黑名单管理</a></dd>
+					<dt>统计报表</dt>
+					<dd><a href="#">充值明细报表</a></dd>
+					<dd><a href="#">提现明细报表</a></dd>
+					<dd><a href="#">充提报表</a></dd>
+					<dd><a href="#">总代每日报表</a></dd>
+					<dd><a href="#">自动收款明细报表</a></dd>
+					<dt>转账相关</dt>
+					<dd><a href="#">转账明细</a></dd>
+					<dd><a href="#">转账限额配置</a></dd>
+				</dl>
+			</div>
+			<div class="col-main">
+				<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong>资金 &gt;<a href="#">人工资金操作</a> &gt; 人工批量 </div></div>
+				<div class="col-content">
+					<div class="col-main">
+						<div class="main">
+							<ul class="ui-tab-title ui-tab-title2 clearfix" id="Tabs">
+								<li class="current"><a href="3.3.1.html">未处理</a></li>
+								<li class=""><a href="3.3.2.html">已完成</a></li>
+								<li class=""><a href="3.3.html">批量上传</a></li>
+							</ul>
+							<table class="table table-info text-center">
+								<thead>
+									<tr>
+										<th><input id="J-select-all" name="" style="vertical-align: middle;" type="checkbox"> 全选</th>
+										<th>人工单单号</th>
+										<th>人工单类型</th>
+										<th>涉及金额</th>
+										<th>涉及用户名</th>
+										<th>是否VIP</th>
+										<th>建单时间</th>
+										<th>建单管理员</th>
+										<th>建单原因</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input name="" type="checkbox"></td>
+										<td>12345</td>
+										<td>加币-活动礼金</td>
+										<td>100.00</td>
+										<td>tvd001</td>
+										<td>是</td>
+										<td>2014-8-28 19:00:00</td>
+										<td>connie</td>
+										<td>新年红包</td>
+									</tr>
+									<tr>
+										<td><input name="" type="checkbox"></td>
+										<td>12345</td>
+										<td>加币-活动礼金</td>
+										<td>100.00</td>
+										<td>tvd001</td>
+										<td>是</td>
+										<td>2014-8-28 19:00:00</td>
+										<td>connie</td>
+										<td>新年红包</td>
+									</tr>
+									<tr>
+										<td><input name="" type="checkbox"></td>
+										<td>12345</td>
+										<td>加币-活动礼金</td>
+										<td>100.00</td>
+										<td>tvd001</td>
+										<td>是</td>
+										<td>2014-8-28 19:00:00</td>
+										<td>connie</td>
+										<td>新年红包</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="page-wrapper">
+							<span class="page-text">
+								<span class="lower">共102条记录</span>
+							</span>
+							<div class="page page-right">
+								<a href="#" class="prev">上一步</a>
+								<a href="#">1</a>
+								<a href="#">2</a>
+								<a href="#" class="current">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">...</a>
+								<a href="#" class="next">下一步</a>
+								<span class="page-few">到第 <input type="text" value="" class="input"> /100页</span>
+								<input type="button" value="确 认" class="page-btn">
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	;(function($){
+		var $selectBox = $('#J-select-all'),
+			$checkList = $('table input[type="checkbox"]');
+
+		$selectBox.click(function(event) {
+			
+			if($(this).prop('checked')) {
+				$checkList.prop('checked', true);
+			}else{
+				$checkList.prop('checked', false);
+			}
+		});
+	})(jQuery);
+	</script>
+</html>

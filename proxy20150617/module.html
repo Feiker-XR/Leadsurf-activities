@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Loading Font Awesome Icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Loading Drunken Parrot UI -->
+    <link href="css/drunken-parrot.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="js/lib/html5shiv.js"></script>
+    <![endif]-->
+
+    <title></title>
+</head>
+<body class="ar-dark">
+<div class="navbar-inverse ar-fixed-top">
+    <div class="row ar-nav-top">
+        <div class="col-xs-2">
+            <a href="#"><span class="fa fa-chevron-left"></span></a>
+        </div>
+        <div class="col-xs-8">
+            报表明细
+        </div>
+        <div class="col-xs-2">
+            <a  data-toggle="collapse" href="#searchbox" aria-expanded="false" aria-controls="searchbox" ><span class="fa-search fa"></span></a>
+        </div>
+    </div>
+</div>
+<div class="container ar-login-box">
+    <div class="page-header">
+        <h1 class="ar-title1">代理报表管理</h1>
+    </div>
+    <div class="tile tile-login">
+        <div class="input-icon">
+            <span class="fa-user fa"></span>
+            <input type="text" class="form-control" placeholder="用户名">
+        </div>
+        <div class="input-icon">
+            <span class="fa-lock fa"></span>
+            <input type="password" class="form-control" placeholder="●●●●●●">
+        </div>
+
+        <a href="#fakeLink" class="btn btn-block btn-primary" id="login">登录</a>
+
+        <div class="login-action clearfix">
+            <div class="col-md-8 col-xs-9">
+                <label class="checkbox" for="checkbox1">
+                    <span class="icons"><span class="first-icon"></span><span class="second-icon fa fa-check"></span></span><input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">记住账户名
+                </label>
+            </div>
+            <div class="col-md-4 col-xs-3">
+                <a href="#fakeLink">忘记密码?</a>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">登录失败</h4>
+                    </div>
+                    <div class="modal-body">
+                        账号或密码错误
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tile tile-login">
+        <img class="logo" src="images/yzm.png" alt="" width="150">
+        <input type="text" class="form-control" placeholder="请输入验证码">
+        <a href="#fakeLink" class="btn btn-block btn-primary">确定</a>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+
+    <div class="collapse searchbox" id="searchbox" >
+        <div class="row">
+            <div class="form-group col-xs-6 col-sm-6 ">
+                <input type="text" class="form-control" placeholder="点击输入用户名">
+            </div>
+            <div class="form-group col-xs-6 col-sm-6">
+
+                <select class="form-control">
+                    <option>全部彩种</option>
+                    <option>彩种1</option>
+                    <option>彩种2</option>
+                    <option>彩种3</option>
+                    <option>彩种4</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3">
+                <a class="btn btn-block btn-primary">搜索</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid row form-group">
+        <div class="col-xs-10">设置查询字段</div>
+        <div class="col-xs-2">
+            <a class="fl" data-toggle="collapse" href="#datebox" aria-expanded="false" aria-controls="datebox" ><span class="fa-chevron-down fa"></span></a>
+        </div>
+    </div>
+    <div class="container-fluid row form-group">
+        <div class="col-xs-10">
+            15/04/31-15/04/31 <a class="btn btn-xs btn-danger">清除</a>
+        </div>
+        <div class="col-xs-2">
+            <a class="fl" data-toggle="collapse" href="#datebox" aria-expanded="false" aria-controls="datebox" ><span class="fa-chevron-down fa"></span></a>
+        </div>
+    </div>
+
+    <div class="collapse" id="datebox" >
+        <div class="row">
+            <div class="col-sm-12 form-group col-md-3">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked>一天
+                    </label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="options" id="option2" autocomplete="off">三天
+                    </label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="options" id="option3" autocomplete="off">五天
+                    </label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="options" id="option4" autocomplete="off">七天
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-12 form-group col-md-4">
+                <input type="date">
+                -
+                <input type="date">
+            </div>
+            <div class="form-group col-xs-6 col-xs-offset-3  col-sm-6 col-sm-offset-3col-md-3 col-md-offset-0">
+                <a class="btn btn-block btn-primary">确定</a>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>用户名</th>
+                <th><a href="">账户支出 <span class="fa-angle-up fa"></span></a></th>
+                <th><a href="">账户收入 <span class="fa-angle-down fa"></span></a></th>
+                <th><a href="">账户盈亏 <span class="fa-angle-down fa"></span></a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Lorem</td>
+                <td>ipsum</td>
+                <td>dolor</td>
+                <td>sit</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="ar-bg-grey">
+                    <div class="ar-slide-box">
+                        <div class="row">
+                            <div class="col-xs-6">用户名</div>
+                            <div class="col-xs-6 text-right">手机</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">用户名</div>
+                            <div class="col-xs-6 text-right">手机</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">用户名</div>
+                            <div class="col-xs-6 text-right">手机</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">用户名</div>
+                            <div class="col-xs-6 text-right">手机</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">用户名</div>
+                            <div class="col-xs-6 text-right">手机</div>
+                        </div>
+                    </div>
+
+                    <div class="ar-slide-more btn btn-block">
+                        <p><a href="#" class="ar-fr"><span class="fa-chevron-right fa"></span></a>查看下级(32)</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>amet</td>
+                <td>consectetur</td>
+                <td>adipiscing</td>
+                <td>elit</td>
+            </tr>
+            <tr>
+                <td>Integer</td>
+                <td>nec</td>
+                <td>odio</td>
+                <td>Praesent</td>
+            </tr>
+            <tr>
+                <td>libero</td>
+                <td>Sed</td>
+                <td>cursus</td>
+                <td>ante</td>
+            </tr>
+            <tr>
+                <td>dapibus</td>
+                <td>diam</td>
+                <td>Sed</td>
+                <td>nisi</td>
+            </tr>
+            <tr>
+                <td>Nulla</td>
+                <td>quis</td>
+                <td>sem</td>
+                <td>at</td>
+            </tr>
+            <tr>
+                <td>nibh</td>
+                <td>elementum</td>
+                <td>imperdiet</td>
+                <td>Duis</td>
+            </tr>
+            <tr>
+                <td>sagittis</td>
+                <td>ipsum</td>
+                <td>Praesent</td>
+                <td>mauris</td>
+            </tr>
+            <tr>
+                <td>Fusce</td>
+                <td>nec</td>
+                <td>tellus</td>
+                <td>sed</td>
+            </tr>
+            <tr>
+                <td>augue</td>
+                <td>semper</td>
+                <td>porta</td>
+                <td>Mauris</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table ar-table-two">
+            <thead>
+            <tr>
+                <th>用途</th>
+                <th>金额</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Lorem</td>
+                <td>ipsum</td>
+            </tr>
+            <tr>
+                <td>amet</td>
+                <td>consectetur</td>
+            </tr>
+            <tr>
+                <td>Integer</td>
+                <td>nec</td>
+            </tr>
+            <tr>
+                <td>libero</td>
+                <td>Sed</td>
+            </tr>
+            <tr>
+                <td>dapibus</td>
+                <td>diam</td>
+            </tr>
+            <tr>
+                <td>Nulla</td>
+                <td>quis</td>
+            </tr>
+            <tr>
+                <td>nibh</td>
+                <td>elementum</td>
+            </tr>
+            <tr>
+                <td>sagittis</td>
+                <td>ipsum</td>
+            </tr>
+            <tr>
+                <td>Fusce</td>
+                <td>nec</td>
+            </tr>
+            <tr>
+                <td>augue</td>
+                <td>semper</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="ar-index-title row">
+        <div class="col-xs-6">
+            凤凰 7天数据统计
+        </div>
+        <div class="col-xs-6 text-right">
+            <div role="presentation" class="dropdown">
+                <a  href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                    vic
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="##">注销</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="ar-index-con row">
+        <div class="col-xs-12">
+            <ul>
+                <li class="active"><span class="ar-li-left">销量总额:</span><span>123400.00元</span></li>
+                <li><span class="ar-li-left">新增用户:</span><span>1300个</span></li>
+                <li><span class="ar-li-left">已绑卡数:</span><span>324张</span></li>
+                <li><span class="ar-li-left">用户活跃度:</span><span>324</span></li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <nav class="navbar-inverse navbar-fixed-bottom">
+            <ul class="row ar-nav-bottom">
+                <li class="active col-xs-3"><a href="#">首页</a></li>
+                <li class="col-xs-3"><a href="#">报表明细</a></li>
+                <li class="col-xs-3"><a href="#">团队明细</a></li>
+                <li class="col-xs-3"><a href="#">账单总览</a></li>
+            </ul>
+    </nav>
+</div>
+
+<script src="js/lib/jquery-1.11.3.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/common/checkbox.js"></script>
+<script src="js/lib/Chart.min.js"></script>
+<script>
+    $(function(){
+        $('#login').click(function(){
+            $('#myModal').modal('show');
+        })
+
+
+        var randomScalingFactor = function(){ return Math.round(Math.random()*500)};
+        var lineChartData = {
+            labels : ["6/11","6/12","6/13","6/14","6/15","6/16","6/17"],
+            datasets : [
+
+                {
+                    label: "My Second dataset",
+                    fillColor : "rgba(151,187,205,0.2)",
+                    strokeColor : "rgba(151,187,205,1)",
+                    pointColor : "rgba(151,187,205,1)",
+                    pointStrokeColor : "#fff",
+                    pointHighlightFill : "#fff",
+                    pointHighlightStroke : "rgba(151,187,205,1)",
+                    data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+                }
+            ]
+
+        }
+
+        window.onload = function(){
+            var ctx = document.getElementById("myChart").getContext("2d");
+            window.myLine = new Chart(ctx).Line(lineChartData, {
+                responsive: true
+            });
+        }
+
+        //隐藏导航
+        window.onload=function(){
+            if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
+                bodyTag = document.getElementsByTagName('body')[0];
+                bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';
+            }
+            setTimeout(function() {
+                window.scrollTo(0, 1)
+            }, 0);
+        };
+
+    })
+</script>
+</body>
+</html>

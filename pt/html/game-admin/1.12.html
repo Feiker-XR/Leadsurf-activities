@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.12奖金组（列表页）</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+    
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li class="current"><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content clearfix">
+								<h3 class="ui-title"><a class="btn btn-small" href="1.121.html">+ 新增奖金组<b class="btn-inner"></b></a>彩种名称：重庆时时彩</h3>
+								<table class="table table-info table-group">
+									<thead>
+										<tr>
+											<th>奖金组名称</th>
+											<th>状态</th>
+											<th>创建时间</th>
+											<th>最近修改时间</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1800奖金组</td>
+											<td class="color-red">待审核</td>
+											<td>2013-04-29 00:00:00</td>
+											<td>2013-04-29 00:00:00</td>
+											<td>
+												<a href="1.125.html">查看</a>
+                                                <a href="1.121.html">修改</a>
+												<a href="javascript:void(0);" id="J-Publish">发布</a>
+												<a href="1.122.html">审核</a>
+												<a href="javascript:void(0);" id="J-Delete1">删除</a>
+											</td>
+										</tr>
+										<tr>
+											<td>1700奖金组</td>
+											<td class="color-red">待发布</td>
+											<td>2013-04-29 00:00:00</td>
+											<td>2013-04-29 00:00:00</td>
+											<td>
+												<a href="javascript:void(0);">查看</a>
+												<a href="javascript:void(0);">修改</a>
+												<a href="javascript:void(0);">发布</a>
+												<a href="javascript:void(0);">删除</a>
+											</td>
+										</tr>
+										<tr>
+											<td>1600奖金组</td>
+											<td class="color-green">进行中</td>
+											<td>2013-04-29 00:00:00</td>
+											<td>2013-04-29 00:00:00</td>
+											<td>
+												<a href="javascript:void(0);">查看</a>
+												<a href="javascript:void(0);">修改</a>
+											</td>
+										</tr>
+										<tr>
+											<td>1500奖金组</td>
+											<td class="color-green">进行中,<span class="color-red">待发布</span></td>
+											<td>2013-04-29 00:00:00</td>
+											<td>2013-04-29 00:00:00</td>
+											<td>
+												<a href="javascript:void(0);">查看</a>
+												<a href="javascript:void(0);">修改</a>
+												<a href="javascript:void(0);">发布</a>
+											</td>
+										</tr>
+										<tr>
+											<td>1900奖金组</td>
+											<td class="color-green">进行中,<span class="color-red">待审核</span></td>
+											<td>2013-04-29 00:00:00</td>
+											<td>2013-04-29 00:00:00</td>
+											<td>
+												<a href="javascript:void(0);">查看</a>
+												<a href="javascript:void(0);">审核</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>   
+     <textarea id="DeleteGroup" style="display:none;">        
+        <div class="bd">
+            <div class="pop-title">
+                <i class="ico-waring"></i>
+                <h4 class="pop-text">你确定要删除当前奖金组吗？</h4>
+            </div>
+            <div class="pop-btn">
+                <a href="javascript:void(0);" class="btn btn-important " id="J-Delete-Butt1">删 除<b class="btn-inner"></b></a>
+                <a href="javascript:void(0);" class="btn" id="closeDd">取 消<b class="btn-inner"></b></a>
+            </div>
+        </div>
+    </textarea>  
+    
+    <textarea id="DivPublish" style="display:none;">     
+        <div class="bd">
+            <div class="pop-title">
+                <i class="ico-waring"></i>
+                <h4 class="pop-text">新建奖金组发布后，奖金不可再修改。该奖金组将适用于所有总代。<br />您确定发布该奖金组吗？</h4>
+            </div>
+            <div class="pop-btn">
+                <a href="javascript:void(0);" class="btn btn-important " id="J-Submit-But1">确 定<b class="btn-inner"></b></a>
+                <a href="javascript:void(0);" class="btn" id="closeDs">取 消<b class="btn-inner"></b></a>
+            </div>
+        </div>
+    </textarea>
+    
+    <div  id="DivFailed" style="position:absolute;z-index:2; display:none"  class="pop w-8">
+        <div class="hd"><i class="close"></i>温馨提示</div>
+        <div class="bd">
+            <div class="pop-title">
+                <i class="ico-error"></i>
+                <h4 class="pop-text">操作失败，请检查网络，并重试</h4>
+            </div>
+            <div class="pop-btn">
+                <a href="javascript:void(0);" class="btn">关 闭<b class="btn-inner"></b></a>
+            </div>
+        </div>
+    </div>
+    
+    <div  id="DivSuccessful" class="pop pop-success w-4" style="position:absolute;z-index:2; display:none" >
+        <i class="ico-success"></i>
+        <h4 class="pop-text">操作成功</h4>
+    </div>
+    
+<script>
+(function() {
+	var minWindow,mask,initFn;	
+	minWindow = new phoenix.MiniWindow();
+	mask = phoenix.Mask.getInstance();
+	minWindow.addEvent('beforeShow', function(){
+		mask.show();
+	});
+	minWindow.addEvent('afterHide', function(){
+		mask.hide();
+	});	
+	
+	//---------------------------------发布操作效果--------------------------------
+	$('#J-Publish').click(function(e){			
+		e.preventDefault();		
+		minWindow.setTitle('温馨提示');
+		minWindow.setContent($('#DivPublish').val());
+		minWindow.show();
+		initFn();		
+	});
+	initFn = function(){	
+		//关闭弹窗
+		$('#closeDs').click(function(e){
+			minWindow.hide();
+		});
+		//提交发布确定操作
+		$('#J-Submit-But1').click(function(e){			
+			minWindow.hide();	
+			//成功展示,自动隐藏			
+			if(!true){
+				fnDiv('DivSuccessful');
+				setTimeout(function (){$("#DivSuccessful").css("display","none");},1500);
+			}else{//失败提示
+				fnDiv('DivFailed');
+				$(".close,.btn").click(function(e){
+					$("#DivFailed").css("display","none");
+				});		
+			}
+		});		
+	};
+	
+	//------------------------------------------删除操作---------------------------------
+	$('#J-Delete1').click(function(e){			
+		e.preventDefault();		
+		minWindow.setTitle('温馨提示');
+		minWindow.setContent($('#DeleteGroup').val());
+		minWindow.show();
+		initFn2();		
+	});
+	initFn2 = function(){	
+		//关闭弹窗
+		$('#closeDd').click(function(e){
+			minWindow.hide();
+		});
+		//提交删除操作，
+		$('#J-Delete-Butt1').click(function(e){			
+			minWindow.hide();	
+			//成功展示,自动隐藏			
+			if(true){
+				fnDiv('DivSuccessful');
+				setTimeout(function (){$("#DivSuccessful").css("display","none");},1500);
+			}else{//失败提示
+				fnDiv('DivFailed');
+				$(".close,.btn").click(function(e){
+					$("#DivFailed").css("display","none");
+				});		
+			}
+		});		
+	};
+	
+	//操作后提示	 
+	function fnDiv(obj){		
+		var Idivdok = document.getElementById(obj);	
+		Idivdok.style.display="block";		
+		Idivdok.style.left=(document.documentElement.clientWidth-Idivdok.clientWidth)/2+document.documentElement.scrollLeft+"px";			
+		Idivdok.style.top=(document.documentElement.clientHeight-Idivdok.clientHeight)/2+document.documentElement.scrollTop-40+"px";
+	} 		
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.clearfix:after,.clearfix:before{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+
+a{
+	text-decoration: none;
+}
+html,body{height:100%;}
+body{font:12px/1.5 Arial,Microsoft Yahei,  Helvetica, sans-serif;}
+.top{position:fixed;z-index:3;width:100%;background-color:#FFF;box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);border-bottom:1px solid #ccc\9;}
+.top-inner{padding:20px 80px;min-width:780px;}
+.top .logo{width:191px;height:43px;float:left;background:url(../images/bg-logo.png) no-repeat 0 0;}
+.top .dropdown{float:left;background-color:#FFF;}
+.top .dropdown li{padding:0 20px;color:#389B91;}
+.top .dropdown span{display:inline-block;line-height:43px;font-size:20px;vertical-align:middle;}
+.top .dropdown .ico-mobile{display:inline-block;width:18px;height:26px;margin-right:10px;background:url(../images/un-sprite.png) no-repeat 0 -40px;vertical-align:middle;}
+.top .dropdown .ico-info{display:inline-block;width:16px;height:21px;margin-right:10px;background:url(../images/un-sprite.png) no-repeat -20px -40px;vertical-align:middle;}
+.top .dropdown .ico-down{display:inline-block;width:15px;height:15px;margin-left:10px;background:url(../images/un-sprite.png) no-repeat -40px -40px;vertical-align:middle;}
+.top .menu{float:right;display:none;_display:block;}
+.top .menu li{position:relative;float:left;padding-left:80px;}
+.top .menu li a{display:inline-block;*display:inline;*zoom:1;height:43px;line-height:43px;font-size:20px;color:#389B91;text-decoration:none;vertical-align:middle;}
+.top .menu .ico-iphone{display:inline-block;width:24px;height:29px;margin-right:5px;background:url(../images/un-sprite.png) no-repeat -60px -40px;vertical-align:middle;}
+.top .menu .ico-android{display:inline-block;width:27px;height:32px;margin-right:5px;background:url(../images/un-sprite.png) no-repeat -90px -40px;vertical-align:middle;}
+
+
+.slider-pic,.slider-pic li{position:absolute;width:100%;height:100%;}
+.banner{position:relative;height:575px;padding-top:83px;color:#FFF;}
+.banner1{background: url(../images/bg-banner1.jpg) no-repeat center 0;}
+.banner2{background: url(../images/bg-banner2.jpg) no-repeat center 0;}
+.banner3{background: url(../images/bg-banner3.jpg) no-repeat center 0;}
+.banner-inner{position:relative;width:980px;height:100%;margin:0 auto;}
+
+.banner .mid{position:absolute;left:480px;top:255px;}
+
+
+
+
+.slider-dot{position:absolute;bottom:20px;left:50%;margin-left:-80px;z-index:1;display:inline-block;*display:inline;*zoom:1;width:160px;height:16px;text-align:center;}
+.slider-dot li{width:10px;height:10px;display:inline-block;*display:inline;*zoom:1;margin:0 8px;cursor:pointer;overflow:hidden;background-color:#CCC;border-radius:4px;}
+.slider-dot .current{background-color:#FFF;}
+.slider-dot0 li{background-position:-20px 0;}
+.slider-dot0 .current{background-position:-20px -30px;}
+.slider-dot1 li{background-position:-40px 0;}
+.slider-dot1 .current{background-position:-40px -30px;}
+.slider-dot3 li{background-position:0 0;}
+.slider-dot3 .current{background-position:0 -30px;}
+
+
+
+.mid{position:absolute;}
+
+.install-iphone{margin-bottom:35px;}
+.install-iphone li{position:static;float:left;width:210px;height:34px;margin-right:1px;padding:17px 15px;background-color:#FFFFFF;;}
+.install-iphone a{display:inline-block;color:#333;font-size:18px;text-decoration:none;vertical-align:middle;}
+.install-iphone a strong{display:block;font-size:18px;}
+.install-iphone i{display:inline-block;width:27px;height:32px;margin:0 10px;background:url(../images/un-sprite.png) no-repeat 0 -70px;vertical-align:middle;}
+.install-iphone .current i{width:24px;height:29px;background-position:-30px -70px;}
+.install-iphone .ico-arrow,.install-iphone .current .ico-arrow{display:inline-block;width:13px;height:7px;margin-left:10px;background:url(../images/un-sprite.png) no-repeat -60px -80px;vertical-align:middle;}
+
+
+.install-tool{position:absolute;width:132px;padding-left:108px;margin-top:51px;margin-left:-15px;background-color:#FFF;font-size:14px;}
+.install-tool dl{margin-bottom:5px;}
+.install-tool dt,.install-tool dd{color:#999;}
+.install-tool dt{float:left;width:56px;margin-left:-56px;_display:inline;}
+.install-tool dd{padding:0 8px;}
+.install-tool a{color:#999;text-decoration:underline;font-size:14px;}
+.install-tool a:hover{color:#389B91;transition: all 0.3s ease-in 0s;}
+
+.install-code{width:100px;margin-left:191px;}
+.install-code img{display:block;width:100px;height:100px;}
+.install-code span{display:block;margin-top:5px;text-align:center;}
+
+
+
+.nav{width:100%;height:255px;background-color:#FFF;}
+.nav ul{width:980px;margin:0 auto;text-align:center;}
+.nav li{position:relative;z-index:1;display:inline-block;*display:inline;*zoom:1;width:104px;height:160px;margin-top:60px;margin-bottom:35px;padding:0 90px;vertical-align:middle;text-align:center;cursor:pointer;}
+.nav li .arrow{
+display:none;
+position:absolute;bottom:-54px;left:50%;margin-left:-20px;width:0;height:0;overflow:hidden;line-height:0;font-size:0;
+vertical-align:middle;
+border-width:20px;
+border-color: #FFF transparent transparent;border-style:solid dotted none;border-style:solid solid none\0;
+z-index: 2
+}
+.nav li.current .arrow{display:block;}
+.nav li.left{}
+.nav li.right{}
+.nav li.border{width:322px;padding:0 30px;border-left:1px solid #ECEDED;border-right:1px solid #ECEDED;}
+.nav .mod-pic{display:inline-block;*display:inline;*zoom:1;width:67px;height:78px;background-image:url(../images/un-nav-ico.png);background-repeat:no-repeat;}
+
+.nav .pic1{background-position:0 0;}
+.nav .pic2{background-position:-70px 0;}
+.nav .pic3{background-position:-140px 0;}
+.nav .mod-text{color:#6F7781;}
+.nav .mod-text .title{font-size:20px;}
+.nav li:hover .mod-text{color:#333;
+transition: all 0.3s ease-in 0s;
+}
+.nav-show{border-top:1px solid #EEE;}
+
+
+.content_area{position:relative;width:100%;background:#FAFAFA;}
+
+.content_area .tab-content{padding-top:60px;background:url(../images/bg-content.png) 0 1px repeat-x;}
+.content_area .tab-content li{}
+.content_area .list100,
+.content_area .list101,
+.content_area .list102,
+.content_area .list103,
+.content_area .list104,
+.content_area .list105,
+.content_area .list201,
+.content_area .list202,
+.content_area .list203,
+.content_area .list204,
+.content_area .list205,
+.content_area .list206,
+.content_area .list301,
+.content_area .list302,
+.content_area .list303,
+.content_area .list304,
+.content_area .list305{
+background-position:center 0;
+background-repeat:no-repeat;
+border-bottom:1px solid #EBEBEB;
+}
+
+.content_area .list106{height:1215px;background-image:url(../images/list106.png);background-position:center 0;}
+
+.list201{height:1841px;background:url(../images/list201.jpg) center 0 no-repeat;}
+.list301{height:1594px;background:url(../images/list301.jpg) center 0 no-repeat;}
+
+
+.footer{padding:40px 0;background-color:#EEE;}
+.footer-inner{width:980px;margin:0 auto;}
+.footer .install-code{float:left;margin-right:50px;margin-bottom:0;margin-left:0;}
+.footer .install-download{float:left;_width:500px;}
+.footer .install-tool{position:static;width:auto;_width:500px;height:auto;margin-top:10px;margin-left:0;padding-left:0;background-color:#EEE;overflow:hidden;}
+.footer .install-tool dt{margin-left:0;}
+.footer .install-tool dd{float:left;}
+.footer .install-iphone li{float:none;width:auto;_width:500px;height:auto;padding-top:0;background-color:#EEE;}
+.footer .install-iphone li a{display:block;}
+.weibo{display:block;width:76px;height:76px;margin-bottom:10px;border:2px solid #E3E3E3;background:url(../images/ico-weibo.jpg) 0 0 no-repeat;cursor:pointer;}
+.weibo:hover{background-position:-80px 0;border-color:#FFA72D;}
+.copyright{float:left;margin-left:200px;padding:15px 50px;border-left:1px solid #D8D8D8;color:#8A8A8A;font-size:18px;_display:inline;}
+
+
+.mask{position:fixed;left:0;top:0;width:100%;height:100%;background:#000;z-index:10;_position:absolute;}
+.pop{position:fixed;left:50%;top:50%;margin-left:-400px;margin-top:-200px;width:800px;border:1px solid #D2D2D2;background-color:#FFF;z-index:100;_position:absolute;}
+.pop .hd{padding:10px;border-bottom:1px solid #D2D2D2;}
+.pop .hd h3{float:left;margin-left:15px;margin-top:5px;_display:inline;}
+.pop .hd h3 span{display:inline-block;*display:inline;*zoom:1;height:30px;line-height:32px;font-size:20px;color:#389B91;text-decoration:none;vertical-align:middle;}
+.pop .hd .ico-iphone{display:inline-block;width:24px;height:29px;margin-right:5px;background:url(../images/un-sprite.png) no-repeat -60px -40px;vertical-align:middle;}
+.pop .hd .install-function{float:left;margin-left:100px;_display:inline;}
+.pop .hd .install-function dt,.pop .hd .install-function dd{float:left;color:#888;}
+.pop .hd .install-function dd{padding-right:20px;}
+.pop .hd .install-function dd a{color:#888;text-decoration:underline;}
+.pop .hd .install-btn{margin-bottom:10px;}
+.pop .hd .install-btn a{display:inline-block;width:142px;height:32px;margin-right:5px;line-height:32px;font-size:18px;color:#FFF;background:url(../images/un-sprite.png) no-repeat -0 -0;text-align:center;}
+.pop .hd .install-code{float:left;margin-left:30px;_display:inline;}
+.pop .hd .install-code img{width:66px;height:66px;}
+.pop .close{float:right;width:10px;height:10px;overflow:hidden;background:url(../images/un-sprite.png) no-repeat -80px -80px;}
+
+.tab-title{border-bottom:1px solid #D2D2D2;}
+.tab-title li{float:left;width:120px;height:40px;line-height:40px;text-align:center;font-size:14px;color:#389B91;border-right:1px solid #D2D2D2;cursor:pointer;}
+.tab-title .current{position:relative;padding-bottom:1px;margin-bottom:-1px;background-color:#FAFAFA;}
+.tab-content{padding:20px;height:200px;background-color:#FAFAFA;overflow-y:auto;}
+.tab-content dl{padding-left:10px;font-size:14px;line-height:2;}
+.tab-content dd{color:#888;}
+.tab-content dd i{font-family:"宋体";font-size:18px;}

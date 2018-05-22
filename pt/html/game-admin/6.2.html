@@ -1,0 +1,192 @@
+<!DOCTYPE>
+<html lang="en-US" class="html-content">
+<head>
+    <meta charset="UTF-8">
+	<title>抽奖用户查询</title>
+	<link rel="stylesheet" href="http://static.rfonlineedu.com:888/static/images/common/base.css" />
+	<link rel="stylesheet" href="http://static.rfonlineedu.com:888/static/images/common/js-ui.css" />
+	<link rel="stylesheet" href="http://static.rfonlineedu.com:888/static/images/admin/admin.css" />
+	<link rel="stylesheet" href="http://static.rfonlineedu.com:888/static/css/pagination.css" />
+	<link rel="stylesheet" href="http://static.rfonlineedu.com:888/static/images/admin/admin-help.css" />	
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.base.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.util.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Countdown.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.pagination.js"></script>
+	<script type="text/javascript" src="http://static.rfonlineedu.com:888/static/js/phoenix.Common.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			
+			<li><a href="http://admin.joy188.com:888/admin">首页</a></li>
+			
+				<li>
+				
+				<a href="http://admin.joy188.com:888/globeAdmin/goRegLoginConfig">全局管理</a>
+				
+				</li>
+
+				<li>
+				
+				<a href="http://admin.joy188.com:888/admin/user/list">用户中心</a>
+				
+				</li>
+		
+				<li>
+				
+				<a href="http://admin.joy188.com:888/gameoa/lotteryList?lotteryId=&status=">游戏中心</a>
+				
+				</li>
+		
+				<li>
+				
+				<a href="http://admin.joy188.com:888/gameRisk/queryGameExceptionAuditList">审核中心</a>
+				
+				</li>
+		
+				<li>
+				
+				<a href="http://admin.joy188.com:888/admin/Rechargemange/index">资金中心</a>
+				
+				</li>
+
+				<li>
+				
+				<a href="http://admin.joy188.com:888/adAdmin/queryPublishAdPage ">营销中心</a>
+				
+				</li>
+	
+				<li style="display:none">
+				
+				</li>
+
+				<li>
+				
+				<a href="http://admin.joy188.com:888/helpAdmin/goHelpManager">内容中心</a>
+				
+				</li>
+
+				<li>
+				
+				<a href="http://admin.joy188.com:888/aclAdmin/goUserManager">权限中心</a>
+				
+				</li>
+		
+				<li>
+				
+				<a href="http://admin.joy188.com:888/noticeAdmin/goSysMsgManager/">通知中心</a>
+				
+				</li>
+			
+			
+		</ul>
+		<div class="menu-quit"><a href="http://admin.joy188.com:888/admin/login">退出</a><i class="ico-user"></i>你好，cancus <span id="_userName"></span></div>
+	</div>
+
+
+
+
+
+	<div class="col-content">
+		<div class="col-side">
+			
+
+<dl class="nav">
+	
+	<dt>游戏审核管理</dt>
+	
+	
+	<dd ><a href="http://admin.joy188.com:888/gameRisk/queryGameExceptionAuditList">游戏异常审核</a></dd>
+	
+	
+	<dd ><a href="http://admin.joy188.com:888/gameRisk/toSeriesConfigRisk?lotteryid=99101">游戏审核设置</a></dd>
+	
+	
+	<dt>统计报表</dt>
+	
+	
+	<dd><a href="http://admin.joy188.com:888/gameRisk/gotoGameRiskTransactionReport">游戏明细表</a></dd>
+	
+	<!--  dd><a href="http://admin.joy188.com:888/gameRisk/queryGameRiskIncomeReport">单期收支报表</a></dd>-->
+	
+	<dd><a href="http://admin.joy188.com:888/gameRisk/queryWarnOrderList">异常记录</a></dd>
+	
+</dl>
+
+		</div>  
+		<div class="col-main">
+			<!-- 从被装饰页面获取body标签内容 -->
+			
+			<div class="col-crumbs">
+			<div class="crumbs">
+				<strong>当前位置：</strong><a href="#">游戏中心</a>>风险记录
+			</div>
+			</div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li>红包明细查询</li>
+									<li class="current"><a>抽奖用户查询</a></li>
+                                    <li><a>中奖结果查询</a></li>
+									<li><a>中奖概率配置</a></li>
+								</ul>
+							</div>
+							<div class="clearfix">
+						<form action="queryWarnOrderList" method="post" id="J-search-form">
+						<ul class="ui-search" id="J-search-panel">
+							<li>
+								<label for="" class="ui-label">用户名：</label>
+								<input type="text" id="J-input-paramCode" name="J-input-paramCode" class="input w-3">
+							</li>
+							<li>
+								<a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">搜 索<b class="btn-inner"></b></a>
+								<a id="J-download-submit" class="btn btn-important" href="javascript:void(0);">导出报表<b class="btn-inner"></b></a>
+							</li>
+						</ul>
+					</form>		
+						<table class="table table-info" id="J-table">
+							<thead>
+								<tr>
+									<th>用户名</th>
+									<th>总抽奖次数</th>
+									<th>未使用次数</th>
+									<th>已使用次数</th>
+									<th>中奖次数</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>kukucai</th>
+									<th>20</th>
+									<th>10</th>
+									<th>10</th>
+									<th>1</th>
+								</tr>
+							</tbody>
+						</table>
+						<input id="pageNo" type="hidden" name="pageNo" value="1"><input id="pageSize" type="hidden" name="pageSize" value="5"><div class="page-wrapper"><span class="page-text"><span class="lower">共1571条记录</span></span><div class="page page-right"><a href="javascript:void(0)" onclick="doCurrent(1)" class="current">1</a><a href="javascript:void(0)" onclick="doCurrent(2)">2</a><a href="javascript:void(0)" onclick="doCurrent(3)">3</a><a href="javascript:void(0)" onclick="doCurrent(4)">4</a><a href="javascript:void(0)" onclick="doCurrent(5)">5</a><a href="javascript:void(0)" onclick="doCurrent(6)">6</a><a href="javascript:void(0)" onclick="doCurrent(7)">7</a><a href="javascript:void(0)" onclick="doCurrent(8)">8</a><a href="javascript:void(0)" onclick="doCurrent(9)">9</a><a href="javascript:void(0)" onclick="doCurrent(10)">10</a><a href="javascript:void(0)" onclick="doForward(11)">...</a><a href="javascript:void(0)" onclick="doNext()" class="next">下一步</a><span class="page-few">到第 <input id="forwardPage" type="text" value="" class="input"> /158页</span><input type="button" value="确 认" class="page-btn" onclick="doForward(-1)"></div></div></div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>唯一附言管理</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/funds/funds.css" />
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+</head>
+<body>
+	<!-- toolbar start -->
+	<div class="bg-toolbar"></div>
+	<div class="toolbar">
+		<div class="g_33">
+				<ul class="menu">
+					<li class="user hover">
+						<a href="#">您好，VIC<i class="tri"></i></a>
+						<div class="menu-nav" style="display:none;">
+							<i class="tri"></i>
+							<a href="">游戏记录</a>
+							<a href="">报表管理</a>
+							<a href="">资金明细</a>
+							<a href="">安全中心</a>
+						</div>
+					</li>
+					<li class="msg">
+						<a href="#" class="msg-title">12</a>
+						<div class="msg-box" style="display:none;">
+							<div class="msg-hd"><i class="tri"></i><a href="#" class="more">更多</a>我的未读消息<strong>（12）</strong></div>
+							<div class="msg-bd">
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息</a>
+								<a href="">这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息这里是消息提示提示消息</a>
+							</div>
+						</div>
+					</li>
+					<li class="balance">余额：10000.00</li>
+					<li class="recharge"><a href="#">充值</a></li>
+					<li class="withdrawals"><a href="#">提现</a></li>
+					<li class="quit"><a href="#">退出</a></li>
+				</ul>
+		</div>
+	</div>
+	<!-- toolbar end -->
+	<!-- header start -->
+	<div class="header">
+		<div class="g_33">
+			<h1 class="logo"><a title="首页" href="#">PH158</a></h1>
+			<div class="service">
+				<a title="客服" class="link-service" href="#">客服</a>
+				<a title="帮助" class="link-help" href="#">帮助</a>
+			</div>
+		</div>
+	</div>
+	<!-- header end -->
+	
+	<div class="g_33 common-main">
+		<div class="g_5">
+			<div class="common-side">
+				<div class="nav-side">
+					<dl class="side-bet">
+						<dt class="title">投注管理</dt>
+						<dd><a href="../bet/1.1bet-bets.html">游戏记录</a></dd>
+						<dd><a href="../bet/1.7bet-chas.html">追号记录</a></dd>
+						<dd><a href="../bet/1.7bet-chas.html">账户明细</a></dd>
+					</dl>
+					<dl class="side-safe">
+						<dt class="title">账户安全</dt>
+						<dd><a href="../ucenter/2.3safe-safe.html">安全中心</a></dd>
+						<dd><a href="../ucenter/2.3safe-safe.html">银行卡管理</a></dd>
+						<dd><a href="../ucenter/2.1safe-personal.html">个人资料</a></dd>
+						<dd><a href="../ucenter/2.11-2.12safe-change-pwd.html">密码管理</a></dd>
+					</dl>
+					<dl class="side-service">
+						<dt class="title">服务</dt>
+						<dd><a href="../service/3.1service-inbox.html">积分</a></dd>
+						<dd><a href="../service/3.1service-inbox.html">红包</a></dd>
+						<dd><a href="../service/3.1service-inbox.html">站内信</a></dd>
+					</dl>
+					<dl class="side-proxy">
+						<dt class="title">代理中心</dt>
+						<dd><a href="../proxy/4.1proxy-index.html">卡户</a></dd>
+						<dd><a href="../proxy/4.23proxy-account-center-management.html">开户中心</a></dd>
+						<dd><a href="../proxy/4.2proxy-customer-management.html">客户管理</a></dd>
+						<dd><a href="../proxy/4.15proxy-report-query.html">报表查询</a></dd>
+					</dl>
+					<dl class="side-funds">
+						<dt class="title">代理中心</dt>
+						<dd><a href="../proxy/4.1proxy-index.html">我要充值</a></dd>
+						<dd><a href="../proxy/4.23proxy-account-center-management.html">我要提现</a></dd>
+						<dd><a href="../proxy/4.2proxy-customer-management.html">上下级转账</a></dd>
+						<dd><a href="../funds/6.html">唯一附言</a></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="g_28 g_last">
+				<div class="common-article">
+				<div class="title">客户管理</div>
+				<div class="content annex-manager">
+					<div class="ui-tab">
+						<div class="ui-tab-title tab-title-bg clearfix">
+							<ul>
+								<li class="current">唯一附言管理</li>
+								<li>唯一附言回收管理</li>
+								<li>配置管理</li>
+							</ul>
+						</div>
+						<div class="ui-tab-title batch-operation">
+							批量操作
+							<a href="#" class="re-bind">解除绑定</a>
+							<a href="#" class="re-lock">解除锁定</a>
+							<a href="#" class="report-download">报表下载</a>
+						</div>
+						<div class="ui-tab-content info-list">
+							<table class="table table-info table-group">
+								<thead>
+									<tr>
+										<th id="J-select-all">反选</th>
+										<th>用户名</th>
+										<th>所属总代</th>
+										<th>用户类型</th>
+										<th>绑定时间</th>
+										<th>唯一附言</th>
+										<th>用户状态</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="checkbox" data-user="vava(300)" class="bind lock" name="annex" /></td>
+										<td><a href="#">vava(300)</a></td>
+										<td>xiaodian</td>
+										<td>VIP</td>
+										<td>2012/10/19 13:11:11</td>
+										<td>321545</td>
+										<td>正常</td>
+										<td>
+											<a class="relock" data-user='vava(300)'  href="#">解除绑定</a>
+											<a class="relock-user" href="#">解除用户锁定</a>
+										</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" data-user="vava(300)" class="bind" name="annex" /></td>
+										<td><a href="#">vava(300)</a></td>
+										<td>xiaodian</td>
+										<td>VIP</td>
+										<td>2012/10/19 13:11:11</td>
+										<td>321545</td>
+										<td>正常</td>
+										<td><a class="relock" href="#">解除绑定</a></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" data-user="vava(300)" class="bind" name="annex" /></td>
+										<td><a href="#">vava(300)</a></td>
+										<td>xiaodian</td>
+										<td>VIP</td>
+										<td>2012/10/19 13:11:11</td>
+										<td>321545</td>
+										<td>正常</td>
+										<td><a class="relock" href="#">解除绑定</a></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" data-user="vava(300)" class="bind" name="annex" /></td>
+										<td><a href="#">vava(300)</a></td>
+										<td>xiaodian</td>
+										<td>VIP</td>
+										<td>2012/10/19 13:11:11</td>
+										<td>321545</td>
+										<td>正常</td>
+										<td><a class="relock" href="#">解除绑定</a></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" data-user="vava(300)" class="bind" name="annex" /></td>
+										<td><a href="#">vava(300)</a></td>
+										<td>xiaodian</td>
+										<td>VIP</td>
+										<td>2012/10/19 13:11:11</td>
+										<td>321545</td>
+										<td>正常</td>
+										<td><a class="relock" href="#">解除绑定</a></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" data-user="vava(300)" class="bind" name="annex" /></td>
+										<td><a href="#">vava(300)</a></td>
+										<td>xiaodian</td>
+										<td>VIP</td>
+										<td>2012/10/19 13:11:11</td>
+										<td>321545</td>
+										<td>正常</td>
+										<td><a class="relock" href="#">解除绑定</a></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" data-user="vava(300)" class="bind" name="annex" /></td>
+										<td><a href="#">vava(300)</a></td>
+										<td>xiaodian</td>
+										<td>VIP</td>
+										<td>2012/10/19 13:11:11</td>
+										<td>321545</td>
+										<td>正常</td>
+										<td><a class="relock" href="#">解除绑定</a></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" data-user="vava(300)" class="bind" name="annex" /></td>
+										<td><a href="#">vava(300)</a></td>
+										<td>xiaodian</td>
+										<td>VIP</td>
+										<td>2012/10/19 13:11:11</td>
+										<td>321545</td>
+										<td>正常</td>
+										<td><a class="relock" href="#">解除绑定</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="page-wrapper clearfix">
+								<div class="page page-right">
+									<a href="#" class="prev">上一步</a>
+									<a href="#">1</a>
+									<a href="#">2</a>
+									<a href="#" class="current">3</a>
+									<a href="#">4</a>
+									<a href="#">5</a>
+									<a href="#">6</a>
+									<a href="#">7</a>
+									<a href="#">8</a>
+									<a href="#">9</a>
+									<a href="#">...</a>
+									<a href="#" class="next">下一步</a>
+									<span class="page-few">到第 <input type="text" value="" class="input"> /100页</span>
+									<input type="button" value="确 认" class="page-btn">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer footer-important">
+		<div class="g_33">
+			<span class="copy">&copy; 2001-2012 591PH. All right reserved. 凤凰游戏平台版权所有</span><a href="#">帮助中心</a> | <a href="#">在线客服</a> | <a href="#">游戏介绍</a> | <a href="#">下载客户端</a> | <a href="#">翻墙工具</a>
+		</div>
+	</div>
+
+
+<script>
+(function($){
+	var message = new phoenix.Message,
+		selectAllDom = $('#J-select-all'),
+		batchReBind = $('.batch-operation .re-bind'),
+		batchReLock = $('.batch-operation .re-lock'),
+		batchReport = $('.batch-operation .report-download'),
+		checkBoxDom = $('input[name="annex"]');
+
+	//根据type类型来进行判断
+	//bind为绑定
+	//bind-user为用户绑定
+	//默认为绑定
+	countCheckedNum = function(type) {
+		var count = 0,
+			type = type || 'bind',
+			dom = $('.info-list' +' .'+type);
+
+		$.each(dom, function(index, val) {
+			var result = $(this).prop('checked');
+
+			if(result) {
+				count++;
+			}
+		});
+
+		return count || -1;
+	}
+
+	//获取用户ID
+	getUserId = function(type) {
+		var saveArray =  [],
+			type = type || 'bind',
+			dom = $('.info-list' +' .'+ type);
+
+		$.each(dom, function(index, val) {
+			var result = $(this).prop('checked');
+
+			if(result) {
+				saveArray.push($(this).attr('data-user'));
+			}
+		});
+
+		return saveArray;
+	}
+
+	//解除绑定
+	batchReBind.on('click', function() {
+		var count = countCheckedNum('bind');
+
+		if(count != -1) {
+
+			message.show({
+				mask: true,
+				content: '<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">确认解绑？</h4></div></div>',
+				confirmIsShow: true,
+				confirmFun: function() {
+					$.ajax({
+						url: '#',
+						type: 'GET',
+						dataType: 'json',
+						data: {userid: getUserId('bind')},
+						success: function() {
+
+							window.location.reload();
+						}
+					});
+				}
+			});
+
+			
+		}else{
+			message.show({
+				mask: true,
+				content: '<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">请先选择需解绑用户</h4></div></div>',
+				cancelIsShow: true,
+				cancelFun: function() {
+					this.hide();
+				}
+			});
+		}
+	});
+
+	//解除锁定
+	batchReLock.on('click', function() {
+		var count = countCheckedNum('lock');
+
+		if(count != -1) {
+
+			message.show({
+				mask: true,
+				content: '<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">确认解锁？</h4></div></div>',
+				confirmIsShow: true,
+				confirmFun: function() {
+					$.ajax({
+						url: '#',
+						type: 'GET',
+						dataType: 'json',
+						data: {userid: getUserId('lock')},
+						success: function() {
+							
+							window.location.reload();
+						}
+					});
+				}
+			});
+			
+		}else{
+
+			message.show({
+				mask: true,
+				content: '<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">请先选择需解锁用户</h4></div></div>',
+				cancelIsShow: true,
+				cancelFun: function() {
+					this.hide();
+				}
+			});
+		}
+	});
+
+	//报表下载
+	batchReport.on('click', function() {
+		var count = countCheckedNum();
+
+
+	});
+
+	//全选按钮
+	selectAllDom.on('click', function() {
+
+
+		$.each(checkBoxDom, function(index, val) {
+			var result = $(this).prop('checked');
+			
+			if(result) {
+				$(this).removeAttr('checked');
+			}else {
+				$(this).prop('checked', true);
+			}
+
+		});
+	});
+
+	//解除绑定
+	$('.relock').on('click', function() {
+		var address = $(this).attr('data-user');
+
+		message.show({
+			mask: true,
+			content: '<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">确认解除绑定？</h4></div></div>',
+			confirmIsShow: true,
+			confirmFun: function() {
+				
+				$.ajax({
+					url: '',
+					type: 'GET',
+					dataType: 'json',
+					data: {userid: address},
+					success: function() {
+						window.location.reload();
+					}
+				});
+			},
+			cancelIsShow: true,
+			cancelFun: function() {
+				this.hide();
+			}
+		});
+	});
+
+	//解除用户锁定
+	$('.relock-user').on('click', function() {
+		var address = $(this).attr('data-user');
+
+		message.show({
+			mask: true,
+			content: '<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">确认解除用户锁定？</h4></div></div>',
+			confirmIsShow: true,
+			confirmFun: function() {
+				
+				$.ajax({
+					url: '',
+					type: 'GET',
+					dataType: 'json',
+					data: {userid: address},
+					success: function() {
+						window.location.reload();
+					}
+				});
+			},
+			cancelIsShow: true,
+			cancelFun: function() {
+				this.hide();
+			}
+		});
+	});
+
+
+
+})(jQuery);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

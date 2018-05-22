@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.16参数设置查看页</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearchGroup.js"></script>
+	<script type="text/javascript" src="../js/phoenix.SuperSearch.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<style>
+	.input-info {border:0;font-weight:bold;}
+	.ui-form .input{
+		border: none;
+		box-shadow: none;
+	}
+	</style>
+
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>彩种管理</dt>
+				<dd class="current"><a href="">彩种信息列表</a></dd>
+				<dt>奖期流程管理</dt>
+				<dd><a href="">流程监控</a></dd>
+				<dd><a href="#">异常流程记录</a></dd>
+				<dt>方案&追号管理</dt>
+				<dd><a href="#">方案记录</a></dd>
+				<dd><a href="#">追号记录</a></dd>
+				<dd><a href="#">异常记录</a></dd>
+				<dt>报表管理</dt>
+				<dd><a href="#">单期盈亏表</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+							<div class="ui-tab-title clearfix">
+								<ul>
+									<li><a href="1.11.html">奖期规则</a></li>
+									<li><a href="1.12.html">奖金组</a></li>
+									<li><a href="1.13.html">投注限制</a></li>
+									<li><a href="1.14.html">玩法描述</a></li>
+									<li><a href="1.15.html">销售状态</a></li>
+									<li class="current"><a href="1.16.html">参数设置</a></li>
+								</ul>
+							</div>
+							<div class="ui-tab-content">
+								<h3 class="ui-title">
+									<a href="javascript:void(0);" id="J-button-publish" class="btn btn-small">发 布<b class="btn-inner"></b></a>
+									<a href="1.161.html" class="btn btn-small">修 改<b class="btn-inner"></b></a>
+									彩种名称：重庆时时彩
+									<span class="info">状态：<span class="color-red">待发布</span></span>
+								</h3>
+								<h3 class="ui-title">投注相关参数</h3>
+								<ul class="ui-form">
+									<li>
+										<label for="" class="ui-label w-4 ">撤单起始金额：</label>
+										<input type="text" disabled="disabled" value="3,000.00" class="input input-info w-2">
+										<span class="ui-info">元</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">撤单手续费比例：</label>
+										<input type="text" disabled="disabled" value="3" class="input input-info w-2">
+										<span class="ui-info">%</span>
+									</li>
+								</ul>
+								<h3 class="ui-title">用户/方案处理相关参数</h3>
+								<ul class="ui-form">
+									<li>
+										<label for="" class="ui-label w-4">单人单期最大获奖金额：</label>
+										<input type="text" disabled="disabled" value="400,000.00" class="input input-info w-2">
+										<span class="ui-info">元</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单人单期最大中/投比：</label>
+										<input type="text" disabled="disabled" value="不判断" class="input input-info w-2">
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单人最大连续中奖次数：</label>
+										<input type="text" disabled="disabled" value="3" class="input input-info w-2">
+										<span class="ui-info">次</span>
+										<span class="ui-prompt">（一个订单中的一个注单中奖计为一次中奖，数量为一期或连续期数中所有中奖注单数量加和）</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单注最大获奖金额：</label>
+										<input type="text" disabled="disabled" value="1,000.00" class="input input-info w-2">
+										<span class="ui-info">元</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">单注最大中/投比：</label>
+										<input type="text" disabled="disabled" value="50.00" class="input input-info w-2">
+									</li>
+								</ul>
+								<h3 class="ui-title">用户/方案处理相关参数</h3>
+								<ul class="ui-form">									
+									<li>
+										<label for="" class="ui-label w-4">管理员在开奖后：</label>
+										<input type="text" disabled="disabled" value="30" class="input input-info w-2">
+										<span class="ui-info">分钟内（含120分钟）可进行单笔撤单</span>
+									</li>
+									<li>
+										<label for="" class="ui-label w-4">管理员在开奖后：</label>
+										<input type="text" disabled="disabled" value="300" class="input input-info w-2">
+										<span class="ui-info">分钟内（含300分钟）可进行流程异常处理</span>
+										<span class="ui-prompt">（超过该时间范围后，该奖期不可再做任何后台操作）</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+<script>
+(function(){
+	var minWindow,mask,initFn,isture=false;	
+	minWindow = new phoenix.MiniWindow({cls:'pop'});
+	mask = phoenix.Mask.getInstance();
+	minWindow.addEvent('beforeShow', function(){
+		mask.show();
+	});
+	minWindow.addEvent('afterHide', function(){
+		mask.hide();
+	});
+	
+
+	$('#J-button-publish').click(function(e){
+		minWindow.setTitle('温馨提示');
+		minWindow.setContent('<div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">您确认发布当前内容吗？</h4></div><div class="pop-btn"><a href="javascript:void(0);" class="btn btn-important " id="J-button-pop-confirm">确 认<b class="btn-inner"></b></a><a href="javascript:void(0);" class="btn" id="J-button-pop-cancel">取 消<b class="btn-inner"></b></a></div>');
+		minWindow.show();
+		
+		$('#J-button-pop-confirm').click(function(){
+			$.ajax({
+				url:'',
+				dataType:'JSON',
+				//返回消息格式
+				//{isSuccess:1,msg:'',type:''}
+				success:function(data){
+					if(Number(data['isSuccess']) == 1){
+						alert('操作成功后的动作...');
+					}else{
+						alert(data['msg']);
+					}
+				}
+			});
+		});
+		$('#J-button-pop-cancel').click(function(){
+			minWindow.hide();
+		});
+	});
+	
+	
+	
+})();
+</script>
+	
+</body>
+</html>

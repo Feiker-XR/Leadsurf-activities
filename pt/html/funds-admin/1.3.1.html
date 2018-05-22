@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.3唯一附言管理</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>充值相关</dt>
+				<dd><a href="">异常充值处理</a></dd>
+				<dd><a href="">充值相关配置</a></dd>
+				<dd><a href="">唯一附言管理</a></dd>
+				<dt>提现相关</dt>
+				<dd><a href="">风险提现处理</a></dd>
+				<dd><a href="#">提现相关处理</a></dd>
+				<dt>人工资金操作</dt>
+				<dd><a href="#">人工资金操作审核流程</a></dd>
+				<dt>银行卡相关</dt>
+				<dd class="current"><a href="#">银行管理</a></dd>
+				<dd><a href="#">用户银行卡绑定管理</a></dd>
+				<dd><a href="#">银行卡黑名单管理</a></dd>
+				<dt>统计报表</dt>
+				<dd><a href="#">充值明细报表</a></dd>
+				<dd><a href="#">提现明细报表</a></dd>
+				<dd><a href="#">充提报表</a></dd>
+				<dd><a href="#">总代每日报表</a></dd>
+				<dd><a href="#">自动收款明细报表</a></dd>
+				<dt>转账相关</dt>
+				<dd><a href="#">转账明细</a></dd>
+				<dd><a href="#">转账限额配置</a></dd>
+			</dl>
+		</div>
+		<div class="col-main setting-manager">
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab-title clearfix">
+							<ul>
+								<li><a href="1.3.html">唯一附言管理</a></li>
+								<li><a href="1.3.2.html">唯一附言回收管理</a></li>
+								<li class="current"><a href="1.3.1.html">配置管理</a></li>
+							</ul>
+						</div>
+						<div class="ui-area">
+							<form>
+								<table class="table table-info table-function info-list">
+									<tbody>
+										<tr>
+											<td class="control-desc">修改绑定与用户解除后再次绑定</td>
+											<td class="control-panl">每 <input id="J-edit-days" class="input w-2" type="text" value="" /> 天，可修改一次唯一附言；（用户解绑后可再次绑定时间）</td>
+										</tr>
+										<tr>
+											<td>可用用户类型</td>
+											<td class="info-area">
+												按用户类型：
+												<label for="all-user"><input id="all-user" name="user-type" class="user-type checkbox" type="checkbox"> 全部</label>
+												<label for="vip-user"><input id="vip-user" name="user-type" class="user-type checkbox" type="checkbox"> VIP</label>
+												<label for="normal-user"><input id="normal-user" name="user-type" class="user-type checkbox" type="checkbox"> 普通用户</label>
+												<div>按总代： </div>
+												<ul data-type="none" id="zongdai-show" class="porxyname"><li>无</li></ul>
+												<div class="clearfix"></div>
+												<input id="J-input-name" class="input w-2" type="text" value="" /> <a id="J-add-proxy" href="javascript:void(0);" class="btn clearfix">添加总代<b class="btn-inner"></b></a>
+												<div class="clearfix"></div>
+												<div>导入Excel： </div>
+												<ul data-type="none" id="excel-show" class="porxyname"><li>无</li></ul>
+												<div class="clearfix input-area"></div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<a href="javascript:void(0);" class="btn w-1 btn-important clearfix">保存<b class="btn-inner"></b></a>
+												<a href="javascript:void(0);" class="btn clearfix">返回<b class="btn-inner"></b></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</form>
+							<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="getproxyuser.php" target="check_file_frame">
+								<input name="file" type="file" id="file" size="40" hidefocus="true" value="导入Excel" class="btn" style="outline:none;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);filter:alpha(opacity=0);opacity: 0;position:absolute;bottom: 85px; left: 335px; width:107px; height:30px;z-index:1;background:#000" />
+								<a style="outline:none;position:absolute;bottom: 85px; left:335px; width:107px; height:30px;z-index:0" href="javascript:void(0);" class="btn clearfix">导入Excel<b class="btn-inner"></b></a>
+								<a style="outline:none;position:absolute;bottom: 80px; left:490px; width:107px; height:30px;z-index:0" href="#" class="">模板下载</a>
+								<input type="reset" style="outline:none;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);filter:alpha(opacity=0);opacity: 0;width:0px; height:0px;z-index:1;background:#000" />
+								<iframe src="getproxyuser.php" name="check_file_frame" style="display:none;"></iframe>
+							</form>
+						</div>
+								<div class="page-wrapper">
+									<span class="page-text">
+										<span class="lower">共102条记录</span>
+									</span>
+									<div class="page page-right">
+										<a href="#" class="prev">上一步</a>
+										<a href="#">1</a>
+										<a href="#">2</a>
+										<a href="#" class="current">3</a>
+										<a href="#">4</a>
+										<a href="#">5</a>
+										<a href="#">6</a>
+										<a href="#">7</a>
+										<a href="#">8</a>
+										<a href="#">9</a>
+										<a href="#">...</a>
+										<a href="#" class="next">下一步</a>
+										<span class="page-few">到第 <input type="text" value="" class="input"> /100页</span>
+										<input type="button" value="确 认" class="page-btn">
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+(function($){
+	var message = new phoenix.Message;
+	var dateDom = $('#J-edit-days');
+	var uploadButton = $('#file');
+
+	dateDom.on('input propertychange', function() {
+		var content = $.trim($(this).val());
+
+		$(this).val(content.replace(/\D/g, ''));	
+	});
+
+
+	var proxyNameDom = $('#J-input-name');
+	var addBtnDom = $('#J-add-proxy');
+	var zongdaiDom = $('#zongdai-show');
+	var excelDom = $('#excel-show');
+
+	//绑定用户上传按钮
+	uploadButton.bind('change', function(){
+		var form = $(this).parent();
+
+		checkFile(this, form);
+	});
+
+	//检测上传
+	checkFile= function(dom, form){
+		var result = dom.value,
+			fileext=result.substring(result.lastIndexOf("."),result.length),
+			fileext=fileext.toLowerCase();
+
+		form[0].submit();
+	}
+	
+	getFile= function(result) {
+		var data = result['data'];
+
+		for (var i = 0; i < data.length; i++) {
+			var content = data[i];
+			var tag = excelDom.attr('data-type');
+
+			if(tag == 'none') {
+				excelDom.html('<li data-user="' + content + '">' + content + '<input type="hidden" value="'+content+'" name="user-name" /><i class="close" title="删除">×</i></li>');
+				excelDom.attr('data-type', 'fill');
+			}else{
+				excelDom.html(excelDom.html() +' '+ '<li>' + content + '<input type="hidden" value="'+content+'" name="user-name" /><i class="close" title="删除">×</i></li>');	
+			}
+		};
+	}
+
+	//关闭总代
+	$('.info-area').on('click', '.close', function() {
+		var dom = $(this).parent();
+		var parentDom = $(this).parent().parent();
+
+		dom.remove();
+
+		if($.trim(parentDom.html()) == '') {
+			parentDom.text('无').attr('data-type', 'none');
+		}
+
+	});
+
+
+	addBtnDom.on('click', function() {
+		var content = $.trim(proxyNameDom.val());
+
+		if(content) {
+
+			$.ajax({
+				url: 'checkporxyname.json',
+				type: 'GET',
+				dataType: 'json',
+				data: {name: content},
+				success: function(r) {
+
+					if(r['isSuccess'] == 1) {
+						
+						if(r['type'] == 1) {
+							var tag = zongdaiDom.attr('data-type');
+
+							if(tag == 'none') {
+								zongdaiDom.html('<li data-user="' + content + '">' + content + '<input type="hidden" value="'+content+'" name="user-name" /><i class="close" title="删除">×</i></li>');
+								zongdaiDom.attr('data-type', 'fill');
+							}else{
+								zongdaiDom.html(zongdaiDom.html() +' '+ '<li>' + content + '<input type="hidden" value="'+content+'" name="user-name" /><i class="close" title="删除">×</i></li>');	
+							}
+
+							proxyNameDom.val('');
+						}else{
+							message.show({
+								mask: true,
+								content: '<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">'+r['msg']+'</h4></div></div>',
+								cancelIsShow: true,
+								cancelFun: function() {
+									this.hide();
+									proxyNameDom.val('').focus();
+								}
+							});
+						}
+					}
+				}
+			});
+		}else {
+			message.show({
+				mask: true,
+				content: '<div class="bd text-center"><div class="pop-title"><i class="ico-waring"></i><h4 class="pop-text">代理名称不能为空</h4></div></div>',
+				cancelIsShow: true,
+				cancelFun: function() {
+					this.hide();
+					proxyNameDom.focus();
+				}
+			});
+		}
+	});
+
+
+})(jQuery);
+</script>
+
+</body>
+</html>

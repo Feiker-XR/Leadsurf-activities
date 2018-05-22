@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>砸金蛋</title>
+<style type="text/css">
+html,body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,th,td,em,form,input,select,textarea,button,header,section,aside,footer{margin:0;padding:0;}
+ul,li{list-style:none;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+img{border:none;}
+body{font:12px/1.5 Microsoft Yahei,Arial,Helvetica,sans-serif;color:#333;background:#05223D center 0 no-repeat;}
+input,select{font-family: 'Microsoft Yahei',Tahoma,Arial,Helvetica,Simsun,STHeiti;}
+.egg-bar{position:fixed;_position:absolute;right:20px;top:50%;width:155px;height:156px;margin-top:-160px;background:url(images/egg-bar.png) no-repeat right 0;cursor:pointer;}
+.egg-bar-tip{position:absolute;left:0;top:60px;width:59px;height:41px;background:url(images/egg-bar-tip.png) no-repeat 0 0;}
+.egg-pop{display:none;position:fixed;_position:absolute;left:50%;top:50%;width:545px;height:488px;margin:-244px 0 0 -273px;background:url(images/bg-egg.png) no-repeat 0 0;}
+.egg-list{position:relative;width:450px;margin-left:52px;}
+.egg-list li{float:left;width:150px;height:230px;margin-top:150px;background:url(images/egg.png) no-repeat bottom;cursor:pointer;}
+.egg-list .current{background:url(images/egg-break.png?1) no-repeat bottom;cursor:default;}
+.egg-info{text-align:center;color:#F2EDE4;font-size:14px;text-shadow:0 1px 4px rgba(0,0,0,.5);}
+.egg-close{position:absolute;right:0;top:0;z-index:10;width:30px;height:30px;background:url(images/egg-close.png) no-repeat 0 0;transition:.3s;}
+.egg-close:hover{transform:rotate(180deg);}
+.egg-light{display:none;position:absolute;background:url(images/egg-light.png) no-repeat 0 0;width:722px; height:259px;top:0;left:50%;margin-left:-361px;z-index:3;}
+.egg-tip{display:none;position:absolute;background:url(images/egg-tip.png) no-repeat 0 0;width:307px;height:82px;z-index:4;top:100px;left:50%;margin-left:-153px;color:#f60;overflow:hidden;}
+.egg-tip .price{width:60px;padding:16px 0 0 190px;font-size:36px;font-weight:700;color:#A70101;text-align:center;}
+.egg-tips{position:absolute;z-index:2;width:45px;height:39px;background:url(images/un-egg-tips.png) no-repeat 0 0;}
+.egg-tip1{left:130px;top:164px;}
+.egg-tip2{left:230px;top:144px;}
+.egg-tip3{left:370px;top:164px;}
+.egg-tip2,.egg-tip3{background-position:-50px 0;}
+.egg-btn{display:none;position:absolute;width:86px;height:41px;z-index:2;top:320px;left:50%;margin-left:-43px;background:url(images/egg-btn.png) no-repeat 0 0;color:#f60;overflow:hidden;}
+.egg-btn:hover{background-position:0 -50px;}
+.hammer{background:url(images/hammer.png) no-repeat;width:123px;height:124px;position:absolute;text-indent:-9999px;z-index:150;left:468px;top:80px;	transition:.1s rotate;}
+.hammer-current{
+	transform:rotate(-30deg);
+	-webkit-transform-origin:80% 100%;
+	-moz-transform-origin:80% 100%;
+	transform-origin:80% 100%;
+}
+/* animation */
+.animation{
+	-webkit-animation-duration:1s;
+	-webkit-animation-delay:.2s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-fill-mode:both;
+	-moz-animation-duration:1s;
+	-moz-animation-delay:.2s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-fill-mode:both;
+}
+@-webkit-keyframes wobble{0%{-webkit-transform:translateX(0%)}
+15%{-webkit-transform:translateX(-15%) rotate(-10deg)}
+30%{-webkit-transform:translateX(12%) rotate(8deg)}
+45%{-webkit-transform:translateX(-9%) rotate(-6deg)}
+60%{-webkit-transform:translateX(6%) rotate(4deg)}
+75%{-webkit-transform:translateX(-3%) rotate(-2deg)}
+100%{-webkit-transform:translateX(0%)}}
+@-moz-keyframes wobble{0%{-moz-transform:translateX(0%)}
+15%{-moz-transform:translateX(-10%) rotate(-10deg)}
+30%{-moz-transform:translateX(8%) rotate(8deg)}
+45%{-moz-transform:translateX(-6%) rotate(-6deg)}
+60%{-moz-transform:translateX(4%) rotate(4deg)}
+75%{-moz-transform:translateX(-2%) rotate(-2deg)}
+100%{-moz-transform:translateX(0%)}}
+.wobble{
+	-webkit-animation-name:wobble;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-transform-origin:80% 100%;
+	-moz-animation-name:wobble;
+	-moz-animation-iteration-count:infinite;
+	-moz-transform-origin:80% 100%;
+}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+</style>
+</head>
+
+<body>
+<div id="header">
+</div>
+<div id="main">
+	<div id="eggBar" class="egg-bar">
+		<i class="egg-bar-tip animation wobble"></i>
+	</div>
+	<div id="eggPop" class="egg-pop">
+		<a href="javascript:void(0);" id="eggClose" class="egg-close"></a>
+		<div class="hammer" id="hammer">锤子</div>
+		<div class="egg-tip"><div id="result" class="price"></div></div>
+		<div class="egg-tips egg-tip1 animation wobble"></div>
+		<div class="egg-tips egg-tip2 animation wobble"></div>
+		<div class="egg-tips egg-tip3 animation wobble"></div>
+		<div class="egg-light"></div>
+		<a href="javascript:void(0);" class="egg-btn"></a>
+		<ul class="egg-list clearfix">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<p class="egg-info">您每天可参与一次“砸蛋抢金”活动<br />选择一个金蛋砸开，可立即获取奖金<br />奖金将计入您的账户余额<br />砸蛋进度于每天00:00重置</p>
+	</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	var eggPop = $('#eggPop');
+	var eggBar = $('#eggBar');
+	var eggClose = $('#eggClose');
+	var oEgg =  $('.egg-list li');
+	var length = oEgg.length;
+	var number = length;
+	function eggClick(obj) {
+		var _this = obj;
+		oEgg.unbind('click');
+		oEgg.unbind('mousemove');
+		$.getJSON("data.php",function(res){
+			$(".hammer").addClass('hammer-current');
+			setTimeout(function(){
+				$(".hammer").removeClass('hammer-current');
+			},100);
+			if(-[1,]){
+				var audio = new Audio('images/egg.mp3');//路径
+				audio.play();
+			}
+			setTimeout(function(){
+				_this.addClass('current'); //蛋碎效果
+				$('.egg-tips').removeClass('animation');
+				$('.egg-light').fadeIn(); //金花四溅
+				$(".hammer").hide();
+				if(res.msg == 1){
+					$("#result").html(res.prize);
+				}else{
+					//$("#result").html("很遗憾,您没能中奖!");
+				}
+				$('.egg-tip').fadeIn(200).animate({top:'150px'},300);
+				$('.egg-btn').delay(400).fadeIn(200).animate({top:'280px'},300);
+			},300);
+		});
+	}
+	oEgg.click(function(){
+		number--;
+		if($(this).hasClass("current")){
+			//alert("蛋都碎了，别砸了！刷新再来.");
+			return false;
+		}
+		if(number >= length-1){
+			eggClick($(this));
+		}else{
+			//alert("您的机会已经用完！请明天再来.");
+			return false;
+		}
+	});
+
+	
+
+	oEgg.mousemove(function(e){
+		var l = $('.egg-pop').offset().left;
+		var t = $('.egg-pop').offset().top;
+		var x = e.pageX;
+		var y = e.pageY;
+		var w = $("#hammer").outerWidth();
+		var h = $("#hammer").outerHeight();
+		if(!oEgg.hasClass("current")){
+			$("#hammer").css({left:x-l+10,top:y-t-h-10});
+		}
+	});
+	function popShow(){
+		eggPop.fadeIn();
+		$('.egg-bar-tip').removeClass('animation');
+	}
+	function popHide(){
+		eggPop.fadeOut();
+		$('.egg-bar-tip').addClass('animation');
+	}
+	$('.egg-btn').click(function(){
+		eggBar.fadeOut();
+		popHide();
+	});
+	eggBar.click(function(){
+		popShow();
+	});
+	eggClose.click(function(){
+		popHide();
+	});
+});
+
+
+</script>
+</body>
+</html>

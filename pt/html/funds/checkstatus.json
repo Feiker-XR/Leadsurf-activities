@@ -1,0 +1,1 @@
+{"isSuccess":1, "type":"", "msg":"请求成功", "data":{"bankFrom":"充值银行名称", "money":"充值金额", "bankTo":"收款银行", "name":"收款人", "email":"收款Email地址", "message":"附言", "bankOpen":"开户行名称"}}

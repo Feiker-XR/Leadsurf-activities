@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="ar-index-title row">
+        <div class="col-xs-8">
+            凤凰 7天数据统计
+        </div>
+        <div class="text-right">
+            <div role="presentation" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button"
+                   aria-expanded="false">
+                    vic
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu ar-dropdown-menu" role="menu" aria-labelledby="drop1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="##">注销</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="ar-index-con row">
+        <div class="col-xs-12">
+            <ul>
+                <li class="active"><span class="ar-li-left">销量总额:</span><span>123400.00元</span></li>
+                <li><span class="ar-li-left">新增用户:</span><span>1300个</span></li>
+                <li><span class="ar-li-left">已绑卡数:</span><span>324张</span></li>
+                <li><span class="ar-li-left">用户活跃度:</span><span>324</span></li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <canvas id="myChart" width="400" height="250"></canvas>
+        </div>
+    </div>
+</div>
+<script>
+        var randomScalingFactor = function () {
+            return Math.round(Math.random() * 100)
+        };
+        var lineChartData = {
+            labels: ["6/11", "6/12", "6/13", "6/14", "6/15", "6/16", "6/17"],
+            datasets: [
+
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                }
+            ]
+
+        }
+
+        var ctx = document.getElementById("myChart").getContext("2d");
+        window.myLine = new Chart(ctx).Line(lineChartData, {
+                responsive: true
+        });
+</script>

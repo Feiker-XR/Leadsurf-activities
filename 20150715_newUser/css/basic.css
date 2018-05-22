@@ -1,0 +1,329 @@
+@charset "UTF-8";
+html,body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,th,td,em,form,input,select,textarea,button,header,section,aside,footer{margin:0;padding:0;}
+input,button,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+ul,li{list-style:none;}
+img{border:none;}
+body{font:14px/1.5 Microsoft Yahei,Arial,Helvetica,sans-serif;color:#d0d2f6; background: #3c3c71; }
+.clearfix:after{content:".";display:block;height:0;clear:both;overflow:hidden;}
+.clearfix{*zoom:1;}
+a { color: #d0d2f6; outline: none;}
+
+.top,
+.middle,
+.bottom,
+.footer {
+    width:100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #3c3c71;
+}
+.topM,
+.middleM,
+.bottomPic,
+.footerContent{
+    width: 980px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 0 auto;
+}
+.top {
+    height: 93px;
+    background-image: url(../images/topbg.jpg);
+}
+
+.middle {
+    height: 1514px;
+    background-image: url(../images/middlebg.jpg);
+}
+
+.bottom {
+    background: #3c3c71;
+    height:142px;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    background: #3c3c71;
+    border-top: 1px solid #4f4f7e;
+}
+
+.topM {
+    background-image: url(../images/topm.jpg);
+    height: 93px;
+}
+
+
+.middleM {
+    height: 1514px;
+    background-image: url(../images/middlem.jpg);
+}
+
+.bottomPic {
+    height: 100%;
+    background: url(../images/bottom.jpg) left 20px no-repeat;
+    margin: 0 auto;
+}
+.footerContent {
+    width: 910px;
+    padding: 14px 35px 0;
+    padding-top: 14px;
+    color: #8f89be;
+    font-size: 12px;
+
+}
+.footerContent a {
+    color: #8f89be;
+    margin-left: 10px;
+}
+
+.footerContent .fright {
+    float: right;
+}
+
+
+.top a {
+    font-size: 12px;
+    position: absolute;
+    cursor: pointer;
+}
+.top .logo {
+    width: 167px;
+    height: 50px;
+    left:4px;
+    top: 24px;
+}
+.top .login {
+    left: 792px;
+    top: 38px;
+}
+
+.top .service {
+    left: 882px;
+    top: 30px;
+}
+
+.title {
+    width: 92px;
+    height: 24px;
+    background-image: url(../images/btn.png);
+    background-repeat: no-repeat;
+}
+.step1 .title {
+    background-position: left -200px;
+}
+.step2 .title {
+    background-position: left -240px;
+}
+.step3 .title {
+    background-position: left -280px;
+}
+
+
+.step1,
+.step2,
+.step3 {
+    position: absolute;
+    width: 698px;
+    left: 282px;
+}
+.step1 {
+    top: 523px;
+    height: 368px;
+}
+
+.step1 .task {
+    position: absolute;
+    width: 100%;
+    height: 84px;
+    left: 57px;
+    top: 45px;
+}
+.task li {
+    position: absolute;
+    top: 34px;
+    width: 184px;
+    line-height: 16px;
+}
+.task li span {
+    color: #fef500;
+}
+.task .task1 {
+    left: 0px;
+}
+.task .task2 {
+    width: 110px;
+    left: 265px;
+}
+.task .task3 {
+    width: 70px;
+    left: 483px;
+}
+.step1 h3 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    width: 650px;
+    position: absolute;
+    top: 160px;
+    text-align: center;
+}
+.step1 h3 span {
+    color: #fffc00;
+}
+.step1 p {
+    font-size: 14px;
+    line-height: 14px;
+    width: 650px;
+    position: absolute;
+    top: 200px;
+    text-align: center;
+}
+.step1 .prize  {
+    position: absolute;
+    left: 0px;
+    top: 230px;
+    width: 100%;
+}
+.prize dl {
+    float: left;
+    display: inline;
+    width: 148px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fdfdfd;
+    border-top-left-radius: 6px;
+    -webkit-border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    margin-right: 18px;
+    text-align: center;
+    overflow: hidden;
+}
+.prize dl dt {
+    color: #424078;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+}
+.prize dl dd {
+    height: 50px;
+    line-height: 50px;
+}
+.prize dl dd span {
+    font-size: 20px;
+}
+.prize .prize2 {
+    color: #fff5c9;
+    border-color: #fff5c9;
+}
+.prize .prize2 dt {
+    background: #fff5c9;
+}
+.prize .prize3 {
+    color: #ffec98;
+    border-color: #ffec98;
+}
+.prize .prize3 dt {
+    background: #ffec98;
+}
+.prize .prize4 {
+    color: #ffe672;
+    border-color: #ffe672;
+}
+.prize .prize4 dt {
+    background: #ffe672;
+}
+
+.step2 {
+    top: 892px;
+    height: 90px;
+}
+.step2 p,
+.step3 p{
+    line-height: 60px;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 30px;
+}
+.step3 {
+    top: 982px;
+    height: 530px;
+}
+.step3 ul {
+    margin-left: 35px;
+    border-left: 1px dashed #d4d4d4;
+}
+.step3 li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 15px;
+    line-height: 22px;
+    z-index: 2;
+    margin-left: -11px;
+}
+.step3 li span {
+    width: 22px;
+    height: 22px;
+    display: block;
+    background-image: url(../images/btn.png);
+    background-repeat: no-repeat;
+    text-indent: -999em;
+    margin-right: 20px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+.step3 li .number1 {
+    background-position: left -320px;
+}
+.step3 li .number2 {
+    background-position: left -345px;
+}
+.step3 li .number3 {
+    background-position: left -370px;
+}
+.step3 li .number4 {
+    background-position: left -395px;
+}
+.step3 li .number5 {
+    background-position: left -420px;
+}
+.step3 li .number6 {
+    background-position: left -445px;
+}
+.step3 li .number7 {
+    background-position: left -470px;
+}
+.step3 li .number8 {
+    background-position: left -495px;
+}
+.step3 li .number9 {
+    background-position: left -520px;
+}
+
+
+.newuser {
+    width: 129px;
+    height: 93px;
+    position: absolute;
+    left: 823px;
+    top: 376px;
+}
+.newuser a {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/btn.png);
+    background-repeat: no-repeat;
+    background-position: left -100px;
+}
+.newuser a:hover {
+    background-position: left top;
+}

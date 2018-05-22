@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="html-content">
+<head>
+	<meta charset="UTF-8">
+	<title>1.2站内信-用户消息管理</title>
+	<link rel="stylesheet" href="../images/common/base.css" />
+    <link rel="stylesheet" href="../images/common/js-ui.css" />
+	<link rel="stylesheet" href="../images/admin/admin.css" />
+	
+	<style>
+	.j-ui-tip {background:#FFFFE1;border:1px solid #CCC;color:#333;font-size:12px;}
+	.j-ui-tip .sj {display:none;}
+	
+	.ui-form-window li {margin-top:5px;margin-bottom:5px;}
+	
+	.pop-window-datepicker {z-index:710;}
+	</style>
+
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/phoenix.base.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Class.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Event.js"></script>
+	<script type="text/javascript" src="../js/phoenix.util.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tab.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Tip.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Mask.js"></script>
+	<script type="text/javascript" src="../js/phoenix.MiniWindow.js"></script>
+	<script type="text/javascript" src="../js/phoenix.Message.js"></script>
+	<script type="text/javascript" src="../js/phoenix.DatePicker.js"></script>
+	
+</head>
+<body>
+	<div class="menu">
+		<div class="menu-logo"></div>
+		<ul class="menu-list">
+			<li><a href="">首页</a></li>
+			<li><a href="">全局</a></li>
+			<li><a href="">用户</a></li>
+			<li class="current"><a href="">游戏</a></li>
+			<li><a href="">资金</a></li>
+			<li><a href="">市场促销</a></li>
+			<li><a href="">统计</a></li>
+			<li><a href="">内容</a></li>
+			<li><a href="">权限</a></li>
+		</ul>
+		<div class="menu-quit"><a href="">退出</a><i class="ico-user"></i>你好，vava</div>
+	</div>
+	<div class="col-content">
+		<div class="col-side">
+			<dl class="nav">
+				<dt>站内信</dt>
+				<dd>发送站内信</dd>
+				<dd class="current"><a href="">系统消息管理</a></dd>
+				<dd>用户消息管理</dd>
+				<dt>邮件</dt>
+				<dd><a href="">邮件配置</a></dd>
+				<dd><a href="">邮件测试</a></dd>
+				<dt>通知任务</dt>
+				<dd><a href="#">通知任务管理</a></dd>
+			</dl>
+		</div>
+		<div class="col-main">
+			<div class="col-crumbs"><div class="crumbs"><strong>当前位置：</strong><a href="#">通知中心</a> &gt; <a href="#">站内信</a> &gt; <a href="#">用户消息管理</a></div></div>
+			<div class="col-content">
+				<div class="col-main">
+					<div class="main">
+						<div class="ui-tab">
+
+							<div class="ui-tab-content">
+								<form action="?" id="J-form">
+									<ul class="ui-search">
+										<li>
+											<label for="" class="ui-label">主题名：</label>
+											<input type="text" value="" class="input w-5">
+										</li>
+										<li>
+											<select class="ui-select">
+												<option value="1">发件人</option>
+												<option value="2">收件人</option>
+											</select>
+											<input type="text" value="" class="input w-2">
+										</li>
+										<li class="time">
+											<label for="" class="ui-label">发送时间：</label>
+											<input id="J-time-start" type="text" value="" class="input"> - <input id="J-time-end" type="text" value="" class="input">
+										</li>
+										<li><a id="J-button-submit" class="btn btn-important" href="javascript:void(0);">搜 索<b class="btn-inner"></b></a></li>
+									</ul>
+								</form>
+							
+								<table class="table table-info" id="J-data-table">
+									<thead>
+										<tr>
+											<th>主题名</th>
+											<th>发件人</th>
+											<th>收件人</th>
+											<th>发送时间</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>凤凰10周年--千万奖金等你拿活动通知 (21)</td>
+											<td>admin</td>
+											<td>全部客户</td>
+											<td>2013-06-13 23:23</td>
+											<td>
+												<a href="1.2.1.html">查看</a>
+											</td>
+										</tr>
+										<tr>
+											<td>凤凰10周年--千万奖金等你拿活动通知 (3)</td>
+											<td>admin</td>
+											<td>全部客户</td>
+											<td>2013-06-13 23:23</td>
+											<td>
+												<a href="1.2.1.html">查看</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="page-wrapper clearfix">
+									<div class="page-short page-right">
+										<i class="prev"></i>
+										<a href="#">上一页</a>
+										<span>2/200</span>
+										<a href="#">下一页</a>
+										<i class="next"></i>
+									</div>
+									<span class="page-text">共XXX条站内信</span>
+								</div>
+								
+								
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<script>
+(function($){
+	var start = $('#J-time-start'),
+		end = $('#J-time-end');
+	start.focus(function(){
+		(new phoenix.DatePicker({input:start})).show();
+	});
+	end.focus(function(){
+		(new phoenix.DatePicker({input:end})).show();
+	});
+	
+	
+	$('#J-button-submit').click(function(){
+		$('#J-form').submit();
+	});
+	
+	var Tip = new phoenix.Tip.getInstance();
+	$('#J-data-table').on('click', '.tip-detail', function(e){
+		var dom = $(this);
+		Tip.setText(dom.parent().find('.tip-hidden').text());
+		Tip.show(dom.width()*-1-10, dom.height()*-1-20, dom.parent());
+	}).on('mouseout', '.tip-detail', function(){
+		Tip.hide();
+	});
+	
+	
+})(jQuery);
+</script>
+
+
+
+	
+	
+</body>
+</html>
